@@ -8789,8 +8789,9 @@ window.TU_WEEKS = [
           "end": 244,
           "title": "Jeremiah the Prophet | Animated Scripture Lesson for Kids",
           "channel": "Latter Day Kids",
-          "previewed": false
-        }
+          "previewed": true
+        },
+        "approved": "13c39c58"
       }
     ]
   }
