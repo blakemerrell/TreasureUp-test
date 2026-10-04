@@ -4892,8 +4892,9 @@ window.TU_WEEKS = [
             "end": 1516,
             "title": "followHIM: Isaiah 50–57 with Dr. Ezra Gwilliam",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "62232159"
         }
       },
       {
@@ -5063,8 +5064,9 @@ window.TU_WEEKS = [
             "end": 3766,
             "title": "followHIM: Isaiah 50–57 with Dr. Ezra Gwilliam",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "f8fe3e53"
         }
       },
       {
@@ -5152,8 +5154,9 @@ window.TU_WEEKS = [
             "end": 5786,
             "title": "followHIM: Isaiah 50–57 with Dr. Ezra Gwilliam",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "b02c08dd"
         }
       },
       {
@@ -5294,7 +5297,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/115"
         },
         "find": "Have I put thee away, or have I cast thee off forever?",
-        "note": "Joseph Smith’s Bible revision adds the Lord’s question, “Have I put thee away, or have I cast thee off forever?”, as Nephi’s copy of Isaiah has it (2 Nephi 7:1)."
+        "note": "Joseph Smith’s Bible revision adds the Lord’s question, “Have I put thee away, or have I cast thee off forever?”, as Nephi’s copy of Isaiah has it (2 Nephi 7:1).",
+        "approved": "1a1626d4"
       },
       {
         "id": "isa52-jsp-then-say",
@@ -5308,7 +5312,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
         },
         "find": "And then shall they say, How beautiful upon the mountains",
-        "note": "Joseph Smith’s Bible revision begins this verse “And then shall they say,” and adds that the good tidings are brought to them, as the Savior said it in 3 Nephi 20:40."
+        "note": "Joseph Smith’s Bible revision begins this verse “And then shall they say,” and adds that the good tidings are brought to them, as the Savior said it in 3 Nephi 20:40.",
+        "approved": "15a51316"
       },
       {
         "id": "isa52-jsp-gather",
@@ -5322,7 +5327,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
         },
         "find": "that saith unto Zion, Thy God reigneth. 15 gather",
-        "note": "The page where this change was first written down: for verse 15, Joseph Smith’s Old Testament manuscript has one word, “gather.”"
+        "note": "The page where this change was first written down: for verse 15, Joseph Smith’s Old Testament manuscript has one word, “gather.”",
+        "approved": "1737a8e9"
       },
       {
         "id": "isa52-jsp-strength",
@@ -5336,7 +5342,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/questions-and-answers-between-circa-16-and-circa-29-march-1838-b-dc-1137-10/1"
         },
         "find": "He had reference to those whome God should call in the last day’s who should hold the power of Priesthood",
-        "note": "The first record of this answer: Joseph Smith’s reply to Elias Higbee in March 1838, written in his journal, explains Zion’s strength as priesthood authority (D&C 113:7–10)."
+        "note": "The first record of this answer: Joseph Smith’s reply to Elias Higbee in March 1838, written in his journal, explains Zion’s strength as priesthood authority (D&C 113:7–10).",
+        "approved": "63c79dda"
       },
       {
         "id": "isa52-jsp-gladness",
@@ -5350,7 +5357,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-the-church-7-september-1842-dc-128/6"
         },
         "find": "Now what do we hear in the gospel which we have received? a voice of gladness!",
-        "note": "Joseph Smith quoted this verse in his 1842 letter on baptism for the dead (D&C 128:19): glad tidings for the living and the dead, “a voice of gladness!”"
+        "note": "Joseph Smith quoted this verse in his 1842 letter on baptism for the dead (D&C 128:19): glad tidings for the living and the dead, “a voice of gladness!”",
+        "approved": "efead935"
       },
       {
         "id": "isa53-jsp-lamb",
@@ -5364,7 +5372,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-the-church-in-caldwell-county-missouri-16-december-1838/2"
         },
         "find": "aided him in leading us, as the savior was led, into the camp",
-        "note": "From Liberty Jail in December 1838, Joseph Smith used this verse for his own betrayal: led “as the savior was led,” and silent, like a sheep before the shearer."
+        "note": "From Liberty Jail in December 1838, Joseph Smith used this verse for his own betrayal: led “as the savior was led,” and silent, like a sheep before the shearer.",
+        "approved": "60aa9897"
       },
       {
         "id": "isa54-jsp-small-moment",
@@ -5378,7 +5387,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-the-church-and-edward-partridge-20-march-1839/8"
         },
         "find": "my son pease be unto thy soul thine advirsity and thy afflictions shall be but a small moment",
-        "note": "From Liberty Jail in 1839, the Lord told Joseph Smith his troubles “shall be but a small moment” (D&C 121:7–8), echoing this verse."
+        "note": "From Liberty Jail in 1839, the Lord told Joseph Smith his troubles “shall be but a small moment” (D&C 121:7–8), echoing this verse.",
+        "approved": "9067b8b6"
       }
     ]
   },
