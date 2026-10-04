@@ -8533,7 +8533,7 @@ window.TU_WEEKS = [
         "notes": [
           {
             "v": 8,
-            "text": "The KJV says the Lord will “repent,” here and in verse 10. In similar verses (Jeremiah 26:13; 26:19), the Joseph Smith Translation says the people repent and the Lord turns away the evil."
+            "text": "The KJV says the Lord will “repent,” here and in verse 10. Joseph Smith’s Bible revision gives ‘withhold’ for both verses: the Lord withholds the evil, or the good. It makes similar changes in Jeremiah 26:13 and 26:19."
           }
         ],
         "review": [
