@@ -8561,7 +8561,7 @@ window.TU_WEEKS = [
             "about": "Verses 19–23 are Jeremiah’s hard prayer against the people plotting to kill him, kept as the KJV has it."
           }
         ],
-        "approved": "65cdbc75"
+        "approved": "119371ba"
       },
       {
         "ch": "Jeremiah 20",
@@ -8881,8 +8881,9 @@ window.TU_WEEKS = [
             "end": 1446,
             "title": "followHIM: Jeremiah, part 1, with Dr. John Hilton III",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "363f9fcd"
         }
       },
       {
@@ -8944,8 +8945,9 @@ window.TU_WEEKS = [
             "end": 2092,
             "title": "followHIM: Jeremiah, part 1, with Dr. John Hilton III",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "83ced03c"
         }
       },
       {
@@ -8992,8 +8994,9 @@ window.TU_WEEKS = [
             "end": 2253,
             "title": "followHIM: Jeremiah, part 2, with Dr. John Hilton III",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "2eb9ac27"
         }
       },
       {
@@ -9219,7 +9222,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/118"
         },
         "find": "turn from — withhold",
-        "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse and for verse 10: “withhold.” The Lord withholds the evil, or the good, rather than repenting; the page doesn’t mark the spot, but it can only replace “repent of.”"
+        "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse and for verse 10: “withhold.” The Lord withholds the evil, or the good, rather than repenting; the page doesn’t mark the spot, but it can only replace “repent of.”",
+        "approved": "1458ca38"
       },
       {
         "id": "jer16-jsp-lies",
@@ -9233,7 +9237,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-edward-partridge-and-the-church-circa-22-march-1839/6"
         },
         "find": "upheld by the influance of that spirit which hath so strongly rivited the creeds of the fathers",
-        "note": "From Liberty Jail in 1839, Joseph Smith used this verse’s words for the false traditions behind the Saints’ persecution: creeds of the fathers “who have inherited lies” (D&C 123:7)."
+        "note": "From Liberty Jail in 1839, Joseph Smith used this verse’s words for the false traditions behind the Saints’ persecution: creeds of the fathers “who have inherited lies” (D&C 123:7).",
+        "approved": "7c59c62e"
       },
       {
         "id": "jer17-jsp-tree",
@@ -9247,7 +9252,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/revelation-2-august-1833-a-dc-97/2"
         },
         "find": "a very fruitful tree which is planted in a goodly land by a pure stream that yealdeth much precious fruit",
-        "note": "An 1833 revelation to Joseph Smith (D&C 97:9) uses this picture: the honest and contrite will be like “a very fruitful tree” by a pure stream."
+        "note": "An 1833 revelation to Joseph Smith (D&C 97:9) uses this picture: the honest and contrite will be like “a very fruitful tree” by a pure stream.",
+        "approved": "ed6e9ac6"
       }
     ]
   }
