@@ -6953,8 +6953,9 @@ window.TU_WEEKS = [
             "end": 2856,
             "title": "followHIM: Isaiah 58–66, part 2, with Dr. Ross Baron",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "eebdd105"
         }
       },
       {
@@ -7029,8 +7030,9 @@ window.TU_WEEKS = [
             "end": 3214,
             "title": "followHIM: Isaiah 58–66, part 2, with Dr. Ross Baron",
             "channel": "followHIM Podcast",
-            "previewed": false
-          }
+            "previewed": true
+          },
+          "approved": "fd41556b"
         }
       },
       {
@@ -7187,7 +7189,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
         },
         "find": "Isaiah, Chapter 62 LXII verse 4 Delightful",
-        "note": "Joseph Smith’s Bible revision puts these names in English: Hephzi-bah becomes Delightful, and Beulah, the land, becomes Union."
+        "note": "Joseph Smith’s Bible revision puts these names in English: Hephzi-bah becomes Delightful, and Beulah, the land, becomes Union.",
+        "approved": "1dda1c8b"
       },
       {
         "id": "isa63-jsp-suffered",
@@ -7201,7 +7204,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
         },
         "find": "Isaiah, Chapter 63 LXIII verse 17— suffered",
-        "note": "In Joseph Smith’s Old Testament manuscript, the change for this verse is the word “suffered”: the Lord allowed them to err and to harden their hearts. He didn’t make them."
+        "note": "In Joseph Smith’s Old Testament manuscript, the change for this verse is the word “suffered”: the Lord allowed them to err and to harden their hearts. He didn’t make them.",
+        "approved": "9daf60b7"
       },
       {
         "id": "isa64-jsp-continuance",
@@ -7215,7 +7219,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
         },
         "find": "Thou meetest him that worketh righteousness, and rejoiceth him that",
-        "note": "Joseph Smith’s Bible revision drops “behold, thou art wroth” and reads that in righteousness there is continuance, and such shall be saved (his manuscript, pages 110–111)."
+        "note": "Joseph Smith’s Bible revision drops “behold, thou art wroth” and reads that in righteousness there is continuance, and such shall be saved (his manuscript, pages 110–111).",
+        "approved": "0a33a359"
       },
       {
         "id": "isa65-jsp-seek",
@@ -7229,7 +7234,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/118"
         },
         "find": "I am found of them who seek after me; I give unto all them that ask of me",
-        "note": "Joseph Smith’s Bible revision turns this verse around: “I am found of them who seek after me,” and the Lord gives to all who ask of Him."
+        "note": "Joseph Smith’s Bible revision turns this verse around: “I am found of them who seek after me,” and the Lord gives to all who ask of Him.",
+        "approved": "a6d28de6"
       },
       {
         "id": "isa65-jsp-hundred",
@@ -7243,7 +7249,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/118"
         },
         "find": "for the child shall not die, but shall live to be a hundred years old",
-        "note": "Joseph Smith’s Bible revision: “the child shall not die, but shall live to be a hundred years old,” in those days of the new heavens and new earth."
+        "note": "Joseph Smith’s Bible revision: “the child shall not die, but shall live to be a hundred years old,” in those days of the new heavens and new earth.",
+        "approved": "55b321ab"
       },
       {
         "id": "isa60-jsp-arise",
@@ -7257,7 +7264,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/revelation-26-april-1838-dc-115/2"
         },
         "find": "Verrily I say unto you all; arise and shine",
-        "note": "In the 1838 revelation that named the Church (D&C 115:5), the Lord gave this verse to the Saints: arise and shine, “that thy light may be a standard for the nations.”"
+        "note": "In the 1838 revelation that named the Church (D&C 115:5), the Lord gave this verse to the Saints: arise and shine, “that thy light may be a standard for the nations.”",
+        "approved": "11ad43f3"
       },
       {
         "id": "isa60-jsp-emma",
@@ -7271,7 +7279,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-emma-smith-13-october-1832/1"
         },
         "find": "Oh how long Oh Lord Shall this order of things exist and darkness cover the Earth and gross darkness cover the people",
-        "note": "In a letter to Emma in his own hand (New York City, 1832), Joseph Smith prayed in this verse’s words: how long shall “darkness cover the Earth”?"
+        "note": "In a letter to Emma in his own hand (New York City, 1832), Joseph Smith prayed in this verse’s words: how long shall “darkness cover the Earth”?",
+        "approved": "4d1926a3"
       },
       {
         "id": "isa63-jsp-winepress",
@@ -7285,7 +7294,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/revelation-3-november-1831-dc-133/4"
         },
         "find": "I have trodden the wine press alone & have brought Judgement upon all people & none was with me",
-        "note": "Joseph Smith’s November 1831 revelation on the Second Coming (D&C 133:46–53) takes up this chapter: “I have trodden the wine press alone.”"
+        "note": "Joseph Smith’s November 1831 revelation on the Second Coming (D&C 133:46–53) takes up this chapter: “I have trodden the wine press alone.”",
+        "approved": "4f992f78"
       },
       {
         "id": "isa65-jsp-tree",
@@ -7299,7 +7309,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/discourse-circa-16march-1841/1"
         },
         "find": "Isaiah says the Days of an infant shall be as the age of a tree",
-        "note": "In an 1841 sermon, as a listener recorded it, Joseph Smith cited this: “Isaiah says the Days of an infant shall be as the age of a tree.”"
+        "note": "In an 1841 sermon, as a listener recorded it, Joseph Smith cited this: “Isaiah says the Days of an infant shall be as the age of a tree.”",
+        "approved": "82f20af7"
       }
     ]
   },
