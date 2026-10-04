@@ -97,6 +97,8 @@
 
   /* the radar and the three quick choices */
   #side { grid-area: side; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .arts { display: flex; flex-wrap: wrap; gap: 4px; }
+  .arts img { width: 34px; height: 34px; border-radius: 7px; border: 1px solid var(--brass); background: #1d1206; }
   #mini { display: block; width: 100%; border-radius: 8px; border: 2px solid var(--brass); background: #140d07; touch-action: none; cursor: pointer;
     box-shadow: inset 0 0 12px rgba(0, 0, 0, .8); }
   .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
@@ -130,6 +132,7 @@
     background: linear-gradient(rgba(15, 9, 4, 0), rgba(15, 9, 4, .92) 45%); text-shadow: 0 1px 1px #000; -webkit-hyphens: auto; hyphens: auto;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .cmd .face .ic { position: absolute; inset: 0 0 26% 0; display: flex; align-items: center; justify-content: center; color: var(--brass-hi); }
+  .cmd.new .face::after { content: 'New'; position: absolute; top: 3px; right: 3px; font-size: 8.5px; font-weight: 800; letter-spacing: .02em; color: #fff; background: #b91c1c; border-radius: 4px; padding: 1px 4px; box-shadow: 0 1px 2px rgba(0,0,0,.5); }
   .cmd .face .ic svg { width: 44%; height: 44%; }
   .cmd small { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0 4px; min-height: 13px; font-size: 10px; font-weight: 700; line-height: 1.15; color: var(--parch-dim); }
   .cmd small .c { white-space: nowrap; }
@@ -240,6 +243,7 @@
     body.side .quick { flex: 1; grid-template-columns: minmax(0, 1fr); }
     body.side .quick button { flex-direction: row; justify-content: flex-start; gap: 4px; min-height: 0; padding: 2px 5px; text-align: left; }
     body.side .quick button svg { width: 14px; height: 14px; flex: none; }
+    body.side #side { flex-wrap: wrap; } body.side .arts { flex-basis: 100%; }   /* what you hold, on its own line under the map */
   }
   @media (max-width: 760px), (max-height: 520px) {
     :root { --top: 42px; }
@@ -264,6 +268,15 @@
     #goals { width: 168px; }
     #feed { width: 56vw; }
   }
+  @media (max-width: 430px) {                           /* four counters on an upright phone */
+    #hud { gap: 2px; }
+    .hb { padding: 0 4px; min-width: 28px; font-size: 12px; }
+    .res { font-size: 13px; gap: 1px; } #hud svg.i { width: 14px; height: 14px; }
+  }
+  @media (max-width: 380px) {
+    .hb { padding: 0 3px; min-width: 26px; font-size: 11px; }
+    .res { font-size: 12px; } #hud svg.i { width: 13px; height: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -273,6 +286,7 @@
   <button id="bMenu" class="hb" title="Menu (Esc)" aria-label="Menu">☰</button>
   <div class="res" title="Grain: food for your people"><span id="iGrain"></span><b id="rGrain">0</b></div>
   <div class="res" title="Timber: for walls and buildings"><span id="iTimber"></span><b id="rTimber">0</b></div>
+  <div class="res" title="Stone: quarried from rock faces, for towers, gates and the hall"><span id="iStone"></span><b id="rStone">0</b></div>
   <div class="res" title="Workers and guards"><span id="iPeople"></span><b id="rPeople">0</b></div>
   <div id="clock"></div>
   <div id="food" hidden title="The robbers' food (3 Nephi 4:18–20). When it runs out, they must go."><span>Robbers' food</span><i><em id="foodBar"></em></i></div>
@@ -293,9 +307,11 @@
     <canvas id="mini" aria-label="Map: tap to look there"></canvas>
     <div class="quick">
       <button id="bArmy" title="Choose all your soldiers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></svg>Soldiers</button>
-      <button id="bIdle" title="Choose workers with nothing to do"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6M17 7l-11 11M4 20l2-2"/><path d="M14 4c3-1 5 0 6 2-2 0-3 1-3 1"/></svg>Idle workers</button>
+      <button id="bCity" title="Your city: everything is built from here"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h14v6M8 14V9h8v5M10 9V5h4v4"/></svg>City</button>
+      <button id="bTemple" hidden title="Your temple: miracles are worked from it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-4h14v4M7 16v-4h10v4M9 12V8h6v4M12 8V5"/></svg>Temple</button>
       <button id="bBox" title="Drag a box on the map to choose people in it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"><rect x="4" y="5" width="16" height="14" rx="1"/></svg>Box select</button>
     </div>
+    <div id="arts" class="arts" hidden title="What you hold: tap one to read about it"></div>
   </div>
   <div id="selInfo"></div>
   <div id="cmds"></div>
@@ -334,10 +350,11 @@
 <script src="../vendor/qrcode.js"></script>
 <script src="webrtc.js?v=15"></script>
 <script src="multi.js?v=15"></script>
-<script src="data.js?v=17"></script>
-<script src="sim.js?v=16"></script>
-<script src="missions.js?v=17"></script>
+<script src="data.js?v=24"></script>
+<script src="sim.js?v=23"></script>
+<script src="camp.js?v=1"></script>
+<script src="missions.js?v=23"></script>
 <script src="scripture.js?v=15"></script>
-<script src="ui.js?v=30"></script>
+<script src="ui.js?v=39"></script>
 </body>
 </html>

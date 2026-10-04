@@ -253,7 +253,7 @@ list of cards, each `{ id, ref, title, text, source: { by, who, title, url }, fi
 - `source`: a page on one of the sites Blake chose (`INSIGHT_SITES` in
   tools/verify.mjs): the Church's Gospel Library pages (manuals, general
   conference, the magazines), Scripture Central, BYU's Religious Studies
-  Center and Speeches, followHIM. `by` is the site's name, or for a Church
+  Center and Speeches, followHIM, the Joseph Smith Papers (below). `by` is the site's name, or for a Church
   page its publication ("Old Testament Student Manual", "General
   Conference"); `who` the speaker or author, if it has one.
 - `find`: words copied exactly from the page, where the card's point is.
@@ -266,6 +266,52 @@ list of cards, each `{ id, ref, title, text, source: { by, who, title, url }, fi
 - Writers draft each week's cards from pages they've read; a second
   reviewer opens every page and checks each card against it before they go
   in; Blake approves each in developer mode.
+
+An insight card can also carry a **deep dive** (Blake, 2026-10-03: "Longer
+adult level deep dive would be great! … the quick learn, or the deep dive …
+With the expand"), `deep: { paras, find, listen }`: the card stays the quick
+learn, for him, and under it, folded (🤿 Deep dive ▾, in its sheet, in Go
+further and in the Study tab, whose **Deep dives** filter lists the cards that
+have one), the same point at length for a grown-up. No setting by age:
+whoever wants more opens it.
+
+- `paras`: 2 to 6 paragraphs, 80 to 450 words in all (130 at most each),
+  in our own words from the card's page (followHIM's episode transcripts are
+  the first ones). Quotes: the KJV's words in `ref`, or the page's own, 3 at
+  most and 25 words or fewer each, saying who said it; the checker finds them
+  on the page with `--online`. A transcript is the hosts' and guests' own
+  words: paraphrase, quote a little, link the page, never paste it in.
+- `find`: 1 to 6 passages of 4 to 30 words copied exactly from the page,
+  where the deep dive's points are, checked with `--online`.
+- `listen`, optional: the stretch of the episode it comes from,
+  `{ youtube, start, end, title, channel, previewed }` like a video card's
+  clip: 10 minutes at most, from an approved channel (asked of YouTube), and
+  shown only once a parent has watched it (approving the card marks it
+  watched).
+- It's part of the card: Blake approves the two together in developer mode,
+  which shows the deep dive under the card. It carries its own approval mark
+  (`deep.approved`), and the card's fingerprint leaves the deep dive out, so a
+  deep dive added to a card already approved waits for Blake while the card
+  stays in the app (developer mode lists the card again, "its new deep
+  dive"); off the test site an unapproved deep dive is left off the card.
+
+**Joseph Smith Papers cards** (Blake, 2026-10-04: "can you add notes to the
+scripture reading from Joseph Smith papers??? having a directly source to
+that would be amazing"; both kinds, under the verse and as a card, the
+coming weeks first) are insight cards whose `source` is a page on
+josephsmithpapers.org (`by: 'Joseph Smith Papers'`), of two kinds: how
+Joseph's Bible revision (the Joseph Smith Translation) changes the verse, from
+its manuscript (Old Testament Revision 2, …), or where Joseph quoted or
+explained it (a revelation's earliest manuscript, a discourse as reported, a
+letter, his history). Its `find` and any quote of Joseph's words are copied
+from the page's transcript, spelling and all. Such a card can carry a `note`:
+the same point in a line (8 to 45 words; a quote is the KJV's words in `ref`,
+or Joseph's own from the page, once, 15 words or fewer), shown in the reader's
+**Notes** under the first of its verses as "📜 Joseph Smith Papers", with a
+link to the page, once the card shows. Study has a **Joseph Smith** filter. A
+note adds the original source; it doesn't repeat what the chapter's own notes
+already say. Where Joseph's wording differs from the KJV the KJV stays the
+scripture, and the note says plainly that the change is Joseph's.
 
 Two more kinds go in the same list (Blake, 2026-10-02, from the Scripture
 Central app):
@@ -356,3 +402,56 @@ on the map (or face each other across a narrow sea, like Egypt and Arabia
 across the Red Sea), and two lands that share a border are in `links`. A
 new map drawn over a picture has to trace the picture's own borders, so
 neighbouring outlines meet, with no gaps or overlaps.
+
+## Sunday classes (`content/sunday.js`)
+
+Blake, 2026-10-03: "We need to incorporate sunday lesson study as well....
+Javan needs to study YM lessons, and Chantel and I the conference talks."
+Since September 6, 2026 every class meets each Sunday (25 minutes): Sunday
+School keeps Come, Follow Me (the rest of the app); Aaronic Priesthood
+quorums and Young Women classes learn from *For the Strength of Youth: A
+Guide for Making Choices*, a chapter a month, with lesson pages in that
+month's magazine; elders quorums and Relief Societies from the most recent
+general conference, the talks their presidencies choose. Everyone sees all
+of it (Blake's choice): no setting for who's in which class.
+
+`window.TU_SUNDAY = { youth: [...], conference: [...] }`.
+
+**`youth`**, a month each: `{ month: "2026-10", chapter: 10, title, guide,
+lessons }`, `guide` the chapter's Gospel Library page. Each lesson is the
+mini-lesson for one Sunday, played like a day's lesson (a card, its
+question, the next):
+
+- `id`, `sunday` (`"2026-10-04"`, a Sunday of the month), `title` (60
+  characters at most), `read` (the Gospel Library page it's from: the
+  guide's section, or the magazine's lesson page), `intro` (10 to 60 words:
+  what this Sunday's class is about and what to read).
+- `cards`, 2 to 5, each `{ id, hook, body, find, q, right, wrong, why }`:
+  `body` 15 to 75 words in our own words, for a youth; one quote from the
+  page at most, 15 words or fewer; `find` 4 to 30 words copied exactly from
+  `read`, where the card's point is (checked with `--online`, as the quote
+  is); `q` a question its body answers, with `right` and 2 or 3 `wrong`;
+  `why` 40 words at most.
+
+**`conference`**, a conference each: `{ id: "2026-10", title, from, talks }`.
+`talks` in the order they were given, which is the talk-a-day plan's order,
+a talk a day from `from`. Each talk:
+
+- `id`, `speaker`, `title`, `session`, `url` (its Gospel Library page,
+  churchofjesuschrist.org/study/general-conference/2026/10/…).
+- `quotes`: up to 4 of the speaker's own words, 8 to 40 words each, no quote
+  marks around them, found on the talk's page word for word (`--online`).
+  These and the talk itself show without approval, like a Gospel Library
+  quote card: they're the speaker's.
+- `scriptures`: the verses or chapters the talk uses (`"Moroni 10:32"`),
+  each a tap from the reader.
+- In our own words, shown once Blake approves the talk in developer mode
+  (drafts on the test site): `quick` (25 to 90 words, what it teaches),
+  `points` (up to 5, 4 to 40 words each), `discuss` (up to 3 questions to
+  talk over, 30 words at most each) and `deep`, a deep dive as an insight
+  card's (`paras`, `find`), its quotes found on the talk's page.
+
+Which talk each Sunday's class does is picked in the app by anyone in the
+family (Blake, 2026-10-03: "You pick it"), one for elders quorum and one for
+Relief Society, kept with the family; until it's picked the app suggests the
+next talk in the plan. tools/verify.mjs checks all of the above.
