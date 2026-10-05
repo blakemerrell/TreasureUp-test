@@ -76,7 +76,7 @@ IMG.cartTimber.src = 'assets/cart_timber.png?v=1';
 IMG.cartStone.src = 'assets/cart_stone.png?v=1';
 IMG.cartWork.src = 'assets/cart_loading.png?v=1';
 IMG.unit.src = 'assets/spearman.png?v=13';
-IMG.stronghold.src = 'assets/stronghold.png?v=14';   // the chief judge's hall (018-great-buildings.md)
+IMG.stronghold.src = 'assets/stronghold.png?v=15';   // the chief judge's palace, in the white stone of the other buildings (020-city-palace.md)
 IMG.barracks.src = 'assets/barracks.png?v=13';
 IMG.tower.src = 'assets/tower.png?v=13';
 IMG.storehouse.src = 'assets/storehouse.png?v=13';
@@ -84,7 +84,7 @@ IMG.armory.src = 'assets/armory.png?v=13';
 IMG.granary.src = 'assets/granary.png?v=2';      // and these: 007-buildings.md (with shadows since)
 IMG.stables.src = 'assets/stables.png?v=2';
 IMG.hall.src = 'assets/hall.png?v=2';
-IMG.temple.src = 'assets/temple.png?v=2';           // after the manner of Solomon's (018)
+IMG.temple.src = 'assets/temple.png?v=3';           // after the manner of Solomon's, in stone and gold, with its lampstand (021)
 IMG.ruin.src = 'assets/ruin.png?v=1';
 IMG.lamaniteCamp.src = 'assets/lamanite_camp.png?v=1';   // and these: 009-battlefield.md
 IMG.robbersCamp.src = 'assets/robbers_camp.png?v=1';
@@ -174,6 +174,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   const cam = { x: 0, y: 0, z: 1 };
   const keys = new Set();
   const pings = [];                                  // where an order was given, for a moment
+  const dustAt = new WeakMap();                      // when a helper's blow last raised dust (this page's clock: kept off the unit, which is saved)
 
   // ------------------------------------------------------------ 2:1 Isometric Projection
   // Standard Westwood Red Alert 2 dimetric ratio (tile width : height = 2 : 1)
@@ -282,8 +283,10 @@ IMG.farm.src = 'assets/farm.png?v=13';
     return c;
   }
   const lostNow = x => !!(x && x.isContextLost && x.isContextLost());
+  // ?canvas=0.5 on the address makes every big canvas that size, as a phone short of memory would (to test on a computer).
+  const FORCE_K = +((location.search.match(/[?&]canvas=([\d.]+)/) || [])[1] || 0);
   function bigCanvas(w, h, sizes, name) {
-    for (const k of sizes) {
+    for (const k of FORCE_K ? [FORCE_K] : sizes) {
       const c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
       const x = c.getContext('2d');
       if (x) {
@@ -296,6 +299,10 @@ IMG.farm.src = 'assets/farm.png?v=13';
     DBG.made[name] = 'every size refused';
     const c = document.createElement('canvas'); c.k = 1; return [watchLoss(c), c.getContext('2d')];
   }
+  // A big canvas is drawn on at its own scale (bigCanvas). A phone that wipes a canvas to save memory (an iPhone does it without
+  // a word; Chrome says 'contextlost') resets that scale with it, and the next painting came out magnified and shifted: Blake's
+  // screenshot, the ground slid off to one side, the fog gone, "too far from your city". So every painting sets the scale first.
+  const fit = (cv, c) => c.setTransform(cv.k || 1, 0, 0, cv.k || 1, 0, 0);
   // The fog is soft at its edges, so half size looks the same and leaves the ground the room to be sharp.
   const [shroudCv, sctx] = bigCanvas(TERR_W, TERR_H, [0.5, 0.35, 0.25], 'fog');
   const explored = new Uint8Array(MAP_W * MAP_H);
@@ -306,6 +313,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   }
   // The shroud over the whole slab, with every explored tile opened again.
   function paintShroud() {
+    fit(shroudCv, sctx);
     sctx.globalCompositeOperation = 'source-over';
     sctx.clearRect(0, 0, TERR_W, TERR_H);
     sctx.fillStyle = '#06070c'; // Westwood Pitch Black Shroud, over the slab and its hills
@@ -324,6 +332,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   }
 
   function revealShroud() {
+    fit(shroudCv, sctx);
     if (!W) return;
     sctx.globalCompositeOperation = 'destination-out';
     const punch = (wx, wy, rad) => {
@@ -557,6 +566,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
     catch (e) { DBG.paint = 'FAILED: ' + e.message; throw e; }
   }
   function paintTerrainNow() {
+    fit(terrain, tctx);
     if (!TEX) TEX = { grass: texture('grass'), rock: texture('rock'), water: texture('water') };
     const whole = !painted;
     if (whole) { painted = new Int16Array(MAP_W * MAP_H).fill(-1); tctx.clearRect(0, 0, TERR_W, TERR_H); }
@@ -1122,8 +1132,8 @@ IMG.farm.src = 'assets/farm.png?v=13';
       }
     } else if (hammering) {
       if (bt.x - u.x - (bt.y - u.y) < 0) flip = -1;
-      if (blow > 0.97 && (!u._dustAt || now - u._dustAt > 300)) {     // the blow lands: dust where it struck
-        u._dustAt = now;
+      if (blow > 0.97 && now - (dustAt.get(u) || -1e9) > 300) {     // the blow lands: dust where it struck
+        dustAt.set(u, now);
         const a = Math.atan2(bt.y - u.y, bt.x - u.x), p = toIso(u.x + Math.cos(a) * 18, u.y + Math.sin(a) * 18);
         addDust(p.ix, p.iy - 6); addDust(p.ix, p.iy - 10);
       }
@@ -1290,7 +1300,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
     idol_warrior: { cx: 226, by: 556, span: 450 },
     stables: { cx: 200, by: 318, span: 375 },
     hall: { cx: 200, by: 310, span: 400 },
-    temple: { cx: 168, by: 283, span: 295 },      // its stair pokes out past the platform's diamond
+    temple: { cx: 301, by: 870, span: 600 },
     ruin: { cx: 99, by: 154, span: 209 },
     lamaniteCamp: { cx: 210, by: 240, span: 419 },
     robbersCamp: { cx: 210, by: 242, span: 418 },
@@ -1346,6 +1356,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   // like a flipbook and added as light; incense rises before the idols. Points are in each picture's own pixels.
   const FX = {
     rameumptom: { fire: [[175, 247], [435, 247], [304, 330]] },
+    temple: { fire: [[385, 506], [371, 515], [358, 523], [344, 529], [329, 541], [315, 548], [301, 558]], fireH: 9 },   // the great lampstand's seven lamps (021)
     idol_jaguar: { smoke: [[90, 248], [230, 312]] },
     idol_warrior: { smoke: [[95, 362], [228, 428]] }
   };
@@ -1356,7 +1367,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
     if (fx.fire && ready(IMG.flames)) {
       ctx.save(); ctx.globalCompositeOperation = 'lighter';
       fx.fire.forEach((p, k) => {
-        const [x, y] = at(p), i = Math.floor(now / 1000 * 11 + k * 2.3 + b.id) % 6, h = 16, w = h * 75 / 140;
+        const [x, y] = at(p), i = Math.floor(now / 1000 * 11 + k * 2.3 + b.id) % 6, h = fx.fireH || 16, w = h * 75 / 140;
         ctx.drawImage(IMG.flames, i * 75, 0, 75, 140, x - w / 2, y - h + 2, w, h);
       });
       ctx.restore();
@@ -1920,7 +1931,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
     units.slice().sort((a, b) => Math.hypot(a.x - cx, a.y - cy) - Math.hypot(b.x - cx, b.y - cy))
       .forEach((u, i) => { const s = spots[i] || [tx, ty]; W.moveTo(u, s[0], s[1], fight && fighterOf(u)); });
   }
-  const fighterOf = u => !!((u.def.soldier || u.def.foe) && u.def.dmg && !u.def.gathers && !u.def.builds && !u.def.scout);
+  const fighterOf = u => S.canFight(u.def);
   function ping(wx, wy, color) { pings.push({ wx, wy, color, t: performance.now(), type: color === '#f87171' ? 'attack' : 'move' }); }
 
   // --- building
@@ -2172,7 +2183,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   function picOf(e) {
     const pic = e.kind === 'building' && e.team !== 'p' && IMG[pictureOf(e)];
     const own = pic && (ready(pic) ? pic : e.def.side === 'kingmen' ? IMG.lamaniteCamp : pic);   // (a tent without its picture yet shows the camp's)
-    const c = own ? own.src : CAMEO_MAP[(e.kind === 'unit' ? 'train:' : 'build:') + e.type] || (e.type === 'stronghold' && 'assets/cameo_stronghold.png?v=2');
+    const c = own ? own.src : CAMEO_MAP[(e.kind === 'unit' ? 'train:' : 'build:') + e.type] || (e.type === 'stronghold' && 'assets/cameo_stronghold.png?v=3');
     if (c) return `<img class="pic" src="${c}" alt="">`;
     if (DRAWN_AS[e.type]) return `<img class="pic" src="assets/${DRAWN_AS[e.type]}.png?v=1" alt="">`;
     if (e.kind === 'unit' && (e.type === 'lamanite' || e.def.foe)) return `<img class="pic" src="assets/cameo_lamanite.png?v=10" alt="">`;
@@ -2222,7 +2233,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
     'build:armory': 'assets/cameo_armory.png?v=10',
     'build:stables': 'assets/cameo_stables.png?v=1',
     'build:hall': 'assets/cameo_hall.png?v=1',
-    'build:temple': 'assets/cameo_temple.png?v=2',
+    'build:temple': 'assets/cameo_temple.png?v=3',
     'build:smithy': 'assets/cameo_smithy.png?v=1',
     'build:training': 'assets/cameo_training.png?v=1',
     'train:bearer': 'assets/cameo_bearer.png?v=1',
@@ -2856,15 +2867,18 @@ IMG.farm.src = 'assets/farm.png?v=13';
     s.onclick = null;
   }
 
+  // What game this is, in a line: the briefing's kicker, and the saved game's on the opening page.
+  const kickerOf = m => m.kicker ? m.kicker() : m === FREE ? `Free battle · ${FREE.LEVELS[FREE.level].name} · ${SIDES[FREE.side === 'kingmen' ? 'kingmen' : 'freemen'].name}`
+    : `${CAMPAIGNS.find(c => c.id === m.campaign).title} · Mission ${inCampaign(m).indexOf(m) + 1} · ${m.chapter}`;
   function briefing(m) {
     showScreen(`<div class="wrap brief">
-      <div class="kicker">${m.kicker ? esc(m.kicker()) : m.free ? 'Free battle · ' + esc(m.LEVELS[m.level].name) : esc(CAMPAIGNS.find(c => c.id === m.campaign).title) + ' · Mission ' + (inCampaign(m).indexOf(m) + 1) + ' · ' + esc(m.chapter)} · ${esc(m.year)}</div>
+      <div class="kicker">${esc(kickerOf(m))} · ${esc(m.year)}</div>
       <h2 style="font-size:32px">${esc(m.title)}</h2>
       <ul>${m.briefing.map(([t, r]) => `<li>${esc(t)} ${refBtn(r)}</li>`).join('')}</ul>
       ${m === FREE ? `<p class="lede">You are the ${m.side === 'kingmen' ? 'King-men' : 'Freemen'}, under ${esc(CAPTAINS[m.side === 'kingmen' ? 'kingmen' : 'freemen'][m.captain].name)}.</p>` : ''}
       <div class="goalbox"><b>Your goals.</b> ${esc(m.goals)}</div>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn go" id="bBegin">Begin</button><button class="btn" id="bTips">Tips</button><button class="btn" id="bBack">Back</button></div></div>`);
-    $('bBegin').onclick = () => begin(m);
+    $('bBegin').onclick = () => askThenBegin(m);
     $('bBack').onclick = () => menuFor(m)();
     $('bTips').onclick = () => showTips(tipsKey(m));
     if (!(save.tips || {})[tipsKey(m)]) showTips(tipsKey(m));
@@ -2903,15 +2917,17 @@ IMG.farm.src = 'assets/farm.png?v=13';
     const T = TIPS[key] || TIPS.mission;
     const tabs = browse ? `<div class="row tipTabs">${Object.keys(TIPS).map(k => `<button class="btn ${k === key ? 'go' : ''}" data-tips="${k}">${esc(TIPS[k].title.replace(/^Free battle · /, ''))}</button>`).join('')}</div>` : '';
     openDialog(`<div class="dialog tipsCard"><div class="kicker">How to play</div><h2>${esc(T.title)}</h2>${tabs}
-      <ul class="tips">${T.tips.map(([pic, b, t]) => `<li><img src="assets/${pic}.png?v=2" alt=""><div><b>${esc(b)}</b><span>${esc(t)}</span></div></li>`).join('')}</ul>
+      <ul class="tips">${T.tips.map(([pic, b, t]) => `<li><img src="assets/${pic}.png?v=4" alt=""><div><b>${esc(b)}</b><span>${esc(t)}</span></div></li>`).join('')}</ul>
       <div class="row" style="margin-top:14px"><button class="btn go" id="tGot">Got it</button>${browse ? '' : '<button class="btn" id="tNever">Don\'t show again</button>'}</div></div>`);
     $('tGot').onclick = () => { closeDialog(); if (done) done(); };
     if ($('tNever')) $('tNever').onclick = () => { save.tips = save.tips || {}; save.tips[key] = 1; store(); closeDialog(); if (done) done(); };
     $('dialog').querySelectorAll('[data-tips]').forEach(b => b.onclick = () => showTips(b.dataset.tips, done, true));
   }
 
-  function begin(m) {
-    if (!beginOk(m)) return;
+  // `opts.noSave`: a co-op match the TV starts (multi.js) isn't saved, and doesn't write over the saved game.
+  let noSave = false;
+  function begin(m, opts) {
+    noSave = !!(opts && opts.noSave);
     const world = new S.World(undefined, m.map);
     world.mission = m;
     m.setup(world);
@@ -2966,7 +2982,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
         ${o.detail ? `<p class="lede" style="margin-top:12px">${esc(o.detail)}</p>` : ''}
         ${o.next ? `<p class="lede">${esc(o.next)}</p>` : ''}
         ${o.won && mission.starsText ? `<p class="lede">Stars: ${esc(mission.starsText)}</p>` : ''}
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">${nextBtn}<button class="btn ${nextBtn ? '' : 'go'}" id="eAgain">Play again</button><button class="btn" id="eHome">${mission === WILD ? 'Choices' : mission.free ? 'Choices' : 'Missions'}</button></div></div>`);
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">${nextBtn}<button class="btn ${nextBtn ? '' : 'go'}" id="eAgain">Play again</button><button class="btn" id="eHome">${mission.free ? 'Choices' : 'Missions'}</button></div></div>`);
       $('eAgain').onclick = () => begin(mission);
       $('eHome').onclick = () => menuFor(mission)();
       if ($('eNext')) $('eNext').onclick = () => briefing(next);
@@ -2988,11 +3004,11 @@ IMG.farm.src = 'assets/farm.png?v=13';
   // leaving; a refresh or a closing tab asks first, where the browser lets a page ask (iPhones don't: the save covers them).
   const SAVE = window.LIB_SAVE;
   function autosave() {
-    if (!SAVE || !W || !mission || W.over) return;
+    if (!SAVE || !W || !mission || W.over || noSave) return;
     try {
       const snap = SAVE.dump(W, { council, cam: { x: cam.x, y: cam.y, z: cam.z }, explored });
       if (snap.lost.length) return;                        // something couldn't be written down: keep the last good save
-      snap.kicker = mission.kicker ? mission.kicker() : mission.free ? `Free battle · ${FREE.LEVELS[FREE.level].name} · ${SIDES[FREE.side].name}` : mission.chapter;
+      snap.kicker = kickerOf(mission); snap.build = buildTag();
       localStorage.setItem(SAVE.KEY, JSON.stringify(snap));
     } catch (e) { /* storage full, or a private window: play on */ }
   }
@@ -3013,25 +3029,34 @@ IMG.farm.src = 'assets/farm.png?v=13';
   });
   function continueGame() {
     const snap = savedGame();
+    // Saved before the game was updated: played on a minute in a copy first, and let go if it can't go on.
+    const fresh = snap && snap.build === buildTag();
     let got = null;
-    try { got = snap && SAVE.load(snap); } catch (e) { got = null; }
-    if (!got) { clearSave(); toast('That saved game could not be opened, sorry.', 'warn'); return home(); }
+    try { got = snap && (fresh || SAVE.playsOn(snap, 30)) && SAVE.load(snap); } catch (e) { got = null; }
+    if (!got) {
+      clearSave(); home();
+      return openDialog(`<div class="dialog"><div class="kicker">Your saved game</div><h2>${snap && !fresh ? 'The game was updated, and that saved game can\'t go on' : 'That saved game could not be opened'}</h2>
+        <p class="lede">Sorry. Start a new one from the tiles below.</p><div class="choices"><button class="choice" data-close>OK</button></div></div>`);
+    }
+    noSave = false;
     W = got.W;
     enterGame(got.mission, got.ui || {});
   }
-  // Starting another game would write over the saved one: ask first.
-  function beginOk(m) {
-    const snap = savedGame();
-    if (!snap || W || beginOk.asked) { beginOk.asked = false; return true; }
-    const d = SAVE.describe(snap);
-    if (!d) return true;
+  // Starting another game would write over the saved one: ask first (from the Begin button only).
+  function askThenBegin(m) {
+    const snap = savedGame(), d = snap && SAVE.describe(snap);
+    if (!d) return begin(m);
     openDialog(`<div class="dialog"><div class="kicker">A game is saved</div><h2>${esc(d.title)}, ${d.minutes} minute${d.minutes > 1 ? 's' : ''} in</h2>
       <p class="lede">Starting ${esc(m.title)} will replace it.</p>
       <div class="choices"><button class="choice" id="sgGo">Continue the saved game</button><button class="choice" id="sgNew">Start ${esc(m.title)}</button><button class="choice" data-close>Back</button></div></div>`);
     $('sgGo').onclick = () => { closeDialog(); continueGame(); };
-    $('sgNew').onclick = () => { closeDialog(); clearSave(); beginOk.asked = true; begin(m); };
-    return false;
+    $('sgNew').onclick = () => { closeDialog(); clearSave(); begin(m); };
   }
+  // Which version of the game's rules a save was made with: the ?v= of the scripts that hold the game itself.
+  function buildTag() {
+    return [...document.querySelectorAll('script[src]')].map(e => e.getAttribute('src')).filter(x => /^(data|sim|camp|missions|save)\.js/.test(x)).join(' ');
+  }
+
 
   // ------------------------------------------------------------ ?debug=1: what this device really drew
   // Colours read back from each layer at your city: if a layer shows 0,0,0,0 the device drew nothing on it.
@@ -3065,6 +3090,18 @@ IMG.farm.src = 'assets/farm.png?v=13';
 
   let last = 0, acc = 0;
   let probeAt = 0, probe = null;                       // where a painted land tile is, on the ground canvas
+  // A tile nobody has seen with nothing seen for 4 tiles round it: the fog there must be dark (the soft edge of the seen land
+  // reaches past the tiles marked seen, so a tile at the edge can be clear without the fog being wiped).
+  let darkAt = -1;
+  function deepDark() {
+    const deep = i => { const x = i % MAP_W, y = (i / MAP_W) | 0;
+      for (let dy = -4; dy <= 4; dy++) for (let dx = -4; dx <= 4; dx++) { const xx = x + dx, yy = y + dy; if (xx >= 0 && yy >= 0 && xx < MAP_W && yy < MAP_H && explored[yy * MAP_W + xx]) return false; }
+      return true; };
+    if (darkAt >= 0 && deep(darkAt)) return darkAt;
+    darkAt = -1;
+    for (let i = 0; i < explored.length; i++) if (!explored[i] && deep(i)) { darkAt = i; break; }
+    return darkAt;
+  }
   function frame(now) {
     requestAnimationFrame(frame);
     const dt = Math.min(0.25, (now - (last || now)) / 1000);
@@ -3079,6 +3116,13 @@ IMG.farm.src = 'assets/farm.png?v=13';
       if (!probe) { const s = W.stronghold() || W.units('p')[0]; const { ix, iy } = toIso(s.x - 2 * TILE, s.y + 2 * TILE); probe = [(ix + ISO_OFFSET_X) * terrain.k, (iy + PAD) * terrain.k]; }
       let a = 255; try { a = tctx.getImageData(Math.round(probe[0]), Math.round(probe[1]), 1, 1).data[3]; } catch (e) { a = 255; }
       if (a === 0) { DBG.blank = (DBG.blank || 0) + 1; DBG.repaints = (DBG.repaints || 0) + 1; painted = null; TREES = null; paintShroud(); }
+      // And the fog: a tile nobody has seen yet must still be dark. If it isn't, the phone wiped the fog: paint it again.
+      const hid = deepDark();
+      if (hid >= 0 && !lostNow(sctx)) {
+        const { ix, iy } = toIso((hid % MAP_W + 0.5) * TILE, (Math.floor(hid / MAP_W) + 0.5) * TILE), k = shroudCv.k || 1;
+        let f = 255; try { f = sctx.getImageData(Math.round((ix + ISO_OFFSET_X) * k), Math.round((iy + PAD) * k), 1, 1).data[3]; } catch (e) { f = 255; }
+        if (f === 0) { DBG.fogBlank = (DBG.fogBlank || 0) + 1; paintShroud(); }
+      }
     }
     if (!W.over && !paused && !modal) {
       acc += dt * speed;
@@ -3101,7 +3145,7 @@ IMG.farm.src = 'assets/farm.png?v=13';
   home();
   requestAnimationFrame(frame);
   // A window on the game for automated play-throughs in a browser.
-  window.LIB_UI = { get W() { return W; }, get mission() { return mission; }, get sel() { return sel; }, get selEnts() { return selEnts(); }, cam, begin: (id, level, length) => { const m = id === 'free' ? FREE : id === 'wild' ? WILD : MISSIONS.find(m => m.id === id); if (level) m.level = level; if (length) m.length = length; begin(m); }, toWorld, lookAt,
+  window.LIB_UI = { get W() { return W; }, get mission() { return mission; }, get sel() { return sel; }, get selEnts() { return selEnts(); }, cam, begin: (id, level, length) => { const m = id === 'free' ? FREE : id === 'wild' ? WILD : MISSIONS.find(m => m.id === id); if (level) m.level = level; if (length) m.length = length; begin(m, { noSave: true }); }, toWorld, lookAt,
     screenOf: (x, y) => toScreen(x, y),
     hidden: () => ({ terrain, shroudCv, trees: TREES }),         // the canvases painted once, for tests that wipe them
     remoteClick: (sx, sy, color) => {
