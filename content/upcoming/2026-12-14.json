@@ -95,7 +95,8 @@
           }
         ]
       }
-    ]
+    ],
+    "approved": "279a6c89"
   },
   "sayings": [
     {
@@ -107,7 +108,8 @@
         "Esau, to his father Isaac",
         "The priests, to Malachi"
       ],
-      "why": "The Lord had just said, “I have loved you.” His people answered with doubt, so He reminded them He had chosen their father Jacob."
+      "why": "The Lord had just said, “I have loved you.” His people answered with doubt, so He reminded them He had chosen their father Jacob.",
+      "approved": "3b7a7be7"
     },
     {
       "id": "say-son-honoureth",
@@ -118,7 +120,8 @@
         "Malachi, to his sons",
         "Moses, to the elders"
       ],
-      "why": "The Lord went on: “if then I be a father, where is mine honour?” The priests gave Him less honor than a son gives his father."
+      "why": "The Lord went on: “if then I be a father, where is mine honour?” The priests gave Him less honor than a son gives his father.",
+      "approved": "1fa6e886"
     },
     {
       "id": "say-table-contemptible",
@@ -129,7 +132,8 @@
         "Pharaoh, about the Israelites",
         "Haman, about the king’s feast"
       ],
-      "why": "The Lord said the priests despised His name by saying this. They treated His altar as worthless, so they offered “polluted bread” on it."
+      "why": "The Lord said the priests despised His name by saying this. They treated His altar as worthless, so they offered “polluted bread” on it.",
+      "approved": "49f41b4b"
     },
     {
       "id": "say-wherein-return",
@@ -140,7 +144,8 @@
         "Malachi, to the Lord",
         "Jonah, to the sailors"
       ],
-      "why": "The Lord had invited them, “Return unto me, and I will return unto you.” They answered as if they had never wandered away."
+      "why": "The Lord had invited them, “Return unto me, and I will return unto you.” They answered as if they had never wandered away.",
+      "approved": "a1505e66"
     },
     {
       "id": "say-rob-god",
@@ -151,7 +156,8 @@
         "Joseph, to his brothers",
         "Nathan, to King David"
       ],
-      "why": "The people asked how they had robbed Him. His answer: “In tithes and offerings.”"
+      "why": "The people asked how they had robbed Him. His answer: “In tithes and offerings.”",
+      "approved": "04e2c564"
     },
     {
       "id": "say-prove-me",
@@ -162,7 +168,8 @@
         "Gideon, to the Lord",
         "Elijah, to Baal’s priests"
       ],
-      "why": "The Lord invited His people to test Him by paying their tithes, and promised to “open you the windows of heaven.”"
+      "why": "The Lord invited His people to test Him by paying their tithes, and promised to “open you the windows of heaven.”",
+      "approved": "8a95f901"
     },
     {
       "id": "say-vain-to-serve",
@@ -173,7 +180,8 @@
         "Pharaoh’s magicians",
         "Job’s three friends"
       ],
-      "why": "They thought obeying God gained them nothing, since the proud seemed happy. But the Lord kept “a book of remembrance” (Malachi 3:16) for the faithful."
+      "why": "They thought obeying God gained them nothing, since the proud seemed happy. But the Lord kept “a book of remembrance” (Malachi 3:16) for the faithful.",
+      "approved": "5a3f50e9"
     },
     {
       "id": "say-my-messenger",
@@ -184,7 +192,8 @@
         "John the Baptist, about Jesus",
         "Isaiah, about King Cyrus"
       ],
-      "why": "John the Baptist was that messenger before Jesus’ ministry. Jesus said so in Matthew 11:10, quoting these words."
+      "why": "John the Baptist was that messenger before Jesus’ ministry. Jesus said so in Matthew 11:10, quoting these words.",
+      "approved": "d70ca8ee"
     },
     {
       "id": "say-send-elijah",
@@ -195,7 +204,8 @@
         "Elisha, to the prophets",
         "Jesus, on the mountain"
       ],
-      "why": "These are among the last words of the Old Testament. Elijah came to Joseph Smith and Oliver Cowdery in the Kirtland Temple in 1836 (D&C 110:13)."
+      "why": "These are among the last words of the Old Testament. Elijah came to Joseph Smith and Oliver Cowdery in the Kirtland Temple in 1836 (D&C 110:13).",
+      "approved": "4e241abf"
     }
   ],
   "words": [
@@ -257,7 +267,8 @@
       ],
       "why": "Verse 17: “I will spare them, as a man spareth his own son that serveth him.” The faithful are like beloved children to Him.",
       "source": "Malachi 3:17",
-      "find": "as a man spareth his own son that serveth him"
+      "find": "as a man spareth his own son that serveth him",
+      "approved": "89d9667f"
     },
     {
       "id": "deep51-weariness",
@@ -273,7 +284,8 @@
       ],
       "why": "Verse 13: “Behold, what a weariness is it! and ye have snuffed at it.” They treated worship like a chore, so they gave the Lord their worst.",
       "source": "Malachi 1:13",
-      "find": "Behold, what a weariness is it"
+      "find": "Behold, what a weariness is it",
+      "approved": "e48c5193"
     },
     {
       "id": "deep51-blessed",
@@ -289,7 +301,8 @@
       ],
       "why": "Verse 12: “All nations shall call you blessed: for ye shall be a delightsome land.” Others will see the Lord’s blessings on them.",
       "source": "Malachi 3:12",
-      "find": "all nations shall call you blessed"
+      "find": "all nations shall call you blessed",
+      "approved": "5d286f59"
     },
     {
       "id": "deep51-doors",
@@ -305,7 +318,8 @@
       ],
       "why": "Verse 16: “By this ye may know that the great and dreadful day of the Lord is near, even at the doors.” His coming was a sign to get ready.",
       "source": "D&C 110:16",
-      "find": "is near, even at the doors"
+      "find": "is near, even at the doors",
+      "approved": "fe605a22"
     },
     {
       "id": "deep51-kids",
@@ -321,7 +335,8 @@
       ],
       "why": "It suggests pouring water into a cup until it overflows, to picture the Lord pouring out more blessings than we have room to hold.",
       "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/51?lang=eng",
-      "find": "pour water into a cup until it overflows"
+      "find": "pour water into a cup until it overflows",
+      "approved": "a9806370"
     },
     {
       "id": "deep51-ftsoy",
@@ -337,7 +352,8 @@
       ],
       "why": "It says people pictured water stored above the sky, let down through windows or floodgates as heavy rain. The Lord used that picture for a flood of blessings.",
       "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/12/what-are-the-windows-of-heaven?lang=eng",
-      "find": "water was thought to be kept in storehouses"
+      "find": "water was thought to be kept in storehouses",
+      "approved": "d6ac1d78"
     }
   ],
   "reels": [
@@ -372,7 +388,8 @@
       },
       "gradient": "linear-gradient(150deg,#4c0519 0%,#be123c 50%,#fecdd3 115%)",
       "blobA": "rgba(254,205,211,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "9a59be81"
     },
     {
       "id": "mal3-return",
@@ -406,7 +423,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e1b4b 0%,#4338ca 50%,#c7d2fe 115%)",
       "blobA": "rgba(199,210,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "f87a917c"
     },
     {
       "id": "mal3-remembrance",
@@ -439,7 +457,8 @@
       },
       "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fef08a 115%)",
       "blobA": "rgba(254,240,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "5576bab6"
     },
     {
       "id": "mal4-sun",
@@ -481,7 +500,8 @@
       },
       "gradient": "linear-gradient(150deg,#7c2d12 0%,#ea580c 50%,#fed7aa 115%)",
       "blobA": "rgba(254,215,170,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "41279219"
     },
     {
       "id": "mal1-blemished",
@@ -523,7 +543,8 @@
       },
       "gradient": "linear-gradient(150deg,#1c1917 0%,#57534e 50%,#e7e5e4 115%)",
       "blobA": "rgba(231,229,228,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "6a67a277"
     },
     {
       "id": "mal1-pure",
@@ -564,7 +585,8 @@
       },
       "gradient": "linear-gradient(160deg,#020617 0%,#1e3a8a 55%,#bfdbfe 115%)",
       "blobA": "rgba(191,219,254,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "e74d6599"
     },
     {
       "id": "mal3-refiner",
@@ -605,7 +627,8 @@
       },
       "gradient": "linear-gradient(155deg,#1c0a00 0%,#9a3412 50%,#fdba74 115%)",
       "blobA": "rgba(253,186,116,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "a0af3481"
     },
     {
       "id": "mal3-rob",
@@ -638,7 +661,8 @@
       },
       "gradient": "linear-gradient(150deg,#064e3b 0%,#047857 50%,#a7f3d0 115%)",
       "blobA": "rgba(167,243,208,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "d90d57fb"
     },
     {
       "id": "mal3-windows",
@@ -671,7 +695,8 @@
       },
       "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
       "blobA": "rgba(224,242,254,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "f0daffae"
     },
     {
       "id": "mal4-elijah",
@@ -712,7 +737,8 @@
       },
       "gradient": "linear-gradient(150deg,#0f172a 0%,#334155 50%,#f8fafc 115%)",
       "blobA": "rgba(248,250,252,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "c38d0051"
     },
     {
       "id": "mal4-hearts",
@@ -753,7 +779,8 @@
       },
       "gradient": "linear-gradient(160deg,#172554 0%,#6d28d9 50%,#ede9fe 115%)",
       "blobA": "rgba(237,233,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "0c078d86"
     },
     {
       "id": "mal4-roots",
@@ -787,7 +814,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#3f6212 50%,#d9f99d 115%)",
       "blobA": "rgba(217,249,157,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "cb3da4a4"
     }
   ],
   "tldr": [
@@ -812,7 +840,8 @@
           "v": 14,
           "about": "The cheat vows a healthy male from his flock but sacrifices “a corrupt thing” (BSB “a defective animal”); the line says he keeps his best animal for himself."
         }
-      ]
+      ],
+      "approved": "b9b4be3a"
     },
     {
       "ch": "Malachi 2",
@@ -831,7 +860,8 @@
           "v": 16,
           "about": "“Putting away” is divorce (BSB “I hate divorce”); the line says they “leave the wives of their youth.”"
         }
-      ]
+      ],
+      "approved": "b57b84c2"
     },
     {
       "ch": "Malachi 3",
@@ -846,7 +876,8 @@
           "v": 1,
           "about": "The heading says the messenger prepares for the Second Coming; Scripture Helps add John the Baptist before Jesus’ mortal ministry and Joseph Smith in our day. The line follows the heading."
         }
-      ]
+      ],
+      "approved": "36d5444a"
     },
     {
       "ch": "Malachi 4",
@@ -864,7 +895,8 @@
           "v": 6,
           "about": "Moroni’s wording (D&C 2:2), “plant in the hearts of the children the promises made to the fathers,” is left to the reels and the Joseph Smith Papers cards."
         }
-      ]
+      ],
+      "approved": "d805c59e"
     }
   ],
   "insights": [
@@ -878,7 +910,8 @@
         "title": "“Behold, I Will Send You Elijah the Prophet”",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-34?lang=eng"
       },
-      "find": "The plates of Laban could not have contained them."
+      "find": "The plates of Laban could not have contained them.",
+      "approved": "782c16b9"
     },
     {
       "id": "mal1-burden",
@@ -891,7 +924,8 @@
         "title": "Old Testament: EPISODE 51 - Malachi - Part 1",
         "url": "https://followhim.co/show-note/2-236/"
       },
-      "find": "They don’t speak for themselves."
+      "find": "They don’t speak for themselves.",
+      "approved": "b0b78c2f"
     },
     {
       "id": "mal1-q-oaks",
@@ -904,7 +938,8 @@
         "who": "President Dallin H. Oaks",
         "title": "What Has Our Savior Done for Us?",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2021/04/35oaks?lang=eng"
-      }
+      },
+      "approved": "f47beb22"
     },
     {
       "id": "mal1-best",
@@ -937,8 +972,10 @@
           "title": "followHIM: Malachi, part 1, with Dr. Barbara Morgan Gardner",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "c8b37169"
+      },
+      "approved": "180c0f19"
     },
     {
       "id": "mal1-pure-reasons",
@@ -951,7 +988,8 @@
         "title": "3 Truths That Motivated Me to Start Paying Tithing",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2026/12/3-truths-that-motivated-me-to-start-paying-tithing?lang=eng"
       },
-      "find": "Tithing Is About Faith—Not Finances"
+      "find": "Tithing Is About Faith—Not Finances",
+      "approved": "209521bc"
     },
     {
       "id": "mal1-weak",
@@ -964,7 +1002,8 @@
         "title": "Old Testament Minute: Malachi",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-malachi"
       },
-      "find": "They were putting forth their weak things unto the Lord and withholding the strong animals for themselves."
+      "find": "They were putting forth their weak things unto the Lord and withholding the strong animals for themselves.",
+      "approved": "0419440a"
     },
     {
       "id": "mal1-jsp-correct",
@@ -978,7 +1017,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/126"
       },
       "find": "Malicah Correct Finished on the 2 d day of July 1833",
-      "note": "Joseph Smith’s Bible manuscript makes no changes to Malachi. It says just “Malicah Correct,” the last entry of his Old Testament work, finished July 2, 1833."
+      "note": "Joseph Smith’s Bible manuscript makes no changes to Malachi. It says just “Malicah Correct,” the last entry of his Old Testament work, finished July 2, 1833.",
+      "approved": "09331dd5"
     },
     {
       "id": "mal2-priesthood",
@@ -990,7 +1030,8 @@
         "title": "“Behold, I Will Send You Elijah the Prophet”",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-34?lang=eng"
       },
-      "find": "He is a student of the scriptures and has the capacity to teach the words of life to others"
+      "find": "He is a student of the scriptures and has the capacity to teach the words of life to others",
+      "approved": "b63534fd"
     },
     {
       "id": "mal2-wearied",
@@ -1003,7 +1044,8 @@
         "title": "Old Testament Minute: Malachi",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-malachi"
       },
-      "find": "As a God of love, the Lord watches and weeps over His people"
+      "find": "As a God of love, the Lord watches and weeps over His people",
+      "approved": "ee7ddf9f"
     },
     {
       "id": "mal3-messengers",
@@ -1015,7 +1057,8 @@
         "title": "Malachi",
         "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/49-malachi?lang=eng"
       },
-      "find": "“Messenger of the covenant” is a title of Jesus Christ"
+      "find": "“Messenger of the covenant” is a title of Jesus Christ",
+      "approved": "a8508a92"
     },
     {
       "id": "mal3-jsp-moroni",
@@ -1029,7 +1072,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/5"
       },
       "find": "he first quoted part of the third chapter of Malachi and he quoted also the fourth or last chapter of the same prophecy",
-      "note": "Joseph Smith’s history says this was the first scripture Moroni quoted to him in 1823: “part of the third chapter of Malachi.” It doesn’t say which verses."
+      "note": "Joseph Smith’s history says this was the first scripture Moroni quoted to him in 1823: “part of the third chapter of Malachi.” It doesn’t say which verses.",
+      "approved": "88cc7ecf"
     },
     {
       "id": "mal3-fullers",
@@ -1041,7 +1085,8 @@
         "title": "Refiner’s Fire and Fullers’ Soap",
         "url": "https://www.churchofjesuschrist.org/study/ensign/2016/09/refiners-fire-and-fullers-soap?lang=eng"
       },
-      "find": "the cleansing process took place in a fullers’ field outside the city because of the smell"
+      "find": "the cleansing process took place in a fullers’ field outside the city because of the smell",
+      "approved": "ae6d19bc"
     },
     {
       "id": "mal3-repent",
@@ -1054,7 +1099,8 @@
         "title": "Old Testament Minute: Malachi",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-malachi"
       },
-      "find": "In the Old Testament, to return was to repent."
+      "find": "In the Old Testament, to return was to repent.",
+      "approved": "c534e0f1"
     },
     {
       "id": "mal3-q-holland",
@@ -1067,7 +1113,8 @@
         "who": "Elder Jeffrey R. Holland",
         "title": "“Like a Watered Garden”",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2001/10/like-a-watered-garden?lang=eng"
-      }
+      },
+      "approved": "2f7b76bc"
     },
     {
       "id": "mal3-fourteen-cents",
@@ -1080,7 +1127,8 @@
         "title": "“Like a Watered Garden”",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2001/10/like-a-watered-garden?lang=eng"
       },
-      "find": "this seven-year-old said he guessed the gospel was true"
+      "find": "this seven-year-old said he guessed the gospel was true",
+      "approved": "d4354a3a"
     },
     {
       "id": "mal3-v-gospelforkids",
@@ -1095,7 +1143,8 @@
         "title": "Malachi the Prophet | Old Testament Stories for Kids",
         "channel": "Gospel For Kids",
         "previewed": false
-      }
+      },
+      "approved": "afb2f5d0"
     },
     {
       "id": "mal3-prove-me",
@@ -1128,8 +1177,10 @@
           "title": "followHIM: Malachi, part 1, with Dr. Barbara Morgan Gardner",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "faee6fed"
+      },
+      "approved": "26a15413"
     },
     {
       "id": "mal3-subtle",
@@ -1142,7 +1193,8 @@
         "title": "The Windows of Heaven",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2013/10/the-windows-of-heaven?lang=eng"
       },
-      "find": "we often receive significant but subtle blessings that are not always what we expect"
+      "find": "we often receive significant but subtle blessings that are not always what we expect",
+      "approved": "90d29529"
     },
     {
       "id": "mal3-potatoes",
@@ -1155,7 +1207,8 @@
         "title": "“Like a Watered Garden”",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2001/10/like-a-watered-garden?lang=eng"
       },
-      "find": "Would you deny me a blessing?"
+      "find": "Would you deny me a blessing?",
+      "approved": "899f7d1b"
     },
     {
       "id": "mal3-q-bednar",
@@ -1168,7 +1221,8 @@
         "who": "Elder David A. Bednar",
         "title": "The Windows of Heaven",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2013/10/the-windows-of-heaven?lang=eng"
-      }
+      },
+      "approved": "1db2f66e"
     },
     {
       "id": "mal3-bakery",
@@ -1181,7 +1235,8 @@
         "title": "Tithing: Opening the Windows of Heaven",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2023/10/22andersen?lang=eng"
       },
-      "find": "I know why our store was protected. You and Mama always pay your tithes."
+      "find": "I know why our store was protected. You and Mama always pay your tithes.",
+      "approved": "0f747592"
     },
     {
       "id": "mal3-ford",
@@ -1193,7 +1248,8 @@
         "title": "“Behold, I Will Send You Elijah the Prophet”",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-34?lang=eng"
       },
-      "find": "Yours is an ancient question. Job and Jeremiah made the same complaint."
+      "find": "Yours is an ancient question. Job and Jeremiah made the same complaint.",
+      "approved": "6f51f78c"
     },
     {
       "id": "mal4-q-cook",
@@ -1206,7 +1262,8 @@
         "who": "Elder Quentin L. Cook",
         "title": "Roots and Branches",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2014/04/roots-and-branches?lang=eng"
-      }
+      },
+      "approved": "7480af8a"
     },
     {
       "id": "mal4-transfiguration",
@@ -1219,7 +1276,8 @@
         "title": "The Hearts of the Children Shall Turn",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2011/10/the-hearts-of-the-children-shall-turn?lang=eng"
       },
-      "find": "Elijah appeared with Moses on the Mount of Transfiguration"
+      "find": "Elijah appeared with Moses on the Mount of Transfiguration",
+      "approved": "9b1eb823"
     },
     {
       "id": "mal4-in-person",
@@ -1232,7 +1290,8 @@
         "title": "“I Will Send You Elijah the Prophet”",
         "url": "https://rsc.byu.edu/you-shall-have-my-word/i-will-send-you-elijah-prophet"
       },
-      "find": "Yet that is what occurred in Ohio a few months later."
+      "find": "Yet that is what occurred in Ohio a few months later.",
+      "approved": "c736e75c"
     },
     {
       "id": "mal4-jsp-priesthood",
@@ -1245,7 +1304,8 @@
         "title": "History, 1838–1856, volume A-1 [23 December 1805–30 August 1834]",
         "url": "https://www.josephsmithpapers.org/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/5"
       },
-      "find": "by the hand of Elijah the prophet before the coming of the great and dreadful day of the Lord"
+      "find": "by the hand of Elijah the prophet before the coming of the great and dreadful day of the Lord",
+      "approved": "f43cad0f"
     },
     {
       "id": "mal4-jsp-kirtland",
@@ -1258,7 +1318,8 @@
         "title": "Visions, 3 April 1836 [D&C 110]",
         "url": "https://www.josephsmithpapers.org/paper-summary/visions-3-april-1836-dc-110/2"
       },
-      "find": "Elijah, the Prophet, who was taken to Heaven without tasting death"
+      "find": "Elijah, the Prophet, who was taken to Heaven without tasting death",
+      "approved": "a3cae4ea"
     },
     {
       "id": "mal4-q-nelson",
@@ -1271,7 +1332,8 @@
         "who": "President Russell M. Nelson",
         "title": "Rejoice in the Gift of Priesthood Keys",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/57nelson?lang=eng"
-      }
+      },
+      "approved": "7c4b57a7"
     },
     {
       "id": "mal4-bookends",
@@ -1284,7 +1346,8 @@
         "title": "Elijah’s Mission: His Keys, Powers, and Blessings from the Old Testament to the Latter Days",
         "url": "https://rsc.byu.edu/sperry-symposium-classics-old-testament/elijahs-mission"
       },
-      "find": "like two prophetic bookends, the last words of the Old Testament"
+      "find": "like two prophetic bookends, the last words of the Old Testament",
+      "approved": "db59e871"
     },
     {
       "id": "mal4-reveal",
@@ -1318,8 +1381,10 @@
           "title": "followHIM: Malachi, part 2, with Dr. Barbara Morgan Gardner",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "dab7ad72"
+      },
+      "approved": "7e942874"
     },
     {
       "id": "mal4-jsp-plant",
@@ -1332,7 +1397,8 @@
         "title": "History, 1838–1856, volume A-1 [23 December 1805–30 August 1834]",
         "url": "https://www.josephsmithpapers.org/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/6"
       },
-      "find": "if it were not so the whole earth would be utterly wasted at his coming"
+      "find": "if it were not so the whole earth would be utterly wasted at his coming",
+      "approved": "b0145ba9"
     },
     {
       "id": "mal4-jsp-welding",
@@ -1345,7 +1411,8 @@
         "title": "Letter to the Church, 7 September 1842 [D&C 128]",
         "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-the-church-7-september-1842-dc-128/6"
       },
-      "find": "It is sufficient to know in this case that the earth will be smitten with a curse"
+      "find": "It is sufficient to know in this case that the earth will be smitten with a curse",
+      "approved": "937c7b2a"
     },
     {
       "id": "mal4-jsp-bind",
@@ -1358,7 +1425,8 @@
         "title": "Discourse, 21 January 1844",
         "url": "https://www.josephsmithpapers.org/paper-summary/discourse-21-january-1844/1"
       },
-      "find": "Now the word turn here should be translated"
+      "find": "Now the word turn here should be translated",
+      "approved": "b92b438f"
     },
     {
       "id": "mal4-sealed-baptism",
@@ -1371,7 +1439,8 @@
         "title": "The Sealing Power",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2023/10/15christofferson?lang=eng"
       },
-      "find": "The sealing power confers a seal of legitimacy upon your baptism"
+      "find": "The sealing power confers a seal of legitimacy upon your baptism",
+      "approved": "69e6b24a"
     },
     {
       "id": "mal4-q-eyring",
@@ -1384,7 +1453,8 @@
         "who": "President Henry B. Eyring",
         "title": "Gathering the Family of God",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2017/04/gathering-the-family-of-god?lang=eng"
-      }
+      },
+      "approved": "479019ee"
     }
   ],
   "plain": [
@@ -1437,7 +1507,8 @@
           "v": 13,
           "about": "The KJV’s “torn” is given as “stolen,” following the Hebrew word (taken by force) and the BSB, with a note."
         }
-      ]
+      ],
+      "approved": "124849df"
     },
     {
       "ch": "Malachi 2",
@@ -1495,7 +1566,8 @@
           "v": 3,
           "about": "“Seed” can mean crops as well as children; the plain words follow the BSB (“descendants”), with a note on the KJV’s “corrupt.” “The dung of your solemn feasts” is given as the dung from the festival sacrifices."
         }
-      ]
+      ],
+      "approved": "2f3af590"
     },
     {
       "ch": "Malachi 3",
@@ -1562,7 +1634,8 @@
           "v": 2,
           "about": "A few words are added to say what a refiner’s fire does (“that makes metal pure”) and what fullers’ soap is (“strong soap for washing clothes”)."
         }
-      ]
+      ],
+      "approved": "4cb5753f"
     },
     {
       "ch": "Malachi 4",
@@ -1613,7 +1686,10 @@
           "v": 1,
           "about": "Hebrew Bibles number this chapter Malachi 3:19–24; the plain words, the BSB and the Hebrew button all follow the KJV’s numbering. “Stubble” gets “(dry straw).”"
         }
-      ]
+      ],
+      "approved": "ddadaa18"
     }
-  ]
+  ],
+  "approved": "3fc9ceb9",
+  "wordsApproved": "e007549f"
 }

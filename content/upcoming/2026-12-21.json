@@ -18,7 +18,8 @@
         "Isaac, to Abraham",
         "Moses, to Aaron"
       ],
-      "why": "Isaac had asked, “where is the lamb for a burnt offering?” (Genesis 22:7). Abraham’s answer pointed ahead to the Lamb of God."
+      "why": "Isaac had asked, “where is the lamb for a burnt offering?” (Genesis 22:7). Abraham’s answer pointed ahead to the Lamb of God.",
+      "approved": "f92aa264"
     },
     {
       "id": "say-not-now",
@@ -29,7 +30,8 @@
         "Moses, from Mount Nebo",
         "Jacob, blessing his sons"
       ],
-      "why": "Balak hired Balaam to curse Israel, but Balaam blessed them instead and saw “a Star out of Jacob” far in the future."
+      "why": "Balak hired Balaam to curse Israel, but Balaam blessed them instead and saw “a Star out of Jacob” far in the future.",
+      "approved": "4fac25cd"
     },
     {
       "id": "say-we-have-waited",
@@ -40,7 +42,8 @@
         "The shepherds, at the manger",
         "The wise men, in Jerusalem"
       ],
-      "why": "The verse begins, “And it shall be said in that day.” This week’s title is what God’s people will say when He comes."
+      "why": "The verse begins, “And it shall be said in that day.” This week’s title is what God’s people will say when He comes.",
+      "approved": "24196fb8"
     },
     {
       "id": "say-good-tidings",
@@ -51,7 +54,8 @@
         "Gabriel, to Mary",
         "Isaiah, to King Ahaz"
       ],
-      "why": "The angel came to shepherds “keeping watch over their flock by night” (Luke 2:8) and told them the Savior was born."
+      "why": "The angel came to shepherds “keeping watch over their flock by night” (Luke 2:8) and told them the Savior was born.",
+      "approved": "72446068"
     },
     {
       "id": "say-his-star",
@@ -62,7 +66,8 @@
         "King Herod, to the scribes",
         "Shepherds, to Mary"
       ],
-      "why": "Wise men from the east came looking for the newborn King. Long before, Balaam had seen “a Star out of Jacob” (Numbers 24:17)."
+      "why": "Wise men from the east came looking for the newborn King. Long before, Balaam had seen “a Star out of Jacob” (Numbers 24:17).",
+      "approved": "7327b4ad"
     },
     {
       "id": "say-thus-written",
@@ -73,7 +78,8 @@
         "Wise men, to King Herod",
         "Joseph, to Mary"
       ],
-      "why": "Herod asked where Christ should be born. They answered with the prophecy of Micah (Micah 5:2)."
+      "why": "Herod asked where Christ should be born. They answered with the prophecy of Micah (Micah 5:2).",
+      "approved": "a0331cd7"
     },
     {
       "id": "say-eve-glad",
@@ -84,7 +90,8 @@
         "Adam, to the angel",
         "Sarah, to Abraham"
       ],
-      "why": "Eve was glad when she learned of “the joy of our redemption.” The Fall opened the way for families and for a Redeemer."
+      "why": "Eve was glad when she learned of “the joy of our redemption.” The Fall opened the way for families and for a Redeemer.",
+      "approved": "a6f5cc85"
     },
     {
       "id": "say-handmaid",
@@ -95,7 +102,8 @@
         "Hannah, to Eli the priest",
         "Elisabeth, to Zacharias"
       ],
-      "why": "Gabriel told Mary she would have a son and “call his name JESUS” (Luke 1:31). Mary answered with faith."
+      "why": "Gabriel told Mary she would have a son and “call his name JESUS” (Luke 1:31). Mary answered with faith.",
+      "approved": "216ee0bb"
     },
     {
       "id": "say-messiah-enoch",
@@ -106,7 +114,8 @@
         "Isaiah, about Christ",
         "David, in a psalm"
       ],
-      "why": "The Lord showed Enoch a vision of the Savior’s coming and used these titles for Himself. Messiah means the Anointed One."
+      "why": "The Lord showed Enoch a vision of the Savior’s coming and used these titles for Himself. Messiah means the Anointed One.",
+      "approved": "8f7dd6e3"
     }
   ],
   "words": [
@@ -168,7 +177,8 @@
       ],
       "why": "Verse 23: “break forth into singing, ye mountains, O forest, and every tree therein: for the LORD hath redeemed Jacob.” All creation rejoices in the Redeemer.",
       "source": "Isaiah 44:23",
-      "find": "break forth into singing, ye mountains, O forest, and every tree therein"
+      "find": "break forth into singing, ye mountains, O forest, and every tree therein",
+      "approved": "aa30201f"
     },
     {
       "id": "deep52-typifying",
@@ -184,7 +194,8 @@
       ],
       "why": "Verse 4: all things given of God “from the beginning of the world, unto man, are the typifying of him.” Typifying means being a type, or symbol, of Him.",
       "source": "2 Nephi 11:4",
-      "find": "are the typifying of him"
+      "find": "are the typifying of him",
+      "approved": "85dec910"
     },
     {
       "id": "deep52-no-end",
@@ -200,7 +211,8 @@
       ],
       "why": "Verse 7: “Of the increase of his government and peace there shall be no end.” Gabriel told Mary the same: “of his kingdom there shall be no end” (Luke 1:33).",
       "source": "Isaiah 9:7",
-      "find": "Of the increase of his government and peace there shall be no end"
+      "find": "Of the increase of his government and peace there shall be no end",
+      "approved": "41514446"
     },
     {
       "id": "deep52-kids",
@@ -216,7 +228,8 @@
       ],
       "why": "It suggests singing Stars Were Gleaming, from the Children’s Songbook, after talking about how Jesus is like a lamb, a star, a shepherd or a light.",
       "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/52?lang=eng",
-      "find": "Stars Were Gleaming"
+      "find": "Stars Were Gleaming",
+      "approved": "a482e5f0"
     },
     {
       "id": "deep52-ftsoy",
@@ -232,7 +245,8 @@
       ],
       "why": "He writes that prophets have always taught first of all about Jesus Christ’s life and mission, and that Abinadi said all the prophets since the world began spoke of the Messiah.",
       "source": "https://www.churchofjesuschrist.org/study/ftsoy/2022/12/06-your-promised-messiah?lang=eng",
-      "find": "have always been the central message of prophets"
+      "find": "have always been the central message of prophets",
+      "approved": "e51d44fa"
     }
   ],
   "reels": [
@@ -268,7 +282,8 @@
       },
       "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "000f5c4a"
     },
     {
       "id": "moses5-joy-christmas",
@@ -302,7 +317,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#4d7c0f 50%,#d9f99d 115%)",
       "blobA": "rgba(217,249,157,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "4d37bc3f"
     },
     {
       "id": "zeph3-sings-christmas",
@@ -336,7 +352,8 @@
       },
       "gradient": "linear-gradient(150deg,#4c0519 0%,#be123c 50%,#fecdd3 115%)",
       "blobA": "rgba(254,205,211,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "503a3bb3"
     },
     {
       "id": "luke2-great-joy-christmas",
@@ -370,7 +387,8 @@
       },
       "gradient": "linear-gradient(160deg,#0b1024 0%,#1e3a8a 55%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "e564ff31"
     },
     {
       "id": "num24-star-christmas",
@@ -412,7 +430,8 @@
       },
       "gradient": "linear-gradient(165deg,#020617 0%,#1e1b4b 55%,#a5b4fc 115%)",
       "blobA": "rgba(165,180,252,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "11ea4a7f"
     },
     {
       "id": "gen22-lamb-christmas",
@@ -454,7 +473,8 @@
       },
       "gradient": "linear-gradient(150deg,#292524 0%,#57534e 50%,#e7e5e4 115%)",
       "blobA": "rgba(231,229,228,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "da1145e2"
     },
     {
       "id": "ps23-shepherd-christmas",
@@ -495,7 +515,8 @@
       },
       "gradient": "linear-gradient(155deg,#052e16 0%,#166534 50%,#a7f3d0 115%)",
       "blobA": "rgba(167,243,208,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "affb78d7"
     },
     {
       "id": "isa9-light-christmas",
@@ -537,7 +558,8 @@
       },
       "gradient": "linear-gradient(150deg,#1c1917 0%,#c2410c 50%,#fed7aa 115%)",
       "blobA": "rgba(254,215,170,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "9080774b"
     },
     {
       "id": "isa9-wonderful-christmas",
@@ -578,7 +600,8 @@
       },
       "gradient": "linear-gradient(150deg,#2e1065 0%,#7c3aed 50%,#ddd6fe 115%)",
       "blobA": "rgba(221,214,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "c27e48e7"
     },
     {
       "id": "isa7-immanuel-christmas",
@@ -612,7 +635,8 @@
       },
       "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
       "blobA": "rgba(224,242,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "fd5d0efd"
     },
     {
       "id": "mic5-bethlehem-christmas",
@@ -645,7 +669,8 @@
       },
       "gradient": "linear-gradient(150deg,#3f2a14 0%,#92400e 50%,#fef3c7 115%)",
       "blobA": "rgba(254,243,199,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "c7c28d26"
     }
   ],
   "insights": [
@@ -660,7 +685,8 @@
         "title": "Isaiah 25",
         "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-25"
       },
-      "find": "The righteous will sing these words"
+      "find": "The righteous will sing these words",
+      "approved": "d804728f"
     },
     {
       "id": "xmas-isa9-joy",
@@ -673,7 +699,8 @@
         "title": "Isaiah 9",
         "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-9"
       },
-      "find": "Isaiah employs four words to emphasize the great joy that comes because of Jesus Christ"
+      "find": "Isaiah employs four words to emphasize the great joy that comes because of Jesus Christ",
+      "approved": "d32f8daa"
     },
     {
       "id": "xmas-moses5-psalm",
@@ -686,7 +713,8 @@
         "title": "Moses 5; Genesis 4",
         "url": "https://scripturecentral.org/archive/books/book-chapter/moses-5-genesis-4"
       },
-      "find": "meld to form a harmonious dual psalm of gratitude"
+      "find": "meld to form a harmonious dual psalm of gratitude",
+      "approved": "744fefbb"
     },
     {
       "id": "xmas-moses5-jsp-name",
@@ -700,7 +728,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-1/10"
       },
       "find": "the Holy Ghost fell upon Adam which bore record of the Father & the Son saying I am Jesus Christ from the beginning",
-      "note": "In Joseph Smith’s 1830 manuscript, the Holy Ghost tells Adam, “I am Jesus Christ from the beginning”; the printed verse, our scripture, reads “the Only Begotten of the Father.”"
+      "note": "In Joseph Smith’s 1830 manuscript, the Holy Ghost tells Adam, “I am Jesus Christ from the beginning”; the printed verse, our scripture, reads “the Only Begotten of the Father.”",
+      "approved": "0e7e01b0"
     },
     {
       "id": "xmas-isa44-cloud",
@@ -713,7 +742,8 @@
         "title": "Isaiah 44",
         "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-44"
       },
-      "find": "As the rain from a cloud cleanses the earth"
+      "find": "As the rain from a cloud cleanses the earth",
+      "approved": "e0d8be13"
     },
     {
       "id": "xmas-luke2-three-groups",
@@ -726,7 +756,8 @@
         "title": "Good Tidings of Great Joy",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2022/12/14oaks?lang=eng"
       },
-      "find": "Those who received the heavenly announcement of the birth were the very humble, the very holy, and the very wise."
+      "find": "Those who received the heavenly announcement of the birth were the very humble, the very holy, and the very wise.",
+      "approved": "a641d9b2"
     },
     {
       "id": "xmas-luke2-three-levels",
@@ -752,8 +783,10 @@
           "he called it the Silent Night level about the baby Jesus",
           "And that’s the Lord level, he called it.",
           "We hope you have a reverent level two Christmas and we hope you have a powerful level three Christmas."
-        ]
-      }
+        ],
+        "approved": "ee000e59"
+      },
+      "approved": "e72de15a"
     },
     {
       "id": "xmas-ps118-many-symbols",
@@ -765,7 +798,8 @@
         "title": "Enrichment Section C: Symbolism and Typology in the Old Testament",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-genesis-2-samuel/enrichment-section-c-symbolism-and-typology-in-the-old-testament?lang=eng"
       },
-      "find": "He is typified or symbolized as the Lamb"
+      "find": "He is typified or symbolized as the Lamb",
+      "approved": "4d175995"
     },
     {
       "id": "xmas-gen22-jireh",
@@ -778,7 +812,8 @@
         "title": "Genesis 21–23",
         "url": "https://scripturecentral.org/archive/books/book-chapter/genesis-2123"
       },
-      "find": "Christians also know that God later provided His Only Begotten Son as a substitute sacrifice"
+      "find": "Christians also know that God later provided His Only Begotten Son as a substitute sacrifice",
+      "approved": "2fd635e8"
     },
     {
       "id": "xmas-ex12-lamb",
@@ -791,7 +826,8 @@
         "title": "Exodus 11–19: The Passover and the Exodus",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-genesis-2-samuel/exodus-11-19-the-passover-and-the-exodus?lang=eng"
       },
-      "find": "signifying that the Lamb of God, pure and perfect, without spot or blemish"
+      "find": "signifying that the Lamb of God, pure and perfect, without spot or blemish",
+      "approved": "849925c3"
     },
     {
       "id": "xmas-mic5-bread",
@@ -804,7 +840,8 @@
         "title": "Divine Gifts",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2020/12/15nelson?lang=eng"
       },
-      "find": "That word in Hebrew, bet lehem, means “house of bread.”"
+      "find": "That word in Hebrew, bet lehem, means “house of bread.”",
+      "approved": "822d07e3"
     },
     {
       "id": "xmas-isa9-galilee",
@@ -816,7 +853,8 @@
         "title": "Chapter 13: The Establishment of Zion",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-13?lang=eng"
       },
-      "find": "where Jesus was raised and spent most of His ministry"
+      "find": "where Jesus was raised and spent most of His ministry",
+      "approved": "1c42f0cc"
     },
     {
       "id": "xmas-isa11-branch",
@@ -842,8 +880,10 @@
           "You have here what we call a synonymous parallel where Isaiah is saying the same thing with synonyms saying it twice.",
           "Jesse was the father of David, right?",
           "that whole genealogy of Jesus is to demonstrate that Jesus, born in Bethlehem, was of the lineage of David going back to Abraham"
-        ]
-      }
+        ],
+        "approved": "38e4cf3c"
+      },
+      "approved": "7b26f019"
     },
     {
       "id": "xmas-isa7-immanuel",
@@ -856,7 +896,8 @@
         "title": "Isaiah 7",
         "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-7"
       },
-      "find": "Immanuel emphasizes that Jesus is God"
+      "find": "Immanuel emphasizes that Jesus is God",
+      "approved": "6d166670"
     },
     {
       "id": "xmas-isa9-father",
@@ -868,7 +909,8 @@
         "title": "Chapter 13: The Establishment of Zion",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-13?lang=eng"
       },
-      "find": "Jesus Christ, being the Creator, is constantly called the Father of heaven and earth"
+      "find": "Jesus Christ, being the Creator, is constantly called the Father of heaven and earth",
+      "approved": "a4aecf87"
     },
     {
       "id": "xmas-isa9-personal-peace",
@@ -881,7 +923,8 @@
         "title": "Personal Peace in Challenging Times",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2021/10/46cook?lang=eng"
       },
-      "find": "personal peace can be achieved despite the anger, contention, and division"
+      "find": "personal peace can be achieved despite the anger, contention, and division",
+      "approved": "1520c27b"
     },
     {
       "id": "xmas-isa12-salvation-name",
@@ -894,7 +937,8 @@
         "title": "Isaiah 12",
         "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-12"
       },
-      "find": "is also the name of Jesus in Hebrew"
+      "find": "is also the name of Jesus in Hebrew",
+      "approved": "c7d95aa7"
     },
     {
       "id": "xmas-ps83-jehovah",
@@ -906,7 +950,8 @@
         "title": "Chapter 13: The Establishment of Zion",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-13?lang=eng"
       },
-      "find": "This is one of the few times the name is written out fully as Jehovah in the King James translation."
+      "find": "This is one of the few times the name is written out fully as Jehovah in the King James translation.",
+      "approved": "ac5d308a"
     },
     {
       "id": "xmas-mic5-tiny-village",
@@ -919,7 +964,8 @@
         "title": "The Promised Messiah",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2022/12/04-the-promised-messiah?lang=eng"
       },
-      "find": "Jesus could have been born into any situation the Father chose"
+      "find": "Jesus could have been born into any situation the Father chose",
+      "approved": "1f5cfd72"
     },
     {
       "id": "xmas-moses7-titles",
@@ -932,7 +978,8 @@
         "title": "Moses 7",
         "url": "https://scripturecentral.org/archive/books/book-chapter/moses-7"
       },
-      "find": "appear only in the book of Moses"
+      "find": "appear only in the book of Moses",
+      "approved": "06ce242b"
     },
     {
       "id": "xmas-luke2-q-oaks",
@@ -945,7 +992,8 @@
         "who": "President Dallin H. Oaks",
         "title": "Good Tidings of Great Joy",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2022/12/14oaks?lang=eng"
-      }
+      },
+      "approved": "5c1ed0e2"
     },
     {
       "id": "xmas-moses5-q-kimball",
@@ -958,7 +1006,8 @@
         "who": "President Spencer W. Kimball",
         "title": "Chapter 35: The Old Testament Closes",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-35?lang=eng"
-      }
+      },
+      "approved": "f56e8a20"
     },
     {
       "id": "xmas-isa53-q-romney",
@@ -971,7 +1020,8 @@
         "who": "President Marion G. Romney",
         "title": "Chapter 35: The Old Testament Closes",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-35?lang=eng"
-      }
+      },
+      "approved": "9a80b217"
     },
     {
       "id": "xmas-isa61-q-eyring",
@@ -984,7 +1034,8 @@
         "who": "President Henry B. Eyring",
         "title": "The Promised Messiah",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2022/12/04-the-promised-messiah?lang=eng"
-      }
+      },
+      "approved": "4d5a4a10"
     },
     {
       "id": "xmas-isa25-q-holland",
@@ -997,7 +1048,8 @@
         "who": "President Jeffrey R. Holland",
         "title": "That Babe in the Manger Makes All the Difference",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2025/12/08-that-babe-in-the-manger-makes-all-the-difference?lang=eng"
-      }
+      },
+      "approved": "3048d3c4"
     },
     {
       "id": "xmas-num24-q-nelson",
@@ -1010,7 +1062,8 @@
         "who": "President Russell M. Nelson",
         "title": "Divine Gifts",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2020/12/15nelson?lang=eng"
-      }
+      },
+      "approved": "5c05bd53"
     },
     {
       "id": "xmas-ps23-q-nelson",
@@ -1023,7 +1076,8 @@
         "who": "President Russell M. Nelson",
         "title": "Divine Gifts",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2020/12/15nelson?lang=eng"
-      }
+      },
+      "approved": "97331b73"
     },
     {
       "id": "xmas-isa7-q-nelson",
@@ -1036,7 +1090,8 @@
         "who": "President Russell M. Nelson",
         "title": "“Come, Let Us Adore Him”",
         "url": "https://www.churchofjesuschrist.org/study/broadcasts/christmas-devotional/2023/12/14nelson?lang=eng"
-      }
+      },
+      "approved": "0009d7ec"
     },
     {
       "id": "xmas-moses6-q-mcconkie",
@@ -1049,7 +1104,8 @@
         "who": "Elder Bruce R. McConkie",
         "title": "Enrichment Section C: Symbolism and Typology in the Old Testament",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-genesis-2-samuel/enrichment-section-c-symbolism-and-typology-in-the-old-testament?lang=eng"
-      }
+      },
+      "approved": "c48f17d1"
     },
     {
       "id": "xmas-luke2-v-church",
@@ -1064,7 +1120,10 @@
         "title": "The Birth of Jesus: A Bible Story for Children",
         "channel": "The Church of Jesus Christ of Latter-day Saints",
         "previewed": false
-      }
+      },
+      "approved": "f7a940c6"
     }
-  ]
+  ],
+  "approved": "1fdaa824",
+  "wordsApproved": "666323c5"
 }

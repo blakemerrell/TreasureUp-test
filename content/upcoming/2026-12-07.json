@@ -18,7 +18,8 @@
         "David, about the temple",
         "Solomon, about the temple"
       ],
-      "why": "The Lord, through Haggai, repeated what the people kept saying. About 15 years after coming home, they still had not rebuilt His house."
+      "why": "The Lord, through Haggai, repeated what the people kept saying. About 15 years after coming home, they still had not rebuilt His house.",
+      "approved": "ea05b151"
     },
     {
       "id": "say-first-glory",
@@ -29,7 +30,8 @@
         "Ezra, at the new altar",
         "Nehemiah, at the walls"
       ],
-      "why": "Some old people remembered Solomon’s grand temple. The Lord asked them about it, then promised the new one greater glory (Haggai 2:9)."
+      "why": "Some old people remembered Solomon’s grand temple. The Lord asked them about it, then promised the new one greater glory (Haggai 2:9).",
+      "approved": "9beed157"
     },
     {
       "id": "say-turn-unto-me",
@@ -40,7 +42,8 @@
         "Moses, at Mount Sinai",
         "Elijah, on Mount Carmel"
       ],
-      "why": "These were the Lord’s first words through Zechariah. When His people turn back to Him, He turns back to them."
+      "why": "These were the Lord’s first words through Zechariah. When His people turn back to Him, He turns back to them.",
+      "approved": "96486d92"
     },
     {
       "id": "say-filthy-garments",
@@ -51,7 +54,8 @@
         "Pharaoh, about Joseph",
         "A father, about his son"
       ],
-      "why": "In Zechariah’s vision, the angel had Joshua’s dirty clothes taken off. Then he told Joshua, “I have caused thine iniquity to pass from thee.”"
+      "why": "In Zechariah’s vision, the angel had Joshua’s dirty clothes taken off. Then he told Joshua, “I have caused thine iniquity to pass from thee.”",
+      "approved": "83e819c2"
     },
     {
       "id": "say-not-by-might",
@@ -62,7 +66,8 @@
         "David, to Goliath",
         "Gideon, to his army"
       ],
-      "why": "An angel gave Zechariah this message for Zerubbabel, who had to finish the temple with few people and little money."
+      "why": "An angel gave Zechariah this message for Zerubbabel, who had to finish the temple with few people and little money.",
+      "approved": "9177f356"
     },
     {
       "id": "say-we-will-go",
@@ -73,7 +78,8 @@
         "Ruth, to Naomi",
         "Caleb, to Joshua"
       ],
-      "why": "Zechariah saw people from every language take hold of a Jew’s robe, wanting to come to the Lord with him."
+      "why": "Zechariah saw people from every language take hold of a Jew’s robe, wanting to come to the Lord with him.",
+      "approved": "5aa6d4d3"
     },
     {
       "id": "say-rejoice-greatly",
@@ -84,7 +90,8 @@
         "Isaiah, about Cyrus",
         "Miriam, at the Red Sea"
       ],
-      "why": "Zechariah told Jerusalem to rejoice because her King was coming, riding on a donkey. Jesus fulfilled it on Palm Sunday."
+      "why": "Zechariah told Jerusalem to rejoice because her King was coming, riding on a donkey. Jesus fulfilled it on Palm Sunday.",
+      "approved": "b478570d"
     },
     {
       "id": "say-give-me-my-price",
@@ -95,7 +102,8 @@
         "Judas, to the priests",
         "Esau, to Jacob"
       ],
-      "why": "Zechariah asked for his pay as a shepherd and got thirty pieces of silver. Judas later asked the priests, “What will ye give me” (Matthew 26:15)."
+      "why": "Zechariah asked for his pay as a shepherd and got thirty pieces of silver. Judas later asked the priests, “What will ye give me” (Matthew 26:15).",
+      "approved": "9dc3863f"
     },
     {
       "id": "say-these-wounds",
@@ -106,7 +114,8 @@
         "Thomas, to Jesus",
         "Peter, to Jesus"
       ],
-      "why": "Zechariah foresaw this question. In Doctrine and Covenants 45:51 the Lord says the Jews will ask it when He comes again."
+      "why": "Zechariah foresaw this question. In Doctrine and Covenants 45:51 the Lord says the Jews will ask it when He comes again.",
+      "approved": "1b21b338"
     }
   ],
   "words": [
@@ -168,7 +177,8 @@
       "why": "Verse 8: “The silver is mine, and the gold is mine, saith the LORD of hosts.” He could give His house all it needed.",
       "source": "Haggai 2:8",
       "find": "The silver is mine, and the gold is mine",
-      "hunt": "In Haggai 2, what does the Lord say belongs to Him?"
+      "hunt": "In Haggai 2, what does the Lord say belongs to Him?",
+      "approved": "89cafc2c"
     },
     {
       "id": "deep50-city",
@@ -184,7 +194,8 @@
       "why": "Verse 3: “Jerusalem shall be called a city of truth; and the mountain of the LORD of hosts the holy mountain.”",
       "source": "Zechariah 8:3",
       "find": "Jerusalem shall be called a city of truth",
-      "hunt": "In Zechariah 8, what will Jerusalem be called?"
+      "hunt": "In Zechariah 8, what will Jerusalem be called?",
+      "approved": "f0193d9a"
     },
     {
       "id": "deep50-need-of-them",
@@ -200,7 +211,8 @@
       "why": "Verse 3: “The Lord hath need of them; and straightway he will send them.” Then Matthew says it fulfilled the prophet’s words (verse 4).",
       "source": "Matthew 21:3",
       "find": "The Lord hath need of them",
-      "hunt": "In Matthew 21, what were the disciples to say if anyone asked why they took the donkeys?"
+      "hunt": "In Matthew 21, what were the disciples to say if anyone asked why they took the donkeys?",
+      "approved": "233a6507"
     },
     {
       "id": "deep50-kids",
@@ -216,7 +228,8 @@
       ],
       "why": "It suggests The Savior Goes to Jerusalem, from New Testament Stories. Then children can point to the people in the pictures who are rejoicing.",
       "source": "lesson",
-      "find": "The Savior Goes to Jerusalem"
+      "find": "The Savior Goes to Jerusalem",
+      "approved": "cc5f86b6"
     },
     {
       "id": "deep50-ftsoy",
@@ -232,7 +245,8 @@
       ],
       "why": "The author says we might put it as asking how that’s working out for you. For the Israelites it was going poorly: they ate and drank but never felt full.",
       "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/12/hidden-treasures?lang=eng",
-      "find": "How’s that working out for you?"
+      "find": "How’s that working out for you?",
+      "approved": "a1daf573"
     }
   ],
   "reels": [
@@ -268,7 +282,8 @@
       },
       "gradient": "linear-gradient(150deg,#292524 0%,#a16207 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "2ad119c2"
     },
     {
       "id": "hag2-glory",
@@ -302,7 +317,8 @@
       },
       "gradient": "linear-gradient(155deg,#1c1917 0%,#78716c 50%,#fef3c7 115%)",
       "blobA": "rgba(254,243,199,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "c1a8ceea"
     },
     {
       "id": "zech4-spirit",
@@ -336,7 +352,8 @@
       },
       "gradient": "linear-gradient(150deg,#422006 0%,#ca8a04 50%,#fef9c3 115%)",
       "blobA": "rgba(254,249,195,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "2aaf3c28"
     },
     {
       "id": "zech1-turn",
@@ -370,7 +387,8 @@
       },
       "gradient": "linear-gradient(150deg,#0f172a 0%,#4338ca 50%,#c7d2fe 115%)",
       "blobA": "rgba(199,210,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "76ece595"
     },
     {
       "id": "zech3-garments",
@@ -404,7 +422,8 @@
       },
       "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0284c7 50%,#f0f9ff 115%)",
       "blobA": "rgba(240,249,255,.45)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "433b92e5"
     },
     {
       "id": "zech14-holiness",
@@ -447,7 +466,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e3a8a 0%,#7c3aed 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "f7e54610"
     },
     {
       "id": "zech9-colt",
@@ -481,7 +501,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#65a30d 50%,#fef08a 115%)",
       "blobA": "rgba(254,240,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "2ff9fef8"
     },
     {
       "id": "zech11-silver",
@@ -523,7 +544,8 @@
       },
       "gradient": "linear-gradient(150deg,#1f2937 0%,#64748b 50%,#e2e8f0 115%)",
       "blobA": "rgba(226,232,240,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "20b983f6"
     },
     {
       "id": "zech12-pierced",
@@ -557,7 +579,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e1b4b 0%,#7f1d1d 50%,#fecaca 115%)",
       "blobA": "rgba(254,202,202,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "2d07826b"
     },
     {
       "id": "zech13-wounds",
@@ -599,7 +622,8 @@
       },
       "gradient": "linear-gradient(160deg,#172554 0%,#9f1239 55%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.35)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "7f017758"
     },
     {
       "id": "zech14-olives",
@@ -633,7 +657,8 @@
       },
       "gradient": "linear-gradient(150deg,#022c22 0%,#047857 50%,#d9f99d 115%)",
       "blobA": "rgba(217,249,157,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "4a8bc3f0"
     }
   ],
   "tldr": [
@@ -654,7 +679,8 @@
           "v": 4,
           "about": "“Fine paneled houses” is for “ceiled houses” (paneled, as the BSB has it)."
         }
-      ]
+      ],
+      "approved": "13b259da"
     },
     {
       "ch": "Haggai 2",
@@ -669,7 +695,8 @@
           "v": 7,
           "about": "“Jesus Christ” comes from the chapter heading (“Haggai speaks about the Messiah”) and the Scripture Helps, which say the title can refer to the Savior."
         }
-      ]
+      ],
+      "approved": "671edc40"
     },
     {
       "ch": "Zechariah 1",
@@ -684,7 +711,8 @@
           "v": 20,
           "about": "“Craftsmen” is for the KJV’s “carpenters” (the Bible Dictionary uses “craftsmen” too)."
         }
-      ]
+      ],
+      "approved": "b54d5606"
     },
     {
       "ch": "Zechariah 2",
@@ -698,7 +726,8 @@
           "v": 8,
           "about": "“What He holds most dear” is for “the apple of his eye,” kept out of the card because APPLE is Tuesday’s Verse Word."
         }
-      ]
+      ],
+      "approved": "1b096da0"
     },
     {
       "ch": "Zechariah 3",
@@ -707,7 +736,8 @@
         "The dirty clothes are taken off, and Joshua gets clean clothes and a clean priest’s cap. His sins are taken away. (verses 4–5)",
         "If Joshua walks in the Lord’s ways and keeps His commands, he will take care of the Lord’s house. (verses 6–7)",
         "The Lord will bring His servant the Branch, the Messiah. At the Second Coming He will remove the land’s sin in one day. (verses 8–10)"
-      ]
+      ],
+      "approved": "3878c9d3"
     },
     {
       "ch": "Zechariah 4",
@@ -716,7 +746,8 @@
         "The message to Zerubbabel: the work will be done not by might or power, but by the Lord’s Spirit. The mountain in front of him will become flat ground. (verses 6–7)",
         "Zerubbabel laid the temple’s foundation, and his own hands will finish it. (verses 8–10)",
         "The two olive trees are the two anointed ones who stand by the Lord of the whole earth. (verses 11–14)"
-      ]
+      ],
+      "approved": "0a067d67"
     },
     {
       "ch": "Zechariah 7",
@@ -725,7 +756,8 @@
         "The Lord asks if their fasts and feasts were really for Him, or only for themselves. He wanted them to listen to His prophets. (verses 4–7)",
         "He calls them to judge fairly, show mercy and kindness, and never mistreat widows, orphans, strangers or the poor. (verses 8–10)",
         "Their fathers hardened their hearts and wouldn’t listen, so the Lord scattered them and the land was left empty. (verses 11–14)"
-      ]
+      ],
+      "approved": "0db65bb3"
     },
     {
       "ch": "Zechariah 8",
@@ -734,7 +766,8 @@
         "In the last days He will gather His people from east and west, and they will be His people. He tells them to be strong and build the temple. (verses 6–13)",
         "He will bless them more than ever before. They must speak the truth, judge fairly and love peace. Their sad fasts will become happy feasts. (verses 14–19)",
         "People from many nations will come to Jerusalem to seek the Lord, because they have heard that God is with His people. (verses 20–23)"
-      ]
+      ],
+      "approved": "60adf4b6"
     },
     {
       "ch": "Zechariah 9",
@@ -749,7 +782,8 @@
           "v": 9,
           "about": "The heading says “Zechariah speaks as the Messiah”; the line names the King as the Messiah, as the heading does."
         }
-      ]
+      ],
+      "approved": "c8be94f2"
     },
     {
       "ch": "Zechariah 10",
@@ -763,7 +797,8 @@
           "v": 8,
           "about": "“Whistle” is for the KJV’s “hiss” (the heading says “hiss for them”); it means calling them, like a shepherd."
         }
-      ]
+      ],
+      "approved": "9f44e142"
     },
     {
       "ch": "Zechariah 11",
@@ -778,7 +813,8 @@
           "v": 12,
           "about": "“The price of a slave” is from the Scripture Helps; the betrayal is from the chapter heading."
         }
-      ]
+      ],
+      "approved": "26b88b56"
     },
     {
       "ch": "Zechariah 12",
@@ -792,7 +828,8 @@
           "v": 10,
           "about": "“Crucified” comes from the chapter heading (“the Lord, whom they crucified”); the verse says pierced."
         }
-      ]
+      ],
+      "approved": "72bdfb5a"
     },
     {
       "ch": "Zechariah 13",
@@ -800,7 +837,8 @@
         "At the Second Coming the Jews will be forgiven and made clean. Idols and false prophets will be gone from the land. (verses 1–5)",
         "They will ask the Lord about the wounds in His hands. He will answer that He was wounded in the house of His friends. (verse 6)",
         "The Shepherd will be struck and the sheep scattered. A third of the people will be refined like silver and gold, and they will be His people. (verses 7–9)"
-      ]
+      ],
+      "approved": "f04c97f9"
     },
     {
       "ch": "Zechariah 14",
@@ -809,7 +847,8 @@
         "That day will be like no other. Living water will flow out from Jerusalem, and the Lord will be King over all the earth. (verses 6–11)",
         "Plagues will destroy the wicked who fought Jerusalem. Those left from the nations will come each year to worship the King. (verses 12–19)",
         "Even the bells of the horses and the cooking pots will be holy to the Lord. (verses 20–21)"
-      ]
+      ],
+      "approved": "fb041358"
     }
   ],
   "insights": [
@@ -824,7 +863,8 @@
         "title": "Consider Your Ways: The Book of Haggai and the Responsibilities and Blessings of Temple Work",
         "url": "https://rsc.byu.edu/sperry-symposium-classics-old-testament/consider-your-ways"
       },
-      "find": "may refer to the costly cedar paneling many of the wealthy were using to decorate the interior of their homes"
+      "find": "may refer to the costly cedar paneling many of the wealthy were using to decorate the interior of their homes",
+      "approved": "7ba97ba9"
     },
     {
       "id": "hag1-wifi",
@@ -837,7 +877,8 @@
         "title": "True Disciples of the Savior",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2019/10/12vinson?lang=eng"
       },
-      "find": "Don’t you love those descriptions of the futility of prioritizing things of no eternal consequence above the things of God?"
+      "find": "Don’t you love those descriptions of the futility of prioritizing things of no eternal consequence above the things of God?",
+      "approved": "8d1a2785"
     },
     {
       "id": "hag1-realign",
@@ -862,8 +903,10 @@
           "The concept of repentance is constant reevaluation and constant realignment.",
           "I actually think that invitation to consider our ways is hopeful and it’s a loving thing.",
           "We like to keep followHIM as a shame free zone."
-        ]
-      }
+        ],
+        "approved": "227f18f9"
+      },
+      "approved": "e32ea962"
     },
     {
       "id": "hag1-q-bednar",
@@ -876,7 +919,8 @@
         "who": "Elder David A. Bednar",
         "title": "Put On Thy Strength, O Zion",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2022/10/46bednar?lang=eng"
-      }
+      },
+      "approved": "d4b88fac"
     },
     {
       "id": "hag2-five-missing",
@@ -888,7 +932,8 @@
         "title": "Temple of Zerubbabel",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/temple-of-zerubbabel?lang=eng"
       },
-      "find": "The Jews reckoned the temple of Zerubbabel to be in five points inferior to the temple of Solomon"
+      "find": "The Jews reckoned the temple of Zerubbabel to be in five points inferior to the temple of Solomon",
+      "approved": "65b7b047"
     },
     {
       "id": "hag2-restorer",
@@ -913,8 +958,10 @@
           "He can redeem, He can rectify, He can restore, He can reclaim, He can recompense in ways that we can’t even fathom.",
           "The glory of that house now is greater than the former.",
           "He’s such a restorer, He can make things better than they were."
-        ]
-      }
+        ],
+        "approved": "476fcd25"
+      },
+      "approved": "7b45b705"
     },
     {
       "id": "hag2-q-nelson",
@@ -927,7 +974,8 @@
         "who": "President Russell M. Nelson",
         "title": "The Lord Jesus Christ Will Come Again",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/10/57nelson?lang=eng"
-      }
+      },
+      "approved": "713650e4"
     },
     {
       "id": "hag2-unclean",
@@ -940,7 +988,8 @@
         "title": "Consider Your Ways: The Book of Haggai and the Responsibilities and Blessings of Temple Work",
         "url": "https://rsc.byu.edu/sperry-symposium-classics-old-testament/consider-your-ways"
       },
-      "find": "the garment itself could not transmit that holiness to a third or fourth object"
+      "find": "the garment itself could not transmit that holiness to a third or fourth object",
+      "approved": "dacfd1da"
     },
     {
       "id": "zech1-name",
@@ -953,7 +1002,8 @@
         "title": "Old Testament Minute: Zechariah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-zechariah"
       },
-      "find": "Repentance is often thought of as a unidirectional movement closer to God."
+      "find": "Repentance is often thought of as a unidirectional movement closer to God.",
+      "approved": "b4b231b6"
     },
     {
       "id": "zech2-apple",
@@ -965,7 +1015,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "more probably the pupil of the eye, pupilla, as being the object most carefully preserved"
+      "find": "more probably the pupil of the eye, pupilla, as being the object most carefully preserved",
+      "approved": "754532da"
     },
     {
       "id": "zech3-accuser",
@@ -978,7 +1029,8 @@
         "title": "Old Testament Minute: Zechariah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-zechariah"
       },
-      "find": "Satan literally means “accuser,” and its Hebrew root is repeated in verse 1 in the verb translated by the King James Version as “resist.”"
+      "find": "Satan literally means “accuser,” and its Hebrew root is repeated in verse 1 in the verb translated by the King James Version as “resist.”",
+      "approved": "398ac908"
     },
     {
       "id": "zech3-clothing",
@@ -1003,8 +1055,10 @@
           "He has on filthy garments that are likely symbolic of maybe his weakness or shortcoming or sin.",
           "the atonement, some of the root words get at to cloth or to cover, to cover our sins",
           "Reminds me a little bit of the calling of Isaiah."
-        ]
-      }
+        ],
+        "approved": "62bdc1df"
+      },
+      "approved": "16437b0f"
     },
     {
       "id": "zech3-q-renlund",
@@ -1017,7 +1071,8 @@
         "who": "Elder Dale G. Renlund",
         "title": "Jesus Christ Is the Treasure",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2023/10/57renlund?lang=eng"
-      }
+      },
+      "approved": "79a98428"
     },
     {
       "id": "zech4-finishers",
@@ -1029,7 +1084,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "In life, as in business, there has always been a need for those persons who could be called finishers."
+      "find": "In life, as in business, there has always been a need for those persons who could be called finishers.",
+      "approved": "06470535"
     },
     {
       "id": "zech4-jsp-servants",
@@ -1043,7 +1099,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/125"
       },
       "find": "Zechariah Chapter IV verse 10— servants",
-      "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse: “servants.” In his revision, the seven who go through the whole earth are the Lord’s servants rather than His eyes."
+      "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse: “servants.” In his revision, the seven who go through the whole earth are the Lord’s servants rather than His eyes.",
+      "approved": "07eb2621"
     },
     {
       "id": "zech7-fasts",
@@ -1055,7 +1112,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "cared infinitely more for righteousness than for ritual"
+      "find": "cared infinitely more for righteousness than for ritual",
+      "approved": "bead3985"
     },
     {
       "id": "zech7-brother",
@@ -1080,8 +1138,10 @@
           "bought a couple of treats for her and slipped them under her door with a note",
           "I will serve others beginning in my own home",
           "the home is where we practice and try to learn to implement these holy ways of living"
-        ]
-      }
+        ],
+        "approved": "84501472"
+      },
+      "approved": "93ba356c"
     },
     {
       "id": "zech8-jsp-gather",
@@ -1095,7 +1155,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/126"
       },
       "find": "Chapte VIII verse 7 gather 13 gather",
-      "note": "Joseph Smith’s Old Testament manuscript gives “gather” for this verse and for verse 13: the Lord will gather His people. It is on the manuscript’s last page, finished July 2, 1833."
+      "note": "Joseph Smith’s Old Testament manuscript gives “gather” for this verse and for verse 13: the Lord will gather His people. It is on the manuscript’s last page, finished July 2, 1833.",
+      "approved": "38d2583b"
     },
     {
       "id": "zech8-missionary",
@@ -1108,7 +1169,8 @@
         "title": "Old Testament Minute: Zechariah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-zechariah"
       },
-      "find": "people will take hold of a missionary or a Latter-day Saint"
+      "find": "people will take hold of a missionary or a Latter-day Saint",
+      "approved": "1721b40b"
     },
     {
       "id": "zech9-two-parades",
@@ -1121,7 +1183,8 @@
         "title": "Palm Sunday: The True King Comes to Jerusalem",
         "url": "https://rsc.byu.edu/greater-love-hath-no-man/palm-sunday"
       },
-      "find": "Jesus’s royal procession, entering the city from the east, contrasted with another, more worldly procession that would have entered the city from the west"
+      "find": "Jesus’s royal procession, entering the city from the east, contrasted with another, more worldly procession that would have entered the city from the west",
+      "approved": "d5729859"
     },
     {
       "id": "zech9-cook",
@@ -1134,7 +1197,8 @@
         "title": "We Have Every Reason to Rejoice",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2026/12/03-we-have-every-reason-to-rejoice?lang=eng"
       },
-      "find": "This prophecy was echoed in the angelic announcement to the shepherds the night of Jesus Christ’s birth"
+      "find": "This prophecy was echoed in the angelic announcement to the shepherds the night of Jesus Christ’s birth",
+      "approved": "627387dc"
     },
     {
       "id": "zech9-q-soares",
@@ -1147,7 +1211,8 @@
         "who": "Elder Ulisses Soares",
         "title": "Followers of the Prince of Peace",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2023/04/43soares?lang=eng"
-      }
+      },
+      "approved": "ac98d33c"
     },
     {
       "id": "zech9-prisoners",
@@ -1160,7 +1225,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "the saving water, which is baptism, is an earthly ordinance and cannot be performed by spirit beings while they dwell in the spirit world"
+      "find": "the saving water, which is baptism, is an earthly ordinance and cannot be performed by spirit beings while they dwell in the spirit world",
+      "approved": "2c26f01d"
     },
     {
       "id": "zech9-v-triumphal-entry",
@@ -1175,7 +1241,8 @@
         "title": "Matthew 21 | The Lord's Triumphal Entry into Jerusalem | The Bible",
         "channel": "The Church of Jesus Christ of Latter-day Saints",
         "previewed": false
-      }
+      },
+      "approved": "6d7d9467"
     },
     {
       "id": "zech11-worthless-price",
@@ -1188,7 +1255,8 @@
         "title": "Old Testament Minute: Zechariah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-zechariah"
       },
-      "find": "In the Sumerian language, to say something was worth thirty pieces of silver meant that it had little value."
+      "find": "In the Sumerian language, to say something was worth thirty pieces of silver meant that it had little value.",
+      "approved": "fd902c85"
     },
     {
       "id": "zech12-megiddo",
@@ -1200,7 +1268,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "The death of this most pious of all the kings of Judah was bewailed by the people"
+      "find": "The death of this most pious of all the kings of Judah was bewailed by the people",
+      "approved": "98346cc3"
     },
     {
       "id": "zech12-dc45",
@@ -1225,8 +1294,10 @@
           "Jesus especially refers to three passages from this prophet that likewise refer to the Day of the Lord and the Savior’s ultimate triumph",
           "This is not repentance for the death of Christ, for these Jews are not guilty of that.",
           "This revelation, in short, was given to cheer the Saints and reinvigorate their hope in the Savior’s promises"
-        ]
-      }
+        ],
+        "approved": "4dc09f3a"
+      },
+      "approved": "6018c3ec"
     },
     {
       "id": "zech13-jsp-wounds",
@@ -1240,7 +1311,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/revelation-circa-7-march-1831-dc-45/5"
       },
       "find": "I am he that was lifted up I am Jesus which was crusified I am the Son of God",
-      "note": "In an early copy of the 1831 revelation now in Doctrine and Covenants 45, the Lord answers this question Himself and adds, “I am Jesus which was crusified.”"
+      "note": "In an early copy of the 1831 revelation now in Doctrine and Covenants 45, the Lord answers this question Himself and adds, “I am Jesus which was crusified.”",
+      "approved": "f5463d4b"
     },
     {
       "id": "zech13-q-stapley",
@@ -1253,7 +1325,8 @@
         "who": "Elder Delbert L. Stapley",
         "title": "Easter Thoughts",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/1976/04/easter-thoughts?lang=eng"
-      }
+      },
+      "approved": "f31d8abe"
     },
     {
       "id": "zech13-shepherd",
@@ -1265,7 +1338,8 @@
         "title": "Preparations for the Lord’s Return in Glory",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-33?lang=eng"
       },
-      "find": "The Shepherd of Israel is Jesus Christ."
+      "find": "The Shepherd of Israel is Jesus Christ.",
+      "approved": "54196d46"
     },
     {
       "id": "zech14-jsp-mount",
@@ -1278,7 +1352,8 @@
         "title": "Revelation, circa 7 March 1831 [D&C 45], page 74",
         "url": "https://www.josephsmithpapers.org/paper-summary/revelation-circa-7-march-1831-dc-45/4"
       },
-      "find": "then shall the lord set his foot upon this mount & it shall cleave in twain"
+      "find": "then shall the lord set his foot upon this mount & it shall cleave in twain",
+      "approved": "cbea7843"
     },
     {
       "id": "zech14-gong",
@@ -1291,7 +1366,8 @@
         "title": "Holiness to the Lord in Everyday Life",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/10/31gong?lang=eng"
       },
-      "find": "On our temples, the standard inscription is “Holiness to the Lord, the House of the Lord.”"
+      "find": "On our temples, the standard inscription is “Holiness to the Lord, the House of the Lord.”",
+      "approved": "572f0009"
     },
     {
       "id": "zech14-q-christofferson",
@@ -1304,7 +1380,8 @@
         "who": "Elder D. Todd Christofferson",
         "title": "The Living Bread Which Came Down from Heaven",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2017/10/the-living-bread-which-came-down-from-heaven?lang=eng"
-      }
+      },
+      "approved": "0763fdbc"
     },
     {
       "id": "zech14-made-holy",
@@ -1317,7 +1394,8 @@
         "title": "Holiness",
         "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/holiness"
       },
-      "find": "it is God who invests a person, place, or object with holiness"
+      "find": "it is God who invests a person, place, or object with holiness",
+      "approved": "df94282b"
     },
     {
       "id": "zech14-traders",
@@ -1330,7 +1408,8 @@
         "title": "Palm Sunday: The True King Comes to Jerusalem",
         "url": "https://rsc.byu.edu/greater-love-hath-no-man/palm-sunday"
       },
-      "find": "Jesus’s activities mirror the three-part structure in Zechariah 14 that refers to the future divine messianic figure"
+      "find": "Jesus’s activities mirror the three-part structure in Zechariah 14 that refers to the future divine messianic figure",
+      "approved": "9e7ae5ab"
     }
   ],
   "plain": [
@@ -1371,7 +1450,8 @@
           "v": 15,
           "about": "This verse finishes verse 14 in the Hebrew (they started work on this day). The plain words add “This was” so it stands as its own line."
         }
-      ]
+      ],
+      "approved": "1ce2eda0"
     },
     {
       "ch": "Haggai 2",
@@ -1431,7 +1511,8 @@
           "v": 23,
           "about": "A few words are added to say what a signet ring is. The KJV has “a signet”; the BSB ‘My signet ring.’"
         }
-      ]
+      ],
+      "approved": "fc360cad"
     },
     {
       "ch": "Zechariah 1",
@@ -1481,7 +1562,8 @@
           "v": 15,
           "about": "The KJV’s “helped forward the affliction” means the nations made Judah’s punishment worse than the Lord intended. The plain words don’t name who He was angry with, as the KJV and Hebrew don’t."
         }
-      ]
+      ],
+      "approved": "1b70d712"
     },
     {
       "ch": "Zechariah 2",
@@ -1518,7 +1600,8 @@
           "v": 4,
           "about": "The message runs into verse 5, so it has no quote marks. “The daughter of Babylon” in verse 7 has a few words added to say who she is."
         }
-      ]
+      ],
+      "approved": "bb6062f2"
     },
     {
       "ch": "Zechariah 3",
@@ -1557,7 +1640,8 @@
           "v": 10,
           "about": "The Hebrew says they will invite each other to “under a vine and under a fig tree,” a picture of peace (as in Micah 4:4). The plain words add “to come and sit.”"
         }
-      ]
+      ],
+      "approved": "0916862b"
     },
     {
       "ch": "Zechariah 4",
@@ -1600,7 +1684,8 @@
           "v": 6,
           "about": "“Not by might, nor by power, but by my Spirit” is kept almost word for word, since it is well known. The message runs through verse 7, so it has no outer quote marks."
         }
-      ]
+      ],
+      "approved": "93d29973"
     },
     {
       "ch": "Zechariah 7",
@@ -1643,7 +1728,8 @@
           "v": 13,
           "about": "The Hebrew says “as he called” and then “I would not listen,” the Lord speaking of Himself both ways. The plain words capitalize He for the Lord; the BSB evens it to ‘I.’"
         }
-      ]
+      ],
+      "approved": "53ca4c46"
     },
     {
       "ch": "Zechariah 8",
@@ -1699,7 +1785,8 @@
           "v": 23,
           "about": "“Take hold” comes twice in the Hebrew (“shall take hold … even shall take hold of the skirt”); the plain words say it once. The “skirt” is the edge of the robe."
         }
-      ]
+      ],
+      "approved": "ed24d0f8"
     },
     {
       "ch": "Zechariah 9",
@@ -1761,7 +1848,8 @@
           "v": 17,
           "about": "The KJV’s “his” is read as the Lord’s and capitalized; the BSB reads it as the people’s, so there is a note. “Cheerful” is a Hebrew word for growing strong (BSB ‘flourish’); the plain words say “thrive.”"
         }
-      ]
+      ],
+      "approved": "de9c18da"
     },
     {
       "ch": "Zechariah 10",
@@ -1802,7 +1890,8 @@
           "v": 2,
           "about": "The KJV’s “idols” are teraphim, household idols used to ask about the future. The plain words keep “idols.”"
         }
-      ]
+      ],
+      "approved": "716984fd"
     },
     {
       "ch": "Zechariah 11",
@@ -1852,7 +1941,8 @@
           "v": 17,
           "about": "The KJV states what will happen (“the sword shall be upon his arm”); the BSB makes it a curse (‘May a sword strike’). The plain words follow the KJV."
         }
-      ]
+      ],
+      "approved": "82c12b89"
     },
     {
       "ch": "Zechariah 12",
@@ -1899,7 +1989,8 @@
           "v": 12,
           "about": "Verses 12–14 are one sentence in the KJV, as here; each family and its wives mourn apart."
         }
-      ]
+      ],
+      "approved": "9550ecb3"
     },
     {
       "ch": "Zechariah 13",
@@ -1945,7 +2036,8 @@
           "v": 7,
           "about": "Jesus applies this verse to Himself (Matthew 26:31, note), so the BSB writes ‘My Shepherd’ and ‘the Shepherd.’ The plain words keep the KJV’s lowercase, as with “king” in Isaiah 33:17. “I will turn mine hand upon the little ones” may mean against them or to care for them; the plain words keep “on.”"
         }
-      ]
+      ],
+      "approved": "30c26776"
     },
     {
       "ch": "Zechariah 14",
@@ -2007,7 +2099,10 @@
           "v": 21,
           "about": "The Hebrew word for “Canaanite” can also mean a trader. The plain words keep “Canaanite,” as the KJV and BSB do. In verse 16 a few words say what the Feast of Tabernacles was; in verse 8 the eastern and western seas are named."
         }
-      ]
+      ],
+      "approved": "acaa599e"
     }
-  ]
+  ],
+  "approved": "6ada9225",
+  "wordsApproved": "a6b36461"
 }

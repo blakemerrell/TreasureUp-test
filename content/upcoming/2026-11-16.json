@@ -18,7 +18,8 @@
         "Jacob, about his grandson",
         "Moses, about Pharaoh"
       ],
-      "why": "Ephraim, the northern kingdom of Israel, had chosen idols over the Lord. For a time He would leave them to the choice they had made."
+      "why": "Ephraim, the northern kingdom of Israel, had chosen idols over the Lord. For a time He would leave them to the choice they had made.",
+      "approved": "fee0bc12"
     },
     {
       "id": "say-let-us-return",
@@ -29,7 +30,8 @@
         "Jonah, inside the great fish",
         "Elijah, on Mount Carmel"
       ],
-      "why": "Hosea calls the people back: “he hath smitten, and he will bind us up.” The Lord who corrects them is the same One who heals them."
+      "why": "Hosea calls the people back: “he hath smitten, and he will bind us up.” The Lord who corrects them is the same One who heals them.",
+      "approved": "aaf6b960"
     },
     {
       "id": "say-become-rich",
@@ -40,7 +42,8 @@
         "Solomon, at his new temple",
         "Job, before his trials"
       ],
-      "why": "Ephraim got rich with “the balances of deceit” (verse 7), cheating people, and then claimed he had done nothing wrong."
+      "why": "Ephraim got rich with “the balances of deceit” (verse 7), cheating people, and then claimed he had done nothing wrong.",
+      "approved": "be31370f"
     },
     {
       "id": "say-destroyed-thyself",
@@ -51,7 +54,8 @@
         "Samuel, to King Saul",
         "Nathan, to King David"
       ],
-      "why": "Israel’s troubles came from its own choices. Even so, the Lord didn’t walk away. Help was still in Him."
+      "why": "Israel’s troubles came from its own choices. Even so, the Lord didn’t walk away. Help was still in Him.",
+      "approved": "aa21a82e"
     },
     {
       "id": "say-thou-art-my-god",
@@ -62,7 +66,8 @@
         "Ruth, to Naomi",
         "Thomas, to the risen Jesus"
       ],
-      "why": "In the last days the Lord will say to Israel, “Thou art my people,” and they will answer Him with these words. The covenant is whole again."
+      "why": "In the last days the Lord will say to Israel, “Thou art my people,” and they will answer Him with these words. The covenant is whole again.",
+      "approved": "7753f1a7"
     },
     {
       "id": "say-no-more-idols",
@@ -73,7 +78,8 @@
         "Gideon, tearing down an altar",
         "Abraham, leaving his father"
       ],
-      "why": "Hosea’s book ends with Ephraim repenting: “Ephraim shall say” this, finished with idols for good."
+      "why": "Hosea’s book ends with Ephraim repenting: “Ephraim shall say” this, finished with idols for good.",
+      "approved": "7010f5ba"
     },
     {
       "id": "say-tell-your-children",
@@ -84,7 +90,8 @@
         "Moses, about the Passover",
         "Joshua, about twelve stones"
       ],
-      "why": "The locusts that stripped the land were so terrible that Joel wanted the lesson remembered for generations."
+      "why": "The locusts that stripped the land were so terrible that Joel wanted the lesson remembered for generations.",
+      "approved": "e17b756d"
     },
     {
       "id": "say-spare-thy-people",
@@ -95,7 +102,8 @@
         "Moses, on Mount Sinai",
         "Daniel, praying in Babylon"
       ],
-      "why": "Joel told the priests to “weep between the porch and the altar” and plead with the Lord for His people."
+      "why": "Joel told the priests to “weep between the porch and the altar” and plead with the Lord for His people.",
+      "approved": "810fa1ba"
     }
   ],
   "words": [
@@ -157,7 +165,8 @@
       "why": "Verse 15: “the valley of Achor for a door of hope.” Even after Israel left Him, the Lord opens a way back.",
       "source": "Hosea 2:15",
       "find": "the valley of Achor for a door of hope",
-      "hunt": "In Hosea 2, what does the Lord say He will make the valley of Achor?"
+      "hunt": "In Hosea 2, what does the Lord say He will make the valley of Achor?",
+      "approved": "1b06359c"
     },
     {
       "id": "deep47-physician",
@@ -173,7 +182,8 @@
       "why": "Verse 12: “They that be whole need not a physician, but they that are sick.” Like a doctor who comes for the sick, Jesus came for sinners.",
       "source": "Matthew 9:12",
       "find": "They that be whole need not a physician, but they that are sick",
-      "hunt": "In Matthew 9, who does Jesus say needs a physician?"
+      "hunt": "In Matthew 9, who does Jesus say needs a physician?",
+      "approved": "be7169be"
     },
     {
       "id": "deep47-third-hour",
@@ -189,7 +199,8 @@
       "why": "Verse 15: “these are not drunken, as ye suppose, seeing it is but the third hour of the day.” That’s about nine in the morning.",
       "source": "Acts 2:15",
       "find": "seeing it is but the third hour of the day",
-      "hunt": "In Acts 2, some people mocked that the disciples were drunk. What does Peter point out?"
+      "hunt": "In Acts 2, some people mocked that the disciples were drunk. What does Peter point out?",
+      "approved": "30d3f42d"
     },
     {
       "id": "deep47-kids",
@@ -205,7 +216,8 @@
       ],
       "why": "It suggests letting children pour a liquid and then contrasting it with a drip or a trickle. The Lord promised to pour out His Spirit, not just let a little through.",
       "source": "lesson",
-      "find": "contrasting it with a drip or a trickle"
+      "find": "contrasting it with a drip or a trickle",
+      "approved": "2609cbf3"
     },
     {
       "id": "deep47-ftsoy",
@@ -221,7 +233,8 @@
       ],
       "why": "Number one is to quiet your surroundings and your mind: find a quiet, holy place, then be still before God.",
       "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/03-7-ways-to-increase-the-flow-of-revelation?lang=eng",
-      "find": "Quiet Your Environment and Your Mind"
+      "find": "Quiet Your Environment and Your Mind",
+      "approved": "b37537e7"
     }
   ],
   "reels": [
@@ -256,7 +269,8 @@
       },
       "gradient": "linear-gradient(150deg,#3b0764 0%,#9d174d 50%,#fbcfe8 115%)",
       "blobA": "rgba(251,207,232,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "8ec6dcfa"
     },
     {
       "id": "hos2-ishi",
@@ -298,7 +312,8 @@
       },
       "gradient": "linear-gradient(150deg,#431407 0%,#9a3412 50%,#fdba74 115%)",
       "blobA": "rgba(253,186,116,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "da363d68"
     },
     {
       "id": "hos11-drew-them",
@@ -332,7 +347,8 @@
       },
       "gradient": "linear-gradient(155deg,#1e3a8a 0%,#2563eb 50%,#bfdbfe 115%)",
       "blobA": "rgba(191,219,254,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "88e25b23"
     },
     {
       "id": "hos13-ransom",
@@ -374,7 +390,8 @@
       },
       "gradient": "linear-gradient(150deg,#134e4a 0%,#0f766e 45%,#fbbf24 115%)",
       "blobA": "rgba(253,224,71,.45)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "d327c5c2"
     },
     {
       "id": "hos14-love-freely",
@@ -416,7 +433,8 @@
       },
       "gradient": "linear-gradient(150deg,#78350f 0%,#be185d 55%,#fb7185 100%)",
       "blobA": "rgba(253,164,175,.45)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "ffc02466"
     },
     {
       "id": "hos6-morning-cloud",
@@ -449,7 +467,8 @@
       },
       "gradient": "linear-gradient(165deg,#312e81 0%,#7c3aed 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "ff6c797d"
     },
     {
       "id": "hos6-mercy",
@@ -482,7 +501,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#16a34a 50%,#bbf7d0 115%)",
       "blobA": "rgba(187,247,208,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "30993f34"
     },
     {
       "id": "hos10-seek",
@@ -523,7 +543,8 @@
       },
       "gradient": "linear-gradient(150deg,#2e1065 0%,#6d28d9 50%,#ddd6fe 115%)",
       "blobA": "rgba(221,214,254,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "ba54906f"
     },
     {
       "id": "joel2-rend-heart",
@@ -557,7 +578,8 @@
       },
       "gradient": "linear-gradient(150deg,#450a0a 0%,#b91c1c 50%,#fecaca 115%)",
       "blobA": "rgba(254,202,202,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "083cdd39"
     },
     {
       "id": "joel2-pour-out",
@@ -591,7 +613,8 @@
       },
       "gradient": "linear-gradient(160deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
       "blobA": "rgba(224,242,254,.45)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "4bf4d5ad"
     },
     {
       "id": "joel2-restore-years",
@@ -632,7 +655,8 @@
       },
       "gradient": "linear-gradient(150deg,#1f2937 0%,#9d174d 55%,#f9a8d4 115%)",
       "blobA": "rgba(249,168,212,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "e89a11f3"
     },
     {
       "id": "joel3-valley",
@@ -666,7 +690,8 @@
       },
       "gradient": "linear-gradient(155deg,#0f172a 0%,#334155 50%,#fcd34d 115%)",
       "blobA": "rgba(252,211,77,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "9b9b2739"
     }
   ],
   "tldr": [
@@ -686,7 +711,8 @@
           "v": 6,
           "about": "“No more mercy” follows the verse’s own words for Lo-ruhamah; the Scripture Helps give “not pitied” or “not having obtained mercy.”"
         }
-      ]
+      ],
+      "approved": "ae1ef139"
     },
     {
       "ch": "Hosea 2",
@@ -705,7 +731,8 @@
           "v": 19,
           "about": "“Marry Israel forever” is verse 19’s “betroth thee unto me for ever,” and the heading’s “reconciled to God.”"
         }
-      ]
+      ],
+      "approved": "a1931015"
     },
     {
       "ch": "Hosea 3",
@@ -718,7 +745,8 @@
           "v": 1,
           "about": "The woman in verse 1 is taken to be Gomer, as the lesson and Scripture Helps tell it (Hosea’s efforts to bring her back)."
         }
-      ]
+      ],
+      "approved": "83b27abe"
     },
     {
       "ch": "Hosea 4",
@@ -732,7 +760,8 @@
           "v": 12,
           "about": "“Wooden idols” for the KJV’s “stocks” follows the Old Testament Student Manual."
         }
-      ]
+      ],
+      "approved": "9d00482d"
     },
     {
       "ch": "Hosea 5",
@@ -740,7 +769,8 @@
         "Israel’s priests and leaders have trapped the people like a hunter’s net. Their pride shows, and both Israel and Judah will fall. (verses 1–7)",
         "Ephraim and Judah are sick and wounded. Ephraim runs to Assyria for help, but Assyria can’t heal them. (verses 8–14)",
         "The Lord will go away until they admit their sins and seek Him. (verse 15)"
-      ]
+      ],
+      "approved": "11b0761f"
     },
     {
       "ch": "Hosea 6",
@@ -748,7 +778,8 @@
         "Hosea calls Israel to return to the Lord, who will heal them. He will come to them as surely as morning and rain. (verses 1–3)",
         "But their goodness disappears like a morning cloud. The Lord wants mercy and knowing Him more than sacrifices. (verses 4–6)",
         "They have broken the covenant. Even the priests do murder, and Israel is unclean. (verses 7–11)"
-      ]
+      ],
+      "approved": "1485cb81"
     },
     {
       "ch": "Hosea 10",
@@ -756,7 +787,8 @@
         "Israel is an empty vine. The richer they got, the more altars and idols they built, so those will be torn down. (verses 1–8)",
         "Israel has sinned since the days of Gibeah, and the Lord will correct them. (verses 9–11)",
         "Hosea calls them to plant righteousness and seek the Lord. They have plowed wickedness, so their forts will fall. (verses 12–15)"
-      ]
+      ],
+      "approved": "88601cbf"
     },
     {
       "ch": "Hosea 11",
@@ -774,7 +806,8 @@
           "v": 9,
           "about": "The line leaves out verse 9’s reason (“I am God, and not man”), a bonus answer."
         }
-      ]
+      ],
+      "approved": "f0b80f61"
     },
     {
       "ch": "Hosea 12",
@@ -783,7 +816,8 @@
         "Jacob wrestled with the angel and met God at Bethel. So turn to God, keep mercy and justice, and wait on Him. (verses 3–6)",
         "Ephraim cheats to get rich, then says he has done nothing wrong. (verses 7–9)",
         "The Lord guided His people by prophets, visions and similitudes, or symbols, yet Ephraim angered Him bitterly. (verses 10–14)"
-      ]
+      ],
+      "approved": "adffea62"
     },
     {
       "ch": "Hosea 13",
@@ -792,7 +826,8 @@
         "The Lord brought them out of Egypt. There is no Savior but Him, yet they forgot Him. (verses 4–8)",
         "Israel ruined itself, but its help is in the Lord. He will ransom them from the grave and redeem them from death. (verses 9–14)",
         "An east wind will dry up Ephraim, and Samaria will fall for rebelling against God. (verses 15–16)"
-      ]
+      ],
+      "approved": "fbf03321"
     },
     {
       "ch": "Hosea 14",
@@ -810,7 +845,8 @@
           "v": 9,
           "about": "Verse 9’s “the ways of the LORD are right” is a bonus answer, so the line only names its question."
         }
-      ]
+      ],
+      "approved": "6e66227b"
     },
     {
       "ch": "Joel 1",
@@ -819,7 +855,8 @@
         "An invader like a lion has stripped the vines and fig trees, and the offerings at the temple have stopped. (verses 5–12)",
         "The priests must fast, call a solemn assembly, and gather everyone to the house of the Lord, for the day of the Lord is near. (verses 13–15)",
         "The food is gone, the animals groan, and fire has burned the fields. Joel cries to the Lord. (verses 16–20)"
-      ]
+      ],
+      "approved": "da70ded3"
     },
     {
       "ch": "Joel 2",
@@ -838,7 +875,8 @@
           "v": 32,
           "about": "“Saved” for the KJV’s “delivered.”"
         }
-      ]
+      ],
+      "approved": "75e02cbe"
     },
     {
       "ch": "Joel 3",
@@ -852,7 +890,8 @@
           "v": 16,
           "about": "Verse 16’s “hope of his people” is a bonus answer, so the line says “protect.”"
         }
-      ]
+      ],
+      "approved": "56577d92"
     }
   ],
   "insights": [
@@ -866,7 +905,8 @@
         "title": "Hosea 1–6; 10–14; Joel",
         "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng"
       },
-      "find": "The names of the three children born to Hosea and Gomer represent consequences that Israel would suffer"
+      "find": "The names of the three children born to Hosea and Gomer represent consequences that Israel would suffer",
+      "approved": "cd5572cb"
     },
     {
       "id": "hos1-sand",
@@ -879,7 +919,8 @@
         "title": "The Imagery of Hosea’s Family and the Restoration of Israel",
         "url": "https://rsc.byu.edu/approaching-holiness/imagery-hoseas-family-restoration-israel"
       },
-      "find": "is a reference back to the covenant between the Lord and Abraham"
+      "find": "is a reference back to the covenant between the Lord and Abraham",
+      "approved": "3c26d1bf"
     },
     {
       "id": "hos2-provided",
@@ -891,7 +932,8 @@
         "title": "Hosea: The Love and Mercy of the Lord",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/46-hosea-joel/461-hosea?lang=eng"
       },
-      "find": "help students see that Hosea was already providing Gomer"
+      "find": "help students see that Hosea was already providing Gomer",
+      "approved": "27df6c45"
     },
     {
       "id": "hos2-return",
@@ -924,8 +966,10 @@
           "title": "followHIM: Hosea and Joel, part 1, with Dr. Aaron Schade",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "003a81b7"
+      },
+      "approved": "99977cdb"
     },
     {
       "id": "hos2-betroth",
@@ -937,7 +981,8 @@
         "title": "Hosea 1–6; 10–14; Joel",
         "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng"
       },
-      "find": "betrothal was a legally binding commitment—the final step before the full union of marriage"
+      "find": "betrothal was a legally binding commitment—the final step before the full union of marriage",
+      "approved": "45727f6e"
     },
     {
       "id": "hos2-q-nelson",
@@ -950,7 +995,8 @@
         "who": "President Russell M. Nelson",
         "title": "The Everlasting Covenant",
         "url": "https://www.churchofjesuschrist.org/study/liahona/2022/10/04-the-everlasting-covenant?lang=eng"
-      }
+      },
+      "approved": "f10e4a06"
     },
     {
       "id": "hos2-q-eyring",
@@ -963,7 +1009,8 @@
         "who": "Elder Henry B. Eyring",
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
-      }
+      },
+      "approved": "002db497"
     },
     {
       "id": "hos3-price",
@@ -975,7 +1022,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "Hosea desired to purchase his wife from slavery just as Heavenly Father seeks after His children to redeem them"
+      "find": "Hosea desired to purchase his wife from slavery just as Heavenly Father seeks after His children to redeem them",
+      "approved": "c94178e7"
     },
     {
       "id": "hos4-hesed",
@@ -988,7 +1036,8 @@
         "title": "The Marriage of Hosea and Jehovah’s Covenant with Israel",
         "url": "https://rsc.byu.edu/isaiah-prophets/marriage-hosea-jehovahs-covenant-israel"
       },
-      "find": "there is no English word that conveys the meaning of hesed accurately"
+      "find": "there is no English word that conveys the meaning of hesed accurately",
+      "approved": "72a98cfa"
     },
     {
       "id": "hos4-heifer",
@@ -1000,7 +1049,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "A backsliding heifer is one who refuses to follow when led and sets her feet and slides in the dirt"
+      "find": "A backsliding heifer is one who refuses to follow when led and sets her feet and slides in the dirt",
+      "approved": "48c1953e"
     },
     {
       "id": "hos5-landmark",
@@ -1012,7 +1062,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "To move such a mark was a serious offense, for it was the same as stealing land"
+      "find": "To move such a mark was a serious offense, for it was the same as stealing land",
+      "approved": "c7858481"
     },
     {
       "id": "hos6-third-day",
@@ -1025,7 +1076,8 @@
         "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 1",
         "url": "https://followhim.co/show-note/2-223/"
       },
-      "find": "He will thoroughly revive us."
+      "find": "He will thoroughly revive us.",
+      "approved": "cf5247bd"
     },
     {
       "id": "hos10-seeds",
@@ -1037,7 +1089,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "If you want a celestial life, you will have to plant celestial seeds"
+      "find": "If you want a celestial life, you will have to plant celestial seeds",
+      "approved": "fc64ca96"
     },
     {
       "id": "hos11-egypt",
@@ -1049,7 +1102,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "Matthew saw the emergence of Israel from Egypt as a type or pattern of Jesus’ coming out of Egypt"
+      "find": "Matthew saw the emergence of Israel from Egypt as a type or pattern of Jesus’ coming out of Egypt",
+      "approved": "5f30f1d4"
     },
     {
       "id": "hos11-walk",
@@ -1082,8 +1136,10 @@
           "title": "followHIM: Hosea and Joel, part 1, with Dr. Aaron Schade",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "18cea1cf"
+      },
+      "approved": "bb4807ad"
     },
     {
       "id": "hos11-jsp",
@@ -1096,7 +1152,8 @@
         "title": "Old Testament Revision 2, page 116",
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/123"
       },
-      "find": "my heart is turned toward thee, and my mercies are extended to gather thee"
+      "find": "my heart is turned toward thee, and my mercies are extended to gather thee",
+      "approved": "ab024f9f"
     },
     {
       "id": "hos13-east-wind",
@@ -1108,7 +1165,8 @@
         "title": "Why Did Abinadi Warn the People of an East Wind?",
         "url": "https://scripturecentral.org/knowhy/why-did-abinadi-warn-the-people-of-an-east-wind"
       },
-      "find": "capable of reducing green crops to dry, brown husks in a single day"
+      "find": "capable of reducing green crops to dry, brown husks in a single day",
+      "approved": "01d222f5"
     },
     {
       "id": "hos13-q-living-christ",
@@ -1121,7 +1179,8 @@
         "who": "The First Presidency and Quorum of the Twelve Apostles",
         "title": "The Living Christ: The Testimony of the Apostles",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng"
-      }
+      },
+      "approved": "357d79d9"
     },
     {
       "id": "hos14-q-renlund",
@@ -1134,7 +1193,8 @@
         "who": "Elder Dale G. Renlund",
         "title": "Choose You This Day",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/10/choose-you-this-day?lang=eng"
-      }
+      },
+      "approved": "c20042e9"
     },
     {
       "id": "hos14-kearon",
@@ -1147,7 +1207,8 @@
         "title": "God’s Intent Is to Bring You Home",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/45kearon?lang=eng"
       },
-      "find": "God is in relentless pursuit of you"
+      "find": "God is in relentless pursuit of you",
+      "approved": "20a5d6e3"
     },
     {
       "id": "hos14-calves",
@@ -1159,7 +1220,8 @@
         "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
       },
-      "find": "To present the sincere prayers of one’s lips as an offering to the Lord was as precious as the best offerings"
+      "find": "To present the sincere prayers of one’s lips as an offering to the Lord was as precious as the best offerings",
+      "approved": "6b2cb972"
     },
     {
       "id": "hos14-love",
@@ -1171,7 +1233,8 @@
         "title": "Hosea, or Hoshea",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/hosea?lang=eng"
       },
-      "find": "Hosea’s fundamental idea is the love of God for His people"
+      "find": "Hosea’s fundamental idea is the love of God for His people",
+      "approved": "79d6767b"
     },
     {
       "id": "joel1-locusts",
@@ -1184,7 +1247,8 @@
         "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
         "url": "https://followhim.co/show-note/2-222/"
       },
-      "find": "There’s over 20 different words for locust."
+      "find": "There’s over 20 different words for locust.",
+      "approved": "dcc1026f"
     },
     {
       "id": "joel2-rend",
@@ -1217,8 +1281,10 @@
           "title": "followHIM: Hosea and Joel, part 2, with Dr. Aaron Schade",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "638c5503"
+      },
+      "approved": "0fed3f36"
     },
     {
       "id": "joel2-jsp",
@@ -1231,7 +1297,8 @@
         "title": "Old Testament Revision 2, page 116",
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/123"
       },
-      "find": "and rend your heart, and not your garments, and repent, and turn"
+      "find": "and rend your heart, and not your garments, and repent, and turn",
+      "approved": "2c3d30ae"
     },
     {
       "id": "joel2-q-oaks",
@@ -1244,7 +1311,8 @@
         "who": "Elder Dallin H. Oaks",
         "title": "The Challenge to Become",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2000/10/the-challenge-to-become?lang=eng"
-      }
+      },
+      "approved": "e39ef71b"
     },
     {
       "id": "joel2-fear-not",
@@ -1256,7 +1324,8 @@
         "title": "Joel: “I Will Pour Out My Spirit”",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/46-hosea-joel/462-joel?lang=eng"
       },
-      "find": "They could replace “O land” with their own name to increase the relevancy of the passage"
+      "find": "They could replace “O land” with their own name to increase the relevancy of the passage",
+      "approved": "2cb1a49f"
     },
     {
       "id": "joel2-q-wirthlin",
@@ -1269,7 +1338,8 @@
         "who": "Elder Joseph B. Wirthlin",
         "title": "Come What May, and Love It",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2008/10/come-what-may-and-love-it?lang=eng"
-      }
+      },
+      "approved": "d52bb199"
     },
     {
       "id": "joel2-moroni",
@@ -1282,7 +1352,8 @@
         "title": "History, circa June 1839–circa 1841 [Draft 2]",
         "url": "https://www.josephsmithpapers.org/paper-summary/history-circa-june-1839-circa-1841-draft-2/6"
       },
-      "find": "He also quoted the second chapter of Joel from the twenty eighth to the last verse."
+      "find": "He also quoted the second chapter of Joel from the twenty eighth to the last verse.",
+      "approved": "d65d34ea"
     },
     {
       "id": "joel2-knowhy",
@@ -1294,7 +1365,8 @@
         "title": "Why Did Moroni Quote from the Book of Joel?",
         "url": "https://scripturecentral.org/knowhy/why-did-moroni-quote-from-the-book-of-joel"
       },
-      "find": "The most powerful manifestation of the Spirit today is the personal revelation that we call a testimony"
+      "find": "The most powerful manifestation of the Spirit today is the personal revelation that we call a testimony",
+      "approved": "780ca8ec"
     },
     {
       "id": "joel2-all-flesh",
@@ -1327,8 +1399,10 @@
           "title": "followHIM: Hosea and Joel, part 2, with Dr. Aaron Schade",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "326364fc"
+      },
+      "approved": "ebd0c846"
     },
     {
       "id": "joel2-q-nelson",
@@ -1341,7 +1415,8 @@
         "who": "President Russell M. Nelson",
         "title": "Revelation for the Church, Revelation for Our Lives",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/revelation-for-the-church-revelation-for-our-lives?lang=eng"
-      }
+      },
+      "approved": "c8926055"
     },
     {
       "id": "joel2-saxton",
@@ -1355,7 +1430,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-noah-c-saxton-4-january-1833/4"
       },
       "find": "shall obtain deliverence at Jerusalem see Joel 2. 32",
-      "note": "In a January 1833 letter to a Rochester newspaper editor, Joseph Smith cited this verse for Judah’s deliverance at Jerusalem in the last days."
+      "note": "In a January 1833 letter to a Rochester newspaper editor, Joseph Smith cited this verse for Judah’s deliverance at Jerusalem in the last days.",
+      "approved": "d6ebb089"
     },
     {
       "id": "joel3-jehoshaphat",
@@ -1367,7 +1443,8 @@
         "title": "Joel: God Will Not Be Mocked",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-7?lang=eng"
       },
-      "find": "Most likely it is the Kidron, a narrow valley between Jerusalem and the Mount of Olives"
+      "find": "Most likely it is the Kidron, a narrow valley between Jerusalem and the Mount of Olives",
+      "approved": "924e216d"
     },
     {
       "id": "joel3-plowshares",
@@ -1380,7 +1457,8 @@
         "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
         "url": "https://followhim.co/show-note/2-222/"
       },
-      "find": "This is a reversal of Isaiah and Micah."
+      "find": "This is a reversal of Isaiah and Micah.",
+      "approved": "42fa02d2"
     }
   ],
   "plain": [
@@ -1422,7 +1500,8 @@
           "v": 6,
           "about": "The names’ meanings are added in a few words, as the Church’s footnotes give them (verses 6 and 9). The last line follows the KJV (“take them completely away”); the Hebrew verb can also mean forgive, as the BSB reads it, so there is a note."
         }
-      ]
+      ],
+      "approved": "f17174f6"
     },
     {
       "ch": "Hosea 2",
@@ -1478,7 +1557,8 @@
           "v": 19,
           "about": "“Betroth” (promise to marry) is “make you my bride,” to keep it plain. The KJV’s “hear” in verses 21–22 is “answer,” the Hebrew word’s usual meaning (BSB ‘respond’)."
         }
-      ]
+      ],
+      "approved": "ae901210"
     },
     {
       "ch": "Hosea 3",
@@ -1508,7 +1588,8 @@
           "v": 2,
           "about": "“An homer … and an half homer” is “a homer and a half”; the Hebrew’s second measure is a lethech (BSB), which the KJV gives as half a homer."
         }
-      ]
+      ],
+      "approved": "cc902483"
     },
     {
       "ch": "Hosea 4",
@@ -1556,7 +1637,8 @@
           "v": 18,
           "about": "Hard Hebrew. The plain words follow the Church’s footnote for the last line and leave out the KJV’s “Give ye,” which reads one Hebrew word another way; there is a note."
         }
-      ]
+      ],
+      "approved": "8fc9cd2e"
     },
     {
       "ch": "Hosea 5",
@@ -1604,7 +1686,8 @@
           "v": 11,
           "about": "Unsure Hebrew; the plain words follow the KJV (“the command”), with a note giving the footnote’s and the BSB’s readings."
         }
-      ]
+      ],
+      "approved": "924a83a5"
     },
     {
       "ch": "Hosea 6",
@@ -1652,7 +1735,8 @@
           "v": 9,
           "about": "The plain words follow the Hebrew and the Church’s footnote (“on the road to Shechem”) over the KJV’s “by consent,” with a note. “Commit lewdness” is “done shameful, wicked things.” In verse 8, “polluted with blood” is the Hebrew picture, “marked with bloody footprints.”"
         }
-      ]
+      ],
+      "approved": "d5b9fae9"
     },
     {
       "ch": "Hosea 10",
@@ -1712,7 +1796,8 @@
           "v": 14,
           "about": "The last line, mothers dashed to pieces with their children, is kept no plainer than the KJV."
         }
-      ]
+      ],
+      "approved": "0853be9f"
     },
     {
       "ch": "Hosea 11",
@@ -1761,7 +1846,8 @@
           "v": 12,
           "about": "“Judah yet ruleth with God” is “walks with God,” the reading in the Church’s footnote (‘OR walks’) and the BSB. “The saints” is kept from the KJV; the BSB reads ‘the Holy One.’ No note."
         }
-      ]
+      ],
+      "approved": "4ec34493"
     },
     {
       "ch": "Hosea 12",
@@ -1804,7 +1890,8 @@
           "v": 14,
           "about": "“His blood” is “his blood guilt,” as the Church’s footnote has it (‘IE guilt’). “His reproach” is “his contempt.” “His Lord” is capitalized, as in the KJV."
         }
-      ]
+      ],
+      "approved": "5e0888fe"
     },
     {
       "ch": "Hosea 13",
@@ -1869,7 +1956,8 @@
           "v": 8,
           "about": "“The caul of their heart” (the Church’s footnote: ‘chamber’) is “their chests.” Kept no plainer than the KJV."
         }
-      ]
+      ],
+      "approved": "116362fd"
     },
     {
       "ch": "Hosea 14",
@@ -1907,7 +1995,8 @@
           "v": 7,
           "about": "“The scent thereof” follows the KJV (“His fragrance”); the Hebrew word is usually ‘remembrance’ or ‘fame’ (BSB ‘His renown’). “Revive as the corn” is “come back to life like grain.”"
         }
-      ]
+      ],
+      "approved": "491463db"
     },
     {
       "ch": "Joel 1",
@@ -1956,7 +2045,8 @@
           "v": 9,
           "about": "“Meat offering” is “grain offering” (verses 9 and 13); in the KJV, meat means food. “Old men” (verse 2) is “elders,” as the Church’s footnote has it."
         }
-      ]
+      ],
+      "approved": "40f7ca0c"
     },
     {
       "ch": "Joel 2",
@@ -2041,7 +2131,8 @@
           "v": 28,
           "about": "Two notes on verse 28 (Moroni and Peter), and Paul under verse 32. “All flesh” is “all people”; “handmaids” (verse 29) is “servants, men and women.” “My Spirit” is capitalized, as in the plain words for Isaiah 44:3."
         }
-      ]
+      ],
+      "approved": "174bfcff"
     },
     {
       "ch": "Joel 3",
@@ -2095,7 +2186,10 @@
           "v": 10,
           "about": "This turns around Isaiah 2:4 and Micah 4:3 (“beat their swords into plowshares”); no note, since the README’s note kinds don’t include it."
         }
-      ]
+      ],
+      "approved": "bf473eb7"
     }
-  ]
+  ],
+  "approved": "f0f80669",
+  "wordsApproved": "aabe288d"
 }

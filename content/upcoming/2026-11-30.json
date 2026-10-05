@@ -96,7 +96,8 @@
           }
         ]
       }
-    ]
+    ],
+    "approved": "34756968"
   },
   "sayings": [
     {
@@ -108,7 +109,8 @@
         "Micah, to the Lord",
         "The people, to Micah"
       ],
-      "why": "In Micah 6 the Lord brings a case against His people, like a trial. He asks them to name one way He has let them down. He had only blessed them."
+      "why": "In Micah 6 the Lord brings a case against His people, like a trial. He asks them to name one way He has let them down. He had only blessed them.",
+      "approved": "b29fe0c2"
     },
     {
       "id": "say-full-of-power",
@@ -119,7 +121,8 @@
         "Samson, about himself",
         "Nephi, about himself"
       ],
-      "why": "Other prophets in Micah’s day said whatever they were paid to say (Micah 3:11). Micah had the Spirit, so he told the people the truth about their sins."
+      "why": "Other prophets in Micah’s day said whatever they were paid to say (Micah 3:11). Micah had the Spirit, so he told the people the truth about their sins.",
+      "approved": "c01bf34e"
     },
     {
       "id": "say-bethlehem",
@@ -130,7 +133,8 @@
         "Samuel, about King David",
         "Herod, about the Wise Men"
       ],
-      "why": "About 700 years before Jesus was born, Micah named His birthplace. When the Wise Men came, Herod’s advisers found the answer in this verse (Matthew 2:5–6)."
+      "why": "About 700 years before Jesus was born, Micah named His birthplace. When the Wise Men came, Herod’s advisers found the answer in this verse (Matthew 2:5–6).",
+      "approved": "66985336"
     },
     {
       "id": "say-delighteth",
@@ -141,7 +145,8 @@
         "Jonah, about the Lord",
         "Nahum, about Nineveh"
       ],
-      "why": "Micah ends his book asking, “Who is a God like unto thee?” The Lord doesn’t hold on to His anger. He loves to forgive."
+      "why": "Micah ends his book asking, “Who is a God like unto thee?” The Lord doesn’t hold on to His anger. He loves to forgive.",
+      "approved": "0ad0439a"
     },
     {
       "id": "say-strong-hold",
@@ -152,7 +157,8 @@
         "David, about the Lord",
         "Isaiah, about the Lord"
       ],
-      "why": "Nahum’s book announces the fall of cruel Nineveh. But in chapter 1 he stops to say that the Lord shelters everyone who trusts in Him."
+      "why": "Nahum’s book announces the fall of cruel Nineveh. But in chapter 1 he stops to say that the Lord shelters everyone who trusts in Him.",
+      "approved": "a928c1a0"
     },
     {
       "id": "say-how-long",
@@ -163,7 +169,8 @@
         "Jonah, praying",
         "Job, praying"
       ],
-      "why": "Habakkuk saw violence all around him and felt unheard. Joseph Smith asked something like it in Liberty Jail: “How long shall thy hand be stayed” (D&C 121:2)."
+      "why": "Habakkuk saw violence all around him and felt unheard. Joseph Smith asked something like it in Liberty Jail: “How long shall thy hand be stayed” (D&C 121:2).",
+      "approved": "0762556a"
     },
     {
       "id": "say-chaldeans",
@@ -174,7 +181,8 @@
         "Habakkuk, to the Lord",
         "Jeremiah, to the king"
       ],
-      "why": "This was the Lord’s answer to Habakkuk’s prayer: Babylon would come to punish Judah. The answer troubled Habakkuk even more (verses 12–13)."
+      "why": "This was the Lord’s answer to Habakkuk’s prayer: Babylon would come to punish Judah. The answer troubled Habakkuk even more (verses 12–13).",
+      "approved": "9c738415"
     },
     {
       "id": "say-rejoice",
@@ -185,7 +193,8 @@
         "Mary, in her song",
         "Hannah, in her song"
       ],
-      "why": "Habakkuk begins his book with hard questions and ends it singing. Even if every crop failed, he would still rejoice in the Lord (Habakkuk 3:17)."
+      "why": "Habakkuk begins his book with hard questions and ends it singing. Even if every crop failed, he would still rejoice in the Lord (Habakkuk 3:17).",
+      "approved": "b606d133"
     },
     {
       "id": "say-seek-meek",
@@ -196,7 +205,8 @@
         "Jesus, on the mountain",
         "Alma, to the poor"
       ],
-      "why": "Before the day of judgment, Zephaniah invited the humble to seek the Lord, so they might be “hid in the day of the LORD’s anger.”"
+      "why": "Before the day of judgment, Zephaniah invited the humble to seek the Lord, so they might be “hid in the day of the LORD’s anger.”",
+      "approved": "8d85fdcb"
     },
     {
       "id": "say-sing-zion",
@@ -207,7 +217,8 @@
         "Zechariah, to Jerusalem",
         "Jeremiah, to Jerusalem"
       ],
-      "why": "After all his warnings, Zephaniah ends with joy. The Lord will be in the midst of His people and rejoice over them (Zephaniah 3:17)."
+      "why": "After all his warnings, Zephaniah ends with joy. The Lord will be in the midst of His people and rejoice over them (Zephaniah 3:17).",
+      "approved": "8eb75233"
     }
   ],
   "words": [
@@ -269,7 +280,8 @@
       "why": "Verse 2: “Hear ye, O mountains, the LORD’s controversy, and ye strong foundations of the earth.” A controversy here is a case in court, with the mountains as witnesses.",
       "source": "Micah 6:2",
       "find": "Hear ye, O mountains, the LORD’s controversy",
-      "hunt": "In Micah 6, whom does the Lord call to hear His case against His people?"
+      "hunt": "In Micah 6, whom does the Lord call to hear His case against His people?",
+      "approved": "ffbcb807"
     },
     {
       "id": "deep49-clouds",
@@ -285,7 +297,8 @@
       "why": "Verse 3: “the LORD hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet.” The clouds are like dust kicked up as He walks.",
       "source": "Nahum 1:3",
       "find": "the clouds are the dust of his feet",
-      "hunt": "In Nahum 1, what does Nahum say the clouds are?"
+      "hunt": "In Nahum 1, what does Nahum say the clouds are?",
+      "approved": "f3975779"
     },
     {
       "id": "deep49-tower",
@@ -301,7 +314,8 @@
       "why": "Verse 1: “I will stand upon my watch, and set me upon the tower, and will watch to see what he will say unto me.” He waited like a guard, ready for the answer.",
       "source": "Habakkuk 2:1",
       "find": "set me upon the tower",
-      "hunt": "In Habakkuk 2, where does Habakkuk go to wait for the Lord’s answer?"
+      "hunt": "In Habakkuk 2, where does Habakkuk go to wait for the Lord’s answer?",
+      "approved": "741a8122"
     },
     {
       "id": "deep49-trust",
@@ -317,7 +331,8 @@
       "why": "Verse 12: “they shall trust in the name of the LORD.” Verse 13 adds that they won’t lie or do wrong. The humble and honest trust Him.",
       "source": "Zephaniah 3:12",
       "find": "they shall trust in the name of the LORD",
-      "hunt": "In Zephaniah 3, what will the afflicted and poor people the Lord leaves do?"
+      "hunt": "In Zephaniah 3, what will the afflicted and poor people the Lord leaves do?",
+      "approved": "732302bc"
     },
     {
       "id": "deep49-children",
@@ -333,7 +348,8 @@
       "why": "Verse 21: “he took their little children, one by one, and blessed them, and prayed unto the Father for them.” Just before, He said His joy was full.",
       "source": "3 Nephi 17:21",
       "find": "he took their little children, one by one, and blessed them",
-      "hunt": "In 3 Nephi 17, what did Jesus do for the little children?"
+      "hunt": "In 3 Nephi 17, what did Jesus do for the little children?",
+      "approved": "ba4a3afa"
     },
     {
       "id": "deep49-kids",
@@ -349,7 +365,8 @@
       ],
       "why": "It mentions fruit that has to ripen and dough that has to bake. Eaten too soon, they aren’t ready yet. God’s promises come when they are ready.",
       "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/49?lang=eng",
-      "find": "fruit that needs to ripen or dough that needs to bake"
+      "find": "fruit that needs to ripen or dough that needs to bake",
+      "approved": "42c563db"
     },
     {
       "id": "deep49-ftsoy",
@@ -365,7 +382,8 @@
       ],
       "why": "He says inviting someone to a Christmas sacrament meeting can help them feel the Spirit and remember Jesus Christ. Don’t worry about the outcome; the Savior magnifies sincere efforts.",
       "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/12/02-jesus-christ-your-reason-for-rejoicing?lang=eng",
-      "find": "inviting someone to attend a Christmas sacrament meeting"
+      "find": "inviting someone to attend a Christmas sacrament meeting",
+      "approved": "af5e26ac"
     }
   ],
   "reels": [
@@ -408,7 +426,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#166534 50%,#bbf7d0 115%)",
       "blobA": "rgba(187,247,208,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "e70e6c05"
     },
     {
       "id": "mic6-rivers-of-oil",
@@ -443,7 +462,8 @@
       },
       "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "9b878158"
     },
     {
       "id": "nah1-stronghold",
@@ -477,7 +497,8 @@
       },
       "gradient": "linear-gradient(155deg,#1c1917 0%,#57534e 50%,#e7e5e4 115%)",
       "blobA": "rgba(231,229,228,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "5ed2a6aa"
     },
     {
       "id": "mic7-depths",
@@ -511,7 +532,8 @@
       },
       "gradient": "linear-gradient(165deg,#0c1e3e 0%,#1e40af 55%,#93c5fd 115%)",
       "blobA": "rgba(147,197,253,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "d5b79588"
     },
     {
       "id": "hab1-how-long",
@@ -553,7 +575,8 @@
       },
       "gradient": "linear-gradient(150deg,#0f172a 0%,#334155 50%,#cbd5e1 115%)",
       "blobA": "rgba(203,213,225,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "556ab7b3"
     },
     {
       "id": "hab2-wait",
@@ -587,7 +610,8 @@
       },
       "gradient": "linear-gradient(150deg,#3b0764 0%,#7e22ce 50%,#e9d5ff 115%)",
       "blobA": "rgba(233,213,255,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "cbee2a21"
     },
     {
       "id": "hab3-rejoice",
@@ -621,7 +645,8 @@
       },
       "gradient": "linear-gradient(150deg,#7c2d12 0%,#ea580c 50%,#fed7aa 115%)",
       "blobA": "rgba(254,215,170,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "d257ea6a"
     },
     {
       "id": "mic5-bethlehem",
@@ -655,7 +680,8 @@
       },
       "gradient": "linear-gradient(160deg,#0b1026 0%,#312e81 55%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "b437a41a"
     },
     {
       "id": "zeph2-seek",
@@ -689,7 +715,8 @@
       },
       "gradient": "linear-gradient(150deg,#134e4a 0%,#0f766e 50%,#99f6e4 115%)",
       "blobA": "rgba(153,246,228,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "d002ee9d"
     },
     {
       "id": "zeph1-candles",
@@ -723,7 +750,8 @@
       },
       "gradient": "linear-gradient(155deg,#18181b 0%,#78350f 55%,#fcd34d 115%)",
       "blobA": "rgba(252,211,77,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "c96dbb46"
     },
     {
       "id": "zeph3-singing",
@@ -765,7 +793,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e3a8a 0%,#2563eb 50%,#fef08a 115%)",
       "blobA": "rgba(254,240,138,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "83a34cc3"
     },
     {
       "id": "mic4-mountain",
@@ -807,7 +836,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e1b4b 0%,#6d28d9 50%,#fbcfe8 115%)",
       "blobA": "rgba(251,207,232,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "62295bfb"
     }
   ],
   "tldr": [
@@ -818,7 +848,8 @@
         "The Lord is coming to judge. Samaria, the capital of Israel, will become a heap of stones, and its idols will be broken. (verses 2–7)",
         "Micah mourns, because the same sickness has spread to Judah and reached the gate of Jerusalem. (verses 8–9)",
         "He names town after town in Judah that will weep, and their children will be taken captive. (verses 10–16)"
-      ]
+      ],
+      "approved": "9a46b4b9"
     },
     {
       "ch": "Micah 2",
@@ -827,7 +858,8 @@
         "So the Lord will bring trouble on them, and their land will be divided up among others. (verses 3–5)",
         "The people tell true prophets to stop, but they would gladly follow a prophet who promised them wine. (verses 6–11)",
         "Still, the Lord will gather the remnant of Israel like sheep in a fold and lead them out as their King. (verses 12–13)"
-      ]
+      ],
+      "approved": "81d64467"
     },
     {
       "ch": "Micah 3",
@@ -841,7 +873,8 @@
           "v": 11,
           "about": "The heading’s “divine for money” is put as “prophesy for money,” as the plain words and the BSB read it."
         }
-      ]
+      ],
+      "approved": "2a8026ee"
     },
     {
       "ch": "Micah 4",
@@ -856,7 +889,8 @@
           "v": 3,
           "about": "“The Millennium” comes from the chapter heading (“the millennial era will commence”); the verses describe the peace without naming it."
         }
-      ]
+      ],
+      "approved": "2512cad5"
     },
     {
       "ch": "Micah 5",
@@ -875,7 +909,8 @@
           "v": 15,
           "about": "“Nations that would not obey” follows the BSB and the plain words; the KJV reads “such as they have not heard.”"
         }
-      ]
+      ],
+      "approved": "085ddea3"
     },
     {
       "ch": "Micah 6",
@@ -883,7 +918,8 @@
         "The Lord brings His case against His people. He reminds them how He freed them from Egypt and kept them safe. (verses 1–5)",
         "What does He want? Not thousands of rams or rivers of oil, but to do justly, love mercy and walk humbly with God. (verses 6–8)",
         "In spite of all His goodness, the people cheat with false scales, lie and do violence, so they will plant but not harvest. (verses 9–16)"
-      ]
+      ],
+      "approved": "db377216"
     },
     {
       "ch": "Micah 7",
@@ -892,7 +928,8 @@
         "Still Micah will look to the Lord and wait for Him. Even if he falls, he will rise again. (verses 7–10)",
         "In the last days the walls will be rebuilt and God’s people gathered from every land. The nations will see it and be ashamed. (verses 11–17)",
         "Who is a God like Him? He has compassion, pardons sin, and loves to show mercy. He throws our sins into the depths of the sea. (verses 18–20)"
-      ]
+      ],
+      "approved": "8889d836"
     },
     {
       "ch": "Nahum 1",
@@ -906,7 +943,8 @@
           "v": 5,
           "about": "“A picture of the Second Coming” is from the chapter heading (“the burning of the earth at the Second Coming”)."
         }
-      ]
+      ],
+      "approved": "f73ff66a"
     },
     {
       "ch": "Nahum 2",
@@ -920,7 +958,8 @@
           "v": 13,
           "about": "The “symbol of what will be in the latter days” from the heading is placed on the last line."
         }
-      ]
+      ],
+      "approved": "5937d40a"
     },
     {
       "ch": "Nahum 3",
@@ -928,7 +967,8 @@
         "Woe to Nineveh, a city full of lies and robbery and killing, which led other nations into evil. (verses 1–7)",
         "The Egyptian city of No, or Thebes, was strong too, and it fell. Nineveh’s forts will drop like ripe figs. (verses 8–13)",
         "No matter how it prepares, Nineveh will be destroyed. Its leaders run like locusts, and its people are scattered. (verses 14–19)"
-      ]
+      ],
+      "approved": "b3be9b8b"
     },
     {
       "ch": "Habakkuk 1",
@@ -936,7 +976,8 @@
         "Habakkuk asks the Lord how long he must cry out about the violence and wrong all around him. (verses 1–4)",
         "The Lord answers that He is raising up the Chaldeans, or Babylonians, a fierce nation, to overrun the land. (verses 5–11)",
         "Habakkuk is troubled. How can a holy God use people more wicked than Judah, who catch nations like fish in a net? (verses 12–17)"
-      ]
+      ],
+      "approved": "4fbb88cb"
     },
     {
       "ch": "Habakkuk 2",
@@ -945,7 +986,8 @@
         "The proud will fail, but the just will live by faith. Woe to those who grow rich by violence and greed. (verses 4–13)",
         "The earth will be filled with the knowledge of the Lord’s glory, as the waters cover the sea. (verse 14)",
         "Woe to those who make others drunk and who pray to idols, which have no breath or power. The Lord is in His holy temple. (verses 15–20)"
-      ]
+      ],
+      "approved": "5672a777"
     },
     {
       "ch": "Habakkuk 3",
@@ -953,7 +995,8 @@
         "Habakkuk prays in a song. He has heard of the Lord’s work, and he asks Him to remember mercy, even in anger. (verses 1–2)",
         "He trembles at God’s majesty, shown as in the days of Moses: mountains shake, and God goes out to save His people. (verses 3–15)",
         "Habakkuk is afraid. Yet even if crops and flocks fail, he will rejoice in the Lord, who is his strength. (verses 16–19)"
-      ]
+      ],
+      "approved": "425fb30f"
     },
     {
       "ch": "Zephaniah 1",
@@ -967,7 +1010,8 @@
           "v": 14,
           "about": "The heading says Judah’s destruction is symbolic of the Second Coming; the line places that on the “great day of the LORD” verses."
         }
-      ]
+      ],
+      "approved": "27fa6cc4"
     },
     {
       "ch": "Zephaniah 2",
@@ -976,7 +1020,8 @@
         "Judgment will come on the Philistines, and their coast will go to the remnant of Judah. (verses 4–7)",
         "Moab and the children of Ammon, who mocked God’s people, will be like Sodom and Gomorrah, and the Ethiopians will fall. (verses 8–12)",
         "Assyria and proud Nineveh will become a dry wilderness where wild animals lie down. (verses 13–15)"
-      ]
+      ],
+      "approved": "02512907"
     },
     {
       "ch": "Zephaniah 3",
@@ -991,7 +1036,8 @@
           "v": 8,
           "about": "The heading says all nations will assemble to battle at the Second Coming; verse 8 says the Lord will gather the nations to pour out His anger."
         }
-      ]
+      ],
+      "approved": "560b470e"
     }
   ],
   "insights": [
@@ -1007,7 +1053,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/125"
       },
       "find": "Micah— Correct— Nahum, Chapters 1–3 —— Nahum Correct —— Habakkuk, Chapters 1–3 —— Habakkuk Correct —— Zephaniah, Chapters 1–3 —— Zephaniah Correct",
-      "note": "Joseph Smith’s Bible revision manuscript lists Micah, with Nahum, Habakkuk and Zephaniah, as “Correct,” and records no changes for any of the four books."
+      "note": "Joseph Smith’s Bible revision manuscript lists Micah, with Nahum, Habakkuk and Zephaniah, as “Correct,” and records no changes for any of the four books.",
+      "approved": "484b74bb"
     },
     {
       "id": "mic1-wordplay",
@@ -1020,7 +1067,8 @@
         "title": "Understanding Micah’s Lament for Judah (Micah 1:10–16) through Text, Archaeology, and Geography",
         "url": "https://rsc.byu.edu/prophets-prophecies-old-testament/understanding-micahs-lament-judah-micah-110-16-through-text-archaeology-geography"
       },
-      "find": "Micah employs paronomasia based on the names of towns that he is lamenting"
+      "find": "Micah employs paronomasia based on the names of towns that he is lamenting",
+      "approved": "fe46bd46"
     },
     {
       "id": "mic2-sleepless",
@@ -1032,7 +1080,8 @@
         "title": "Promise of Judgments, Promise of Salvation (Micah)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-11?lang=eng"
       },
-      "find": "probably referring to those who lay awake at night thinking up evil things to do"
+      "find": "probably referring to those who lay awake at night thinking up evil things to do",
+      "approved": "6e46577c"
     },
     {
       "id": "mic3-full-of-power",
@@ -1066,8 +1115,10 @@
           "title": "followHIM: Jonah and Micah, part 2, with Dr. Joshua Sears",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "80061cde"
+      },
+      "approved": "b86d5107"
     },
     {
       "id": "mic4-temples",
@@ -1080,7 +1131,8 @@
         "title": "Old Testament Minute: Micah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-micah"
       },
-      "find": "In the restoration, the Lord’s modern Israel has flowed up to the mountain-temples to receive and make covenants with Him"
+      "find": "In the restoration, the Lord’s modern Israel has flowed up to the mountain-temples to receive and make covenants with Him",
+      "approved": "bd066d6c"
     },
     {
       "id": "mic4-babylon",
@@ -1092,7 +1144,8 @@
         "title": "Promise of Judgments, Promise of Salvation (Micah)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-11?lang=eng"
       },
-      "find": "This prophecy is amazing because Assyria was mistress of the world in Micah’s day, Babylon being only a province of Assyria"
+      "find": "This prophecy is amazing because Assyria was mistress of the world in Micah’s day, Babylon being only a province of Assyria",
+      "approved": "4c0f3544"
     },
     {
       "id": "mic5-jesus-quoted",
@@ -1104,7 +1157,8 @@
         "title": "Why Did Jesus Mix Together Micah and Isaiah?",
         "url": "https://scripturecentral.org/knowhy/why-did-jesus-mix-together-micah-and-isaiah"
       },
-      "find": "exactly half of the verses in the speech come from these prophets"
+      "find": "exactly half of the verses in the speech come from these prophets",
+      "approved": "82013c6b"
     },
     {
       "id": "mic5-ephratah",
@@ -1116,7 +1170,8 @@
         "title": "Promise of Judgments, Promise of Salvation (Micah)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-11?lang=eng"
       },
-      "find": "Ephratah is simply an additional name to distinguish the Bethlehem in Judah from another Bethlehem in the land assigned to the tribe of Zebulun"
+      "find": "Ephratah is simply an additional name to distinguish the Bethlehem in Judah from another Bethlehem in the land assigned to the tribe of Zebulun",
+      "approved": "52b1d751"
     },
     {
       "id": "mic5-q-nelson",
@@ -1129,7 +1184,8 @@
         "who": "Elder Russell M. Nelson",
         "title": "In This Holy Land",
         "url": "https://www.churchofjesuschrist.org/study/liahona/1991/02/in-this-holy-land?lang=eng"
-      }
+      },
+      "approved": "fe3cb9f1"
     },
     {
       "id": "mic5-dew",
@@ -1142,7 +1198,8 @@
         "title": "Amos through Malachi: Major Teachings of the Twelve Prophets",
         "url": "https://rsc.byu.edu/archived/volume-4-number-3-2003/amos-through-malachi-major-teachings-twelve-prophets"
       },
-      "find": "they will be like nourishing dew and life-saving rain to the rest of the world"
+      "find": "they will be like nourishing dew and life-saving rain to the rest of the world",
+      "approved": "cd458bb4"
     },
     {
       "id": "mic6-renlund",
@@ -1155,7 +1212,8 @@
         "title": "Do Justly, Love Mercy, and Walk Humbly with God",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2020/10/55renlund?lang=eng"
       },
-      "find": "Loving mercy means that we do not just love the mercy God extends to us; we delight that God extends the same mercy to others"
+      "find": "Loving mercy means that we do not just love the mercy God extends to us; we delight that God extends the same mercy to others",
+      "approved": "4f00df33"
     },
     {
       "id": "mic6-q-renlund",
@@ -1168,7 +1226,8 @@
         "who": "Elder Dale G. Renlund",
         "title": "Do Justly, Love Mercy, and Walk Humbly with God",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2020/10/55renlund?lang=eng"
-      }
+      },
+      "approved": "cb536010"
     },
     {
       "id": "mic6-hesed",
@@ -1181,7 +1240,8 @@
         "title": "Tender Mercies and Loving-Kindness",
         "url": "https://rsc.byu.edu/winter-2026/tender-mercies-loving-kindness"
       },
-      "find": "Such actions are also an obligation placed on the Lord’s covenant people"
+      "find": "Such actions are also an obligation placed on the Lord’s covenant people",
+      "approved": "a2c8383b"
     },
     {
       "id": "mic7-name",
@@ -1194,7 +1254,8 @@
         "title": "Old Testament Minute: Micah",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-micah"
       },
-      "find": "The name of the prophet and this closing statement serve as bookends"
+      "find": "The name of the prophet and this closing statement serve as bookends",
+      "approved": "269f88c3"
     },
     {
       "id": "mic7-hurl",
@@ -1228,8 +1289,10 @@
           "title": "followHIM: Jonah and Micah, part 2, with Dr. Joshua Sears",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "155c6fe7"
+      },
+      "approved": "2cd24331"
     },
     {
       "id": "mic7-q-holland",
@@ -1242,7 +1305,8 @@
         "who": "Elder Jeffrey R. Holland",
         "title": "The Laborers in the Vineyard",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2012/04/the-laborers-in-the-vineyard?lang=eng"
-      }
+      },
+      "approved": "258035ad"
     },
     {
       "id": "nah1-comforter",
@@ -1255,7 +1319,8 @@
         "title": "What Is in a Name? Lessons from the Names of Old Testament Prophets",
         "url": "https://rsc.byu.edu/vol-15-no-2-2014/what-name-lessons-names-old-testament-prophets"
       },
-      "find": "Nahum is typically understood to mean a comforter or consoler"
+      "find": "Nahum is typically understood to mean a comforter or consoler",
+      "approved": "1dd737e8"
     },
     {
       "id": "nah1-balance",
@@ -1268,7 +1333,8 @@
         "title": "‘The Burden of Ninevah’ (Nahum)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-20?lang=eng"
       },
-      "find": "His mercy shall not rob justice, but neither will justice rob His mercy"
+      "find": "His mercy shall not rob justice, but neither will justice rob His mercy",
+      "approved": "667d829a"
     },
     {
       "id": "nah1-refuge",
@@ -1302,8 +1368,10 @@
           "title": "followHIM: Nahum, Habakkuk, Zephaniah, part 1, with Dr. Joshua Matson",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "44e3508f"
+      },
+      "approved": "6fa9913b"
     },
     {
       "id": "nah1-q-gong",
@@ -1316,7 +1384,8 @@
         "who": "Elder Gerrit W. Gong",
         "title": "All Things for Our Good",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/25gong?lang=eng"
-      }
+      },
+      "approved": "80d408fb"
     },
     {
       "id": "nah2-gates",
@@ -1329,7 +1398,8 @@
         "title": "Old Testament Minute: Nahum",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-nahum"
       },
-      "find": "Nineveh was overrun by the Khosr River, which was a tributary of the Tigris River and ran through the center of Nineveh"
+      "find": "Nineveh was overrun by the Khosr River, which was a tributary of the Tigris River and ran through the center of Nineveh",
+      "approved": "8a9397e4"
     },
     {
       "id": "nah3-thebes",
@@ -1342,7 +1412,8 @@
         "title": "‘The Burden of Ninevah’ (Nahum)",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-20?lang=eng"
       },
-      "find": "reference is made to the destruction of the city of No-Amon, the Egyptian Thebes, as an already accomplished fact"
+      "find": "reference is made to the destruction of the city of No-Amon, the Egyptian Thebes, as an already accomplished fact",
+      "approved": "dab63882"
     },
     {
       "id": "hab1-wrestle",
@@ -1375,8 +1446,10 @@
           "title": "followHIM: Nahum, Habakkuk, Zephaniah, part 2, with Dr. Joshua Matson",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "9409e3bb"
+      },
+      "approved": "10bf4f40"
     },
     {
       "id": "hab1-q-holland",
@@ -1389,7 +1462,8 @@
         "who": "Elder Jeffrey R. Holland",
         "title": "Waiting on the Lord",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2020/10/57holland?lang=eng"
-      }
+      },
+      "approved": "38f5b0db"
     },
     {
       "id": "hab2-q-hales",
@@ -1402,7 +1476,8 @@
         "who": "Elder Robert D. Hales",
         "title": "Waiting upon the Lord: Thy Will Be Done",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2011/10/waiting-upon-the-lord-thy-will-be-done?lang=eng"
-      }
+      },
+      "approved": "03766801"
     },
     {
       "id": "hab2-soap",
@@ -1415,7 +1490,8 @@
         "title": "The Just Shall Live by Faith",
         "url": "https://www.churchofjesuschrist.org/study/ensign/2017/04/the-just-shall-live-by-faith?lang=eng"
       },
-      "find": "Religion without action is like soap that remains in the box"
+      "find": "Religion without action is like soap that remains in the box",
+      "approved": "5e3c91bc"
     },
     {
       "id": "hab2-earth",
@@ -1428,7 +1504,8 @@
         "title": "Old Testament Minute: Habakkuk",
         "url": "https://scripturecentral.org/archive/books/book/old-testament-minute-habakkuk"
       },
-      "find": "God’s glory will eventually dominate the earth, overtaking the violence, greediness, and iniquity mentioned above"
+      "find": "God’s glory will eventually dominate the earth, overtaking the violence, greediness, and iniquity mentioned above",
+      "approved": "e86912c1"
     },
     {
       "id": "hab2-silence",
@@ -1441,7 +1518,8 @@
         "title": "Old Testament: EPISODE 49 – Nahum; Habakkuk; Zephaniah – Part 2",
         "url": "https://followhim.co/show-note/2-230/"
       },
-      "find": "When we know that we’ve received an answer, it’s time for us to keep silence before him"
+      "find": "When we know that we’ve received an answer, it’s time for us to keep silence before him",
+      "approved": "901cc2fd"
     },
     {
       "id": "hab3-hinds",
@@ -1453,7 +1531,8 @@
         "title": "Habakkuk: Waiting for Answers to Our Sincere Questions",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/48-micah-zephaniah/482-habakkuk?lang=eng"
       },
-      "find": "refers to deer feet, which enable deer to climb difficult ground"
+      "find": "refers to deer feet, which enable deer to climb difficult ground",
+      "approved": "4f982ee9"
     },
     {
       "id": "hab3-q-nelson",
@@ -1466,7 +1545,8 @@
         "who": "President Russell M. Nelson",
         "title": "Joy and Spiritual Survival",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2016/10/joy-and-spiritual-survival?lang=eng"
-      }
+      },
+      "approved": "ad466594"
     },
     {
       "id": "hab2-v-lift-us-up",
@@ -1481,7 +1561,8 @@
         "title": "God Will Lift Us Up",
         "channel": "The Church of Jesus Christ of Latter-day Saints",
         "previewed": false
-      }
+      },
+      "approved": "2025d66f"
     },
     {
       "id": "zeph1-prophets",
@@ -1493,7 +1574,8 @@
         "title": "Who Were the “Many Prophets” in Jerusalem During Lehi’s Time?",
         "url": "https://scripturecentral.org/knowhy/who-were-the-many-prophets-in-jerusalem-during-lehis-time"
       },
-      "find": "Nine prophets from the Bible were active during the late-7th/early-6th centuries bc"
+      "find": "Nine prophets from the Bible were active during the late-7th/early-6th centuries bc",
+      "approved": "329c5485"
     },
     {
       "id": "zeph2-hidden",
@@ -1506,7 +1588,8 @@
         "title": "What Is in a Name? Lessons from the Names of Old Testament Prophets",
         "url": "https://rsc.byu.edu/vol-15-no-2-2014/what-name-lessons-names-old-testament-prophets"
       },
-      "find": "the name Zephaniah can be translated as one who is protected or hidden by the Lord"
+      "find": "the name Zephaniah can be translated as one who is protected or hidden by the Lord",
+      "approved": "5cbb7e1c"
     },
     {
       "id": "zeph3-two-cities",
@@ -1540,8 +1623,10 @@
           "title": "followHIM: Nahum, Habakkuk, Zephaniah, part 2, with Dr. Joshua Matson",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "cecf1d86"
+      },
+      "approved": "4ff0f341"
     },
     {
       "id": "zeph3-joy",
@@ -1553,7 +1638,8 @@
         "title": "Why Is Joy Associated with Temple Work in the Scriptures?",
         "url": "https://scripturecentral.org/knowhy/why-is-joy-associated-with-temple-work-in-the-scriptures"
       },
-      "find": "the prophet Zephaniah described the joy and love that God feels when He is with us"
+      "find": "the prophet Zephaniah described the joy and love that God feels when He is with us",
+      "approved": "3d8893fc"
     }
   ],
   "plain": [
@@ -1608,7 +1694,8 @@
           "v": 15,
           "about": "The KJV’s “heir” is a Hebrew word for one who takes possession (BSB ‘conqueror’), given as “someone to take possession of you.” The KJV reads “Adullam the glory of Israel”; the Hebrew says the glory of Israel will come to Adullam, as the plain words do."
         }
-      ]
+      ],
+      "approved": "c27ee8ac"
     },
     {
       "ch": "Micah 2",
@@ -1654,7 +1741,8 @@
           "v": 13,
           "about": "“King” is capitalized because the verse names Him as the Lord. “The breaker” is given as “the one who breaks open the way” (BSB)."
         }
-      ]
+      ],
+      "approved": "47f0284d"
     },
     {
       "ch": "Micah 3",
@@ -1686,7 +1774,8 @@
           "v": 12,
           "about": "Possible note, left out because it isn’t one of the README’s note kinds: elders of Judah later quoted this verse word for word, “Micah the Morasthite prophesied in the days of Hezekiah king of Judah” (Jeremiah 26:18), and recalled that Hezekiah feared the Lord and the disaster was turned away (Jeremiah 26:19)."
         }
-      ]
+      ],
+      "approved": "a8432d13"
     },
     {
       "ch": "Micah 4",
@@ -1732,7 +1821,8 @@
           "v": 13,
           "about": "The KJV’s “brass” is given as “bronze” (Hebrew nechosheth, BSB ‘bronze’). The KJV and the Hebrew say “I will consecrate”; the BSB says ‘you will devote.’ 3 Nephi 20:19 has “I will consecrate,” so the plain words keep it."
         }
-      ]
+      ],
+      "approved": "637d0bf6"
     },
     {
       "ch": "Micah 5",
@@ -1800,7 +1890,8 @@
           "v": 15,
           "about": "The plain words follow the KJV and 3 Nephi 21:21 (“such as they have not heard”), with a note giving the BSB’s reading."
         }
-      ]
+      ],
+      "approved": "c41c20ef"
     },
     {
       "ch": "Micah 6",
@@ -1844,7 +1935,8 @@
           "v": 16,
           "about": "“(Wicked kings of Israel)” is added for Omri and Ahab. The KJV and the Hebrew end “the reproach of my people”; the BSB has ‘the scorn of the nations.’ The plain words follow the Hebrew."
         }
-      ]
+      ],
+      "approved": "4cce61d4"
     },
     {
       "ch": "Micah 7",
@@ -1905,7 +1997,8 @@
           "v": 19,
           "about": "The KJV and the Hebrew say “our iniquities” and then “all their sins”; the BSB makes both ‘our.’ The plain words keep the Hebrew, which may read oddly. “Subdue” is the Hebrew for treading down, given as “trample… under His feet.”"
         }
-      ]
+      ],
+      "approved": "f1867a18"
     },
     {
       "ch": "Nahum 1",
@@ -1953,7 +2046,8 @@
           "v": 15,
           "about": "Numbering: in the Hebrew this verse is Nahum 2:1, and the KJV’s Nahum 2:1–13 are Hebrew 2:2–14. The plain words follow the KJV’s numbering, as the BSB does. The note’s Mosiah 15:18 is Abinadi explaining the same words in Isaiah 52:7; drop it if that feels like a stretch for Nahum."
         }
-      ]
+      ],
+      "approved": "b3aaf8ab"
     },
     {
       "ch": "Nahum 2",
@@ -2003,7 +2097,8 @@
           "v": 10,
           "about": "The KJV says faces “gather blackness”; the Hebrew is unsure (literally ‘gather a glow’), and the BSB reads ‘grows pale.’ The plain words follow the BSB, with no note."
         }
-      ]
+      ],
+      "approved": "06c0217b"
     },
     {
       "ch": "Nahum 3",
@@ -2059,7 +2154,8 @@
           "v": 18,
           "about": "The Hebrew says only that the nobles ‘lie down’ or ‘settle’ (in death); the plain words keep the KJV’s “in the dust.”"
         }
-      ]
+      ],
+      "approved": "da802bd4"
     },
     {
       "ch": "Habakkuk 1",
@@ -2117,7 +2213,8 @@
           "v": 15,
           "about": "The Hebrew in verses 15–17 is singular (the Chaldean), as in the BSB; the plain words keep the KJV’s “they.”"
         }
-      ]
+      ],
+      "approved": "63edf3fc"
     },
     {
       "ch": "Habakkuk 2",
@@ -2194,7 +2291,8 @@
           "v": 19,
           "about": "The KJV says “Arise, it shall teach!”; the Hebrew and the BSB make it a question, “Can it teach?” The plain words follow the Hebrew."
         }
-      ]
+      ],
+      "approved": "309f118b"
     },
     {
       "ch": "Habakkuk 3",
@@ -2250,7 +2348,8 @@
           "v": 16,
           "about": "The end of the verse is hard Hebrew; the plain words follow the KJV’s reading of the invader coming up with his troops."
         }
-      ]
+      ],
+      "approved": "93acb796"
     },
     {
       "ch": "Zephaniah 1",
@@ -2300,7 +2399,8 @@
           "v": 12,
           "about": "“Settled on their lees” pictures wine left on its dregs so long it thickens: people who are lazy and careless about God. The plain words keep the picture."
         }
-      ]
+      ],
+      "approved": "a192438d"
     },
     {
       "ch": "Zephaniah 2",
@@ -2348,7 +2448,8 @@
           "v": 14,
           "about": "The birds are unsure in the Hebrew (the BSB has ‘the desert owl and screech owl’). As in approved Isaiah 34:11, the plain words keep the KJV’s cormorant and bittern and add “(wild birds).” “Upper lintels” are the tops of pillars (BSB ‘atop her pillars’)."
         }
-      ]
+      ],
+      "approved": "f0985e2d"
     },
     {
       "ch": "Zephaniah 3",
@@ -2405,7 +2506,10 @@
           "v": 18,
           "about": "Hard Hebrew. The plain words stay near the KJV; the BSB reads ‘I will gather those among you who grieve over the appointed feasts, so that you will no longer suffer reproach.’"
         }
-      ]
+      ],
+      "approved": "b8c26090"
     }
-  ]
+  ],
+  "approved": "0765e592",
+  "wordsApproved": "d87c659a"
 }

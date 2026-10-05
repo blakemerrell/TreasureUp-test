@@ -344,7 +344,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Education increases your ability to serve the Lord, including as a missionary, and to bless others. The more you learn, the more you can help build God’s kingdom."
             }
-          ]
+          ],
+          "approved": "6e4ea227"
         },
         {
           "id": "fsy11-scriptures",
@@ -409,7 +410,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Psalm 119:105 calls God’s word a lamp and a light. Like a flashlight on a dark trail, the scriptures show you the next step to take."
             }
-          ]
+          ],
+          "approved": "69ee21cf"
         },
         {
           "id": "fsy11-search",
@@ -474,7 +476,8 @@ window.TU_SUNDAY = {
               ],
               "why": "The Lord gives truth line upon line, here a little and there a little, and gives more to those who receive it (2 Nephi 28:30)."
             }
-          ]
+          ],
+          "approved": "97fcdab8"
         },
         {
           "id": "fsy11-integrity",
@@ -539,7 +542,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Let love for God and His children guide your words: no contention, just clarity, meekness and kindness. When you stand up for Christ’s teachings, He stands with you."
             }
-          ]
+          ],
+          "approved": "e37ab977"
         },
         {
           "id": "fsy11-covenant-son",
@@ -604,7 +608,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Chapter 11, “Truth Will Make You Free,” covers learning, integrity and sharing truth, and Captain Moroni shows what standing for truth looks like."
             }
-          ]
+          ],
+          "approved": "eb9e874e"
         }
       ]
     },
@@ -677,7 +682,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Faith in Jesus Christ, His healing power and His promises can give you joy even in hard times, and a fulness of joy awaits in the celestial kingdom."
             }
-          ]
+          ],
+          "approved": "948511fa"
         },
         {
           "id": "fsy12-trust",
@@ -742,7 +748,8 @@ window.TU_SUNDAY = {
               ],
               "why": "2 Corinthians 12:9: the Lord said His grace was sufficient, and His strength is made perfect in weakness. Trusting Him matters more than getting the answer you wanted."
             }
-          ]
+          ],
+          "approved": "55b2b217"
         },
         {
           "id": "fsy12-hope",
@@ -807,7 +814,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Romans 15:4: things were written in the past for our learning, so that through the comfort of the scriptures we might have hope."
             }
-          ]
+          ],
+          "approved": "a757b612"
         },
         {
           "id": "fsy12-covenant-son",
@@ -872,7 +880,8 @@ window.TU_SUNDAY = {
               ],
               "why": "Chapter 12, “Jesus Christ Brings Joy,” teaches that joy comes from following Him, and Joseph and Nephi show what trusting Him looks like."
             }
-          ]
+          ],
+          "approved": "bdf9e5cf"
         }
       ]
     }

@@ -96,7 +96,8 @@
           }
         ]
       }
-    ]
+    ],
+    "approved": "f86ec52d"
   },
   "sayings": [
     {
@@ -108,7 +109,8 @@
         "Jonah, to the sailors",
         "Obadiah, to Edom"
       ],
-      "why": "Amaziah told Amos to go home to Judah. Amos answered that he was a herdman until “the LORD took me as I followed the flock” (Amos 7:15)."
+      "why": "Amaziah told Amos to go home to Judah. Amos answered that he was a herdman until “the LORD took me as I followed the flock” (Amos 7:15).",
+      "approved": "68f7a250"
     },
     {
       "id": "say-o-thou-seer",
@@ -119,7 +121,8 @@
         "Amos, to Amaziah",
         "The king, to Jonah"
       ],
-      "why": "Amaziah, the priest at Beth-el, wanted Amos gone. He called Beth-el “the king’s chapel” (Amos 7:13), and Amos’s warnings weren’t welcome there."
+      "why": "Amaziah, the priest at Beth-el, wanted Amos gone. He called Beth-el “the king’s chapel” (Amos 7:13), and Amos’s warnings weren’t welcome there.",
+      "approved": "1dc0b98c"
     },
     {
       "id": "say-seek-ye-me",
@@ -130,7 +133,8 @@
         "Moses, to the tribes",
         "Jonah, to Nineveh"
       ],
-      "why": "The Lord pleaded with Israel to come to Him. Going to holy places like Beth-el and Gilgal wasn’t enough (verse 5)."
+      "why": "The Lord pleaded with Israel to come to Him. Going to holy places like Beth-el and Gilgal wasn’t enough (verse 5).",
+      "approved": "c1a4acd5"
     },
     {
       "id": "say-o-lord-forgive",
@@ -141,7 +145,8 @@
         "Jonah, praying in the fish",
         "Obadiah, praying for Edom"
       ],
-      "why": "In a vision Amos saw grasshoppers eating up the land. He begged the Lord to spare Israel, and the Lord said, “It shall not be” (Amos 7:3)."
+      "why": "In a vision Amos saw grasshoppers eating up the land. He begged the Lord to spare Israel, and the Lord said, “It shall not be” (Amos 7:3).",
+      "approved": "2b472f7c"
     },
     {
       "id": "say-bring-me-down",
@@ -152,7 +157,8 @@
         "Babylon, on its walls",
         "Nineveh, in its pride"
       ],
-      "why": "Edom lived high in the rocks and felt safe. The Lord answered, “thence will I bring thee down” (Obadiah 1:4)."
+      "why": "Edom lived high in the rocks and felt safe. The Lord answered, “thence will I bring thee down” (Obadiah 1:4).",
+      "approved": "44789481"
     },
     {
       "id": "say-o-sleeper",
@@ -163,7 +169,8 @@
         "Eli, to young Samuel",
         "Jonah, to the sailors"
       ],
-      "why": "The storm was about to break the ship, and Jonah was asleep below. The captain woke him up to pray, “that we perish not.”"
+      "why": "The storm was about to break the ship, and Jonah was asleep below. The captain woke him up to pray, “that we perish not.”",
+      "approved": "eb435a91"
     },
     {
       "id": "say-cast-me-forth",
@@ -174,7 +181,8 @@
         "The captain, to his crew",
         "The sailors, to Jonah"
       ],
-      "why": "Jonah knew the storm was his fault: “for my sake this great tempest is upon you.” The sailors tried rowing to land first (verse 13)."
+      "why": "Jonah knew the storm was his fault: “for my sake this great tempest is upon you.” The sailors tried rowing to land first (verse 13).",
+      "approved": "aba699ea"
     },
     {
       "id": "say-who-can-tell",
@@ -185,7 +193,8 @@
         "The sailors, in the storm",
         "Jonah, under the gourd"
       ],
-      "why": "The king ordered everyone to fast and turn from evil. He hoped God would spare them, and He did (Jonah 3:10)."
+      "why": "The king ordered everyone to fast and turn from evil. He hoped God would spare them, and He did (Jonah 3:10).",
+      "approved": "bfff9cc3"
     },
     {
       "id": "say-doest-thou-well",
@@ -196,7 +205,8 @@
         "Jonah, to the king",
         "Amos, to Amaziah"
       ],
-      "why": "Jonah was angry that the Lord spared Nineveh. The Lord answered with a question to help him think about it."
+      "why": "Jonah was angry that the Lord spared Nineveh. The Lord answered with a question to help him think about it.",
+      "approved": "32f61d35"
     }
   ],
   "words": [
@@ -258,7 +268,8 @@
       "why": "Verse 5: “his word ye shall receive, as if from mine own mouth, in all patience and faith.” The Lord speaks through His prophet.",
       "source": "D&C 21:5",
       "find": "as if from mine own mouth",
-      "hunt": "In D&C 21, how does the Lord say the Church should receive the prophet’s word?"
+      "hunt": "In D&C 21, how does the Lord say the Church should receive the prophet’s word?",
+      "approved": "c4f5b0b6"
     },
     {
       "id": "deep48-gate",
@@ -274,7 +285,8 @@
       "why": "Verse 15: “Hate the evil, and love the good, and establish judgment in the gate.” That’s where the poor had been turned aside from their rights (verse 12).",
       "source": "Amos 5:15",
       "find": "establish judgment in the gate",
-      "hunt": "In Amos 5, where does Amos tell the people to establish judgment, or fairness?"
+      "hunt": "In Amos 5, where does Amos tell the people to establish judgment, or fairness?",
+      "approved": "64abcfd7"
     },
     {
       "id": "deep48-enos",
@@ -290,7 +302,8 @@
       "why": "Verse 4: “all the day long did I cry unto him; yea, and when the night came I did still raise my voice.” His hunger was answered (verse 5).",
       "source": "Enos 1:4",
       "find": "all the day long did I cry unto him",
-      "hunt": "In Enos 1, how long did Enos pray?"
+      "hunt": "In Enos 1, how long did Enos pray?",
+      "approved": "867b2a3d"
     },
     {
       "id": "deep48-celestial-room",
@@ -305,7 +318,8 @@
       ],
       "why": "He says that when the Mesa Arizona Temple was opened for tours, a visitor called the celestial room God’s living room. It represents the celestial kingdom.",
       "source": "https://www.churchofjesuschrist.org/study/general-conference/2004/10/closing-remarks?lang=eng",
-      "find": "described the celestial room as God’s living room"
+      "find": "described the celestial room as God’s living room",
+      "approved": "bfab8edc"
     },
     {
       "id": "deep48-sons-of-mosiah",
@@ -321,7 +335,8 @@
       "why": "Verse 3: “they could not bear that any human soul should perish.” Jonah ran from Nineveh. They begged to go.",
       "source": "Mosiah 28:3",
       "find": "they could not bear that any human soul should perish",
-      "hunt": "In Mosiah 28, why did the sons of Mosiah want to preach to the Lamanites?"
+      "hunt": "In Mosiah 28, why did the sons of Mosiah want to preach to the Lamanites?",
+      "approved": "e6005fb5"
     },
     {
       "id": "deep48-kids",
@@ -337,7 +352,8 @@
       ],
       "why": "It suggests whispering a simple message to one child, who shares it with the others. Then you can talk about how that messenger is like a prophet.",
       "source": "lesson",
-      "find": "whisper a simple message to one of them"
+      "find": "whisper a simple message to one of them",
+      "approved": "6c60222d"
     },
     {
       "id": "deep48-small-throats",
@@ -353,7 +369,8 @@
       ],
       "why": "The teacher said whales have small throats. The girl answered that when she got to heaven, she would ask Jonah himself.",
       "source": "https://www.churchofjesuschrist.org/study/general-conference/2025/10/53holland?lang=eng",
-      "find": "because whales have small throats"
+      "find": "because whales have small throats",
+      "approved": "619a07b8"
     }
   ],
   "reels": [
@@ -389,7 +406,8 @@
       },
       "gradient": "linear-gradient(150deg,#1e1b4b 0%,#4338ca 50%,#c7d2fe 115%)",
       "blobA": "rgba(199,210,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "53c05844"
     },
     {
       "id": "amos7-herdman",
@@ -423,7 +441,8 @@
       },
       "gradient": "linear-gradient(150deg,#1a2e05 0%,#4d7c0f 50%,#d9f99d 115%)",
       "blobA": "rgba(217,249,157,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "e5ce0667"
     },
     {
       "id": "amos4-returned",
@@ -458,7 +477,8 @@
       },
       "gradient": "linear-gradient(150deg,#292524 0%,#a16207 50%,#fde68a 115%)",
       "blobA": "rgba(253,230,138,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "fb55bf74"
     },
     {
       "id": "amos5-seek",
@@ -493,7 +513,8 @@
       },
       "gradient": "linear-gradient(160deg,#0f172a 0%,#1e3a8a 55%,#bfdbfe 115%)",
       "blobA": "rgba(191,219,254,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "3d75af2a"
     },
     {
       "id": "amos8-famine",
@@ -534,7 +555,8 @@
       },
       "gradient": "linear-gradient(150deg,#422006 0%,#b45309 50%,#fef3c7 115%)",
       "blobA": "rgba(254,243,199,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "0fd766e6"
     },
     {
       "id": "amos9-sieve",
@@ -568,7 +590,8 @@
       },
       "gradient": "linear-gradient(150deg,#3f2a14 0%,#a16207 50%,#fef9c3 115%)",
       "blobA": "rgba(254,249,195,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "69a7ae03"
     },
     {
       "id": "obad1-saviours",
@@ -609,7 +632,8 @@
       },
       "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
       "blobA": "rgba(224,242,254,.4)",
-      "blobB": "rgba(0,0,0,.4)"
+      "blobB": "rgba(0,0,0,.4)",
+      "approved": "198c05ac"
     },
     {
       "id": "obad1-eagle",
@@ -651,7 +675,8 @@
       },
       "gradient": "linear-gradient(150deg,#450a0a 0%,#b91c1c 50%,#fecaca 115%)",
       "blobA": "rgba(254,202,202,.35)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "2b74f18d"
     },
     {
       "id": "jonah1-flee",
@@ -685,7 +710,8 @@
       },
       "gradient": "linear-gradient(160deg,#020617 0%,#1e3a5f 50%,#94a3b8 115%)",
       "blobA": "rgba(148,163,184,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "3ccf1df1"
     },
     {
       "id": "jonah2-fish",
@@ -719,7 +745,8 @@
       },
       "gradient": "linear-gradient(170deg,#022c22 0%,#0f766e 50%,#99f6e4 115%)",
       "blobA": "rgba(153,246,228,.4)",
-      "blobB": "rgba(0,0,0,.5)"
+      "blobB": "rgba(0,0,0,.5)",
+      "approved": "4b2a0372"
     },
     {
       "id": "jonah3-nineveh",
@@ -753,7 +780,8 @@
       },
       "gradient": "linear-gradient(150deg,#2e1065 0%,#7e22ce 50%,#e9d5ff 115%)",
       "blobA": "rgba(233,213,255,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "60b2674c"
     },
     {
       "id": "jonah4-gourd",
@@ -787,7 +815,8 @@
       },
       "gradient": "linear-gradient(150deg,#14532d 0%,#65a30d 50%,#fef08a 115%)",
       "blobA": "rgba(254,240,138,.4)",
-      "blobB": "rgba(0,0,0,.45)"
+      "blobB": "rgba(0,0,0,.45)",
+      "approved": "e06eabf6"
     }
   ],
   "tldr": [
@@ -808,7 +837,8 @@
           "v": 13,
           "about": "Ammon’s crime (“ripped up the women with child of Gilead”) is summed up gently as “cruelly attacked Gilead.”"
         }
-      ]
+      ],
+      "approved": "f69e3d30"
     },
     {
       "ch": "Amos 2",
@@ -823,7 +853,8 @@
           "v": 7,
           "about": "Verse 7’s sexual sin is folded into “treats the needy cruelly, even while worshipping” (verses 6–8); nothing about it is spelled out."
         }
-      ]
+      ],
+      "approved": "d80629cf"
     },
     {
       "ch": "Amos 3",
@@ -838,7 +869,8 @@
           "v": 9,
           "about": "“Rejects the prophets” comes from the chapter heading; in these verses the charge is violence and robbery, and the rejecting of prophets is in Amos 2:12 and 7:10–13."
         }
-      ]
+      ],
+      "approved": "99c612b2"
     },
     {
       "ch": "Amos 4",
@@ -856,7 +888,8 @@
           "v": 12,
           "about": "Said as “get ready to face the Lord” so the line doesn’t give away the bonus answer (“prepare to meet thy God”)."
         }
-      ]
+      ],
+      "approved": "98f75fbf"
     },
     {
       "ch": "Amos 5",
@@ -865,7 +898,8 @@
         "The Lord says, “Seek ye me, and ye shall live.” Going to Beth-el and Gilgal won’t save them. (verses 4–9)",
         "They hate honest people and cheat the poor. Amos pleads with them to seek good and hate evil so they may live. (verses 10–17)",
         "The day of the Lord will be dark for them. God hates their feasts and false gods and wants justice to flow like a river. (verses 18–27)"
-      ]
+      ],
+      "approved": "4a40dbc7"
     },
     {
       "ch": "Amos 6",
@@ -874,7 +908,8 @@
         "They will be the first taken captive. The Lord will give up their proud city. (verses 7–8)",
         "Death and ruin will fill the houses. Israel has turned justice into poison and boasts of its own strength. (verses 9–13)",
         "The Lord will raise up a nation to trouble Israel from one end of the land to the other. (verse 14)"
-      ]
+      ],
+      "approved": "3ef8ed4f"
     },
     {
       "ch": "Amos 7",
@@ -889,7 +924,8 @@
           "v": 3,
           "about": "The KJV says “the LORD repented”; the line says “holds back,” as the Scripture Helps and the Joseph Smith Translation explain."
         }
-      ]
+      ],
+      "approved": "12426d4d"
     },
     {
       "ch": "Amos 8",
@@ -907,7 +943,8 @@
           "v": 2,
           "about": "“Ripe for its end” follows the Old Testament Student Manual (8-16): summer fruit that must be eaten before it spoils."
         }
-      ]
+      ],
+      "approved": "83998e48"
     },
     {
       "ch": "Amos 9",
@@ -915,7 +952,8 @@
         "Amos sees the Lord at the altar. No one can hide from Him, not in the deepest sea or on the highest mountain. (verses 1–6)",
         "The Lord will sift Israel among all nations like grain in a sieve, but not one good grain will be lost. (verses 7–10)",
         "In the last days He will rebuild David’s fallen house and gather Israel to their land, and it will grow plenty of food. (verses 11–15)"
-      ]
+      ],
+      "approved": "e068072b"
     },
     {
       "ch": "Obadiah 1",
@@ -930,7 +968,8 @@
           "v": 21,
           "about": "The line stays with what the verse says; the temple-work meaning latter-day prophets give it is in the reels and the cards."
         }
-      ]
+      ],
+      "approved": "230e0f70"
     },
     {
       "ch": "Jonah 1",
@@ -939,7 +978,8 @@
         "The Lord sends a great storm. The frightened sailors pray to their gods, while Jonah sleeps below. (verses 4–6)",
         "The sailors learn Jonah is running from the Lord. He tells them to throw him into the sea, and the storm stops. (verses 7–16)",
         "The Lord prepares a great fish to swallow Jonah. He is inside it three days and three nights. (verse 17)"
-      ]
+      ],
+      "approved": "95040c9c"
     },
     {
       "ch": "Jonah 2",
@@ -947,7 +987,8 @@
         "From inside the fish, Jonah prays. He was sinking into the deep, but the Lord heard him. (verses 1–6)",
         "Jonah remembers the Lord and His holy temple and promises to keep his vows. Salvation comes from the Lord. (verses 7–9)",
         "The Lord speaks to the fish, and it spits Jonah out onto dry land. (verse 10)"
-      ]
+      ],
+      "approved": "920bb244"
     },
     {
       "ch": "Jonah 3",
@@ -955,7 +996,8 @@
         "The Lord calls Jonah a second time, and this time he goes to Nineveh, a huge city. (verses 1–3)",
         "Jonah warns that in forty days Nineveh will be overthrown. (verse 4)",
         "Everyone, from the king down, believes God, fasts, and turns from evil. God sees it and spares the city. (verses 5–10)"
-      ]
+      ],
+      "approved": "9395f4ed"
     },
     {
       "ch": "Jonah 4",
@@ -963,7 +1005,8 @@
         "Jonah is angry that the Lord showed mercy to Nineveh. He says he ran away because he knew God is gracious and merciful. (verses 1–4)",
         "Jonah waits outside the city. God makes a plant grow to shade him, then sends a worm and a hot wind, and Jonah wants to die. (verses 5–9)",
         "The Lord asks: if Jonah cared about a plant, shouldn’t God care about the 120,000 people of Nineveh? (verses 10–11)"
-      ]
+      ],
+      "approved": "affaf22d"
     }
   ],
   "insights": [
@@ -977,7 +1020,8 @@
         "title": "Amos",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/amos?lang=eng"
       },
-      "find": "native of Tekoa, 12 miles south of Jerusalem"
+      "find": "native of Tekoa, 12 miles south of Jerusalem",
+      "approved": "58b087b8"
     },
     {
       "id": "amos1-three-four",
@@ -989,7 +1033,8 @@
         "title": "Amos: The Lord Reveals His Secrets to His Servants the Prophets",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-8?lang=eng"
       },
-      "find": "A modern English equivalent would be the expression"
+      "find": "A modern English equivalent would be the expression",
+      "approved": "93dbea9c"
     },
     {
       "id": "amos2-surrounded",
@@ -1002,7 +1047,8 @@
         "title": "Amos through Malachi: Major Teachings of the Twelve Prophets",
         "url": "https://rsc.byu.edu/vol-4-no-3-2003/amos-through-malachi-major-teachings-twelve-prophets"
       },
-      "find": "The problem is not that northern Israelites are surrounded by wickedness"
+      "find": "The problem is not that northern Israelites are surrounded by wickedness",
+      "approved": "5eddc6c7"
     },
     {
       "id": "amos3-lion",
@@ -1037,8 +1083,10 @@
           "title": "followHIM: Amos and Obadiah, part 1, with Dr. Ryan C. Davis",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "3f2ace5e"
+      },
+      "approved": "b78c80cf"
     },
     {
       "id": "amos3-jsp-until",
@@ -1051,7 +1099,8 @@
         "title": "Old Testament Revision 2, page 117",
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/124"
       },
-      "find": "vers[e] 7— until— the"
+      "find": "vers[e] 7— until— the",
+      "approved": "e6d9e3a3"
     },
     {
       "id": "amos3-jsp-letter",
@@ -1064,7 +1113,8 @@
         "title": "Letter to Editor, 28 February 1843",
         "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-editor-28-february-1843/1"
       },
-      "find": "for the Lord hath not shown me any such sign, and, as the prophet saith, so it must be"
+      "find": "for the Lord hath not shown me any such sign, and, as the prophet saith, so it must be",
+      "approved": "dc713c36"
     },
     {
       "id": "amos3-jsp-conference",
@@ -1077,7 +1127,8 @@
         "title": "Discourse, 6 April 1843–B, as Reported by Willard Richards",
         "url": "https://www.josephsmithpapers.org/paper-summary/discourse-6-april-1843-b-as-reported-by-willard-richards/12"
       },
-      "find": "it is not the design of the Almighty to come upon the Earth & crush it, & grind it to powder"
+      "find": "it is not the design of the Almighty to come upon the Earth & crush it, & grind it to powder",
+      "approved": "8e6a3299"
     },
     {
       "id": "amos3-q-soares",
@@ -1090,7 +1141,8 @@
         "who": "Elder Ulisses Soares",
         "title": "Prophets Speak by the Power of the Holy Spirit",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/prophets-speak-by-the-power-of-the-holy-spirit?lang=eng"
-      }
+      },
+      "approved": "aa6639dc"
     },
     {
       "id": "amos5-righteous",
@@ -1102,7 +1154,8 @@
         "title": "Amos",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/amos?lang=eng"
       },
-      "find": "the offering the Lord most cares for is a righteous life"
+      "find": "the offering the Lord most cares for is a righteous life",
+      "approved": "21c06d81"
     },
     {
       "id": "amos5-stream",
@@ -1128,8 +1181,10 @@
           "If you are one of these wadis where you know, oh, it’ll be there when the times are right and when the conditions are favorable",
           "We’re not fair-weather disciples we’re there all the time no matter what.",
           "a vending machine is the greatest example of what a transactional relationship looks like"
-        ]
-      }
+        ],
+        "approved": "6512165d"
+      },
+      "approved": "db41b75c"
     },
     {
       "id": "amos7-intercede",
@@ -1142,7 +1197,8 @@
         "title": "“O Lord God, Forgive!” Prophetic Intercession in Amos",
         "url": "https://rsc.byu.edu/prophets-prophecies-old-testament/o-lord-god-forgive"
       },
-      "find": "One important way the prophets act as emissaries to God is by engaging in intercession"
+      "find": "One important way the prophets act as emissaries to God is by engaging in intercession",
+      "approved": "0b64e942"
     },
     {
       "id": "amos7-jsp-jacob",
@@ -1155,7 +1211,8 @@
         "title": "Old Testament Revision 2, page 117",
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/124"
       },
-      "find": "Jacob shall repent for this, therefore I will not utterly distroy him, saith the Lord."
+      "find": "Jacob shall repent for this, therefore I will not utterly distroy him, saith the Lord.",
+      "approved": "e35a57b4"
     },
     {
       "id": "amos7-plumbline",
@@ -1167,7 +1224,8 @@
         "title": "Amos; Obadiah; Jonah",
         "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/46-amos-obadiah-jonah?lang=eng"
       },
-      "find": "This tool was used by builders to ensure that walls were exactly straight vertically"
+      "find": "This tool was used by builders to ensure that walls were exactly straight vertically",
+      "approved": "6159c8b4"
     },
     {
       "id": "amos8-hunter",
@@ -1180,7 +1238,8 @@
         "title": "Spiritual Famine",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/1972/10/spiritual-famine?lang=eng"
       },
-      "find": "One of the most striking prophecies of the Old Testament, which certainly characterizes our day"
+      "find": "One of the most striking prophecies of the Old Testament, which certainly characterizes our day",
+      "approved": "59aa7c23"
     },
     {
       "id": "amos8-q-kimball",
@@ -1193,7 +1252,8 @@
         "who": "Elder Spencer W. Kimball",
         "title": "Amos: The Lord Reveals His Secrets to His Servants the Prophets",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-8?lang=eng"
-      }
+      },
+      "approved": "3bf586b8"
     },
     {
       "id": "obad1-servant",
@@ -1205,7 +1265,8 @@
         "title": "Obadiah",
         "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/obadiah?lang=eng"
       },
-      "find": "Nothing is known of his personal history"
+      "find": "Nothing is known of his personal history",
+      "approved": "a6445376"
     },
     {
       "id": "obad1-rasmussen",
@@ -1218,7 +1279,8 @@
         "title": "Zephaniah, Obadiah, and Micah: Prophets During Times of Crises",
         "url": "https://scripturecentral.org/archive/periodicals/magazine-article/zephaniah-obadiah-and-micah-prophets-during-times-crises"
       },
-      "find": "Obadiah chastised Judah's cousin-peoples in the rock clefts of Edom"
+      "find": "Obadiah chastised Judah's cousin-peoples in the rock clefts of Edom",
+      "approved": "e58e9187"
     },
     {
       "id": "obad1-vandyke",
@@ -1231,7 +1293,8 @@
         "title": "Amos through Malachi: Major Teachings of the Twelve Prophets",
         "url": "https://rsc.byu.edu/vol-4-no-3-2003/amos-through-malachi-major-teachings-twelve-prophets"
       },
-      "find": "there will be one special place of refuge: the temple"
+      "find": "there will be one special place of refuge: the temple",
+      "approved": "994855ff"
     },
     {
       "id": "obad1-pike",
@@ -1244,7 +1307,8 @@
         "title": "Obadiah 1:21: Context, Text, Interpretation, and Application",
         "url": "https://rsc.byu.edu/prophets-prophecies-old-testament/obadiah-121"
       },
-      "find": "come together in a sermon by Joseph Smith on 16 May 1841"
+      "find": "come together in a sermon by Joseph Smith on 16 May 1841",
+      "approved": "3b12ced2"
     },
     {
       "id": "obad1-deliverers",
@@ -1270,8 +1334,10 @@
           "Where God is that’s where rescue happens.",
           "a savior in this sense, a deliverer, someone that rescues others from captivity is one that has the Spirit of the Lord come upon them",
           "Our mission to rescue scattered Israel on both sides of the veil is the same mission that both Amos has been talking about"
-        ]
-      }
+        ],
+        "approved": "712e3d14"
+      },
+      "approved": "4983a632"
     },
     {
       "id": "obad1-jsp-1844",
@@ -1285,7 +1351,8 @@
         "url": "https://www.josephsmithpapers.org/paper-summary/discourse-21-january-1844/2"
       },
       "find": "how are they to become Saviors on Mount Zion by building their temples erecting their Baptismal fonts",
-      "note": "Joseph Smith, 21 January 1844: the Saints become saviors on mount Zion “by building their temples erecting their Baptismal fonts” and receiving the ordinances for their dead."
+      "note": "Joseph Smith, 21 January 1844: the Saints become saviors on mount Zion “by building their temples erecting their Baptismal fonts” and receiving the ordinances for their dead.",
+      "approved": "fea5fd78"
     },
     {
       "id": "obad1-q-hinckley",
@@ -1298,7 +1365,8 @@
         "who": "President Gordon B. Hinckley",
         "title": "Closing Remarks",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2004/10/closing-remarks?lang=eng"
-      }
+      },
+      "approved": "82683779"
     },
     {
       "id": "jonah1-tarshish",
@@ -1310,7 +1378,8 @@
         "title": "Amos; Obadiah; Jonah",
         "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/46-amos-obadiah-jonah?lang=eng"
       },
-      "find": "By attempting to flee to Tarshish, Jonah was trying to get as far away as he could from where the Lord had called him to go"
+      "find": "By attempting to flee to Tarshish, Jonah was trying to get as far away as he could from where the Lord had called him to go",
+      "approved": "9c663cfb"
     },
     {
       "id": "jonah1-sailors",
@@ -1322,7 +1391,8 @@
         "title": "Jonah: One Should Not Flee from His Responsibilities",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-9?lang=eng"
       },
-      "find": "The men did not accept Jonah’s offer until they had made every effort to save themselves in other ways"
+      "find": "The men did not accept Jonah’s offer until they had made every effort to save themselves in other ways",
+      "approved": "3aa4db86"
     },
     {
       "id": "jonah1-parry",
@@ -1335,7 +1405,8 @@
         "title": "The Sign of Jonah: Pointing to Christ’s Death",
         "url": "https://scripturecentral.org/archive/books/book-chapter/sign-jonah-pointing-christs-death"
       },
-      "find": "This parallels the occurrence when Jesus slept in the ship during a great storm"
+      "find": "This parallels the occurrence when Jesus slept in the ship during a great storm",
+      "approved": "8b8184cf"
     },
     {
       "id": "jonah1-dove",
@@ -1347,7 +1418,8 @@
         "title": "What Is the Sign of Jonah?",
         "url": "https://scripturecentral.org/knowhy/what-is-the-sign-of-jonah"
       },
-      "find": "offered himself for sacrifice in an effort to save the lives of the sailors"
+      "find": "offered himself for sacrifice in an effort to save the lives of the sailors",
+      "approved": "6a1d15a0"
     },
     {
       "id": "jonah1-v-followhim",
@@ -1362,7 +1434,8 @@
         "title": "Jonah, Micah Part 1 • Dr. Joshua Sears • Nov. 21 - 27 • Come Follow Me",
         "channel": "followHIM Podcast",
         "previewed": false
-      }
+      },
+      "approved": "c5527fd7"
     },
     {
       "id": "jonah2-jared",
@@ -1374,7 +1447,8 @@
         "title": "How Were Jonah and the Brother of Jared Able to Find Comfort?",
         "url": "https://scripturecentral.org/knowhy/how-were-jonah-and-the-brother-of-jared-able-to-find-comfort"
       },
-      "find": "The first verse of this prayer is remarkably similar to Jonah 2"
+      "find": "The first verse of this prayer is remarkably similar to Jonah 2",
+      "approved": "8ce46987"
     },
     {
       "id": "jonah2-hesed",
@@ -1409,8 +1483,10 @@
           "title": "followHIM: Jonah and Micah, part 1, with Dr. Joshua Sears",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "efea00c0"
+      },
+      "approved": "b0cc49fc"
     },
     {
       "id": "jonah2-own-mercy",
@@ -1423,7 +1499,8 @@
         "title": "Forsake Not Your Own Mercy",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/10/53holland?lang=eng"
       },
-      "find": "meaning it is perfectly suited to you"
+      "find": "meaning it is perfectly suited to you",
+      "approved": "e5b366bf"
     },
     {
       "id": "jonah3-q-faust",
@@ -1436,7 +1513,8 @@
         "who": "President James E. Faust",
         "title": "Lesson 153: Jonah",
         "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-teacher-material-2018/jonah/lesson-153?lang=eng"
-      }
+      },
+      "approved": "86f1588d"
     },
     {
       "id": "jonah3-uceda",
@@ -1449,7 +1527,8 @@
         "title": "Jonah and the Second Chance",
         "url": "https://www.churchofjesuschrist.org/study/ensign/2002/09/jonah-and-the-second-chance?lang=eng"
       },
-      "find": "the test of life is a multipart exam"
+      "find": "the test of life is a multipart exam",
+      "approved": "a966a858"
     },
     {
       "id": "jonah3-jsp",
@@ -1462,7 +1541,8 @@
         "title": "Old Testament Revision 2, page 118",
         "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/125"
       },
-      "find": "verse 9 Who can tell, if we will repent and turn unto God, but he will turn away from us his fierce anger, that we perish not?"
+      "find": "verse 9 Who can tell, if we will repent and turn unto God, but he will turn away from us his fierce anger, that we perish not?",
+      "approved": "99e8bfb0"
     },
     {
       "id": "jonah4-question",
@@ -1496,8 +1576,10 @@
           "title": "followHIM: Jonah and Micah, part 1, with Dr. Joshua Sears",
           "channel": "followHIM Podcast",
           "previewed": false
-        }
-      }
+        },
+        "approved": "5c5c2730"
+      },
+      "approved": "989aeb37"
     },
     {
       "id": "jonah4-cattle",
@@ -1510,7 +1592,8 @@
         "title": "Amos through Malachi: Major Teachings of the Twelve Prophets",
         "url": "https://rsc.byu.edu/vol-4-no-3-2003/amos-through-malachi-major-teachings-twelve-prophets"
       },
-      "find": "Jonah had underestimated the love and mercy that God has for all His children"
+      "find": "Jonah had underestimated the love and mercy that God has for all His children",
+      "approved": "961ee3ad"
     },
     {
       "id": "jonah4-q-uchtdorf",
@@ -1523,7 +1606,8 @@
         "who": "President Dieter F. Uchtdorf",
         "title": "The Merciful Obtain Mercy",
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2012/04/the-merciful-obtain-mercy?lang=eng"
-      }
+      },
+      "approved": "56258852"
     }
   ],
   "plain": [
@@ -1560,7 +1644,8 @@
           "v": 13,
           "about": "A hard verse: the Ammonites ripping open pregnant women in war. The plain words say it no more plainly than the KJV."
         }
-      ]
+      ],
+      "approved": "f8b96358"
     },
     {
       "ch": "Amos 2",
@@ -1613,7 +1698,8 @@
           "v": 13,
           "about": "Hard Hebrew. The plain words follow the KJV (the Lord weighed down under them), and the note gives the BSB’s reading (the Lord crushing them)."
         }
-      ]
+      ],
+      "approved": "180d7805"
     },
     {
       "ch": "Amos 3",
@@ -1665,7 +1751,8 @@
           "v": 12,
           "about": "A choice between readings: the KJV has “in Damascus in a couch”; the BSB and most modern translations read the word as part of the couch. The plain words follow the BSB, with a note. Your call."
         }
-      ]
+      ],
+      "approved": "e0b94c7d"
     },
     {
       "ch": "Amos 4",
@@ -1711,7 +1798,8 @@
           "v": 13,
           "about": "Whose thoughts? The Hebrew says “what is his thought”; the KJV leaves it open, and the BSB reads it as God’s (‘reveals His thoughts to man’). The plain words keep it open, as the KJV does."
         }
-      ]
+      ],
+      "approved": "4cb634a8"
     },
     {
       "ch": "Amos 5",
@@ -1783,7 +1871,8 @@
           "v": 26,
           "about": "Hard Hebrew. The plain words keep the KJV’s Moloch and Chiun, with a note. Stephen’s quotation (Acts 7:43) says “beyond Babylon” where Amos says “beyond Damascus” (verse 27); no note on that."
         }
-      ]
+      ],
+      "approved": "48f9355d"
     },
     {
       "ch": "Amos 6",
@@ -1826,7 +1915,8 @@
           "v": 14,
           "about": "“In the north” and “in the south” are added to say where Hemath and the river of the wilderness are: Israel’s northern and southern borders."
         }
-      ]
+      ],
+      "approved": "e44ed621"
     },
     {
       "ch": "Amos 7",
@@ -1876,7 +1966,8 @@
           "v": 17,
           "about": "“Harlot” is kept, as in the KJV (BSB ‘prostitute’), as Isaiah 1:21 decided. The verse is Amaziah’s punishment when the city is captured."
         }
-      ]
+      ],
+      "approved": "c2551fdd"
     },
     {
       "ch": "Amos 8",
@@ -1919,7 +2010,8 @@
           "v": 14,
           "about": "“The sin of Samaria” is probably an idol, and Dan had one of Jeroboam’s golden calves (1 Kings 12:29). The plain words don’t explain either."
         }
-      ]
+      ],
+      "approved": "73fa87ba"
     },
     {
       "ch": "Amos 9",
@@ -1975,7 +2067,8 @@
           "v": 12,
           "about": "“Heathen” is “nations”; James quotes the verse with “Gentiles” (Acts 15:17)."
         }
-      ]
+      ],
+      "approved": "7aadfa2c"
     },
     {
       "ch": "Obadiah 1",
@@ -2025,7 +2118,8 @@
           "v": 21,
           "about": "“Saviours … on mount Zion”: Latter-day Saints often apply this to temple work for the dead, and the Church’s footnote points to D&C 103:9–10 and the Topical Guide’s Salvation for the Dead. There is no note, since the README’s note kinds don’t cover it. Decide if you want one."
         }
-      ]
+      ],
+      "approved": "2611a873"
     },
     {
       "ch": "Jonah 1",
@@ -2071,7 +2165,8 @@
           "v": 17,
           "about": "The Hebrew numbers this verse Jonah 2:1, and Jonah 2:1–10 as 2:2–11. The plain words follow the KJV’s numbering, one line per KJV verse."
         }
-      ]
+      ],
+      "approved": "8025c1a9"
     },
     {
       "ch": "Jonah 2",
@@ -2110,7 +2205,8 @@
           "v": 8,
           "about": "The plain words keep the KJV’s “their own mercy,” and the note gives the BSB’s reading."
         }
-      ]
+      ],
+      "approved": "5e3eefce"
     },
     {
       "ch": "Jonah 3",
@@ -2149,7 +2245,8 @@
           "v": 9,
           "about": "Where the KJV says God may “repent” (verses 9–10), the Hebrew means relent. The plain words say God may “show mercy” (verse 9) and “turned away the disaster” (verse 10), as Jeremiah 18:8 does; the notes give the Joseph Smith Translation, where the people repent. Your call on “show mercy.”"
         }
-      ]
+      ],
+      "approved": "616da1b7"
     },
     {
       "ch": "Jonah 4",
@@ -2189,7 +2286,10 @@
           "v": 11,
           "about": "“Sixscore thousand” is 120,000. “Spare” and “had pity” (verse 10) are the same Hebrew word, so the plain words say “have pity” in both."
         }
-      ]
+      ],
+      "approved": "4a6ce9fd"
     }
-  ]
+  ],
+  "approved": "d6e16f2c",
+  "wordsApproved": "1c42aff1"
 }

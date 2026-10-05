@@ -7565,7 +7565,8 @@ window.TU_WEEKS = [
             }
           ]
         }
-      ]
+      ],
+      "approved": "a2b7abe2"
     },
     "sayings": [
       {
@@ -7577,7 +7578,8 @@ window.TU_WEEKS = [
           "Jacob, to Rachel",
           "Ruth, to Naomi"
         ],
-        "why": "The Lord spoke these words to His scattered people. His love for them hadn’t ended, and it never would."
+        "why": "The Lord spoke these words to His scattered people. His love for them hadn’t ended, and it never would.",
+        "approved": "6e9c9d5f"
       },
       {
         "id": "say-too-hard",
@@ -7588,7 +7590,8 @@ window.TU_WEEKS = [
           "Jeremiah, to the Lord",
           "Gabriel, to Mary"
         ],
-        "why": "Jeremiah had just prayed, “there is nothing too hard for thee” (Jeremiah 32:17). The Lord answered with the same truth, asked as a question."
+        "why": "Jeremiah had just prayed, “there is nothing too hard for thee” (Jeremiah 32:17). The Lord answered with the same truth, asked as a question.",
+        "approved": "6cacf0ce"
       },
       {
         "id": "say-wrote-with-ink",
@@ -7599,7 +7602,8 @@ window.TU_WEEKS = [
           "Jeremiah, to the king",
           "Moses, to Israel"
         ],
-        "why": "The princes asked how the words had been written. Baruch said Jeremiah spoke them aloud, and he wrote them down with ink."
+        "why": "The princes asked how the words had been written. Baruch said Jeremiah spoke them aloud, and he wrote them down with ink.",
+        "approved": "e034ee91"
       },
       {
         "id": "say-go-hide",
@@ -7610,7 +7614,8 @@ window.TU_WEEKS = [
           "The king, to his guards",
           "Jeremiah, to Baruch"
         ],
-        "why": "The princes knew the king would be furious about the scroll. When he sent men to arrest them, “the LORD hid them” (Jeremiah 36:26)."
+        "why": "The princes knew the king would be furious about the scroll. When he sent men to arrest them, “the LORD hid them” (Jeremiah 36:26).",
+        "approved": "5d15bbe3"
       },
       {
         "id": "say-not-the-welfare",
@@ -7621,7 +7626,8 @@ window.TU_WEEKS = [
           "King Ahab, about Elijah",
           "Laman, about Nephi"
         ],
-        "why": "The princes wanted Jeremiah dead for telling people to surrender. In truth he was trying to save their lives (Jeremiah 38:2)."
+        "why": "The princes wanted Jeremiah dead for telling people to surrender. In truth he was trying to save their lives (Jeremiah 38:2).",
+        "approved": "1155af58"
       },
       {
         "id": "say-in-your-hand",
@@ -7632,7 +7638,8 @@ window.TU_WEEKS = [
           "Pilate, to the crowd",
           "King Darius, to his princes"
         ],
-        "why": "Instead of protecting the Lord’s prophet, Zedekiah let the princes do whatever they wanted with him."
+        "why": "Instead of protecting the Lord’s prophet, Zedekiah let the princes do whatever they wanted with him.",
+        "approved": "4708f3ef"
       },
       {
         "id": "say-done-evil",
@@ -7643,7 +7650,8 @@ window.TU_WEEKS = [
           "Baruch, to the king",
           "Nathan, to King David"
         ],
-        "why": "Ebed-melech wasn’t a prince or a prophet. He was an official from another land, yet he told the king plainly that what the princes did was wrong."
+        "why": "Ebed-melech wasn’t a prince or a prophet. He was an official from another land, yet he told the king plainly that what the princes did was wrong.",
+        "approved": "7c45e547"
       },
       {
         "id": "say-hide-nothing",
@@ -7654,7 +7662,8 @@ window.TU_WEEKS = [
           "Eli, to young Samuel",
           "King Saul, to Samuel"
         ],
-        "why": "Zedekiah wanted the truth in secret. Jeremiah gave it, but first asked, “wilt thou not hearken unto me?” (Jeremiah 38:15)."
+        "why": "Zedekiah wanted the truth in secret. Jeremiah gave it, but first asked, “wilt thou not hearken unto me?” (Jeremiah 38:15).",
+        "approved": "453ec343"
       },
       {
         "id": "say-look-well",
@@ -7665,7 +7674,8 @@ window.TU_WEEKS = [
           "King Zedekiah, about Jeremiah",
           "Pharaoh, about Joseph"
         ],
-        "why": "The prophet his own king had locked up was protected by the enemy. The king of Babylon gave orders to care for Jeremiah (Jeremiah 39:11)."
+        "why": "The prophet his own king had locked up was protected by the enemy. The king of Babylon gave orders to care for Jeremiah (Jeremiah 39:11).",
+        "approved": "6af85d9f"
       },
       {
         "id": "say-is-it-nothing",
@@ -7676,7 +7686,8 @@ window.TU_WEEKS = [
           "Job, to his friends",
           "Naomi, in Bethlehem"
         ],
-        "why": "In Lamentations 1, the ruined city itself speaks, like a person crying out to everyone walking past."
+        "why": "In Lamentations 1, the ruined city itself speaks, like a person crying out to everyone walking past.",
+        "approved": "6f21accb"
       }
     ],
     "words": [
@@ -7738,7 +7749,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 17: “there is hope in thine end, saith the LORD, that thy children shall come again to their own border.” Her weeping would end.",
         "source": "Jeremiah 31:17",
-        "find": "thy children shall come again to their own border"
+        "find": "thy children shall come again to their own border",
+        "approved": "930542b0"
       },
       {
         "id": "deep44-husband",
@@ -7754,7 +7766,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 32: “which my covenant they brake, although I was an husband unto them.” He had been faithful to them, like a loving husband.",
         "source": "Jeremiah 31:32",
-        "find": "although I was an husband unto them"
+        "find": "although I was an husband unto them",
+        "approved": "fd418bdc"
       },
       {
         "id": "deep44-no-throne",
@@ -7770,7 +7783,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 30: “He shall have none to sit upon the throne of David.” Burning God’s word didn’t save his kingdom.",
         "source": "Jeremiah 36:30",
-        "find": "He shall have none to sit upon the throne of David"
+        "find": "He shall have none to sit upon the throne of David",
+        "approved": "c83d50ad"
       },
       {
         "id": "deep44-lehi-obeyed",
@@ -7786,7 +7800,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 3: “he was obedient unto the word of the Lord, wherefore he did as the Lord commanded him.” Zedekiah heard the Lord’s word too, but didn’t obey.",
         "source": "1 Nephi 2:3",
-        "find": "he was obedient unto the word of the Lord"
+        "find": "he was obedient unto the word of the Lord",
+        "approved": "fdf185ae"
       },
       {
         "id": "deep44-trust",
@@ -7802,7 +7817,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 18: “I will surely deliver thee… because thou hast put thy trust in me.” His courage came from trusting the Lord.",
         "source": "Jeremiah 39:18",
-        "find": "because thou hast put thy trust in me"
+        "find": "because thou hast put thy trust in me",
+        "approved": "eb160a99"
       },
       {
         "id": "deep44-not-willingly",
@@ -7818,7 +7834,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 33: “he doth not afflict willingly nor grieve the children of men.” Even His correction comes with “compassion” (verse 32).",
         "source": "Lamentations 3:33",
-        "find": "he doth not afflict willingly"
+        "find": "he doth not afflict willingly",
+        "approved": "3f31ce9d"
       },
       {
         "id": "deep44-kids",
@@ -7834,7 +7851,8 @@ window.TU_WEEKS = [
         ],
         "why": "It suggests comparing a metal coin, which lasts, with a piece of fruit, which doesn’t, and then talking about what everlasting means.",
         "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/44?lang=eng",
-        "find": "such as a metal coin"
+        "find": "such as a metal coin",
+        "approved": "eb1ed92d"
       },
       {
         "id": "deep44-ballard",
@@ -7850,7 +7868,8 @@ window.TU_WEEKS = [
         ],
         "why": "He says the three hold up our lives together. Each one matters, and none of them is complete without the other two.",
         "source": "https://www.churchofjesuschrist.org/study/general-conference/1992/10/the-joy-of-hope-fulfilled?lang=eng",
-        "find": "like the legs of a three-legged stool"
+        "find": "like the legs of a three-legged stool",
+        "approved": "fcb1988d"
       }
     ],
     "reels": [
@@ -7894,7 +7913,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#4c1d95 0%,#c026d3 50%,#fde68a 115%)",
         "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "eefbee45"
       },
       {
         "id": "jer32-field",
@@ -7929,7 +7949,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fef08a 115%)",
         "blobA": "rgba(254,240,138,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "bbba73e9"
       },
       {
         "id": "jer33-branch",
@@ -7963,7 +7984,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#14532d 0%,#4d7c0f 50%,#d9f99d 115%)",
         "blobA": "rgba(217,249,157,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "e0eae842"
       },
       {
         "id": "jer31-new-covenant",
@@ -7996,7 +8018,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#7f1d1d 0%,#be123c 50%,#fecdd3 115%)",
         "blobA": "rgba(254,205,211,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "aa727a33"
       },
       {
         "id": "jer32-everlasting",
@@ -8030,7 +8053,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#1e3a8a 0%,#2563eb 50%,#bfdbfe 115%)",
         "blobA": "rgba(191,219,254,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "c75460ff"
       },
       {
         "id": "jer36-scroll",
@@ -8063,7 +8087,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#3b2410 0%,#92400e 50%,#fed7aa 115%)",
         "blobA": "rgba(254,215,170,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "5168e1bf"
       },
       {
         "id": "jer36-penknife",
@@ -8097,7 +8122,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(155deg,#1c0a00 0%,#9a3412 50%,#fb923c 115%)",
         "blobA": "rgba(251,146,60,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "8840d7c5"
       },
       {
         "id": "jer37-secretly",
@@ -8132,7 +8158,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#0f172a 0%,#334155 50%,#cbd5e1 115%)",
         "blobA": "rgba(203,213,225,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "89dfde62"
       },
       {
         "id": "jer38-obey",
@@ -8166,7 +8193,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#1e1b4b 0%,#4338ca 50%,#c7d2fe 115%)",
         "blobA": "rgba(199,210,254,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "24d7fe0d"
       },
       {
         "id": "jer38-ebed-melech",
@@ -8222,7 +8250,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#292524 0%,#57534e 50%,#d6d3d1 115%)",
         "blobA": "rgba(214,211,209,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "42aacf09"
       },
       {
         "id": "lam1-widow",
@@ -8263,7 +8292,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(155deg,#1c0a00 0%,#78350f 50%,#fbbf24 115%)",
         "blobA": "rgba(251,191,36,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "c00937d3"
       },
       {
         "id": "lam3-new-every-morning",
@@ -8305,7 +8335,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#7c2d12 0%,#f97316 50%,#fde68a 115%)",
         "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.35)"
+        "blobB": "rgba(0,0,0,.35)",
+        "approved": "c7fec794"
       }
     ],
     "tldr": [
@@ -8326,7 +8357,8 @@ window.TU_WEEKS = [
             "v": 15,
             "about": "Rachel’s weeping is left as the verses give it; the Scripture Helps explain she stands for the northern tribes taken by Assyria. The Go-deeper answer (verse 17) is kept out of the line."
           }
-        ]
+        ],
+        "approved": "274be31b"
       },
       {
         "ch": "Jeremiah 32",
@@ -8345,7 +8377,8 @@ window.TU_WEEKS = [
             "v": 39,
             "about": "The bonus answer (one heart and one way) is left out of the last line on purpose."
           }
-        ]
+        ],
+        "approved": "8a29ec5e"
       },
       {
         "ch": "Jeremiah 33",
@@ -8364,7 +8397,8 @@ window.TU_WEEKS = [
             "v": 15,
             "about": "Branch = the Messiah, Jesus Christ, from the heading and the Scripture Helps."
           }
-        ]
+        ],
+        "approved": "57b16ee5"
       },
       {
         "ch": "Jeremiah 36",
@@ -8379,7 +8413,8 @@ window.TU_WEEKS = [
             "v": 30,
             "about": "The judgment on Jehoiakim is kept general; what he won’t have (verse 30) is the Go-deeper question."
           }
-        ]
+        ],
+        "approved": "fd34eb6f"
       },
       {
         "ch": "Jeremiah 37",
@@ -8394,7 +8429,8 @@ window.TU_WEEKS = [
             "v": 21,
             "about": "The daily bread is left out of the last line; it is a bonus answer."
           }
-        ]
+        ],
+        "approved": "293e61aa"
       },
       {
         "ch": "Jeremiah 38",
@@ -8403,7 +8439,8 @@ window.TU_WEEKS = [
           "Ebed-melech, an Ethiopian servant, pleads with the king. Using old rags and ropes, he pulls Jeremiah out, and Jeremiah stays in the prison court. (verses 7–13)",
           "Zedekiah secretly asks Jeremiah about the war. If the king surrenders to Babylon, he and the city will live; if not, the city will burn. (verses 14–23)",
           "The king tells Jeremiah to keep their talk secret from the princes. Jeremiah stays in the prison court until Jerusalem is taken. (verses 24–28)"
-        ]
+        ],
+        "approved": "295fcfd8"
       },
       {
         "ch": "Jeremiah 39",
@@ -8422,7 +8459,8 @@ window.TU_WEEKS = [
             "v": 18,
             "about": "Why Ebed-melech is saved (verse 18) is the Go-deeper answer, so the line only says he will be kept safe."
           }
-        ]
+        ],
+        "approved": "ab90c2fd"
       },
       {
         "ch": "Lamentations 1",
@@ -8437,7 +8475,8 @@ window.TU_WEEKS = [
             "v": 10,
             "about": "“Enemies have entered her temple” is the KJV’s “the heathen entered into her sanctuary.”"
           }
-        ]
+        ],
+        "approved": "c4827786"
       },
       {
         "ch": "Lamentations 3",
@@ -8456,7 +8495,8 @@ window.TU_WEEKS = [
             "v": 33,
             "about": "The third line uses verse 31; verse 33 is the Go-deeper answer."
           }
-        ]
+        ],
+        "approved": "c42f605b"
       }
     ],
     "insights": [
@@ -8471,7 +8511,8 @@ window.TU_WEEKS = [
           "title": "A Peculiar Treasure",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng"
         },
-        "find": "That pattern includes two simple but powerful conditions: to obey His voice and to keep our covenants with Him"
+        "find": "That pattern includes two simple but powerful conditions: to obey His voice and to keep our covenants with Him",
+        "approved": "0629400a"
       },
       {
         "id": "jer31-hesed",
@@ -8484,7 +8525,8 @@ window.TU_WEEKS = [
           "title": "The Everlasting Covenant",
           "url": "https://www.churchofjesuschrist.org/study/liahona/2022/10/04-the-everlasting-covenant?lang=eng"
         },
-        "find": "Translators of the King James Version of the Bible must have struggled with how to render hesed in English"
+        "find": "Translators of the King James Version of the Bible must have struggled with how to render hesed in English",
+        "approved": "d82e9b82"
       },
       {
         "id": "jer31-pioneers",
@@ -8496,7 +8538,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of a Latter-day Gathering",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "Elder LeGrand Richards saw a parallel between verses 7–14 and the early history"
+        "find": "Elder LeGrand Richards saw a parallel between verses 7–14 and the early history",
+        "approved": "eeac5bcf"
       },
       {
         "id": "jer31-rachels-tomb",
@@ -8529,8 +8572,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Jeremiah and Lamentations, part 2, with Dr. S. Michael Wilcox",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "3055b42a"
+        },
+        "approved": "b6f75556"
       },
       {
         "id": "jer31-sour-grapes",
@@ -8542,7 +8587,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of a Latter-day Gathering",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "Nothing in Exodus 20:5–6 justifies saying that, in a final sense, children are punished for their parents’ sins"
+        "find": "Nothing in Exodus 20:5–6 justifies saying that, in a final sense, children are punished for their parents’ sins",
+        "approved": "5965538e"
       },
       {
         "id": "jer31-sacrament",
@@ -8555,7 +8601,8 @@ window.TU_WEEKS = [
           "title": "Covenants in Biblical Times",
           "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/covenants-biblical-times"
         },
-        "find": "The recurring symbol of renewal in the new covenant is the Sacrament"
+        "find": "The recurring symbol of renewal in the new covenant is the Sacrament",
+        "approved": "f342cce1"
       },
       {
         "id": "jer31-jsp-covenant",
@@ -8569,7 +8616,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-noah-c-saxton-4-january-1833/2"
         },
         "find": "This covenant has never been established with the house of Isreal",
-        "note": "In 1833 Joseph Smith pointed a newspaper editor to these verses: a covenant “requires two parties” who agree, and God would write His laws in His people’s hearts."
+        "note": "In 1833 Joseph Smith pointed a newspaper editor to these verses: a covenant “requires two parties” who agree, and God would write His laws in His people’s hearts.",
+        "approved": "71201b92"
       },
       {
         "id": "jer31-christofferson",
@@ -8582,7 +8630,8 @@ window.TU_WEEKS = [
           "title": "When Thou Art Converted",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2004/04/when-thou-art-converted?lang=eng"
         },
-        "find": "The gospel cannot be written in your heart unless your heart is open"
+        "find": "The gospel cannot be written in your heart unless your heart is open",
+        "approved": "b53023dc"
       },
       {
         "id": "jer31-forgetting",
@@ -8595,7 +8644,8 @@ window.TU_WEEKS = [
           "title": "Old Testament: EPISODE 43 – Jeremiah, Lamentations – Part 2",
           "url": "https://followhim.co/show-note/2-213/"
         },
-        "find": "We worship not only a forgiving God, we worship a forgetting God"
+        "find": "We worship not only a forgiving God, we worship a forgetting God",
+        "approved": "c2ec4dae"
       },
       {
         "id": "jer31-jsp-know",
@@ -8609,7 +8659,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/discourse-between-circa-26-june-and-circa-2-july-1839-as-reported-by-willard-richards/4"
         },
         "find": "know ye the Lord for all shall know him",
-        "note": "In 1839 Joseph Smith taught that a day must come when no one needs to teach a neighbor, “for all shall know him,” through the sealing power and revelation."
+        "note": "In 1839 Joseph Smith taught that a day must come when no one needs to teach a neighbor, “for all shall know him,” through the sealing power and revelation.",
+        "approved": "1b9f5455"
       },
       {
         "id": "jer32-jar",
@@ -8621,7 +8672,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "as proof of his faith in God’s promise"
+        "find": "as proof of his faith in God’s promise",
+        "approved": "3c69fa09"
       },
       {
         "id": "jer32-rising-early",
@@ -8654,8 +8706,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Jeremiah and Lamentations, part 1, with Dr. S. Michael Wilcox",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "ef518731"
+        },
+        "approved": "bf3675f9"
       },
       {
         "id": "jer32-q-nelson",
@@ -8668,7 +8722,8 @@ window.TU_WEEKS = [
           "who": "President Russell M. Nelson",
           "title": "The Everlasting Covenant",
           "url": "https://www.churchofjesuschrist.org/study/liahona/2022/10/04-the-everlasting-covenant?lang=eng"
-        }
+        },
+        "approved": "6acbbde1"
       },
       {
         "id": "jer33-flocks",
@@ -8680,7 +8735,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of a Latter-day Gathering",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "will again be full of people and their bounteous flocks"
+        "find": "will again be full of people and their bounteous flocks",
+        "approved": "c083185b"
       },
       {
         "id": "jer33-justice",
@@ -8693,7 +8749,8 @@ window.TU_WEEKS = [
           "title": "Justice and Righteousness: Jeremiah against King and People",
           "url": "https://rsc.byu.edu/covenant-compassion/justice-righteousness"
         },
-        "find": "In Jeremiah’s teachings, establishing justice and righteousness meant caring for those in need"
+        "find": "In Jeremiah’s teachings, establishing justice and righteousness meant caring for those in need",
+        "approved": "7791afaf"
       },
       {
         "id": "jer36-record",
@@ -8705,7 +8762,8 @@ window.TU_WEEKS = [
           "title": "How Did Jeremiah’s and Lehi’s Ministries Reflect One Another?",
           "url": "https://scripturecentral.org/knowhy/how-did-jeremiahs-and-lehis-ministries-reflect-one-another"
         },
-        "find": "both prophets are explicitly connected with the act of record keeping"
+        "find": "both prophets are explicitly connected with the act of record keeping",
+        "approved": "1ee781a9"
       },
       {
         "id": "jer36-q-benson",
@@ -8718,7 +8776,8 @@ window.TU_WEEKS = [
           "who": "President Ezra Taft Benson",
           "title": "Jeremiah 36: The Word of God",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/43-jeremiah-lamentations/432-jeremiah-36?lang=eng"
-        }
+        },
+        "approved": "1d150d8e"
       },
       {
         "id": "jer36-animosity",
@@ -8731,7 +8790,8 @@ window.TU_WEEKS = [
           "title": "Justice and Righteousness: Jeremiah against King and People",
           "url": "https://rsc.byu.edu/covenant-compassion/justice-righteousness"
         },
-        "find": "This discord was the beginning of great animosity between the two men"
+        "find": "This discord was the beginning of great animosity between the two men",
+        "approved": "1c810a1a"
       },
       {
         "id": "jer37-jsp-dungeon",
@@ -8745,7 +8805,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/121"
         },
         "find": "And Jeremiah was entered into the dungeon, and into the cabbins, and he remained there many days",
-        "note": "Joseph Smith’s Bible manuscript makes this verse its own sentence: Jeremiah was put in the dungeon, “and he remained there many days.” The King James wording leaves it unfinished until verse 17."
+        "note": "Joseph Smith’s Bible manuscript makes this verse its own sentence: Jeremiah was put in the dungeon, “and he remained there many days.” The King James wording leaves it unfinished until verse 17.",
+        "approved": "436a01cd"
       },
       {
         "id": "jer37-where-prophets",
@@ -8757,7 +8818,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "Their word had been proven false, and where were they?"
+        "find": "Their word had been proven false, and where were they?",
+        "approved": "0c899557"
       },
       {
         "id": "jer38-ebed-permission",
@@ -8770,7 +8832,8 @@ window.TU_WEEKS = [
           "title": "The Imprisonment of Jeremiah in Its Historical Context",
           "url": "https://rsc.byu.edu/vol-20-no-3-2019/imprisonment-jeremiah-its-historical-context"
         },
-        "find": "he sought the king’s permission and tried to spur Zedekiah on to action"
+        "find": "he sought the king’s permission and tried to spur Zedekiah on to action",
+        "approved": "9db10da2"
       },
       {
         "id": "jer38-meservy",
@@ -8783,7 +8846,8 @@ window.TU_WEEKS = [
           "title": "Jerusalem at the Time of Lehi and Jeremiah",
           "url": "https://www.churchofjesuschrist.org/study/ensign/1988/01/jerusalem-at-the-time-of-lehi-and-jeremiah?lang=eng"
         },
-        "find": "Zedekiah kept the advice secret for fear of his own people"
+        "find": "Zedekiah kept the advice secret for fear of his own people",
+        "approved": "db21d150"
       },
       {
         "id": "jer38-q-benson",
@@ -8796,7 +8860,8 @@ window.TU_WEEKS = [
           "who": "President Ezra Taft Benson",
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
-        }
+        },
+        "approved": "0590be0f"
       },
       {
         "id": "jer38-mire",
@@ -8809,7 +8874,8 @@ window.TU_WEEKS = [
           "title": "The Imprisonment of Jeremiah in Its Historical Context",
           "url": "https://rsc.byu.edu/vol-20-no-3-2019/imprisonment-jeremiah-its-historical-context"
         },
-        "find": "The imagery seems to mirror Jeremiah’s incarceration in a muddy cistern"
+        "find": "The imagery seems to mirror Jeremiah’s incarceration in a muddy cistern",
+        "approved": "30cc12d0"
       },
       {
         "id": "jer39-two-prophets",
@@ -8843,8 +8909,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Jeremiah and Lamentations, part 2, with Dr. S. Michael Wilcox",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "a3af6acc"
+        },
+        "approved": "cbe1e576"
       },
       {
         "id": "jer39-spared",
@@ -8856,7 +8924,8 @@ window.TU_WEEKS = [
           "title": "How Did Jeremiah’s and Lehi’s Ministries Reflect One Another?",
           "url": "https://scripturecentral.org/knowhy/how-did-jeremiahs-and-lehis-ministries-reflect-one-another"
         },
-        "find": "Jeremiah was commanded to stay in Jerusalem where he would survive the Babylonian assault"
+        "find": "Jeremiah was commanded to stay in Jerusalem where he would survive the Babylonian assault",
+        "approved": "ee622caf"
       },
       {
         "id": "lam1-alas",
@@ -8868,7 +8937,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "It was customary in ancient Judah to compose and sing lamentations about departed friends or relatives"
+        "find": "It was customary in ancient Judah to compose and sing lamentations about departed friends or relatives",
+        "approved": "b5183360"
       },
       {
         "id": "lam1-lovers",
@@ -8880,7 +8950,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "All her “lovers” (the false gods she worshiped) abandoned her to her enemies"
+        "find": "All her “lovers” (the false gods she worshiped) abandoned her to her enemies",
+        "approved": "e6f7809d"
       },
       {
         "id": "lam1-q-cook",
@@ -8893,7 +8964,8 @@ window.TU_WEEKS = [
           "who": "Elder Quentin L. Cook",
           "title": "Lamentations of Jeremiah: Beware of Bondage",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2013/10/lamentations-of-jeremiah-beware-of-bondage?lang=eng"
-        }
+        },
+        "approved": "48faca71"
       },
       {
         "id": "lam1-he-wept",
@@ -8927,8 +8999,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Jeremiah and Lamentations, part 1, with Dr. S. Michael Wilcox",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "f56e9339"
+        },
+        "approved": "9381cc37"
       },
       {
         "id": "lam3-new-mercies",
@@ -8961,8 +9035,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Jeremiah and Lamentations, part 1, with Dr. S. Michael Wilcox",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "6f31108c"
+        },
+        "approved": "616976fa"
       },
       {
         "id": "lam3-q-ballard",
@@ -8975,7 +9051,8 @@ window.TU_WEEKS = [
           "who": "Elder M. Russell Ballard",
           "title": "The Joy of Hope Fulfilled",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/1992/10/the-joy-of-hope-fulfilled?lang=eng"
-        }
+        },
+        "approved": "8fee4bc6"
       },
       {
         "id": "lam3-compassion",
@@ -8987,7 +9064,8 @@ window.TU_WEEKS = [
           "title": "Lamentations 1; 3: “His Compassions Fail Not”",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/43-jeremiah-lamentations/433-lamentations?lang=eng"
         },
-        "find": "The Lord has compassion for us, even when we sin"
+        "find": "The Lord has compassion for us, even when we sin",
+        "approved": "27b3a815"
       },
       {
         "id": "lam3-q-andersen",
@@ -9000,7 +9078,8 @@ window.TU_WEEKS = [
           "who": "Elder Neil L. Andersen",
           "title": "The Triumph of Hope",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/10/12andersen?lang=eng"
-        }
+        },
+        "approved": "f1f9f9c9"
       }
     ],
     "plain": [
@@ -9087,7 +9166,8 @@ window.TU_WEEKS = [
             "v": 31,
             "about": "Verses 31–34, the new covenant, are the heart of the chapter. Check they read the way you want; the note gives Hebrews 8."
           }
-        ]
+        ],
+        "approved": "aef9f5dd"
       },
       {
         "ch": "Jeremiah 32",
@@ -9164,7 +9244,8 @@ window.TU_WEEKS = [
             "v": 24,
             "about": "The KJV’s “mounts” are siege ramps; the plain words say so, with a short gloss."
           }
-        ]
+        ],
+        "approved": "320d2eeb"
       },
       {
         "ch": "Jeremiah 33",
@@ -9231,7 +9312,8 @@ window.TU_WEEKS = [
             "v": 24,
             "about": "The plain words add “(Israel and Judah)” to say who the two families are."
           }
-        ]
+        ],
+        "approved": "707522ab"
       },
       {
         "ch": "Jeremiah 36",
@@ -9288,7 +9370,8 @@ window.TU_WEEKS = [
             "v": 30,
             "about": "“He shall have none to sit upon the throne of David”: his son Jehoiachin did reign three months (2 Kings 24:8), so this is often read as no lasting heir. The plain words keep the Hebrew as it is and add nothing."
           }
-        ]
+        ],
+        "approved": "1961eaa4"
       },
       {
         "ch": "Jeremiah 37",
@@ -9338,7 +9421,8 @@ window.TU_WEEKS = [
             "v": 16,
             "about": "The KJV’s “dungeon” is literally ‘the house of the cistern,’ and its “cabins” are cells. The plain words keep “dungeon” and say “cells.”"
           }
-        ]
+        ],
+        "approved": "10a2b173"
       },
       {
         "ch": "Jeremiah 38",
@@ -9399,7 +9483,8 @@ window.TU_WEEKS = [
             "v": 25,
             "about": "The KJV and the Hebrew have the officials promising “we will not put thee to death”; the BSB reads it as a threat (‘or we will kill you’). The plain words follow the KJV."
           }
-        ]
+        ],
+        "approved": "63834ae6"
       },
       {
         "ch": "Jeremiah 39",
@@ -9446,7 +9531,8 @@ window.TU_WEEKS = [
             "v": 18,
             "about": "The KJV’s “thy life shall be for a prey unto thee” (also Jeremiah 38:2) means he gets away with his life like a prize won in war. The plain words say “escape with your life as your prize.”"
           }
-        ]
+        ],
+        "approved": "a38b704d"
       },
       {
         "ch": "Lamentations 1",
@@ -9497,7 +9583,8 @@ window.TU_WEEKS = [
             "v": 17,
             "about": "The KJV’s “as a menstruous woman”: the plain words say “an unclean thing,” as the BSB does, which is what the picture means."
           }
-        ]
+        ],
+        "approved": "29e13594"
       },
       {
         "ch": "Lamentations 3",
@@ -9604,9 +9691,12 @@ window.TU_WEEKS = [
             "v": 65,
             "about": "The KJV’s “sorrow of heart” is a rare Hebrew word, maybe a covering over the heart (BSB ‘a veil of anguish’). The plain words keep the KJV."
           }
-        ]
+        ],
+        "approved": "cd0ab336"
       }
-    ]
+    ],
+    "approved": "13426348",
+    "wordsApproved": "0f07f32b"
   },
   {
     "dates": "November 2–8, 2026",
@@ -9705,7 +9795,8 @@ window.TU_WEEKS = [
             }
           ]
         }
-      ]
+      ],
+      "approved": "d2f35742"
     },
     "sayings": [
       {
@@ -9717,7 +9808,8 @@ window.TU_WEEKS = [
           "The choir at the temple",
           "The captives by the river"
         ],
-        "why": "As the Spirit lifted Ezekiel up, he heard behind him “a voice of a great rushing” praising the glory of the Lord."
+        "why": "As the Spirit lifted Ezekiel up, he heard behind him “a voice of a great rushing” praising the glory of the Lord.",
+        "approved": "cdcf6ded"
       },
       {
         "id": "say-city-smitten",
@@ -9728,7 +9820,8 @@ window.TU_WEEKS = [
           "A soldier of Babylon",
           "A watchman on the wall"
         ],
-        "why": "In the twelfth year of the captivity, a survivor reached Ezekiel in Babylon with the news. Jerusalem had fallen, just as Ezekiel had warned."
+        "why": "In the twelfth year of the captivity, a survivor reached Ezekiel in Babylon with the news. Jerusalem had fallen, just as Ezekiel had warned.",
+        "approved": "ef30cb87"
       },
       {
         "id": "say-way-not-equal",
@@ -9739,7 +9832,8 @@ window.TU_WEEKS = [
           "Job’s friends, about Job",
           "Jonah, about Nineveh"
         ],
-        "why": "They called the Lord unfair. He answered that their way was the unfair one, and that He will judge “every one after his ways” (Ezekiel 33:20)."
+        "why": "They called the Lord unfair. He answered that their way was the unfair one, and that He will judge “every one after his ways” (Ezekiel 33:20).",
+        "approved": "d656fe77"
       },
       {
         "id": "say-hear-the-word",
@@ -9750,7 +9844,8 @@ window.TU_WEEKS = [
           "Jeremiah, at the temple gate",
           "The priests, to the people"
         ],
-        "why": "People gathered to hear Ezekiel like a lovely song, but the Lord said, “they hear thy words, but they do them not” (Ezekiel 33:32)."
+        "why": "People gathered to hear Ezekiel like a lovely song, but the Lord said, “they hear thy words, but they do them not” (Ezekiel 33:32).",
+        "approved": "57458f7a"
       },
       {
         "id": "say-woe-shepherds",
@@ -9761,7 +9856,8 @@ window.TU_WEEKS = [
           "Moses, to Israel’s elders",
           "Nathan, to King David"
         ],
-        "why": "Israel’s leaders took care of themselves, not the flock. The Lord asked, “should not the shepherds feed the flocks?”"
+        "why": "Israel’s leaders took care of themselves, not the flock. The Lord asked, “should not the shepherds feed the flocks?”",
+        "approved": "24ae4bc4"
       },
       {
         "id": "say-search-my-sheep",
@@ -9772,7 +9868,8 @@ window.TU_WEEKS = [
           "David, about his father’s sheep",
           "Jacob, about Laban’s flock"
         ],
-        "why": "Since Israel’s shepherds wouldn’t, the Lord said He would find His scattered sheep Himself: “I will seek that which was lost” (Ezekiel 34:16)."
+        "why": "Since Israel’s shepherds wouldn’t, the Lord said He would find His scattered sheep Himself: “I will seek that which was lost” (Ezekiel 34:16).",
+        "approved": "52d221e4"
       },
       {
         "id": "say-hope-is-lost",
@@ -9783,7 +9880,8 @@ window.TU_WEEKS = [
           "Job, in his suffering",
           "Jeremiah, in the dungeon"
         ],
-        "why": "The Lord told Ezekiel the dry bones were Israel. The captives felt their hope was as dead as old bones, but the Lord promised to bring them back to life."
+        "why": "The Lord told Ezekiel the dry bones were Israel. The captives felt their hope was as dead as old bones, but the Lord promised to bring them back to life.",
+        "approved": "02c0bdf6"
       },
       {
         "id": "say-shew-us",
@@ -9794,7 +9892,8 @@ window.TU_WEEKS = [
           "The king, about his dream",
           "The disciples, about a parable"
         ],
-        "why": "Ezekiel held two sticks joined as one. When people asked, the Lord explained He would make Joseph’s stick and Judah’s stick one in His hand (Ezekiel 37:19)."
+        "why": "Ezekiel held two sticks joined as one. When people asked, the Lord explained He would make Joseph’s stick and Judah’s stick one in His hand (Ezekiel 37:19).",
+        "approved": "59f50d46"
       },
       {
         "id": "say-hast-thou-seen",
@@ -9805,7 +9904,8 @@ window.TU_WEEKS = [
           "The Lord, at the burning bush",
           "An angel, to the shepherds"
         ],
-        "why": "After leading Ezekiel through water that kept getting deeper, his guide brought him back to the riverbank, where trees grew on both sides (Ezekiel 47:7)."
+        "why": "After leading Ezekiel through water that kept getting deeper, his guide brought him back to the riverbank, where trees grew on both sides (Ezekiel 47:7).",
+        "approved": "27efcecc"
       }
     ],
     "words": [
@@ -9867,7 +9967,8 @@ window.TU_WEEKS = [
         "why": "Verse 26: “I will cause the shower to come down in his season; there shall be showers of blessing.” The Good Shepherd takes care of His flock.",
         "source": "Ezekiel 34:26",
         "find": "there shall be showers of blessing",
-        "hunt": "In Ezekiel 34, what will the Lord send down in its season?"
+        "hunt": "In Ezekiel 34, what will the Lord send down in its season?",
+        "approved": "c86162c1"
       },
       {
         "id": "deep45-clean-water",
@@ -9883,7 +9984,8 @@ window.TU_WEEKS = [
         "why": "Verse 25: “Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.”",
         "source": "Ezekiel 36:25",
         "find": "Then will I sprinkle clean water upon you",
-        "hunt": "In Ezekiel 36, what will the Lord sprinkle on His people to make them clean?"
+        "hunt": "In Ezekiel 36, what will the Lord sprinkle on His people to make them clean?",
+        "approved": "6bbfcadc"
       },
       {
         "id": "deep45-grow-together",
@@ -9899,7 +10001,8 @@ window.TU_WEEKS = [
         "why": "Verse 12: “that which shall be written by the fruit of thy loins, and also that which shall be written by the fruit of the loins of Judah, shall grow together.”",
         "source": "2 Nephi 3:12",
         "find": "shall grow together",
-        "hunt": "In 2 Nephi 3, what will the writings of Joseph’s and Judah’s descendants do?"
+        "hunt": "In 2 Nephi 3, what will the writings of Joseph’s and Judah’s descendants do?",
+        "approved": "71dfa625"
       },
       {
         "id": "deep45-medicine",
@@ -9915,7 +10018,8 @@ window.TU_WEEKS = [
         "why": "Verse 12: “the fruit thereof shall be for meat, and the leaf thereof for medicine.” Meat here means food. The trees feed and heal.",
         "source": "Ezekiel 47:12",
         "find": "the leaf thereof for medicine",
-        "hunt": "In Ezekiel 47, what will the leaves of the trees by the river be for?"
+        "hunt": "In Ezekiel 47, what will the leaves of the trees by the river be for?",
+        "approved": "3e4d5843"
       },
       {
         "id": "deep45-kids",
@@ -9931,7 +10035,8 @@ window.TU_WEEKS = [
         ],
         "why": "It suggests singing Families Can Be Together Forever, from the Children’s Songbook, and talking about how the Lord blesses us in His holy house.",
         "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/45?lang=eng",
-        "find": "Families Can Be Together Forever"
+        "find": "Families Can Be Together Forever",
+        "approved": "d74effce"
       },
       {
         "id": "deep45-renlund",
@@ -9947,7 +10052,8 @@ window.TU_WEEKS = [
         ],
         "why": "They first met in the celestial room of the St. George Utah Temple, on the day Betty went to the temple for the first time.",
         "source": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/family-history-and-temple-work-sealing-and-healing?lang=eng",
-        "find": "Rod and Betty first met in person in the celestial room"
+        "find": "Rod and Betty first met in person in the celestial room",
+        "approved": "02f84718"
       }
     ],
     "reels": [
@@ -9984,7 +10090,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#1e1b4b 0%,#4338ca 50%,#fde68a 115%)",
         "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "a827bde4"
       },
       {
         "id": "ezk3-scroll",
@@ -10017,7 +10124,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#451a03 0%,#b45309 50%,#fde68a 115%)",
         "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "4eccae6f"
       },
       {
         "id": "ezk3-watchman",
@@ -10051,7 +10159,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(155deg,#0f172a 0%,#334155 50%,#fbbf24 115%)",
         "blobA": "rgba(251,191,36,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "a3eac276"
       },
       {
         "id": "ezk34-shepherd",
@@ -10092,7 +10201,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#14532d 0%,#4d7c0f 50%,#ecfccb 115%)",
         "blobA": "rgba(236,252,203,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "bc1932c2"
       },
       {
         "id": "ezk33-turn",
@@ -10134,7 +10244,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#3b0764 0%,#7e22ce 50%,#f5d0fe 115%)",
         "blobA": "rgba(245,208,254,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "7ebe54af"
       },
       {
         "id": "ezk33-not-mentioned",
@@ -10168,7 +10279,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
         "blobA": "rgba(224,242,254,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "89263a65"
       },
       {
         "id": "ezk36-new-heart",
@@ -10202,7 +10314,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#7f1d1d 0%,#dc2626 50%,#fecaca 115%)",
         "blobA": "rgba(254,202,202,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "fb148ed4"
       },
       {
         "id": "ezk37-dry-bones",
@@ -10237,7 +10350,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(160deg,#1c1917 0%,#78716c 50%,#f5f5f4 115%)",
         "blobA": "rgba(245,245,244,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "b445ad3c"
       },
       {
         "id": "ezk37-two-sticks",
@@ -10270,7 +10384,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fef3c7 115%)",
         "blobA": "rgba(254,243,199,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "39f8b468"
       },
       {
         "id": "ezk47-deeper",
@@ -10311,7 +10426,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#064e3b 0%,#0f766e 50%,#99f6e4 115%)",
         "blobA": "rgba(153,246,228,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "690e57b4"
       },
       {
         "id": "ezk47-healed",
@@ -10353,7 +10469,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0891b2 50%,#cffafe 115%)",
         "blobA": "rgba(207,250,254,.4)",
-        "blobB": "rgba(0,0,0,.4)"
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "c89a563b"
       }
     ],
     "tldr": [
@@ -10374,7 +10491,8 @@ window.TU_WEEKS = [
             "v": 10,
             "about": "The four faces are left unnamed on purpose: a bonus asks for them."
           }
-        ]
+        ],
+        "approved": "7b39ffec"
       },
       {
         "ch": "Ezekiel 2",
@@ -10388,7 +10506,8 @@ window.TU_WEEKS = [
             "v": 9,
             "about": "The KJV’s “roll of a book” is called a scroll, as the Scripture Helps do."
           }
-        ]
+        ],
+        "approved": "e11e0dd8"
       },
       {
         "ch": "Ezekiel 3",
@@ -10403,7 +10522,8 @@ window.TU_WEEKS = [
             "v": 18,
             "about": "“The Lord will hold him responsible” sums up “his blood will I require at thine hand” (the heading: the blood of Israel is required at his hand unless he raises the warning voice)."
           }
-        ]
+        ],
+        "approved": "8bc9d7bd"
       },
       {
         "ch": "Ezekiel 33",
@@ -10422,7 +10542,8 @@ window.TU_WEEKS = [
             "v": 21,
             "about": "The heading says the people of Judah in Jerusalem are destroyed; verses 24–29 speak of those still living in the ruined land."
           }
-        ]
+        ],
+        "approved": "c7386db3"
       },
       {
         "ch": "Ezekiel 34",
@@ -10441,7 +10562,8 @@ window.TU_WEEKS = [
             "v": 25,
             "about": "The heading’s “gospel covenant” is given as the verse’s “covenant of peace.”"
           }
-        ]
+        ],
+        "approved": "59bbad7d"
       },
       {
         "ch": "Ezekiel 36",
@@ -10456,7 +10578,8 @@ window.TU_WEEKS = [
             "v": 24,
             "about": "“In the last days” comes from the chapter heading; the verses say “I will take you from among the heathen.”"
           }
-        ]
+        ],
+        "approved": "717166b2"
       },
       {
         "ch": "Ezekiel 37",
@@ -10471,7 +10594,8 @@ window.TU_WEEKS = [
             "v": 12,
             "about": "The heading’s “inherit the land in the Resurrection” is put as “raise them up”; the Scripture Helps also read the vision as a prophecy of the Resurrection."
           }
-        ]
+        ],
+        "approved": "b64dda2a"
       },
       {
         "ch": "Ezekiel 47",
@@ -10486,7 +10610,8 @@ window.TU_WEEKS = [
             "v": 12,
             "about": "The trees’ leaves (for medicine) are left out on purpose: a Go deeper asks about them."
           }
-        ]
+        ],
+        "approved": "960c77a6"
       }
     ],
     "insights": [
@@ -10501,7 +10626,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Prophet of Judgment, Prophet of Promise",
           "url": "https://rsc.byu.edu/isaiah-prophets/ezekiel-prophet-judgment-prophet-promise"
         },
-        "find": "We know the names of four of the prophets of that day—Lehi, Ezekiel, Jeremiah, and Daniel."
+        "find": "We know the names of four of the prophets of that day—Lehi, Ezekiel, Jeremiah, and Daniel.",
+        "approved": "8bce9807"
       },
       {
         "id": "ezk1-likeness",
@@ -10513,7 +10639,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Watchman of Israel",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
         },
-        "find": "he used words like as, likeness, and appearance"
+        "find": "he used words like as, likeness, and appearance",
+        "approved": "18a5a879"
       },
       {
         "id": "ezk1-wheels",
@@ -10525,7 +10652,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Watchman of Israel",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
         },
-        "find": "At present the interpretation of Ezekiel’s vision has not been given to the Church"
+        "find": "At present the interpretation of Ezekiel’s vision has not been given to the Church",
+        "approved": "cca359c4"
       },
       {
         "id": "ezk2-son-of-man",
@@ -10538,7 +10666,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel 1–3; 33–34; 36–37; 47",
           "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-13-3334-3637-47"
         },
-        "find": "the title “son of man” simply means “human.”"
+        "find": "the title “son of man” simply means “human.”",
+        "approved": "06f26259"
       },
       {
         "id": "ezk3-face-up",
@@ -10550,7 +10679,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Watchman of Israel",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
         },
-        "find": "The words of Ezekiel 3:8 are a Hebrew idiom suggesting essentially the English idiom"
+        "find": "The words of Ezekiel 3:8 are a Hebrew idiom suggesting essentially the English idiom",
+        "approved": "ae298a24"
       },
       {
         "id": "ezk3-fh-adamant",
@@ -10583,8 +10713,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Ezekiel, part 1, with Dr. Jan J. Martin",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "082fff53"
+        },
+        "approved": "57159fda"
       },
       {
         "id": "ezk3-sat-with-them",
@@ -10597,7 +10729,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel 1–3; 33–34; 36–37; 47",
           "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-13-3334-3637-47"
         },
-        "find": "There is much wisdom in learning to be silent and in actively listening to those whom we serve."
+        "find": "There is much wisdom in learning to be silent and in actively listening to those whom we serve.",
+        "approved": "2ad867b2"
       },
       {
         "id": "ezk3-watchman-danger",
@@ -10609,7 +10742,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Watchman of Israel",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
         },
-        "find": "faced execution if he failed to warn the city when the enemy appeared"
+        "find": "faced execution if he failed to warn the city when the enemy appeared",
+        "approved": "ec7e0745"
       },
       {
         "id": "ezk3-mastery",
@@ -10621,7 +10755,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel 1–3; 33: “I Have Made Thee a Watchman”",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/441-ezekiel-1-3-33?lang=eng"
         },
-        "find": "Ezekiel 3:16–17 is a doctrinal mastery passage."
+        "find": "Ezekiel 3:16–17 is a doctrinal mastery passage.",
+        "approved": "72dd9abc"
       },
       {
         "id": "ezk3-q-andersen",
@@ -10634,7 +10769,8 @@ window.TU_WEEKS = [
           "who": "Elder Neil L. Andersen",
           "title": "The Prophet of God",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/the-prophet-of-god?lang=eng"
-        }
+        },
+        "approved": "24627717"
       },
       {
         "id": "ezk3-q-nelson",
@@ -10647,7 +10783,8 @@ window.TU_WEEKS = [
           "who": "President Russell M. Nelson",
           "title": "Ezekiel 1–3; 33: “I Have Made Thee a Watchman”",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/441-ezekiel-1-3-33?lang=eng"
-        }
+        },
+        "approved": "b34b9df4"
       },
       {
         "id": "ezk33-q-christofferson",
@@ -10660,7 +10797,8 @@ window.TU_WEEKS = [
           "who": "President D. Todd Christofferson",
           "title": "The Voice of Warning",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2017/04/the-voice-of-warning?lang=eng"
-        }
+        },
+        "approved": "2860b763"
       },
       {
         "id": "ezk33-restitution",
@@ -10672,7 +10810,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of the Restoration (Ezekiel 25–48)",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
         },
-        "find": "he should next restore insofar as possible that which was damaged"
+        "find": "he should next restore insofar as possible that which was damaged",
+        "approved": "1b09ecb3"
       },
       {
         "id": "ezk33-fh-song",
@@ -10705,8 +10844,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Ezekiel, part 2, with Dr. Jan J. Martin",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "c42e1003"
+        },
+        "approved": "edbb5579"
       },
       {
         "id": "ezk33-forgive",
@@ -10718,7 +10859,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel 1–3; 33: “I Have Made Thee a Watchman”",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/441-ezekiel-1-3-33?lang=eng"
         },
-        "find": "when we repent, the Lord will fully forgive us of our sins"
+        "find": "when we repent, the Lord will fully forgive us of our sins",
+        "approved": "fd6c1fc4"
       },
       {
         "id": "ezk34-lasater",
@@ -10731,7 +10873,8 @@ window.TU_WEEKS = [
           "title": "Shepherds of Israel",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/1988/04/shepherds-of-israel?lang=eng"
         },
-        "find": "the good shepherds know each one of their sheep by name"
+        "find": "the good shepherds know each one of their sheep by name",
+        "approved": "cbe6cffc"
       },
       {
         "id": "ezk34-fh-shepherds",
@@ -10764,8 +10907,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Ezekiel, part 2, with Dr. Jan J. Martin",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "a8466875"
+        },
+        "approved": "ca3162c1"
       },
       {
         "id": "ezk34-q-gong",
@@ -10778,7 +10923,8 @@ window.TU_WEEKS = [
           "who": "Elder Gerrit W. Gong",
           "title": "Ministering",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2023/04/14gong?lang=eng"
-        }
+        },
+        "approved": "896470cd"
       },
       {
         "id": "ezk36-new-mind",
@@ -10791,7 +10937,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel 1–3; 33–34; 36–37; 47",
           "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-13-3334-3637-47"
         },
-        "find": "To have a new heart was to have a new perspective and outlook."
+        "find": "To have a new heart was to have a new perspective and outlook.",
+        "approved": "19eab010"
       },
       {
         "id": "ezk36-promise",
@@ -10804,7 +10951,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel: Prophet of Judgment, Prophet of Promise",
           "url": "https://rsc.byu.edu/isaiah-prophets/ezekiel-prophet-judgment-prophet-promise"
         },
-        "find": "even the most harsh and caustic predictions and judgments were counterbalanced by an immediate addendum of hope"
+        "find": "even the most harsh and caustic predictions and judgments were counterbalanced by an immediate addendum of hope",
+        "approved": "eefaceb5"
       },
       {
         "id": "ezk37-fh-bones",
@@ -10837,8 +10985,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Ezekiel, part 2, with Dr. Jan J. Martin",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "ea1e3530"
+        },
+        "approved": "71e5255c"
       },
       {
         "id": "ezk37-q-mcconkie",
@@ -10851,7 +11001,8 @@ window.TU_WEEKS = [
           "who": "Elder Bruce R. McConkie",
           "title": "Prophecies of the Restoration (Ezekiel 25–48)",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
-        }
+        },
+        "approved": "b60607a9"
       },
       {
         "id": "ezk37-new-life",
@@ -10863,7 +11014,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of the Restoration (Ezekiel 25–48)",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
         },
-        "find": "The source of this new life will be the Holy Ghost."
+        "find": "The source of this new life will be the Holy Ghost.",
+        "approved": "fa79f5c0"
       },
       {
         "id": "ezk37-boards",
@@ -10876,7 +11028,8 @@ window.TU_WEEKS = [
           "title": "Ezekiel’s Sticks and the Gathering of Israel",
           "url": "https://www.churchofjesuschrist.org/study/ensign/1987/02/ezekiels-sticks-and-the-gathering-of-israel?lang=eng"
         },
-        "find": "By joining two boards together by thongs or metal hinges, a scribe could fold them together"
+        "find": "By joining two boards together by thongs or metal hinges, a scribe could fold them together",
+        "approved": "1f40d462"
       },
       {
         "id": "ezk37-print-shops",
@@ -10889,7 +11042,8 @@ window.TU_WEEKS = [
           "title": "Scriptures",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/1982/10/scriptures?lang=eng"
         },
-        "find": "Two events connected with the fulfillment of the prophecy were centered in print shops."
+        "find": "Two events connected with the fulfillment of the prophecy were centered in print shops.",
+        "approved": "a0ddb173"
       },
       {
         "id": "ezk37-q-nelson",
@@ -10902,7 +11056,8 @@ window.TU_WEEKS = [
           "who": "President Russell M. Nelson",
           "title": "Scriptural Witnesses",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2007/10/scriptural-witnesses?lang=eng"
-        }
+        },
+        "approved": "9ce089c5"
       },
       {
         "id": "ezk37-jsp-post",
@@ -10916,7 +11071,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-stephen-post-17-september-1838/2"
         },
         "find": "Should take the record of Joseph in your hand, would not then the stick of Joseph of Joseph be in the hand of Ephraim",
-        "note": "In an 1838 letter, Joseph Smith explained this verse: when members of Ephraim’s line hold the Book of Mormon, a record of Joseph, the stick of Joseph is “in the hand of Ephraim.”"
+        "note": "In an 1838 letter, Joseph Smith explained this verse: when members of Ephraim’s line hold the Book of Mormon, a record of Joseph, the stick of Joseph is “in the hand of Ephraim.”",
+        "approved": "eb093858"
       },
       {
         "id": "ezk37-jsp-dc27",
@@ -10929,7 +11085,8 @@ window.TU_WEEKS = [
           "title": "Revelation, circa August 1835 [D&C 27]",
           "url": "https://www.josephsmithpapers.org/paper-summary/revelation-circa-august-1835-dc-27/2"
         },
-        "find": "This wording comes from Ezekiel 37:16–17, which is referred to in 2 Nephi, chapter 3"
+        "find": "This wording comes from Ezekiel 37:16–17, which is referred to in 2 Nephi, chapter 3",
+        "approved": "208cd1bd"
       },
       {
         "id": "ezk47-cowan",
@@ -10942,7 +11099,8 @@ window.TU_WEEKS = [
           "title": "What Old Testament Temples Can Teach Us about Our Own Temple Activity",
           "url": "https://rsc.byu.edu/ascending-mountain-lord/what-old-testament-temples-can-teach-us-about-our-own-temple-activity"
         },
-        "find": "the impact of temple blessings increases as we return again and again to the Lord’s house"
+        "find": "the impact of temple blessings increases as we return again and again to the Lord’s house",
+        "approved": "ac9d9474"
       },
       {
         "id": "ezk47-jsp-temple",
@@ -10956,7 +11114,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/discourse-6-april-1843-b-as-reported-by-willard-richards/12"
         },
         "find": "water come out from under the temple",
-        "note": "Joseph Smith taught in 1843 that before the Savior comes, water must “come out from under the temple” and the Dead Sea be healed, as Ezekiel saw."
+        "note": "Joseph Smith taught in 1843 that before the Savior comes, water must “come out from under the temple” and the Dead Sea be healed, as Ezekiel saw.",
+        "approved": "842860c2"
       },
       {
         "id": "ezk47-q-renlund",
@@ -10969,7 +11128,8 @@ window.TU_WEEKS = [
           "who": "Elder Dale G. Renlund",
           "title": "Family History and Temple Work: Sealing and Healing",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/family-history-and-temple-work-sealing-and-healing?lang=eng"
-        }
+        },
+        "approved": "36132e00"
       },
       {
         "id": "ezk47-strangers",
@@ -10981,7 +11141,8 @@ window.TU_WEEKS = [
           "title": "Prophecies of the Restoration (Ezekiel 25–48)",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
         },
-        "find": "They will then be adopted into the house of Israel."
+        "find": "They will then be adopted into the house of Israel.",
+        "approved": "777b216e"
       },
       {
         "id": "ezk47-fh-hope",
@@ -10994,7 +11155,8 @@ window.TU_WEEKS = [
           "title": "Old Testament: EPISODE 44 – Ezekiel – Part 2",
           "url": "https://followhim.co/show-note/2-216/"
         },
-        "find": "Look to the temple when you’re looking for that hope."
+        "find": "Look to the temple when you’re looking for that hope.",
+        "approved": "12585981"
       }
     ],
     "plain": [
@@ -11065,7 +11227,8 @@ window.TU_WEEKS = [
             "v": 3,
             "about": "A few words are added: “(Babylon)” for the land of the Chaldeans. The JST marks Ezekiel 1–13 “All Correct,” so there are no JST notes in chapters 1–3."
           }
-        ]
+        ],
+        "approved": "6cdfbe7f"
       },
       {
         "ch": "Ezekiel 2",
@@ -11108,7 +11271,8 @@ window.TU_WEEKS = [
             "v": 10,
             "about": "Eating the scroll (2:8–3:3): the Scripture Helps says it likely meant Ezekiel taking the Lord’s message into himself, and names Revelation 10:9–10. No note was added, since the README’s kinds of notes don’t cover a likeness like that; add one if you want it."
           }
-        ]
+        ],
+        "approved": "271a70e5"
       },
       {
         "ch": "Ezekiel 3",
@@ -11164,7 +11328,8 @@ window.TU_WEEKS = [
             "v": 12,
             "about": "“Spirit” is capitalized in verses 12, 14 and 24, as the BSB has it; Ezekiel’s own “spirit” in verse 14 stays lowercase. The rumbling “saying” follows the KJV; the Hebrew has the words right after the sound."
           }
-        ]
+        ],
+        "approved": "283f27e9"
       },
       {
         "ch": "Ezekiel 33",
@@ -11234,7 +11399,8 @@ window.TU_WEEKS = [
             "v": 30,
             "about": "The KJV says the people are “talking against thee”; the Hebrew says ‘speaking about you’ (BSB). The plain words follow the Hebrew."
           }
-        ]
+        ],
+        "approved": "1b22414d"
       },
       {
         "ch": "Ezekiel 34",
@@ -11306,7 +11472,8 @@ window.TU_WEEKS = [
             "v": 29,
             "about": "The plain words say “a planting that is famous” to cover both readings, the KJV’s “plant” and the BSB’s ‘garden,’ with a note."
           }
-        ]
+        ],
+        "approved": "5d9ed11b"
       },
       {
         "ch": "Ezekiel 36",
@@ -11377,7 +11544,8 @@ window.TU_WEEKS = [
             "v": 36,
             "about": "The JST’s only change in this chapter is here, and it is small: “plant that that was desolate” becomes “which.” No note."
           }
-        ]
+        ],
+        "approved": "39d66d06"
       },
       {
         "ch": "Ezekiel 37",
@@ -11450,7 +11618,8 @@ window.TU_WEEKS = [
             "v": 24,
             "about": "As in Ezekiel 34:23, “my servant David” keeps lowercase pronouns; the Scripture Helps says this means Jesus Christ. “Tabernacle” in verse 27 is kept, with “(my dwelling place)” added."
           }
-        ]
+        ],
+        "approved": "e15adea9"
       },
       {
         "ch": "Ezekiel 47",
@@ -11518,9 +11687,12 @@ window.TU_WEEKS = [
             "v": 19,
             "about": "“The river” is a brook or wadi in the Hebrew (BSB ‘the Brook of Egypt’); the plain words say “the brook.” “Strangers” in verses 22–23 is “foreigners,” as in Jeremiah 7:6."
           }
-        ]
+        ],
+        "approved": "5d987731"
       }
-    ]
+    ],
+    "approved": "36c9ab4e",
+    "wordsApproved": "e69dadee"
   },
   {
     "dates": "November 9–15, 2026",
@@ -11619,7 +11791,8 @@ window.TU_WEEKS = [
             }
           ]
         }
-      ]
+      ],
+      "approved": "e3679d69"
     },
     "sayings": [
       {
@@ -11631,7 +11804,8 @@ window.TU_WEEKS = [
           "The captain of the guard",
           "The king’s chief butler"
         ],
-        "why": "He was afraid the king would see Daniel’s group looking worse than the others. Daniel answered with a ten-day test (Daniel 1:12)."
+        "why": "He was afraid the king would see Daniel’s group looking worse than the others. Daniel answered with a ten-day test (Daniel 1:12).",
+        "approved": "e57e0039"
       },
       {
         "id": "say-not-a-man",
@@ -11642,7 +11816,8 @@ window.TU_WEEKS = [
           "Daniel, to the king",
           "Arioch, to Daniel"
         ],
-        "why": "The king’s wise men said no one could tell a king his own dream. Daniel answered that “there is a God in heaven that revealeth secrets” (Daniel 2:28)."
+        "why": "The king’s wise men said no one could tell a king his own dream. Daniel answered that “there is a God in heaven that revealeth secrets” (Daniel 2:28).",
+        "approved": "1da90755"
       },
       {
         "id": "say-captives-of-judah",
@@ -11653,7 +11828,8 @@ window.TU_WEEKS = [
           "The queen, to Belshazzar",
           "Melzar, to the king"
         ],
-        "why": "Arioch hurried Daniel in to the king as if he had found him himself. Really, Daniel had asked to be taken in (Daniel 2:24)."
+        "why": "Arioch hurried Daniel in to the king as if he had found him himself. Really, Daniel had asked to be taken in (Daniel 2:24).",
+        "approved": "1f93c6d9"
       },
       {
         "id": "say-able-to-deliver",
@@ -11664,7 +11840,8 @@ window.TU_WEEKS = [
           "Daniel, before the lions",
           "Jeremiah, in the dungeon"
         ],
-        "why": "Then they added, “But if not” (Daniel 3:18): even if God didn’t save them, they still would not worship the king’s image."
+        "why": "Then they added, “But if not” (Daniel 3:18): even if God didn’t save them, they still would not worship the king’s image.",
+        "approved": "9db934fe"
       },
       {
         "id": "say-three-men-bound",
@@ -11675,7 +11852,8 @@ window.TU_WEEKS = [
           "The king’s counsellors",
           "The princes of Babylon"
         ],
-        "why": "The astonished king jumped up. He saw four men walking free in the fire, and “they have no hurt” (Daniel 3:25)."
+        "why": "The astonished king jumped up. He saw four men walking free in the fire, and “they have no hurt” (Daniel 3:25).",
+        "approved": "27aea4da"
       },
       {
         "id": "say-great-babylon",
@@ -11686,7 +11864,8 @@ window.TU_WEEKS = [
           "Belshazzar, at his feast",
           "Darius, signing a law"
         ],
-        "why": "While the words were still in his mouth, a voice from heaven said, “The kingdom is departed from thee” (Daniel 4:31)."
+        "why": "While the words were still in his mouth, a voice from heaven said, “The kingdom is departed from thee” (Daniel 4:31).",
+        "approved": "03b26aca"
       },
       {
         "id": "say-thy-gifts",
@@ -11697,7 +11876,8 @@ window.TU_WEEKS = [
           "Daniel, to Nebuchadnezzar",
           "Joseph, to Pharaoh"
         ],
-        "why": "Belshazzar offered scarlet clothes, a gold chain and a high office. Daniel didn’t want them, but he read the writing anyway."
+        "why": "Belshazzar offered scarlet clothes, a gold chain and a high office. Daniel didn’t want them, but he read the writing anyway.",
+        "approved": "ef6d3213"
       },
       {
         "id": "say-servest-continually",
@@ -11708,7 +11888,8 @@ window.TU_WEEKS = [
           "Nebuchadnezzar, to the three",
           "Daniel, to his friends"
         ],
-        "why": "Darius had been tricked into his own law. Early the next morning he called out, “is thy God… able to deliver thee from the lions?” (Daniel 6:20)."
+        "why": "Darius had been tricked into his own law. Early the next morning he called out, “is thy God… able to deliver thee from the lions?” (Daniel 6:20).",
+        "approved": "74efed60"
       },
       {
         "id": "say-not-hurt-me",
@@ -11719,7 +11900,8 @@ window.TU_WEEKS = [
           "Darius, to his lords",
           "An angel, to Darius"
         ],
-        "why": "Daniel had done no wrong before God or the king. He came out with “no manner of hurt” (Daniel 6:23), because he believed in his God."
+        "why": "Daniel had done no wrong before God or the king. He came out with “no manner of hurt” (Daniel 6:23), because he believed in his God.",
+        "approved": "2abf9b2d"
       }
     ],
     "words": [
@@ -11781,7 +11963,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 10: “then shall ye make me endanger my head to the king.” So Daniel offered a fair ten-day test that wouldn’t get him in trouble.",
         "source": "Daniel 1:10",
-        "find": "then shall ye make me endanger my head to the king"
+        "find": "then shall ye make me endanger my head to the king",
+        "approved": "48646f39"
       },
       {
         "id": "deep46-chaff",
@@ -11797,7 +11980,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 35: they “became like the chaff of the summer threshingfloors; and the wind carried them away.” Chaff is the dry husk that blows off grain.",
         "source": "Daniel 2:35",
-        "find": "became like the chaff of the summer threshingfloors"
+        "find": "became like the chaff of the summer threshingfloors",
+        "approved": "9435bcec"
       },
       {
         "id": "deep46-light",
@@ -11813,7 +11997,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 22: “he knoweth what is in the darkness, and the light dwelleth with him.” God sees what is hidden, and He gives light to those who ask.",
         "source": "Daniel 2:22",
-        "find": "the light dwelleth with him"
+        "find": "the light dwelleth with him",
+        "approved": "a4d8638c"
       },
       {
         "id": "deep46-holiness",
@@ -11829,7 +12014,8 @@ window.TU_WEEKS = [
         ],
         "why": "Verse 57: “in the language of Adam, Man of Holiness is his name, and the name of his Only Begotten is the Son of Man.” So Son of Man means Son of the Man of Holiness.",
         "source": "Moses 6:57",
-        "find": "Man of Holiness"
+        "find": "Man of Holiness",
+        "approved": "30dc0454"
       },
       {
         "id": "deep46-kids",
@@ -11845,7 +12031,8 @@ window.TU_WEEKS = [
         ],
         "why": "It suggests singing Choose the Right, number 239 in the hymnbook, after sharing how you have been blessed for making the right choice even when it was hard.",
         "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/46?lang=eng",
-        "find": "Choose the Right"
+        "find": "Choose the Right",
+        "approved": "bc382232"
       },
       {
         "id": "deep46-friend",
@@ -11861,7 +12048,8 @@ window.TU_WEEKS = [
         ],
         "why": "The Friend says the king was surprised to see a heavenly being in the fire with them. Daniel 3:25 says the fourth was like the Son of God.",
         "source": "https://www.churchofjesuschrist.org/study/friend/2026/10/come-follow-me/25-safe-in-the-fire?lang=eng",
-        "find": "a heavenly being in the fire with the three men"
+        "find": "a heavenly being in the fire with the three men",
+        "approved": "56d90e04"
       }
     ],
     "reels": [
@@ -11905,7 +12093,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#172554 0%,#1d4ed8 50%,#93c5fd 115%)",
         "blobA": "rgba(147,197,253,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "6a0bc5eb"
       },
       {
         "id": "dan1-knowledge",
@@ -11939,7 +12128,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#1e1b4b 0%,#4338ca 50%,#c7d2fe 115%)",
         "blobA": "rgba(199,210,254,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "18ca3653"
       },
       {
         "id": "dan2-night-vision",
@@ -11981,7 +12171,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(160deg,#0f172a 0%,#1e3a8a 55%,#a5b4fc 115%)",
         "blobA": "rgba(165,180,252,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "8aeae892"
       },
       {
         "id": "dan2-god-in-heaven",
@@ -12015,7 +12206,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#3b0764 0%,#7e22ce 50%,#f0abfc 115%)",
         "blobA": "rgba(240,171,252,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "2b074897"
       },
       {
         "id": "dan2-stone",
@@ -12071,7 +12263,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(160deg,#020617 0%,#0c4a6e 55%,#7dd3fc 115%)",
         "blobA": "rgba(125,211,252,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "9c8dc67e"
       },
       {
         "id": "dan3-but-if-not",
@@ -12104,7 +12297,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(155deg,#1c0a00 0%,#9a3412 50%,#fdba74 115%)",
         "blobA": "rgba(253,186,116,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "4f5ea1a1"
       },
       {
         "id": "dan3-fourth-man",
@@ -12146,7 +12340,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#450a0a 0%,#c2410c 50%,#fde047 115%)",
         "blobA": "rgba(253,224,71,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "4df8c64d"
       },
       {
         "id": "dan4-most-high",
@@ -12188,7 +12383,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#292524 0%,#78716c 50%,#e7e5e4 115%)",
         "blobA": "rgba(231,229,228,.35)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "49afa2de"
       },
       {
         "id": "dan5-writing",
@@ -12230,7 +12426,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#1c1917 0%,#854d0e 50%,#fde68a 115%)",
         "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.5)"
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "ae7bb75c"
       },
       {
         "id": "dan6-window",
@@ -12285,7 +12482,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#064e3b 0%,#047857 50%,#a7f3d0 115%)",
         "blobA": "rgba(167,243,208,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "bff2f03e"
       },
       {
         "id": "dan7-son-of-man",
@@ -12319,7 +12517,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(165deg,#0f172a 0%,#334155 50%,#f1f5f9 115%)",
         "blobA": "rgba(241,245,249,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "2e2d2332"
       },
       {
         "id": "dan7-ancient-of-days",
@@ -12353,7 +12552,8 @@ window.TU_WEEKS = [
         },
         "gradient": "linear-gradient(150deg,#422006 0%,#a16207 50%,#fef9c3 115%)",
         "blobA": "rgba(254,249,195,.4)",
-        "blobB": "rgba(0,0,0,.45)"
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "a9c0d694"
       }
     ],
     "tldr": [
@@ -12378,7 +12578,8 @@ window.TU_WEEKS = [
             "v": 21,
             "about": "Left as “for many years”: the verse names King Cyrus, and a bonus asks for that name."
           }
-        ]
+        ],
+        "approved": "f16457c1"
       },
       {
         "ch": "Daniel 2",
@@ -12393,7 +12594,8 @@ window.TU_WEEKS = [
             "v": 44,
             "about": "“The stone is God’s latter-day kingdom” is from the chapter heading; the verses say God will set up a kingdom that will never be destroyed (verse 44)."
           }
-        ]
+        ],
+        "approved": "d8494fe0"
       },
       {
         "ch": "Daniel 3",
@@ -12402,7 +12604,8 @@ window.TU_WEEKS = [
           "Shadrach, Meshach, and Abed-nego refuse. They tell the king God can save them, but even if He doesn’t, they won’t worship his gods. (verses 8–18)",
           "The king has them thrown into the furnace, heated seven times hotter. Then he sees four men walking in the fire, unharmed. (verses 19–25)",
           "The three come out without even a burned hair. The king praises their God, because no other god can save like Him. (verses 26–30)"
-        ]
+        ],
+        "approved": "3a5f0631"
       },
       {
         "ch": "Daniel 4",
@@ -12421,7 +12624,8 @@ window.TU_WEEKS = [
             "v": 1,
             "about": "The chapter is told by Nebuchadnezzar himself (verses 1–18 and 34–37); the line leaves that out to stay short."
           }
-        ]
+        ],
+        "approved": "fe4e1966"
       },
       {
         "ch": "Daniel 5",
@@ -12430,7 +12634,8 @@ window.TU_WEEKS = [
           "Fingers of a hand write on the palace wall. The king is terrified, and none of his wise men can read the writing. (verses 5–9)",
           "The queen remembers Daniel. Daniel turns down the king’s gifts and scolds him for his pride and his idols. (verses 10–24)",
           "Daniel explains the words: God has ended the king’s reign, weighed him, and given his kingdom to the Medes and Persians. That night Babylon falls. (verses 25–31)"
-        ]
+        ],
+        "approved": "6eee76de"
       },
       {
         "ch": "Daniel 6",
@@ -12439,7 +12644,8 @@ window.TU_WEEKS = [
           "Daniel keeps praying to God three times a day, as before. The men report him, and the upset king has to throw him to the lions. (verses 10–17)",
           "The king has a sleepless night. In the morning Daniel is alive: God sent His angel, and the lions didn’t hurt him, because he believed in God. (verses 18–23)",
           "Daniel’s accusers are thrown to the lions. Darius commands everyone in his kingdom to honor the living God of Daniel. (verses 24–28)"
-        ]
+        ],
+        "approved": "9d5199cb"
       },
       {
         "ch": "Daniel 7",
@@ -12457,7 +12663,8 @@ window.TU_WEEKS = [
             "v": 3,
             "about": "The beasts are explained in verse 17 (four kings); the line puts that with verses 1–8, as the heading does."
           }
-        ]
+        ],
+        "approved": "3cc7e305"
       }
     ],
     "insights": [
@@ -12472,7 +12679,8 @@ window.TU_WEEKS = [
           "who": "President Dieter F. Uchtdorf",
           "title": "Be Not Afraid, Only Believe",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/10/be-not-afraid-only-believe?lang=eng"
-        }
+        },
+        "approved": "716736fc"
       },
       {
         "id": "dan1-go-along",
@@ -12485,7 +12693,8 @@ window.TU_WEEKS = [
           "title": "Be Not Afraid, Only Believe",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/10/be-not-afraid-only-believe?lang=eng"
         },
-        "find": "had lost his connection to the true source of light and wisdom"
+        "find": "had lost his connection to the true source of light and wisdom",
+        "approved": "215e976b"
       },
       {
         "id": "dan1-peacemakers",
@@ -12518,8 +12727,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Daniel 1–6, part 1, with Dr. Lili de Hoyos Anderson",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "b81836f2"
+        },
+        "approved": "cb6c920e"
       },
       {
         "id": "dan1-q-rasband",
@@ -12532,7 +12743,8 @@ window.TU_WEEKS = [
           "who": "Elder Ronald A. Rasband",
           "title": "Standing by Our Promises and Covenants",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2019/10/29rasband?lang=eng"
-        }
+        },
+        "approved": "7b07d9bb"
       },
       {
         "id": "dan1-pulse",
@@ -12544,7 +12756,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "they were also blessed by God for adhering to His laws"
+        "find": "they were also blessed by God for adhering to His laws",
+        "approved": "103b0a06"
       },
       {
         "id": "dan1-health-law",
@@ -12556,7 +12769,8 @@ window.TU_WEEKS = [
           "title": "Daniel 1: “Daniel … Would Not Defile Himself”",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/45-daniel/451-daniel-1?lang=eng"
         },
-        "find": "the Lord has revealed a health law for His children today"
+        "find": "the Lord has revealed a health law for His children today",
+        "approved": "2b16b694"
       },
       {
         "id": "dan2-certain",
@@ -12568,7 +12782,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "should probably read ‘is certain with me,’"
+        "find": "should probably read ‘is certain with me,’",
+        "approved": "95723277"
       },
       {
         "id": "dan2-personal-god",
@@ -12581,7 +12796,8 @@ window.TU_WEEKS = [
           "title": "The Prophets of the Exile: Saviors of a People",
           "url": "https://rsc.byu.edu/sperry-symposium-classics-old-testament/prophets-exile"
         },
-        "find": "the Babylonian priests admit that they could not get in contact with their own local gods"
+        "find": "the Babylonian priests admit that they could not get in contact with their own local gods",
+        "approved": "34b1618b"
       },
       {
         "id": "dan2-witness",
@@ -12614,8 +12830,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Daniel 1–6, part 1, with Dr. Lili de Hoyos Anderson",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "21c1c7ba"
+        },
+        "approved": "df2182b1"
       },
       {
         "id": "dan2-moroni",
@@ -12628,7 +12846,8 @@ window.TU_WEEKS = [
           "title": "Daniel, Prophecies of",
           "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/daniel-prophecies"
         },
-        "find": "the angel Moroni quoted to the Prophet Joseph Smith from Daniel chapter two"
+        "find": "the angel Moroni quoted to the Prophet Joseph Smith from Daniel chapter two",
+        "approved": "876f8436"
       },
       {
         "id": "dan2-growth",
@@ -12641,7 +12860,8 @@ window.TU_WEEKS = [
           "title": "The Restoration in the Lord’s Plan",
           "url": "https://rsc.byu.edu/window-faith/restoration-lords-plan"
         },
-        "find": "there is still a long way to go before it even came close to filling the earth"
+        "find": "there is still a long way to go before it even came close to filling the earth",
+        "approved": "42516e5e"
       },
       {
         "id": "dan2-not-political",
@@ -12654,7 +12874,8 @@ window.TU_WEEKS = [
           "title": "Why the Church",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/10/why-the-church?lang=eng"
         },
-        "find": "it will not be a kingdom in any political sense"
+        "find": "it will not be a kingdom in any political sense",
+        "approved": "cba9576f"
       },
       {
         "id": "dan2-earthly-hands",
@@ -12687,8 +12908,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Daniel 1–6, part 1, with Dr. Lili de Hoyos Anderson",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "9e63fdef"
+        },
+        "approved": "2ddafda4"
       },
       {
         "id": "dan2-q-hinckley",
@@ -12701,7 +12924,8 @@ window.TU_WEEKS = [
           "who": "President Gordon B. Hinckley",
           "title": "This Is the Work of the Master",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/04/this-is-the-work-of-the-master?lang=eng"
-        }
+        },
+        "approved": "4b49cba8"
       },
       {
         "id": "dan2-jsp-stone",
@@ -12714,7 +12938,8 @@ window.TU_WEEKS = [
           "title": "Revelation, 30 October 1831 [D&C 65]",
           "url": "https://www.josephsmithpapers.org/paper-summary/revelation-30-october-1831-dc-65/1"
         },
-        "find": "as the stone which is hewn from the Mountain without hands shall roll forth untill it hath filled the whole Earth"
+        "find": "as the stone which is hewn from the Mountain without hands shall roll forth untill it hath filled the whole Earth",
+        "approved": "017c3d95"
       },
       {
         "id": "dan3-q-christofferson",
@@ -12727,7 +12952,8 @@ window.TU_WEEKS = [
           "who": "Elder D. Todd Christofferson",
           "title": "Worship",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/35christofferson?lang=eng"
-        }
+        },
+        "approved": "3ae503c4"
       },
       {
         "id": "dan3-promise",
@@ -12740,7 +12966,8 @@ window.TU_WEEKS = [
           "title": "A Sin-Resistant Generation",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2017/04/a-sin-resistant-generation?lang=eng"
         },
-        "find": "These three young men were not basing their obedience upon being delivered"
+        "find": "These three young men were not basing their obedience upon being delivered",
+        "approved": "870a74db"
       },
       {
         "id": "dan3-friends",
@@ -12773,8 +13000,10 @@ window.TU_WEEKS = [
             "title": "followHIM Favorites: Why does it matter who my friends are?",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "6f1d4a8f"
+        },
+        "approved": "6f78d82c"
       },
       {
         "id": "dan3-hotter",
@@ -12786,7 +13015,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "to be heated as hot as it could be heated"
+        "find": "to be heated as hot as it could be heated",
+        "approved": "a909dfa2"
       },
       {
         "id": "dan4-astonied",
@@ -12798,7 +13028,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "Daniel was troubled because he knew that the message of Nebuchadnezzar’s dream was not good"
+        "find": "Daniel was troubled because he knew that the message of Nebuchadnezzar’s dream was not good",
+        "approved": "ef487dcf"
       },
       {
         "id": "dan4-king-of-heaven",
@@ -12831,8 +13062,10 @@ window.TU_WEEKS = [
             "title": "followHIM: Daniel 1–6, part 2, with Dr. Lili de Hoyos Anderson",
             "channel": "followHIM Podcast",
             "previewed": false
-          }
-        }
+          },
+          "approved": "24794dfa"
+        },
+        "approved": "31b64bc8"
       },
       {
         "id": "dan5-third-ruler",
@@ -12844,7 +13077,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "would be made third in authority in the kingdom next to Nabonidus and Belshazzar"
+        "find": "would be made third in authority in the kingdom next to Nabonidus and Belshazzar",
+        "approved": "40430552"
       },
       {
         "id": "dan5-jsp-upharsin",
@@ -12858,7 +13092,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/123"
         },
         "find": "th Upharsin —— Hosea, Chapter 11",
-        "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse: “Upharsin,” the word written on the wall in verse 25, where the King James Version has Peres."
+        "note": "Joseph Smith’s Old Testament manuscript gives one word for this verse: “Upharsin,” the word written on the wall in verse 25, where the King James Version has Peres.",
+        "approved": "bd7a763b"
       },
       {
         "id": "dan5-one-night",
@@ -12870,7 +13105,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "Thus the Persians marched under the massive walls"
+        "find": "Thus the Persians marched under the massive walls",
+        "approved": "516bfd18"
       },
       {
         "id": "dan6-toward-temple",
@@ -12882,7 +13118,8 @@ window.TU_WEEKS = [
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
         },
-        "find": "To face the temple, which is the temporal representation of the House of God, suggests that one turns one’s heart to the Lord"
+        "find": "To face the temple, which is the temporal representation of the House of God, suggests that one turns one’s heart to the Lord",
+        "approved": "20ebe362"
       },
       {
         "id": "dan6-q-eyring",
@@ -12895,7 +13132,8 @@ window.TU_WEEKS = [
           "who": "President Henry B. Eyring",
           "title": "Prayers for Peace",
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=eng"
-        }
+        },
+        "approved": "9e7d8aea"
       },
       {
         "id": "dan6-living-god",
@@ -12921,8 +13159,10 @@ window.TU_WEEKS = [
             "Jehovah had definitely climbed a few more rungs up the ladder of the pantheon",
             "One thing is sure: he reckoned Jehovah as",
             "Jehovah no longer stood as one of the many gods nor as the head of the gods"
-          ]
-        }
+          ],
+          "approved": "c413bca9"
+        },
+        "approved": "06cadf2f"
       },
       {
         "id": "dan6-v-latterdaykids",
@@ -12937,7 +13177,8 @@ window.TU_WEEKS = [
           "title": "Daniel and the Lion's Den | Animated Scripture Lesson for Kids",
           "channel": "Latter Day Kids",
           "previewed": false
-        }
+        },
+        "approved": "8f0bcf84"
       },
       {
         "id": "dan7-thrones",
@@ -12950,7 +13191,8 @@ window.TU_WEEKS = [
           "title": "“One Like the Son of Man Came with the Clouds of Heaven”: The Context and Influence of the Son of Man Prophecy in Daniel 7",
           "url": "https://rsc.byu.edu/vol-24-no-1-2023/one-like-son-man-came-clouds-heaven"
         },
-        "find": "Although the King James Version makes it sound like the thrones are toppled"
+        "find": "Although the King James Version makes it sound like the thrones are toppled",
+        "approved": "7c26d757"
       },
       {
         "id": "dan7-jsp-ancient",
@@ -12964,7 +13206,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/journal-march-september-1838/30"
         },
         "find": "is the place where Adam shall come to visit his people, or the Ancient of days shall sit as spoken of by Daniel the Prophet",
-        "note": "Joseph Smith’s 1838 journal names Adam-ondi-Ahman as the place where “the Ancient of days shall sit as spoken of by Daniel the Prophet” (D&C 116)."
+        "note": "Joseph Smith’s 1838 journal names Adam-ondi-Ahman as the place where “the Ancient of days shall sit as spoken of by Daniel the Prophet” (D&C 116).",
+        "approved": "6988e0b1"
       },
       {
         "id": "dan7-like",
@@ -12977,7 +13220,8 @@ window.TU_WEEKS = [
           "title": "“One Like the Son of Man Came with the Clouds of Heaven”: The Context and Influence of the Son of Man Prophecy in Daniel 7",
           "url": "https://rsc.byu.edu/vol-24-no-1-2023/one-like-son-man-came-clouds-heaven"
         },
-        "find": "Rather than coming as another type of beast, he will come like or as a Son of man"
+        "find": "Rather than coming as another type of beast, he will come like or as a Son of man",
+        "approved": "37e9134d"
       },
       {
         "id": "dan7-son-of-man",
@@ -12990,7 +13234,8 @@ window.TU_WEEKS = [
           "title": "Jesus Christ, Names and Titles of",
           "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/jesus-christ-names-and-titles"
         },
-        "find": "Jesus is the son of the archetypal Man, the perfect heavenly Man, the Eternal Father"
+        "find": "Jesus is the son of the archetypal Man, the perfect heavenly Man, the Eternal Father",
+        "approved": "b34a0087"
       },
       {
         "id": "dan7-jsp-stewardship",
@@ -13004,7 +13249,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/discourse-between-circa-26-june-and-circa-4-august-1839-a-as-reported-by-willard-richards/2"
         },
         "find": "The Son of Man Stands before him & there is given him glory & dominion",
-        "note": "In 1839 Joseph Smith taught that at Adam’s grand council, “The Son of Man Stands before him & there is given him glory & dominion,” as Willard Richards recorded."
+        "note": "In 1839 Joseph Smith taught that at Adam’s grand council, “The Son of Man Stands before him & there is given him glory & dominion,” as Willard Richards recorded.",
+        "approved": "eb96c684"
       },
       {
         "id": "dan7-q-richards",
@@ -13017,7 +13263,8 @@ window.TU_WEEKS = [
           "who": "Elder LeGrand Richards",
           "title": "Daniel: Prophet of God, Companion of Kings",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-28?lang=eng"
-        }
+        },
+        "approved": "7e82ef53"
       },
       {
         "id": "dan7-jsp-beasts",
@@ -13031,7 +13278,8 @@ window.TU_WEEKS = [
           "url": "https://www.josephsmithpapers.org/paper-summary/discourse-8-april-1843-as-reported-by-willard-richards/3"
         },
         "find": "By figure of Beasts God represented the kingdoms of the world",
-        "note": "Joseph Smith in 1843, as Willard Richards recorded: “By figure of Beasts God represented the kingdoms of the world.” He laughed at the idea of a beast picturing God’s kingdom."
+        "note": "Joseph Smith in 1843, as Willard Richards recorded: “By figure of Beasts God represented the kingdoms of the world.” He laughed at the idea of a beast picturing God’s kingdom.",
+        "approved": "2d9abd85"
       }
     ],
     "plain": [
@@ -13087,7 +13335,8 @@ window.TU_WEEKS = [
             "v": 20,
             "about": "The KJV’s “astrologers” here (and in chapters 2, 4 and 5) is a Hebrew and Aramaic word for people who use spells; the plain words say “enchanters,” as the BSB does. The KJV’s “soothsayers” is “fortune-tellers” (BSB ‘diviners’)."
           }
-        ]
+        ],
+        "approved": "254ab8bd"
       },
       {
         "ch": "Daniel 2",
@@ -13185,7 +13434,8 @@ window.TU_WEEKS = [
             "v": 46,
             "about": "The KJV’s “worshipped Daniel” is the Aramaic word for bowing down low (BSB ‘paid homage’). The plain words say “bowed down to Daniel.”"
           }
-        ]
+        ],
+        "approved": "4abaa91f"
       },
       {
         "ch": "Daniel 3",
@@ -13252,7 +13502,8 @@ window.TU_WEEKS = [
             "v": 1,
             "about": "The plain words add “(about ninety feet)” after sixty cubits, a cubit being about a foot and a half."
           }
-        ]
+        ],
+        "approved": "6926866d"
       },
       {
         "ch": "Daniel 4",
@@ -13322,7 +13573,8 @@ window.TU_WEEKS = [
             "v": 29,
             "about": "The plain words follow the Aramaic and the BSB (“on the roof of the royal palace”) over the KJV’s “in the palace,” with a note."
           }
-        ]
+        ],
+        "approved": "30ab1ded"
       },
       {
         "ch": "Daniel 5",
@@ -13390,7 +13642,8 @@ window.TU_WEEKS = [
             "v": 26,
             "about": "The KJV’s “numbered thy kingdom, and finished it” is said “counted up your kingdom and brought it to an end.” MENE means numbered or counted; the BSB adds ‘the days of your reign.’"
           }
-        ]
+        ],
+        "approved": "0c15daf4"
       },
       {
         "ch": "Daniel 6",
@@ -13451,7 +13704,8 @@ window.TU_WEEKS = [
             "v": 24,
             "about": "A hard verse for a child: the accusers’ wives and children are thrown to the lions too. The plain words say it no more plainly than the KJV."
           }
-        ]
+        ],
+        "approved": "58760c1f"
       },
       {
         "ch": "Daniel 7",
@@ -13520,8 +13774,11 @@ window.TU_WEEKS = [
             "v": 22,
             "about": "The plain words keep the KJV’s “judgment was given to the saints.” The BSB reads ‘pronounced judgment in favor of the saints.’ Both fit the Aramaic."
           }
-        ]
+        ],
+        "approved": "779f4599"
       }
-    ]
+    ],
+    "approved": "87456b26",
+    "wordsApproved": "39439e32"
   }
 ];
