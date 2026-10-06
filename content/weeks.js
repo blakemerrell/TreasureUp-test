@@ -12908,7 +12908,8 @@ window.TU_WEEKS = [
           "Missionaries, parents and ministering brothers and sisters can all learn from Him. Jesus asked Peter to feed His sheep too (John 21:15–17).",
           "Look for symbols as well, like the good pasture and fold in Ezekiel 34:14, and the lost sheep versus the ones driven away (Ezekiel 34:16)."
         ],
-        "ask": "Whom has the Lord given our family to watch over and feed, and how can we help one of them this week?"
+        "ask": "Whom has the Lord given our family to watch over and feed, and how can we help one of them this week?",
+        "approved": "845c57f5"
       },
       {
         "h": "The Lord wants to forgive.",
@@ -12921,7 +12922,8 @@ window.TU_WEEKS = [
           "If that seems unfair, compare the two sons in Matthew 21:28–31 and the two men praying in Luke 18:9–14.",
           "For more on what repenting means, read about a new heart and spirit in Ezekiel 36:26–27, and being born again and washed clean in Alma 7:14–16."
         ],
-        "ask": "What might it look like to “trust to his own righteousness” (Ezekiel 33:13), and how is repenting different from that?"
+        "ask": "What might it look like to “trust to his own righteousness” (Ezekiel 33:13), and how is repenting different from that?",
+        "approved": "1d1cac62"
       },
       {
         "h": "The Lord is gathering His people and giving them new life.",
@@ -12934,7 +12936,8 @@ window.TU_WEEKS = [
           "Second, two sticks, which many scholars think were wooden writing boards, one for Judah and one for Joseph, become one in the Lord’s hand (Ezekiel 37:15–28).",
           "Judah’s stick can stand for the Bible and Joseph’s for the Book of Mormon. Ask what the Lord wants the gathering to do, and how He does it."
         ],
-        "ask": "Which verses from the Bible and the Book of Mormon have worked as a pair to bring you closer to Jesus Christ?"
+        "ask": "Which verses from the Bible and the Book of Mormon have worked as a pair to bring you closer to Jesus Christ?",
+        "approved": "276ab6d5"
       },
       {
         "h": "I can find spiritual healing in the house of the Lord.",
@@ -12946,7 +12949,8 @@ window.TU_WEEKS = [
           "Notice what the water does wherever it flows, and compare Revelation 22:1. What could the water stand for, and the fruit trees in Ezekiel 47:12?",
           "Elder Dale G. Renlund’s 2018 talk about temple and family history work, and the healing it brings, can add to what you see here."
         ],
-        "ask": "When has the temple, or getting ready to go there, brought healing or new life to you or our family?"
+        "ask": "When has the temple, or getting ready to go there, brought healing or new life to you or our family?",
+        "approved": "3d786d1d"
       },
       {
         "h": "Prophets are like watchmen who warn us of danger.",
@@ -12959,7 +12963,8 @@ window.TU_WEEKS = [
           "Or let someone stand at a window and report what is going on outside. The lesson also suggests the video ‘Watchman on the Tower’.",
           "A watchman sees trouble coming and blows the trumpet in time (Ezekiel 33:1–5). Prophets warn us of dangers we can’t see yet."
         ],
-        "ask": "What has our living prophet warned us about lately, and how is he like a watchman on a tower?"
+        "ask": "What has our living prophet warned us about lately, and how is he like a watchman on a tower?",
+        "approved": "2f759ee1"
       },
       {
         "h": "The Bible and the Book of Mormon help “gather” us to Jesus Christ.",
@@ -12971,7 +12976,8 @@ window.TU_WEEKS = [
           "Take turns sharing a story or verse from each book that helps you feel close to the Savior.",
           "The Lord promises to gather and cleanse His people: “so shall they be my people, and I will be their God” (Ezekiel 37:23)."
         ],
-        "ask": "Why is it a blessing to have both the Bible and the Book of Mormon?"
+        "ask": "Why is it a blessing to have both the Bible and the Book of Mormon?",
+        "approved": "db7c0519"
       },
       {
         "h": "Our hearts and families can find healing in the house of the Lord.",
@@ -12983,7 +12989,8 @@ window.TU_WEEKS = [
           "Talk about the blessings the river brought, and how they are like what the Savior gives those who keep their temple covenants.",
           "Sing a song together about the blessings of the temple, or watch the video ‘And the River Will Grow’. The lesson suggests both."
         ],
-        "ask": "What blessings did the river bring, and how does the temple bring blessings like those to our family?"
+        "ask": "What blessings did the river bring, and how does the temple bring blessings like those to our family?",
+        "approved": "927013cd"
       }
     ],
     "family": {
@@ -13021,7 +13028,8 @@ window.TU_WEEKS = [
           "k": "close",
           "text": "Parents share why they trust the prophet’s warnings and love both books of scripture. This week, listen for one thing the prophet has asked us to do, and do it as a family."
         }
-      ]
+      ],
+      "approved": "8bafacc7"
     }
   }
 ];
