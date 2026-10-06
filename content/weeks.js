@@ -8023,7 +8023,8 @@ window.TU_WEEKS = [
           "Jeremiah 7:1–7 and Jeremiah 20:8–9 show more about prophets, and so does hymn 22, ‘We Listen to a Prophet’s Voice.’",
           "Jeremiah 1:10 lists what a prophet is sent to do: tear down and build up. What does our living prophet help pull down and build today?"
         ],
-        "ask": "What has helped you come to know that the prophet we have today is truly called of God?"
+        "ask": "What has helped you come to know that the prophet we have today is truly called of God?",
+        "approved": "b086d5ce"
       },
       {
         "h": "God knew me before I was born.",
@@ -8036,7 +8037,8 @@ window.TU_WEEKS = [
           "President Russell M. Nelson taught that Heavenly Father chose you to come to earth now because of qualities of your spirit, like courage and a wish to serve.",
           "Elder Ahmad S. Corbitt’s talk ‘You Can Gather Israel!’ tells how these truths made a difference in his life. How do they shape the way you live?"
         ],
-        "ask": "When would it help most to remember that God knew you before you were born? How could you remind yourself?"
+        "ask": "When would it help most to remember that God knew you before you were born? How could you remind yourself?",
+        "approved": "59e31863"
       },
       {
         "h": "“They have forsaken me the fountain of living waters.”",
@@ -8049,7 +8051,8 @@ window.TU_WEEKS = [
           "Jeremiah 2:26–28 and Jeremiah 7:2–11 show how the people left the Lord: they turned to idols, then came to His temple as if nothing was wrong.",
           "Jeremiah 7:21–23 tells what the Lord wanted from His people even more than their offerings. What might He want from you?"
         ],
-        "ask": "How do you drink from the Savior’s living water, and how can you keep coming back for more?"
+        "ask": "How do you drink from the Savior’s living water, and how can you keep coming back for more?",
+        "approved": "fab9f2f6"
       },
       {
         "h": "The Lord will gather His people.",
@@ -8062,7 +8065,8 @@ window.TU_WEEKS = [
           "In his youth devotional ‘Hope of Israel,’ President Russell M. Nelson called the gathering of Israel the most important thing happening on earth today.",
           "Read or listen to it and look for three things: what the gathering is, why it matters so much, and how you can be part of it."
         ],
-        "ask": "What is one way our family could help gather someone to the Savior this month?"
+        "ask": "What is one way our family could help gather someone to the Savior this month?",
+        "approved": "2745fa5a"
       },
       {
         "h": "Heavenly Father knew me before I was born.",
@@ -8074,7 +8078,8 @@ window.TU_WEEKS = [
           "Sing a song together about our life before we came to earth. The lesson suggests one from the Children’s Songbook.",
           "Want more? The Guide to the Scriptures has an entry on Premortal Life. Look there for answers to questions that begin with who, when and what."
         ],
-        "ask": "Why do you think Heavenly Father wants you to know He knew you before you were born?"
+        "ask": "Why do you think Heavenly Father wants you to know He knew you before you were born?",
+        "approved": "1d325023"
       },
       {
         "h": "Prophets are called to speak the words of the Lord.",
@@ -8085,7 +8090,8 @@ window.TU_WEEKS = [
           "Gather pictures of our living prophet and of prophets in the scriptures, from a Church magazine or Come, Follow Me. What do you know about each one?",
           "Then each person picks a verse from Jeremiah 1, like verse 5, 7, 10 or 19, reads it aloud and shares what it shows about prophets."
         ],
-        "ask": "From the verse you picked, what is one thing prophets do for the Lord and for us?"
+        "ask": "From the verse you picked, what is one thing prophets do for the Lord and for us?",
+        "approved": "6bbcd710"
       },
       {
         "h": "I can help Heavenly Father’s children come back to Him.",
@@ -8097,7 +8103,8 @@ window.TU_WEEKS = [
           "The fishers and hunters, President Russell M. Nelson has said, are like missionaries. What do missionaries spend their days doing?",
           "The lesson also points to a video message President Nelson gave just for children."
         ],
-        "ask": "How could you help a friend or family member come closer to Heavenly Father this week?"
+        "ask": "How could you help a friend or family member come closer to Heavenly Father this week?",
+        "approved": "636d1d54"
       },
       {
         "h": "I can let the Lord guide my life, like a potter shapes clay.",
@@ -8109,7 +8116,8 @@ window.TU_WEEKS = [
           "“As the clay is in the potter’s hand, so are ye in mine hand” (Jeremiah 18:6). Isaiah 64:8 uses the same picture.",
           "For another story about clay, see Elder Richard J. Maynes’s October 2015 conference talk about finding joy in a Christ-centered life."
         ],
-        "ask": "What would it look like this week to be soft clay in the Lord’s hands?"
+        "ask": "What would it look like this week to be soft clay in the Lord’s hands?",
+        "approved": "aabea54b"
       }
     ],
     "family": {
@@ -8147,7 +8155,8 @@ window.TU_WEEKS = [
           "k": "close",
           "text": "Parents, share why you believe Heavenly Father knew everyone in your family before they were born. This week, look for one person you can help feel closer to Him."
         }
-      ]
+      ],
+      "approved": "64771658"
     }
   },
   {
