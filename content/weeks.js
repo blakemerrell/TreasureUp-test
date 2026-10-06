@@ -3693,7 +3693,8 @@ window.TU_WEEKS = [
           "He promised, “the redeemed of the LORD shall return, and come with singing unto Zion” (Isaiah 51:11).",
           "Try three columns as you read: what God is like (Isaiah 51:3–8), His promises of hope (Isaiah 52:9–10), and your part (Isaiah 51:1–2)."
         ],
-        "ask": "Which promise in Isaiah 50–52 gives you the most hope for what’s ahead, and why?"
+        "ask": "Which promise in Isaiah 50–52 gives you the most hope for what’s ahead, and why?",
+        "approved": "c51719c7"
       },
       {
         "h": "Jesus Christ took upon Himself my sins and sorrows.",
@@ -3706,7 +3707,8 @@ window.TU_WEEKS = [
           "Read one verse at a time and pause. Try I and my in place of we and our, and notice your thoughts and feelings.",
           "Match pictures of His suffering and death to phrases in the chapter, or watch the video ‘My Kingdom Is Not of This World’ in Gospel Library."
         ],
-        "ask": "Which line in Isaiah 53 helps you see that He did this for you personally?"
+        "ask": "Which line in Isaiah 53 helps you see that He did this for you personally?",
+        "approved": "5586e632"
       },
       {
         "h": "Jesus Christ wants me to return to Him.",
@@ -3719,7 +3721,8 @@ window.TU_WEEKS = [
           "Look in Isaiah 54:4–10 and Isaiah 57:15–19 for words that show how He feels about you.",
           "President Dieter F. Uchtdorf taught that no life is too ruined, and no heart too broken, for the Savior to rebuild."
         ],
-        "ask": "How does it change things to know how the Savior feels about you, even after a mistake?"
+        "ask": "How does it change things to know how the Savior feels about you, even after a mistake?",
+        "approved": "b8f563bf"
       },
       {
         "h": "The Lord invites all to “take hold of my covenant.”",
@@ -3731,7 +3734,8 @@ window.TU_WEEKS = [
           "Even someone who says, “The LORD hath utterly separated me from his people” (Isaiah 56:3), is welcome to come.",
           "Mark what people who hold on to His covenant think and do in Isaiah 56:4–7."
         ],
-        "ask": "What would the Lord say to someone who feels left out of His family?"
+        "ask": "What would the Lord say to someone who feels left out of His family?",
+        "approved": "13a093f6"
       },
       {
         "h": "The Lord invites me to “put on [my] strength.”",
@@ -3743,7 +3747,8 @@ window.TU_WEEKS = [
           "Talk about what it looks like to wake up, stand up and grow strong spiritually. What is the Lord asking of us?",
           "In Isaiah 51:1, 4 and 7, see who the Lord is talking to and what He asks: “Hearken unto me, my people” (Isaiah 51:4)."
         ],
-        "ask": "How can you show the Lord that you’re really listening to Him?"
+        "ask": "How can you show the Lord that you’re really listening to Him?",
+        "approved": "26538061"
       },
       {
         "h": "Jesus Christ took upon Himself my sins and sorrows.",
@@ -3756,7 +3761,8 @@ window.TU_WEEKS = [
           "Read “Surely he hath borne our griefs, and carried our sorrows” (Isaiah 53:4), then try to lift something heavy. Sadness can weigh on us like that.",
           "Why did He carry our griefs, sorrows and sins? Alma 7:11–12 helps answer. Then share how He has helped each of you."
         ],
-        "ask": "When has Jesus Christ helped you with something heavy, like sadness, worry or a mistake?"
+        "ask": "When has Jesus Christ helped you with something heavy, like sadness, worry or a mistake?",
+        "approved": "1234e46a"
       },
       {
         "h": "I can seek the Lord and call upon Him.",
@@ -3768,7 +3774,8 @@ window.TU_WEEKS = [
           "Take turns hiding a picture of the Savior. Whoever finds it names one way to seek Him, then hides it for the next round.",
           "For more ideas, sing ‘Seek the Lord Early’ (Children’s Songbook, 108)."
         ],
-        "ask": "What are some ways you can seek the Lord, even on a busy school day?"
+        "ask": "What are some ways you can seek the Lord, even on a busy school day?",
+        "approved": "17b077d9"
       },
       {
         "h": "The Lord’s ways are higher than mine.",
@@ -3780,7 +3787,8 @@ window.TU_WEEKS = [
           "Stand on a sturdy stool and notice how the room looks from up high. Or draw what the verse means to you.",
           "Then compare His ways with ours: how He treats sinners (Mark 2:15–17) and how He leads others (Matthew 20:25–28)."
         ],
-        "ask": "When have you learned to trust the Lord’s way, even when it wasn’t what you expected?"
+        "ask": "When have you learned to trust the Lord’s way, even when it wasn’t what you expected?",
+        "approved": "171e232f"
       }
     ],
     "family": {
@@ -3817,7 +3825,8 @@ window.TU_WEEKS = [
           "k": "close",
           "text": "A parent shares how they know the Savior is near when we seek Him. Invite everyone to try their way of seeking Him each day this week."
         }
-      ]
+      ],
+      "approved": "be5c69d6"
     }
   },
   {
