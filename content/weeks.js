@@ -3681,7 +3681,144 @@ window.TU_WEEKS = [
         "short": "humble",
         "approved": "9e94efd5"
       }
-    ]
+    ],
+    "guide": [
+      {
+        "h": "The future is bright for the Lord’s people.",
+        "id": "title3",
+        "ref": "Isaiah 50–52",
+        "kids": false,
+        "lines": [
+          "Israel would spend years as captives because of their own poor choices. Still, the Lord asked them to face what was coming with hope.",
+          "He promised, “the redeemed of the LORD shall return, and come with singing unto Zion” (Isaiah 51:11).",
+          "Try three columns as you read: what God is like (Isaiah 51:3–8), His promises of hope (Isaiah 52:9–10), and your part (Isaiah 51:1–2)."
+        ],
+        "ask": "Which promise in Isaiah 50–52 gives you the most hope for what’s ahead, and why?"
+      },
+      {
+        "h": "Jesus Christ took upon Himself my sins and sorrows.",
+        "id": "title4",
+        "ref": "Isaiah 53",
+        "kids": false,
+        "lines": [
+          "Few chapters show the Savior’s mission as beautifully as Isaiah 53, and it was written centuries before He was born.",
+          "Movie heroes usually rescue people by fighting. Compare that with the Savior here: “he was wounded for our transgressions” (Isaiah 53:5).",
+          "Read one verse at a time and pause. Try I and my in place of we and our, and notice your thoughts and feelings.",
+          "Match pictures of His suffering and death to phrases in the chapter, or watch the video ‘My Kingdom Is Not of This World’ in Gospel Library."
+        ],
+        "ask": "Which line in Isaiah 53 helps you see that He did this for you personally?"
+      },
+      {
+        "h": "Jesus Christ wants me to return to Him.",
+        "id": "title5",
+        "ref": "Isaiah 54; 57:15–19",
+        "kids": false,
+        "lines": [
+          "Everyone feels far from the Lord sometimes because of sins or weaknesses. Some people even stop believing He could forgive them.",
+          "Isaiah 54 and Isaiah 57 answer that fear. The Lord says, “with great mercies will I gather thee” (Isaiah 54:7).",
+          "Look in Isaiah 54:4–10 and Isaiah 57:15–19 for words that show how He feels about you.",
+          "President Dieter F. Uchtdorf taught that no life is too ruined, and no heart too broken, for the Savior to rebuild."
+        ],
+        "ask": "How does it change things to know how the Savior feels about you, even after a mistake?"
+      },
+      {
+        "h": "The Lord invites all to “take hold of my covenant.”",
+        "id": "title6",
+        "ref": "Isaiah 55–56",
+        "kids": false,
+        "lines": [
+          "Israel was known as God’s covenant people, but His plan was always bigger than one nation: “Ho, every one that thirsteth, come ye to the waters” (Isaiah 55:1).",
+          "Even someone who says, “The LORD hath utterly separated me from his people” (Isaiah 56:3), is welcome to come.",
+          "Mark what people who hold on to His covenant think and do in Isaiah 56:4–7."
+        ],
+        "ask": "What would the Lord say to someone who feels left out of His family?"
+      },
+      {
+        "h": "The Lord invites me to “put on [my] strength.”",
+        "id": "title8",
+        "ref": "Isaiah 51–52",
+        "kids": true,
+        "lines": [
+          "Hunt for wake-up words in Isaiah 51–52, like “Awake, awake; put on thy strength, O Zion” (Isaiah 52:1). Then act them out.",
+          "Talk about what it looks like to wake up, stand up and grow strong spiritually. What is the Lord asking of us?",
+          "In Isaiah 51:1, 4 and 7, see who the Lord is talking to and what He asks: “Hearken unto me, my people” (Isaiah 51:4)."
+        ],
+        "ask": "How can you show the Lord that you’re really listening to Him?"
+      },
+      {
+        "h": "Jesus Christ took upon Himself my sins and sorrows.",
+        "id": "title9",
+        "ref": "Isaiah 53:3–9",
+        "kids": true,
+        "lines": [
+          "Look at pictures of the Savior’s suffering and death. Then read Isaiah 53:3–6, 9 and find words that match what you see.",
+          "Isaiah wrote this hundreds of years before it happened. Alma 39:15–19 helps explain why people needed to know so early.",
+          "Read “Surely he hath borne our griefs, and carried our sorrows” (Isaiah 53:4), then try to lift something heavy. Sadness can weigh on us like that.",
+          "Why did He carry our griefs, sorrows and sins? Alma 7:11–12 helps answer. Then share how He has helped each of you."
+        ],
+        "ask": "When has Jesus Christ helped you with something heavy, like sadness, worry or a mistake?"
+      },
+      {
+        "h": "I can seek the Lord and call upon Him.",
+        "id": "title10",
+        "ref": "Isaiah 55:6",
+        "kids": true,
+        "lines": [
+          "Isaiah invites, “Seek ye the LORD while he may be found, call ye upon him while he is near” (Isaiah 55:6).",
+          "Take turns hiding a picture of the Savior. Whoever finds it names one way to seek Him, then hides it for the next round.",
+          "For more ideas, sing ‘Seek the Lord Early’ (Children’s Songbook, 108)."
+        ],
+        "ask": "What are some ways you can seek the Lord, even on a busy school day?"
+      },
+      {
+        "h": "The Lord’s ways are higher than mine.",
+        "id": "title11",
+        "ref": "Isaiah 55:8–9",
+        "kids": true,
+        "lines": [
+          "“For as the heavens are higher than the earth, so are my ways higher than your ways” (Isaiah 55:9).",
+          "Stand on a sturdy stool and notice how the room looks from up high. Or draw what the verse means to you.",
+          "Then compare His ways with ours: how He treats sinners (Mark 2:15–17) and how He leads others (Matthew 20:25–28)."
+        ],
+        "ask": "When have you learned to trust the Lord’s way, even when it wasn’t what you expected?"
+      }
+    ],
+    "family": {
+      "title": "Seek Him; He carries the load",
+      "minutes": 20,
+      "from": [
+        "title10",
+        "title9"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Sing ‘Seek the Lord Early’ (Children’s Songbook, 108) together. Then someone offers a prayer."
+        },
+        {
+          "k": "learn",
+          "ref": "Isaiah 55:6",
+          "text": "Read Isaiah 55:6 together. Listen for the two things Isaiah asks us to do, and when to do them."
+        },
+        {
+          "k": "do",
+          "text": "Take turns hiding a picture of Jesus somewhere in the house. Whoever finds it names one way to seek Him, like praying, reading scriptures or helping someone, then hides it for the next person. Play a few rounds."
+        },
+        {
+          "k": "learn",
+          "ref": "Isaiah 53:4",
+          "text": "Read Isaiah 53:4. Then everyone tries to lift something heavy, like a full laundry basket or a stack of books. Talk about how sadness can feel that heavy, and who carries it with us."
+        },
+        {
+          "k": "talk",
+          "text": "When have you felt Jesus Christ help you carry something hard? Where could you look for Him this week?"
+        },
+        {
+          "k": "close",
+          "text": "A parent shares how they know the Savior is near when we seek Him. Invite everyone to try their way of seeking Him each day this week."
+        }
+      ]
+    }
   },
   {
     "dates": "October 12–18, 2026",
@@ -5684,7 +5821,154 @@ window.TU_WEEKS = [
         "more": "It’s the word in Genesis 1:1. Here the Lord promises new heavens and a new earth, when the earth will be renewed and made glorious.",
         "approved": "aa4bd63e"
       }
-    ]
+    ],
+    "guide": [
+      {
+        "h": "Fasting builds spiritual power and blesses people in need.",
+        "id": "title3",
+        "ref": "Isaiah 58:3–12",
+        "kids": false,
+        "lines": [
+          "Why would anyone skip meals with food right there in the kitchen? Isaiah 58 gives the Lord’s reasons for fasting. Think about yours, too.",
+          "Fasting can start to feel like a burden (Isaiah 58:3–5). The Lord’s kind of fast is meant “to loose the bands of wickedness” (Isaiah 58:6).",
+          "It reaches others too, like feeding the hungry and helping the poor (Isaiah 58:7). Then He promises light, healing and guidance (Isaiah 58:8–12).",
+          "President Henry B. Eyring has told of several people blessed by fasting and fast offerings."
+        ],
+        "ask": "When has fasting, or a fast offering, blessed you or someone you know?"
+      },
+      {
+        "h": "Honoring the Lord on the Sabbath brings joy.",
+        "id": "title4",
+        "ref": "Isaiah 58:13–14",
+        "kids": false,
+        "lines": [
+          "The Lord asks His people to “call the sabbath a delight, the holy of the LORD, honourable” (Isaiah 58:13). Is it a delight for you?",
+          "Think about what it means to set your own plans aside on His day, and to find your joy in Him instead.",
+          "President Russell M. Nelson taught about making the Sabbath a delight. What could help your family enjoy it more?"
+        ],
+        "ask": "What’s one change that would make next Sunday more of a delight for our family?"
+      },
+      {
+        "h": "Jesus Christ is my Savior and Redeemer.",
+        "id": "title5",
+        "ref": "Isaiah 59:9–21; 61:1–3; 63:7–9",
+        "kids": false,
+        "lines": [
+          "These chapters keep pointing to the Savior. Watch for His titles and how He’s described, like “the Redeemer shall come to Zion” (Isaiah 59:20).",
+          "No one could rescue the people from the darkness of Isaiah 59:9–15. In Isaiah 59:16–21, the Lord steps in Himself as their intercessor.",
+          "In Nazareth, Jesus read Isaiah 61:1–2 and said it was about Him (Luke 4:16–21). Where has He given you “beauty for ashes” (Isaiah 61:3)?",
+          "In Isaiah 63:7–9, Isaiah remembers how the Lord has cared for His people. What would you add from your own life?"
+        ],
+        "ask": "Which blessing in Isaiah 61:1–3 have you seen the Savior give to you or someone you love?"
+      },
+      {
+        "h": "“The Lord shall be unto thee an everlasting light.”",
+        "id": "title6",
+        "ref": "Isaiah 60; 62",
+        "kids": false,
+        "lines": [
+          "Isaiah 60 and Isaiah 62 are full of light and darkness, eyes and seeing. They show the Savior’s gospel blessing the whole world in the latter days.",
+          "Look for those ideas in Isaiah 60:1–5, 19–20 and Isaiah 62:1–2, like “darkness shall cover the earth… but the LORD shall arise upon thee” (Isaiah 60:2).",
+          "The Lord is bringing His children out of darkness into His light. What can you do to help?"
+        ],
+        "ask": "Who could our family help come a little closer to the Lord’s light this week?"
+      },
+      {
+        "h": "Christ will reign on earth during the Millennium.",
+        "id": "title7",
+        "ref": "Isaiah 64:1–5; 65:17–25; 66",
+        "kids": false,
+        "lines": [
+          "Isaiah saw a day when “the former troubles are forgotten” (Isaiah 65:16). This promise comes true more than once, but most fully when Jesus Christ comes again.",
+          "Read Isaiah 64:1–5, Isaiah 65:17–25 and Isaiah 66, and count words like rejoice and joy as you go.",
+          "The Lord says, “be ye glad and rejoice for ever in that which I create” (Isaiah 65:18)."
+        ],
+        "ask": "Why will the day Jesus comes again be a joyful day for you, and how can you get ready for it?"
+      },
+      {
+        "h": "Fasting blesses me and others in need.",
+        "id": "title9",
+        "ref": "Isaiah 58:6–11",
+        "kids": true,
+        "lines": [
+          "Knowing the Lord’s reasons may be the best help in getting ready to fast. Read Isaiah 58:6–11 together to find why we fast, and how.",
+          "The Guide to the Scriptures has an entry on fasting that can help, too.",
+          "Parents, if fasting has ever meant a lot to you, tell the story."
+        ],
+        "ask": "If a friend asked you why we fast, what would you say?"
+      },
+      {
+        "h": "The Sabbath can be a delight to me.",
+        "id": "title10",
+        "ref": "Isaiah 58:13–14",
+        "kids": true,
+        "lines": [
+          "After reading Isaiah 58:13–14, say the days of the week together on a calendar. When you reach Sunday, call it “a delight” (Isaiah 58:13).",
+          "Parents, tell why Sunday is a delight to you.",
+          "Share ways to “delight thyself in the LORD” (Isaiah 58:14) on Sunday. Draw your ideas and save them for a Sunday when you need something to do."
+        ],
+        "ask": "What’s something you love doing on Sunday that helps you feel close to the Lord?"
+      },
+      {
+        "h": "The Savior is like a light for me.",
+        "id": "title11",
+        "ref": "Isaiah 60:1–3",
+        "kids": true,
+        "lines": [
+          "Close your eyes while someone reads Isaiah 60:1–3. Open them at the word light, and shut them again at darkness.",
+          "Jesus Christ and His gospel work like a light, showing us the way home to Heavenly Father."
+        ],
+        "ask": "When has following Jesus helped you see what to do, like a light in a dark room?"
+      },
+      {
+        "h": "When Jesus comes again, He will bring peace and joy.",
+        "id": "title12",
+        "ref": "Isaiah 65:17–25",
+        "kids": true,
+        "lines": [
+          "Isaiah 65:17–25 pictures life after the Savior returns. Read it together and look for what will be different on the “new earth” (Isaiah 65:17).",
+          "No more crying (Isaiah 65:19), and even animals at peace (Isaiah 65:25). Why is it a time to “rejoice for ever” (Isaiah 65:18)?",
+          "Sing ‘When the Savior Comes Again’ (number 1002 in Hymns for Home and Church) together."
+        ],
+        "ask": "What are you most excited about for when Jesus comes again, and how can we prepare?"
+      }
+    ],
+    "family": {
+      "title": "His light now, His joy to come",
+      "minutes": 20,
+      "from": [
+        "title11",
+        "title12"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Sing ‘When the Savior Comes Again’ (number 1002 in Hymns for Home and Church), then have someone pray."
+        },
+        {
+          "k": "learn",
+          "ref": "Isaiah 60:1–3",
+          "text": "Dim the lights and close your eyes while a parent reads slowly. Open your eyes every time you hear “light,” and squeeze them shut at “darkness.” Then do it again with someone else reading."
+        },
+        {
+          "k": "talk",
+          "text": "How is Jesus Christ like a light? Talk about how He and His gospel help us find the way back to Heavenly Father, and a time He helped you see what to do."
+        },
+        {
+          "k": "learn",
+          "ref": "Isaiah 65:17–25",
+          "text": "Take turns reading these verses about the earth after the Savior comes again. Then each person acts out one change they found, like the wolf and the lamb eating together (verse 25), while everyone else guesses which verse it is."
+        },
+        {
+          "k": "talk",
+          "text": "What are you most looking forward to when He comes? What could each of us do this week to get ready?"
+        },
+        {
+          "k": "close",
+          "text": "A parent shares why they love the Savior and look forward to His coming. Invite everyone to let His light show in one kind act this week."
+        }
+      ]
+    }
   },
   {
     "dates": "October 19–25, 2026",
@@ -7708,7 +7992,144 @@ window.TU_WEEKS = [
         "more": "It’s the same word as “Before I formed thee” in Jeremiah 1:5. When a pot was marred, the potter made it again (verse 4). The Lord can reshape us too.",
         "approved": "c1f794a9"
       }
-    ]
+    ],
+    "guide": [
+      {
+        "h": "Prophets are called to speak God’s word.",
+        "id": "title3",
+        "ref": "Jeremiah 1:4–19; 7:1–7; 20:8–9",
+        "kids": false,
+        "lines": [
+          "Picture a friend who knows nothing about prophets. How could Jeremiah’s call in Jeremiah 1:4–19 help you explain them? Look for what it teaches.",
+          "Jeremiah 7:1–7 and Jeremiah 20:8–9 show more about prophets, and so does hymn 22, ‘We Listen to a Prophet’s Voice.’",
+          "Jeremiah 1:10 lists what a prophet is sent to do: tear down and build up. What does our living prophet help pull down and build today?"
+        ],
+        "ask": "What has helped you come to know that the prophet we have today is truly called of God?"
+      },
+      {
+        "h": "God knew me before I was born.",
+        "id": "title4",
+        "ref": "Jeremiah 1:5",
+        "kids": false,
+        "lines": [
+          "In Jeremiah 1:5 the Lord tells Jeremiah He knew him and set him apart before he was born. Why would a brand-new prophet need to hear that?",
+          "Much of that is true of you too. Abraham 3:22–23, Alma 13:1–4 and Doctrine and Covenants 138:53–56 tell more; try listing what you find.",
+          "President Russell M. Nelson taught that Heavenly Father chose you to come to earth now because of qualities of your spirit, like courage and a wish to serve.",
+          "Elder Ahmad S. Corbitt’s talk ‘You Can Gather Israel!’ tells how these truths made a difference in his life. How do they shape the way you live?"
+        ],
+        "ask": "When would it help most to remember that God knew you before you were born? How could you remind yourself?"
+      },
+      {
+        "h": "“They have forsaken me the fountain of living waters.”",
+        "id": "title5",
+        "ref": "Jeremiah 2; 7",
+        "kids": false,
+        "lines": [
+          "In a dry land, people kept water in underground pits called cisterns. What might “broken cisterns, that can hold no water” (Jeremiah 2:13) stand for?",
+          "Try pouring water into a cracked cup, then drinking from a running tap. Why is living water a good picture of what Jesus Christ gives you?",
+          "Jeremiah 2:26–28 and Jeremiah 7:2–11 show how the people left the Lord: they turned to idols, then came to His temple as if nothing was wrong.",
+          "Jeremiah 7:21–23 tells what the Lord wanted from His people even more than their offerings. What might He want from you?"
+        ],
+        "ask": "How do you drink from the Savior’s living water, and how can you keep coming back for more?"
+      },
+      {
+        "h": "The Lord will gather His people.",
+        "id": "title6",
+        "ref": "Jeremiah 3:14–18; 16:14–21",
+        "kids": false,
+        "lines": [
+          "Jeremiah 16:14–15 says that one day the gathering of Israel from every land will be remembered even more than the Exodus from Egypt. Why might that be?",
+          "Look in Jeremiah 3:14–18 and Jeremiah 16:14–21 for how the gathering happens, like “one of a city, and two of a family” (Jeremiah 3:14) and “many fishers” (Jeremiah 16:16).",
+          "In his youth devotional ‘Hope of Israel,’ President Russell M. Nelson called the gathering of Israel the most important thing happening on earth today.",
+          "Read or listen to it and look for three things: what the gathering is, why it matters so much, and how you can be part of it."
+        ],
+        "ask": "What is one way our family could help gather someone to the Savior this month?"
+      },
+      {
+        "h": "Heavenly Father knew me before I was born.",
+        "id": "title8",
+        "ref": "Jeremiah 1:5",
+        "kids": true,
+        "lines": [
+          "Look at baby pictures together, maybe even your own, and read Jeremiah 1:5. Do you know where you lived before you were born?",
+          "Sing a song together about our life before we came to earth. The lesson suggests one from the Children’s Songbook.",
+          "Want more? The Guide to the Scriptures has an entry on Premortal Life. Look there for answers to questions that begin with who, when and what."
+        ],
+        "ask": "Why do you think Heavenly Father wants you to know He knew you before you were born?"
+      },
+      {
+        "h": "Prophets are called to speak the words of the Lord.",
+        "id": "title9",
+        "ref": "Jeremiah 1:4–19",
+        "kids": true,
+        "lines": [
+          "Gather pictures of our living prophet and of prophets in the scriptures, from a Church magazine or Come, Follow Me. What do you know about each one?",
+          "Then each person picks a verse from Jeremiah 1, like verse 5, 7, 10 or 19, reads it aloud and shares what it shows about prophets."
+        ],
+        "ask": "From the verse you picked, what is one thing prophets do for the Lord and for us?"
+      },
+      {
+        "h": "I can help Heavenly Father’s children come back to Him.",
+        "id": "title10",
+        "ref": "Jeremiah 16:14–16",
+        "kids": true,
+        "lines": [
+          "While someone reads Jeremiah 16:16, everyone else pretends to fish or hunt for things around the room.",
+          "The fishers and hunters, President Russell M. Nelson has said, are like missionaries. What do missionaries spend their days doing?",
+          "The lesson also points to a video message President Nelson gave just for children."
+        ],
+        "ask": "How could you help a friend or family member come closer to Heavenly Father this week?"
+      },
+      {
+        "h": "I can let the Lord guide my life, like a potter shapes clay.",
+        "id": "title11",
+        "ref": "Jeremiah 18:1–6",
+        "kids": true,
+        "lines": [
+          "Talk about how pottery is made, or look at the picture at the end of the lesson. Then read Jeremiah 18:1–6 together.",
+          "“As the clay is in the potter’s hand, so are ye in mine hand” (Jeremiah 18:6). Isaiah 64:8 uses the same picture.",
+          "For another story about clay, see Elder Richard J. Maynes’s October 2015 conference talk about finding joy in a Christ-centered life."
+        ],
+        "ask": "What would it look like this week to be soft clay in the Lord’s hands?"
+      }
+    ],
+    "family": {
+      "title": "Known, Called and Shaped",
+      "minutes": 20,
+      "from": [
+        "title8",
+        "title9",
+        "title10",
+        "title11"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Pass around baby pictures of everyone in the family and guess who is who. Then someone offers a prayer."
+        },
+        {
+          "k": "learn",
+          "ref": "Jeremiah 1:4–19",
+          "text": "Read Jeremiah 1:5 together: the Lord knew Jeremiah before he was born. Then each person picks verse 7, 10 or 19, reads it aloud, and tells one thing it shows about prophets."
+        },
+        {
+          "k": "do",
+          "text": "Fishers and hunters: one person hides spoons, socks or small toys around the room. Read Jeremiah 16:16 aloud, then everyone else fishes and hunts until all are found. President Russell M. Nelson likened these fishers and hunters to missionaries."
+        },
+        {
+          "k": "do",
+          "text": "Grab play dough, or mix a little flour and water into dough. Read Jeremiah 18:1–6, then everyone shapes a little pot. Squash one and make it again, just as the potter did when his first try was marred."
+        },
+        {
+          "k": "talk",
+          "text": "Who could we help come back to Heavenly Father, like the fishers and hunters? What might it look like to let the Lord shape you, like clay in His hands?"
+        },
+        {
+          "k": "close",
+          "text": "Parents, share why you believe Heavenly Father knew everyone in your family before they were born. This week, look for one person you can help feel closer to Him."
+        }
+      ]
+    }
   },
   {
     "dates": "October 26–November 1, 2026",
@@ -10101,7 +10522,178 @@ window.TU_WEEKS = [
         "more": "Even after Jerusalem fell, Jeremiah said the Lord’s compassions “fail not” and “are new every morning” (verse 23). The same letters spell רַחַם, “womb.”",
         "approved": "4e4ef2ad"
       }
-    ]
+    ],
+    "guide": [
+      {
+        "h": "The Lord will bring His covenant people out of captivity.",
+        "id": "title3",
+        "ref": "Jeremiah 31; 33",
+        "kids": false,
+        "lines": [
+          "The Lord knew captivity would bring His people “lamentation, and bitter weeping” (Jeremiah 31:15). He didn’t look away from their sorrow.",
+          "But Jeremiah 31 and 33 are full of comfort and hope too. Look for those promises as you read, like “I will turn their mourning into joy” (Jeremiah 31:13).",
+          "He even promised to bring the captives home: “I will cause the captivity of Judah and the captivity of Israel to return” (Jeremiah 33:7)."
+        ],
+        "ask": "Which of the Lord’s promises in these chapters feels most like it’s meant for you, and why?"
+      },
+      {
+        "h": "“They shall be my people, and I will be their God.”",
+        "id": "title4",
+        "ref": "Jeremiah 31:31–34; 32:37–42",
+        "kids": false,
+        "lines": [
+          "Israel had broken its covenants, yet the Lord promised “a new covenant” (Jeremiah 31:31) and “an everlasting covenant” (Jeremiah 32:40). What is that covenant?",
+          "For help, look up New and Everlasting Covenant in the Guide to the Scriptures, or read Elder Alan R. Walker’s talk ‘A Peculiar Treasure.’",
+          "As you read, ponder what it means to belong to God’s covenant people, with His law written on your heart.",
+          "Think too about what the Lord promises you in your covenants, and how keeping close to Him changes you."
+        ],
+        "ask": "What promises have you made to God, at baptism or in other ordinances, and how have you seen Him keep His?"
+      },
+      {
+        "h": "The scriptures have power to turn me away from evil.",
+        "id": "title5",
+        "ref": "Jeremiah 36",
+        "kids": false,
+        "lines": [
+          "Jeremiah 36:2–3 tells why the Lord had Jeremiah write His words in a scroll: so the people might hear, turn from evil and be forgiven.",
+          "As you read, notice how each one felt about the scroll: the Lord, Jeremiah, Baruch, Jehudi, King Jehoiakim, and the princes who begged the king not to burn it."
+        ],
+        "ask": "How do you feel about the scriptures? When have they helped you stay away from something wrong?"
+      },
+      {
+        "h": "Be firm in following God’s prophets.",
+        "id": "title6",
+        "ref": "Jeremiah 37–39",
+        "kids": false,
+        "lines": [
+          "In Jeremiah 37:1–3, 15–21 and Jeremiah 38:1–6, 14–28, look for clues that King Zedekiah believed Jeremiah spoke for the Lord, and clues that he didn’t.",
+          "Jeremiah 39 shows what happened when the warnings were ignored. How might things have gone if the king and his people had obeyed?",
+          "Lehi lived in Jerusalem under the same king. Set his family’s story in 1 Nephi 1–2 beside Zedekiah’s. What do you notice?"
+        ],
+        "ask": "What helps you follow the prophet even when it’s hard, or when others around you won’t?"
+      },
+      {
+        "h": "I can be bold in standing up for what is right.",
+        "id": "title7",
+        "ref": "Jeremiah 38:6–13; 39:15–18",
+        "kids": false,
+        "lines": [
+          "The princes claimed Jeremiah’s words were weakening the soldiers, so they lowered him into a muddy pit (Jeremiah 38:1–6).",
+          "Read Jeremiah 38:7–13. What stands out to you about the way Ebed-melech, a servant from Ethiopia, came to Jeremiah’s rescue?",
+          "Then see what the Lord promised him in Jeremiah 39:15–18: “I will surely deliver thee” (Jeremiah 39:18)."
+        ],
+        "ask": "Where might you need to be brave like Ebed-melech, at school, with friends or online?"
+      },
+      {
+        "h": "The Lord can relieve the sorrow I experience because of sin.",
+        "id": "title8",
+        "ref": "Lamentations 1; 3",
+        "kids": false,
+        "lines": [
+          "Lamentations gathers sad poems from the time after Babylon destroyed Jerusalem and its temple. Why might it matter that they were saved for us?",
+          "Its word pictures, like Jerusalem as a widow weeping in the night (Lamentations 1:1–2), show how deep Israel’s sorrow was.",
+          "Look for hope in Christ too, especially in Lamentations 3:20–33. Matthew 5:4, James 4:8–10 and Alma 36:17–20 add more.",
+          "President M. Russell Ballard pleaded with anyone trapped by sin never to give up, because hope is always there. See also hymn 115, ‘Come, Ye Disconsolate.’"
+        ],
+        "ask": "Which verse in Lamentations 3:20–33 gives you the most hope in Jesus Christ, and why?"
+      },
+      {
+        "h": "Heavenly Father and Jesus love me “with an everlasting love.”",
+        "id": "title10",
+        "ref": "Jeremiah 31:3",
+        "kids": true,
+        "lines": [
+          "Read Jeremiah 31:3. Then hunt the house for things that last a long time and things that don’t, like a piece of fruit.",
+          "What does everlasting mean? Tell each other about a time you felt Heavenly Father’s love that never runs out.",
+          "Sing ‘God Is Watching Over All’ together, from page 229 of the Children’s Songbook."
+        ],
+        "ask": "How does it feel to know that Heavenly Father and Jesus will never stop loving you?"
+      },
+      {
+        "h": "God will help me keep my covenants.",
+        "id": "title11",
+        "ref": "Jeremiah 31:31–34; 32:38–41",
+        "kids": true,
+        "lines": [
+          "Draw a big heart on paper. As you read Jeremiah 31:31–34, write inside it what you learn about making covenants with God.",
+          "Go over the promises made at baptism in Mosiah 18:10, 13. What would it mean to have them written in your heart?",
+          "The Lord promises His help: “I will not turn away from them, to do them good” (Jeremiah 32:40)."
+        ],
+        "ask": "What is one way Heavenly Father has helped you keep the promises you made when you were baptized?"
+      },
+      {
+        "h": "The scriptures are the word of God.",
+        "id": "title12",
+        "ref": "Jeremiah 36:1–4",
+        "kids": true,
+        "lines": [
+          "Act out Jeremiah 36:4–10: one person speaks the Lord’s words like Jeremiah, another writes them in a book like Baruch, then reads them aloud to everyone.",
+          "This week’s children’s activity page can help with the story of Jeremiah, Baruch and the king.",
+          "Set a storybook next to the scriptures. How are they different, and what makes the scriptures special?"
+        ],
+        "ask": "Which scripture passage is special to you, and why? Take turns sharing one."
+      },
+      {
+        "h": "I can stand up for what is right.",
+        "id": "title13",
+        "ref": "Jeremiah 38:6–13",
+        "kids": true,
+        "lines": [
+          "Look at the picture at the end of the lesson while you tell how Ebed-melech saved Jeremiah (Jeremiah 38:6–13).",
+          "Which verse shows Ebed-melech being brave for the prophet? See who can find it first."
+        ],
+        "ask": "How can we show that we believe the prophet God has called for our day?"
+      },
+      {
+        "h": "The Savior made it possible for me to be forgiven of my sins.",
+        "id": "title14",
+        "ref": "Lamentations 1:1–2, 16; 3:22–26",
+        "kids": true,
+        "lines": [
+          "Jerusalem and its temple were destroyed because the people would not repent. Read Lamentations 1:1–2, 16. How might you have felt living there?",
+          "Then read Lamentations 3:22–26. How could “his compassions fail not” (Lamentations 3:22) bring hope to someone that sad?",
+          "Tell each other about a time you felt sad after a wrong choice. What do these verses teach about the forgiveness Jesus Christ offers?"
+        ],
+        "ask": "What does “new every morning” (Lamentations 3:23) tell you about starting fresh after a mistake?"
+      }
+    ],
+    "family": {
+      "title": "Everlasting Love and a Rope Rescue",
+      "minutes": 20,
+      "from": [
+        "title10",
+        "title13",
+        "title14"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Sing ‘God Is Watching Over All’ (Children’s Songbook, page 229) together, then say a family prayer."
+        },
+        {
+          "k": "learn",
+          "ref": "Jeremiah 31:3",
+          "text": "Read Jeremiah 31:3. Then everyone gets one minute to grab one thing that lasts and one that won’t, like a banana. Which kind is the Lord’s love, and why?"
+        },
+        {
+          "k": "learn",
+          "ref": "Jeremiah 38:6–13",
+          "text": "Read Jeremiah 38:6–13 together. Look for what Ebed-melech told the king, and how he got Jeremiah out of the mud."
+        },
+        {
+          "k": "do",
+          "text": "Rope rescue: one person sits on the floor as Jeremiah in the muddy pit. Twist a towel or sheet into a rope, tuck socks under their arms for the old rags, and gently pull them to their feet. Take turns."
+        },
+        {
+          "k": "talk",
+          "text": "Read Lamentations 3:22–23. When have you felt sad about a wrong choice? How does Jesus Christ help us start fresh, with mercies that are new every morning?"
+        },
+        {
+          "k": "close",
+          "text": "Parents, share how you have felt the never-ending love of Heavenly Father and Jesus Christ. This week, look for a chance to be brave like Ebed-melech and stand up for what is right."
+        }
+      ]
+    }
   },
   {
     "dates": "November 2–8, 2026",
@@ -12263,6 +12855,133 @@ window.TU_WEEKS = [
         "more": "Water flowing from the temple made even the salty Dead Sea fresh and full of fish (verse 9). Blessings that flow from the Lord’s house can heal us too.",
         "approved": "72c5d1c0"
       }
-    ]
+    ],
+    "guide": [
+      {
+        "h": "The Lord invites me to feed His sheep.",
+        "id": "title3",
+        "ref": "Ezekiel 3; 34",
+        "kids": false,
+        "lines": [
+          "The Lord calls the leaders of His people watchmen (Ezekiel 3:17) and shepherds (Ezekiel 34:2). Think about what each title says a good leader should do.",
+          "In Ezekiel 34:11–31 the Savior shows how a true shepherd acts: He searches for the lost, binds up the hurt and feeds His flock.",
+          "Missionaries, parents and ministering brothers and sisters can all learn from Him. Jesus asked Peter to feed His sheep too (John 21:15–17).",
+          "Look for symbols as well, like the good pasture and fold in Ezekiel 34:14, and the lost sheep versus the ones driven away (Ezekiel 34:16)."
+        ],
+        "ask": "Whom has the Lord given our family to watch over and feed, and how can we help one of them this week?"
+      },
+      {
+        "h": "The Lord wants to forgive.",
+        "id": "title4",
+        "ref": "Ezekiel 33:10–19",
+        "kids": false,
+        "lines": [
+          "Weighed down by their sins, the captives asked, “how should we then live?” (Ezekiel 33:10). The Lord answered by teaching them to repent and be forgiven.",
+          "He warns against leaning on the good we did before, and promises that a sinner who turns away and does right will live (Ezekiel 33:12–16).",
+          "If that seems unfair, compare the two sons in Matthew 21:28–31 and the two men praying in Luke 18:9–14.",
+          "For more on what repenting means, read about a new heart and spirit in Ezekiel 36:26–27, and being born again and washed clean in Alma 7:14–16."
+        ],
+        "ask": "What might it look like to “trust to his own righteousness” (Ezekiel 33:13), and how is repenting different from that?"
+      },
+      {
+        "h": "The Lord is gathering His people and giving them new life.",
+        "id": "title5",
+        "ref": "Ezekiel 37",
+        "kids": false,
+        "lines": [
+          "Ezekiel 37 shows the gathering of Israel in two pictures. First, a valley of dry bones comes back to life (Ezekiel 37:1–14; see also Ezekiel 36:24–30).",
+          "Think about how the Lord gathers His children, both the living and those who have died.",
+          "Second, two sticks, which many scholars think were wooden writing boards, one for Judah and one for Joseph, become one in the Lord’s hand (Ezekiel 37:15–28).",
+          "Judah’s stick can stand for the Bible and Joseph’s for the Book of Mormon. Ask what the Lord wants the gathering to do, and how He does it."
+        ],
+        "ask": "Which verses from the Bible and the Book of Mormon have worked as a pair to bring you closer to Jesus Christ?"
+      },
+      {
+        "h": "I can find spiritual healing in the house of the Lord.",
+        "id": "title6",
+        "ref": "Ezekiel 47:1–12",
+        "kids": false,
+        "lines": [
+          "In Ezekiel’s vision, water runs out from under the temple and becomes a river that heals the Dead Sea, where fish and plants couldn’t live (Ezekiel 47:1–9).",
+          "Notice what the water does wherever it flows, and compare Revelation 22:1. What could the water stand for, and the fruit trees in Ezekiel 47:12?",
+          "Elder Dale G. Renlund’s 2018 talk about temple and family history work, and the healing it brings, can add to what you see here."
+        ],
+        "ask": "When has the temple, or getting ready to go there, brought healing or new life to you or our family?"
+      },
+      {
+        "h": "Prophets are like watchmen who warn us of danger.",
+        "id": "title8",
+        "ref": "Ezekiel 3:17; 33:1–5",
+        "kids": true,
+        "lines": [
+          "In Ezekiel 3:17 the Lord makes Ezekiel a watchman. As you read it, point to your eyes, ears and mouth for watchman, hear and mouth.",
+          "Go for a walk outside or around the room while one person calls out pretend dangers on the path, like a stream to leap or a branch to duck.",
+          "Or let someone stand at a window and report what is going on outside. The lesson also suggests the video ‘Watchman on the Tower’.",
+          "A watchman sees trouble coming and blows the trumpet in time (Ezekiel 33:1–5). Prophets warn us of dangers we can’t see yet."
+        ],
+        "ask": "What has our living prophet warned us about lately, and how is he like a watchman on a tower?"
+      },
+      {
+        "h": "The Bible and the Book of Mormon help “gather” us to Jesus Christ.",
+        "id": "title9",
+        "ref": "Ezekiel 37:15–23",
+        "kids": true,
+        "lines": [
+          "Read Ezekiel 37:15–23 together, then find two sticks. Label one for Judah, the Bible, and the other for Joseph, the Book of Mormon.",
+          "Take turns sharing a story or verse from each book that helps you feel close to the Savior.",
+          "The Lord promises to gather and cleanse His people: “so shall they be my people, and I will be their God” (Ezekiel 37:23)."
+        ],
+        "ask": "Why is it a blessing to have both the Bible and the Book of Mormon?"
+      },
+      {
+        "h": "Our hearts and families can find healing in the house of the Lord.",
+        "id": "title10",
+        "ref": "Ezekiel 47:1–12",
+        "kids": true,
+        "lines": [
+          "Each person draws something from Ezekiel 47:1–12: the temple, the river, the desert, the Dead Sea, lots of fish, or a fruit tree. Hold it up when it comes.",
+          "Talk about the blessings the river brought, and how they are like what the Savior gives those who keep their temple covenants.",
+          "Sing a song together about the blessings of the temple, or watch the video ‘And the River Will Grow’. The lesson suggests both."
+        ],
+        "ask": "What blessings did the river bring, and how does the temple bring blessings like those to our family?"
+      }
+    ],
+    "family": {
+      "title": "The Watchman and the Two Sticks",
+      "minutes": 20,
+      "from": [
+        "title8",
+        "title9",
+        "title5"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Sing ‘Israel, Israel, God Is Calling’ (Hymns, no. 7), a hymn about the Lord gathering His people. Then someone offers the opening prayer."
+        },
+        {
+          "k": "do",
+          "text": "One child is the watchman and leads the family on a trail through the house, calling out pretend dangers ahead: a river to leap, a low branch to duck, a bear to tiptoe past. Everyone moves only when the watchman says it’s safe."
+        },
+        {
+          "k": "learn",
+          "ref": "Ezekiel 33:1–5",
+          "text": "Read about the watchman chosen to guard the land. What does he do when he sees the sword coming, and what happens to people who ignore the trumpet? Then read Ezekiel 3:17, where the Lord gives Ezekiel that same job."
+        },
+        {
+          "k": "learn",
+          "ref": "Ezekiel 37:15–23",
+          "text": "Find two sticks, wooden spoons or pencils. Write Judah (Bible) on one and Joseph (Book of Mormon) on the other. Read the verses, and when the Lord joins the sticks, hold them end to end so they look like one in your hand."
+        },
+        {
+          "k": "talk",
+          "text": "In what ways is the prophet today like that watchman? Then each person shares one story from the Bible and one from the Book of Mormon that helps them feel close to Jesus."
+        },
+        {
+          "k": "close",
+          "text": "Parents share why they trust the prophet’s warnings and love both books of scripture. This week, listen for one thing the prophet has asked us to do, and do it as a family."
+        }
+      ]
+    }
   }
 ];
