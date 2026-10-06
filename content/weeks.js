@@ -5843,7 +5843,8 @@ window.TU_WEEKS = [
           "It reaches others too, like feeding the hungry and helping the poor (Isaiah 58:7). Then He promises light, healing and guidance (Isaiah 58:8–12).",
           "President Henry B. Eyring has told of several people blessed by fasting and fast offerings."
         ],
-        "ask": "When has fasting, or a fast offering, blessed you or someone you know?"
+        "ask": "When has fasting, or a fast offering, blessed you or someone you know?",
+        "approved": "1b6c7aca"
       },
       {
         "h": "Honoring the Lord on the Sabbath brings joy.",
@@ -5855,7 +5856,8 @@ window.TU_WEEKS = [
           "Think about what it means to set your own plans aside on His day, and to find your joy in Him instead.",
           "President Russell M. Nelson taught about making the Sabbath a delight. What could help your family enjoy it more?"
         ],
-        "ask": "What’s one change that would make next Sunday more of a delight for our family?"
+        "ask": "What’s one change that would make next Sunday more of a delight for our family?",
+        "approved": "5bfd65d7"
       },
       {
         "h": "Jesus Christ is my Savior and Redeemer.",
@@ -5868,7 +5870,8 @@ window.TU_WEEKS = [
           "In Nazareth, Jesus read Isaiah 61:1–2 and said it was about Him (Luke 4:16–21). Where has He given you “beauty for ashes” (Isaiah 61:3)?",
           "In Isaiah 63:7–9, Isaiah remembers how the Lord has cared for His people. What would you add from your own life?"
         ],
-        "ask": "Which blessing in Isaiah 61:1–3 have you seen the Savior give to you or someone you love?"
+        "ask": "Which blessing in Isaiah 61:1–3 have you seen the Savior give to you or someone you love?",
+        "approved": "a8ec4d8c"
       },
       {
         "h": "“The Lord shall be unto thee an everlasting light.”",
@@ -5880,7 +5883,8 @@ window.TU_WEEKS = [
           "Look for those ideas in Isaiah 60:1–5, 19–20 and Isaiah 62:1–2, like “darkness shall cover the earth… but the LORD shall arise upon thee” (Isaiah 60:2).",
           "The Lord is bringing His children out of darkness into His light. What can you do to help?"
         ],
-        "ask": "Who could our family help come a little closer to the Lord’s light this week?"
+        "ask": "Who could our family help come a little closer to the Lord’s light this week?",
+        "approved": "b1918543"
       },
       {
         "h": "Christ will reign on earth during the Millennium.",
@@ -5892,7 +5896,8 @@ window.TU_WEEKS = [
           "Read Isaiah 64:1–5, Isaiah 65:17–25 and Isaiah 66, and count words like rejoice and joy as you go.",
           "The Lord says, “be ye glad and rejoice for ever in that which I create” (Isaiah 65:18)."
         ],
-        "ask": "Why will the day Jesus comes again be a joyful day for you, and how can you get ready for it?"
+        "ask": "Why will the day Jesus comes again be a joyful day for you, and how can you get ready for it?",
+        "approved": "2702d2fe"
       },
       {
         "h": "Fasting blesses me and others in need.",
@@ -5904,7 +5909,8 @@ window.TU_WEEKS = [
           "The Guide to the Scriptures has an entry on fasting that can help, too.",
           "Parents, if fasting has ever meant a lot to you, tell the story."
         ],
-        "ask": "If a friend asked you why we fast, what would you say?"
+        "ask": "If a friend asked you why we fast, what would you say?",
+        "approved": "13dbb869"
       },
       {
         "h": "The Sabbath can be a delight to me.",
@@ -5916,7 +5922,8 @@ window.TU_WEEKS = [
           "Parents, tell why Sunday is a delight to you.",
           "Share ways to “delight thyself in the LORD” (Isaiah 58:14) on Sunday. Draw your ideas and save them for a Sunday when you need something to do."
         ],
-        "ask": "What’s something you love doing on Sunday that helps you feel close to the Lord?"
+        "ask": "What’s something you love doing on Sunday that helps you feel close to the Lord?",
+        "approved": "53705829"
       },
       {
         "h": "The Savior is like a light for me.",
@@ -5927,7 +5934,8 @@ window.TU_WEEKS = [
           "Close your eyes while someone reads Isaiah 60:1–3. Open them at the word light, and shut them again at darkness.",
           "Jesus Christ and His gospel work like a light, showing us the way home to Heavenly Father."
         ],
-        "ask": "When has following Jesus helped you see what to do, like a light in a dark room?"
+        "ask": "When has following Jesus helped you see what to do, like a light in a dark room?",
+        "approved": "8627a8fb"
       },
       {
         "h": "When Jesus comes again, He will bring peace and joy.",
@@ -5939,7 +5947,8 @@ window.TU_WEEKS = [
           "No more crying (Isaiah 65:19), and even animals at peace (Isaiah 65:25). Why is it a time to “rejoice for ever” (Isaiah 65:18)?",
           "Sing ‘When the Savior Comes Again’ (number 1002 in Hymns for Home and Church) together."
         ],
-        "ask": "What are you most excited about for when Jesus comes again, and how can we prepare?"
+        "ask": "What are you most excited about for when Jesus comes again, and how can we prepare?",
+        "approved": "edf4f7c4"
       }
     ],
     "family": {
@@ -5976,7 +5985,8 @@ window.TU_WEEKS = [
           "k": "close",
           "text": "A parent shares why they love the Savior and look forward to His coming. Invite everyone to let His light show in one kind act this week."
         }
-      ]
+      ],
+      "approved": "ef983a66"
     }
   },
   {
