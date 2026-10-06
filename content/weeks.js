@@ -10562,7 +10562,8 @@ window.TU_WEEKS = [
           "But Jeremiah 31 and 33 are full of comfort and hope too. Look for those promises as you read, like “I will turn their mourning into joy” (Jeremiah 31:13).",
           "He even promised to bring the captives home: “I will cause the captivity of Judah and the captivity of Israel to return” (Jeremiah 33:7)."
         ],
-        "ask": "Which of the Lord’s promises in these chapters feels most like it’s meant for you, and why?"
+        "ask": "Which of the Lord’s promises in these chapters feels most like it’s meant for you, and why?",
+        "approved": "31d39626"
       },
       {
         "h": "“They shall be my people, and I will be their God.”",
@@ -10575,7 +10576,8 @@ window.TU_WEEKS = [
           "As you read, ponder what it means to belong to God’s covenant people, with His law written on your heart.",
           "Think too about what the Lord promises you in your covenants, and how keeping close to Him changes you."
         ],
-        "ask": "What promises have you made to God, at baptism or in other ordinances, and how have you seen Him keep His?"
+        "ask": "What promises have you made to God, at baptism or in other ordinances, and how have you seen Him keep His?",
+        "approved": "365ec5df"
       },
       {
         "h": "The scriptures have power to turn me away from evil.",
@@ -10586,7 +10588,8 @@ window.TU_WEEKS = [
           "Jeremiah 36:2–3 tells why the Lord had Jeremiah write His words in a scroll: so the people might hear, turn from evil and be forgiven.",
           "As you read, notice how each one felt about the scroll: the Lord, Jeremiah, Baruch, Jehudi, King Jehoiakim, and the princes who begged the king not to burn it."
         ],
-        "ask": "How do you feel about the scriptures? When have they helped you stay away from something wrong?"
+        "ask": "How do you feel about the scriptures? When have they helped you stay away from something wrong?",
+        "approved": "1f5d2921"
       },
       {
         "h": "Be firm in following God’s prophets.",
@@ -10598,7 +10601,8 @@ window.TU_WEEKS = [
           "Jeremiah 39 shows what happened when the warnings were ignored. How might things have gone if the king and his people had obeyed?",
           "Lehi lived in Jerusalem under the same king. Set his family’s story in 1 Nephi 1–2 beside Zedekiah’s. What do you notice?"
         ],
-        "ask": "What helps you follow the prophet even when it’s hard, or when others around you won’t?"
+        "ask": "What helps you follow the prophet even when it’s hard, or when others around you won’t?",
+        "approved": "8155e421"
       },
       {
         "h": "I can be bold in standing up for what is right.",
@@ -10610,7 +10614,8 @@ window.TU_WEEKS = [
           "Read Jeremiah 38:7–13. What stands out to you about the way Ebed-melech, a servant from Ethiopia, came to Jeremiah’s rescue?",
           "Then see what the Lord promised him in Jeremiah 39:15–18: “I will surely deliver thee” (Jeremiah 39:18)."
         ],
-        "ask": "Where might you need to be brave like Ebed-melech, at school, with friends or online?"
+        "ask": "Where might you need to be brave like Ebed-melech, at school, with friends or online?",
+        "approved": "5390c157"
       },
       {
         "h": "The Lord can relieve the sorrow I experience because of sin.",
@@ -10623,7 +10628,8 @@ window.TU_WEEKS = [
           "Look for hope in Christ too, especially in Lamentations 3:20–33. Matthew 5:4, James 4:8–10 and Alma 36:17–20 add more.",
           "President M. Russell Ballard pleaded with anyone trapped by sin never to give up, because hope is always there. See also hymn 115, ‘Come, Ye Disconsolate.’"
         ],
-        "ask": "Which verse in Lamentations 3:20–33 gives you the most hope in Jesus Christ, and why?"
+        "ask": "Which verse in Lamentations 3:20–33 gives you the most hope in Jesus Christ, and why?",
+        "approved": "edb81d36"
       },
       {
         "h": "Heavenly Father and Jesus love me “with an everlasting love.”",
@@ -10635,7 +10641,8 @@ window.TU_WEEKS = [
           "What does everlasting mean? Tell each other about a time you felt Heavenly Father’s love that never runs out.",
           "Sing ‘God Is Watching Over All’ together, from page 229 of the Children’s Songbook."
         ],
-        "ask": "How does it feel to know that Heavenly Father and Jesus will never stop loving you?"
+        "ask": "How does it feel to know that Heavenly Father and Jesus will never stop loving you?",
+        "approved": "9a1c5425"
       },
       {
         "h": "God will help me keep my covenants.",
@@ -10647,7 +10654,8 @@ window.TU_WEEKS = [
           "Go over the promises made at baptism in Mosiah 18:10, 13. What would it mean to have them written in your heart?",
           "The Lord promises His help: “I will not turn away from them, to do them good” (Jeremiah 32:40)."
         ],
-        "ask": "What is one way Heavenly Father has helped you keep the promises you made when you were baptized?"
+        "ask": "What is one way Heavenly Father has helped you keep the promises you made when you were baptized?",
+        "approved": "0d718f4d"
       },
       {
         "h": "The scriptures are the word of God.",
@@ -10659,7 +10667,8 @@ window.TU_WEEKS = [
           "This week’s children’s activity page can help with the story of Jeremiah, Baruch and the king.",
           "Set a storybook next to the scriptures. How are they different, and what makes the scriptures special?"
         ],
-        "ask": "Which scripture passage is special to you, and why? Take turns sharing one."
+        "ask": "Which scripture passage is special to you, and why? Take turns sharing one.",
+        "approved": "5914807a"
       },
       {
         "h": "I can stand up for what is right.",
@@ -10670,7 +10679,8 @@ window.TU_WEEKS = [
           "Look at the picture at the end of the lesson while you tell how Ebed-melech saved Jeremiah (Jeremiah 38:6–13).",
           "Which verse shows Ebed-melech being brave for the prophet? See who can find it first."
         ],
-        "ask": "How can we show that we believe the prophet God has called for our day?"
+        "ask": "How can we show that we believe the prophet God has called for our day?",
+        "approved": "4e6572ea"
       },
       {
         "h": "The Savior made it possible for me to be forgiven of my sins.",
@@ -10682,7 +10692,8 @@ window.TU_WEEKS = [
           "Then read Lamentations 3:22–26. How could “his compassions fail not” (Lamentations 3:22) bring hope to someone that sad?",
           "Tell each other about a time you felt sad after a wrong choice. What do these verses teach about the forgiveness Jesus Christ offers?"
         ],
-        "ask": "What does “new every morning” (Lamentations 3:23) tell you about starting fresh after a mistake?"
+        "ask": "What does “new every morning” (Lamentations 3:23) tell you about starting fresh after a mistake?",
+        "approved": "f8b9ff15"
       }
     ],
     "family": {
@@ -10720,7 +10731,8 @@ window.TU_WEEKS = [
           "k": "close",
           "text": "Parents, share how you have felt the never-ending love of Heavenly Father and Jesus Christ. This week, look for a chance to be brave like Ebed-melech and stand up for what is right."
         }
-      ]
+      ],
+      "approved": "0c1e558c"
     }
   },
   {
