@@ -941,7 +941,8 @@ window.TU_SUNDAY = {
               "temple sacrifice and temple service include a spirit of gratitude",
               "please consider saving for and buying your own ceremonial temple clothes"
             ]
-          }
+          },
+          "approved": "4ee652f5"
         },
         {
           "id": "oct26-runia-sculpting-souls",
@@ -989,7 +990,8 @@ window.TU_SUNDAY = {
               "You can curse God and blame Him, or you can turn to Him and let Him heal you.",
               "He waits for an invitation before He can really go to work."
             ]
-          }
+          },
+          "approved": "c5bdea73"
         },
         {
           "id": "oct26-causse-gift-testimony",
@@ -1039,7 +1041,8 @@ window.TU_SUNDAY = {
               "As you share it freely, your own testimony will grow stronger.",
               "look each day for opportunities, as prompted by the Holy Ghost, to bear witness of Jesus Christ"
             ]
-          }
+          },
+          "approved": "8f6124b4"
         },
         {
           "id": "oct26-sikahema-prophets-seers",
@@ -1088,7 +1091,8 @@ window.TU_SUNDAY = {
               "let us not be guilty of holding",
               "whether by mine own voice or by the voice of my servants, it is the same"
             ]
-          }
+          },
+          "approved": "d076a914"
         },
         {
           "id": "oct26-hathaway-great-deliverer",
@@ -1137,7 +1141,8 @@ window.TU_SUNDAY = {
               "This grace does not remove the pain and difficulty of affliction",
               "no mortal timeline can place us beyond Christ’s power to deliver"
             ]
-          }
+          },
+          "approved": "b4973241"
         },
         {
           "id": "oct26-soares-holier-fast",
@@ -1186,7 +1191,8 @@ window.TU_SUNDAY = {
               "finds tangible expression in generous fast offerings",
               "I invite you to prayerfully ponder Isaiah’s teachings"
             ]
-          }
+          },
+          "approved": "8caeca9f"
         },
         {
           "id": "oct26-douglas-hour-mission",
@@ -1233,7 +1239,8 @@ window.TU_SUNDAY = {
               "Don’t be distracted by alternatives of far less worth.",
               "I invite each of you to substitute your name for Thomas’s"
             ]
-          }
+          },
+          "approved": "39f69a19"
         },
         {
           "id": "oct26-christofferson-o-be-wise",
@@ -1284,7 +1291,8 @@ window.TU_SUNDAY = {
               "overarching all other concerns is the fact that gambling is morally wrong.",
               "Today, I am pleading with all of us to live life on a higher plane."
             ]
-          }
+          },
+          "approved": "a855db58"
         },
         {
           "id": "oct26-renlund-how-long-believe",
@@ -1333,7 +1341,8 @@ window.TU_SUNDAY = {
               "there is no asterisk excluding you from God’s richest blessings",
               "all human circumstances are within the Savior’s redemptive reach"
             ]
-          }
+          },
+          "approved": "b5a28a66"
         },
         {
           "id": "oct26-farnes-divine-appointments",
@@ -1383,7 +1392,8 @@ window.TU_SUNDAY = {
               "But the Spirit prompted me to look again.",
               "let us pray every day for eyes to see the divine appointments God places before us"
             ]
-          }
+          },
+          "approved": "a7f52f7a"
         },
         {
           "id": "oct26-chigbundu-spiritual-immunity",
@@ -1433,7 +1443,8 @@ window.TU_SUNDAY = {
               "The sacrament is a sacred ordinance that strengthens our relationship with the Savior.",
               "Worshipping in the Lord’s house, the temple, is vital to staying on the covenant path."
             ]
-          }
+          },
+          "approved": "e6886224"
         },
         {
           "id": "oct26-giuffra-tithes-offerings",
@@ -1479,7 +1490,8 @@ window.TU_SUNDAY = {
               "tithing can break cycles of poverty in poor nations and families",
               "Tithe paying is evidence that we accept the law of sacrifice."
             ]
-          }
+          },
+          "approved": "548408c6"
         },
         {
           "id": "oct26-morgan-infinite-power",
@@ -1528,7 +1540,8 @@ window.TU_SUNDAY = {
               "So, no, there is no limit to the power of God in our covenants.",
               "Take comfort; God hears you and will answer your prayers in His own time and in His own way."
             ]
-          }
+          },
+          "approved": "76026cb8"
         },
         {
           "id": "oct26-fale-child-of-god",
@@ -1578,7 +1591,8 @@ window.TU_SUNDAY = {
               "there is still yet time if we turn to Christ today",
               "Today Christ shows us our Father’s love through priesthood keys held by living prophets and apostles."
             ]
-          }
+          },
+          "approved": "2c1915b4"
         },
         {
           "id": "oct26-kearon-lives-to-lift",
@@ -1629,7 +1643,8 @@ window.TU_SUNDAY = {
               "Find a faithful guide and learn from them where lift is found.",
               "Your Saviour is your lift. He is your ever-rising air."
             ]
-          }
+          },
+          "approved": "90bb4a9b"
         },
         {
           "id": "oct26-dunn-ninety-and-ten",
@@ -1679,7 +1694,8 @@ window.TU_SUNDAY = {
               "He not only knows the road; He knows you and what you, as noble offspring of the divine, are capable of.",
               "Peace will come even when hoped-for outcomes do not."
             ]
-          }
+          },
+          "approved": "d6a318e4"
         },
         {
           "id": "oct26-eyring-comfort-holy-ghost",
@@ -1729,7 +1745,8 @@ window.TU_SUNDAY = {
               "He spares us from the only two things that can bring us permanent misery",
               "The Savior’s peace is made manifest through the comforting power of the Holy Ghost."
             ]
-          }
+          },
+          "approved": "aa2b9a53"
         },
         {
           "id": "oct26-rasband-love-like-jesus",
@@ -1780,7 +1797,8 @@ window.TU_SUNDAY = {
               "Love, brothers and sisters, is the answer to connecting with all of our loved ones.",
               "Third, remember Jesus Christ is the answer."
             ]
-          }
+          },
+          "approved": "86a57d2a"
         },
         {
           "id": "oct26-eyring-fear-not",
@@ -1826,7 +1844,8 @@ window.TU_SUNDAY = {
               "the Lord sends faithful disciples to help Him keep His promise to succor others in their distress",
               "You have prayed in faith consistently for your family members or friends to know who the Lord would have you help for Him."
             ]
-          }
+          },
+          "approved": "94c3fa20"
         },
         {
           "id": "oct26-chibota-child-of-god",
@@ -1872,7 +1891,8 @@ window.TU_SUNDAY = {
               "His grace is sufficient to lift you above every label and limitation.",
               "Learn the name of someone who may feel unseen."
             ]
-          }
+          },
+          "approved": "227b283e"
         },
         {
           "id": "oct26-andersen-courage-faith",
@@ -1921,7 +1941,8 @@ window.TU_SUNDAY = {
               "as we manifest our courage to choose the right, our faith in Christ strengthens",
               "your answers will come, your spiritual power will increase, and your courage in following Christ will define your eternal soul"
             ]
-          }
+          },
+          "approved": "565f38bf"
         },
         {
           "id": "oct26-fantone-take-his-name",
@@ -1970,7 +1991,8 @@ window.TU_SUNDAY = {
               "Time did not change—the missionaries did.",
               "when we genuinely take upon ourselves the name of Jesus Christ by losing ourselves in the service of others, something miraculous happens"
             ]
-          }
+          },
+          "approved": "4d062ab5"
         },
         {
           "id": "oct26-dube-come-unto-christ",
@@ -2017,7 +2039,8 @@ window.TU_SUNDAY = {
               "The adversary wants to hang that sign on the gate of our heart.",
               "Will you find one person and invite him or her to come unto Christ"
             ]
-          }
+          },
+          "approved": "e7859ff0"
         },
         {
           "id": "oct26-cook-integrity-virtue",
@@ -2066,7 +2089,8 @@ window.TU_SUNDAY = {
               "The ultimate reward of integrity and virtue is the constant companionship of the Holy Ghost.",
               "Part of having integrity is acknowledging our faults to the Lord and repenting of transgressions."
             ]
-          }
+          },
+          "approved": "c491fc20"
         },
         {
           "id": "oct26-kyungu-language-peacemakers",
@@ -2113,7 +2137,8 @@ window.TU_SUNDAY = {
               "let us fill our hearts with the true doctrine of Christ",
               "Let us repent for the harsh language and expressions that have offended our friends"
             ]
-          }
+          },
+          "approved": "e0d1762e"
         },
         {
           "id": "oct26-schmeil-consider-your-ways",
@@ -2162,7 +2187,8 @@ window.TU_SUNDAY = {
               "the Lord could not magnify their efforts because their actions were not aligned with God’s will",
               "He will magnify our efforts as we consider our ways and make the proper adjustments"
             ]
-          }
+          },
+          "approved": "623bfe52"
         },
         {
           "id": "oct26-oaks-gospel-for-all",
@@ -2211,7 +2237,8 @@ window.TU_SUNDAY = {
               "Protect yourself with the weekly renewing of your covenants by partaking of the sacrament",
               "His grace is for all."
             ]
-          }
+          },
+          "approved": "de7b02a5"
         },
         {
           "id": "oct26-uchtdorf-christ-centered-unity",
@@ -2261,7 +2288,8 @@ window.TU_SUNDAY = {
               "let us not miss the unifying power of the sacrament",
               "The sacrament is a weekly reminder, a sacred reminder, that we are not alone."
             ]
-          }
+          },
+          "approved": "11f7894d"
         },
         {
           "id": "oct26-munoz-spannaus-at-your-side",
@@ -2312,7 +2340,8 @@ window.TU_SUNDAY = {
               "Satan wants to destroy your self-esteem, your mind, your thoughts, and your spirit.",
               "I invite you to study the thirteenth article of faith and to create your own list of aspirations."
             ]
-          }
+          },
+          "approved": "067db8e2"
         },
         {
           "id": "oct26-villanueva-prove-me-now",
@@ -2360,7 +2389,8 @@ window.TU_SUNDAY = {
               "Have you ever asked yourselves whether the Lord has caused your personal possessions to last longer",
               "The widow trusted in Elijah’s words and offered up all that she had"
             ]
-          }
+          },
+          "approved": "704095dd"
         },
         {
           "id": "oct26-bednar-holy-spirit-promise",
@@ -2408,7 +2438,8 @@ window.TU_SUNDAY = {
               "The sealing ordinance includes two fundamental and related parts",
               "unrighteousness by one person cannot hinder or thwart the flow of God’s love, strength, and blessings to another person"
             ]
-          }
+          },
+          "approved": "ac14a62a"
         },
         {
           "id": "oct26-lebethoa-light-life",
@@ -2457,7 +2488,8 @@ window.TU_SUNDAY = {
               "the method, timing, and length of our scripture study matter less than the consistency and sincerity of our effort",
               "Repentance means a change of mind and a turning of the heart to God"
             ]
-          }
+          },
+          "approved": "0acc8efe"
         },
         {
           "id": "oct26-sinclair-quick-help",
@@ -2505,7 +2537,8 @@ window.TU_SUNDAY = {
               "we must look not only to their past—we must look to their possible",
               "we are invited to reorient our souls so we may help friends and new members in more Christlike ways"
             ]
-          }
+          },
+          "approved": "5f68c899"
         },
         {
           "id": "oct26-stevenson-fruit-happy",
@@ -2553,7 +2586,8 @@ window.TU_SUNDAY = {
               "His very important roles include to warn, to comfort, and to testify.",
               "love, share, and invite. Do this with words and actions."
             ]
-          }
+          },
+          "approved": "a288b61d"
         },
         {
           "id": "oct26-reid-good-enough-teach",
@@ -2602,7 +2636,8 @@ window.TU_SUNDAY = {
               "Christ-centered teaching is rooted in relationships.",
               "If class members leave the lesson feeling closer to the Savior than when they came, we have taught enough."
             ]
-          }
+          },
+          "approved": "766726a7"
         },
         {
           "id": "oct26-gilbert-truth-love",
@@ -2649,7 +2684,8 @@ window.TU_SUNDAY = {
               "the fourth principle is to hold to truth even in our outreach",
               "The fifth principle then is to stay anchored in Jesus Christ."
             ]
-          }
+          },
+          "approved": "0e6c3d34"
         },
         {
           "id": "oct26-oaks-closing-remarks",
@@ -2684,7 +2720,8 @@ window.TU_SUNDAY = {
               "On April 5, 2027, the temple doors will open to the public",
               "we invoke the blessings of the Lord on you and your families, blessings of peace and contentment"
             ]
-          }
+          },
+          "approved": "af9d52c3"
         }
       ]
     }
