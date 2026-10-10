@@ -27597,7 +27597,7 @@ window.TU_PLAIN = {
         "Yet I am always with You. You hold me by my right hand.",
         "You guide me with Your advice, and afterward You will take me into glory.",
         "Who do I have in heaven but You? And there is nothing on earth I want besides You.",
-        "My body and my heart may fail, but God is the strength of my heart and my share forever.",
+        "My body and my heart may fail, but God is the Rock of my heart and my share forever.",
         "For those who stay far from You will die. You destroy everyone who is unfaithful to You.",
         "But for me, it is good to be near God. I have made the Lord God my safe place, so I can tell about all the things You have done."
       ],
@@ -27605,6 +27605,10 @@ window.TU_PLAIN = {
         {
           "v": 8,
           "text": "The KJV has ‘They are corrupt’; the Hebrew word means they mock."
+        },
+        {
+          "v": 26,
+          "text": "The KJV has ‘the strength of my heart’; the Hebrew says ‘the rock of my heart’, a picture of the strength God gives."
         }
       ],
       "review": [
@@ -28787,7 +28791,7 @@ window.TU_PLAIN = {
       "notes": [
         {
           "v": 1,
-          "text": "The KJV has ‘my strength’; the Hebrew word means my rock."
+          "text": "The KJV has ‘my strength’; the Hebrew says ‘my rock’, a picture of the strength God gives."
         },
         {
           "v": 2,
@@ -28796,15 +28800,10 @@ window.TU_PLAIN = {
       ],
       "review": [
         {
-          "v": 1,
-          "about": "Left the KJV’s ‘my strength’ for the Hebrew ‘my Rock’ (tsur), with a note. The KJV’s word is a figure for the same idea, so Blake may prefer to keep ‘my strength’."
-        },
-        {
           "v": 14,
           "about": "‘No breaking in, nor going out’ is read as no breach in the walls and no one going into captivity (BSB). The Hebrew for ‘going out’ could also mean a miscarriage of the cattle."
         }
-      ],
-      "approved": "49d94a95"
+      ]
     },
     {
       "ch": "Psalms 145",
@@ -29510,7 +29509,7 @@ window.TU_PLAIN = {
         },
         {
           "v": 2,
-          "text": "The KJV has ‘my strength’; the Hebrew word means my rock."
+          "text": "The KJV has ‘my strength’; the Hebrew says ‘my rock’, a picture of the strength God gives."
         },
         {
           "v": 5,
@@ -29533,13 +29532,8 @@ window.TU_PLAIN = {
         {
           "v": 4,
           "about": "Hebrew chebel can mean ‘cords’ or ‘pains’; v4–5 now keep the KJV’s sense (‘sorrows’ → ‘pains’) rather than ‘ropes’. V5 ‘hell’ (Sheol) is now ‘the grave’ with a note."
-        },
-        {
-          "v": 2,
-          "about": "KJV ‘my God, my strength’; the Hebrew is tsur, ‘my rock’. Now ‘my Rock’ with a KJV note, matching 19:14 and 144:1 (also 73:26)."
         }
-      ],
-      "approved": "badb7576"
+      ]
     },
     {
       "ch": "Psalms 19",
