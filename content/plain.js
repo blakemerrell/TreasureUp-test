@@ -308,7 +308,7 @@ window.TU_PLAIN = {
         "Above Him stood seraphim, heavenly beings, and each one had six wings. With two he covered his face, with two he covered his feet, and with two he flew.",
         "They called out to one another, “Holy, holy, holy is the Lord of Hosts! The whole earth is full of His glory.”",
         "The doorposts shook at the voice of the one who called out, and the temple was filled with smoke.",
-        "Then I said, “Woe (great sorrow is coming) to me! I am ruined, because I am a man with unclean lips, and I live among a people with unclean lips. And my eyes have seen the King, the Lord of Hosts!”",
+        "Then I said, “Woe is me (I am in great sorrow)! I am ruined, because I am a man with unclean lips, and I live among a people with unclean lips. And my eyes have seen the King, the Lord of Hosts!”",
         "Then one of the seraphim flew to me. In his hand was a burning coal that he had taken with tongs from the altar.",
         "He touched my mouth with it and said, “Look, this has touched your lips. Your guilt is taken away, and your sin is atoned for.”",
         "Then I heard the voice of the Lord say, “Whom shall I send? Who will go for us?” And I said, “Here am I. Send me.”",
@@ -349,8 +349,7 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "The KJV’s “thy sin purged” is the Hebrew word for atonement; the plain words say “your sin is atoned for,” as the BSB does. Smaller Book of Mormon differences without notes: verses 2, 5, 10–13."
         }
-      ],
-      "approved": "ed50ee15"
+      ]
     },
     {
       "ch": "Isaiah 7",
@@ -13367,7 +13366,7 @@ window.TU_PLAIN = {
         "So the people sent men to Shiloh, and they brought back the ark of the covenant of the Lord of Hosts, who sits on His throne between the cherubims (angel figures on the ark’s lid). Eli’s two sons, Hophni and Phinehas, were there with the ark of God’s covenant.",
         "When the ark of the Lord’s covenant came into the camp, all Israel gave such a loud shout that the ground shook.",
         "The Philistines heard the shouting and asked, “What is all this loud shouting in the Hebrews’ camp?” Then they found out that the ark of the Lord had come into the camp.",
-        "The Philistines were scared. They said, “God has come into the camp!” They said, “Woe (great sorrow is coming) to us! Nothing like this has ever happened before.”",
+        "The Philistines were scared. They said, “God has come into the camp!” They said, “Woe to us (we are in great sorrow)! Nothing like this has ever happened before.”",
         "“Woe to us! Who can save us from the power of these mighty gods? These are the gods who struck the Egyptians with all kinds of plagues in the wilderness.”",
         "“Be strong, Philistines! Be men! If you don’t, you will become servants to the Hebrews, just as they have been servants to you. Be men and fight!”",
         "So the Philistines fought, and Israel was beaten. Every man ran home to his own tent. It was a terrible slaughter: thirty thousand Israelite foot soldiers were killed.",
@@ -13390,8 +13389,7 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "Elohim can mean God or gods. In v7 the verb is singular, so I kept the KJV’s “God has come into the camp”; in v8 the words are plural, so “these mighty gods” (as the KJV, without its capital G)."
         }
-      ],
-      "approved": "2ca261c3"
+      ]
     },
     {
       "ch": "1 Samuel 18",
@@ -27252,7 +27250,7 @@ window.TU_PLAIN = {
         "Lord, rescue my soul from lips that lie and from a tongue that tricks people.",
         "What will be given to you? What more will be done to you, you lying tongue?",
         "Sharp arrows from a warrior, with burning coals of the broom bush (a desert bush whose coals burn very hot)!",
-        "Woe (great sorrow is coming) to me, because I have to live as a foreigner in Mesech, and I live among the tents of Kedar (far-off peoples known for fighting)!",
+        "Woe is me (I am in great sorrow), because I have to live as a foreigner in Mesech, and I live among the tents of Kedar (far-off peoples known for fighting)!",
         "For a long time my soul has lived with the kind of person who hates peace.",
         "I want peace, but when I speak, they want war."
       ],
@@ -27267,8 +27265,7 @@ window.TU_PLAIN = {
           "v": 4,
           "about": "Left the KJV: ‘juniper’ → ‘broom bush’ (Hebrew rothem, the white broom), with a KJV note."
         }
-      ],
-      "approved": "4e0ca709"
+      ]
     },
     {
       "ch": "Psalms 66",
@@ -32486,7 +32483,7 @@ window.TU_PLAIN = {
         "I will scatter them like chaff blown by the wind at the gates of the land. I will take away their children. I will destroy My people, because they will not turn from their ways.",
         "I will make their widows more in number than the sand of the seas. At noon I will bring a destroyer against the mothers of the young men. I will suddenly make him fall on her, and bring terrors on the city.",
         "The mother of seven children grows weak and breathes her last. Her sun goes down while it is still day. She is shamed and disgraced. And the rest of them I will hand over to be killed by the sword in front of their enemies, says the Lord.",
-        "Woe (great sorrow is coming) to me, my mother, that you gave birth to me, a man the whole land argues and fights with! I have not lent money to anyone, and no one has lent money to me, yet every one of them curses me.",
+        "Woe is me (I am in great sorrow), my mother, that you gave birth to me, a man the whole land argues and fights with! I have not lent money to anyone, and no one has lent money to me, yet every one of them curses me.",
         "The Lord said, “Surely it will go well for your remnant (those of you who are left). Surely I will make the enemy come and plead with you in the time of trouble and in the time of distress.”",
         "Can iron break iron from the north, or bronze?",
         "I will give away your wealth and your treasures as loot, free of charge, because of all your sins all through your land.",
@@ -32526,8 +32523,7 @@ window.TU_PLAIN = {
           "v": 14,
           "about": "KJV “make thee to pass with thine enemies” follows the standard Hebrew; some Hebrew copies (and the BSB) read “make you serve your enemies,” as in 17:4. I went back to the KJV’s text."
         }
-      ],
-      "approved": "eb9f53cd"
+      ]
     },
     {
       "ch": "Jeremiah 4",
@@ -32544,7 +32540,7 @@ window.TU_PLAIN = {
         "Then I said, “Oh, Lord God! You have truly deceived this people and Jerusalem by saying, ‘You will have peace,’ when the sword is at our throats.”",
         "At that time this people and Jerusalem will be told, “A scorching wind from the bare hills in the desert is blowing toward the daughter of My people. It is not a gentle wind for separating grain from chaff or for cleaning it.”",
         "A wind too strong for that will come at My command. Now I also will announce My judgments against them.",
-        "Look! He comes up like clouds, and his chariots are like a whirlwind. His horses are faster than eagles. Woe (great sorrow is coming) to us, because we are ruined!",
+        "Look! He comes up like clouds, and his chariots are like a whirlwind. His horses are faster than eagles. Woe to us (we are in great sorrow), because we are ruined!",
         "Jerusalem, wash the evil out of your heart so that you can be saved. How long will you keep your wicked thoughts inside you?",
         "For a voice is calling out from Dan, announcing trouble from Mount Ephraim.",
         "Tell the nations! Announce it to Jerusalem: watchers (an army that surrounds a city) are coming from a faraway land, and they are shouting against the cities of Judah.",
@@ -32570,8 +32566,7 @@ window.TU_PLAIN = {
           "v": 10,
           "about": "Jeremiah's words to God are strong in the Hebrew too ('You have surely deceived this people'). I kept 'deceived' as the KJV and Hebrew have it rather than softening it; check you're comfortable with how it reads for Javan."
         }
-      ],
-      "approved": "385f3080"
+      ]
     },
     {
       "ch": "Jeremiah 5",
@@ -32690,7 +32685,7 @@ window.TU_PLAIN = {
         "People of Benjamin, gather together and run away from Jerusalem! Blow the trumpet in Tekoa. Light a fire signal in Beth-haccerem. For disaster is coming from the north, a terrible destruction.",
         "I have compared the daughter of Zion (Jerusalem) to a beautiful and delicate woman.",
         "Shepherds will come to her with their flocks. They will set up their tents all around her. Each one will graze his flock in his own spot.",
-        "“Get ready for war against her! Get up, let’s attack at noon! Woe (great sorrow is coming) to us, for the day is ending. The evening shadows are growing long.”",
+        "“Get ready for war against her! Get up, let’s attack at noon! Woe to us (we are in great sorrow), for the day is ending. The evening shadows are growing long.”",
         "“Get up, let’s attack at night and destroy her strong buildings!”",
         "For this is what the Lord of Hosts has said: “Cut down trees and build a ramp of dirt against Jerusalem. This is the city that must be punished. Inside her there is nothing but oppression.”",
         "As a well keeps pouring out water, so she keeps pouring out her wickedness. Violence and destruction are heard in her. I always see sickness and wounds there.",
@@ -32749,20 +32744,18 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "The Hebrew salsillôt (KJV ‘baskets’, BSB ‘branches’) appears only here and is uncertain, so I kept the KJV’s ‘baskets’."
         }
-      ],
-      "approved": "86f66fce"
+      ]
     },
     {
       "ch": "Jeremiah 45",
       "verses": [
         "This is the message Jeremiah the prophet gave to Baruch son of Neriah, in the fourth year of Jehoiakim son of Josiah king of Judah, when Baruch wrote these words in a book (a scroll) as Jeremiah spoke them:",
         "This is what the Lord, the God of Israel, says to you, Baruch:",
-        "You said, “Woe (great sorrow is coming) to me! The Lord has added sorrow to my pain. I am worn out from groaning, and I can’t find any rest.”",
+        "You said, “Woe is me (I am in great sorrow)! The Lord has added sorrow to my pain. I am worn out from groaning, and I can’t find any rest.”",
         "Tell him this: “The Lord says: What I have built, I am going to tear down. What I have planted, I am going to pull up, this whole land.”",
         "Are you looking for great things for yourself? Don’t look for them. I am going to bring disaster on all people, says the Lord. But wherever you go, I will let you escape with your life, like a prize won in war."
       ],
-      "notes": [],
-      "approved": "58e4cd04"
+      "notes": []
     },
     {
       "ch": "Jeremiah 46",
@@ -33711,7 +33704,7 @@ window.TU_PLAIN = {
         "The young men were taken to grind at the mill, and the boys stumbled under loads of wood.",
         "The elders no longer sit at the city gate. The young men have stopped making music.",
         "The joy in our hearts is gone. Our dancing has turned into mourning.",
-        "The crown has fallen from our head. Woe (great sorrow is coming) to us, because we have sinned!",
+        "The crown has fallen from our head. Woe to us (we are in great sorrow), because we have sinned!",
         "Because of this our hearts are sick. Because of these things our eyes have grown dim.",
         "It is because Mount Zion lies empty and ruined, and foxes prowl over it.",
         "But You, Lord, rule forever. Your throne lasts through every generation.",
@@ -33725,8 +33718,7 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "The Hebrew starts ‘unless’ / ‘except’ (BSB: ‘unless You have utterly rejected us’), which makes it a fearful question rather than a flat statement. I kept the KJV’s ‘But You have completely rejected us.’"
         }
-      ],
-      "approved": "5dc4e2e4"
+      ]
     },
     {
       "ch": "Jeremiah 30",
@@ -33982,7 +33974,7 @@ window.TU_PLAIN = {
         "But the One who is Jacob’s portion is not like them. He is the one who formed all things, and Israel is the tribe that is His inheritance. The Lord of Hosts is His name.",
         "Pack up your things and leave the land, you who live in the city under attack.",
         "For this is what the Lord says: “This time I will throw out the people who live in the land, like stones from a sling. I will bring trouble on them so that they will feel it.”",
-        "Woe (great sorrow is coming) to me because I am hurt! My wound is very bad. But I said, “Surely this is my sickness, and I must put up with it.”",
+        "Woe is me (I am in great sorrow) because I am hurt! My wound is very bad. But I said, “Surely this is my sickness, and I must put up with it.”",
         "My tent is torn down, and all its ropes are broken. My children have left me, and they are gone. There is no one left to put up my tent again or hang its curtains.",
         "For the shepherds (the leaders) have become stupid. They have not looked for the Lord. So they do not succeed, and all their flocks are scattered.",
         "Listen! News is coming, a great noise from the land in the north. It will make the towns of Judah an empty ruin, a home for jackals.",
@@ -34009,8 +34001,7 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "The KJV’s ‘the stock is a doctrine of vanities’ is hard Hebrew (literally ‘the instruction of futilities: it is wood’). I wrote ‘learning from a wooden idol is learning from something worthless.’"
         }
-      ],
-      "approved": "8b3ac58c"
+      ]
     },
     {
       "ch": "Ezekiel 25",
