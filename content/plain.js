@@ -39225,7 +39225,7 @@ window.TU_PLAIN = {
         "Then the eleven disciples went to Galilee, to the mountain where Jesus had told them to go.",
         "When they saw Him, they worshipped Him, but some doubted.",
         "Jesus came to them and said, “All authority in heaven and on earth has been given to Me.”",
-        "“So go and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.”",
+        "“So go and make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.”",
         "“Teach them to obey everything I have commanded you. And remember, I am with you always, even to the end of the world. Amen.”"
       ],
       "notes": [
@@ -39235,16 +39235,9 @@ window.TU_PLAIN = {
         },
         {
           "v": 19,
-          "text": "The BSB reads ‘make disciples of all nations’."
+          "text": "The KJV has ‘teach all nations’; the Greek word means make disciples of all nations (verse 20 then says “teaching them”)."
         }
-      ],
-      "review": [
-        {
-          "v": 19,
-          "about": "Kept the KJV’s “teach all nations.” The Greek verb means make disciples of, or teach (it can be read either way), so this is not a clear mistranslation; the BSB’s ‘make disciples’ is in a note. The earlier draft’s added “by teaching them” is gone."
-        }
-      ],
-      "approved": "eb81966d"
+      ]
     },
     {
       "ch": "John 1",
