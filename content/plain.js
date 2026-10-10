@@ -39235,7 +39235,7 @@ window.TU_PLAIN = {
         },
         {
           "v": 19,
-          "text": "The KJV has ‘teach all nations’; the Greek word means make disciples of all nations (verse 20 then says “teaching them”)."
+          "text": "The KJV has ‘teach all nations’; the Greek word means make disciples of all nations. Verse 20 then speaks of teaching them."
         }
       ]
     },
