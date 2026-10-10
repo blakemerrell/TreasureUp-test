@@ -32184,8 +32184,8 @@ window.TU_PLAIN = {
         "So this is what the Lord God of Israel says about the shepherds who care for My people: You have scattered My flock and driven them away, and you have not looked after them. Now I will punish you for the evil things you have done, says the Lord.",
         "I Myself will gather what is left of My flock out of all the countries where I have driven them. I will bring them back to their pastures, and they will have many young and grow in number.",
         "I will put shepherds over them who will take care of them. They will not be afraid or terrified anymore, and none of them will be missing, says the Lord.",
-        "The days are coming, says the Lord, when I will raise up for David a righteous Branch. He will reign as King and prosper, and he will do what is fair and right on the earth.",
-        "In his days Judah will be saved, and Israel will live in safety. This is the name he will be called: The Lord Our Righteousness.",
+        "The days are coming, says the Lord, when I will raise up for David a righteous Branch. He will reign as King and prosper, and He will do what is fair and right on the earth.",
+        "In His days Judah will be saved, and Israel will live in safety. This is the name He will be called: The Lord Our Righteousness.",
         "So the days are coming, says the Lord, when people will no longer make a promise by saying, “As surely as the Lord lives, who brought the children of Israel up out of the land of Egypt.”",
         "Instead they will say, “As surely as the Lord lives, who brought the descendants of Israel up and led them out of the land of the north and out of all the countries where I had driven them.” And they will live in their own land.",
         "My heart is broken inside me because of the prophets. All my bones shake. I am like a drunk man, like someone overpowered by wine, because of the Lord and because of His holy words.",
@@ -32228,10 +32228,6 @@ window.TU_PLAIN = {
         }
       ],
       "review": [
-        {
-          "v": 5,
-          "about": "The New Testament does not quote vv. 5–6, so by the rule I wrote “he/his” in lowercase for the Branch (keeping the KJV’s capitals on Branch and King). Check you want this for a passage Latter-day Saints read as about Christ."
-        },
         {
           "v": 33,
           "about": "“Burden” (Hebrew massa) means both a heavy load and a prophet’s message; vv. 33–38 play on both. I kept “burden” and explained it once in v. 33."
@@ -35838,7 +35834,7 @@ window.TU_PLAIN = {
         "So this is what the Lord God says: You have made your guilt remembered. Your rebellion is out in the open, and your sins show in everything you do. Because you have been remembered, you will be captured.",
         "And you, unholy and wicked prince of Israel, your day has come, the time when sin comes to an end.",
         "This is what the Lord God says: Take off the royal turban, and remove the crown. Things will not stay as they are. Lift up the lowly, and bring down the one who is high.",
-        "Ruin, ruin, ruin! I will make it a ruin. It will be no more until he comes to whom it rightly belongs, and I will give it to him.",
+        "Ruin, ruin, ruin! I will make it a ruin. It will be no more until He comes to whom it rightly belongs, and I will give it to Him.",
         "And you, son of man, prophesy and say, This is what the Lord God says about the Ammonites and their insults: Say, A sword, a sword is drawn! It is polished for the slaughter, to destroy, to flash like lightning.",
         "While people see false visions for you and tell you lying fortunes, you will be laid on the necks of the wicked who are killed, whose day has come, the time when their sin comes to an end.",
         "Put the sword back in its sheath! I will judge you in the place where you were created, in the land where you were born.",
@@ -35869,15 +35865,10 @@ window.TU_PLAIN = {
           "about": "The KJV has “to appoint captains,” but the Hebrew word is the same one translated “battering rams” later in the verse (KJV margin too). I treated this as a clear mistranslation, followed the Hebrew and added the KJV note."
         },
         {
-          "v": 27,
-          "about": "“Until he come whose right it is” is often read as a prophecy of the Messiah, but the New Testament doesn’t apply it to Christ, so by your rule he/him are lowercase (the writer had capitalized them as the BSB does)."
-        },
-        {
           "v": 30,
           "about": "The KJV asks “Shall I cause it to return into his sheath?”; the Masoretic Hebrew is a command, “Put it back!” (BSB too). I followed the Hebrew with a KJV note; check you agree it isn’t a two-way reading."
         }
-      ],
-      "approved": "84f15834"
+      ]
     },
     {
       "ch": "Ezekiel 35",
@@ -36197,8 +36188,8 @@ window.TU_PLAIN = {
         "Then the word of the Lord came to me, and it said,",
         "Take gifts from the exiles who have come back from Babylon: from Heldai, Tobijah, and Jedaiah. Go that same day to the house of Josiah the son of Zephaniah.",
         "Take silver and gold and make crowns. Put them on the head of Joshua the son of Josedech, the high priest.",
-        "Tell him that this is what the Lord of Hosts says: “Here is the man whose name is The Branch. He will grow up from his place, and he will build the temple of the Lord.”",
-        "Yes, he is the one who will build the temple of the Lord. He will be given honor and majesty, and he will sit and rule on his throne. He will be a priest on his throne, and there will be peace and agreement between the two of them.",
+        "Tell him that this is what the Lord of Hosts says: “Here is the man whose name is The Branch. He will grow up from His place, and He will build the temple of the Lord.”",
+        "Yes, He is the One who will build the temple of the Lord. He will be given honor and majesty, and He will sit and rule on His throne. He will be a priest on His throne, and there will be peace and agreement between the two of them.",
         "The crowns will be kept in the temple of the Lord to help people remember Helem, Tobijah, Jedaiah, and Hen the son of Zephaniah.",
         "People who are far away will come and help build the temple of the Lord. Then you will know that the Lord of Hosts has sent me to you. This will happen if you carefully obey the voice of the Lord your God."
       ],
@@ -36216,13 +36207,8 @@ window.TU_PLAIN = {
         {
           "v": 8,
           "about": "The KJV leaves the speaker as ‘he’ and ‘my spirit’; the BSB reads it as the Lord and capitalizes ‘My Spirit’. Kept it lowercase as in the KJV."
-        },
-        {
-          "v": 12,
-          "about": "Lowercased he/his for the Branch (v12–13) and ‘sent me’ (v15): the New Testament doesn’t quote this passage, so by the brief’s rule they stay lowercase as in the KJV. The draft had followed the BSB’s capitals. Check this one."
         }
-      ],
-      "approved": "a2119321"
+      ]
     },
     {
       "ch": "Mark 1",
