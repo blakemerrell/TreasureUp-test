@@ -38050,7 +38050,7 @@ window.TU_PLAIN = {
         "Many people told him sternly to be quiet, but he shouted even louder, “Son of David, have mercy on me!”",
         "Jesus stopped and told them to call him. So they called the blind man and said to him, “Cheer up! Get up. He is calling you.”",
         "He threw off his coat, got up, and came to Jesus.",
-        "Jesus asked him, “What do you want Me to do for you?” The blind man said to Him, “Lord, I want to be able to see.”",
+        "Jesus asked him, “What do you want Me to do for you?” The blind man said to Him, “Rabboni (my Teacher), I want to be able to see.”",
         "Jesus said to him, “Go. Your faith has healed you.” Right away he could see, and he followed Jesus along the road."
       ],
       "notes": [
@@ -38073,6 +38073,10 @@ window.TU_PLAIN = {
         {
           "v": 24,
           "text": "The oldest Greek manuscripts read ‘how hard is it to enter into the kingdom of God!’, without ‘for them that trust in riches’."
+        },
+        {
+          "v": 51,
+          "text": "The KJV has ‘Lord’; the Greek word is ‘Rabboni’, ‘my Teacher’, the word Mary uses in John 20:16."
         }
       ],
       "review": [
@@ -38083,10 +38087,6 @@ window.TU_PLAIN = {
         {
           "v": 44,
           "about": "The Greek word is “slave” (v43 has a different word, “servant”); kept the KJV’s “servant of everyone,” since the KJV’s “servant” can mean a bond-servant. Check the wording."
-        },
-        {
-          "v": 51,
-          "about": "The Greek has “Rabboni” (my Master); the KJV says “Lord.” Kept “Lord,” since it is a fair rendering of the title. Check whether you’d rather show “Rabboni.”"
         }
       ],
       "approved": "1b39936e"
