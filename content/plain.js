@@ -349,7 +349,8 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "The KJV’s “thy sin purged” is the Hebrew word for atonement; the plain words say “your sin is atoned for,” as the BSB does. Smaller Book of Mormon differences without notes: verses 2, 5, 10–13."
         }
-      ]
+      ],
+      "approved": "587eca61"
     },
     {
       "ch": "Isaiah 7",
@@ -2684,7 +2685,8 @@ window.TU_PLAIN = {
           "v": 11,
           "about": "KJV ‘took of the stones … put them for his pillows’ (also v18); the Hebrew means he took one of the stones and put it at his head. I followed the Hebrew and added a KJV note."
         }
-      ]
+      ],
+      "approved": "014fc50f"
     },
     {
       "ch": "Genesis 42",
@@ -3868,7 +3870,8 @@ window.TU_PLAIN = {
           "v": 35,
           "about": "The servant’s long speech (vv. 35–49) is left without outer quote marks so the quotes inside it stay simple; vv. 7, 43–44 use reported speech for the same reason."
         }
-      ]
+      ],
+      "approved": "62471aa4"
     },
     {
       "ch": "Genesis 47",
@@ -5984,7 +5987,8 @@ window.TU_PLAIN = {
           "v": 2,
           "about": "KJV ‘I will prepare him an habitation’. The Hebrew verb can be read that way (from the word for a dwelling) or as ‘I will praise (glorify) Him’ (BSB ‘I will praise Him’). Since it can be read two ways, plain words keep the KJV’s sense: ‘I will make Him a home’."
         }
-      ]
+      ],
+      "approved": "0060eb0d"
     },
     {
       "ch": "Exodus 8",
@@ -6352,7 +6356,8 @@ window.TU_PLAIN = {
           "v": 12,
           "about": "KJV ‘fried’; the Hebrew word seems to mean well mixed or soaked (BSB ‘well-kneaded’). The plain words say ‘well mixed’ (also 6:21), with no note."
         }
-      ]
+      ],
+      "approved": "45f2595d"
     },
     {
       "ch": "Leviticus 24",
@@ -6540,7 +6545,8 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "‘His blood shall be upon him’ (used through the chapter) I wrote as ‘he is responsible for his own death’. Check you like that wording."
         }
-      ]
+      ],
+      "approved": "ae6f9960"
     },
     {
       "ch": "Leviticus 3",
@@ -6910,7 +6916,8 @@ window.TU_PLAIN = {
           "v": 16,
           "about": "Hebrew is ambiguous whether ‘them’ who bear guilt are the priests or the people; followed BSB reading that priests must not cause the people to bear guilt."
         }
-      ]
+      ],
+      "approved": "d02ff48c"
     },
     {
       "ch": "Leviticus 15",
@@ -7405,7 +7412,8 @@ window.TU_PLAIN = {
           "v": 13,
           "about": "Added rough modern amounts in brackets for the ephah and hin (about four quarts, about a quart)."
         }
-      ]
+      ],
+      "approved": "f43ab331"
     },
     {
       "ch": "Leviticus 12",
@@ -7565,7 +7573,8 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "The Hebrew ‘the nakedness of your father and the nakedness of your mother’ is often read (BSB) as ‘dishonor your father by lying with your mother’ (compare 20:11). The plain words keep the Hebrew idiom and the KJV’s ‘father or mother’, so both readings stay open."
         }
-      ]
+      ],
+      "approved": "61071719"
     },
     {
       "ch": "Numbers 23",
@@ -8664,7 +8673,8 @@ window.TU_PLAIN = {
           "v": 20,
           "about": "Hebrew “as a swallowing of the holy things” can mean “even for an instant” (BSB) or “while they are being covered” (KJV). Two readings, so I kept the KJV’s. A note gives the BSB’s reading."
         }
-      ]
+      ],
+      "approved": "aeb5bb59"
     },
     {
       "ch": "Numbers 12",
@@ -9061,7 +9071,8 @@ window.TU_PLAIN = {
           "v": 21,
           "about": "Followed the KJV (‘all the earth shall be filled with the glory of the LORD’). The Hebrew can also be read as part of the oath, as the BSB does: ‘as surely as the whole earth is filled with the glory of the LORD’."
         }
-      ]
+      ],
+      "approved": "87a731ea"
     },
     {
       "ch": "Numbers 22",
@@ -9636,7 +9647,8 @@ window.TU_PLAIN = {
           "v": 21,
           "about": "Adult subject matter in vv. 13–30 (virginity, adultery, rape). Translated plainly and accurately without graphic detail; you may want to look at the wording before Javan reads it."
         }
-      ]
+      ],
+      "approved": "bf433ef6"
     },
     {
       "ch": "Deuteronomy 29",
@@ -9686,7 +9698,8 @@ window.TU_PLAIN = {
           "v": 19,
           "about": "KJV ‘to add drunkenness to thirst’; the Hebrew can also be read ‘to sweep away the watered with the dry (ground)’ (BSB). Two possible readings, so I kept the KJV’s."
         }
-      ]
+      ],
+      "approved": "9ad4b606"
     },
     {
       "ch": "Deuteronomy 1",
@@ -11306,7 +11319,8 @@ window.TU_PLAIN = {
           "v": 13,
           "about": "Left the KJV’s “stood still in their strength”: the Hebrew tel means a mound (a town’s hill), so “stood on their mounds”, with a KJV note."
         }
-      ]
+      ],
+      "approved": "09809705"
     },
     {
       "ch": "Joshua 6",
@@ -11618,7 +11632,8 @@ window.TU_PLAIN = {
           "v": 34,
           "about": "The name ‘Ed’ is not in the Masoretic Hebrew (KJV supplies it in italics). Kept ‘Ed (which means witness)’ to match the KJV; check if Blake prefers to drop it."
         }
-      ]
+      ],
+      "approved": "c3faddf7"
     },
     {
       "ch": "Joshua 7",
@@ -12392,7 +12407,8 @@ window.TU_PLAIN = {
           "v": 21,
           "about": "‘thou hast trodden down strength’: the Hebrew verb form can be past (KJV) or a wish (BSB ‘March on, O my soul, in strength!’). Two readings, so I kept the KJV’s. Also v14 ‘root … against Amalek’ (BSB ‘in Amalek’): kept the KJV."
         }
-      ]
+      ],
+      "approved": "bc6b753d"
     },
     {
       "ch": "Judges 1",
@@ -13147,7 +13163,8 @@ window.TU_PLAIN = {
           "v": 32,
           "about": "Hebrew ‘and the Israelites said’ is placed after Benjamin’s boast; I wrote ‘had said’ since it explains their plan. Check it reads right."
         }
-      ]
+      ],
+      "approved": "2b10df5b"
     },
     {
       "ch": "Judges 12",
@@ -13389,7 +13406,8 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "Elohim can mean God or gods. In v7 the verb is singular, so I kept the KJV’s “God has come into the camp”; in v8 the words are plural, so “these mighty gods” (as the KJV, without its capital G)."
         }
-      ]
+      ],
+      "approved": "4b9b6751"
     },
     {
       "ch": "1 Samuel 18",
@@ -13677,7 +13695,8 @@ window.TU_PLAIN = {
           "v": 5,
           "about": "Hebrew and KJV have ‘thirty thousand chariots’; the BSB has ‘three thousand’ from some ancient copies. Kept thirty thousand. Also v16: KJV ‘Gibeah’, Hebrew ‘Geba’; kept the KJV name."
         }
-      ]
+      ],
+      "approved": "cb3054f0"
     },
     {
       "ch": "Ruth 2",
@@ -17097,7 +17116,8 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "KJV ‘whoredoms’ (Hebrew ‘prostitutions’, often a picture of idol worship). Kept ‘prostitution’ with the text and added “(unfaithfulness to God)” to make the meaning plain."
         }
-      ]
+      ],
+      "approved": "6b3f91b4"
     },
     {
       "ch": "1 Kings 3",
@@ -19573,7 +19593,8 @@ window.TU_PLAIN = {
           "v": 12,
           "about": "‘All that he had by the spirit’ (Hebrew ‘in the spirit with him’) can mean God’s Spirit gave David the plans (compare verse 19) or simply what David had in mind (BSB). I kept the KJV’s wording with a small ‘spirit’ rather than choosing."
         }
-      ]
+      ],
+      "approved": "4c7197e0"
     },
     {
       "ch": "1 Chronicles 16",
@@ -19827,7 +19848,8 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "The Hebrew of ‘have made thee a name’ can be read as a future (‘I will make’, BSB) or, as the KJV takes it here and in 2 Samuel 7:9, a past; kept the KJV’s past, BSB reading in a note. In verse 13 capitalized He/His/Father/Son because Hebrews 1:5 applies the words to Jesus; verses 11–12 and 14 stay lowercase."
         }
-      ]
+      ],
+      "approved": "d9986b66"
     },
     {
       "ch": "1 Chronicles 11",
@@ -20349,7 +20371,8 @@ window.TU_PLAIN = {
           "v": 36,
           "about": "KJV “God had prepared the people”; the Hebrew (ha- as “that which”) reads “what God had prepared for the people”. Plain words follow the Hebrew, with a KJV note; some read it as the KJV does."
         }
-      ]
+      ],
+      "approved": "7549640f"
     },
     {
       "ch": "2 Chronicles 16",
@@ -21239,7 +21262,8 @@ window.TU_PLAIN = {
         "It went on day after day, and after two years his bowels came out because of the disease. He died in terrible pain. His people did not light a fire to honor him, as they had done for his ancestors.",
         "He was 32 years old when he became king, and he ruled eight years in Jerusalem. When he died, no one was sorry. They buried him in the city of David, but not in the tombs of the kings."
       ],
-      "notes": []
+      "notes": [],
+      "approved": "1dec049b"
     },
     {
       "ch": "2 Chronicles 13",
@@ -21880,7 +21904,8 @@ window.TU_PLAIN = {
         "But when Sanballat the Horonite, Tobiah the Ammonite servant, and Geshem the Arabian heard about it, they laughed at us and looked down on us. They said, “What is this you’re doing? Are you rebelling against the king?”",
         "I answered them, “The God of heaven will give us success. We are His servants, and we will get up and build. But you have no share, no right, and no claim to be remembered in Jerusalem.”"
       ],
-      "notes": []
+      "notes": [],
+      "approved": "e63f2c41"
     },
     {
       "ch": "Nehemiah 8",
@@ -22154,7 +22179,8 @@ window.TU_PLAIN = {
           "v": 17,
           "about": "KJV ‘in their rebellion appointed a captain’ follows the Masoretic Hebrew (be-miryam). The BSB reads ‘in Egypt’ (be-mitsrayim, as some Hebrew copies and Numbers 14:4). Kept the KJV reading."
         }
-      ]
+      ],
+      "approved": "be4200df"
     },
     {
       "ch": "Nehemiah 3",
@@ -22577,7 +22603,8 @@ window.TU_PLAIN = {
           "v": 36,
           "about": "Left the KJV: ‘of the Levites were divisions in Judah, and in Benjamin’ adds ‘and in’; the Hebrew says some divisions of the Levites of Judah went with Benjamin. Followed the Hebrew and added a note. Check you agree it is a clear mistranslation."
         }
-      ]
+      ],
+      "approved": "fcd175c0"
     },
     {
       "ch": "Ezra 5",
@@ -23234,7 +23261,8 @@ window.TU_PLAIN = {
           "v": 33,
           "about": "Hard Hebrew. Plain words keep the KJV’s reading; the BSB reads ‘Should God repay you on your own terms when you have disavowed Him? You must choose, not I’."
         }
-      ]
+      ],
+      "approved": "0fe93b90"
     },
     {
       "ch": "Job 18",
@@ -23465,7 +23493,8 @@ window.TU_PLAIN = {
           "v": 28,
           "about": "Hebrew begins ‘If you say…’; the KJV makes it ‘But ye should say’. Plain words follow the Hebrew and run into verse 29. The BSB has ‘lies with him’; the Hebrew and the plain words keep ‘in me’."
         }
-      ]
+      ],
+      "approved": "e477bc07"
     },
     {
       "ch": "Job 28",
@@ -23667,7 +23696,8 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "Left the KJV’s ‘the wicked’ for the Hebrew ‘one in misery’ (BSB ‘the full force of misery’), with a note."
         }
-      ]
+      ],
+      "approved": "b9d654b6"
     },
     {
       "ch": "Job 36",
@@ -23996,7 +24026,8 @@ window.TU_PLAIN = {
           "v": 3,
           "about": "The Hebrew verb can mean “flee” (KJV) or “gnaw” (BSB, “they gnawed the dry land”). I kept the KJV’s “fled.”"
         }
-      ]
+      ],
+      "approved": "be1fef24"
     },
     {
       "ch": "Job 13",
@@ -24395,7 +24426,8 @@ window.TU_PLAIN = {
           "v": 3,
           "about": "Left the KJV’s ‘my words are swallowed up’ for the Hebrew ‘my words have been rash’, with a note."
         }
-      ]
+      ],
+      "approved": "192c4dac"
     },
     {
       "ch": "Job 38",
@@ -24461,7 +24493,8 @@ window.TU_PLAIN = {
           "v": 37,
           "about": "KJV ‘stay the bottles of heaven’; the Hebrew verb (make to lie down) is taken as tipping the sky’s water jars to pour rain, which fits v38. I followed that; the KJV reads ‘stop’. Check."
         }
-      ]
+      ],
+      "approved": "a83834a2"
     },
     {
       "ch": "Job 24",
@@ -24914,7 +24947,8 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "KJV ‘sorrow is turned into joy’ misreads the Hebrew (‘terror dances before him’). Followed the Hebrew, with a note. v11 ‘prevented me’ = gave to Me first (Romans 11:35)."
         }
-      ]
+      ],
+      "approved": "13d8ac3a"
     },
     {
       "ch": "Job 42",
@@ -25499,7 +25533,8 @@ window.TU_PLAIN = {
           "v": 11,
           "text": "The KJV has ‘health’; the Hebrew word means salvation (rescue), as ‘health’ could in 1611."
         }
-      ]
+      ],
+      "approved": "aaf87064"
     },
     {
       "ch": "Psalms 94",
@@ -25545,7 +25580,8 @@ window.TU_PLAIN = {
           "v": 5,
           "text": "The KJV has ‘health’; the Hebrew word means salvation (rescue), as ‘health’ could in 1611."
         }
-      ]
+      ],
+      "approved": "68947c3f"
     },
     {
       "ch": "Psalms 95",
@@ -26510,7 +26546,8 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "Left the KJV ‘I myself will awake early’ for the Hebrew ‘I will awaken the dawn’ (dawn is the object); note added. ‘My glory’ kept, with ‘(my soul)’ as a gloss."
         }
-      ]
+      ],
+      "approved": "8b6a07d1"
     },
     {
       "ch": "Psalms 109",
@@ -27265,7 +27302,8 @@ window.TU_PLAIN = {
           "v": 4,
           "about": "Left the KJV: ‘juniper’ → ‘broom bush’ (Hebrew rothem, the white broom), with a KJV note."
         }
-      ]
+      ],
+      "approved": "2d61723d"
     },
     {
       "ch": "Psalms 66",
@@ -27310,7 +27348,8 @@ window.TU_PLAIN = {
           "v": 7,
           "text": "A Dead Sea Scroll (4Q83) reads ‘they will bless you’ where the Masoretic Hebrew has ‘he will bless us’."
         }
-      ]
+      ],
+      "approved": "76e12b50"
     },
     {
       "ch": "Psalms 121",
@@ -27404,7 +27443,8 @@ window.TU_PLAIN = {
           "v": 30,
           "about": "KJV ‘the company of spearmen’; modern Bibles read ‘the beast of the reeds’ (an image for Egypt). The Hebrew can mean either (chayyah is ‘congregation’ in v10; qaneh is reed or spear-shaft), so kept the KJV. Same in v16: the rare verb is ‘leap’ (KJV) or ‘look with envy’ (modern); kept ‘leap’."
         }
-      ]
+      ],
+      "approved": "23779bdb"
     },
     {
       "ch": "Psalms 69",
@@ -27624,7 +27664,8 @@ window.TU_PLAIN = {
           "v": 20,
           "about": "KJV ‘thou shalt despise their image’; the Hebrew word is a shadow-like image. Kept ‘despise their image’ and added a short explanation in brackets. Check it keeps the sense."
         }
-      ]
+      ],
+      "approved": "5a924f9f"
     },
     {
       "ch": "Psalms 74",
@@ -28692,7 +28733,8 @@ window.TU_PLAIN = {
           "v": 2,
           "about": "Kept the KJV’s ‘gathered together for war’; the Hebrew verb can also mean ‘stir up’ (BSB ‘stir up war’)."
         }
-      ]
+      ],
+      "approved": "e9431c7d"
     },
     {
       "ch": "Psalms 141",
@@ -28803,7 +28845,8 @@ window.TU_PLAIN = {
           "v": 14,
           "about": "‘No breaking in, nor going out’ is read as no breach in the walls and no one going into captivity (BSB). The Hebrew for ‘going out’ could also mean a miscarriage of the cattle."
         }
-      ]
+      ],
+      "approved": "de3dd276"
     },
     {
       "ch": "Psalms 145",
@@ -29533,7 +29576,8 @@ window.TU_PLAIN = {
           "v": 4,
           "about": "Hebrew chebel can mean ‘cords’ or ‘pains’; v4–5 now keep the KJV’s sense (‘sorrows’ → ‘pains’) rather than ‘ropes’. V5 ‘hell’ (Sheol) is now ‘the grave’ with a note."
         }
-      ]
+      ],
+      "approved": "ea3d47f5"
     },
     {
       "ch": "Psalms 19",
@@ -30532,7 +30576,8 @@ window.TU_PLAIN = {
           "v": 4,
           "about": "The Hebrew can mean work comes from envy of a neighbor (BSB) or causes a neighbor's envy (KJV). Two readings, so I went back to the KJV's."
         }
-      ]
+      ],
+      "approved": "5b343461"
     },
     {
       "ch": "Ecclesiastes 5",
@@ -31072,7 +31117,8 @@ window.TU_PLAIN = {
           "v": 26,
           "about": "The Hebrew can read 'words of kindness are pure (to Him)', as the BSB has it; I followed the KJV's sense, 'the words of the pure are pleasant'."
         }
-      ]
+      ],
+      "approved": "4749e91c"
     },
     {
       "ch": "Proverbs 25",
@@ -32232,7 +32278,8 @@ window.TU_PLAIN = {
           "v": 33,
           "about": "“Burden” (Hebrew massa) means both a heavy load and a prophet’s message; vv. 33–38 play on both. I kept “burden” and explained it once in v. 33."
         }
-      ]
+      ],
+      "approved": "1c2bf5b9"
     },
     {
       "ch": "Jeremiah 12",
@@ -32336,7 +32383,8 @@ window.TU_PLAIN = {
           "v": 16,
           "about": "The Hebrew ṣalmāwet can be read ‘shadow of death’ (KJV) or ‘deep darkness’ (BSB). Since both readings are possible, I put back the KJV’s ‘shadow of death’."
         }
-      ]
+      ],
+      "approved": "954f2a98"
     },
     {
       "ch": "Jeremiah 35",
@@ -32459,7 +32507,8 @@ window.TU_PLAIN = {
           "v": 26,
           "about": "I added “(a code name for Babylon)” after Sheshach; Jeremiah 51:41 puts Sheshach and Babylon side by side. Remove it if you’d rather not explain the name."
         }
-      ]
+      ],
+      "approved": "a8b64560"
     },
     {
       "ch": "Jeremiah 15",
@@ -32513,7 +32562,8 @@ window.TU_PLAIN = {
           "v": 14,
           "about": "KJV “make thee to pass with thine enemies” follows the standard Hebrew; some Hebrew copies (and the BSB) read “make you serve your enemies,” as in 17:4. I went back to the KJV’s text."
         }
-      ]
+      ],
+      "approved": "493bd811"
     },
     {
       "ch": "Jeremiah 4",
@@ -32556,7 +32606,8 @@ window.TU_PLAIN = {
           "v": 10,
           "about": "Jeremiah's words to God are strong in the Hebrew too ('You have surely deceived this people'). I kept 'deceived' as the KJV and Hebrew have it rather than softening it; check you're comfortable with how it reads for Javan."
         }
-      ]
+      ],
+      "approved": "be2f3692"
     },
     {
       "ch": "Jeremiah 5",
@@ -32734,7 +32785,8 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "The Hebrew salsillôt (KJV ‘baskets’, BSB ‘branches’) appears only here and is uncertain, so I kept the KJV’s ‘baskets’."
         }
-      ]
+      ],
+      "approved": "c0c31f00"
     },
     {
       "ch": "Jeremiah 45",
@@ -32745,7 +32797,8 @@ window.TU_PLAIN = {
         "Tell him this: “The Lord says: What I have built, I am going to tear down. What I have planted, I am going to pull up, this whole land.”",
         "Are you looking for great things for yourself? Don’t look for them. I am going to bring disaster on all people, says the Lord. But wherever you go, I will let you escape with your life, like a prize won in war."
       ],
-      "notes": []
+      "notes": [],
+      "approved": "5d83e74c"
     },
     {
       "ch": "Jeremiah 46",
@@ -32932,7 +32985,8 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "KJV “Give wings unto Moab”; the BSB reads “Put salt on Moab.” The rare Hebrew word can be read either way, so I kept the KJV. Same in v2 (“cut down” vs BSB “silenced”) and v32 (“with the weeping of Jazer” vs “more than”)."
         }
-      ]
+      ],
+      "approved": "ddb878a9"
     },
     {
       "ch": "Jeremiah 49",
@@ -33286,7 +33340,8 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "Hebrew “by the hand of Gedaliah” can mean “because of” (KJV) or “along with” (BSB). Two readings, so I kept the KJV’s “because of Gedaliah.”"
         }
-      ]
+      ],
+      "approved": "90e3186b"
     },
     {
       "ch": "Jeremiah 19",
@@ -33708,7 +33763,8 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "The Hebrew starts ‘unless’ / ‘except’ (BSB: ‘unless You have utterly rejected us’), which makes it a fearful question rather than a flat statement. I kept the KJV’s ‘But You have completely rejected us.’"
         }
-      ]
+      ],
+      "approved": "585b1ea2"
     },
     {
       "ch": "Jeremiah 30",
@@ -33991,7 +34047,8 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "The KJV’s ‘the stock is a doctrine of vanities’ is hard Hebrew (literally ‘the instruction of futilities: it is wood’). I wrote ‘learning from a wooden idol is learning from something worthless.’"
         }
-      ]
+      ],
+      "approved": "ec5b0e74"
     },
     {
       "ch": "Ezekiel 25",
@@ -34067,7 +34124,8 @@ window.TU_PLAIN = {
           "v": 10,
           "about": "‘untempered mortar’ → ‘whitewash’ with a KJV note (the Hebrew tafel here means whitewash or plaster); check you agree it counts as a KJV mistranslation."
         }
-      ]
+      ],
+      "approved": "29c726ba"
     },
     {
       "ch": "Ezekiel 26",
@@ -34433,7 +34491,8 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "Hard verse. Kept the KJV’s reading ‘so increased from the lowest chamber to the highest by the midst’; the BSB reads it as a stairway going up through the middle floor."
         }
-      ]
+      ],
+      "approved": "40523d71"
     },
     {
       "ch": "Ezekiel 28",
@@ -35868,7 +35927,8 @@ window.TU_PLAIN = {
           "v": 30,
           "about": "The KJV asks “Shall I cause it to return into his sheath?”; the Masoretic Hebrew is a command, “Put it back!” (BSB too). I followed the Hebrew with a KJV note; check you agree it isn’t a two-way reading."
         }
-      ]
+      ],
+      "approved": "61c44426"
     },
     {
       "ch": "Ezekiel 35",
@@ -36208,7 +36268,8 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "The KJV leaves the speaker as ‘he’ and ‘my spirit’; the BSB reads it as the Lord and capitalizes ‘My Spirit’. Kept it lowercase as in the KJV."
         }
-      ]
+      ],
+      "approved": "33240b99"
     },
     {
       "ch": "Mark 1",
@@ -38089,7 +38150,7 @@ window.TU_PLAIN = {
           "about": "The Greek word is “slave” (v43 has a different word, “servant”); kept the KJV’s “servant of everyone,” since the KJV’s “servant” can mean a bond-servant. Check the wording."
         }
       ],
-      "approved": "1b39936e"
+      "approved": "e46ced2a"
     },
     {
       "ch": "Mark 11",
@@ -38509,7 +38570,8 @@ window.TU_PLAIN = {
           "v": 39,
           "text": "The oldest Greek manuscripts don’t have ‘cried out, and’."
         }
-      ]
+      ],
+      "approved": "1261ef70"
     },
     {
       "ch": "Mark 16",
@@ -39237,7 +39299,8 @@ window.TU_PLAIN = {
           "v": 19,
           "text": "The KJV has ‘teach all nations’; the Greek word means make disciples of all nations. Verse 20 then speaks of teaching them."
         }
-      ]
+      ],
+      "approved": "328cf8a8"
     },
     {
       "ch": "John 1",
@@ -40724,7 +40787,8 @@ window.TU_PLAIN = {
           "v": 18,
           "about": "The oldest Greek manuscripts don’t have ‘to heal the brokenhearted’. Not noted, to keep the v44 (Judæa/Galilee) note within 3 manuscript notes."
         }
-      ]
+      ],
+      "approved": "32758d89"
     },
     {
       "ch": "Luke 5",
@@ -44112,7 +44176,8 @@ window.TU_PLAIN = {
           "v": 22,
           "about": "‘Vessels of wrath fitted to destruction’ is a hard doctrinal verse; plain words say ‘ready to be destroyed’ without saying who made them ready, as the Greek leaves it open."
         }
-      ]
+      ],
+      "approved": "04ade153"
     },
     {
       "ch": "Romans 10",
@@ -44232,7 +44297,8 @@ window.TU_PLAIN = {
           "v": 30,
           "about": "KJV ‘not believed’ (also vv. 31–32) is the Greek apeitheō, usually ‘disobey’ (the BSB says ‘disobeyed’), but it can also mean refusing to believe. Kept ‘believe’ as a possible reading."
         }
-      ]
+      ],
+      "approved": "9ee99737"
     },
     {
       "ch": "Romans 12",
@@ -45529,7 +45595,8 @@ window.TU_PLAIN = {
           "v": 11,
           "about": "‘All the good pleasure of his goodness’ can be read as God’s good pleasure or the readers’ desire for goodness. Per the two-readings rule I now keep the KJV’s reading (God’s); the BSB has ‘your every good desire’."
         }
-      ]
+      ],
+      "approved": "00e4fa83"
     },
     {
       "ch": "Ephesians 1",
@@ -45628,7 +45695,8 @@ window.TU_PLAIN = {
           "v": 12,
           "about": "KJV ‘damned’ → ‘condemned’ (Greek krinō), with a note."
         }
-      ]
+      ],
+      "approved": "83ea9e9e"
     },
     {
       "ch": "2 Corinthians 2",
@@ -46312,7 +46380,8 @@ window.TU_PLAIN = {
           "v": 9,
           "about": "‘effeminate’ / ‘abusers of themselves with mankind’: Greek malakoi (soft men) and arsenokoitai (men who lie with men). Rendered with the Greek’s own idiom; check the wording."
         }
-      ]
+      ],
+      "approved": "9187438e"
     },
     {
       "ch": "1 Corinthians 7",
@@ -47240,7 +47309,8 @@ window.TU_PLAIN = {
           "v": 5,
           "about": "‘thinketh no evil’: the Greek means ‘does not count up the wrong’. Rendered ‘does not hold evil against others’, with a KJV note naming Moroni 7:45. Check the note."
         }
-      ]
+      ],
+      "approved": "3c4d8fb6"
     },
     {
       "ch": "2 Timothy 4",
@@ -47436,7 +47506,8 @@ window.TU_PLAIN = {
           "v": 1,
           "about": "Greek kata pistin can mean ‘according to the faith’ (KJV) or ‘for the sake of / to further the faith’ (BSB ‘for the faith’). Kept the KJV’s sense: ‘in keeping with the faith’."
         }
-      ]
+      ],
+      "approved": "8b00bae5"
     },
     {
       "ch": "Hebrews 1",
@@ -47541,7 +47612,8 @@ window.TU_PLAIN = {
           "v": 16,
           "about": "KJV “took on him the nature of angels … the seed of Abraham” (incarnation) vs the Greek verb “take hold of / help.” Followed the Greek with a KJV note; check you’re happy leaving the KJV here."
         }
-      ]
+      ],
+      "approved": "052c1838"
     },
     {
       "ch": "Hebrews 3",
@@ -48544,7 +48616,8 @@ window.TU_PLAIN = {
           "v": 15,
           "about": "“Firstborn of all creation” kept literal (Greek prōtotokos, first in rank and birthright); BSB has “over all creation.”"
         }
-      ]
+      ],
+      "approved": "530effa2"
     },
     {
       "ch": "1 Corinthians 16",
@@ -49438,7 +49511,8 @@ window.TU_PLAIN = {
           "v": 16,
           "about": "‘two hundred thousand thousand’ is literally ‘twice ten thousand times ten thousand’, rendered as the plain number ‘two hundred million’."
         }
-      ]
+      ],
+      "approved": "b4a35fbc"
     },
     {
       "ch": "Revelation 1",
@@ -50088,7 +50162,8 @@ window.TU_PLAIN = {
           "v": 8,
           "about": "‘The wine of the wrath of her fornication’: I kept it close to the Greek as ‘the wine of the anger of her sexual sin’ (the same wording in 18:3). The Greek word can also mean passion, as the BSB has it; the KJV’s ‘wrath’ is a fair reading, so I kept it."
         }
-      ]
+      ],
+      "approved": "733fcedc"
     },
     {
       "ch": "1 Peter 1",
@@ -50265,7 +50340,8 @@ window.TU_PLAIN = {
           "v": 7,
           "about": "“the weaker vessel” now “the weaker partner” (the first draft softened it to “more delicate”); check the tone is right for the family."
         }
-      ]
+      ],
+      "approved": "3913f8f3"
     },
     {
       "ch": "Revelation 15",
@@ -50719,7 +50795,8 @@ window.TU_PLAIN = {
           "v": 15,
           "about": "‘Rule’ is the Greek word for a shepherd’s work (‘will shepherd them with a rod of iron’). I kept the KJV’s ‘rule.’"
         }
-      ]
+      ],
+      "approved": "78ab5322"
     },
     {
       "ch": "Revelation 20",
