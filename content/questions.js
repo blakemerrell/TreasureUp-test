@@ -68,7 +68,7 @@ window.TU_QUESTIONS = {
       "kid": [
         "Scientists have found lots of evidence that living things changed over a very long time. That's what evolution means, and you'll learn about it in school. That's okay!",
         "The Church of Jesus Christ of Latter-day Saints doesn't fight science. The Church's youth magazine said, \"The Church has no official position on the theory of evolution.\" Science asks how things happen. It can't tell us whether God is behind it, or why we are here.",
-        "Latter-day Saints believe God is the Creator and that you are His child, whatever methods He used. Learning science can be one way of learning about His work."
+        "The Church teaches that Adam and Eve were our first parents, and that God is the Creator, however He did it. You are His child, and learning science can be one way of learning about His work."
       ],
       "deeper": [
         "Evolution is the mainstream scientific explanation for how life on earth changed and branched out over time, and it rests on a large body of evidence from fossils, genetics and biology. Most scientists accept it. What science can't do is test whether God exists or whether life has a purpose. Going from \"evolution happened\" to \"so there is no God\" is a philosophical step, not a scientific finding, and many scientists who accept evolution also believe in God.",
@@ -101,8 +101,7 @@ window.TU_QUESTIONS = {
       ],
       "review": [
         "There is no Gospel Topics page or essay on evolution; the Church History topic 'Organic Evolution' is the closest official page. Its claims used here (1909 and 1925 statements, Talmage/Widtsoe vs Joseph Fielding Smith, the 1931 memo, Brigham Young on all truth) were checked against it.",
-        "Paragraph 3 now says plainly that the 1909 statement is still an official, still-cited declaration that calls human descent from lower animals 'theories of men', alongside 'no official position on the theory'. Both are true; decide if you want both in front of teens.",
-        "The kid answer gives only the 'no official position' side. It does not mention that the Church teaches Adam and Eve were our first parents with no spirit children of God before them (New Era 2016). Consider adding one line."
+        "Kid answer now says the Church teaches Adam and Eve were our first parents and God is the Creator, however He did it (your decision 3). It says nothing about how He did it, and it replaces the old 'whatever methods He used' line so the idea isn't said twice."
       ],
       "more": [
         {
@@ -306,6 +305,7 @@ window.TU_QUESTIONS = {
         "The definition in the question is common, and some believers do talk that way. But it isn't how scripture uses the word. Hebrews 11:1 describes faith as a kind of evidence for things we can't see, and the Church's Gospel Topics page on faith treats it as something that moves us to act. In scripture, faith is trust in Jesus Christ that you live by, not a refusal to think.",
         "Alma 32 is the clearest example. Alma admits that faith is not perfect knowledge (Alma 32:21), then invites his listeners to \"experiment upon my words\" (Alma 32:27). Plant the word like a seed. If it is good, it will swell, enlarge your soul and enlighten your understanding. That is evidence, gathered through experience over time. Alma also warns that a good seed can wither if it isn't nourished, which is why faith takes patience.",
         "It's fair to admit that this kind of evidence is personal and spiritual. It can't be measured like a lab result or handed to someone else, and people can misread their own feelings. Skeptics also point out that people of many faiths describe similar spiritual experiences. Latter-day Saints believe the Holy Ghost is real and that spiritual knowledge is real knowledge, while also valuing study, reason and history. The Lord told the early Saints to seek learning both by study and by faith (D&C 88:118).",
+        "How should a Latter-day Saint think about that? With warmth, not worry. Scripture teaches that God speaks to all His children. Mormon taught that the Spirit of Christ, often called the Light of Christ, is given to every person so they can tell good from evil (Moroni 7:16). In 2 Nephi 29:7–12 the Lord says He remembers every nation and speaks to all of them. So when a friend of another faith describes feeling God's love or an answer to prayer, you don't have to call it fake. Someone else's experience of God doesn't cancel yours. Latter-day Saints believe many people receive real light from God, and that the Restoration adds to that light rather than erasing it.",
         "Everyone, believer or not, trusts many things they can't personally prove. Faith is choosing to trust God for good reasons and then testing that trust in daily life. Over years, many Latter-day Saints find that the fruits of following Christ (peace, changed hearts, answered prayers) become a witness that is hard to deny."
       ],
       "parent": false,
@@ -332,8 +332,9 @@ window.TU_QUESTIONS = {
         }
       ],
       "review": [
-        "Added the skeptic's strongest point (people of many faiths report similar spiritual experiences) without an answer to it. You might add a line on how you'd want Javan to think about that.",
-        "Kid answer's suggested activity ('live one scripture for a week') is the writer's own idea, not from a source."
+        "Added a faithful reply to the 'many faiths' point (your decision 4): God speaks to all His children, the Light of Christ (Moroni 7:16), and 2 Nephi 29:7–12. It paraphrases rather than quotes, because this answer already has 2 quotes. Check the tone.",
+        "Kid answer's suggested activity ('live one scripture for a week') is the writer's own idea, not from a source.",
+        "Your decisions list put this under god-real, but the 'many faiths' line and the note asking for a reply are in god-faith, so the reply went here. god-real is unchanged."
       ],
       "more": [
         {
@@ -672,6 +673,7 @@ window.TU_QUESTIONS = {
         "Revelation 22:18–19 warns anyone who adds to or takes from the words of that book. Facts first: when John wrote, there was no Bible as one bound collection. For centuries the New Testament books circulated separately or in small groups. Elder Jeffrey R. Holland noted that of 5,366 known Greek New Testament manuscripts, only 35 contain the whole New Testament, and 34 of those date after A.D. 1000. Elder Howard W. Hunter taught that Revelation joined the collection only after many years of church debate.",
         "Was Revelation the last book written? Scholars debate the exact dates. Elder Hunter and Elder Holland both pointed out that some New Testament writings, such as John's epistles, were likely written after it. Because those dates are uncertain, the stronger point is simpler: Revelation was placed last when the books were gathered, not written as the Bible's final page.",
         "Moses gave nearly the same warning: “Ye shall not add unto the word which I command you, neither shall ye diminish ought from it” (Deuteronomy 4:2). If that verse sealed scripture, nothing after Deuteronomy would count, not even Isaiah or the Gospels. As Elder Hunter explained, these warnings forbid people from changing God's revelations; they don't limit what God may reveal. Many Christians agree that the verse is about Revelation alone but still believe scripture is complete for other reasons, such as the faith being delivered once (Jude 1:3) or God speaking finally through His Son (Hebrews 1:1–2). The Church's Gospel Topics essay on whether Latter-day Saints are Christian responds that the Bible never says all revelation would be closed into one volume.",
+        "Those two verses deserve a fair answer. In Jude 1:3, once means once for all, as many modern translations put it: the gospel was handed down whole, so no one should trade it for another. It is about keeping the faith, not about God falling silent. Hebrews 1:1–2 says God has spoken through His Son, and Latter-day Saints agree that Christ is the center of all revelation. Yet Hebrews was itself new scripture, written after Jesus' earthly ministry. The Bible also expects prophets to keep coming: Amos 3:7 says the Lord does nothing without first revealing it to His prophets, and Acts 2:17–18 promises that in the last days sons and daughters will prophesy. Revelation 22:18 guards that one book from being changed.",
         "Latter-day Saints love the Bible and believe God still speaks (2 Nephi 29:10; Articles of Faith 1:9). The Bible suggests its own test for any message claiming to be from God: look at its fruits, and ask Him (Matthew 7:16–20; James 1:5)."
       ],
       "parent": false,
@@ -698,7 +700,7 @@ window.TU_QUESTIONS = {
         }
       ],
       "review": [
-        "Added the strongest form of the objection (many Christians agree Rev. 22:18 is about Revelation only but hold a closed canon on other grounds, e.g. Jude 1:3, Hebrews 1:1–2). The answer to it is brief; decide if you want more.",
+        "New paragraph answers Jude 1:3 and Hebrews 1:1–2 (your decision 4), with Amos 3:7 and Acts 2:17–18, paraphrased rather than quoted because this answer already has 2 quotes. Hebrews' author and date are unknown, so it says only that it was written after Jesus' earthly ministry.",
         "No specific year is given for Revelation or for when the 27-book list was settled (often A.D. 367, Athanasius). The 5,366 / 35 / 34 manuscript figures are Elder Holland's (2008); current counts are higher.",
         "Elder Holland claims near-consensus that Jude, John's epistles and probably John's Gospel came after Revelation; mainstream dating is less certain, so the answer only says 'likely' and 'scholars debate'."
       ],
@@ -1231,18 +1233,18 @@ window.TU_QUESTIONS = {
       "heard": "Why couldn't Black members hold the priesthood? Mormons were racist.",
       "where": "friend",
       "kid": [
-        "This is a real and painful part of Church history. For many years, until 1978, Black men of African descent could not be ordained to the priesthood, and Black members could not receive most temple blessings. It wasn't that way at the start: a few Black men, like Elijah Able, were ordained. Brigham Young began the ban in 1852.",
+        "This is a real and painful part of Church history. For many years, until 1978, Black men of African descent could not be ordained to the priesthood, and Black members could not receive most temple blessings. It wasn't that way at the start: a few Black men, like Elijah Able (also spelled Abel), were ordained. Brigham Young began the ban in 1852.",
         "Church leaders and members back then gave reasons for it, like saying dark skin was a curse. Those ideas were wrong. Today the Church says plainly that it rejects them and condemns all racism.",
-        "In 1978 the prophet, Spencer W. Kimball, received a revelation, and the priesthood and temple were opened to every worthy member. The Book of Mormon teaches that \"all are alike unto God\" (2 Nephi 26:33)."
+        "In 1978 President Spencer W. Kimball received a revelation, and the priesthood and temple were opened to every worthy member. The Book of Mormon teaches that \"all are alike unto God\" (2 Nephi 26:33)."
       ],
       "deeper": [
-        "The Church's essay \"Race and the Priesthood\" starts with the facts. The Church was founded in 1830, when slavery was legal and racism was common in America. From the start, people of any race could be baptized, and near the end of his life Joseph Smith openly opposed slavery. In the first two decades a few Black men were ordained. Elijah Able (the essay spells it Abel) took part in temple ceremonies in Kirtland, and the essay says there is no reliable evidence any Black man was denied the priesthood while Joseph Smith lived.",
+        "The Church's essay \"Race and the Priesthood\" starts with the facts. The Church was founded in 1830, when slavery was legal and racism was common in America. From the start, people of any race could be baptized, and near the end of his life Joseph Smith openly opposed slavery. In the first two decades a few Black men were ordained. Elijah Able took part in temple ceremonies in Kirtland, and the essay says there is no reliable evidence any Black man was denied the priesthood while Joseph Smith lived.",
         "In 1852, Brigham Young told the Utah territorial legislature that men of Black African descent could no longer be ordained; in that same session the legislature legalized a form of Black servitude. Later presidents also kept Black members from the temple endowment and sealings. When Able asked for his endowment in 1879, he was turned down; Jane Manning James, a faithful pioneer, could do baptisms for the dead but no other temple ordinances. Members and leaders offered explanations borrowed from the racism of the time, such as a supposed curse of Cain or being less valiant before birth. Brigham Young also said that one day Black members would receive every blessing.",
         "Over time, leaders felt a revelation was needed to change the policy. The Church grew in Brazil, where a temple was announced in 1975, and thousands in Nigeria and Ghana had embraced the Church's message. In June 1978, after long prayer in the Salt Lake Temple, President Spencer W. Kimball, his counselors and the Twelve Apostles received a revelation opening the priesthood and temple to all worthy members. It is now Official Declaration 2.",
         "The essay says that \"the Church disavows the theories advanced in the past that black skin is a sign of divine disfavor or curse.\" It also rejects the ideas that black skin reflects unrighteous actions in a premortal life, that mixed-race marriage is sin, or that any race is inferior. Notice what the essay does not do: it gives no revealed reason for the restriction. Faithful members still talk honestly about how good people, including leaders, can be shaped by the prejudices of their time.",
         "Black Latter-day Saints today number in the hundreds of thousands. Many, like Jane Manning James long ago, have stayed faithful through hard things. Their witness, and the Book of Mormon's promise that the Lord turns no one away, can help you see this history with both honesty and hope."
       ],
-      "parent": false,
+      "parent": true,
       "sources": [
         {
           "t": "Race and the Priesthood",
@@ -1266,8 +1268,8 @@ window.TU_QUESTIONS = {
         }
       ],
       "review": [
-        "Spelling: the essay uses 'Elijah Abel'; the Church History Topics page uses 'Elijah Able (sometimes spelled Abel or Ables)'. I used 'Able' and noted 'Abel'. Pick one.",
-        "parent flag: the fact-checker's view is to keep it false. The kid answer is calm and age-appropriate, and kids meet this topic at school. Go deeper is heavier (curse of Cain, servitude, a prophet's mistaken reasons), so switch to true if Javan will read Go deeper on his own.",
+        "Spelling is now 'Elijah Able' throughout, with '(also spelled Abel)' once, in the kid answer. The essay spells it 'Abel', but neither quote taken from it contains the name, so no quote changed.",
+        "To fit the spelling note, the kid answer's 'the prophet, Spencer W. Kimball,' became 'President Spencer W. Kimball'. It is now exactly 130 words, the limit.",
         "The line 'Faithful members still talk honestly about how good people, including leaders, can be shaped by the prejudices of their time' is my framing, not the essay's. Please check you're comfortable with it."
       ],
       "more": [
