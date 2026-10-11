@@ -202,6 +202,19 @@ that file as the BSB published it. The Hebrew and Greek, every word with how
 it sounds and what it means, come from STEPBible.org (Tyndale House
 Cambridge, CC BY 4.0) through `tools/original.mjs`, pinned to one commit;
 nothing in them is written by hand, so they need no approval either.
+A Book of Mormon, Doctrine and Covenants or Pearl of Great Price chapter has
+no KJV button: its text always shows, with Plain words and Notes where it has
+them. The Book of Mormon adds **Changes** (each verse's changes from the 1830
+edition to 2013, from BYU Office of Digital Humanities' OpenScripture data
+through `tools/editions.mjs`, sorted into kinds by rules) and **JS Papers**
+(links to the chapter's pages at the Joseph Smith Papers, from
+`tools/jsp-bom-pages.json`), and **1830** (each verse as the 1830 edition
+has it, from the same OpenScripture data, with its printed page linked at the
+Joseph Smith Papers; the words changed or added since are marked by
+comparing the editions word for word). None of these is written by hand, so they need no
+approval; the one line on each edition (`CHG_EDITIONS` in `index.html`) is
+reviewed in its pull request. A note on why one verse changed would be written
+by hand, and would wait for Blake's approval like any note.
 
 - `ch`: a chapter of the week's reading ("Isaiah 40"). `verses`: one plain
   line for every verse of that chapter, in order.
