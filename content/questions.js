@@ -58,7 +58,8 @@ window.TU_QUESTIONS = {
           "kind": "podcast",
           "u": "https://scripturecentral.org/shows/church-history-matters/episodes/can-science-and-religion-coexist-church-history-matters-science-and-religion-series"
         }
-      ]
+      ],
+      "approved": "43180103"
     },
     {
       "id": "god-science",
@@ -114,7 +115,8 @@ window.TU_QUESTIONS = {
           "kind": "podcast",
           "u": "https://scripturecentral.org/shows/church-history-matters/episodes/is-evolution-a-threat-to-faith-church-history-matters-i-science-and-religion-ep05"
         }
-      ]
+      ],
+      "approved": "b08b5f46"
     },
     {
       "id": "god-suffering",
@@ -180,7 +182,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/how-can-trials-of-faith-lead-to-spiritual-growth"
         }
-      ]
+      ],
+      "approved": "993369d7"
     },
     {
       "id": "god-jesus-existed",
@@ -227,7 +230,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/why-are-the-gospel-accounts-of-the-resurrection-credible"
         }
-      ]
+      ],
+      "approved": "5cafcc58"
     },
     {
       "id": "god-resurrection",
@@ -289,7 +293,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/how-did-saints-in-kirtland-testify-of-jesus-christ-s-resurrection"
         }
-      ]
+      ],
+      "approved": "36594606"
     },
     {
       "id": "god-faith",
@@ -352,7 +357,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/books/book-chapter/power-evidence-nurturing-faith"
         }
-      ]
+      ],
+      "approved": "fee3d5cb"
     },
     {
       "id": "bible-telephone-game",
@@ -414,7 +420,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/why-did-joseph-smith-produce-a-new-translation-of-the-bible"
         }
-      ]
+      ],
+      "approved": "3576075e"
     },
     {
       "id": "bible-contradictions",
@@ -482,7 +489,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/periodicals/journal-article/most-misunderstood-book-christopher-hitchens-bible"
         }
-      ]
+      ],
+      "approved": "e5cb1ea2"
     },
     {
       "id": "bible-noah-adam-eve",
@@ -549,7 +557,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/articles/encyclopedia-entry/origin-man"
         }
-      ]
+      ],
+      "approved": "304e64b6"
     },
     {
       "id": "bible-mean-god",
@@ -601,7 +610,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/why-the-book-of-mormons-depiction-of-a-loving-god-fits-with-the-old-testament"
         }
-      ]
+      ],
+      "approved": "822d1416"
     },
     {
       "id": "bible-mormons-christian",
@@ -657,7 +667,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/why-did-christ-call-the-creeds-an-abomination"
         }
-      ]
+      ],
+      "approved": "ce544faa"
     },
     {
       "id": "bible-no-more-scripture",
@@ -720,7 +731,8 @@ window.TU_QUESTIONS = {
           "kind": "podcast",
           "u": "https://scripturecentral.org/shows/church-history-matters/episodes/how-has-canonizing-de-canonizing-happened-in-the-doctrine-and-covenants"
         }
-      ]
+      ],
+      "approved": "da8378e6"
     },
     {
       "id": "bom-made-up",
@@ -782,7 +794,8 @@ window.TU_QUESTIONS = {
           "kind": "evidence",
           "u": "https://scripturecentral.org/evidence/book-of-mormon-evidence-joseph-smith-s-education"
         }
-      ]
+      ],
+      "approved": "884fb495"
     },
     {
       "id": "bom-archaeology",
@@ -849,7 +862,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/periodicals/journal-article/archaeology-relics-and-book-mormon-belief"
         }
-      ]
+      ],
+      "approved": "2739b6fd"
     },
     {
       "id": "bom-dna",
@@ -901,7 +915,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/periodicals/journal-article/addressing-questions-surrounding-book-mormon-and-dna-research"
         }
-      ]
+      ],
+      "approved": "0d37658a"
     },
     {
       "id": "bom-seer-stone",
@@ -957,7 +972,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/were-joseph-smiths-translation-instruments-like-the-israelite-urim-and-thummim"
         }
-      ]
+      ],
+      "approved": "7fb0932e"
     },
     {
       "id": "bom-changes",
@@ -1024,7 +1040,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/archive/periodicals/journal-article/changes-book-mormon"
         }
-      ]
+      ],
+      "approved": "ec924c15"
     },
     {
       "id": "bom-gold-plates",
@@ -1091,7 +1108,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/did-the-book-of-mormon-witnesses-really-see-what-they-claimed"
         }
-      ]
+      ],
+      "approved": "6f5d6ac4"
     },
     {
       "id": "history-first-vision-accounts",
@@ -1157,7 +1175,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/how-did-joseph-smith-s-family-testify-of-the-first-vision"
         }
-      ]
+      ],
+      "approved": "1f8f3d33"
     },
     {
       "id": "history-joseph-smith-wives",
@@ -1225,7 +1244,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/what-does-the-book-of-mormon-say-about-polygamy"
         }
-      ]
+      ],
+      "approved": "75cf1803"
     },
     {
       "id": "history-race-priesthood",
@@ -1288,7 +1308,8 @@ window.TU_QUESTIONS = {
           "kind": "podcast",
           "u": "https://scripturecentral.org/shows/church-history-matters/episodes/q-and-r-tough-questions-with-paul-reeve-race-priesthood-and-temple"
         }
-      ]
+      ],
+      "approved": "d646039b"
     },
     {
       "id": "history-book-of-abraham",
@@ -1354,7 +1375,8 @@ window.TU_QUESTIONS = {
           "kind": "article",
           "u": "https://scripturecentral.org/blog/an-egyptologist-answers-questions-about-the-book-of-abraham"
         }
-      ]
+      ],
+      "approved": "c1b6d5f7"
     },
     {
       "id": "history-mountain-meadows",
@@ -1422,7 +1444,8 @@ window.TU_QUESTIONS = {
           "kind": "knowhy",
           "u": "https://scripturecentral.org/knowhy/why-were-violent-acts-like-the-mountain-meadows-massacre-committed-by-latter-day-saints"
         }
-      ]
+      ],
+      "approved": "df984346"
     },
     {
       "id": "history-own-planet",
@@ -1478,7 +1501,8 @@ window.TU_QUESTIONS = {
           "kind": "podcast",
           "u": "https://scripturecentral.org/shows/church-history-matters/episodes/the-vision-that-changed-heaven-forever-church-history-matters-with-scott-casey-july-7-13"
         }
-      ]
+      ],
+      "approved": "e0dc2da9"
     }
   ]
 };
