@@ -77,7 +77,7 @@ window.TU_SUNDAY = {
               "kind": "recall"
             }
           ],
-          "approved": "6046e017",
+          "approved": "a5562152",
           "try": "Before you get dressed each morning this week, ask yourself the chapter’s question: “Am I honoring my body as a sacred gift from God?”",
           "reflect": "How would you treat your body differently if you really saw it as a temple?"
         },
@@ -149,7 +149,7 @@ window.TU_SUNDAY = {
               "kind": "scenario"
             }
           ],
-          "approved": "e62285cd",
+          "approved": "e8b5d295",
           "try": "Read Doctrine and Covenants 89:18–21 and write each promise on a card. Pick one everyday choice, like your bedtime, that helps you keep it.",
           "reflect": "Which promise in Doctrine and Covenants 89 would help you most right now, and why?"
         },
@@ -236,7 +236,7 @@ window.TU_SUNDAY = {
               "kind": "verse"
             }
           ],
-          "approved": "b5fbecc5",
+          "approved": "5ac89a81",
           "try": "Write three ways you’ll protect your thoughts this week, like limiting screen time or choosing uplifting music, and put the list by your bed.",
           "reflect": "What helps you feel clean and close to the Spirit, and how could you have more of it?"
         },
@@ -308,7 +308,7 @@ window.TU_SUNDAY = {
               "kind": "scenario"
             }
           ],
-          "approved": "a0c57f4d",
+          "approved": "45f45444",
           "try": "Choose one thing you’re trusted with this week, like a chore or a priesthood assignment, and do it fully without being reminded.",
           "reflect": "How has the Savior helped you keep your body sacred this month? What helps you stay true when no one is watching?"
         }
@@ -388,7 +388,7 @@ window.TU_SUNDAY = {
               "kind": "recall"
             }
           ],
-          "approved": "6e4ea227",
+          "approved": "1c14bc2b",
           "try": "Pick one subject that’s hard for you and ask Heavenly Father to help you learn it this week. Notice what changes.",
           "reflect": "What is one true thing you’ve learned that has made your life freer or happier?"
         },
@@ -460,7 +460,7 @@ window.TU_SUNDAY = {
               "kind": "verse"
             }
           ],
-          "approved": "69ee21cf",
+          "approved": "33bac00d",
           "try": "Memorize Psalm 119:105 this week. Say it each night when you switch off the light.",
           "reflect": "Which verse has felt most like a trusted friend to you, and when did you need it?"
         },
@@ -532,7 +532,7 @@ window.TU_SUNDAY = {
               "kind": "scenario"
             }
           ],
-          "approved": "97fcdab8",
+          "approved": "973a5343",
           "try": "Write down one gospel question you have. This week, look for an answer in the scriptures or a prophet’s words, and pray about it.",
           "reflect": "What is one truth you know now that you didn’t know a year ago? How did you learn it?"
         },
@@ -604,7 +604,7 @@ window.TU_SUNDAY = {
               "kind": "recall"
             }
           ],
-          "approved": "e37ab977",
+          "approved": "df85c683",
           "try": "For one week, catch yourself before any small lie or exaggeration, even as a joke, and say what’s true instead.",
           "reflect": "Where is it hardest for you to be the same person in private as in public? Why?"
         },
@@ -676,7 +676,7 @@ window.TU_SUNDAY = {
               "kind": "scenario"
             }
           ],
-          "approved": "eb9e874e",
+          "approved": "b2eb47c0",
           "try": "Make two lists: things of this world and things of a better. Choose one thing to set down this week and one to reach for.",
           "reflect": "What would you write on your own title of liberty, and why does it matter to you?"
         }
@@ -756,7 +756,7 @@ window.TU_SUNDAY = {
               "kind": "recall"
             }
           ],
-          "approved": "948511fa",
+          "approved": "433bdc19",
           "try": "Each night this week, write down one reason to rejoice from that day. On Sunday, read your whole list.",
           "reflect": "When have you felt joy during a hard time? What do you think brought it?"
         },
@@ -828,7 +828,7 @@ window.TU_SUNDAY = {
               "kind": "recall"
             }
           ],
-          "approved": "55b2b217",
+          "approved": "2509b0b9",
           "try": "Write down one thing you’re trusting Jesus Christ with right now. Each morning this week, pray about it and tell Him you trust Him.",
           "reflect": "What do you know about Jesus Christ that makes Him worthy of your trust?"
         },
@@ -900,7 +900,7 @@ window.TU_SUNDAY = {
               "kind": "verse"
             }
           ],
-          "approved": "a757b612",
+          "approved": "3be20d29",
           "try": "Find one verse that gives you hope, write it on a card, and put it where you’ll see it every morning.",
           "reflect": "What good things are you hoping for because of Jesus Christ?"
         },
@@ -972,7 +972,7 @@ window.TU_SUNDAY = {
               "kind": "scenario"
             }
           ],
-          "approved": "bdf9e5cf",
+          "approved": "314642eb",
           "try": "This week, do one quiet act of service for someone at home without being asked, the way Joseph quietly protected his family.",
           "reflect": "What work do you think God has given you to do, and which Christlike trait would help you most?"
         }
@@ -1034,7 +1034,7 @@ window.TU_SUNDAY = {
               "please consider saving for and buying your own ceremonial temple clothes"
             ]
           },
-          "approved": "4ee652f5",
+          "approved": "ad997da9",
           "story": {
             "title": "Temple clothes for a widowed mother",
             "text": "A family without much money had a widowed mother who asked for temple clothes of her own. Her children saved until they could buy them for her. For many years she wore them gladly as she went to the temple, and when she died, the family honored her wish and buried her in them. Elder Gong shares it to show that caring for our own temple clothes lets children and grandchildren see how much we love the Lord and our covenants."
@@ -1098,7 +1098,7 @@ window.TU_SUNDAY = {
               "He waits for an invitation before He can really go to work."
             ]
           },
-          "approved": "c5bdea73",
+          "approved": "c8bb4aea",
           "story": {
             "title": "A master’s hand on the clay",
             "text": "In a college sculpting class, Sister Runia’s brother had to model a clay bust of himself. He expected it to be easy, but the eyes never looked alive. He saw the instructor helping others, yet he wanted the piece to be all his own, so he struggled alone until he finally asked. The teacher cut in so deep and fast it startled him, and within minutes the eyes came alive. The bust was still unmistakably him, shaped by a skill he lacked. The Savior works on our souls like that, once we invite Him."
@@ -1160,7 +1160,7 @@ window.TU_SUNDAY = {
               "look each day for opportunities, as prompted by the Holy Ghost, to bear witness of Jesus Christ"
             ]
           },
-          "approved": "8f6124b4",
+          "approved": "9d2bf963",
           "story": {
             "title": "Two sentences at girls camp",
             "text": "Elder Caussé’s niece, just beginning to gain a testimony, stood to bear it at Young Women camp. Nervous, she managed only two lines: that God loves her and that He has a plan for her. For days afterward she felt discouraged that she could not speak like the other girls. When she told her mother, her mother asked whether she believed what she had said. She did. Then, her mother told her, that was all that mattered. A testimony needs to be true, not long or polished."
@@ -1225,7 +1225,7 @@ window.TU_SUNDAY = {
               "whether by mine own voice or by the voice of my servants, it is the same"
             ]
           },
-          "approved": "d076a914",
+          "approved": "32a26cd5",
           "story": {
             "title": "Sailing through grief to hear an Apostle",
             "text": "In 1947 Elder Sikahema’s grandparents, poor Tongan farmers serving a mission on a remote island, set out with their three small children to hear Elder Matthew Cowley, only the third Apostle ever to visit Tonga. A storm stretched a 16-hour crossing into two and a half days. Their baby son became badly dehydrated and died. They buried him within two days, then got back on the boat. They kept sailing because an Apostle held the keys to seal their family and could teach them how to bless others."
@@ -1286,7 +1286,7 @@ window.TU_SUNDAY = {
               "no mortal timeline can place us beyond Christ’s power to deliver"
             ]
           },
-          "approved": "b4973241",
+          "approved": "5b65d4d0",
           "story": {
             "title": "One week from hugging her dad",
             "text": "On her last preparation day, a sister missionary in Elder Hathaway’s mission got an early call from her father, who told her how much he loved her, how proud he felt and how soon he wanted to hug her. That night he died in a car accident on his way home from work. Through tears she asked how this could happen a week before she would see him. Weeks later she said it had been the most awful and most sacred time of her life; she had never held so tightly to her covenants, and she knew Jesus would heal her."
@@ -1347,7 +1347,7 @@ window.TU_SUNDAY = {
               "I invite you to prayerfully ponder Isaiah’s teachings"
             ]
           },
-          "approved": "8caeca9f",
+          "approved": "b855404b",
           "invite": [
             {
               "ask": "I invite you to prayerfully ponder Isaiah’s teachings and more intentionally embrace the divine purpose of the law of the fast in a higher and holier way as part of our worship.",
@@ -1402,7 +1402,7 @@ window.TU_SUNDAY = {
               "I invite each of you to substitute your name for Thomas’s"
             ]
           },
-          "approved": "39f69a19",
+          "approved": "21009930",
           "story": {
             "title": "Mission papers a friend started",
             "text": "In Lima, Peru, where Bishop Douglas and his wife led a mission, one elder had joined the Church at nearly 24 and then drifted away. A faithful friend helped him start his mission papers and book a physical before he had even decided to go. When he came back to church at 25, a desire to serve rose in him, and the Lord cleared obstacle after obstacle. He served to be close to Jesus Christ. Soon after, he married, was called as a bishop on his wedding day, and now serves as a stake president."
@@ -1469,7 +1469,7 @@ window.TU_SUNDAY = {
               "Today, I am pleading with all of us to live life on a higher plane."
             ]
           },
-          "approved": "a855db58",
+          "approved": "53dd8e76",
           "story": {
             "title": "A sermon in three words",
             "text": "Calvin Coolidge, the famously quiet U.S. president, came home from church one Sunday, and his wife asked what the sermon had been about. Sin, he said. And what had the preacher said about it? He was against it. President Gordon B. Hinckley once retold the exchange and said the Church’s view of gambling could be summed up just as briefly. President Christofferson borrows the story to open a talk on a subject he would rather not have to raise, but feels he must."
@@ -1530,7 +1530,7 @@ window.TU_SUNDAY = {
               "all human circumstances are within the Savior’s redemptive reach"
             ]
           },
-          "approved": "b5a28a66",
+          "approved": "9d3a14da",
           "story": {
             "title": "The oatmeal isn’t hot",
             "text": "In the late 1980s, Elder Renlund’s medical team took on a patient dying of heart failure. A first transplant failed, his organs were shutting down, and the team was preparing to withdraw life support when a marginal donor heart, unwanted for anyone else, became available. It worked beautifully. Ten days later, the day before going home, the man sat gripping his breakfast tray, irritated that his oatmeal wasn’t hot and his milk wasn’t cold. After three weeks near death, he had lost sight of his miracle."
@@ -1595,7 +1595,7 @@ window.TU_SUNDAY = {
               "let us pray every day for eyes to see the divine appointments God places before us"
             ]
           },
-          "approved": "a7f52f7a",
+          "approved": "bfd0b02f",
           "story": {
             "title": "The missionary with an alarm clock",
             "text": "Waiting at an airport with earbuds in, President Farnes glanced up at a young elder rocking back and forth in tears, clutching a boarding pass and an alarm clock. He went back to his book until the Spirit nudged him to look again. The elder, far from his home country, was flying alone for the first time. The Farneses walked him to the gate. He boarded last, and the only empty seat was beside President Farnes. At baggage claim the elder hugged them before greeting his mission leaders."
@@ -1657,7 +1657,7 @@ window.TU_SUNDAY = {
               "Worshipping in the Lord’s house, the temple, is vital to staying on the covenant path."
             ]
           },
-          "approved": "e6886224",
+          "approved": "70fb5072",
           "story": {
             "title": "A new missionary who wanted to go home",
             "text": "In his welcome interview as a mission leader, Elder Chigbundu met a new missionary who broke into tears and asked to go home but could not say why. When asked, he admitted he had no testimony of the Book of Mormon. Elder Chigbundu bore his own witness and urged him to study the scriptures. The elder and his trainer made a daily study plan. Later he wrote that the scriptures had helped him understand his purpose, and he was happy and no longer wanted to leave."
@@ -1719,7 +1719,7 @@ window.TU_SUNDAY = {
               "Tithe paying is evidence that we accept the law of sacrifice."
             ]
           },
-          "approved": "548408c6",
+          "approved": "cc791269",
           "story": {
             "title": "No exceptions, even for the poor",
             "text": "As a missionary in Puerto Montt, Chile, Elder Giuffra taught a woman of about 70 who cleaned houses and washed clothes and could barely cover rent, firewood and food. She was sure she could never pay tithing. Hoping for an exception, he called his mission president, who read him the widow’s mite and said he had no right to deny her the blessings. The missionaries fasted and prayed. When they returned, she told them she had asked Heavenly Father to help her live the law. After baptism, she brought tithing every week and fast offerings monthly."
@@ -1780,7 +1780,7 @@ window.TU_SUNDAY = {
               "Take comfort; God hears you and will answer your prayers in His own time and in His own way."
             ]
           },
-          "approved": "76026cb8",
+          "approved": "c7654509",
           "story": {
             "title": "A mother reading aloud every morning",
             "text": "Elder Morgan grew up in another church that also accepts the Book of Mormon. As a young teen, while he got ready for school, his single mother read it aloud to him every day until they finished, whether he listened or not. He remembers only two phrases, but he knew the book mattered to her and that she knew it was true. At 14 he began searching, and for two months he slipped into a Latter-day Saint congregation, hiding in the overflow, until he knew this was the Lord’s Church."
@@ -1841,7 +1841,7 @@ window.TU_SUNDAY = {
               "Today Christ shows us our Father’s love through priesthood keys held by living prophets and apostles."
             ]
           },
-          "approved": "2c1915b4",
+          "approved": "0e65ad24",
           "story": {
             "title": "Baby pictures and unearned love",
             "text": "Prompted during a Church meeting, Elder Fale texted his wife asking her to dig out baby photos of each of their children. At home he showed them the photos, described the love they felt at each birth, and asked what they had done by that day to earn it. Eyes down, they answered that they had done nothing. Exactly, he told them: love they never earned can never be lost. Then he said their parents’ love is only a small part of what Heavenly Father feels, and that they could always come home. The Spirit filled the room."
@@ -1903,7 +1903,7 @@ window.TU_SUNDAY = {
               "Your Saviour is your lift. He is your ever-rising air."
             ]
           },
-          "approved": "90bb4a9b",
+          "approved": "c15cfa88",
           "story": {
             "title": "Learning to feel the rising air",
             "text": "As a boy at boarding school in England, Elder Kearon dreamed of flying home to his parents in Arabia. In his mid-teens he spent parts of two summers learning to fly gliders with the Royal Air Force. A glider has no engine, so the key skill is finding rising air. He learned to head for cumulus clouds, to feel a wing tip upward and turn into it, to circle up alongside other pilots, and to turn sharply away from sinking air. Years later he saw the gospel in those lessons."
@@ -1969,7 +1969,7 @@ window.TU_SUNDAY = {
               "Peace will come even when hoped-for outcomes do not."
             ]
           },
-          "approved": "d6a318e4",
+          "approved": "0304cecd",
           "story": {
             "title": "Who was carrying the water?",
             "text": "In 1998 Elder Dunn’s running partner, a veteran of the race, talked him into a 100-mile ultramarathon and promised to run the second half beside him. At mile 90, completely drained, Elder Dunn sat under a tree and said he was giving up. His friend knelt, looked him in the eye and said he knew he could do it and would get him there. They finished the last 10 miles together. Later a race photo revealed something he had missed: his friend had been carrying Elder Dunn’s water bottles and pack for the last 10 miles."
@@ -2034,7 +2034,7 @@ window.TU_SUNDAY = {
               "The Savior’s peace is made manifest through the comforting power of the Holy Ghost."
             ]
           },
-          "approved": "aa2b9a53",
+          "approved": "b73c7987",
           "story": {
             "title": "A blessing for a grieving father",
             "text": "Elder Eyring and his wife once lost one of their twins before birth. Years later they shared a meal with a young couple grieving a twin lost in their first pregnancy, and they spoke together of parenthood, loss and healing. In the hospital the mother had received a priesthood blessing, but the father had not. After dinner Elder Eyring gave him one, and the Spirit promised him peace beyond understanding, then and for the rest of his life. As the couple left, their faces shone."
@@ -2101,7 +2101,7 @@ window.TU_SUNDAY = {
               "Third, remember Jesus Christ is the answer."
             ]
           },
-          "approved": "86a57d2a",
+          "approved": "d3e874db",
           "story": {
             "title": "A father’s prayers for a rebel son",
             "text": "Alma the Younger was gifted, persuasive and openly fighting against God. His father, Alma, prayed for him in faith, perhaps for years. Then an angel stopped the son with a voice like thunder, announcing that the Lord had heard his father’s prayers. For three days and nights the young man was tormented by his sins, until he remembered his father’s teaching that Jesus Christ would come to atone. He cried out to Jesus for mercy, was filled with joy, and became one of the great prophets of the Book of Mormon."
@@ -2163,7 +2163,7 @@ window.TU_SUNDAY = {
               "You have prayed in faith consistently for your family members or friends to know who the Lord would have you help for Him."
             ]
           },
-          "approved": "94c3fa20",
+          "approved": "360d704b",
           "story": {
             "title": "Of course it’s hard",
             "text": "As a little boy, President Eyring asked his mother why life was so hard. She smiled and told him firmly that of course it was hard; it was meant to be, because life is a test. Only later did he realize she was enduring a lifetime of serious illness that began in her girlhood. In her final, bedridden days, the one picture on her wall was of the Savior. His father slept on a cot beside her, and after she died, he thanked and shook hands with every nurse on the ward."
@@ -2225,7 +2225,7 @@ window.TU_SUNDAY = {
               "Learn the name of someone who may feel unseen."
             ]
           },
-          "approved": "227b283e",
+          "approved": "361ff8d0",
           "story": {
             "title": "A janitor who felt seen",
             "text": "At their daughter’s last parent-teacher conference, a school janitor came up to President Chibota and her husband with tears in his eyes. He wanted to thank them for their daughter. She greeted him regularly, knew his name and even helped him clean up after lunch. Very few students knew who he was, he said, but she noticed him. A small, steady habit of attention had told a man his worth."
@@ -2290,7 +2290,7 @@ window.TU_SUNDAY = {
               "Their faith in Jesus Christ lifted their courage, and their courage has elevated their faith."
             ]
           },
-          "approved": "565f38bf",
+          "approved": "7cb5e42b",
           "story": {
             "title": "After the Spokane fires",
             "text": "A month before conference, Elder Andersen went with President Dieter F. Uchtdorf to Spokane, Washington, where fires had destroyed more than 800 homes. They visited members whose whole neighborhoods were gone. One couple, the Woodburys, told him their family was safe, their faith was secure, and a house could be built again. Their faith in Christ had given them courage in the loss, and that courage was making their faith even stronger."
@@ -2351,7 +2351,7 @@ window.TU_SUNDAY = {
               "Service is the very fiber of which an exalted life in the celestial kingdom is made"
             ]
           },
-          "approved": "4d062ab5",
+          "approved": "030983d6",
           "story": {
             "title": "A quick fix on a school form",
             "text": "Registering his youngest daughter for a home-school program, Elder Fantone was asked to write her name and sign. Distracted, he wrote and signed his own name instead. Because her middle and last names are the same as his, he simply added her first name in front, and the form was fixed. Later he wondered what is really in a name, and saw the contrast: Christ does not want His name tacked onto ours like a label, but taken on through covenant and service."
@@ -2409,7 +2409,7 @@ window.TU_SUNDAY = {
               "Perfection is pending."
             ]
           },
-          "approved": "e7859ff0",
+          "approved": "c6bab607",
           "story": {
             "title": "One more ministering visit",
             "text": "On the way to the airport, a stake president in North Carolina asked Elder Dube for one more ministering visit, to a good man trying hard to quit smoking. Never a smoker himself, Elder Dube prayed for words. He asked Brother Child how much he loved his wife, then invited the couple to choose a date to be sealed. They came back with August 5 and were sealed two months later. His wife had prayed all night and received the answer that her husband didn’t need to be perfect, only to give his best."
@@ -2470,7 +2470,7 @@ window.TU_SUNDAY = {
               "Let virtue garnish thy thoughts unceasingly."
             ]
           },
-          "approved": "c491fc20",
+          "approved": "f86dcbf0",
           "story": {
             "title": "Solid ground under his feet",
             "text": "As a young missionary in Britain, Elder Cook taught a man who had served on a battleship in Europe during World War II, 16 years earlier. When the missionaries taught him about repentance, he was overcome. He said it felt like the day he stepped off the ship back in England and felt the ground of his island home under his feet, a moment so overwhelming he fell to his knees. Before his baptism he prayed to share that same joy with others, above all with his family."
@@ -2533,7 +2533,7 @@ window.TU_SUNDAY = {
               "This peace is real. It is powerful, and it begins with us—with our hearts, our choices, and our words."
             ]
           },
-          "approved": "e0d1762e",
+          "approved": "ff414d3c",
           "invite": [
             {
               "ask": "Let us repent for the harsh language and expressions that have offended our friends, leaders, family members, or colleagues.",
@@ -2594,7 +2594,7 @@ window.TU_SUNDAY = {
               "God knows what is best for us and is eager to bless us."
             ]
           },
-          "approved": "623bfe52",
+          "approved": "9761cdc3",
           "story": {
             "title": "A temple left in ruins",
             "text": "Through the prophet Haggai, the Lord told the Israelites to rebuild His temple, but they kept putting their own houses first. They planted much and harvested little, and their wages seemed to fall through a bag with holes. Twice the Lord told them to consider their ways. They repented and began to build, and the Lord promised to bless them from that very day. Elder Schmeil draws the lesson: when our priorities line up with God’s, He can magnify our efforts."
@@ -2659,7 +2659,7 @@ window.TU_SUNDAY = {
               "The Book of Mormon is a great witness that the Lord loves all people and reaches out to all, everywhere."
             ]
           },
-          "approved": "de7b02a5",
+          "approved": "51fb8250",
           "invite": [
             {
               "ask": "Protect yourself with the weekly renewing of your covenants by partaking of the sacrament and with consistent efforts to live according to those sacred covenants.",
@@ -2721,7 +2721,7 @@ window.TU_SUNDAY = {
               "It would be incomplete without you."
             ]
           },
-          "approved": "11f7894d",
+          "approved": "0f8e01c0",
           "story": {
             "title": "Baptized in a pool he couldn’t swim in",
             "text": "President and Sister Uchtdorf recently attended the baptisms of two great-grandchildren, who followed not only the Savior but siblings, cousins, parents and friends into the water. He remembered his own baptism at eight, in a large indoor public swimming pool. Walking in, his main thought was that the water kept getting deeper and he couldn’t swim. Spiritual growth, he notes, usually starts that small and uncertain, then builds like a curve that bends sharply upward."
@@ -2784,7 +2784,7 @@ window.TU_SUNDAY = {
               "But the Father, Jesus Christ, and the Holy Ghost are at your side."
             ]
           },
-          "approved": "067db8e2",
+          "approved": "48d3a9a0",
           "story": {
             "title": "A black cloud and a blessing",
             "text": "Soon after moving from Argentina to the United States, while still learning English, Sister Muñoz Spannaus taught in her calling and felt it had gone terribly: mispronounced words, grammar mistakes, everything wrong. She felt depressed and confused about why God had called her, and went to sleep in tears. Morning brought no relief. Then her husband gave her a priesthood blessing that named Satan’s aim to tear down her confidence and assured her that the Father, Jesus Christ and the Holy Ghost were at her side."
@@ -2848,7 +2848,7 @@ window.TU_SUNDAY = {
               "Elijah understood that blessings will come after the trial of our faith."
             ]
           },
-          "approved": "704095dd",
+          "approved": "66f5755a",
           "story": {
             "title": "A sister who felt unblessed",
             "text": "After a sacrament meeting, a faithful sister told Elder Villanueva that her testimony of tithing was weakening. She had always paid a full tithe, yet the promotion and raise she hoped for never came. He shared Elder David A. Bednar’s counsel that tithing often brings significant but subtle blessings that are easy to miss, and invited her to list her own. He had made such a list himself: steady work, good health, a preserved home, an education, gratitude and recognizing the Spirit."
@@ -2908,7 +2908,7 @@ window.TU_SUNDAY = {
               "But I do know promised blessings will be received."
             ]
           },
-          "approved": "ac14a62a",
+          "approved": "a696a539",
           "story": {
             "title": "The parable of the damaged passport",
             "text": "A man flew to a distant country to visit relatives, carrying a valid passport from his own government. But he had not cared for it: the personal page was stained and damaged, and a torn page had been patched with tape and glue in an unauthorized way. The border official refused the entry stamp, leaving him confused about what to do. Holding a valid passport gave him the chance to enter, but it did not guarantee he would."
@@ -2969,7 +2969,7 @@ window.TU_SUNDAY = {
               "It is important to remember that we do not need to go through this alone."
             ]
           },
-          "approved": "0acc8efe",
+          "approved": "495117f8",
           "story": {
             "title": "Eternal joy and a first argument",
             "text": "In South Africa, names carry meaning. Elder Lebethoa’s name means joy and his wife’s middle name means eternal, so together their names spell eternal joy. Yet soon after they married, an evening conversation turned into their first real argument, and they slipped into the silent treatment. As he pondered what to do, the Savior’s words to the Nephites came to mind: contention comes from the devil, not from Him (3 Nephi 11:29–30). Those words cleared his mind and showed him how to resolve it."
@@ -3028,7 +3028,7 @@ window.TU_SUNDAY = {
               "Being quick to help and slow to judge is a simple and deeply encouraging way for each of us to be more holy"
             ]
           },
-          "approved": "5f68c899",
+          "approved": "01912653",
           "story": {
             "title": "The parable of the baffling buttons",
             "text": "During a ward Primary program, a young boy in a new suit buttoned his sleeve button into the buttonhole on his lapel and got stuck in a one-armed straitjacket just before his turn at the pulpit. Elder Sinclair, watching, grew more and more irritated and shook his head. But the little girl beside the boy simply reached up and popped the button free. The boy was rescued, the program went on, and Elder Sinclair felt quietly rebuked and humbled."
@@ -3088,7 +3088,7 @@ window.TU_SUNDAY = {
               "Finally, a most delicious fruit for Latter-day Saints is the gift of the Holy Ghost, His constant companionship."
             ]
           },
-          "approved": "a288b61d",
+          "approved": "54eb3a86",
           "story": {
             "title": "A grieving priest in Japan",
             "text": "While living in Japan, Elder Stevenson befriended a Buddhist temple priest, a happy man until his wife died and grief left him deeply depressed. One night Elder Stevenson and a friend visited him. He barely spoke until Elder Stevenson asked whether he knew where his wife was. Startled, he asked what he meant. They explained that spirits return to God and that his wife had gone to a place of rest and peace. His face changed: peace replaced despair, and joy replaced sorrow."
@@ -3149,7 +3149,7 @@ window.TU_SUNDAY = {
               "To teach like the Savior, we must love like the Savior!"
             ]
           },
-          "approved": "766726a7",
+          "approved": "2b7c6d96",
           "story": {
             "title": "Primary under a mango tree",
             "text": "Brother Reid grew up in the village of Leone, American Samoa, one of 13 children raised by faithful parents: a father who joined the Church as a young man and a mother with little formal schooling. Many of his first Primary classes met in the shade of a mango tree. His teachers prepared every lesson, but what he remembers most is that they knew each child by name and loved them. That love helped him feel the Savior’s love, and then the truth of His gospel."
@@ -3212,7 +3212,7 @@ window.TU_SUNDAY = {
               "For disciples of Jesus Christ, truth and love always walk together."
             ]
           },
-          "approved": "0e6c3d34",
+          "approved": "e8bba700",
           "story": {
             "title": "Two hours of listening",
             "text": "A stake president handed Elder Gilbert a long list of ministering visits. Short on time, Elder Gilbert suggested they choose just one home. They did, but five people were waiting there, each with a different concern. He asked where they wanted to begin and listened. He was tempted to jump in, but the Spirit kept prompting him to wait. After nearly two hours, running through their next meeting, he understood their struggles. When he invited all five to stake conference that evening, every one accepted."
@@ -3259,7 +3259,7 @@ window.TU_SUNDAY = {
               "we invoke the blessings of the Lord on you and your families, blessings of peace and contentment"
             ]
           },
-          "approved": "af9d52c3",
+          "approved": "3953a432",
           "invite": [
             {
               "ask": "As the talks of this conference are published, we invite all to study and ponder them prayerfully and to act in faith on the principles they explain.",
