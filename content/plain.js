@@ -1,5 +1,5 @@
 // Plain words and notes for chapters no week reads, shown in the Scriptures tab once approved
-// (Blake, 2026-10-02: "the notes and plain translation for all of Isaiah"). Developer mode
+// (2026-10-02: "the notes and plain translation for all of Isaiah"). Developer mode
 // edits this file; tools/verify.mjs checks it.
 window.TU_PLAIN = {
   "title": "Plain words for chapters no week reads",
