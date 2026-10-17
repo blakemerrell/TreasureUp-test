@@ -709,28 +709,27 @@ console.log('Command Center & Tactical Cohort Battalions · Red Alert 2 Evolutio
   W.side('p').res.timber = 1000;
   W.side('p').res.stone = 1000;
 
-  // 1. Production building auto-cohort assignment
+  // 1. A soldier trained on his own joins no regiment (the owner chose regiments: a package bought as one), and marches to the rally point.
   const b = W.addBuilding('barracks', 'p', 10, 10, true);
-  b.autoCohort = 1;
   b.rally = [15, 15];
   W.train(b, 'spearman');
   while (b.queue.length > 0) W.step(0.5);
   const soldier = W.units('p').find(u => u.type === 'spearman');
-  ok(soldier && soldier.cohort === 1, 'barracks recruit auto-joins configured Cohort 1');
+  ok(soldier && !soldier.cohort, 'a recruit trained on his own belongs to no regiment');
   ok(soldier.order.type === 'move' && soldier.order.tx === 15 && soldier.order.ty === 15, 'new recruit marches to building rally point');
 
-  // 2. Default unit cohort categorization: Melee -> 1, Ranged -> 2, Beasts/Carts -> 3
+  // 2. Archers and carts trained one at a time stay free too: only a regiment's own recruits join it.
   const archerBuilding = W.addBuilding('barracks', 'p', 20, 10, true);
   W.train(archerBuilding, 'archer');
   while (archerBuilding.queue.length > 0) W.step(0.5);
   const archer = W.units('p').find(u => u.type === 'archer');
-  ok(archer && archer.cohort === 2, 'ranged recruit auto-joins Skirmishers (Cohort 2)');
+  ok(archer && !archer.cohort, 'an archer trained on his own belongs to no regiment');
 
   const stable = W.addBuilding('stables', 'p', 30, 10, true);
   W.train(stable, 'cart');
   while (stable.queue.length > 0) W.step(0.5);
   const cart = W.units('p').find(u => u.type === 'cart');
-  ok(cart && cart.cohort === 3, 'transport cart auto-joins Siege & Supply (Cohort 3)');
+  ok(cart && !cart.cohort, 'a cart belongs to no regiment');
 
   // 3. Cart docking sequence and yield popups (+10 Grain)
   const storehouse = W.addBuilding('storehouse', 'p', 40, 10, true);
@@ -749,6 +748,7 @@ console.log('Command Center & Tactical Cohort Battalions · Red Alert 2 Evolutio
   // 4. Formation speed synchronization: troops in cohort lock speed to slowest member
   const swordFast = W.addUnit('spearman', 'p', 100, 100);
   const curelomSlow = W.addUnit('curelom', 'p', 102, 100);
+  W.regiments();
   swordFast.cohort = 1;
   curelomSlow.cohort = 1;
   W.cohorts[1].speedLock = true;
@@ -1023,6 +1023,269 @@ console.log('Campaign Missions & Star Perks · Meta-Progression');
   }
 }
 
+// ------------------------------------------------------------ skirmish frontier economy
+console.log('Skirmish Economy & Frontier Loop');
+{
+  // 1. Living Farm: completing a farm seeds surrounding T.GRASS into T.FIELD and regrows over time
+  {
+    const W = new S.World();
+    W.tech = true;
+    W.res = { grain: 500, timber: 500, stone: 500 };
+    W.addBuilding('stronghold', 'p', 10, 10, true);
+    const farm = W.place('farm', 15, 10, [], 'p');
+    ok(farm, 'farm placed near stronghold');
+    run(W, 25); // let farm self-build to completion
+    ok(farm.built >= 1, 'farm finished building');
+    let fieldsAround = 0;
+    for (let dy = -1; dy <= farm.h; dy++) for (let dx = -1; dx <= farm.w; dx++) {
+      if (dx >= 0 && dx < farm.w && dy >= 0 && dy < farm.h) continue;
+      if (W.tile(farm.tx + dx, farm.ty + dy) === D.T.FIELD) fieldsAround++;
+    }
+    ok(fieldsAround === 8, `completed farm tilled 8 surrounding grass tiles into grain fields (got ${fieldsAround})`);
+    // Deplete one adjacent field back to grass and verify farm regrows it
+    W.setTile(14, 10, D.T.GRASS, 0);
+    farm.growAt = 0;
+    W.step(3.5);
+    ok(W.tile(14, 10) === D.T.FIELD && W.amt[10 * D.MAP_W + 14] >= 45, 'living farm regrows harvested adjacent tile back into field');
+  }
+
+  // 2. Wandering Flocks: claiming, herding arrival (+75 grain), 35% armor discount, and zero soft-lock fallback
+  {
+    const W = new S.World();
+    W.tech = true;
+    W.res = { grain: 100, timber: 200, stone: 200 };
+    W.addBuilding('stronghold', 'p', 10, 10, true);
+    const baseBreastCost = D.RESEARCH.breastplates.cost.grain;
+    ok(!W.hasFlockBonus('p') && W.researchCost('breastplates', 'p').grain === baseBreastCost, 'base armor research cost without flock');
+
+    const flock = W.addUnit('flock', 'n', 16 * D.TILE, 11 * D.TILE);
+    const scout = W.addUnit('hunter', 'p', 15.5 * D.TILE, 11 * D.TILE);
+    W.step(0.5);
+    ok(flock.team === 'p' && flock.order.type === 'herd', 'walking friendly unit near neutral flock claims it and herds it toward camp');
+
+    const g0 = W.res.grain;
+    run(W, 12);
+    ok(W.side('p').flocks === 1 && W.res.grain >= g0 + 75, `herded flock grants +75 grain burst and increments flocks (${W.res.grain} vs ${g0})`);
+    const discCost = W.researchCost('breastplates', 'p').grain;
+    ok(W.hasFlockBonus('p') && discCost === Math.round(baseBreastCost * 0.65), `flock bonus grants 35% discount on armor research (${discCost} vs ${baseBreastCost})`);
+
+    // Zero soft-lock fallback: stables or 2 farms also grants the bonus
+    const W2 = new S.World();
+    W2.tech = true;
+    W2.addBuilding('stables', 'p', 10, 10, true);
+    ok(W2.hasFlockBonus('p'), 'stables satisfies flock armor bonus as zero soft-lock fallback');
+  }
+
+  // 3. Hunters (eats: 0), Frontier Builds outside base REACH, Auto-Hunt, Campfire Dropoff & Ranger Evolution
+  {
+    const W = new S.World();
+    W.tech = true;
+    W.res = { grain: 100, timber: 200, stone: 100 };
+    W.addBuilding('stronghold', 'p', 10, 10, true);
+    const h = W.addUnit('hunter', 'p', 40 * D.TILE, 40 * D.TILE);
+    ok(W.foodUsed('p') === 0, 'hunter eats 0 food supply (lives off the wilderness)');
+
+    // Build a campfire far outside stronghold REACH (at tile 41, 40)
+    ok(W.canPlace('campfire', 41, 40, 'p'), 'frontier campfire can be placed far outside base REACH');
+    const fire = W.place('campfire', 41, 40, [h], 'p');
+    run(W, 10);
+    ok(fire && fire.built >= 1, 'hunter builds frontier campfire in the wilderness');
+
+    // Damage hunter and verify campfire heals him
+    h.hp = 40;
+    W.step(2);
+    ok(h.hp > 40, `campfire warms and heals nearby friendly units (${h.hp.toFixed(1)} > 40)`);
+
+    // Spawn 3 wild game deer near the hunter; let him hunt & unload at the campfire, evolving into Ranger!
+    const gStart = W.res.grain;
+    for (let k = 0; k < 3; k++) {
+      W.addUnit('game', 'n', (39 + k * 0.4) * D.TILE, 40 * D.TILE);
+      run(W, 12);
+    }
+    ok(W.res.grain >= gStart + 75, `hunter unloaded hunted game meat at frontier campfire (+${W.res.grain - gStart} grain)`);
+    ok(h.type === 'ranger' && h.max >= 115, `hunter auto-evolved into Wilderness Ranger after 3 hunts (type=${h.type}, maxHp=${h.max})`);
+
+    // Build a Tree Lookout (blind) next to the Ranger and verify stealth
+    const blind = W.addBuilding('blind', 'p', tileOf(h.x) + 1, tileOf(h.y), true);
+    h.struckAt = -10;
+    ok(blind && W.hidden(h), 'ranger is concealed when standing beside a Tree Lookout (blind)');
+
+    // Build Sharpened Stakes and verify trap slow + damage on an enemy
+    const stakes = W.addBuilding('stakes', 'p', 30, 30, true);
+    const foe = W.addUnit('lamanite', 'r', 30.5 * D.TILE, 30.5 * D.TILE);
+    const hp0 = foe.hp;
+    W.step(2);
+    ok(foe.hp < hp0 && foe.slowUntil > W.t, `sharpened stakes trap slows and damages enemies (${foe.hp} < ${hp0})`);
+  }
+
+  console.log('C&C Auto-Tile Terrain · Plateaus, Ramps, Bridges & Roads');
+  {
+    const W = new S.World();
+    W.tech = true;
+    W.res = { grain: 500, timber: 500, stone: 500 };
+    W.addBuilding('stronghold', 'p', 16, 32, true);
+
+    const stamp = D.createMapStamps(W.tiles, W.amt);
+    // Stamp a 3x3 plateau at (21..23, 33..35) with a single ramp on the south edge (22, 36)
+    stamp.plateau(21, 33, 3, 3);
+    stamp.ramp(22, 36, 1, 1);
+
+    // 1. Strict cliff-edge blocking & ramp pathfinding
+    ok(!W.canStep(22, 32, 22, 33), 'strict cliff edge blocks direct step from low grass (22,32) onto north plateau (22,33)');
+    ok(W.canStep(22, 37, 22, 36) && W.canStep(22, 36, 22, 35), 'ramp tile (22,36) bridges elevation 0 -> 0.5 -> 1.0 onto plateau');
+    const climber = W.addUnit('swordsman', 'p', 22.5 * D.TILE, 32.5 * D.TILE);
+    const pathToPlateau = W.findPath(climber, { x0: 22, y0: 34, x1: 22, y1: 34 }, false);
+    ok(pathToPlateau && pathToPlateau.some(([px, py]) => px === 22 && py === 36), 'A* pathfinder routes around north cliff face to climb via south ramp (22,36)');
+    let prev = [22, 32];
+    for (const [px, py] of pathToPlateau) {
+      ok(W.canStep(prev[0], prev[1], px, py), `step (${prev[0]},${prev[1]}) -> (${px},${py}) respects canStep`);
+      prev = [px, py];
+    }
+    climber.hp = 0;
+
+    // 2. Building cliff-straddle validation
+    ok(!W.whyNotPlace('barracks', 21, 33, 'p'), '2x2 barracks can be placed wholly on top of plateau (21,33)');
+    ok(W.whyNotPlace('barracks', 20, 33, 'p') === 'ground', '2x2 building cannot straddle a cliff edge between low ground (20,33) and plateau (21,33)');
+
+    // 3. High-ground range (+32px), damage (+20%), ramp exclusion, and sheer-cliff melee blocking
+    const hiBow = W.addUnit('archer', 'p', 22.5 * D.TILE, 33.5 * D.TILE);
+    const rampBow = W.addUnit('archer', 'p', 22.5 * D.TILE, 36.5 * D.TILE);
+    const loBow = W.addUnit('archer', 'p', 19.5 * D.TILE, 33.5 * D.TILE);
+    const targetLo = W.addUnit('lamanite', 'r', 22.5 * D.TILE, 31.5 * D.TILE);
+    ok(W.rangeOf(hiBow, targetLo) === W.rangeOf(loBow, targetLo) + D.TILE, `high-ground archer on plateau gains +${D.TILE}px (+1 tile) range vs low-ground target`);
+    ok(W.rangeOf(rampBow, targetLo) === W.rangeOf(loBow, targetLo), 'unit on ramp (elev 0.5) does not get plateau range bonus');
+    const cliffSwordsman = W.addUnit('swordsman', 'p', 22.5 * D.TILE, 33.1 * D.TILE);
+    const baseEnemy = W.addUnit('lamanite', 'r', 22.5 * D.TILE, 32.9 * D.TILE);
+    ok(!W.reachOf(cliffSwordsman, baseEnemy), 'melee unit cannot strike across a sheer cliff edge without a ramp');
+    cliffSwordsman.hp = 0; baseEnemy.hp = 0; rampBow.hp = 0;
+    const hpBefore = targetLo.hp;
+    W.damage(targetLo, 10, hiBow);
+    const dmgHi = hpBefore - targetLo.hp;
+    const hpBefore2 = targetLo.hp;
+    W.damage(targetLo, 10, loBow);
+    const dmgLo = hpBefore2 - targetLo.hp;
+    ok(Math.abs(dmgHi / dmgLo - 1.2) < 0.01, `high-ground attack deals +20% bonus damage (${dmgHi.toFixed(1)} vs ${dmgLo.toFixed(1)})`);
+    hiBow.hp = 0; loBow.hp = 0; targetLo.hp = 0;
+
+    // 4. Destructible & repairable 2x2 bridge span (melee demolisher stays safely on bank)
+    for (let y = 32; y <= 35; y++) for (let x = 26; x <= 27; x++) W.setTile(x, y, D.T.WATER, 0);
+    stamp.bridge(26, 33, 27, 33);
+    stamp.bridge(26, 34, 27, 34);
+    ok(W.tile(26, 33) === D.T.BRIDGE && W.tile(27, 34) === D.T.BRIDGE && W.passable(26, 33), 'intact 2x2 bridge over water is walkable');
+    const victim = W.addUnit('lamanite', 'r', 27.5 * D.TILE, 34.5 * D.TILE);
+    const demolisher = W.addUnit('cumom', 'p', 24.5 * D.TILE, 33.5 * D.TILE);
+    W.order(demolisher, { type: 'demolish', tx: 27, ty: 33 });
+    run(W, 12);
+    ok(
+      W.tile(26, 33) === D.T.BROKEN_BRIDGE && W.tile(27, 33) === D.T.BROKEN_BRIDGE &&
+      W.tile(26, 34) === D.T.BROKEN_BRIDGE && W.tile(27, 34) === D.T.BROKEN_BRIDGE && !W.passable(26, 33),
+      'entire connected 2x2 bridge span collapses into impassable T.BROKEN_BRIDGE'
+    );
+    ok(victim.dead && victim.hp <= 0, 'unit standing on collapsing 2x2 bridge span perishes in the river');
+    ok(!demolisher.dead && demolisher.hp > 0, 'melee demolisher attacks from the riverbank and survives the bridge collapse');
+    demolisher.hp = 0;
+
+    const mender = W.addUnit('worker', 'p', 25.5 * D.TILE, 33.5 * D.TILE);
+    W.order(mender, { type: 'mendbridge', tx: 27, ty: 34 });
+    run(W, 6);
+    ok(
+      W.tile(26, 33) === D.T.BRIDGE && W.tile(27, 33) === D.T.BRIDGE &&
+      W.tile(26, 34) === D.T.BRIDGE && W.tile(27, 34) === D.T.BRIDGE && W.passable(27, 34),
+      'worker ordered with mendbridge repairs the entire 2x2 broken span back to walkable T.BRIDGE'
+    );
+    mender.hp = 0;
+
+    // 5. Ancient Nephite Road speed bonus (+25%)
+    for (let x = 18; x <= 25; x++) {
+      W.setTile(x, 38, D.T.ROAD, 0);
+      W.setTile(x, 39, D.T.GRASS, 0);
+    }
+    const runnerRoad = W.addUnit('swordsman', 'p', 18.5 * D.TILE, 38.5 * D.TILE);
+    const runnerGrass = W.addUnit('swordsman', 'p', 18.5 * D.TILE, 39.5 * D.TILE);
+    W.order(runnerRoad, { type: 'move', tx: 25, ty: 38 });
+    W.order(runnerGrass, { type: 'move', tx: 25, ty: 39 });
+    run(W, 1.0);
+    const dRoad = runnerRoad.x - 18.5 * D.TILE;
+    const dGrass = runnerGrass.x - 18.5 * D.TILE;
+    ok(dRoad > dGrass * 1.18, `unit marching along T.ROAD moves ~25% faster than on grass (${dRoad.toFixed(1)}px vs ${dGrass.toFixed(1)}px)`);
+
+    // 6. Phase 2 Skirmish Map Pack (all 4 C&C maps build valid worlds with reachable WARCAMP & plateaus/roads)
+    const FREE = require('../liberty/missions.js').FREE_BATTLE;
+    const mapIds = Object.keys(D.SKIRMISH_MAPS || {});
+    ok(mapIds.length === 4, `4 skirmish maps defined in D.SKIRMISH_MAPS (${mapIds.join(', ')})`);
+    for (const mid of mapIds) {
+      const meta = D.SKIRMISH_MAPS[mid];
+      FREE.mapId = mid;
+      FREE.customMap = undefined;
+      FREE.side = 'freemen';
+      FREE.level = 'normal';
+      const MW = new S.World(19, FREE.map);
+      MW.mission = FREE;
+      FREE.setup(MW);
+      MW.border = null;
+      let hasPlateau = false, hasRamp = false, hasRoad = false;
+      for (let i = 0; i < MW.tiles.length; i++) {
+        if (MW.tiles[i] === D.T.PLATEAU) hasPlateau = true;
+        else if (MW.tiles[i] === D.T.RAMP) hasRamp = true;
+        else if (MW.tiles[i] === D.T.ROAD) hasRoad = true;
+      }
+      ok(hasPlateau && hasRamp && hasRoad, `skirmish map '${mid}' (${meta.name}) includes plateaus, ramps, and roads`);
+      const goal = { x0: meta.WARCAMP.x, y0: meta.WARCAMP.y, x1: meta.WARCAMP.x + 3, y1: meta.WARCAMP.y + 3 };
+      const path = MW.findPath(
+        { x: (meta.START.x + 2) * D.TILE + 16, y: (meta.START.y + 2) * D.TILE + 16, team: 'p', def: D.UNITS.spearman },
+        goal,
+        true
+      );
+      const last = path && path.length ? path[path.length - 1] : null;
+      const reached = !!(last && last[0] >= goal.x0 - 1 && last[0] <= goal.x1 + 1 && last[1] >= goal.y0 - 1 && last[1] <= goal.y1 + 1);
+      ok(reached, `skirmish map '${mid}' A* march path genuinely reaches WARCAMP (${path ? path.length : 0} steps, end=${last ? last.join(',') : 'none'})`);
+      if (mid === 'highland_citadel') {
+        let plateauIntact = true;
+        for (let y = 19; y < 29; y++) for (let x = 26; x < 38; x++) {
+          const t = MW.tile(x, y);
+          if (t !== D.T.PLATEAU && t !== D.T.RAMP) plateauIntact = false;
+        }
+        ok(plateauIntact, 'Highland Citadel central 12x10 plateau has no low-ground resource holes');
+      }
+    }
+
+    // 7. Custom Map Builder RLE encode/decode round-trip, setup, and malformed JSON sanitization
+    const base = D.buildSkirmishMap('twin_bluffs');
+    base.tiles[20 * D.MAP_W + 20] = D.T.PLATEAU;
+    base.tiles[20 * D.MAP_W + 21] = D.T.RAMP;
+    base.tiles[25 * D.MAP_W + 30] = D.T.BRIDGE;
+    base.amt[25 * D.MAP_W + 30] = D.BRIDGE_HP;
+    const encoded = D.encodeCustomMap({
+      name: 'Moroni Mesa Test',
+      tiles: base.tiles,
+      amt: base.amt,
+      START: { x: 10, y: 36 },
+      WARCAMP: { x: 50, y: 4 },
+      CAMPS: [{ x: 40, y: 6 }, { x: 56, y: 12 }, { x: 46, y: 13 }]
+    });
+    const decoded = D.decodeCustomMap(encoded);
+    ok(decoded && decoded.name === 'Moroni Mesa Test' && decoded.tiles[20 * D.MAP_W + 20] === D.T.PLATEAU && decoded.tiles[20 * D.MAP_W + 21] === D.T.RAMP && decoded.amt[25 * D.MAP_W + 30] === D.BRIDGE_HP, 'encodeCustomMap & decodeCustomMap round-trip custom terrain and bridge HP');
+    const dirty = D.decodeCustomMap({
+      tilesRle: [99, 10, 200, 10],
+      START: { x: -999, y: 9999 },
+      WARCAMP: { x: 'bad', y: null },
+      CAMPS: [null, 'bad'],
+      RELICS: 'not-an-array'
+    });
+    ok(dirty && dirty.tiles[0] === D.T.GRASS && dirty.START.x >= 2 && dirty.WARCAMP.x >= 2 && dirty.CAMPS.length === 3 && Array.isArray(dirty.RELICS), 'decodeCustomMap sanitizes out-of-range tiles and malformed coordinates');
+    FREE.mapId = 'custom';
+    FREE.customMap = encoded;
+    const CW = new S.World(23, FREE.map);
+    CW.mission = FREE;
+    FREE.setup(CW);
+    ok(CW.tile(20, 20) === D.T.PLATEAU && CW.buildings('r', 'warcamp').length === 1, 'Free Battle loads and sets up custom Map Builder map');
+    delete FREE.mapId;
+    delete FREE.customMap;
+  }
+}
+
+
+
 // ------------------------------------------------------------ quotes
 // Every quotation in the game, in its text or its comments, is checked
 // against the verses cited on the same line: the words must be there.
@@ -1083,6 +1346,40 @@ console.log('Losing');
 // The game shows each picture's WebP, so a WebP made from an older picture would quietly show the old one. Every PNG and
 // JPG in liberty/assets/ needs a WebP made from it as it is now (python3 tools/liberty-webp.py writes them, and
 // webp.json notes the picture each was made from).
+// Regiments (the owner, 2026-10-11): "build regiment one and it includes a curelom and five archers, ten swordsmen ... like buying a
+// package"; a Refill pays only for the missing.
+console.log("Regiments · a package of soldiers");
+{
+  const FB = require('../liberty/missions.js').FREE_BATTLE;
+  FB.level = 'normal'; FB.side = 'freemen'; FB.captain = null;
+  const W = new S.World(undefined, FB.map); W.mission = FB; FB.setup(W);
+  const city = W.deploy(W.units('p').find(u => u.def.deploys));
+  const regs = W.regiments(), guard = regs.find(r => r.name === "Moroni's Guard");
+  ok(regs.length === 4 && guard && guard.mix.curelom === 1 && guard.mix.archer === 5 && guard.mix.swordsman === 10, "the Freemen start with four regiments, Moroni's Guard among them: a curelom, five archers and ten swordsmen");
+  const spot = (t, dx, dy) => { for (let r = 0; r < 14; r++) for (let oy = -r; oy <= r; oy++) for (let ox = -r; ox <= r; ox++) if (W.canPlace(t, city.tx + dx + ox, city.ty + dy + oy)) return [city.tx + dx + ox, city.ty + dy + oy]; return null; };
+  for (const [t, dx, dy] of [['barracks', 6, 0], ['farm', -6, 0], ['farm', -6, 5], ['farm', 0, 7], ['farm', 6, 7]]) { const p = spot(t, dx, dy); if (p) W.addBuilding(t, 'p', p[0], p[1], true); }
+  W.res.grain = 2000; W.res.timber = 2000;
+  const wall = regs.find(r => r.name === 'Spear Wall'), before = W.res.grain;
+  const f = W.fillRegiment(wall.id);
+  ok(f.queued === 8 && f.left === 0 && W.res.grain === before - 6 * 45 - 2 * 35, `one tap puts the whole Spear Wall into training, paid as it goes in (${f.queued} queued: 6 spearmen, 2 archers)`);
+  for (let i = 0; i < 2400 && W.cohortUnits('p', wall.id).length < 8; i++) W.step(0.1);
+  const men = W.cohortUnits('p', wall.id);
+  ok(men.length === 8 && men.filter(u => u.type === 'spearman').length === 6 && !Object.keys(W.regimentMissing(wall.id)).length, 'they come out marked as the Spear Wall, eight of them, none missing');
+  W.remove(men[0]); W.remove(men[1]);
+  const g = W.res.grain, refill = W.fillRegiment(wall.id);
+  ok(refill.queued === 2 && g - W.res.grain <= 2 * 45, 'two fall: Refill trains only those two');
+  const g2 = W.fillRegiment(guard.id);
+  ok(g2.queued === 5 && g2.left === 11 && /needs /.test(g2.why), `Moroni's Guard without a smithy or stables: the five archers go in, and it says what the rest need ("${g2.why}")`);
+  const b = W.buildings('p', 'barracks')[0], n = W.units('p').length;
+  W.train(b, 'spearman');
+  for (let i = 0; i < 600 && W.units('p').length <= n + 7; i++) W.step(0.1);
+  ok(W.units('p').filter(u => u.type === 'spearman' && !u.cohort).length >= 1, 'a spearman trained on his own belongs to no regiment');
+  FB.side = 'kingmen';
+  const K = new S.World(undefined, FB.map); K.mission = FB; FB.setup(K);
+  ok(K.regiments()[0].name === 'War Band', 'the King-men start with their own (the War Band first)');
+  FB.side = 'freemen';
+}
+
 console.log('Pictures');
 {
   const fs = await import('node:fs'), path = await import('node:path'), { createHash } = await import('node:crypto'), { fileURLToPath } = await import('node:url');

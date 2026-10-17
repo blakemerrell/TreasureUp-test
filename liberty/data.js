@@ -7,7 +7,9 @@
   const TILE = 32;
   const MAP_W = 64, MAP_H = 48;
   // Terrain. Forest and fields hold timber and grain; water, rock and forest block the way.
-  const T = { GRASS: 0, FOREST: 1, WATER: 2, FORD: 3, ROCK: 4, FIELD: 5, RUIN: 6 };
+  // Plateaus are high ground walkable via Ramps; Bridges span water and can be broken/repaired; Roads speed up carts and troops.
+  const T = { GRASS: 0, FOREST: 1, WATER: 2, FORD: 3, ROCK: 4, FIELD: 5, RUIN: 6, PLATEAU: 7, RAMP: 8, BRIDGE: 9, BROKEN_BRIDGE: 10, ROAD: 11 };
+  const BRIDGE_HP = 250;
   // North of this row is the wilderness, the robbers' own lands (3 Nephi 3:20–21).
   const BORDER_Y = 10;
   // The three ways down out of the mountains, and the river's three crossings.
@@ -79,11 +81,17 @@
                     about: 'A great horned beast that butts down walls and buildings: "elephants and cureloms and cumoms; all of which were useful unto man" (Ether 9:19). Slow, clumsy against soldiers; spearmen bring it down. Nobody knows what a cumom looked like, and its use in war is imagined.' },
     cart:         { name: 'Horse cart', hp: 90, speed: 78, dmg: 0, range: 0, cd: 1, armor: 1, sight: 140, cost: { grain: 60, timber: 40 }, time: 12, gathers: true, load: 30, quick: 1.5, needs: ['storehouse'],
                     about: 'Brings in grain and timber on its own, whichever is shorter: it finds the nearest field or forest and hauls the load to a storehouse. Defends itself when attacked: stone carts throw rocks, timber carts drop stakes, and grain carts burst ahead to escape. The Nephites had "horses, and their chariots" (3 Nephi 3:22).' },
+    hunter:       { name: 'Hunter', hp: 70, speed: 66, dmg: 9, range: 135, cd: 1.25, armor: 0, sight: 210, cost: { grain: 35, timber: 15 }, time: 8, ranged: true, scout: true, hunter: true, load: 25, eats: 0, tier: true, beats: 'light',
+                    about: 'Arms himself with a bow and goes forth into the wilderness to "slay wild beasts" and "obtain food" (1 Nephi 16:23, 31). Hunts wild game, herds flocks, and builds campfires, lookouts and stake traps anywhere on the frontier. After 3 hunts or kills, evolves into a Wilderness Ranger.' },
+    ranger:       { name: 'Wilderness ranger', hp: 115, speed: 72, dmg: 14, range: 175, cd: 1.1, armor: 1, sight: 245, cost: { grain: 55, timber: 35 }, time: 12, ranged: true, scout: true, hunter: true, ranger: true, load: 30, eats: 0, tier: true, beats: 'light',
+                    about: 'A seasoned hunter of the wilderness: goes unseen beside trees or a lookout, shoots far with a fine bow, and raises frontier works anywhere.' },
+    game:         { name: 'Wild game', hp: 30, speed: 46, dmg: 0, range: 0, cd: 1, armor: 0, sight: 60, carries: 55, game: true, prey: true, meat: 25,
+                    about: 'Wild beasts of the forest to "obtain food for our families" (1 Nephi 16:31). Send a hunter to bring in the meat.' },
     prisoner:     { name: 'Prisoner', hp: 1, speed: 45, dmg: 0, range: 0, cd: 1, armor: 0, sight: 0, about: 'Yielded up as a prisoner (3 Nephi 4:27).' }
   };
 
   const BUILDINGS = {
-    stronghold: { name: 'Zarahemla', w: 4, h: 4, hp: 2400, armor: 4, dmg: 8, range: 130, cd: 1.4, dropoff: 'story', builder: true, trains: ['cart', 'worker'], research: ['council', 'acropolis'], food: 10, store: 300, about: 'The chief judge\'s hall, where Pahoran was "appointed to fill the judgment-seat" (Alma 50:39): the seat of a free people, and their gathering place (3 Nephi 3:23). Its guards shoot at robbers. Lose it and the mission is lost.' },
+    stronghold: { name: 'Zarahemla', w: 4, h: 4, hp: 2400, armor: 4, dmg: 8, range: 130, cd: 1.4, dropoff: 'story', builder: true, trains: ['cart', 'worker', 'hunter'], research: ['council', 'acropolis'], food: 10, store: 300, about: 'The chief judge\'s hall, where Pahoran was "appointed to fill the judgment-seat" (Alma 50:39): the seat of a free people, and their gathering place (3 Nephi 3:23). Its guards shoot at robbers. Lose it and the mission is lost.' },
     storehouse: { name: 'Storehouse', w: 2, h: 2, hp: 450, armor: 2, cost: { timber: 60 }, work: 18, dropoff: true, brings: 'cart', store: 300, about: 'Where the carts bring grain, timber and stone: with none standing they have nowhere to go. Each one built brings a horse cart, like a refinery in Red Alert.' },
     barracks:   { name: 'Barracks', w: 3, h: 3, hp: 650, armor: 2, cost: { timber: 110 }, work: 30, trains: ['spearman', 'nslinger', 'archer'], research: ['armor'], about: 'Trains the guards.' },
     tower:      { name: 'Watchtower', w: 2, h: 2, hp: 520, armor: 3, cost: { timber: 40, stone: 40 }, work: 26, dmg: 9, range: 150, cd: 1.3, needs: ['barracks'], about: 'Guards "watch them … day and night" (3 Nephi 3:14). Shoots at robbers.' },
@@ -93,7 +101,13 @@
     camp:       { name: "Robbers' camp", w: 3, h: 3, hp: 380, armor: 2, food: 8, about: 'Part of the siege round about the city (3 Nephi 4:16).' },
     // Free battle.
     farm:       { name: 'Farm', w: 2, h: 2, hp: 300, armor: 1, cost: { timber: 50 }, work: 14, food: 8, grows: 0.25, tier: true,
-                  about: 'Feeds 8 more people, and grows a little grain. "They did raise grain in abundance" (Helaman 6:12).' },
+                  about: 'Feeds 8 more people, tills surrounding open ground into corn and wheat fields, and regrows them for your carts to harvest. "They did raise grain in abundance" (Helaman 6:12).' },
+    campfire:   { name: 'Hunting campfire', w: 1, h: 1, hp: 180, armor: 0, cost: { timber: 25 }, work: 6, dropoff: true, heals: 95, frontier: true, tier: true,
+                  about: 'A frontier fire where hunters dress their game and warm the watch: serves as a field dropoff and gently mends nearby people.' },
+    blind:      { name: 'Tree lookout', w: 1, h: 1, hp: 200, armor: 1, cost: { timber: 30 }, work: 7, sight: 250, frontier: true, tier: true,
+                  about: '"Moroni sent spies into the wilderness to watch their camp" (Alma 43:23): sees far across passes and fords, and hides friendly hunters standing beside it.' },
+    stakes:     { name: 'Sharpened stakes', w: 1, h: 1, hp: 220, armor: 2, cost: { timber: 15 }, work: 5, wall: true, trap: true, frontier: true, tier: true,
+                  about: 'Pointed timber stakes planted in a ford or pass: slows enemies close by and pierces those who press against them.' },
     granary:    { name: 'Granary', w: 2, h: 2, hp: 380, armor: 2, cost: { timber: 45 }, work: 14, store: 500, tier: true,
                   about: 'Holds 500 more of each: grain, timber and stone. The Nephites "reserved for themselves provisions" (3 Nephi 4:4). From history, not the verses: clay granaries like these have held maize in Mexico since long before the Spanish came.' },
     sawmill:    { name: 'Timber works', w: 2, h: 2, hp: 400, armor: 1, cost: { timber: 50, grain: 20 }, work: 16, needs: ['storehouse'], dropoff: true, mills: 0.3, tier: true,
@@ -138,7 +152,7 @@
                   about: 'The Zoramites bowed "down to dumb idols" (Alma 31:1). An idol has no power of its own, but the people\'s zeal for it stirs up the Rameumptom: each one standing, up to three, brings its works back a sixth sooner. Pull them down and the zeal goes with them.' },
     pavilion:   { name: 'Chief captain\'s pavilion', w: 3, h: 3, hp: 700, armor: 3, cost: { grain: 80, timber: 140 }, work: 32, needs: ['shieldtent'], trains: ['amalekite', 'zoramite', 'cumom'], research: ['campditch'], side: 'kingmen', tier: true,
                   about: 'Zerahemnah "appointed chief captains over the Lamanites, and they were all Amalekites and Zoramites" (Alma 43:6).' },
-    warcamp:    { name: 'Lamanite war camp', w: 4, h: 4, hp: 1800, armor: 3, tier: true, dropoff: 'story', builder: true, trains: ['bearer'], food: 40, store: 300, side: 'kingmen',
+    warcamp:    { name: 'Lamanite war camp', w: 4, h: 4, hp: 1800, armor: 3, tier: true, dropoff: 'story', builder: true, trains: ['bearer', 'hunter'], food: 40, store: 300, side: 'kingmen',
                   about: 'Where the Lamanite armies gather and the bearers are sent out from. Its provisions go to the store tents. Tear it down to win.' }
   };
 
@@ -347,6 +361,50 @@
     return { tiles, amt };
   }
 
+  // Declarative C&C / Red Alert puzzle-tile stamps for plateaus, ramps, bridges, and roads.
+  function createMapStamps(tiles, amt, clear) {
+    const inb = (x, y) => x >= 0 && y >= 0 && x < MAP_W && y < MAP_H;
+    const set = (x, y, t, a) => { if (inb(x, y)) { tiles[y * MAP_W + x] = t; amt[y * MAP_W + x] = a || 0; } };
+    const get = (x, y) => inb(x, y) ? tiles[y * MAP_W + x] : T.ROCK;
+    const isClear = (x, y) => clear && clear(x, y);
+    return {
+      plateau(x0, y0, w, h, ramps) {
+        for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) {
+          if (!inb(x, y) || isClear(x, y)) continue;
+          const t = get(x, y);
+          if (t === T.WATER || t === T.FORD || t === T.BRIDGE) continue;
+          set(x, y, T.PLATEAU, 0);
+        }
+        for (const [rx, ry] of ramps || []) {
+          if (inb(rx, ry)) set(rx, ry, T.RAMP, 0);
+        }
+      },
+      ramp(x0, y0, w = 1, h = 1) {
+        for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) {
+          if (inb(x, y)) set(x, y, T.RAMP, 0);
+        }
+      },
+      bridge(x0, y0, x1, y1) {
+        const ax = Math.min(x0, x1), bx = Math.max(x0, x1), ay = Math.min(y0, y1), by = Math.max(y0, y1);
+        for (let y = ay; y <= by; y++) for (let x = ax; x <= bx; x++) {
+          if (!inb(x, y)) continue;
+          set(x, y, T.BRIDGE, BRIDGE_HP);
+        }
+      },
+      road(points) {
+        for (let i = 0; i < points.length - 1; i++) {
+          let [x, y] = points[i], [tx, ty] = points[i + 1];
+          const steps = Math.max(Math.abs(tx - x), Math.abs(ty - y), 1);
+          for (let s = 0; s <= steps; s++) {
+            const cx = Math.round(x + (tx - x) * s / steps), cy = Math.round(y + (ty - y) * s / steps);
+            if (!inb(cx, cy) || isClear(cx, cy)) continue;
+            if (get(cx, cy) === T.GRASS) set(cx, cy, T.ROAD, 0);
+          }
+        }
+      }
+    };
+  }
+
   // Free battle: your standard in the south-west, the Lamanite war camp in the
   // north-east, the river Sidon between, with timber, fields and hills to fight over.
   const FREE = {
@@ -373,6 +431,242 @@
     [[4, 30, 2.5], [20, 43, 2.5], [5, 45, 2], [24, 19, 3], [38, 33, 3], [15, 13, 2.5], [49, 40, 3], [59, 22, 2.5], [39, 1, 2], [57, 30, 2], [9, 22, 2]].forEach(([x, y, rad]) => blob(x, y, rad, T.FOREST, 120));
     const field = (x0, y0, w, h) => { for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) if (get(x, y) === T.GRASS && !clear(x, y)) set(x, y, T.FIELD, 300); };
     [[17, 34, 3, 2], [8, 43, 3, 2], [25, 33, 3, 2], [36, 14, 3, 2], [54, 16, 3, 2], [14, 28, 3, 2]].forEach(f => field(...f));
+    // C&C Auto-Tile Stamps: central bridge over the Sidon, high-ground overlook plateaus with ramps, and paved trade road.
+    const stamps = createMapStamps(tiles, amt, clear);
+    for (let y = 24; y <= 25; y++) { const rx = FREE.river(y); stamps.bridge(rx, y, rx + 1, y); }
+    stamps.plateau(5, 15, 4, 3, [[9, 16], [6, 18]]);
+    stamps.plateau(51, 34, 4, 3, [[50, 35], [52, 33]]);
+    stamps.road([[27, 24], [30, 24]]);
+    stamps.road([[34, 24], [37, 24]]);
+    return { tiles, amt };
+  }
+
+  // Skirmish Map Pack (Phase 2): 4 C&C Red Alert 2-style tactical maps + Custom Map Builder support.
+  const SKIRMISH_MAPS = {
+    sidon: {
+      id: 'sidon',
+      name: 'Sidon River Crossing',
+      ref: 'Alma 43:35',
+      about: 'The river Sidon divides the valley, spanned by a central timber bridge, two shallow fords, and high-ground overlook bluffs.',
+      START: FREE.START,
+      WARCAMP: FREE.WARCAMP,
+      CAMPS: FREE.CAMPS,
+      RELICS: [[54, 45, 'sword'], [37, 24, 'liahona'], [7, 7, 'breastplate'], [27, 18, 'beast']],
+      FLOCKS: [[16, 22], [32, 34], [24, 12], [44, 28]],
+      GAME: [[18, 30], [28, 42], [20, 16], [38, 32], [46, 20], [14, 18]]
+    },
+    twin_bluffs: {
+      id: 'twin_bluffs',
+      name: 'Twin Bluffs Canyon',
+      ref: 'Alma 49:18–22',
+      about: 'Two elevated limestone mesas command the central paved trade highway and twin bridges over a winding canyon gorge.',
+      START: { x: 10, y: 36 },
+      WARCAMP: { x: 50, y: 4 },
+      CAMPS: [{ x: 40, y: 6 }, { x: 56, y: 12 }, { x: 46, y: 13 }],
+      RELICS: [[52, 42, 'sword'], [33, 23, 'liahona'], [9, 8, 'breastplate'], [28, 17, 'beast']],
+      FLOCKS: [[18, 22], [34, 34], [24, 13], [44, 28]],
+      GAME: [[16, 29], [28, 40], [22, 16], [38, 32], [46, 20], [14, 18]]
+    },
+    bountiful_isles: {
+      id: 'bountiful_isles',
+      name: 'Waters of Ripliancum',
+      ref: 'Ether 15:8',
+      about: 'Wide waters divide the battlefield into island strongholds linked by four destructible bridges and two outer shallow fords.',
+      START: { x: 11, y: 37 },
+      WARCAMP: { x: 50, y: 3 },
+      CAMPS: [{ x: 41, y: 5 }, { x: 57, y: 11 }, { x: 47, y: 12 }],
+      RELICS: [[54, 44, 'sword'], [32, 23, 'liahona'], [8, 8, 'breastplate'], [30, 18, 'beast']],
+      FLOCKS: [[16, 22], [35, 34], [24, 12], [44, 28]],
+      GAME: [[18, 30], [27, 42], [20, 16], [38, 32], [46, 20], [14, 18]]
+    },
+    highland_citadel: {
+      id: 'highland_citadel',
+      name: 'Citadel of Teancum',
+      ref: 'Alma 52:19',
+      about: 'A massive central high-ground plateau with four corner ramps holds the four Jaredite relics, ringed by rich stone, grain, and a fast paved road.',
+      START: { x: 10, y: 37 },
+      WARCAMP: { x: 50, y: 3 },
+      CAMPS: [{ x: 41, y: 5 }, { x: 57, y: 11 }, { x: 47, y: 12 }],
+      RELICS: [[29, 21, 'sword'], [35, 25, 'liahona'], [28, 25, 'breastplate'], [34, 21, 'beast']],
+      FLOCKS: [[16, 22], [32, 37], [24, 10], [45, 28]],
+      GAME: [[18, 30], [28, 42], [20, 14], [40, 32], [46, 20], [14, 18]]
+    }
+  };
+
+  function encodeCustomMap(spec) {
+    const tiles = Array.from(spec.tiles || []);
+    const amt = Array.from(spec.amt || []);
+    // Compact run-length encoding for tiles and amt
+    const rle = arr => {
+      const out = [];
+      for (let i = 0; i < arr.length; ) {
+        const v = arr[i];
+        let c = 1;
+        while (i + c < arr.length && arr[i + c] === v && c < 4095) c++;
+        out.push(v, c);
+        i += c;
+      }
+      return out;
+    };
+    return {
+      v: 1,
+      name: spec.name || 'Custom Battlefield',
+      START: spec.START || { x: 11, y: 37 },
+      WARCAMP: spec.WARCAMP || { x: 50, y: 3 },
+      CAMPS: spec.CAMPS || [{ x: 41, y: 5 }, { x: 57, y: 11 }, { x: 47, y: 12 }],
+      RELICS: spec.RELICS || SKIRMISH_MAPS.sidon.RELICS,
+      FLOCKS: spec.FLOCKS || SKIRMISH_MAPS.sidon.FLOCKS,
+      GAME: spec.GAME || SKIRMISH_MAPS.sidon.GAME,
+      tilesRle: rle(tiles),
+      amtRle: rle(amt)
+    };
+  }
+
+  function decodeCustomMap(raw) {
+    if (!raw || typeof raw !== 'object') return null;
+    const tiles = new Uint8Array(MAP_W * MAP_H);
+    const amt = new Int16Array(MAP_W * MAP_H);
+    const unrle = (src, dst) => {
+      if (!Array.isArray(src)) return;
+      let k = 0;
+      for (let i = 0; i < src.length && k < dst.length; i += 2) {
+        const v = src[i] | 0, c = Math.max(1, src[i + 1] | 0);
+        for (let j = 0; j < c && k < dst.length; j++) dst[k++] = v;
+      }
+    };
+    if (Array.isArray(raw.tilesRle)) unrle(raw.tilesRle, tiles);
+    else if (raw.tiles && raw.tiles.length === MAP_W * MAP_H) tiles.set(raw.tiles);
+    if (Array.isArray(raw.amtRle)) unrle(raw.amtRle, amt);
+    else if (raw.amt && raw.amt.length === MAP_W * MAP_H) amt.set(raw.amt);
+    // Clamp tile IDs to valid range and ensure default resource amounts
+    for (let i = 0; i < tiles.length; i++) {
+      if (tiles[i] > T.ROAD) tiles[i] = T.GRASS;
+      if (tiles[i] === T.FOREST && amt[i] <= 0) amt[i] = 120;
+      else if (tiles[i] === T.FIELD && amt[i] <= 0) amt[i] = 300;
+      else if (tiles[i] === T.BRIDGE && amt[i] <= 0) amt[i] = BRIDGE_HP;
+    }
+    const clampX = x => Math.max(2, Math.min(MAP_W - 6, x | 0));
+    const clampY = y => Math.max(2, Math.min(MAP_H - 6, y | 0));
+    const START = raw.START && Number.isFinite(raw.START.x) && Number.isFinite(raw.START.y) ? { x: clampX(raw.START.x), y: clampY(raw.START.y) } : { x: 11, y: 37 };
+    const WARCAMP = raw.WARCAMP && Number.isFinite(raw.WARCAMP.x) && Number.isFinite(raw.WARCAMP.y) ? { x: clampX(raw.WARCAMP.x), y: clampY(raw.WARCAMP.y) } : { x: 50, y: 3 };
+    const CAMPS = Array.isArray(raw.CAMPS) && raw.CAMPS.length === 3 && raw.CAMPS.every(c => c && Number.isFinite(c.x) && Number.isFinite(c.y))
+      ? raw.CAMPS.map(c => ({ x: clampX(c.x), y: clampY(c.y) }))
+      : [
+          { x: clampX(WARCAMP.x - 9), y: clampY(WARCAMP.y + 2) },
+          { x: clampX(WARCAMP.x + 7), y: clampY(WARCAMP.y + 8) },
+          { x: clampX(WARCAMP.x - 3), y: clampY(WARCAMP.y + 9) }
+        ];
+    const validRelics = Array.isArray(raw.RELICS) && raw.RELICS.length > 0 && raw.RELICS.every(r => Array.isArray(r) && Number.isFinite(r[0]) && Number.isFinite(r[1]) && typeof r[2] === 'string' && ARTIFACTS[r[2]]);
+    const validPairs = arr => Array.isArray(arr) && arr.length > 0 && arr.every(p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1]));
+    return {
+      id: 'custom',
+      name: String(raw.name || 'Custom Battlefield').slice(0, 40),
+      ref: 'Alma 48:8',
+      about: 'Custom skirmish battlefield crafted in the Map Builder.',
+      START,
+      WARCAMP,
+      CAMPS,
+      RELICS: validRelics ? raw.RELICS.map(r => [clampX(r[0]), clampY(r[1]), r[2]]) : SKIRMISH_MAPS.sidon.RELICS,
+      FLOCKS: validPairs(raw.FLOCKS) ? raw.FLOCKS.map(p => [clampX(p[0]), clampY(p[1])]) : SKIRMISH_MAPS.sidon.FLOCKS,
+      GAME: validPairs(raw.GAME) ? raw.GAME.map(p => [clampX(p[0]), clampY(p[1])]) : SKIRMISH_MAPS.sidon.GAME,
+      tiles,
+      amt
+    };
+  }
+
+  function buildSkirmishMap(mapId, customSpec) {
+    if (!mapId || mapId === 'sidon') return buildFreeMap();
+    if (mapId === 'custom' && customSpec) {
+      const dec = decodeCustomMap(customSpec);
+      if (dec) return { tiles: dec.tiles, amt: dec.amt };
+    }
+    const meta = SKIRMISH_MAPS[mapId] || SKIRMISH_MAPS.sidon;
+    const r = rng(mapId === 'twin_bluffs' ? 71 : mapId === 'bountiful_isles' ? 83 : 97);
+    const tiles = new Uint8Array(MAP_W * MAP_H);
+    const amt = new Int16Array(MAP_W * MAP_H);
+    const inb = (x, y) => x >= 0 && y >= 0 && x < MAP_W && y < MAP_H;
+    const set = (x, y, t, a) => { if (inb(x, y)) { tiles[y * MAP_W + x] = t; amt[y * MAP_W + x] = a || 0; } };
+    const get = (x, y) => inb(x, y) ? tiles[y * MAP_W + x] : T.ROCK;
+    const clear = (x, y) => Math.hypot(x - meta.START.x - 2, y - meta.START.y - 2) < 6.5 ||
+      Math.hypot(x - meta.WARCAMP.x - 2, y - meta.WARCAMP.y - 2) < 6.5 ||
+      meta.CAMPS.some(c => Math.hypot(x - c.x - 1, y - c.y - 1) < 3.5);
+    const stamps = createMapStamps(tiles, amt, clear);
+    const blob = (cx, cy, rad, t, a) => {
+      for (let y = Math.floor(cy - rad - 1); y <= cy + rad + 1; y++) for (let x = Math.floor(cx - rad - 1); x <= cx + rad + 1; x++) {
+        if (Math.hypot(x - cx, y - cy) <= rad - 0.3 + r() * 0.8 && get(x, y) === T.GRASS && !clear(x, y)) set(x, y, t, a);
+      }
+    };
+    const field = (x0, y0, w, h) => {
+      for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) if (get(x, y) === T.GRASS && !clear(x, y)) set(x, y, T.FIELD, 300);
+    };
+
+    if (mapId === 'twin_bluffs') {
+      // Diagonal canyon gorge running NW to SE, crossed by twin bridges and a central ford
+      for (let y = 0; y < MAP_H; y++) {
+        const rx = Math.round(31 + 3 * Math.cos(y / 7));
+        for (let x = rx; x < rx + 2; x++) {
+          if (!clear(x, y)) set(x, y, (y >= 22 && y <= 23) ? T.FORD : T.WATER);
+        }
+      }
+      for (let y = 11; y <= 12; y++) { const rx = Math.round(31 + 3 * Math.cos(y / 7)); stamps.bridge(rx, y, rx + 1, y); }
+      for (let y = 34; y <= 35; y++) { const rx = Math.round(31 + 3 * Math.cos(y / 7)); stamps.bridge(rx, y, rx + 1, y); }
+      // Two large elevated plateaus overlooking the crossings, each with wide ramps
+      stamps.plateau(18, 12, 8, 6, [[21, 18], [22, 18], [26, 15], [17, 15]]);
+      stamps.plateau(38, 28, 8, 6, [[41, 27], [42, 27], [37, 31], [46, 31]]);
+      // Paved canyon road linking SW base -> south bridge -> north bridge -> NE camp
+      stamps.road([[15, 35], [36, 35], [44, 24], [36, 12], [44, 10]]);
+      [[19, 27, 2.2], [45, 20, 2.4], [22, 6, 1.8], [42, 42, 2.0]].forEach(([x, y, rad]) => blob(x, y, rad, T.ROCK));
+      [[4, 28, 2.6], [19, 43, 2.5], [5, 44, 2.2], [12, 16, 2.8], [39, 38, 2.8], [50, 41, 2.6], [58, 22, 2.5], [35, 3, 2.2], [56, 30, 2.2], [8, 21, 2.2]].forEach(([x, y, rad]) => blob(x, y, rad, T.FOREST, 120));
+      [[16, 33, 3, 2], [7, 42, 3, 2], [24, 32, 3, 2], [35, 15, 3, 2], [53, 17, 3, 2], [13, 27, 3, 2]].forEach(f => field(...f));
+    } else if (mapId === 'bountiful_isles') {
+      // Twin river channels creating a central island linked by 4 bridges + 2 outer fords
+      for (let y = 0; y < MAP_H; y++) {
+        const w1 = Math.round(25 + 1.5 * Math.sin(y / 8));
+        const w2 = Math.round(38 - 1.5 * Math.sin(y / 8));
+        for (let x = w1; x < w1 + 2; x++) if (!clear(x, y)) set(x, y, (y >= 41 && y <= 42) ? T.FORD : T.WATER);
+        for (let x = w2; x < w2 + 2; x++) if (!clear(x, y)) set(x, y, (y >= 6 && y <= 7) ? T.FORD : T.WATER);
+      }
+      // 4 bridges linking West Bank <-> Central Island <-> East Bank
+      for (let y = 14; y <= 15; y++) {
+        const w1 = Math.round(25 + 1.5 * Math.sin(y / 8));
+        const w2 = Math.round(38 - 1.5 * Math.sin(y / 8));
+        stamps.bridge(w1, y, w1 + 1, y);
+        stamps.bridge(w2, y, w2 + 1, y);
+      }
+      for (let y = 31; y <= 32; y++) {
+        const w1 = Math.round(25 + 1.5 * Math.sin(y / 8));
+        const w2 = Math.round(38 - 1.5 * Math.sin(y / 8));
+        stamps.bridge(w1, y, w1 + 1, y);
+        stamps.bridge(w2, y, w2 + 1, y);
+      }
+      // Central island high-ground citadel overlooking the bridges
+      stamps.plateau(29, 20, 6, 6, [[31, 19], [32, 19], [31, 26], [32, 26]]);
+      stamps.road([[18, 31], [44, 31]]);
+      stamps.road([[20, 15], [44, 15]]);
+      [[18, 25, 2.2], [45, 26, 2.4], [31, 10, 1.8], [32, 38, 1.8]].forEach(([x, y, rad]) => blob(x, y, rad, T.ROCK));
+      [[4, 30, 2.5], [19, 43, 2.5], [5, 45, 2], [14, 13, 2.5], [49, 40, 3], [59, 22, 2.5], [57, 30, 2], [9, 22, 2], [31, 35, 2.2], [31, 12, 2.2]].forEach(([x, y, rad]) => blob(x, y, rad, T.FOREST, 120));
+      [[16, 34, 3, 2], [8, 43, 3, 2], [14, 28, 3, 2], [42, 14, 3, 2], [54, 16, 3, 2], [29, 28, 3, 2]].forEach(f => field(...f));
+    } else if (mapId === 'highland_citadel') {
+      // Outer stream on the flanks with wide central plateau citadel
+      for (let y = 0; y < MAP_H; y++) {
+        const rx = Math.round(58 + 1.5 * Math.sin(y / 6));
+        if (rx < MAP_W - 1 && !clear(rx, y)) set(rx, y, T.WATER);
+      }
+      // Great central high-ground citadel plateau (12x10) with 4 cardinal ramps
+      stamps.plateau(26, 19, 12, 10, [
+        [31, 18], [32, 18], // North ramp
+        [31, 29], [32, 29], // South ramp
+        [25, 23], [25, 24], // West ramp
+        [38, 23], [38, 24]  // East ramp
+      ]);
+      // Perimeter highway ring around the citadel + spokes to both bases
+      stamps.road([[22, 15], [41, 15], [41, 32], [22, 32], [22, 15]]);
+      stamps.road([[15, 36], [22, 32]]);
+      stamps.road([[41, 15], [46, 10]]);
+      [[20, 26, 2.2], [44, 22, 2.4], [24, 17, 1.8], [39, 30, 1.8], [24, 8, 1.8], [40, 40, 1.8]].forEach(([x, y, rad]) => blob(x, y, rad, T.ROCK));
+      [[4, 30, 2.5], [20, 43, 2.5], [5, 45, 2], [15, 13, 2.8], [38, 37, 2.8], [49, 40, 3], [54, 24, 2.5], [37, 3, 2.2], [9, 22, 2.2]].forEach(([x, y, rad]) => blob(x, y, rad, T.FOREST, 120));
+      [[17, 34, 3, 2], [8, 43, 3, 2], [14, 28, 3, 2], [35, 11, 3, 2], [52, 16, 3, 2], [26, 16, 3, 2], [35, 30, 3, 2]].forEach(f => field(...f));
+    }
     return { tiles, amt };
   }
 
@@ -429,6 +723,10 @@
     [[17, 33, 2.5], [35, 25, 2.5], [31, 39, 2.2], [11, 38, 2.2], [40, 30, 2], [22, 18, 2.2], [46, 41, 2]].forEach(([x, y, rad]) => blob(x, y, rad, T.FOREST, 120));
     const field = (x0, y0, w, h) => { for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) if (get(x, y) === T.GRASS && !clear(x, y)) set(x, y, T.FIELD, 300); };
     [[19, 26, 3, 2], [33, 31, 3, 2], [27, 37, 3, 2], [30, 20, 3, 2], [14, 28, 2, 3]].forEach(f => field(...f));
+    const stamps = createMapStamps(tiles, amt, clear);
+    for (let y = 13; y <= 14; y++) { const rx = WILD.river(y); stamps.bridge(rx, y, rx + 1, y); }
+    stamps.plateau(43, 22, 3, 3, [[42, 23], [46, 23]]);
+    stamps.road([[47, 14], [50, 14]]);
     return { tiles, amt };
   }
 
@@ -575,6 +873,23 @@
                build: ['tents', 'storetent', 'muster', 'wall', 'gate', 'lookout', 'shieldtent', 'ladderworks', 'wardance', 'pavilion', 'rameumptom', 'idol'],
                about: 'Those who "were called king-men" (Alma 51:5): all who fought for Amalickiah\'s crown, the Lamanite armies and the dissenters with them. Numbers, fierce captains, and wicked works stirred up from the Rameumptom.' }
   };
+  // Regiments (the owner, 2026-10-11: "build regiment one and it includes a curelom and five archers, ten swordsmen ... like buying a
+  // package"): each side starts with these, and any of them can be changed. One tap trains all who are missing; they march to
+  // join those already standing, and the regiment's badge selects them all. Kinds the mission doesn't have are left out.
+  const REGIMENTS = {
+    freemen: [
+      { name: 'Spear Wall', mix: { spearman: 6, archer: 2 }, formation: 'block' },
+      { name: 'Archer Line', mix: { archer: 6, nslinger: 2 }, formation: 'line' },
+      { name: "Moroni's Guard", mix: { curelom: 1, archer: 5, swordsman: 10 }, formation: 'block' },
+      { name: 'Stripling Band', mix: { stripling: 6, javelin: 2 }, formation: 'wedge' }
+    ],
+    kingmen: [
+      { name: 'War Band', mix: { lamanite: 8, slinger: 2 }, formation: 'block' },
+      { name: 'Slingers', mix: { slinger: 8 }, formation: 'line' },
+      { name: "Captain's Host", mix: { amalekite: 1, zoramite: 1, lamanite: 10, cumom: 1 }, formation: 'block' },
+      { name: 'Raiders', mix: { lamanite: 6, slinger: 4 }, formation: 'wedge' }
+    ]
+  };
   // Pick a side, then a captain (design/evolution.md, section 7): each brings a hero and one gift.
   const CAPTAINS = {
     freemen: {
@@ -639,7 +954,7 @@
     }
   };
 
-  const DATA = { TILE, MAP_W, MAP_H, T, BORDER_Y, PASSES, FORDS, UNITS, BUILDINGS, RESEARCH, MIRACLES, CUNNING, POWERS, ARTIFACTS, SIDES, CAPTAINS, PERKS, CITY, VILLAGES, QUESTIONS, SIDON, FREE, WILD, buildMap, buildSidonMap, buildFreeMap, buildWildMap, rng };
+  const DATA = { TILE, MAP_W, MAP_H, T, BRIDGE_HP, BORDER_Y, PASSES, FORDS, UNITS, BUILDINGS, RESEARCH, MIRACLES, CUNNING, POWERS, ARTIFACTS, SIDES, REGIMENTS, CAPTAINS, PERKS, CITY, VILLAGES, QUESTIONS, SIDON, FREE, WILD, SKIRMISH_MAPS, buildMap, buildSidonMap, buildFreeMap, buildWildMap, buildSkirmishMap, encodeCustomMap, decodeCustomMap, createMapStamps, rng };
   if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
   else root.LIB_DATA = DATA;
 })(this);

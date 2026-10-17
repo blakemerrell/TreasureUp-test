@@ -1225,7 +1225,8 @@
   }
 
   const free = {
-    id: 'free', campaign: 'free', title: 'Free battle', chapter: 'Any chapter you have read', free: true, map: D.buildFreeMap,
+    id: 'free', campaign: 'free', title: 'Free battle', chapter: 'Any chapter you have read', free: true,
+    map() { return D.buildSkirmishMap(free.mapId, free.customMap); },
     year: 'In the days of Captain Moroni', level: 'normal', LEVELS,
     goals: 'Pick a side and a captain, build up your camp, and tear down the enemy\'s. The Freemen plant the standard of liberty; the King-men raise Amalickiah\'s banner.',
     starsText: '★ won on Easy, ★★ on Normal, ★★★ on Hard.',
@@ -1258,7 +1259,8 @@
       const guard = (home, list, team) => { let k = 0; for (const [type, n] of list) for (let i = 0; i < n; i++, k++) put(type, home.tx + (k % 4), home.ty + home.h + Math.floor(k / 4), team, { mode: 'guard', home }); };
       // The Freemen's ground is the south-west, the King-men's the north-east, whoever holds them.
       const F = this.side === 'freemen' ? 'p' : 'r', K = F === 'p' ? 'r' : 'p';
-      const S0 = FR.START, WC = FR.WARCAMP;
+      const M = (this.mapId === 'custom' && this.customMap && D.decodeCustomMap(this.customMap)) || D.SKIRMISH_MAPS[this.mapId] || D.SKIRMISH_MAPS.sidon;
+      const S0 = M.START || FR.START, WC = M.WARCAMP || FR.WARCAMP, MCAMPS = M.CAMPS || FR.CAMPS;
       // The Freemen: the human plants the standard of liberty; the opponent's city stands from the start, with its guards.
       if (F === 'p') {
         this.standard = put('standard', S0.x + 2, S0.y + 2);
@@ -1288,7 +1290,7 @@
           if (W.whyNotPlace('wall', x, y) === 'ground') continue;
           W.addBuilding('wall', K, x, y, true);
         } }
-      this.camps = FR.CAMPS.map(c => W.addBuilding('camp', K, c.x, c.y, true, { name: 'Lamanite camp', about: K === 'p' ? 'A camp of yours: it feeds eight, and your warriors gather here.' : 'Lamanite warriors gather here to march on your city.' }));
+      this.camps = MCAMPS.map(c => W.addBuilding('camp', K, c.x, c.y, true, { name: 'Lamanite camp', about: K === 'p' ? 'A camp of yours: it feeds eight, and your warriors gather here.' : 'Lamanite warriors gather here to march on your city.' }));
       put('bearer', this.warcamp.tx + 1, this.warcamp.ty + this.warcamp.h, K); put('bearer', this.warcamp.tx + 2, this.warcamp.ty + this.warcamp.h, K);
       if (K === 'r') {
         this.guardList = [['lamanite', Math.ceil(L.guards * 0.6)], ['slinger', Math.floor(L.guards * 0.3)], ['amalekite', 1], ['zoramite', L.stars > 1 ? 1 : 0]];
@@ -1311,13 +1313,18 @@
       this.camp = new CAMP.Camp(W, 'r', K === 'r' ? this.warcamp : this.city, L);
       // Jaredite ruins, each holding something (Mosiah 8:8-11): the sword of Laban far to the south-east, the Liahona across the ford, breastplates in the north-west.
       // (and a fourth, between the two camps, where a great beast waits tame: Ether 9:19)
-      for (const [x, y, key] of [[54, 45, 'sword'], [37, 24, 'liahona'], [7, 7, 'breastplate'], [27, 18, 'beast']]) {
+      for (const [x, y, key] of (M.RELICS || [[54, 45, 'sword'], [37, 24, 'liahona'], [7, 7, 'breastplate'], [27, 18, 'beast']])) {
         let spot = null;
         for (let r = 0; r < 6 && !spot; r++) for (let dy = -r; dy <= r && !spot; dy++) for (let dx = -r; dx <= r && !spot; dx++) if (W.whyNotPlace('relic', x + dx, y + dy) !== 'ground') spot = [x + dx, y + dy];
         if (!spot) continue;
         for (let yy = spot[1] - 1; yy <= spot[1] + 2; yy++) for (let xx = spot[0] - 1; xx <= spot[0] + 2; xx++) if (W.tile(xx, yy) === T.GRASS) W.setTile(xx, yy, T.RUIN);
         W.addBuilding('relic', 'n', spot[0], spot[1], true, { artifact: key });
       }
+      // Wilderness frontier: a starting Hunter for the player, plus wandering flocks (Enos 1:21) and wild game (1 Nephi 16:31).
+      if (F === 'p') put('hunter', S0.x + 4, S0.y + 5, 'p', { think: 0.2 });
+      else put('hunter', this.warcamp.tx + 4, this.warcamp.ty + this.warcamp.h + 1, 'p', { think: 0.2 });
+      for (const [fx, fy] of (M.FLOCKS || [[16, 22], [32, 34], [24, 12], [44, 28]])) put('flock', fx, fy, 'n', { think: 0.25 });
+      for (const [gx, gy] of (M.GAME || [[18, 30], [28, 42], [20, 16], [38, 32], [46, 20], [14, 18]])) put('game', gx, gy, 'n', { think: 0.3 });
       this.foretold = 0; this.planted = K === 'p'; this.nextFierce = 300;
       const c = caps[this.captain];
       W.msg(`${c.name} leads you: ${c.gift.toLowerCase()}.`, c.ref, 'good');
@@ -1446,12 +1453,12 @@
       W.tech = true; W.border = null;
       W.res = { grain: 200, timber: 250, stone: 50 };
       W.boost.r = L.strength; W.foeArmor = L.armor;
-      const put = (type, x, y) => { const [fx, fy] = W.freeTileNear(x, y, 'p'); return W.addUnit(type, 'p', center(fx), center(fy)); };
+      const put = (type, x, y, team, extra) => { const [fx, fy] = W.freeTileNear(x, y, team || 'p'); return W.addUnit(type, team || 'p', center(fx), center(fy), extra); };
       const S0 = WD.START;
       this.standard = put('standard', S0.x + 2, S0.y + 2);
       this.standard.heroType = 'moroni';
       put('cart', S0.x, S0.y + 5); put('worker', S0.x + 1, S0.y + 6); put('worker', S0.x + 2, S0.y + 6);   // (one cart: each storehouse brings another)
-      put('spearman', S0.x + 5, S0.y); put('spearman', S0.x + 6, S0.y + 1); put('nslinger', S0.x + 5, S0.y + 2);
+      put('spearman', S0.x + 5, S0.y); put('hunter', S0.x + 6, S0.y + 1, 'p', { think: 0.2 }); put('nslinger', S0.x + 5, S0.y + 2);
       this.raids = WILD_LENGTHS[this.length].raids;
       this.raid = 0;                     // raids that have come down
       this.nextAt = L.first;             // when the next one comes
@@ -1462,6 +1469,8 @@
       const open = (x, y) => W.passable(x, y, 'r'), key = (x, y) => y * D.MAP_W + x;
       const valley = new Set([key(S0.x, S0.y)]), q = [[S0.x, S0.y]];
       while (q.length) { const [x, y] = q.pop(); for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (open(x + dx, y + dy) && !valley.has(key(x + dx, y + dy))) { valley.add(key(x + dx, y + dy)); q.push([x + dx, y + dy]); } }
+      for (const [fx, fy] of [[S0.x - 11, S0.y + 4], [S0.x + 14, S0.y + 5]]) if (valley.has(key(fx, fy))) put('flock', fx, fy, 'n', { think: 0.25 });
+      for (const [gx, gy] of [[S0.x - 10, S0.y - 6], [S0.x + 13, S0.y - 5], [S0.x - 9, S0.y + 10]]) if (valley.has(key(gx, gy))) put('game', gx, gy, 'n', { think: 0.3 });
       this.spawns = WD.WAYS.map(w => {
         const out = [], seen = new Set([key(w.x, w.y)]), wq = [[w.x, w.y]];
         while (wq.length && out.length < 30) {

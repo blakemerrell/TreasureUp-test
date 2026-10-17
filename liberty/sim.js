@@ -4,10 +4,10 @@
 (function (root) {
   'use strict';
   const D = root.LIB_DATA || require('./data.js');
-  const { TILE, MAP_W, MAP_H, T, UNITS, BUILDINGS, RESEARCH, MIRACLES, ARTIFACTS } = D;
+  const { TILE, MAP_W, MAP_H, T, BRIDGE_HP, UNITS, BUILDINGS, RESEARCH, MIRACLES, ARTIFACTS } = D;
   const REACH = 8;
   const KINDS = ['grain', 'timber', 'stone'];      // what the carts bring in
-  const QUARRY = 100, OPEN = new Set([T.GRASS, T.FIELD, T.RUIN, T.FORD]);   // stone in a rock face beside open ground                                      // how many squares from your buildings a new one may stand
+  const QUARRY = 100, OPEN = new Set([T.GRASS, T.FIELD, T.RUIN, T.FORD, T.PLATEAU, T.RAMP, T.BRIDGE, T.ROAD]);   // stone in a rock face beside open ground                                      // how many squares from your buildings a new one may stand
   const idx = (x, y) => y * MAP_W + x;
   const center = t => t * TILE + TILE / 2;
   const tileOf = p => Math.floor(p / TILE);
@@ -17,8 +17,9 @@
   const kindOf = def => def.beast ? 'beast' : def.ranged ? 'ranged' : (def.armor || 0) >= 2 ? 'armored' : 'light';
   // A fighter: a soldier of the Nephites, or a warrior of the Lamanites.
   const fighter = def => !!(def.soldier || def.foe);
-  // One who can be sent to fight: a fighter with a blow, and not a hauler, builder or scout (ui.js sends these on attack-move).
-  const canFight = def => fighter(def) && !!def.dmg && !def.gathers && !def.builds && !def.scout;
+  // One who can be sent to fight: a fighter or hunter with a blow, and not a hauler or builder (ui.js sends these on attack-move).
+  const canFight = def => (fighter(def) || !!def.hunter) && !!def.dmg && !def.gathers && !def.builds;
+  const ARMOR_TECHS = new Set(['armor', 'clothing', 'breastplates', 'lshields', 'skins', 'hides']);
   // Armor takes a share of each blow, never all of it.
   const ARMOR = 6;
 
@@ -67,16 +68,58 @@
       this.lastBorderMsg = -99;
       this.perks = [];                             // campaign star perks and relics (data.js: PERKS)
       this.yieldPops = [];                         // floating harvest/production yield text popups: [{ x, y, text, type, t }]
-      this.cohorts = {
-        1: { name: 'Vanguard', formation: 'phalanx', speedLock: true, rule: 'hunt', healthThreshold: 50 },
-        2: { name: 'Skirmishers', formation: 'line', speedLock: true, rule: 'hunt', healthThreshold: 50 },
-        3: { name: 'Siege & Supply', formation: 'escort', speedLock: true, rule: 'speed', healthThreshold: 40 }
-      };
+      this.cohorts = {};                           // your regiments, by number: { name, mix: { kind: how many }, formation, speedLock } (regiments())
       this.rallyPoints = {};                       // { buildingId: { x, y } }
     }
 
     setCohort(u, cohortId) { if (u) u.cohort = cohortId; }
     cohortUnits(team, cohortId) { return this.units(team).filter(u => u.cohort === cohortId); }
+
+    // --- regiments (the owner: "build regiment one and it includes a curelom and five archers, ten swordsmen ... like buying a
+    // package"). A regiment is a mix of kinds; u.cohort is the number of the regiment a soldier marches with (none when he
+    // was trained on his own). Your side's starting regiments come from data.js (REGIMENTS), the first time they're asked for.
+    regiments() {
+      if (!Object.values(this.cohorts || {}).some(r => r && r.mix)) {          // (a game saved before regiments had cohorts without mixes)
+        const side = (this.side(this.me) && this.side(this.me).side) || 'freemen';
+        this.cohorts = {};
+        (D.REGIMENTS[side] || D.REGIMENTS.freemen).forEach((r, i) => { this.cohorts[i + 1] = { name: r.name, mix: Object.assign({}, r.mix), formation: r.formation, speedLock: true }; });
+      }
+      return Object.keys(this.cohorts).map(Number).filter(id => this.cohorts[id] && this.cohorts[id].mix).sort((a, b) => a - b).map(id => Object.assign({ id }, this.cohorts[id]));
+    }
+    // Who is missing from a regiment: its mix less those standing and those already in training for it. Kinds this mission
+    // doesn't have don't count.
+    regimentMissing(id, team) {
+      team = team || this.me;
+      const R = this.cohorts[id], want = {};
+      if (!R || !R.mix) return want;
+      for (const t of Object.keys(R.mix)) if (UNITS[t] && this.visible(UNITS[t]) && R.mix[t] > 0) want[t] = R.mix[t];
+      for (const u of this.units(team)) if (u.cohort === id && want[u.type] > 0) want[u.type]--;
+      for (const b of this.buildings(team)) for (const q of b.queue) if (q.reg === id && want[q.type] > 0) want[q.type]--;
+      for (const t of Object.keys(want)) if (!want[t]) delete want[t];
+      return want;
+    }
+    // Build a regiment, or fill its ranks: every missing soldier goes into training at the building with the shortest line
+    // for his kind, paid for as he's put in, as with one tapped tile. A kind that can't be trained (too poor, no food, or nothing
+    // standing that trains it) is skipped and the others still go in. Returns how many went in, how many are still missing, and
+    // why the first that couldn't.
+    fillRegiment(id, team) {
+      team = team || this.me;
+      const want = this.regimentMissing(id, team);
+      let queued = 0, left = 0, why = '';
+      for (const t of Object.keys(want)) for (let i = 0; i < want[t]; i++) {
+        const at = this.buildings(team).filter(b => b.built >= 1 && !b.dead && (b.def.trains || []).includes(t)).sort((a, b) => a.queue.length - b.queue.length)[0];
+        const no = !at ? 'Needs ' + (this.trainerName(t) || 'a building') : this.train(at, t, id) ? '' :
+          this.whyNotTrain(t, team) || (this.canAfford(this.costOf(UNITS[t], team, 'train'), team) ? 'The lines are full' : 'Not enough to pay for them');
+        if (no) { why = why || UNITS[t].name + ': ' + no.charAt(0).toLowerCase() + no.slice(1); left += want[t] - i; break; }   // (the rest of this kind; the other kinds still go in)
+        queued++;
+      }
+      return { queued, left, why };
+    }
+    trainerName(type) {
+      const side = (this.side(this.me) && this.side(this.me).side) || 'freemen', S = D.SIDES[side] || D.SIDES.freemen;
+      for (const b of [S.capital, ...(S.build || [])]) if (BUILDINGS[b] && (BUILDINGS[b].trains || []).includes(type)) return BUILDINGS[b].name;
+      return '';
+    }
 
     hasPerk(id) { return Array.isArray(this.perks) && this.perks.includes(id); }
 
@@ -85,7 +128,7 @@
     // World.res, World.researched and so on, so the panel, the missions and the tests needn't know about sides.
     static side(name) {
       return { side: name || null, res: { grain: 0, timber: 0, stone: 0 }, researched: {}, researching: null,
-        armor: 0, dmgUp: 0, wallMul: 1, wallLevel: 1, bows: false, clothing: false, ladders: false, artifacts: {}, ready: {}, captain: null };
+        armor: 0, dmgUp: 0, wallMul: 1, wallLevel: 1, bows: false, clothing: false, ladders: false, flocks: 0, artifacts: {}, ready: {}, captain: null };
     }
     side(team) { return this.sides[team] || (this.sides[team] = World.side()); }
     // What to call a side's people in a message: "The Lamanites have made ..." (data.js: SIDES).
@@ -99,6 +142,7 @@
     get bows() { return this.side(this.me).bows; }                     set bows(v) { this.side(this.me).bows = v; }
     get clothing() { return this.side(this.me).clothing; }             set clothing(v) { this.side(this.me).clothing = v; }
     get ladders() { return this.side(this.me).ladders; }               set ladders(v) { this.side(this.me).ladders = v; }
+    get flocks() { return this.side(this.me).flocks; }                 set flocks(v) { this.side(this.me).flocks = v; }
     get artifacts() { return this.side(this.me).artifacts; }           set artifacts(v) { this.side(this.me).artifacts = v; }
     get ready() { return this.side(this.me).ready; }                   set ready(v) { this.side(this.me).ready = v; }
     get foeArmor() { return this.side('r').armor; }                    set foeArmor(v) { this.side('r').armor = v; }
@@ -107,11 +151,16 @@
     inBounds(x, y) { return x >= 0 && y >= 0 && x < MAP_W && y < MAP_H; }
     tile(x, y) { return this.inBounds(x, y) ? this.tiles[idx(x, y)] : T.ROCK; }
     setTile(x, y, t, a) { this.tiles[idx(x, y)] = t; this.amt[idx(x, y)] = a || 0; this.terrainDirty = true; }
+    // High-ground elevation: 1 on a flat plateau, 0.5 on a sloped ramp, 0 on low ground.
+    // Units cannot step directly between low ground (0) and plateau (1); they must climb a ramp (0.5).
+    elevOf(x, y) { const t = this.tile(x, y); return t === T.PLATEAU ? 1 : t === T.RAMP ? 0.5 : 0; }
+    elevAt(e) { return e ? this.elevOf(tileOf(e.x), tileOf(e.y)) : 0; }
+    canStep(x0, y0, x1, y1) { return Math.abs(this.elevOf(x0, y0) - this.elevOf(x1, y1)) <= 0.5; }
     // Can this team stand on (x, y)? Robbers can also plan through walls, which they then break.
     passable(x, y, team, throughWalls) {
       if (!this.inBounds(x, y)) return false;
       const t = this.tiles[idx(x, y)];
-      if (t === T.WATER || t === T.ROCK || t === T.FOREST) return false;
+      if (t === T.WATER || t === T.ROCK || t === T.FOREST || t === T.BROKEN_BRIDGE) return false;
       const b = this.occ[idx(x, y)];
       if (b) {
         const e = this.ents.get(b);
@@ -130,7 +179,8 @@
     // --- entities
     addUnit(type, team, x, y, extra) {
       const def = UNITS[type];
-      const u = Object.assign({ id: this.nextId++, kind: 'unit', type, def, team, x, y, hp: def.hp, cool: 0, order: { type: 'idle' }, path: null, carry: null, face: 0, think: this.rand() * 0.4 }, extra || {});
+      const think = (extra && extra.think != null) ? extra.think : this.rand() * 0.4;
+      const u = Object.assign({ id: this.nextId++, kind: 'unit', type, def, team, x, y, hp: def.hp, cool: 0, order: { type: 'idle' }, path: null, carry: null, face: 0, think }, extra || {});
       if (team === this.me && type === 'stripling' && this.hasPerk('stripling_covenant')) {
         u.rank = Math.max(u.rank || 0, 1);
         u.kills = Math.max(u.kills || 0, 3);
@@ -176,10 +226,15 @@
 
     // Nearest free tile to (tx, ty) this team can stand on.
     freeTileNear(tx, ty, team) {
-      for (let r = 0; r < 12; r++) {
-        for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
-          if (Math.max(Math.abs(dx), Math.abs(dy)) !== r) continue;
-          if (this.passable(tx + dx, ty + dy, team)) return [tx + dx, ty + dy];
+      const e0 = this.elevOf(tx, ty);
+      for (let pass = 0; pass < 2; pass++) {
+        for (let r = 0; r < 12; r++) {
+          for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
+            if (Math.max(Math.abs(dx), Math.abs(dy)) !== r) continue;
+            if (!this.passable(tx + dx, ty + dy, team)) continue;
+            if (pass === 0 && Math.abs(e0 - this.elevOf(tx + dx, ty + dy)) > 0.5) continue;
+            return [tx + dx, ty + dy];
+          }
         }
       }
       return [tx, ty];
@@ -216,7 +271,10 @@
         let c = 1;
         const b = this.occ[idx(x, y)];
         if (b && walls) c += 10;                    // breaking through takes a while
-        if (this.tiles[idx(x, y)] === T.FORD) c += 0.5;
+        const t = this.tiles[idx(x, y)];
+        if (t === T.FORD) c += 0.5;
+        else if (t === T.ROAD) c = Math.max(0.2, c - 0.2);
+        else if (t === T.BRIDGE) c = Math.max(0.2, c - 0.1);
         return c;
       };
       const s = idx(sx, sy);
@@ -234,12 +292,14 @@
           if (!dx && !dy) continue;
           const nx = x + dx, ny = y + dy;
           if (!this.inBounds(nx, ny)) continue;
+          if (!this.canStep(x, y, nx, ny)) continue;
           const j = idx(nx, ny);
           if (closed[j]) continue;
           let c = cost(nx, ny);
           if (c === Infinity) continue;
-          if (dx && dy) {                          // diagonal: both sides must be open
+          if (dx && dy) {                          // diagonal: both sides must be open and cliff-safe
             if (cost(x + dx, y) === Infinity || cost(x, y + dy) === Infinity) continue;
+            if (!this.canStep(x, y, x + dx, y) || !this.canStep(x, y, x, y + dy)) continue;
             c *= 1.414;
           }
           const ng = g[i] + c;
@@ -261,11 +321,12 @@
     approach(u, px, py, dt) {
       const dx = px - u.x, dy = py - u.y, d = Math.hypot(dx, dy);
       if (d < 1) return;
-      let sp = u.def.speed * (u.slow || 1);
+      const ux = tileOf(u.x), uy = tileOf(u.y), curT = this.tile(ux, uy);
+      let sp = u.def.speed * (u.slow || 1) * (curT === T.ROAD ? 1.25 : curT === T.FORD ? 0.7 : 1);
       if (u.type === 'cart' && u.team === this.me && this.hasPerk('nephite_chariots')) sp *= 1.2;
       const s = Math.min(d, sp * dt);
-      const nx = u.x + dx / d * s, ny = u.y + dy / d * s;
-      if (this.passable(tileOf(nx), tileOf(ny), u.team)) { u.x = nx; u.y = ny; u.face = Math.atan2(dy, dx); }
+      const nx = u.x + dx / d * s, ny = u.y + dy / d * s, ntx = tileOf(nx), nty = tileOf(ny);
+      if (this.passable(ntx, nty, u.team) && this.canStep(ux, uy, ntx, nty)) { u.x = nx; u.y = ny; u.face = Math.atan2(dy, dx); }
     }
 
     // --- orders (what a player's click, or the robbers' plans, ask for)
@@ -299,8 +360,8 @@
       let n = 0;
       for (const e of this.ents.values()) {
         if (e.team !== team) continue;
-        if (e.kind === 'unit' && !this.heroic(e) && (fighter(e.def) || e.def.gathers || e.def.builds || e.def.scout)) n += e.def.eats || 1;
-        else if (e.kind === 'building') for (const q of e.queue) n += UNITS[q.type].eats || 1;
+        if (e.kind === 'unit' && !this.heroic(e) && (fighter(e.def) || e.def.gathers || e.def.builds || e.def.scout)) n += e.def.eats != null ? e.def.eats : 1;
+        else if (e.kind === 'building') for (const q of e.queue) n += UNITS[q.type].eats != null ? UNITS[q.type].eats : 1;
       }
       return n;
     }
@@ -327,10 +388,10 @@
       return '';
     }
     whyNotTrain(type, team) {
-      const def = UNITS[type], need = this.missing(def, team);
+      const def = UNITS[type], need = this.missing(def, team), eats = def.eats != null ? def.eats : 1;
       if (!this.visible(def)) return 'Not in this mission';
       if (need.length) return 'Needs ' + need.map(t => BUILDINGS[t].name).join(' and ');
-      if (this.tech && this.foodUsed(team) + (def.eats || 1) > this.foodCap(team)) return 'Not enough food: ' + this.foodHint(team);
+      if (this.tech && eats > 0 && this.foodUsed(team) + eats > this.foodCap(team)) return 'Not enough food: ' + this.foodHint(team);
       return '';
     }
     // The standard of liberty, planted: your city stands there (Alma 46:36).
@@ -373,7 +434,7 @@
       this.refund(this.sellValue(b), b.team);
       for (const q of b.queue || []) this.refund(this.costOf(UNITS[q.type], b.team, 'train'), b.team);
       const S = this.side(b.team);
-      if (S.researching && S.researching.by === b.id) { this.refund(RESEARCH[S.researching.key].cost, b.team); S.researching = null; }
+      if (S.researching && S.researching.by === b.id) { this.refund(S.researching.cost || RESEARCH[S.researching.key].cost, b.team); S.researching = null; }
       this.remove(b);
       return true;
     }
@@ -384,19 +445,21 @@
     whyNotPlace(type, tx, ty, team) {
       const def = BUILDINGS[type];
       team = team || this.me;
+      const e0 = this.elevOf(tx, ty);
       for (let y = ty; y < ty + def.h; y++) for (let x = tx; x < tx + def.w; x++) {
         if (!this.inBounds(x, y)) return 'ground';
         const t = this.tile(x, y);
-        if (t !== T.GRASS && t !== T.FIELD && t !== T.RUIN) return 'ground';
+        if (t !== T.GRASS && t !== T.FIELD && t !== T.RUIN && t !== T.PLATEAU && t !== T.ROAD) return 'ground';
+        if (this.elevOf(x, y) !== e0) return 'ground';
         if (this.occ[idx(x, y)] && !(def.gate && this.wallAt(x, y, team))) return 'ground';   // (a gate may take the place of your own wall piece)
         if (team === this.me && this.border != null && y < this.border) return 'ground';
       }
-      if (def.cost && !this.inReach(tx, ty, def.w, def.h, team)) return 'far';
+      if (def.cost && !def.frontier && !this.inReach(tx, ty, def.w, def.h, team)) return 'far';
       return '';
     }
     inReach(tx, ty, w, h, team) {
       for (const b of this.buildings(team || this.me)) {
-        if (b.def.wall != null) continue;
+        if (b.def.wall != null || b.def.frontier) continue;
         const gap = Math.max(b.tx - (tx + w), tx - (b.tx + b.w), b.ty - (ty + h), ty - (b.ty + b.h));
         if (gap < REACH) return true;
       }
@@ -411,15 +474,58 @@
       this.pay(cost, team);
       if (def.gate) { const w = this.wallAt(tx, ty, team); if (w) this.sell(w); }   // the gate goes in where the wall piece was
       const b = this.addBuilding(type, team, tx, ty, false);
-      for (const u of builders || []) if (u.def.builds) this.order(u, { type: 'build', target: b.id });
+      for (const u of builders || []) if (u.def.builds || u.def.hunter) this.order(u, { type: 'build', target: b.id });
       return b;
     }
-    train(b, type) {
+    // Up to 8 open perimeter squares around a 2x2 farm where grain can sprout and be reaped.
+    farmFieldTiles(b) {
+      const out = [];
+      for (let y = b.ty - 1; y <= b.ty + b.h; y++) for (let x = b.tx - 1; x <= b.tx + b.w; x++) {
+        if (x >= b.tx && x < b.tx + b.w && y >= b.ty && y < b.ty + b.h) continue;
+        if (!this.inBounds(x, y) || this.occ[idx(x, y)]) continue;
+        if (b.team === this.me && this.border != null && y < this.border) continue;
+        const t = this.tile(x, y);
+        if (t === T.GRASS || t === T.FIELD) out.push([x, y]);
+      }
+      return out;
+    }
+    seedFarmFields(b) {
+      if (!b || b.type !== 'farm' || b.seeded) return 0;
+      b.seeded = true;
+      const spots = this.farmFieldTiles(b).slice(0, 8);
+      for (const [x, y] of spots) {
+        const i = idx(x, y);
+        if (this.tiles[i] === T.GRASS) this.setTile(x, y, T.FIELD, 200);
+        else if (this.tiles[i] === T.FIELD && this.amt[i] < 200) this.amt[i] = 200;
+      }
+      return spots.length;
+    }
+    // Flocks of sheep & goats (Enos 1:21): herding a wild flock or raising a domestic herd (stables / 2 farms) discounts armor & hide upgrades by 35%.
+    hasFlockBonus(team) {
+      team = team || this.me;
+      const S = this.side(team);
+      if ((S.flocks || 0) > 0 || this.has('stables', team)) return true;
+      return this.buildings(team, 'farm').filter(b => b.built >= 1).length >= 2
+        || this.buildings(team, 'tents').filter(b => b.built >= 1).length >= 2;
+    }
+    researchCost(key, team) {
+      const r = RESEARCH[key];
+      if (!r || !r.cost) return null;
+      team = team || this.me;
+      if (ARMOR_TECHS.has(key) && this.hasFlockBonus(team)) {
+        const out = {};
+        for (const k of KINDS) if (r.cost[k]) out[k] = Math.round(r.cost[k] * 0.65);
+        return out;
+      }
+      return r.cost;
+    }
+    // `reg`: for a regiment (fillRegiment), whose line may run longer than the five you can tap in one at a time.
+    train(b, type, reg) {
       const def = UNITS[type];
       const cost = this.costOf(def, b.team, 'train');
-      if (b.built < 1 || !b.def.trains || !b.def.trains.includes(type) || this.whyNotTrain(type, b.team) || !this.canAfford(cost, b.team) || b.queue.length >= 5) return false;
+      if (b.built < 1 || !b.def.trains || !b.def.trains.includes(type) || this.whyNotTrain(type, b.team) || !this.canAfford(cost, b.team) || b.queue.length >= (reg ? 24 : 5)) return false;
       this.pay(cost, b.team);
-      b.queue.push({ type, left: def.time });
+      b.queue.push(reg ? { type, left: def.time, reg } : { type, left: def.time });
       return true;
     }
     // What a thing costs this side: a captain's gift, or the Rameumptom, may make it cheaper (data.js: CAPTAINS).
@@ -447,10 +553,10 @@
     research(b, key) {
       const r = RESEARCH[key];
       if (!r || !this.researchAt(b).includes(key)) return false;   // only where it's made
-      const S = this.side(b.team);
-      if (b.built < 1 || S.researched[key] || S.researching || !this.canAfford(r.cost, b.team)) return false;
-      this.pay(r.cost, b.team);
-      S.researching = { key, left: r.time, by: b.id };
+      const S = this.side(b.team), cost = this.researchCost(key, b.team);
+      if (b.built < 1 || S.researched[key] || S.researching || !this.canAfford(cost, b.team)) return false;
+      this.pay(cost, b.team);
+      S.researching = { key, left: r.time, by: b.id, cost };
       return true;
     }
 
@@ -469,6 +575,7 @@
       if (from && from.rank) a *= 1 + 0.15 * from.rank;                                   // a veteran strikes harder
       if (from && from.sword) a *= 1.5;                                                   // the sword of Laban (1 Nephi 4:9)
       if (from && from.def.foe && from.weak) a *= 0.6;
+      if (from && target && this.elevAt(from) >= 1 && this.elevAt(from) > this.elevAt(target)) a *= 1.2;   // high ground plateau advantage (Alma 49:19)
       const TS = this.side(target.team), unit = target.kind === 'unit';
       // Each kind of fighter is strong against another (data.js: `beats`).
       if (from && from.kind === 'unit' && unit && from.def.beats && [].concat(from.def.beats).includes(kindOf(target.def))) a *= 1.5;
@@ -535,6 +642,59 @@
         }
       }
       if (target.hp <= 0) this.kill(target, from);
+    }
+    // Flood-fill all connected tiles of a bridge span (intact or broken).
+    bridgeSpan(tx, ty, want) {
+      want = want != null ? want : this.tile(tx, ty);
+      if (want !== T.BRIDGE && want !== T.BROKEN_BRIDGE) return [[tx, ty]];
+      const out = [], seen = new Set([idx(tx, ty)]), q = [[tx, ty]];
+      while (q.length && out.length < 16) {
+        const [x, y] = q.shift();
+        out.push([x, y]);
+        for (const [dx, dy] of [[-1, 0], [1, 0], [0, -1], [0, 1]]) {
+          const nx = x + dx, ny = y + dy;
+          if (!this.inBounds(nx, ny)) continue;
+          const k = idx(nx, ny);
+          if (!seen.has(k) && this.tiles[k] === want) { seen.add(k); q.push([nx, ny]); }
+        }
+      }
+      return out;
+    }
+    // Destructible and repairable bridges (C&C Red Alert style):
+    // Demolishing a bridge tile collapses its entire connected river span into T.BROKEN_BRIDGE and drowns anyone standing on it.
+    damageBridge(tx, ty, amount, from) {
+      if (!this.inBounds(tx, ty) || this.tile(tx, ty) !== T.BRIDGE) return false;
+      const span = this.bridgeSpan(tx, ty, T.BRIDGE);
+      const i = idx(tx, ty);
+      const cur = this.amt[i] > 0 ? this.amt[i] : (BRIDGE_HP || 250);
+      const next = Math.max(0, cur - amount);
+      for (const [bx, by] of span) this.amt[idx(bx, by)] = next;
+      if (next > 0) return false;
+      for (const [bx, by] of span) this.setTile(bx, by, T.BROKEN_BRIDGE, 0);
+      for (const u of [...this.units()]) {
+        if (u.dead) continue;
+        const ux = tileOf(u.x), uy = tileOf(u.y);
+        if (span.some(([bx, by]) => bx === ux && by === uy)) { u.hp = 0; this.kill(u, from || null); }
+      }
+      if (this.t - (this.bridgeMsgAt || -99) > 4) {
+        this.bridgeMsgAt = this.t;
+        this.msg('The bridge has collapsed into the river! Send a worker to mend the crossing.', null, 'warn');
+      }
+      return true;
+    }
+    mendBridge(tx, ty, amount, team) {
+      if (!this.inBounds(tx, ty) || this.tile(tx, ty) !== T.BROKEN_BRIDGE) return false;
+      const span = this.bridgeSpan(tx, ty, T.BROKEN_BRIDGE);
+      const i = idx(tx, ty), max = BRIDGE_HP || 250;
+      const next = Math.min(max, Math.max(0, this.amt[i]) + amount);
+      for (const [bx, by] of span) this.amt[idx(bx, by)] = next;
+      if (next < max) return false;
+      for (const [bx, by] of span) this.setTile(bx, by, T.BRIDGE, max);
+      if ((!team || team === this.me) && this.t - (this.bridgeMsgAt || -99) > 4) {
+        this.bridgeMsgAt = this.t;
+        this.msg('The bridge is mended and open again.', null, 'good');
+      }
+      return true;
     }
     // Something of yours is attacked: idle soldiers nearby come to defend it.
     callHelp(target, from) {
@@ -618,6 +778,12 @@
         this.zones.push({ kind: 'quake', team, x, y, r: m.r, until: this.t + 1.5 }); this.quakeAt = this.t;
         for (const b of [...this.ents.values()]) if (b.kind === 'building' && b.team !== team && !b.dead && !b.untouchable && !b.def.neutral && this.distToRect({ x, y }, b) < m.r) this.damage(b, maxHp(b) * (b.def.wall != null ? 1 : 0.4) / (this.shield[b.team] || 1), null);
         for (const u of [...this.ents.values()]) if (u.kind === 'unit' && !u.dead && Math.hypot(u.x - x, u.y - y) < m.r) u.kneelUntil = this.t + 3;
+        const rTiles = Math.ceil(m.r / TILE) + 1, qx = tileOf(x), qy = tileOf(y);
+        for (let by = Math.max(0, qy - rTiles); by <= Math.min(MAP_H - 1, qy + rTiles); by++) {
+          for (let bx = Math.max(0, qx - rTiles); bx <= Math.min(MAP_W - 1, qx + rTiles); bx++) {
+            if (this.tile(bx, by) === T.BRIDGE && Math.hypot(center(bx) - x, center(by) - y) < m.r) this.damageBridge(bx, by, BRIDGE_HP || 250, null);
+          }
+        }
       } else if (key === 'sleep') {
         this.zones.push({ kind: 'sleep', team, x, y, r: m.r, until: this.t + m.last });
         for (const u of foesIn(m.r)) { if (thirsty(u)) continue; u.sleepUntil = this.t + m.last; this.order(u, { type: 'idle' }); }
@@ -693,9 +859,29 @@
           }
           if (e.type === 'villager' && e.from) e.from.lost = (e.from.lost || 0) + 1;
           if (e.sword) { e.sword = false; this.msg(this.swordTo(e, e.team) ? 'The bearer of the sword of Laban has fallen: it passes to another.' : 'The bearer of the sword of Laban has fallen. It waits for the next soldier.', null, 'warn'); }
-        } else {
+        } else if (e.team !== 'n') {
           this.stats.defeated++;
           if (e.sword) { e.sword = false; this.swordTo(e, e.team); }
+        }
+        // A hunter slaying wild game harvests meat for the camp and grows toward a Wilderness Ranger (1 Nephi 16:31; Alma 43:23).
+        if (from && from.kind === 'unit' && from.def.hunter && !from.dead) {
+          if (e.def && e.def.prey) {
+            from.hunts = (from.hunts || 0) + 1;
+            const meat = e.def.meat || 25;
+            if (!this.yieldPops) this.yieldPops = [];
+            this.yieldPops.push({ x: e.x, y: e.y - 10, text: `+${meat} Game Meat`, type: 'grain', t: this.t });
+            if (this.nearestDropoff(from)) {
+              from.carry = { type: 'grain', amt: Math.min(from.def.load || 25, ((from.carry && from.carry.amt) || 0) + meat) };
+              this.order(from, { type: 'unload' });
+            } else {
+              this.gain('grain', meat, from.team);
+            }
+          } else if (from.team !== e.team && e.team !== 'n') {
+            from.kills = (from.kills || 0) + 1;
+          }
+          if (from.type === 'hunter' && (from.hunts || 0) + (from.kills || 0) >= 3) {
+            this.promoteHunter(from);
+          }
         }
         // A veteran: three foes make a soldier "exceedingly valiant for courage" (Alma 53:20); eight, a veteran twice over.
         if (from && from.kind === 'unit' && from.team !== e.team && e.team !== 'n' && fighter(from.def) && !this.heroic(from) && !from.dead) {
@@ -713,10 +899,83 @@
       this.remove(e);
     }
 
+    promoteHunter(u) {
+      if (!u || u.dead || u.type !== 'hunter') return false;
+      u.type = 'ranger';
+      u.def = UNITS.ranger;
+      u.max = UNITS.ranger.hp;
+      u.hp = UNITS.ranger.hp;
+      if (u.team === this.me) {
+        this.msg('A hunter has mastered the forest paths and become a Wilderness Ranger!', 'Alma 43:23', 'good');
+      }
+      return true;
+    }
+
+    nearestPen(u, team) {
+      team = team || u.team;
+      let best = null, bd = Infinity;
+      const types = new Set(['stables', 'farm', 'tents', 'storehouse', 'storetent', 'stronghold', 'warcamp']);
+      for (const b of this.buildings(team)) {
+        if (!b.dead && b.built >= 1 && types.has(b.type)) {
+          const d = this.distToRect(u, b);
+          if (d < bd) { bd = d; best = b; }
+        }
+      }
+      return best;
+    }
+    claimFlock(u, team) {
+      if (!u || u.dead || u.type !== 'flock') return false;
+      u.team = team;
+      const pen = this.nearestPen(u, team);
+      if (pen) {
+        this.order(u, { type: 'herd', target: pen.id, goal: this.rectOf(pen), near: true });
+      } else {
+        this.order(u, { type: 'idle' });
+      }
+      if (team === this.me) {
+        this.msg('You have gathered a flock! It herds back to your camp (+75 grain and 35% off armor upgrades).', 'Enos 1:21', 'good');
+      }
+      return true;
+    }
+    autoHunt(u) {
+      if (!u || u.dead || !u.def.hunter) return false;
+      if (!this.stronghold(u.team) && !this.nearestDropoff(u)) return false;
+      let bestFlock = null, fd = 240;
+      let bestGame = null, gd = 240;
+      for (const e of this.ents.values()) {
+        if (e.kind !== 'unit' || e.dead || e.team !== 'n') continue;
+        if (e.type === 'flock') {
+          const d = dist(u, e);
+          if (d < fd) { fd = d; bestFlock = e; }
+        } else if (e.def && e.def.prey) {
+          const d = dist(u, e);
+          if (d < gd) { gd = d; bestGame = e; }
+        }
+      }
+      if (bestFlock) {
+        this.order(u, { type: 'move', goal: this.rectOf(bestFlock), near: true });
+        return true;
+      }
+      if (bestGame) {
+        this.order(u, { type: 'attack', target: bestGame.id });
+        return true;
+      }
+      return false;
+    }
+
     // Standing still in cover, and not fighting lately: the enemy walks past (Alma 43:27).
     hidden(u) {
       if (u.kind !== 'unit') return false;
       if (u.stealthUntil > this.t && this.t - (u.struckAt || -99) >= 2) return true;      // by stratagem, unseen until they strike (Alma 58:6)
+      if ((u.def.ranger || u.def.hunter) && this.t - (u.struckAt || -99) >= 2.5) {
+        const x = tileOf(u.x), y = tileOf(u.y);
+        if (this.buildings(u.team, 'blind').some(b => b.built >= 1 && !b.dead && this.nextTo(u, this.rectOf(b)))) return true;
+        if (u.def.ranger) {
+          for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+            if ((dx || dy) && this.tile(x + dx, y + dy) === T.FOREST) return true;
+          }
+        }
+      }
       if (u.team !== this.me || !this.cover.length || u.order.type !== 'idle' || this.t - (u.struckAt || -99) < 4) return false;
       const x = tileOf(u.x), y = tileOf(u.y);
       return this.cover.some(c => x >= c.x0 && x <= c.x1 && y >= c.y0 && y <= c.y1);
@@ -743,9 +1002,16 @@
       const dx = Math.max(x0 - p.x, 0, p.x - x1), dy = Math.max(y0 - p.y, 0, p.y - y1);
       return Math.hypot(dx, dy);
     }
-    reachOf(u, target) { return (target.kind === 'building' ? this.distToRect(u, target) : dist(u, target) - 10) <= this.rangeOf(u) + 6; }
-    // How far a unit strikes: archers farther with bows of fine steel (1 Nephi 16:18).
-    rangeOf(u) { const S = this.side(u.team); return u.def.range + (u.type === 'archer' && S.bows ? 40 : 0) + (u.type === 'javelin' && S.captain && S.captain.bonus.javelin ? S.captain.bonus.javelin : 0); }
+    reachOf(u, target) {
+      if (!u.def.ranged && Math.abs(this.elevAt(u) - this.elevAt(target)) > 0.5) return false;
+      return (target.kind === 'building' ? this.distToRect(u, target) : dist(u, target) - 10) <= this.rangeOf(u, target) + 6;
+    }
+    // How far a unit strikes: archers farther with bows of fine steel (1 Nephi 16:18), and ranged shooters +1 tile from a plateau.
+    rangeOf(u, target) {
+      const S = this.side(u.team);
+      const high = target && u.def.ranged && this.elevAt(u) >= 1 && this.elevAt(u) > this.elevAt(target) ? TILE : 0;
+      return u.def.range + (u.type === 'archer' && S.bows ? 40 : 0) + (u.type === 'javelin' && S.captain && S.captain.bonus.javelin ? S.captain.bonus.javelin : 0) + high;
+    }
     // Who can go over an enemy wall: those who brought ladders, or a side's fighters once it has made ladders (Alma 62:21).
     // A wall of the third level, with its ditch, belonging to someone other than `team`, on that square.
     ditchAt(x, y, team) {
@@ -826,6 +1092,7 @@
       b.built = Math.min(1, b.built + step);
       b.hp = Math.min(maxHp(b), b.hp + maxHp(b) * step * 0.9);
       if (b.built >= 1) {
+        if (b.type === 'farm') this.seedFarmFields(b);
         if (b.team === this.me) this.msg(b.def.name + ' is finished.', null, 'good');
         if (b.def.brings && this.tech) {             // a store comes with a hauler, as a refinery comes with a harvester
           const [x, y] = this.freeTileNear(b.tx + Math.floor(b.w / 2), b.ty + b.h, b.team);
@@ -846,9 +1113,47 @@
         return;
       }
       if (b.def.grows) this.gain('grain', b.def.grows * dt, b.team);   // "they did raise grain in abundance" (Helaman 6:12)
+      if (b.type === 'farm') {
+        if (!b.seeded) this.seedFarmFields(b);
+        b.cropTimer = (b.cropTimer || 0) + dt;
+        if (b.cropTimer >= 3) {
+          b.cropTimer -= 3;
+          const spots = this.farmFieldTiles(b).slice(0, 8);
+          for (const [x, y] of spots) {
+            const i = idx(x, y);
+            if (this.tiles[i] === T.FIELD && this.amt[i] < 300) this.amt[i] = Math.min(300, this.amt[i] + 8);
+            else if (this.tiles[i] === T.GRASS) this.setTile(x, y, T.FIELD, 45);
+          }
+        }
+      }
       if (b.def.mills) this.gain('timber', b.def.mills * dt, b.team);   // "timber to build their houses" (Helaman 3:9)
       if (b.def.quarries) this.gain('stone', b.def.quarries * dt, b.team);
       if (b.def.bakes) this.gain('stone', b.def.bakes * dt, b.team);    // cement and brickworks (Helaman 3:7)
+      if (b.type === 'campfire' && b.def.heals) {
+        for (const u of this.units(b.team)) {
+          if (!u.dead && u.hp < maxHp(u) && dist(u, b) < b.def.heals) {
+            u.hp = Math.min(maxHp(u), u.hp + 3 * dt);
+          }
+        }
+      }
+      if (b.def.trap) {
+        b.cool = (b.cool || 0) - dt;
+        let hit = false;
+        for (const u of this.ents.values()) {
+          if (u.kind !== 'unit' || u.dead || u.untouchable || u.team === b.team || u.team === 'n' || u.team === 'x') continue;
+          const d = dist(u, b);
+          if (d <= 44) {
+            u.slow = 0.5;
+            u.slowUntil = Math.max(u.slowUntil || 0, this.t + 1.2);
+            if (d <= 38 && b.cool <= 0) {
+              this.damage(u, 7, b);
+              this.effects.push({ t: this.t, x0: b.x, y0: b.y, x1: u.x, y1: u.y, kind: 'hit', stake: true, team: b.team });
+              hit = true;
+            }
+          }
+        }
+        if (hit) b.cool = 1.5;
+      }
       if (b.queue.length && !(b.stalledUntil > this.t)) {
         const q = b.queue[0];
         if ((q.left -= dt * this.trainSpeed(b)) <= 0) {
@@ -869,13 +1174,14 @@
             if (own.some(t => t.def.fierce)) u.fierceUntil = this.t + 45;      // from the war-dance: faster and harder for a while
           }
           if (b.team === this.me) this.trained[q.type] = (this.trained[q.type] || 0) + 1;
-          if (b.autoCohort) u.cohort = b.autoCohort;
-          else if (u.type === 'cart' || u.type === 'curelom' || u.type === 'cumom' || (u.def && u.def.siege)) {
-            u.cohort = 3;
-          } else if (fighter(u.def)) {
-            u.cohort = u.def.ranged ? 2 : 1;
-          }
-          if (b.rally) {
+          // A regiment's recruit marches to join those of his regiment already standing; anyone else goes to the rally point.
+          const mates = q.reg ? this.cohortUnits(b.team, q.reg).filter(m => m !== u) : [];
+          if (q.reg) u.cohort = q.reg;
+          if (mates.length) {
+            const mx = mates.reduce((a, m) => a + m.x, 0) / mates.length, my = mates.reduce((a, m) => a + m.y, 0) / mates.length;
+            const [jx, jy] = this.freeTileNear(tileOf(mx), tileOf(my), b.team);
+            this.moveTo(u, jx, jy);
+          } else if (b.rally) {
             const rx = Array.isArray(b.rally) ? b.rally[0] : (b.rally.tx != null ? b.rally.tx : tileOf(b.rally.x));
             const ry = Array.isArray(b.rally) ? b.rally[1] : (b.rally.ty != null ? b.rally.ty : tileOf(b.rally.y));
             this.moveTo(u, rx, ry);
@@ -894,10 +1200,11 @@
           } else b.cool = 0.4;
         }
       }
-      if (b.def.dmg) {                              // a watchtower
+      if (b.def.dmg) {                              // a watchtower (+1 tile range on a plateau)
         b.cool -= dt;
         if (b.cool <= 0) {
-          const e = this.enemiesNear(b, b.team, b.def.range);
+          const r = b.def.range + (this.elevAt(b) >= 1 ? TILE : 0);
+          const e = this.enemiesNear(b, b.team, r);
           if (e && e.kind === 'unit') { this.shoot(b, e, b.def.dmg); b.cool = b.def.cd; }
           else b.cool = 0.3;
         }
@@ -944,13 +1251,36 @@
       u.think -= dt;
       if (u.think <= 0) {
         u.think = 0.4;
+        if (u.type === 'flock' && u.team === 'n') {
+          const finder = [...this.ents.values()].find(e => e.kind === 'unit' && !e.dead && (e.team === 'p' || e.team === 'r') && e.type !== 'flock' && e.type !== 'game' && dist(e, u) <= 2.2 * TILE);
+          if (finder) this.claimFlock(u, finder.team);
+        } else if (u.type === 'flock' && u.team !== 'n' && this.tech && (u.order.type === 'idle' || u.order.type === 'herd')) {
+          const pen = (u.order.target && this.ents.get(u.order.target)) || this.nearestPen(u, u.team);
+          if (pen && !pen.dead) {
+            if (this.nextTo(u, this.rectOf(pen))) { this.arrive(u); return; }
+            if (u.order.type !== 'herd' || u.order.target !== pen.id) {
+              const path = this.findPath(u, this.rectOf(pen), true);
+              if (path) {
+                this.order(u, { type: 'herd', target: pen.id, goal: this.rectOf(pen), near: true });
+                u.path = path;
+              } else {
+                u.think = 2.5;
+              }
+            }
+          }
+        }
         const mine = u.team === this.me || !fighter(u.def);           // the human's, or a hauler or builder of any side
         if (!mine && this.mission && this.mission.foeBrain) {
           if (u.turnUntil > this.t) { if (u.order.type === 'idle') this.turnOn(u); }          // turned on his own (Judges 7:22)
           else if (!(u.fearUntil > this.t)) this.mission.foeBrain(this, u);                    // (fleeing the fire, he keeps running)
         }
         // (An army lying hidden holds still until it's ordered, or found.)
-        else if (mine && u.order.type === 'idle' && u.def.dmg && !u.def.gathers && !u.def.builds && (!this.hidden(u) || this.t - (u.hitAt || -99) < 2)) this.autoAcquire(u, u.def.sight);
+        else if (mine && u.order.type === 'idle' && u.def.dmg && !u.def.gathers && !u.def.builds && (!this.hidden(u) || this.t - (u.hitAt || -99) < 2)) {
+          if (!this.autoAcquire(u, u.def.sight) && u.def.hunter) {
+            if (u.carry && u.carry.amt > 0 && this.nearestDropoff(u)) this.order(u, { type: 'unload' });
+            else this.autoHunt(u);
+          }
+        }
         else if (mine && u.order.type === 'move' && (u.order.attackMove || u.order.rule === 'hunt')) this.autoAcquire(u, u.def.sight, true);
         else if (mine && u.order.type === 'idle' && (u.def.gathers || u.def.builds) && u.hitAt && this.t - u.hitAt < 1.5) this.autoAcquire(u, 60);
         // A cart with nothing to do goes and hauls, like a harvester in Red Alert.
@@ -966,13 +1296,44 @@
       }
       const o = u.order;
       switch (o.type) {
-        case 'move': case 'caravan': case 'retreat': case 'flee': case 'prisoner': case 'hunt': {
+        case 'move': case 'caravan': case 'retreat': case 'flee': case 'prisoner': case 'hunt': case 'herd': {
           if (!u.path) {
             const g = o.goal || { x0: o.tx, y0: o.ty, x1: o.tx, y1: o.ty };
             u.path = this.findPath(u, g, !!o.near);
+            if (!u.path) { this.order(u, { type: 'idle' }); u.think = 1.5; break; }
           }
           if (this.follow(u, dt)) this.arrive(u);
           else if (this.blockedBy && (u.def.foe || u.def.soldier)) { const w = this.blockedBy; this.blockedBy = null; this.order(u, { type: 'attack', target: w.id, then: o }); }
+          break;
+        }
+        case 'unload': {
+          if (!u.carry || !u.carry.amt) { this.order(u, { type: 'idle' }); break; }
+          const drop = this.nearestDropoff(u);
+          if (!drop) {
+            this.gain(u.carry.type, u.carry.amt, u.team);
+            u.carry = null;
+            this.order(u, { type: 'idle' });
+            break;
+          }
+          if (this.nextTo(u, this.rectOf(drop))) {
+            const amt = u.carry.amt, type = u.carry.type;
+            this.gain(type, amt, u.team);
+            if (!this.yieldPops) this.yieldPops = [];
+            const dx = drop.kind === 'building' ? (drop.tx + drop.w / 2) * TILE : drop.x;
+            const dy = drop.kind === 'building' ? drop.ty * TILE - 8 : drop.y - 12;
+            this.yieldPops.push({ x: dx, y: dy, text: `+${amt} ${type[0].toUpperCase() + type.slice(1)}`, type, t: this.t });
+            u.carry = null;
+            this.order(u, { type: 'idle' });
+            break;
+          }
+          if (!u.path) {
+            u.path = this.findPath(u, this.rectOf(drop), true);
+            if (!u.path) { this.gain(u.carry.type, u.carry.amt, u.team); u.carry = null; this.order(u, { type: 'idle' }); break; }
+          }
+          if (this.follow(u, dt) && !this.nextTo(u, this.rectOf(drop))) {
+            u.tries = (u.tries || 0) + 1;
+            if (u.tries > 4) this.order(u, { type: 'idle' });
+          }
           break;
         }
         case 'attack': {
@@ -989,9 +1350,10 @@
             }
           } else {
             u.repath = (u.repath || 0) - dt;
-            if (!u.path || !u.path.length || u.repath <= 0) {
+            if ((!u.path || !u.path.length) && u.repath <= 0) {
               u.path = this.findPath(u, this.rectOf(t), true);
               u.repath = 0.8;
+              if (!u.path && u.def.hunter && t.def && t.def.prey) { this.order(u, { type: 'idle' }); u.think = 2.0; break; }
             }
             // Walking into a wall on the way: break it (foes).
             if (this.follow(u, dt) || !u.path) {
@@ -1006,12 +1368,84 @@
           }
           break;
         }
+        case 'demolish': {
+          if (this.tile(o.tx, o.ty) !== T.BRIDGE) { this.order(u, { type: 'idle' }); break; }
+          const span = this.bridgeSpan(o.tx, o.ty, T.BRIDGE);
+          const ux = tileOf(u.x), uy = tileOf(u.y);
+          const bx = center(o.tx), by = center(o.ty);
+          const onBank = this.tile(ux, uy) !== T.BRIDGE && span.some(([sx, sy]) => Math.abs(ux - sx) <= 1 && Math.abs(uy - sy) <= 1);
+          const inReach = u.def.ranged ? Math.hypot(bx - u.x, by - u.y) <= this.rangeOf(u) + 12 : onBank;
+          if (inReach) {
+            u.path = null;
+            u.face = Math.atan2(by - u.y, bx - u.x);
+            if (u.cool <= 0) {
+              const dmg = (u.def.dmg || 10) * (u.def.siege || 1);
+              this.effects.push({ t: this.t, x0: u.x, y0: u.y, x1: bx, y1: by, kind: u.def.ranged ? 'arrow' : 'hit', team: u.team });
+              this.damageBridge(o.tx, o.ty, dmg, u);
+              u.cool = u.def.cd || 1.2;
+            }
+          } else {
+            if (!u.path) {
+              if (u.def.ranged) {
+                u.path = this.findPath(u, { x0: o.tx, y0: o.ty, x1: o.tx, y1: o.ty }, true);
+              } else {
+                let best = null, bestD = 1e9;
+                for (const [sx, sy] of span) {
+                  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+                    const nx = sx + dx, ny = sy + dy;
+                    if (!this.inBounds(nx, ny) || this.tile(nx, ny) === T.BRIDGE || !this.passable(nx, ny, u.team)) continue;
+                    const d = Math.hypot(nx - ux, ny - uy);
+                    if (d < bestD) { bestD = d; best = [nx, ny]; }
+                  }
+                }
+                u.path = best ? this.findPath(u, { x0: best[0], y0: best[1], x1: best[0], y1: best[1] }, false) : null;
+              }
+            }
+            if (this.follow(u, dt)) {
+              const nux = tileOf(u.x), nuy = tileOf(u.y);
+              const nowOnBank = this.tile(nux, nuy) !== T.BRIDGE && span.some(([sx, sy]) => Math.abs(nux - sx) <= 1 && Math.abs(nuy - sy) <= 1);
+              if (!nowOnBank) this.order(u, { type: 'idle' });
+            }
+          }
+          break;
+        }
+        case 'mendbridge': {
+          if (this.tile(o.tx, o.ty) !== T.BROKEN_BRIDGE) { this.order(u, { type: 'idle' }); break; }
+          const span = this.bridgeSpan(o.tx, o.ty, T.BROKEN_BRIDGE);
+          const ux = tileOf(u.x), uy = tileOf(u.y);
+          const adj = span.some(([sx, sy]) => Math.abs(ux - sx) <= 1 && Math.abs(uy - sy) <= 1);
+          if (adj) {
+            u.path = null;
+            u.face = Math.atan2(center(o.ty) - u.y, center(o.tx) - u.x);
+            this.mendBridge(o.tx, o.ty, 65 * dt, u.team);
+          } else {
+            if (!u.path) {
+              let best = null, bestD = 1e9;
+              for (const [sx, sy] of span) {
+                for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+                  const nx = sx + dx, ny = sy + dy;
+                  if (!this.inBounds(nx, ny) || !this.passable(nx, ny, u.team)) continue;
+                  const d = Math.hypot(nx - ux, ny - uy);
+                  if (d < bestD) { bestD = d; best = [nx, ny]; }
+                }
+              }
+              u.path = best ? this.findPath(u, { x0: best[0], y0: best[1], x1: best[0], y1: best[1] }, false) : null;
+            }
+            if (this.follow(u, dt)) {
+              const nux = tileOf(u.x), nuy = tileOf(u.y);
+              const nowAdj = span.some(([sx, sy]) => Math.abs(nux - sx) <= 1 && Math.abs(nuy - sy) <= 1);
+              if (!nowAdj) this.order(u, { type: 'idle' });
+            }
+          }
+          break;
+        }
         case 'gather': this.stepGather(u, dt); break;
         case 'build': this.stepBuild(u, dt); break;
         case 'idle': default: break;
       }
     }
     afterFight(u, gaveUp) {
+      if (u.def.hunter && u.carry && u.carry.amt > 0) { this.order(u, { type: 'unload' }); return; }
       const then = u.order.then, leash = u.order.leash;
       if (then) { this.order(u, then); return; }
       this.order(u, { type: 'idle' });
@@ -1034,7 +1468,9 @@
       if (!u.path) return false;
       if (!u.path.length) { u.path = null; return true; }
       const [tx, ty] = u.path[0];
+      const ux = tileOf(u.x), uy = tileOf(u.y);
       u.climbing = false;
+      if (!this.canStep(ux, uy, tx, ty)) { u.path = null; return false; }
       if (!this.passable(tx, ty, u.team)) {
         const b = this.occ[idx(tx, ty)] && this.ents.get(this.occ[idx(tx, ty)]);
         if (b && b.def.wall && b.team !== u.team && this.canClimb(u)) u.climbing = true;                  // over it, slowly
@@ -1043,7 +1479,8 @@
       }
       const cx = center(tx), cy = center(ty);
       const dx = cx - u.x, dy = cy - u.y, d = Math.hypot(dx, dy);
-      let sp = u.def.speed * (u.slow || 1) * (this.tile(tileOf(u.x), tileOf(u.y)) === T.FORD ? 0.7 : 1);
+      const curT = this.tile(ux, uy);
+      let sp = u.def.speed * (u.slow || 1) * (curT === T.FORD ? 0.7 : curT === T.ROAD ? 1.25 : 1);
       if (u.climbing) sp *= this.ditchAt(tx, ty, u.team) ? 0.25 : 0.4;
       else if (this.ditchNear(u)) sp *= 0.6;                 // down into the ditch and up again (Alma 49:18)
       if (u.fierceUntil > this.t) sp *= 1.15;
@@ -1057,7 +1494,8 @@
         if (cohortMoving.length > 1) {
           let minSp = sp;
           for (const m of cohortMoving) {
-            let msp = m.def.speed * (m.slow || 1);
+            const mt = this.tile(tileOf(m.x), tileOf(m.y));
+            let msp = m.def.speed * (m.slow || 1) * (mt === T.FORD ? 0.7 : mt === T.ROAD ? 1.25 : 1);
             if (m.carry && m.carry.amt) msp *= 0.9;
             if (msp < minSp) minSp = msp;
           }
@@ -1075,6 +1513,19 @@
     arrive(u) {
       const o = u.order;
       if (this.mission && this.mission.onArrive && this.mission.onArrive(this, u)) return;
+      if (o.type === 'herd' && u.type === 'flock') {
+        const amt = this.tech ? 75 : (u.def.carries || 60);
+        this.gain('grain', amt, u.team);
+        const S = this.side(u.team);
+        S.flocks = (S.flocks || 0) + 1;
+        if (!this.yieldPops) this.yieldPops = [];
+        this.yieldPops.push({ x: u.x, y: u.y - 12, text: `+${amt} Grain (Flock)`, type: 'grain', t: this.t });
+        if (u.team === this.me) {
+          this.msg('A flock is safely penned! (+75 grain, and armor & hide upgrades cost 35% less.)', 'Alma 1:29', 'good');
+        }
+        this.remove(u);
+        return;
+      }
       if (o.type === 'move') {
         if (o.waypoints && o.waypoints.length > 0) {
           const wp = o.waypoints.shift();
@@ -1114,8 +1565,9 @@
       }
     }
     nudge(u, dx, dy) {
-      const nx = u.x + dx, ny = u.y + dy;
-      if (this.passable(tileOf(nx), tileOf(ny), u.team) || !this.passable(tileOf(u.x), tileOf(u.y), u.team)) { u.x = nx; u.y = ny; }
+      const nx = u.x + dx, ny = u.y + dy, ux = tileOf(u.x), uy = tileOf(u.y), ntx = tileOf(nx), nty = tileOf(ny);
+      if (!this.canStep(ux, uy, ntx, nty)) return;
+      if (this.passable(ntx, nty, u.team) || !this.passable(ux, uy, u.team)) { u.x = nx; u.y = ny; }
     }
 
     // --- gathering: out to the field or the trees, back to the storehouse
