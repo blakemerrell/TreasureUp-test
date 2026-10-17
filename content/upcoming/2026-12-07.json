@@ -8,6 +8,73 @@
     "The Lord can make me holy",
     "Jesus Christ is the promised Messiah"
   ],
+  "puzzle": {
+    "groups": [
+      {
+        "section": 0,
+        "tiles": [
+          {
+            "text": "Ceiled houses",
+            "ref": "Haggai 1:4"
+          },
+          {
+            "text": "A bag with holes",
+            "ref": "Haggai 1:6"
+          },
+          {
+            "text": "Go up and bring wood",
+            "ref": "Haggai 1:8"
+          },
+          {
+            "text": "The latter house",
+            "ref": "Haggai 2:9"
+          }
+        ]
+      },
+      {
+        "section": 1,
+        "tiles": [
+          {
+            "text": "Filthy garments",
+            "ref": "Zechariah 3:3"
+          },
+          {
+            "text": "A fair mitre",
+            "ref": "Zechariah 3:5"
+          },
+          {
+            "text": "Speak ye the truth",
+            "ref": "Zechariah 8:16"
+          },
+          {
+            "text": "Bells of the horses",
+            "ref": "Zechariah 14:20"
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "tiles": [
+          {
+            "text": "Riding upon an ass",
+            "ref": "Zechariah 9:9"
+          },
+          {
+            "text": "Thirty pieces of silver",
+            "ref": "Zechariah 11:12"
+          },
+          {
+            "text": "Wounds in thine hands",
+            "ref": "Zechariah 13:6"
+          },
+          {
+            "text": "Mount of Olives",
+            "ref": "Zechariah 14:4"
+          }
+        ]
+      }
+    ]
+  },
   "sayings": [
     {
       "id": "say-time-not-come",
