@@ -53,12 +53,14 @@ TreasureUp is a vanilla HTML/JS/CSS offline-first web application.
 ---
 
 ## Current Status (October 2026)
-- **Active Branch**: `gemini/cfm-lesson-fixes`
+- **Active Branch**: `gemini/conference-story-decks`
 - **Latest Work**:
-  - Implemented 3-way scripture translation toggle (`Plain English`, `KJV`, `BSB`) with single-flight network retry and fallback protection.
-  - Chunked and verified Week 42 (October 12–18, 2026) family lesson cards with interactive activities.
-  - Fixed video row badge text overlap in Study tab (`.cr-kind` flex sizing and `▶ Video` badge).
-  - Wired Deep Dive cards in the Study tab shelf directly to authentic scholar cards (`openCard`) and Hebrew word study sheets with native audio (`openTreasure`) + 15 XP reward.
+  - **Phase 1: Conference Story Decks (`openTalk`)**:
+    - Replaced the legacy bulleted worksheet layout with a modern 3-Slide Swipeable Story Deck (`.ins-deck`).
+    - **Slide 1 (The Living Word)**: Conference session kicker, talk title, speaker, core quick summary, hero power quote, and Gospel Library link.
+    - **Slide 2 (Core Truths & Insights)**: Doctrinal takeaways styled as sleek cards with purple glass borders (`.ins-deck .talk-list li`), secondary speaker quotes, cited scriptures, and deep dive exploration.
+    - **Slide 3 (The Apostle's Invitation & Reflection)**: Apostle invitations and promises (`talkInviteHtml`), discussion questions (`talkTryHtml`), 1-tap `✍️ Save Takeaway to My Notes` (persisted into `S.impressions`), and `✓ I studied this talk · +15 XP` completion button.
+    - Full interactive deck controls: top progress bars (`.ins-deck-bars`), jump pills (`.ins-deck-pills`), smooth horizontal swipe, and slide persistence when marking done.
   - Fully green on `tools/check-parse.mjs` and `tools/verify.mjs`.
   - **Blake's Best Self PRO Architecture & Design**:
     - Grounded adult planning flow anchored by Blake's Core Values Triad: **FAITH** (Jesus Christ, Kindness, Spiritual, Family, Humility, Ethics, Hope, Friendship), **ADVENTURE** (Awe, Wonder, Fun, Learning, Risk Taking, Independence, Overcome Obstacles), and **INTEGRITY** (Honesty, Loyal, Truth, Authentic, Trustworthy, Free of Deception, Open, Leadership, Accountable).
