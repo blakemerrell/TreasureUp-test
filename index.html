@@ -2491,6 +2491,27 @@
     padding: 9px 14px; border-radius: 12px; font-size: 13px; font-weight: 800;
     background: rgba(52,211,153,.16); border: 1px solid rgba(52,211,153,.45); color: #6ee7b7; cursor: pointer;
   }
+  .ins-deck .talk-list {
+    margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;
+  }
+  .ins-deck .talk-list li {
+    margin: 0; padding: 10px 14px; border-radius: 12px;
+    background: rgba(255,255,255,.05); border-left: 3px solid #c4b5fd;
+    font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.92);
+  }
+  .ins-deck .talk-story {
+    padding: 12px 14px; border-radius: 14px;
+    background: rgba(124,58,237,.12); border: 1px solid rgba(167,139,250,.28);
+  }
+  .ins-deck .talk-invite {
+    padding: 12px 14px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(245,158,11,.14), rgba(0,0,0,.3));
+    border: 1px solid rgba(251,191,36,.32);
+  }
+  .ins-deck .talk-try {
+    padding: 12px 14px; border-radius: 14px;
+    background: rgba(16,185,129,.12); border: 1px solid rgba(52,211,153,.32);
+  }
   .lm-note-card {
     margin-top: 10px; padding: 14px 16px; border-radius: 16px;
     background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
@@ -6716,7 +6737,7 @@ const TreasureUp = (function () {
     wireInsDeck();
     if (!(S.insights || {})[x.id]) { (S.insights = S.insights || {})[x.id] = dayKey(); save(); }
   }
-  function wireInsDeck() {
+  function wireInsDeck(initialSlide = 0) {
     const deck = $('appBody') && $('appBody').querySelector('.ins-deck');
     if (!deck) return;
     const track = deck.querySelector('.ins-deck-track');
@@ -6736,7 +6757,12 @@ const TreasureUp = (function () {
       if (!track.clientWidth) return;
       sync(Math.round(track.scrollLeft / track.clientWidth));
     }, { passive: true });
-    sync(0);
+    sync(initialSlide);
+    if (initialSlide > 0) {
+      setTimeout(() => {
+        if (track.clientWidth) track.scrollLeft = initialSlide * track.clientWidth;
+      }, 30);
+    }
   }
   // Sunday classes (content/sunday.js; 2026-10-03: "We need to
   // incorporate sunday lesson study as well.... [our son] needs to study YM
@@ -6795,25 +6821,72 @@ const TreasureUp = (function () {
     const done = !!(S.talks || {})[t.id];
     return { done, html: tcRow(`data-talk="${esc(t.id)}"`, { done, title: `🎤 Talk a day · ${i + 1} of ${c.talks.length}`, sub: esc(t.title) + ' · ' + esc(t.speaker) }) };
   }
-  // A talk on its own: what it teaches, the speaker's own words, its
-  // scriptures (each a tap from the reader), questions to talk over, a deep
-  // dive, and the talk in Gospel Library to read, watch or listen to.
-  function openTalk(id) {
+  // A talk on its own: swipeable 3-slide story deck with the speaker's power quote,
+  // core doctrinal truths, scripture anchors, invitation to act, and personal notes.
+  function openTalk(id, initialSlide = 0) {
     const c = curConf(), t = talkById(id);
     if (!t) return;
     use('talk');
     const own = sunShow(t), draft = own && !sunApproved(t), seen = (S.talks || {})[t.id];
     const list = (h, xs) => xs && xs.length ? `<div class="talk-h">${h}</div><ul class="talk-list">${xs.map(x => `<li>${linkRefs(x)}</li>`).join('')}</ul>` : '';
-    openSheet(`<div class="ls-kind">🎤 ${esc(c.title)} · ${esc(t.session)}</div>${draft ? '<p class="plain-draft">Draft: not approved yet</p>' : ''}
-      <div class="sh-title">${esc(t.title)}</div><p class="ins-who" style="margin-top:2px">${esc(t.speaker)}</p>
-      ${own && t.quick ? `<p class="reel-body" style="margin-top:10px">${linkRefs(t.quick)}</p>` : ''}${own ? talkStoryHtml(t) : ''}
-      ${(t.quotes || []).map(q => `<blockquote class="ins-quote">“${esc(String(q).replace(/“/g, '‘').replace(/”/g, '’'))}”</blockquote>`).join('')}${own ? talkInviteHtml(t) : ''}
-      ${own ? list('What it teaches', t.points) : ''}
-      ${(t.scriptures || []).length ? `<div class="talk-h">Scriptures it uses</div><p class="talk-refs">${t.scriptures.map(r => linkRefs(r)).join(' · ')}</p>` : ''}
-      ${own ? list('To talk over', t.discuss) : ''}${own ? talkTryHtml(t) : ''}
-      ${own && t.deep ? diveHtml({ deep: t.deep }) : ''}
-      <a class="ins-src" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer"><span>Read, watch or listen</span> <b>${esc(t.title)} in Gospel Library ↗</b></a>
-      ${seen ? '<p class="fam-note" style="margin-top:14px">✓ Studied</p>' : `<div class="board-actions"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk · +${TALK_XP} XP</button></div>`}`);
+    const quotes = t.quotes || [];
+    const firstQuote = quotes.length ? quotes[0] : '';
+    const otherQuotes = quotes.slice(1);
+
+    const slides = [
+      {
+        label: '1. The Word',
+        html: `<div class="ins-deck-kicker"><span>🎤 ${esc(c ? c.title : 'General Conference')}</span><span>${esc(t.session || '')}</span></div>
+          <div class="sh-title" style="margin:2px 0 0 0">${esc(t.title)}</div>
+          <p class="ins-who" style="margin:2px 0 6px 0">${esc(t.speaker)}</p>
+          ${own && t.quick ? `<p class="reel-body" style="margin-top:8px">${linkRefs(t.quick)}</p>` : ''}
+          ${own ? talkStoryHtml(t) : ''}
+          ${firstQuote ? `<blockquote class="ins-quote" style="margin:10px 0">“${esc(String(firstQuote).replace(/“/g, '‘').replace(/”/g, '’'))}”</blockquote>` : ''}
+          <a class="ins-src" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" style="margin-top:auto"><span>Read, watch or listen</span> <b>${esc(t.title)} in Gospel Library ↗</b></a>`
+      },
+      {
+        label: '2. Core Truths',
+        html: `<div class="ins-deck-kicker"><span>💡 Core Truths & Insights</span><span>${esc(t.speaker)}</span></div>
+          ${own ? list('What it teaches', t.points) : ''}
+          ${otherQuotes.map(q => `<blockquote class="ins-quote" style="margin:8px 0">“${esc(String(q).replace(/“/g, '‘').replace(/”/g, '’'))}”</blockquote>`).join('')}
+          ${(t.scriptures || []).length ? `<div class="talk-h">Scriptures it uses</div><p class="talk-refs">${t.scriptures.map(r => linkRefs(r)).join(' · ')}</p>` : ''}
+          ${own && t.deep ? diveHtml({ deep: t.deep }) : ''}`
+      },
+      {
+        label: '3. Invitation',
+        html: `<div class="ins-deck-kicker"><span>⚡ The Apostle's Invitation</span><span>Take Action</span></div>
+          ${own ? talkInviteHtml(t) : ''}
+          ${own ? list('To talk over', t.discuss) : ''}
+          ${own ? talkTryHtml(t) : ''}
+          <a class="ins-src" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><span>Study in Gospel Library</span> <b>${esc(t.title)} ↗</b></a>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <button type="button" class="ins-save-btn" data-save-card-note="${esc(t.id)}">✍️ Save Takeaway to My Notes</button>
+          </div>
+          ${seen ? '<p class="fam-note" style="margin-top:14px;color:#34d399;font-weight:700">✓ Studied · +15 XP</p>' : `<div class="board-actions" style="margin-top:14px"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk · +${TALK_XP} XP</button></div>`}`
+      }
+    ];
+
+    const deckHtml = `<div class="ins-deck" data-ins-deck="${esc(t.id)}">
+      <div class="ls-kind" style="margin-bottom:2px">🎤 ${esc(c ? c.title : 'General Conference')} · ${esc(t.session || '')}</div>
+      ${draft ? '<p class="plain-draft">Draft: not approved yet</p>' : ''}
+      <div class="ins-deck-bars">
+        ${slides.map((_, idx) => `<button type="button" class="ins-deck-bar${idx === 0 ? ' on' : ''}" data-deck-goto="${idx}" aria-label="Slide ${idx + 1} of ${slides.length}"></button>`).join('')}
+      </div>
+      <div class="ins-deck-pills">
+        ${slides.map((sl, idx) => `<button type="button" class="ins-deck-pill${idx === 0 ? ' on' : ''}" data-deck-goto="${idx}">${esc(sl.label)}</button>`).join('')}
+      </div>
+      <div class="ins-deck-track">
+        ${slides.map((sl, idx) => `<div class="ins-deck-slide" data-slide-idx="${idx}">${sl.html}</div>`).join('')}
+      </div>
+      <div class="ins-deck-foot">
+        <button type="button" class="sp-back-btn" data-deck-step="-1">‹ Swipe / Prev</button>
+        <span style="font-size:12px;font-weight:800;color:rgba(255,255,255,.65)" data-deck-indicator>Slide 1 of ${slides.length}</span>
+        <button type="button" class="sp-action-btn" data-deck-step="1" style="font-size:12px;padding:7px 14px;background:#f59e0b;color:#1c1406">Next Slide ›</button>
+      </div>
+    </div>`;
+
+    openSheet(deckHtml);
+    wireInsDeck(initialSlide);
   }
   function markTalk(id) {
     const t = talkById(id), T = S.talks || (S.talks = {});
@@ -20724,11 +20797,21 @@ const TreasureUp = (function () {
       if (scn) {
         const cid = scn.dataset.saveCardNote;
         const found = insightsOf(WEEK).find(y => y.x.id === cid) || (noteKnown.get(cid) && noteKnown.get(cid).i);
+        let txtVal = '', refVal = '';
         if (found && found.x) {
           const x = found.x;
-          const txtVal = (x.title ? x.title + ': ' : '') + (x.text || x.quote || '');
+          txtVal = (x.title ? x.title + ': ' : '') + (x.text || x.quote || '');
+          refVal = x.ref || '';
+        } else {
+          const t = talkById(cid);
+          if (t) {
+            txtVal = `${t.speaker} — “${t.title}”: ${(t.quotes && t.quotes[0]) || t.quick || ''}`;
+            refVal = (t.scriptures && t.scriptures[0]) || '';
+          }
+        }
+        if (txtVal) {
           const imps = S.impressions || (S.impressions = {});
-          imps[seaId('i')] = { text: txtVal.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: x.ref || '', share: false };
+          imps[seaId('i')] = { text: txtVal.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: refVal, share: false };
           save();
           scn.textContent = '✓ Saved to My Notes';
           scn.disabled = true;
@@ -20809,7 +20892,7 @@ const TreasureUp = (function () {
         return;
       }
       const td = e.target.closest('[data-talkdone]');
-      if (td) { markTalk(td.dataset.talkdone); return openTalk(td.dataset.talkdone); }
+      if (td) { markTalk(td.dataset.talkdone); return openTalk(td.dataset.talkdone, 2); }
       const sp = e.target.closest('[data-setpick]');
       if (sp) { const [slot, k, id] = sp.dataset.setpick.split('|'); closeSheet(); setPick(slot, k, id); return; }
       const t = e.target.closest('[data-set-text]');
