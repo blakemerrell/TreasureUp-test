@@ -13,5 +13,11 @@ window.TU_PAST_INDEX = [
     "dates": "September 28–October 4, 2026",
     "title": "Comfort Ye My People",
     "reference": "Isaiah 40–49"
+  },
+  {
+    "num": 41,
+    "dates": "October 5–11, 2026",
+    "title": "He Hath Borne Our Griefs, and Carried Our Sorrows",
+    "reference": "Isaiah 50–57"
   }
 ];
