@@ -24,13 +24,27 @@ export default async function growth({ port }) {
   await p.click('#appSheet [data-coach-goto="2"]'); await wait(300);
   check(/\(0 selected\)/i.test(await sheet()) && !(await p.locator('#appSheet [data-coach-toggle-int].on').count()), 'no interests are picked for him');
   await p.click('#appSheet [data-coach-toggle-int="Basketball"]'); await wait(200);
+  await p.selectOption('#coachCustomArea', 'intellectual');
   await p.fill('#coachCustomInt', 'Fishing'); await p.click('#appSheet [data-coach-add-custom]'); await wait(200);
+  check(await p.locator('#appSheet [data-coach-rm-custom="Fishing"]').count() === 1, 'custom interest appears as a removable chip with its area tag');
   await p.click('#appSheet [data-coach-goto="3"]'); await wait(300);
+  check(await p.locator('#appSheet [data-coach-val].on').count() === 3, 'Core Values Triad defaults to 3 pillars (Faith, Adventure, Integrity)');
+  await p.click('#appSheet [data-coach-subval="Honest Stewardship"]'); await wait(200);
   await p.click('#appSheet [data-coach-sp="Loyal Friend"]'); await wait(200);
   await p.click('#appSheet [data-coach-finish]'); await wait(600);
   const prof = (await state(p)).profile || {};
-  check(prof.born === '2015-04' && prof.who === 'child' && JSON.stringify(prof.interests) === '["Basketball","Fishing"]' && prof.superpower === 'Loyal Friend',
-    `saved: born ${prof.born}, ${prof.who}, ${JSON.stringify(prof.interests)}, ${prof.superpower}`);
+  check(prof.born === '2015-04' && prof.who === 'child' && JSON.stringify(prof.interests) === '["Basketball","Fishing"]' && prof.superpower === 'Loyal Friend'
+    && Array.isArray(prof.coreValues) && prof.coreValues.length === 3 && (prof.subValues || []).includes('Honest Stewardship'),
+    `saved: born ${prof.born}, ${prof.who}, ${JSON.stringify(prof.interests)}, ${prof.superpower}, values ${JSON.stringify(prof.coreValues)}`);
+
+  // The Social Feed tab in Family Study renders cards (including Hebrew/Greek word cards without undefined) and allows liking.
+  await p.click('#tabs [data-tab="study"]'); await wait(400);
+  await p.click('#home [data-study-kind="feed"]'); await wait(400);
+  check(await p.locator('#home .social-feed .sf-card').count() >= 3, 'Social Feed renders vertical study cards');
+  const wordCardTxt = await txt(p, '#home .social-feed .sf-card.sf-word');
+  check(wordCardTxt.length > 10 && !wordCardTxt.includes('undefined'), 'Social Feed Hebrew/Greek word card renders word and meaning without undefined');
+  await p.click('#home .social-feed [data-feed-like] >> nth=0'); await wait(200);
+  check(Object.keys((await state(p)).feedLikes || {}).length === 1, 'loving a Social Feed card saves to feedLikes');
 
   // The Season's ideas, area by area.
   const ideas = async area => {

@@ -30,7 +30,7 @@ export default async function merge({ port }) {
     // Two years' week 39: different weeks, both kept.
     [{ ...base, history: [{ num: 39, title: 'Lesson 39 of 2026' }] }, { ...base, history: [{ num: 39, title: 'Lesson 39 of 2027' }] }, { ...base, history: [] }],
     // The growth profile and the study mode changed here; the family's copy changed something else.
-    [{ ...base, xp: 1010, talks: { t1: { xp: 10 } } }, { ...base, profile: { name: 'Sam', upd: 2 }, studyMode: 'family' }, { ...base }],
+    [{ ...base, xp: 1010, talks: { t1: { xp: 10 } }, feedLikes: { 'sf:1': 100 } }, { ...base, profile: { name: 'Sam', coreValues: ['faith', 'adventure', 'integrity'], upd: 2 }, studyMode: 'family', feedLikes: { 'sf:2': 200 } }, { ...base }],
     // A short finished on both devices since they met (10 XP each), another only here.
     [{ ...base, xp: 1010, shortsDone: { s1: { day, xp: 10 } } }, { ...base, xp: 1030, shortsDone: { s1: { day, xp: 10 }, s2: { day, xp: 20 } } }, { ...base }],
   ]);
@@ -41,7 +41,7 @@ export default async function merge({ port }) {
   check(back.freezes === 1 && !(back.frozen || {})['2026-10-13'], `a freeze given back here is given back once (freezes ${back.freezes}, still frozen: ${!!(back.frozen || {})['2026-10-13']})`);
   check(both.freezes === 0, `both devices using a freeze for the same day costs one (left: ${both.freezes}, want 0)`);
   check(who1.seasonWho === 'adult' && who2.seasonWho === 'adult', `a setting changed on either device is kept (${who1.seasonWho}, ${who2.seasonWho})`);
-  check(prof.profile && prof.profile.name === 'Sam' && prof.studyMode === 'family', `the growth profile and study mode changed here aren't lost (${JSON.stringify(prof.profile)}, ${prof.studyMode})`);
+  check(prof.profile && prof.profile.name === 'Sam' && prof.studyMode === 'family' && prof.feedLikes && prof.feedLikes['sf:1'] && prof.feedLikes['sf:2'], `the growth profile, study mode, and feedLikes changed on either device aren't lost (${JSON.stringify(prof.profile)}, ${prof.studyMode})`);
   check(!!(shorts.shortsDone || {}).s1 && !!(shorts.shortsDone || {}).s2 && shorts.xp === 1030, `shorts done on either device are kept, paid once (${Object.keys(shorts.shortsDone || {})}, xp ${shorts.xp}, want 1030)`);
   check(hist.history.length === 2, `2026's and 2027's week 39 are both kept (${hist.history.length})`);
 
