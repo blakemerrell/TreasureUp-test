@@ -13759,10 +13759,13 @@ const TreasureUp = (function () {
       appId: '1:865412939485:web:f1652b7b6cfa874559e534'
     }
   };
-  const FIREBASE_CONFIG = Object.keys(FIREBASE_PROJECTS)
-    .filter(path => (location.hostname.endsWith('github.io') || (location.hostname === 'localhost' && path === '/TreasureUp-test/')) &&
-                    location.pathname.startsWith(path))
-    .map(path => FIREBASE_PROJECTS[path])[0] || null;
+  const FIREBASE_CONFIG =
+    (location.hostname === 'treasure-up-54eeb.web.app' || location.hostname === 'treasure-up-54eeb.firebaseapp.com') ? FIREBASE_PROJECTS['/TreasureUp/'] :
+    (location.hostname === 'scripturetok-test.web.app' || location.hostname === 'scripturetok-test.firebaseapp.com') ? FIREBASE_PROJECTS['/TreasureUp-test/'] :
+    Object.keys(FIREBASE_PROJECTS)
+      .filter(path => (location.hostname.endsWith('github.io') || (location.hostname === 'localhost' && path === '/TreasureUp-test/')) &&
+                      location.pathname.startsWith(path))
+      .map(path => FIREBASE_PROJECTS[path])[0] || null;
 
   // Firebase loads on first use (the live game, or the family screen) and
   // is shared by both. It waits until it knows who is signed in, so a
