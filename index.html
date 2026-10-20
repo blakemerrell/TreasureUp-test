@@ -13760,8 +13760,8 @@ const TreasureUp = (function () {
     }
   };
   const FIREBASE_CONFIG =
-    (location.hostname === 'treasure-up-54eeb.web.app' || location.hostname === 'treasure-up-54eeb.firebaseapp.com') ? FIREBASE_PROJECTS['/TreasureUp/'] :
-    (location.hostname === 'scripturetok-test.web.app' || location.hostname === 'scripturetok-test.firebaseapp.com') ? FIREBASE_PROJECTS['/TreasureUp-test/'] :
+    /^(treasureup|treasure-up-54eeb)\.(web\.app|firebaseapp\.com)$/.test(location.hostname) ? FIREBASE_PROJECTS['/TreasureUp/'] :
+    /^scripturetok-test\.(web\.app|firebaseapp\.com)$/.test(location.hostname) ? FIREBASE_PROJECTS['/TreasureUp-test/'] :
     Object.keys(FIREBASE_PROJECTS)
       .filter(path => (location.hostname.endsWith('github.io') || (location.hostname === 'localhost' && path === '/TreasureUp-test/')) &&
                       location.pathname.startsWith(path))

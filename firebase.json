@@ -1,6 +1,7 @@
 {
   "firestore": { "rules": "firestore.rules" },
   "hosting": {
+    "site": "treasureup",
     "public": ".",
     "ignore": [
       "firebase.json",
