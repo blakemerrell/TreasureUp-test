@@ -10,7 +10,10 @@
       "**/node_modules/**",
       "tools/**",
       "tests/**",
-      "liberty/art/**"
+      "liberty/art/**",
+      "*mockup*.html",
+      "*canvas*.html",
+      "*.md"
     ],
     "redirects": [
       { "source": "/TreasureUp", "destination": "/", "type": 301 },

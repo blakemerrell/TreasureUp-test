@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreasureUp — Interactive App Flow & Wireframe Storyboard Canvas</title>
+<style>
+  :root {
+    --bg: #070a12;
+    --panel: #111624;
+    --card: #171e31;
+    --border: rgba(255, 255, 255, 0.12);
+    --gold: #fbbf24;
+    --gold-bg: rgba(251, 191, 36, 0.14);
+    --sky: #38bdf8;
+    --sky-bg: rgba(56, 189, 248, 0.14);
+    --emerald: #34d399;
+    --emerald-bg: rgba(52, 211, 153, 0.14);
+    --rose: #fb7185;
+    --rose-bg: rgba(251, 113, 133, 0.14);
+    --purple: #c084fc;
+    --purple-bg: rgba(192, 132, 252, 0.14);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    background: var(--bg);
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--text);
+    line-height: 1.4;
+    padding-bottom: 60px;
+  }
+
+  /* Top Bar */
+  .wf-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 10, 18, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .wf-title-wrap { display: flex; align-items: center; gap: 10px; }
+  .wf-tag {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #090d16;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .wf-title { font-size: 17px; font-weight: 900; color: #fff; }
+  .wf-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .persona-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .persona-btn.on {
+    background: var(--gold-bg);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+
+  /* Legend / Wire Key */
+  .wf-legend {
+    max-width: 1640px;
+    margin: 14px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .wire-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-weight: 800;
+    font-size: 11px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .wp-gold { background: var(--gold-bg); color: #fde68a; border-color: rgba(251,191,36,0.4); }
+  .wp-sky { background: var(--sky-bg); color: #bae6fd; border-color: rgba(56,189,248,0.4); }
+  .wp-rose { background: var(--rose-bg); color: #fecdd3; border-color: rgba(251,113,133,0.4); }
+  .wp-emerald { background: var(--emerald-bg); color: #a7f3d0; border-color: rgba(52,211,153,0.4); }
+
+  /* 4-Column Storyboard Swimlanes */
+  .wf-board {
+    max-width: 1640px;
+    margin: 16px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(340px, 1fr));
+    gap: 18px;
+    overflow-x: auto;
+    align-items: start;
+  }
+
+  .wf-lane {
+    background: rgba(17, 22, 36, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 16px;
+    position: relative;
+  }
+  .wf-lane-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .wf-step-num {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
+  .wf-freq {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .wf-lane-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .wf-lane-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* Wireframe Screen Box */
+  .wf-screen {
+    background: #0b0f1a;
+    border: 1.5px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .wf-screen-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+  }
+  .wf-screen-name {
+    font-size: 12px;
+    font-weight: 900;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .wf-screen-type {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 99px;
+    background: rgba(255,255,255,0.08);
+    color: var(--muted);
+  }
+
+  /* Wire Annotated Slots */
+  .wf-slot {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .wf-slot.wire-gold { border-color: rgba(251, 191, 36, 0.5); background: rgba(251, 191, 36, 0.06); }
+  .wf-slot.wire-sky { border-color: rgba(56, 189, 248, 0.5); background: rgba(56, 189, 248, 0.06); }
+  .wf-slot.wire-rose { border-color: rgba(251, 113, 133, 0.5); background: rgba(251, 113, 133, 0.06); }
+  .wf-slot.wire-emerald { border-color: rgba(52, 211, 153, 0.5); background: rgba(52, 211, 153, 0.06); }
+  .wf-slot.highlight-pulse {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.45);
+  }
+
+  .wire-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  .wb-g { background: rgba(251,191,36,0.22); color: #fde68a; }
+  .wb-s { background: rgba(56,189,248,0.22); color: #bae6fd; }
+  .wb-r { background: rgba(251,113,133,0.22); color: #fecdd3; }
+  .wb-e { background: rgba(52,211,153,0.22); color: #a7f3d0; }
+
+  .wf-label { font-size: 12px; font-weight: 800; color: #fff; margin-bottom: 5px; display: block; }
+  .wf-sub { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+
+  .chip-group { display: flex; flex-wrap: wrap; gap: 5px; }
+  .wf-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #e2e8f0;
+    padding: 4px 9px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.12s;
+  }
+  .wf-chip:hover { border-color: #fff; }
+  .wf-chip.on {
+    background: rgba(251, 191, 36, 0.25);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+  .wf-chip.sky-on {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: var(--sky);
+    color: #bae6fd;
+  }
+  .wf-chip.rose-on {
+    background: rgba(251, 113, 133, 0.25);
+    border-color: var(--rose);
+    color: #fecdd3;
+  }
+
+  .wf-input {
+    width: 100%;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    padding: 7px 9px;
+    color: #fff;
+    font-size: 12px;
+    font-family: inherit;
+    margin-top: 5px;
+  }
+
+  /* Today Path Row Preview */
+  .today-sec-lbl {
+    font-size: 10.5px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 10px 0 5px;
+  }
+  .today-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 10px;
+    border-radius: 11px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .today-row:hover { border-color: rgba(255,255,255,0.28); }
+  .today-row.done {
+    background: rgba(52, 211, 153, 0.1);
+    border-color: rgba(52, 211, 153, 0.4);
+  }
+  .tr-check {
+    width: 20px; height: 20px; border-radius: 6px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900; color: #06281e;
+    flex-shrink: 0;
+  }
+  .today-row.done .tr-check {
+    background: var(--emerald);
+    border-color: var(--emerald);
+  }
+  .tr-body { flex: 1; min-width: 0; }
+  .tr-title { font-size: 12.5px; font-weight: 800; color: #fff; display: block; }
+  .tr-sub { font-size: 11px; color: var(--muted); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tr-xp {
+    font-size: 10.5px; font-weight: 900; color: var(--gold);
+    background: rgba(251,191,36,0.12); padding: 2px 7px; border-radius: 99px;
+  }
+
+  /* Gap Callout Box */
+  .arch-note {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(192, 132, 252, 0.08));
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    color: #e0f2fe;
+    margin-top: 8px;
+  }
+  .arch-note b { color: #fde68a; }
+</style>
+</head>
+<body>
+
+<header class="wf-top">
+  <div class="wf-title-wrap">
+    <span class="wf-tag">System Wireframe & Data Flow</span>
+    <span class="wf-title">How Coaching Modals Seed Morning Council → Today Page → Evening & Season</span>
+  </div>
+  <div class="wf-controls">
+    <span style="font-size:12px;color:var(--muted);font-weight:700">Simulate Persona:</span>
+    <button class="persona-btn on" id="btnAdult" onclick="setPersona('adult')">👔 Parent (Adult / Best Self PRO)</button>
+    <button class="persona-btn" id="btnYouth" onclick="setPersona('kid')">👦 Youth / Child (Age 11 · Luke 2:52)</button>
+    <a class="persona-btn" href="phase2_visual_walkthrough_mockup.html" style="text-decoration:none">🎨 5-Pillar UI Mockups ›</a>
+    <a class="persona-btn" href="index.html" target="_blank" style="text-decoration:none">🚀 Live App ›</a>
+  </div>
+</header>
+
+<!-- Color-Coded Data Wire Key -->
+<div class="wf-legend">
+  <span><b>Click any item in Column 1 or Column 2</b> to watch the data flow live across the screens:</span>
+  <span class="wire-pill wp-gold" onclick="flashWire('wire-gold')">🟡 WIRE A: Core Values Triad & Strengths → Touchstone Banner</span>
+  <span class="wire-pill wp-sky" onclick="flashWire('wire-sky')">🔵 WIRE B: Season Goals / Pro Big Rocks / Interests → Today's ONE Thing</span>
+  <span class="wire-pill wp-rose" onclick="flashWire('wire-rose')">🔴 WIRE C: Roles / Family / Superpower → Hesed & Agape Uplift</span>
+  <span class="wire-pill wp-emerald" onclick="flashWire('wire-emerald')">🟢 WIRE D: Daily Prompt & Reading → Gratitude & Evening Loop</span>
+</div>
+
+<main class="wf-board">
+
+  <!-- =========================================================================
+       COLUMN 1: UPSTREAM CALIBRATION & COACHING MODALS (Set Once / Weekly)
+       ========================================================================= -->
+  <div class="wf-lane">
+    <div class="wf-lane-head">
+      <span class="wf-step-num">Column 1 · Upstream Setup</span>
+      <span class="wf-freq">Calibrated Once / Weekly</span>
+    </div>
+    <div class="wf-lane-title">🧭 Coaching & Season Modals</div>
+    <div class="wf-lane-desc">Where you discover who you are (Values, Strengths, Interests) and set 90-day / weekly priorities. <b>Click chips below to test seeding!</b></div>
+
+    <!-- Modal 1A: Growth Coach Setup -->
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name">Modal A: 🧭 Growth Coach Profile</span>
+        <span class="wf-screen-type">⚙️ Settings / 🌱 Season</span>
+      </div>
+
+      <!-- WIRE A SOURCE -->
+      <div class="wf-slot wire-gold">
+        <span class="wire-badge wb-g">🟡 Wire A Source → S.profile.coreValues</span>
+        <span class="wf-label">Step 3: Core Values Triad (Tap to toggle)</span>
+        <div class="chip-group" id="col1Values"></div>
+        <span class="wf-label" style="margin-top:8px">Signature Strength / Superpower</span>
+        <div class="chip-group" id="col1Strengths"></div>
+      </div>
+
+      <!-- WIRE B SOURCE 1: INTERESTS -->
+      <div class="wf-slot wire-sky">
+        <span class="wire-badge wb-s">🔵 Wire B Source 1 → S.profile.interests</span>
+        <span class="wf-label">Step 2: Interests & Pursuits (Tap to toggle)</span>
+        <div class="chip-group" id="col1Interests"></div>
+      </div>
+    </div>
+
+    <!-- Modal 1B: Season / Pro Weekly Planner -->
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name" id="col1PlanTitle">Modal B: 🌱 Season & ✨ Pro Planner</span>
+        <span class="wf-screen-type">🌱 Season Tab</span>
+      </div>
+
+      <!-- WIRE B SOURCE 2: ACTIVE GOALS / BIG ROCKS -->
+      <div class="wf-slot wire-sky">
+        <span class="wire-badge wb-s">🔵 Wire B Source 2 → Active Goals & Big Rocks</span>
+        <span class="wf-label" id="col1GoalsLabel">Active 90-Day Goals & Weekly Big Rocks</span>
+        <div class="chip-group" id="col1Goals"></div>
+      </div>
+
+      <!-- WIRE C SOURCE: ROLES & PEOPLE -->
+      <div class="wf-slot wire-rose">
+        <span class="wire-badge wb-r">🔴 Wire C Source → Roles & Covenant Circle</span>
+        <span class="wf-label">Who Matters Most (Roles & Family)</span>
+        <div class="chip-group" id="col1People"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       COLUMN 2: MORNING COUNCIL MODAL (Seeded from Column 1 Every Morning)
+       ========================================================================= -->
+  <div class="wf-lane">
+    <div class="wf-lane-head">
+      <span class="wf-step-num">Column 2 · Morning Modal</span>
+      <span class="wf-freq">Every Morning (2 Min)</span>
+    </div>
+    <div class="wf-lane-title">🌅 Morning Council Sheet</div>
+    <div class="wf-lane-desc">Opened from the top of Today. Automatically seeded by Column 1 so you never stare at a blank page. <b>Tap any seeded chip below!</b></div>
+
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name" id="mcModalTitle">🌅 Morning Council · Best Self</span>
+        <span class="wf-screen-type"> blueprintSheetHtml()</span>
+      </div>
+
+      <!-- Step 0: Inline Be Still -->
+      <div class="wf-slot wire-emerald" style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <span class="wire-badge wb-e">🟢 Step 1 · Stillness</span>
+          <span class="wf-label" style="margin:0">🕊️ Be Still & Know (60s Breath)</span>
+        </div>
+        <button class="wf-chip on" id="mcStillBtn" onclick="toggleStill()">✓ Done (+10 XP)</button>
+      </div>
+
+      <!-- WIRE A DESTINATION: TOUCHSTONE BANNER -->
+      <div class="wf-slot wire-gold">
+        <span class="wire-badge wb-g">🟡 Seeded by Wire A (Values + Strength)</span>
+        <span class="wf-label">🏛️ My Core Values Triad Touchstone</span>
+        <div class="chip-group" id="mcTriadPills" style="margin-bottom:6px"></div>
+        <div class="wf-sub" id="mcStrengthPrompt" style="color:#fde68a;margin:0"></div>
+      </div>
+
+      <!-- WIRE D DESTINATION: GRATITUDE -->
+      <div class="wf-slot wire-emerald">
+        <span class="wire-badge wb-e">🟢 Seeded by Wire D (Today's Rotating Prompt)</span>
+        <span class="wf-label">🙏 Morning Gratitude</span>
+        <div class="wf-sub" id="mcGratPrompt">Prompt: “Something in Jeremiah 1–2 you’re thankful for?”</div>
+        <input class="wf-input" id="mcGratInput" value="God knew us personally before we were born (Jeremiah 1:5)" oninput="renderCol3And4()">
+      </div>
+
+      <!-- WIRE B DESTINATION: THE ONE THING -->
+      <div class="wf-slot wire-sky">
+        <span class="wire-badge wb-s">🔵 Seeded by Wire B (Goals + Big Rocks + Coach)</span>
+        <span class="wf-label" id="mcOneThingLabel">🎯 Today’s ONE Thing (Lead Domino)</span>
+        <div class="wf-sub">Tap a seeded chip from your Season Goals, Pro Big Rocks, or Coach Interests:</div>
+        <div class="chip-group" id="mcGoalChips"></div>
+        <input class="wf-input" id="mcOneThingInput" oninput="renderCol3And4()">
+      </div>
+
+      <!-- WIRE C DESTINATION: HESED & AGAPE UPLIFT -->
+      <div class="wf-slot wire-rose">
+        <span class="wire-badge wb-r">🔴 Seeded by Wire C (Roles + Family + Strength)</span>
+        <span class="wf-label">🤝 Someone to Uplift · Hesed & Agape</span>
+        <div class="wf-sub">Tap a seeded person/role prompt:</div>
+        <div class="chip-group" id="mcUpliftChips"></div>
+        <input class="wf-input" id="mcUpliftInput" oninput="renderCol3And4()">
+      </div>
+    </div>
+
+    <div class="arch-note">
+      <b>🔧 Why this wireframe matters:</b> Right now in `index.html`, Box 3 (`#bpOneThing`) only checks Simple Mode `S.seasons` goals. By connecting <b>Wire B</b> to Pro Big Rocks + Coach Interests and <b>Wire C</b> to your Roles/Strengths, Morning Council is rich every single day!
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       COLUMN 3: MAIN SCREEN — TODAY PAGE HAPPY PATH
+       ========================================================================= -->
+  <div class="wf-lane">
+    <div class="wf-lane-head">
+      <span class="wf-step-num">Column 3 · Main Screen</span>
+      <span class="wf-freq">☀️ Today Tab (pathDayHtml)</span>
+    </div>
+    <div class="wf-lane-title">☀️ Today Page (Main Flow)</div>
+    <div class="wf-lane-desc">How the Morning Council outputs land on the main Today screen. <b>Click any row below to check it off and watch XP + Column 4 update!</b></div>
+
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name">☀️ Today · Monday, Oct 19</span>
+        <span class="wf-screen-type" id="todayXpBadge">🔥 Streak · 1,240 XP</span>
+      </div>
+
+      <!-- Core Walk Celebration Banner -->
+      <div id="coreWalkBanner" style="border-radius:12px;padding:10px 12px;margin-bottom:10px;border:1px solid rgba(251,191,36,0.4);background:rgba(251,191,36,0.1)"></div>
+
+      <div class="today-sec-lbl">🌅 Morning</div>
+      <div id="todayMorningRows"></div>
+
+      <div class="today-sec-lbl">📖 Today's Scripture Feast (Core Walk)</div>
+      <div id="todayScriptureRows"></div>
+
+      <div class="today-sec-lbl">🎯 Today's Goals (Live from Morning Council!)</div>
+      <div id="todayGoalRows"></div>
+
+      <div class="today-sec-lbl">🤿 Go Further (Optional Bonus Explorer)</div>
+      <div class="today-row" onclick="this.classList.toggle('done')">
+        <div class="tr-check">✓</div>
+        <div class="tr-body">
+          <span class="tr-title">🎤 Talk a day · 1 of 37</span>
+          <span class="tr-sub">3-Slide Conference Story Deck · Tap when you have time</span>
+        </div>
+        <span class="tr-xp">+20 XP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       COLUMN 4: EVENING RETURN & REPORT + SEASON / SOCIAL FEEDBACK LOOP
+       ========================================================================= -->
+  <div class="wf-lane">
+    <div class="wf-lane-head">
+      <span class="wf-step-num">Column 4 · Feedback Loop</span>
+      <span class="wf-freq">Evening & 🌱 Season Sync</span>
+    </div>
+    <div class="wf-lane-title">🌙 Evening & 🌱 Season Sync</div>
+    <div class="wf-lane-desc">Checking off items on Today automatically advances your Season/Pro progress, feeds Evening Return & Report, and creates Social Feed cards.</div>
+
+    <!-- Evening Return & Report Preview -->
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name">🌙 Evening Return & Report</span>
+        <span class="wf-screen-type">eveningSheetHtml()</span>
+      </div>
+
+      <div class="wf-slot wire-sky">
+        <span class="wire-badge wb-s">🔵 Auto-Recap of Today's Morning Council</span>
+        <span class="wf-label">Did I live my Morning Council today?</span>
+        <div id="evRecapList" style="font-size:12px;color:#e2e8f0;margin-top:4px"></div>
+      </div>
+
+      <div class="wf-slot wire-emerald">
+        <span class="wire-badge wb-e">🟢 Alma 34:38 · Tender Mercies</span>
+        <span class="wf-label">✨ Where did I see the Lord's hand today?</span>
+        <input class="wf-input" value="Felt peace during Morning Stillness and great 1-on-1 time.">
+      </div>
+    </div>
+
+    <!-- Season & Pro Progress Sync -->
+    <div class="wf-screen">
+      <div class="wf-screen-bar">
+        <span class="wf-screen-name">🌱 Season & ✨ Social Feed Sync</span>
+        <span class="wf-screen-type">Two-Way State</span>
+      </div>
+
+      <div class="wf-slot wire-sky">
+        <span class="wire-badge wb-s">🔵 Season / Pro Goal Tracker</span>
+        <div id="seasonSyncStatus" style="font-size:12px;color:#bae6fd"></div>
+      </div>
+
+      <div class="wf-slot wire-gold">
+        <span class="wire-badge wb-g">🟡 ✨ Social Feed & Family Chat</span>
+        <div id="socialSyncPreview" style="font-size:12px;color:#fde68a"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const STATE = {
+    persona: 'adult',
+    adult: {
+      values: ['🕊️ FAITH', '🏔️ ADVENTURE', '🛡️ INTEGRITY'],
+      allValues: ['🕊️ FAITH', '🏔️ ADVENTURE', '🛡️ INTEGRITY', '❤️ HESED LOVE', '💡 WISDOM', '⚡ VITALITY'],
+      strength: 'Strategic',
+      allStrengths: ['Strategic', 'Achiever', 'Ideation', 'Maximizer', 'Relator', 'Developer'],
+      interests: ['Business / Building', 'Family 1-on-1s', 'Fitness & Training'],
+      allInterests: ['Business / Building', 'Family 1-on-1s', 'Fitness & Training', 'Scripture Feasting', 'Writing / Creating', 'Financial Stewardship'],
+      goals: [
+        { text: '90-Min Deep Work on #1 Business Domino', src: '✨ Pro Big Rock' },
+        { text: 'Morning Conditioning / Workout (45m)', src: '🌱 Physical Goal' },
+        { text: 'Protected 1-on-1 Kid Adventure', src: '🌱 Social Goal' }
+      ],
+      people: [
+        { label: 'My Spouse', prompt: 'Send a heartfelt note & plan Friday date night' },
+        { label: '1-on-1 with Son', prompt: 'Play 15 min of Pickleball or Title of Liberty together' },
+        { label: 'Shop Floor Team', prompt: 'Encourage a team member with specific praise today' }
+      ],
+      oneThing: '90-Min Deep Work on #1 Business Domino',
+      uplift: 'Play 15 min of Pickleball or Title of Liberty together'
+    },
+    kid: {
+      values: ['🕊️ FAITH', '🏔️ ADVENTURE', '🛡️ INTEGRITY'],
+      allValues: ['🕊️ FAITH', '🏔️ ADVENTURE', '🛡️ INTEGRITY', '❤️ KINDNESS', '💡 CURIOUS', '⚡ ENERGY'],
+      strength: 'Loyal Friend',
+      allStrengths: ['Loyal Friend', 'Creative Builder', 'Fast Learner', 'Joyful Energy', 'Peacekeeper'],
+      interests: ['Basketball', 'Trumpet', 'Making YouTube Videos'],
+      allInterests: ['Basketball', 'Trumpet', 'Making YouTube Videos', 'Pickleball', 'Building things / LEGO', 'Outdoor Boys Stuff'],
+      goals: [
+        { text: 'Shoot 50 Basketball Free Throws (15m)', src: '🏀 Physical Quest' },
+        { text: 'Practice Trumpet Song for 15 Minutes', src: '🎺 Mind Quest' },
+        { text: 'Getting Ready for 12 · Learn Deacons Quorum Duty', src: '🕊️ Turning-12 Quest' }
+      ],
+      people: [
+        { label: 'Mom or Dad', prompt: 'Say a genuine thank you to Mom or Dad without being asked' },
+        { label: 'Friend at School', prompt: 'Sit by or invite a friend who is alone at lunch' },
+        { label: 'Brother / Sister', prompt: 'Help a sibling or share something fun together' }
+      ],
+      oneThing: 'Shoot 50 Basketball Free Throws (15m)',
+      uplift: 'Say a genuine thank you to Mom or Dad without being asked'
+    },
+    stillDone: true,
+    readDone: false,
+    shortDone: false,
+    oneDone: false,
+    upliftDone: false
+  };
+
+  function curP() { return STATE[STATE.persona]; }
+
+  function setPersona(p) {
+    STATE.persona = p;
+    document.getElementById('btnAdult').classList.toggle('on', p === 'adult');
+    document.getElementById('btnYouth').classList.toggle('on', p === 'kid');
+    renderAll();
+  }
+
+  function toggleValue(v) {
+    const p = curP();
+    const idx = p.values.indexOf(v);
+    if (idx >= 0 && p.values.length > 1) p.values.splice(idx, 1);
+    else if (idx < 0) {
+      if (p.values.length >= 3) p.values.shift();
+      p.values.push(v);
+    }
+    renderAll();
+  }
+
+  function selectStrength(s) {
+    curP().strength = s;
+    renderAll();
+  }
+
+  function toggleInterest(it) {
+    const p = curP();
+    const idx = p.interests.indexOf(it);
+    if (idx >= 0) p.interests.splice(idx, 1);
+    else p.interests.push(it);
+    renderAll();
+  }
+
+  function pickOneThing(txt) {
+    curP().oneThing = txt;
+    document.getElementById('mcOneThingInput').value = txt;
+    renderAll();
+  }
+
+  function pickUplift(txt) {
+    curP().uplift = txt;
+    document.getElementById('mcUpliftInput').value = txt;
+    renderAll();
+  }
+
+  function toggleStill() {
+    STATE.stillDone = !STATE.stillDone;
+    renderAll();
+  }
+
+  function flashWire(cls) {
+    document.querySelectorAll('.wf-slot').forEach(el => el.classList.remove('highlight-pulse'));
+    document.querySelectorAll('.' + cls).forEach(el => {
+      el.classList.add('highlight-pulse');
+      setTimeout(() => el.classList.remove('highlight-pulse'), 1400);
+    });
+  }
+
+  function renderAll() {
+    const p = curP();
+    const isKid = STATE.persona === 'kid';
+
+    // Column 1: Values
+    document.getElementById('col1Values').innerHTML = p.allValues.map(v =>
+      `<span class="wf-chip${p.values.includes(v) ? ' on' : ''}" onclick="toggleValue('${v}')">${v}</span>`
+    ).join('');
+
+    // Column 1: Strengths
+    document.getElementById('col1Strengths').innerHTML = p.allStrengths.map(s =>
+      `<span class="wf-chip${p.strength === s ? ' on' : ''}" onclick="selectStrength('${s}')">⚡ ${s}</span>`
+    ).join('');
+
+    // Column 1: Interests
+    document.getElementById('col1Interests').innerHTML = p.allInterests.map(it =>
+      `<span class="wf-chip${p.interests.includes(it) ? ' sky-on' : ''}" onclick="toggleInterest('${it}')">${it}</span>`
+    ).join('');
+
+    // Column 1: Goals
+    document.getElementById('col1GoalsLabel').textContent = isKid ? 'Active Luke 2:52 Quests (Season Tab)' : 'Active Pro Big Rocks & Season Goals';
+    document.getElementById('col1Goals').innerHTML = p.goals.map(g =>
+      `<span class="wf-chip sky-on" onclick="pickOneThing('${g.text}')">${g.src}: ${g.text}</span>`
+    ).join('');
+
+    // Column 1: People
+    document.getElementById('col1People').innerHTML = p.people.map(pe =>
+      `<span class="wf-chip rose-on" onclick="pickUplift('${pe.prompt}')">🤝 ${pe.label}</span>`
+    ).join('');
+
+    // Column 2: Morning Council
+    document.getElementById('mcModalTitle').textContent = isKid ? '🌟 Morning Council · Walk with Him' : '🌅 Morning Council · Best Self';
+    const sb = document.getElementById('mcStillBtn');
+    sb.textContent = STATE.stillDone ? '✓ Stillness Done (+10 XP)' : '▶ Start 60s Breath';
+    sb.classList.toggle('on', STATE.stillDone);
+
+    document.getElementById('mcTriadPills').innerHTML = p.values.map(v =>
+      `<span class="wf-chip on">${v}</span>`
+    ).join('');
+    document.getElementById('mcStrengthPrompt').innerHTML =
+      `⚡ <b>Strength Lens (${p.strength}):</b> How can I use my <i>${p.strength}</i> gift to live ${p.values.join(' · ')} today?`;
+
+    // Seeded Goal Chips in Column 2 (combining Season/Pro Goals + Coach Interest Ideas!)
+    const interestChips = p.interests.slice(0, 2).map(it => ({
+      text: isKid ? `Practice ${it} for 20 min` : `30m Strategic Block: ${it}`,
+      src: '🧭 Coach Idea'
+    }));
+    const allSeedGoals = [...p.goals, ...interestChips];
+    document.getElementById('mcOneThingLabel').textContent = isKid ? '🎯 My #1 Quest Today (The ONE Thing)' : '🎯 Today’s ONE Thing (Lead Domino)';
+    document.getElementById('mcGoalChips').innerHTML = allSeedGoals.map(g =>
+      `<span class="wf-chip${p.oneThing === g.text ? ' sky-on' : ''}" onclick="pickOneThing('${g.text}')">+ ${g.text} <small style="opacity:.7">(${g.src})</small></span>`
+    ).join('');
+    document.getElementById('mcOneThingInput').value = p.oneThing;
+
+    document.getElementById('mcUpliftChips').innerHTML = p.people.map(pe =>
+      `<span class="wf-chip${p.uplift === pe.prompt ? ' rose-on' : ''}" onclick="pickUplift('${pe.prompt}')">+ ${pe.label}</span>`
+    ).join('');
+    document.getElementById('mcUpliftInput').value = p.uplift;
+
+    renderCol3And4();
+  }
+
+  function renderCol3And4() {
+    const p = curP();
+    p.oneThing = document.getElementById('mcOneThingInput').value;
+    p.uplift = document.getElementById('mcUpliftInput').value;
+    const grat = document.getElementById('mcGratInput').value;
+
+    const bpDone = !!(p.oneThing || p.uplift);
+    const coreCount = (STATE.stillDone ? 1 : 0) + (bpDone ? 1 : 0) + (STATE.readDone ? 1 : 0);
+
+    // Core Walk Banner
+    const banner = document.getElementById('coreWalkBanner');
+    if (coreCount === 3) {
+      banner.style.background = 'rgba(52, 211, 153, 0.16)';
+      banner.style.borderColor = 'rgba(52, 211, 153, 0.5)';
+      banner.innerHTML = `<div style="font-size:12.5px;font-weight:900;color:#6ee7b7">🎉 Core Daily Walk Complete! (3 of 3 Done)</div>
+        <div style="font-size:11px;color:#d1fae5">You slowed down, counseled with the Lord, and feasted on His word. Everything below is bonus explorer credit!</div>`;
+    } else {
+      banner.style.background = 'rgba(251, 191, 36, 0.1)';
+      banner.style.borderColor = 'rgba(251, 191, 36, 0.4)';
+      banner.innerHTML = `<div style="font-size:12.5px;font-weight:900;color:#fde68a">☀️ Core Daily Walk · ${coreCount} of 3 Done</div>
+        <div style="font-size:11px;color:#fef3c7">1. Be Still → 2. Morning Council → 3. Read Jeremiah 1–2 (Check them off below!)</div>`;
+    }
+
+    // Morning Rows
+    document.getElementById('todayMorningRows').innerHTML = `
+      <div class="today-row ${STATE.stillDone ? 'done' : ''}" onclick="STATE.stillDone=!STATE.stillDone;renderAll()">
+        <div class="tr-check">${STATE.stillDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">🕊️ Be still</span>
+          <span class="tr-sub">“Be still, and know that I am God” (Psalm 46:10)</span>
+        </div>
+        <span class="tr-xp">+10 XP</span>
+      </div>
+      <div class="today-row ${bpDone ? 'done' : ''}">
+        <div class="tr-check">${bpDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">${STATE.persona === 'kid' ? '🌟 Morning Council' : '🌅 Morning Council'}</span>
+          <span class="tr-sub">⭐ ${p.oneThing || 'Tap to set'} · 🤝 ${p.uplift || ''}</span>
+        </div>
+        <span class="tr-xp">+15 XP</span>
+      </div>
+    `;
+
+    // Scripture Rows
+    document.getElementById('todayScriptureRows').innerHTML = `
+      <div class="today-row ${STATE.readDone ? 'done' : ''}" onclick="STATE.readDone=!STATE.readDone;renderCol3And4()">
+        <div class="tr-check">${STATE.readDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">📖 Read Jeremiah 1–2</span>
+          <span class="tr-sub">4 min · Plain English + 4 Verse Commentaries inside</span>
+        </div>
+        <span class="tr-xp">+25 XP</span>
+      </div>
+      <div class="today-row ${STATE.shortDone ? 'done' : ''}" onclick="STATE.shortDone=!STATE.shortDone;renderCol3And4()">
+        <div class="tr-check">${STATE.shortDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">⚡ Come Follow Me · 2-Min Short</span>
+          <span class="tr-sub">“Before I Formed Thee in the Belly I Knew Thee”</span>
+        </div>
+        <span class="tr-xp">+15 XP</span>
+      </div>
+    `;
+
+    // Goal Rows (Seeded by Morning Council!)
+    document.getElementById('todayGoalRows').innerHTML = `
+      <div class="today-row ${STATE.oneDone ? 'done' : ''}" onclick="STATE.oneDone=!STATE.oneDone;renderCol3And4()">
+        <div class="tr-check">${STATE.oneDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">${p.oneThing || 'Set your ONE Thing in Morning Council'}</span>
+          <span class="tr-sub">⭐ Today's ONE Thing · Linked to Season / Pro Goal</span>
+        </div>
+        <span class="tr-xp">+10 XP</span>
+      </div>
+      <div class="today-row ${STATE.upliftDone ? 'done' : ''}" onclick="STATE.upliftDone=!STATE.upliftDone;renderCol3And4()">
+        <div class="tr-check">${STATE.upliftDone ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">${p.uplift || 'Set Someone to Uplift in Morning Council'}</span>
+          <span class="tr-sub">🤝 Someone to uplift · Hesed & Agape</span>
+        </div>
+        <span class="tr-xp">+10 XP</span>
+      </div>
+      <div class="today-row ${grat ? 'done' : ''}">
+        <div class="tr-check">${grat ? '✓' : ''}</div>
+        <div class="tr-body">
+          <span class="tr-title">🙏 Grateful for… (Auto-synced from Morning Council!)</span>
+          <span class="tr-sub">${grat || 'Write 1 gratitude line in Morning Council'}</span>
+        </div>
+        <span class="tr-xp">+10 XP</span>
+      </div>
+    `;
+
+    // Column 4: Evening Recap & Season Sync
+    document.getElementById('evRecapList').innerHTML = `
+      <div style="margin-bottom:4px">${STATE.oneDone ? '✅' : '⬜'} <b>ONE Thing:</b> ${p.oneThing}</div>
+      <div style="margin-bottom:4px">${STATE.upliftDone ? '✅' : '⬜'} <b>Hesed Uplift:</b> ${p.uplift}</div>
+      <div>${STATE.readDone ? '✅' : '⬜'} <b>Scripture Feast:</b> Jeremiah 1–2</div>
+    `;
+
+    document.getElementById('seasonSyncStatus').innerHTML = STATE.oneDone
+      ? `✅ <b>Ticked on Today!</b> Automatically marked complete in your <b>🌱 Season / ✨ Pro Weekly Big Rocks</b> (+10 XP).`
+      : `⏳ Waiting: When you check off <b>“${p.oneThing}”</b> on Today (Column 3), it automatically ticks your Season/Pro goal here.`;
+
+    document.getElementById('socialSyncPreview').innerHTML = `
+      <b>✨ Social Feed Card Generated:</b><br>
+      “🌅 ${STATE.persona === 'kid' ? 'Youth' : 'Parent'}’s ONE Thing: ${p.oneThing} · 🤝 Uplifting: ${p.uplift}”
+    `;
+  }
+
+  renderAll();
+</script>
+</body>
+</html>

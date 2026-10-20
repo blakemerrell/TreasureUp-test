@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreasureUp — 5-Pillar Visual Walkthrough & Dial-In Workbench</title>
+<style>
+  :root {
+    --bg: #0b0e17;
+    --card: #131826;
+    --card-hi: #1a2134;
+    --border: rgba(255, 255, 255, 0.11);
+    --gold: #fbbf24;
+    --gold-dim: rgba(251, 191, 36, 0.16);
+    --emerald: #34d399;
+    --indigo: #818cf8;
+    --purple: #c084fc;
+    --rose: #fb7185;
+    --sky: #38bdf8;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+    padding-bottom: 60px;
+  }
+  /* Top Workbench Header */
+  .wb-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 14, 23, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+  }
+  .wb-header-top {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .wb-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wb-badge {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: #1c1406;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .wb-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .wb-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .wb-link {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--border);
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .wb-link:hover, .wb-link.active {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  /* Pillar Nav Bar */
+  .wb-nav {
+    max-width: 1360px;
+    margin: 12px auto 0;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .wb-tab {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 9px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .wb-tab:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.09);
+  }
+  .wb-tab.on {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.08));
+    border-color: var(--gold);
+    color: #fde68a;
+    box-shadow: 0 4px 14px rgba(251, 191, 36, 0.15);
+  }
+
+  /* Main Container */
+  .wb-main {
+    max-width: 1360px;
+    margin: 24px auto;
+    padding: 0 20px;
+  }
+  .pillar-sec { display: none; }
+  .pillar-sec.on { display: block; }
+
+  .pillar-intro {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .pillar-intro h2 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .pillar-intro p {
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 780px;
+  }
+  .dial-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .dial-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #bae6fd;
+  }
+
+  /* Side-by-Side Comparison Grid */
+  .cmp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .cmp-col {
+    background: rgba(19, 24, 38, 0.65);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 18px;
+  }
+  .cmp-col.upgrade {
+    background: linear-gradient(180deg, rgba(30, 27, 75, 0.45), rgba(19, 24, 38, 0.85));
+    border-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+  .cmp-col-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .cmp-col-title {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cmp-col-badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .badge-curr {
+    background: rgba(148, 163, 184, 0.16);
+    color: #cbd5e1;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+  }
+  .badge-next {
+    background: rgba(52, 211, 153, 0.18);
+    color: #6ee7b7;
+    border: 1px solid rgba(52, 211, 153, 0.4);
+  }
+
+  /* Phone Frame Simulator */
+  .phone-frame {
+    background: #0d111c;
+    border: 2px solid rgba(255, 255, 255, 0.13);
+    border-radius: 24px;
+    padding: 16px;
+    max-width: 440px;
+    margin: 0 auto;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 28px rgba(0,0,0,0.4);
+  }
+
+  /* App Components inside Phone Frame */
+  .sh-title { font-size: 19px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .sh-small { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+  .values-triad-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(99, 102, 241, 0.12));
+    border: 1px solid rgba(251, 191, 36, 0.38);
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  .vt-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .vt-pillars { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 5px; }
+  .vt-pill {
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(251, 191, 36, 0.45);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .bp-sec {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .bp-sec-priority { border-color: rgba(251, 191, 36, 0.35); background: rgba(251, 191, 36, 0.05); }
+  .bp-sec-uplift { border-color: rgba(244, 63, 94, 0.3); background: rgba(244, 63, 94, 0.05); }
+  .bp-sec-gratitude { border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.05); }
+  .bp-sec-title { font-size: 13px; font-weight: 800; color: #fff; display: block; margin-bottom: 4px; }
+  .bp-textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    padding: 8px 10px;
+    color: #fff;
+    font-size: 13px;
+    resize: none;
+    font-family: inherit;
+  }
+  .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+  .chip {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .chip.on {
+    background: rgba(251, 191, 36, 0.22);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+  .btn-gold {
+    width: 100%;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1c1406;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 16px;
+    font-weight: 900;
+    font-size: 13.5px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* Dialed-In Tactile Values Cards */
+  .tactile-triad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .tactile-card {
+    background: linear-gradient(160deg, rgba(251, 191, 36, 0.18), rgba(15, 23, 42, 0.92));
+    border: 1px solid rgba(251, 191, 36, 0.45);
+    border-radius: 12px;
+    padding: 9px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s;
+  }
+  .tactile-card:hover { transform: translateY(-2px); border-color: #fde68a; }
+  .tactile-card .tc-ic { font-size: 20px; display: block; margin-bottom: 2px; }
+  .tactile-card .tc-nm { font-size: 11px; font-weight: 900; letter-spacing: 0.05em; color: #fde68a; display: block; }
+  .tactile-card .tc-sub { font-size: 10px; color: rgba(255,255,255,0.75); display: block; margin-top: 2px; }
+
+  /* Inline Be Still Breath Bar */
+  .still-inline {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.12));
+    border: 1px solid rgba(56, 189, 248, 0.38);
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .still-orb {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #38bdf8, #4f46e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+    animation: pulseOrb 4s infinite ease-in-out;
+    flex-shrink: 0;
+  }
+  @keyframes pulseOrb {
+    0%, 100% { transform: scale(0.95); opacity: 0.85; }
+    50% { transform: scale(1.12); opacity: 1; }
+  }
+
+  /* Values Deck Full Cards (Pillar 2) */
+  .vdeck-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 8px 0 12px;
+  }
+  .vdeck-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .vdeck-card.on {
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.18), rgba(99, 102, 241, 0.12));
+    border-color: var(--gold);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+  }
+  .vdeck-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .vdeck-name { font-size: 12px; font-weight: 900; color: #fff; }
+  .vdeck-desc { font-size: 11px; color: var(--muted); line-height: 1.3; }
+
+  /* CliftonStrengths Domain Groups */
+  .cs-domain {
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.025);
+  }
+  .cs-domain-head {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Story Deck Simulator (Pillar 3) */
+  .deck-bars { display: flex; gap: 5px; margin: 8px 0; }
+  .deck-bar { flex: 1; height: 4px; border-radius: 99px; background: rgba(255,255,255,0.16); border: none; cursor: pointer; }
+  .deck-bar.on { background: var(--gold); }
+  .deck-pills { display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; }
+  .deck-pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .deck-pill.on {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+  .deck-slide {
+    background: linear-gradient(165deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    padding: 16px;
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ins-quote {
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px;
+    background: rgba(251, 191, 36, 0.07);
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    font-size: 13.5px;
+    color: #fef3c7;
+  }
+
+  /* Social Feed Cards (Pillar 4) */
+  .sf-card {
+    background: linear-gradient(165deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .sf-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .sf-author { display: flex; align-items: center; gap: 8px; }
+  .sf-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(251, 191, 36, 0.16);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+  }
+  .sf-name { font-size: 12.5px; font-weight: 800; color: #fff; display: block; }
+  .sf-sub { font-size: 11px; color: var(--muted); display: block; }
+  .sf-tag {
+    font-size: 10.5px; font-weight: 800; padding: 3px 8px;
+    border-radius: 999px; background: rgba(255,255,255,0.08); color: #cbd5e1;
+  }
+  .sf-actions {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .sf-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #e2e8f0;
+    border-radius: 999px;
+    padding: 5px 11px;
+    font-size: 11.5px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .sf-btn.liked { background: rgba(244, 63, 94, 0.2); border-color: #fb7185; color: #fda4af; }
+  .sf-btn.primary { margin-left: auto; background: rgba(251, 191, 36, 0.18); border-color: var(--gold); color: #fde68a; }
+
+  /* Instagram Poster Visual Card (Upgrade Proposal) */
+  .ig-poster {
+    border-radius: 16px;
+    padding: 22px 18px;
+    background: radial-gradient(circle at 20% 15%, rgba(245, 158, 11, 0.32), rgba(49, 46, 129, 0.85) 60%, #090d16 100%);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 8px 0;
+  }
+  .ig-poster-kicker {
+    font-size: 10.5px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fde68a;
+    margin-bottom: 8px;
+  }
+  .ig-poster-quote {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .ig-poster-ref {
+    font-size: 12px;
+    font-weight: 800;
+    color: #cbd5e1;
+  }
+  .veo-card {
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 78, 59, 0.6));
+    border: 1px solid rgba(52, 211, 153, 0.45);
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .veo-stage {
+    border-radius: 12px;
+    background: linear-gradient(160deg, #1e1b4b, #0f172a);
+    border: 1px solid rgba(255,255,255,0.16);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 8px 0;
+  }
+  .veo-play {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(251, 191, 36, 0.92);
+    color: #1c1406;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 900;
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+  }
+
+  /* Verse Commentary Box (Pillar 5) */
+  .vn-comm-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-height: 210px;
+    overflow-y: auto;
+  }
+  .vn-comm-item {
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .vn-comm-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    font-weight: 800;
+    color: #fde68a;
+    font-size: 11px;
+  }
+  .vn-insert-btn {
+    background: rgba(251, 191, 36, 0.16);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    color: #fde68a;
+    border-radius: 99px;
+    padding: 2px 8px;
+    font-size: 10.5px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header class="wb-header">
+  <div class="wb-header-top">
+    <div class="wb-brand">
+      <span class="wb-badge">Interactive Workbench</span>
+      <span class="wb-title">TreasureUp — Reviewing & Dialing In the 5 Pillars (`45df1e6`)</span>
+    </div>
+    <div class="wb-links">
+      <a class="wb-link active" href="index.html" target="_blank">🚀 Open Live Local App (localhost:8090) ↗</a>
+    </div>
+  </div>
+  <nav class="wb-nav" id="pillarNav">
+    <button class="wb-tab on" data-pillar="p1">1. ☀️ Today & Morning Council</button>
+    <button class="wb-tab" data-pillar="p2">2. 🧭 Best Self & Values Deck</button>
+    <button class="wb-tab" data-pillar="p3">3. 🎴 Swipeable Story Decks</button>
+    <button class="wb-tab" data-pillar="p4">4. ✨ Social Feed & Family Cartoons</button>
+    <button class="wb-tab" data-pillar="p5">5. ✍️ Verse Commentary & Notes</button>
+  </nav>
+</header>
+
+<main class="wb-main">
+
+  <!-- =====================================================================
+       PILLAR 1: TODAY PAGE & MORNING COUNCIL
+       ===================================================================== -->
+  <section class="pillar-sec on" id="p1">
+    <div class="pillar-intro">
+      <div>
+        <h2>Pillar 1: Today's Happy Path, Be Still & Morning Council</h2>
+        <p>Your vision: <i>"Start the app, take a moment to be still, write some notes of gratitude, and dive into the scriptures—feeling like you accomplished something when you've done the main things without guilt."</i></p>
+        <div class="dial-list">
+          <span class="dial-tag">✓ Built in 45df1e6: Core Values Triad Banner</span>
+          <span class="dial-tag">✓ Built in 45df1e6: Gary Keller's The ONE Thing</span>
+          <span class="dial-tag">✓ Built in 45df1e6: Hesed & Agape Prompt</span>
+          <span class="dial-tag">✨ Dial-In Idea: Inline 60s Be Still Breath + Tactile Values Cards</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- LEFT: CURRENT (45df1e6) -->
+      <div class="cmp-col">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">Current on Branch (`45df1e6`)</span>
+          <span class="cmp-col-badge badge-curr">Live in Repo</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">🌅 Morning Council · Best Self</div>
+          <p class="sh-small">Alma 37:37 · Counsel with the Lord in all thy doings</p>
+
+          <div class="values-triad-banner">
+            <div class="vt-row">
+              <span style="font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fde68a">🏛️ My Core Values Triad</span>
+              <span style="font-size:11px;color:#cbd5e1;cursor:pointer">Calibrate Coach ✎</span>
+            </div>
+            <div class="vt-pillars">
+              <span class="vt-pill">🕊️ FAITH</span>
+              <span class="vt-pill">🏔️ ADVENTURE</span>
+              <span class="vt-pill">🛡️ INTEGRITY</span>
+            </div>
+            <small style="font-size:11.5px;color:rgba(255,255,255,.78)">Living today with: <b>Trust in God · Growth Mindset · Wholeheartedness</b></small>
+          </div>
+
+          <div class="bp-sec bp-sec-priority">
+            <span class="bp-sec-title">🎯 Today’s ONE Thing (Lead Domino)</span>
+            <p class="sh-small" style="margin-bottom:6px">“What’s the ONE Thing I can do today such that by doing it everything else will be easier or unnecessary?”</p>
+            <textarea class="bp-textarea" rows="2">Finish the Q4 shop floor scheduling review before 11am</textarea>
+          </div>
+
+          <div class="bp-sec bp-sec-uplift">
+            <span class="bp-sec-title">🤝 Someone to Uplift · Hesed & Agape</span>
+            <div class="chip-row">
+              <span class="chip">+ My spouse</span>
+              <span class="chip on">+ One of my kids (1-on-1)</span>
+              <span class="chip">+ A team member</span>
+            </div>
+            <textarea class="bp-textarea" rows="1">Play 15 min of Pickleball or Title of Liberty after dinner</textarea>
+          </div>
+
+          <div class="bp-sec bp-sec-gratitude">
+            <span class="bp-sec-title">🙏 Morning Gratitude & Stillness</span>
+            <textarea class="bp-textarea" rows="2">Grateful for a quiet morning and Jeremiah 1 ("Before I formed thee...")</textarea>
+          </div>
+
+          <button class="btn-gold">Save Morning Council (+15 XP)</button>
+          <div style="text-align:center;margin-top:10px;font-size:12px;color:#93c5fd">🕊️ Open Be Still Timer › &nbsp;·&nbsp; 📓 Open Season Notebook ›</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: DIALED-IN UPGRADE -->
+      <div class="cmp-col upgrade">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">✨ Dialed-In Flow Option (Natural Order)</span>
+          <span class="cmp-col-badge badge-next">Interactive Proposal</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">🌅 Morning Council · Walk with Him</div>
+          <p class="sh-small">1. Be Still → 2. Gratitude → 3. Today's ONE Thing & Hesed</p>
+
+          <!-- Step 1 right at the top: Be Still inline breath -->
+          <div class="still-inline">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div class="still-orb">🕊️</div>
+              <div>
+                <div style="font-size:12.5px;font-weight:900;color:#e0f2fe">Step 1: Be Still & Know (60s)</div>
+                <div style="font-size:11px;color:#bae6fd">“Be still, and know that I am God.” (Psalm 46:10)</div>
+              </div>
+            </div>
+            <button class="chip on" onclick="this.textContent = this.textContent.includes('Done') ? '▶ Start 60s' : '✓ Stillness Done'">▶ Start 60s</button>
+          </div>
+
+          <!-- Tactile 3-Card Values Triad (tap any card to focus it) -->
+          <div style="font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fde68a;margin-bottom:6px;display:flex;justify-content:space-between">
+            <span>🏛️ My 3 Core Value Cards (Tap to focus today)</span>
+            <span style="color:#94a3b8;cursor:pointer">Swap Cards ✎</span>
+          </div>
+          <div class="tactile-triad">
+            <div class="tactile-card" onclick="document.getElementById('valFocusPrompt').textContent='🕊️ FAITH Anchor: How can I trust the Lord’s timing today instead of forcing outcomes?'">
+              <span class="tc-ic">🕊️</span>
+              <span class="tc-nm">FAITH</span>
+              <span class="tc-sub">Trust in God</span>
+            </div>
+            <div class="tactile-card" onclick="document.getElementById('valFocusPrompt').textContent='🏔️ ADVENTURE Anchor: Where can I bring joy, curiosity, and a growth mindset today?'">
+              <span class="tc-ic">🏔️</span>
+              <span class="tc-nm">ADVENTURE</span>
+              <span class="tc-sub">Growth Mindset</span>
+            </div>
+            <div class="tactile-card" onclick="document.getElementById('valFocusPrompt').textContent='🛡️ INTEGRITY Anchor: What promise to myself or my family will I keep wholeheartedly today?'">
+              <span class="tc-ic">🛡️</span>
+              <span class="tc-nm">INTEGRITY</span>
+              <span class="tc-sub">Wholehearted</span>
+            </div>
+          </div>
+          <div id="valFocusPrompt" style="font-size:11.5px;color:#fde68a;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.25);border-radius:10px;padding:7px 10px;margin-bottom:10px">
+            💡 <b>Tap a Value Card above</b> to surface its daily self-discovery question.
+          </div>
+
+          <!-- Natural Order: Gratitude FIRST, then ONE Thing, then Hesed -->
+          <div class="bp-sec bp-sec-gratitude">
+            <span class="bp-sec-title">🙏 Step 2: Morning Gratitude (Start with Thanks)</span>
+            <textarea class="bp-textarea" rows="2">1. Quiet morning before the house wakes up
+2. Jeremiah 1:5 — God knew us before we were born</textarea>
+          </div>
+
+          <div class="bp-sec bp-sec-priority">
+            <span class="bp-sec-title">🎯 Step 3: Today’s ONE Thing (Lead Domino)</span>
+            <textarea class="bp-textarea" rows="2">Finish the Q4 shop floor scheduling review before 11am</textarea>
+          </div>
+
+          <div class="bp-sec bp-sec-uplift">
+            <span class="bp-sec-title">🤝 Step 4: Hesed & Agape (Who will I lift today?)</span>
+            <textarea class="bp-textarea" rows="1">1-on-1 Pickleball match + encourage after school</textarea>
+          </div>
+
+          <button class="btn-gold">✓ Complete Morning Council (+15 XP) → Open Scriptures ›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PILLAR 2: BEST SELF & VALUES DECK / CLIFTONSTRENGTHS
+       ===================================================================== -->
+  <section class="pillar-sec" id="p2">
+    <div class="pillar-intro">
+      <div>
+        <h2>Pillar 2: Best Self Values Deck & CliftonStrengths Discovery</h2>
+        <p>Your vision: <i>"Research the values cards and the StrengthFinders. We need to get this right. It doesn't have to be religious... but real. Help us discover truth about ourselves."</i></p>
+        <div class="dial-list">
+          <span class="dial-tag">✓ Built in 45df1e6: 6 Core Pillars + Sub-Values</span>
+          <span class="dial-tag">✓ Built in 45df1e6: 18 CliftonStrengths + Custom Area Tagging</span>
+          <span class="dial-tag">✨ Dial-In Idea: Real Card-Sort Feel + 4-Domain CliftonStrengths with Plain-English Truths</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- LEFT: CURRENT (45df1e6) -->
+      <div class="cmp-col">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">Current Step 3 (`45df1e6` Flat Chips)</span>
+          <span class="cmp-col-badge badge-curr">Live in Repo</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">🧭 Your Superpower & Focus · Core Values</div>
+          <p class="sh-small">Anchor your Best Self in your Core Values Triad (up to 3 pillars) and signature strengths.</p>
+
+          <div style="margin-bottom:12px">
+            <div style="font-size:12px;font-weight:800;margin-bottom:6px">🏛️ Core Values Triad (Pick up to 3)</div>
+            <div class="chip-row">
+              <span class="chip on">🕊️ FAITH</span>
+              <span class="chip on">🏔️ ADVENTURE</span>
+              <span class="chip on">🛡️ INTEGRITY</span>
+              <span class="chip">❤️ HESED & AGAPE</span>
+              <span class="chip">💡 WISDOM</span>
+              <span class="chip">⚡ VITALITY</span>
+            </div>
+            <div class="chip-row" style="margin-top:8px">
+              <span class="chip on">✨ Trust in God</span>
+              <span class="chip">✨ Eternal Perspective</span>
+              <span class="chip on">✨ Growth Mindset</span>
+              <span class="chip">✨ Joyful Exploration</span>
+              <span class="chip on">✨ Wholeheartedness</span>
+              <span class="chip">✨ Honest Stewardship</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <div style="font-size:12px;font-weight:800;margin-bottom:6px">🧬 Signature CliftonStrengths (Wall of 18 Pills)</div>
+            <div class="chip-row">
+              <span class="chip on">Strategic</span>
+              <span class="chip on">Achiever</span>
+              <span class="chip">Learner</span>
+              <span class="chip on">Ideation</span>
+              <span class="chip">Futuristic</span>
+              <span class="chip">Maximizer</span>
+              <span class="chip">Relator</span>
+              <span class="chip">Connectedness</span>
+              <span class="chip">Arranger</span>
+              <span class="chip">Responsibility</span>
+              <span class="chip">Belief</span>
+              <span class="chip">Positivity</span>
+              <span class="chip">Activator</span>
+              <span class="chip">Communication</span>
+              <span class="chip">Empathy</span>
+              <span class="chip">Developer</span>
+              <span class="chip">Individualization</span>
+              <span class="chip">Focus</span>
+            </div>
+          </div>
+          <button class="btn-gold">🚀 Lock In My Profile (+25 XP)</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: DIALED-IN UPGRADE -->
+      <div class="cmp-col upgrade">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">✨ Dialed-In Self-Discovery Cards & 4 Domains</span>
+          <span class="cmp-col-badge badge-next">Interactive Proposal</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">🧭 Discover Your Core Values & Strengths</div>
+          <p class="sh-small">Pick the 3 Value Cards that define who you are when you are at your best.</p>
+
+          <div class="vdeck-grid">
+            <div class="vdeck-card on" onclick="this.classList.toggle('on')">
+              <div class="vdeck-top"><span class="vdeck-name">🕊️ FAITH</span><span style="font-size:11px;color:#fde68a">★ Pillar 1</span></div>
+              <div class="vdeck-desc">Anchored in God, stillness, and eternal perspective over noise.</div>
+            </div>
+            <div class="vdeck-card on" onclick="this.classList.toggle('on')">
+              <div class="vdeck-top"><span class="vdeck-name">🏔️ ADVENTURE</span><span style="font-size:11px;color:#fde68a">★ Pillar 2</span></div>
+              <div class="vdeck-desc">Curious explorer, builder, and memory-maker who embraces growth.</div>
+            </div>
+            <div class="vdeck-card on" onclick="this.classList.toggle('on')">
+              <div class="vdeck-top"><span class="vdeck-name">🛡️ INTEGRITY</span><span style="font-size:11px;color:#fde68a">★ Pillar 3</span></div>
+              <div class="vdeck-desc">Wholehearted honesty—my inner life matches my outer promises.</div>
+            </div>
+            <div class="vdeck-card" onclick="this.classList.toggle('on')">
+              <div class="vdeck-top"><span class="vdeck-name">❤️ HESED LOVE</span><span style="font-size:11px;color:#94a3b8">Tap</span></div>
+              <div class="vdeck-desc">Relentless, loyal covenant kindness that never gives up on people.</div>
+            </div>
+          </div>
+
+          <div style="font-size:12px;font-weight:800;margin-bottom:6px;color:#fff">🧬 CliftonStrengths by Domain (Tap any talent to see its truth)</div>
+
+          <div class="cs-domain">
+            <div class="cs-domain-head" style="color:#c084fc"><span>🧠 Strategic Thinking (How You Absorb & Analyze)</span></div>
+            <div class="chip-row">
+              <span class="chip on" onclick="showStrengthInfo('Strategic', 'You quickly spot patterns and alternative paths through complexity where others see only noise.')">Strategic</span>
+              <span class="chip on" onclick="showStrengthInfo('Ideation', 'You are energized by fresh concepts, connecting seemingly unrelated ideas into new solutions.')">Ideation</span>
+              <span class="chip" onclick="showStrengthInfo('Learner', 'You love the process of moving from ignorance to competence.')">Learner</span>
+              <span class="chip" onclick="showStrengthInfo('Futuristic', 'You see a vivid picture of what the future can be and inspire others with it.')">Futuristic</span>
+            </div>
+          </div>
+
+          <div class="cs-domain">
+            <div class="cs-domain-head" style="color:#38bdf8"><span>⚡ Executing & 🔥 Influencing (How You Build & Lead)</span></div>
+            <div class="chip-row">
+              <span class="chip on" onclick="showStrengthInfo('Achiever', 'You have an internal fire that drives you to build tangible results every single day.')">Achiever</span>
+              <span class="chip" onclick="showStrengthInfo('Maximizer', 'You take something good and transform it into something superb.')">Maximizer</span>
+              <span class="chip" onclick="showStrengthInfo('Activator', 'You turn thoughts into action—learning by starting rather than waiting.')">Activator</span>
+              <span class="chip" onclick="showStrengthInfo('Arranger', 'You orchestrate moving parts and people for maximum agility.')">Arranger</span>
+            </div>
+          </div>
+
+          <div class="cs-domain">
+            <div class="cs-domain-head" style="color:#34d399"><span>🤝 Relationship Building (How You Hold People Together)</span></div>
+            <div class="chip-row">
+              <span class="chip" onclick="showStrengthInfo('Relator', 'You find deep joy in close, authentic, lifelong 1-on-1 relationships.')">Relator</span>
+              <span class="chip" onclick="showStrengthInfo('Developer', 'You spot the hidden potential in others and help them experience success.')">Developer</span>
+              <span class="chip" onclick="showStrengthInfo('Connectedness', 'You sense that nothing happens by accident and we are all part of a larger whole.')">Connectedness</span>
+            </div>
+          </div>
+
+          <div id="strengthTruthBox" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);border-radius:10px;padding:8px 10px;font-size:12px;color:#e0f2fe;margin-top:6px">
+            ✨ <b>Strategic:</b> You quickly spot patterns and alternative paths through complexity where others see only noise.
+          </div>
+
+          <button class="btn-gold">🚀 Lock In My Best Self Profile (+25 XP)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PILLAR 3: SWIPEABLE STORY DECKS (CARDS & TALKS)
+       ===================================================================== -->
+  <section class="pillar-sec" id="p3">
+    <div class="pillar-intro">
+      <div>
+        <h2>Pillar 3: Crisp, Visual Swipeable Story Decks (Study Cards & Talks)</h2>
+        <p>Your vision: <i>"Dial in the learning cards and make those just really good, really crisp, swipeable step-throughs—with video timestamps and outside Gospel Library links when I have time to go deep."</i></p>
+        <div class="dial-list">
+          <span class="dial-tag">✓ Built in 45df1e6: 3-Slide Story Decks for Insights & Conference Talks</span>
+          <span class="dial-tag">✨ Dial-In Idea: Inline Personal Takeaway Editor + Timestamped Video Clip Drawer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- LEFT: CURRENT (45df1e6) -->
+      <div class="cmp-col">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">Current 3-Slide Deck (`45df1e6`)</span>
+          <span class="cmp-col-badge badge-curr">Click Pills to Step Through</span>
+        </div>
+        <div class="phone-frame">
+          <div style="font-size:11px;font-weight:800;color:#fbbf24;text-transform:uppercase">💡 Scholar Insight · Jeremiah 1:5</div>
+          <div class="deck-bars">
+            <div class="deck-bar on" id="curBar0"></div>
+            <div class="deck-bar" id="curBar1"></div>
+            <div class="deck-bar" id="curBar2"></div>
+          </div>
+          <div class="deck-pills">
+            <button class="deck-pill on" onclick="setCurSlide(0)">1. Hook & Verse</button>
+            <button class="deck-pill" onclick="setCurSlide(1)">2. Deep Dive (2m)</button>
+            <button class="deck-pill" onclick="setCurSlide(2)">3. Sources & Takeaway</button>
+          </div>
+
+          <div class="deck-slide" id="curSlideBox">
+            <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#fbbf24">
+              <span>💡 Scripture Central</span><span>Jeremiah 1:5</span>
+            </div>
+            <div class="sh-title" style="font-size:17px">“Before I Formed Thee in the Belly I Knew Thee”</div>
+            <p style="font-size:13.5px;color:#e2e8f0">The Hebrew verb <b>yada‘</b> (“knew”) means far more than intellectual awareness—it is covenantal, personal intimacy and foreordination.</p>
+            <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:12px;padding:10px;font-size:12.5px;color:#fef3c7">
+              <b>📖 Jeremiah 1:5 (Plain English):</b> “Before I shaped you in your mother’s womb, I knew you personally; before you were born, I set you apart for a holy calling.”
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+            <button class="chip" onclick="stepCurSlide(-1)">‹ Prev</button>
+            <span style="font-size:12px;font-weight:800;color:#94a3b8" id="curSlideLbl">Slide 1 of 3</span>
+            <button class="chip on" onclick="stepCurSlide(1)">Next Slide ›</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: DIALED-IN UPGRADE -->
+      <div class="cmp-col upgrade">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">✨ Dialed-In Slide 3 (Custom Takeaway + Timestamped Video)</span>
+          <span class="cmp-col-badge badge-next">Interactive Proposal</span>
+        </div>
+        <div class="phone-frame">
+          <div style="font-size:11px;font-weight:800;color:#fbbf24;text-transform:uppercase">💡 Scholar Insight · Jeremiah 1:5</div>
+          <div class="deck-bars">
+            <div class="deck-bar on"></div>
+            <div class="deck-bar on"></div>
+            <div class="deck-bar on"></div>
+          </div>
+          <div class="deck-slide">
+            <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#fbbf24">
+              <span>🏛️ Go Deeper & Save Takeaway</span><span>Jeremiah 1:5</span>
+            </div>
+
+            <!-- Timestamped Video Clip right inside the Deck -->
+            <div style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.35);border-radius:12px;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <div>
+                <div style="font-size:11px;font-weight:900;color:#38bdf8;text-transform:uppercase">🎬 Timestamped Watch Clip (3m 15s)</div>
+                <div style="font-size:12.5px;font-weight:800;color:#fff">followHIM · Jeremiah’s Foreordination (14:20–17:35)</div>
+              </div>
+              <button class="chip on" style="white-space:nowrap">▶ Watch Clip</button>
+            </div>
+
+            <!-- Editable Takeaway Box instead of canned save -->
+            <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.35);border-radius:12px;padding:10px">
+              <div style="font-size:11px;font-weight:900;color:#fde68a;text-transform:uppercase;margin-bottom:4px">✍️ My Takeaway on Jeremiah 1:5</div>
+              <textarea class="bp-textarea" rows="2" placeholder="Write your own 1-line thought (or keep the pre-filled takeaway)...">God’s “knowing” (yada‘) means He knows our strengths and calling before we even begin.</textarea>
+              <div style="display:flex;gap:6px;margin-top:8px">
+                <button class="chip on" style="flex:1;text-align:center">💾 Save to My Notes (+5 XP)</button>
+                <button class="chip" style="flex:1;text-align:center">💬 Share to Family Chat</button>
+              </div>
+            </div>
+
+            <!-- Outside Source Links when you have time -->
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <span class="chip" style="flex:1;text-align:center">📖 Open Jeremiah 1 in Gospel Library ↗</span>
+              <span class="chip" style="flex:1;text-align:center">🏛️ Scripture Central KnoWhy ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PILLAR 4: SOCIAL FEED & VEO FAMILY CARTOONS
+       ===================================================================== -->
+  <section class="pillar-sec" id="p4">
+    <div class="pillar-intro">
+      <div>
+        <h2>Pillar 4: Instagram-Style Visual Quote Cards & Google Veo Family Cartoon Studio</h2>
+        <p>Your vision: <i>"I would love to have little Instagram type of cards there—visual with beautiful pictures with little sayings like a family Instagram reel page that's scripture based. And I really want to start using Google Veo to make my own family cartoons where we can watch our home YouTube version."</i></p>
+        <div class="dial-list">
+          <span class="dial-tag">✓ Built in 45df1e6: ✨ Social Feed Stream + ❤️ Love & 💬 Share</span>
+          <span class="dial-tag">✨ Dial-In Idea: Full-Bleed Instagram Poster Cards + 🎬 Family Cartoon / Veo Theater Shelf</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- LEFT: CURRENT (45df1e6) -->
+      <div class="cmp-col">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">Current Social Feed (`45df1e6` Text Cards)</span>
+          <span class="cmp-col-badge badge-curr">Live in Repo</span>
+        </div>
+        <div class="phone-frame">
+          <div class="chip-row" style="margin-bottom:10px">
+            <span class="chip on">✨ All Stream (24)</span>
+            <span class="chip">🎬 Videos & Shorts</span>
+            <span class="chip">💎 Scholars & Hebrew</span>
+          </div>
+
+          <article class="sf-card">
+            <div class="sf-head">
+              <div class="sf-author">
+                <div class="sf-avatar">💬</div>
+                <div>
+                  <span class="sf-name">President Russell M. Nelson</span>
+                  <span class="sf-sub">Jeremiah 1:5 · General Conference</span>
+                </div>
+              </div>
+              <span class="sf-tag">Quote</span>
+            </div>
+            <h3 style="font-size:15px;font-weight:800;margin-bottom:6px">Known and Foreordained</h3>
+            <blockquote class="ins-quote">“You were reserved to come to earth at this precise time, the most crucial time in the history of the world.”</blockquote>
+            <div class="sf-actions">
+              <button class="sf-btn liked">❤️ Amen</button>
+              <button class="sf-btn">✍️ Save Note</button>
+              <button class="sf-btn">💬 Share</button>
+              <button class="sf-btn primary">📖 Story Deck ›</button>
+            </div>
+          </article>
+
+          <article class="sf-card">
+            <div class="sf-head">
+              <div class="sf-author">
+                <div class="sf-avatar">💎</div>
+                <div>
+                  <span class="sf-name">Hebrew Word Study · yada‘</span>
+                  <span class="sf-sub">Jeremiah 1:5</span>
+                </div>
+              </div>
+              <button class="sf-btn">🔊 Say It</button>
+            </div>
+            <h3 style="font-size:15px;font-weight:800;margin-bottom:4px">יָדַע (yada‘) — “I knew thee”</h3>
+            <p style="font-size:13px;color:#cbd5e1">Covenant knowing by heart and relationship, not mere acquaintance.</p>
+            <div class="sf-actions">
+              <button class="sf-btn">🤍 Love</button>
+              <button class="sf-btn">💬 Share</button>
+              <button class="sf-btn primary">💎 Open Word Study ›</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- RIGHT: DIALED-IN UPGRADE -->
+      <div class="cmp-col upgrade">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">✨ Visual Instagram Cards + Google Veo Family Studio</span>
+          <span class="cmp-col-badge badge-next">Interactive Proposal</span>
+        </div>
+        <div class="phone-frame">
+          <div class="chip-row" style="margin-bottom:10px">
+            <span class="chip on">✨ All Stream</span>
+            <span class="chip" style="border-color:#34d399;color:#6ee7b7">🍿 Family Studio (Veo)</span>
+            <span class="chip">🖼️ Visual Quotes</span>
+            <span class="chip">💎 Hebrew Gems</span>
+          </div>
+
+          <!-- Google Veo Family Cartoon Card -->
+          <div class="veo-card">
+            <div class="sf-head" style="margin-bottom:4px">
+              <div class="sf-author">
+                <div class="sf-avatar" style="background:rgba(52,211,153,0.2);border-color:#34d399">🍿</div>
+                <div>
+                  <span class="sf-name">Family Studio · Google Veo</span>
+                  <span class="sf-sub">Jeremiah 18 · The Potter's House Cartoon</span>
+                </div>
+              </div>
+              <span class="sf-tag" style="background:rgba(52,211,153,0.2);color:#6ee7b7">Veo Original</span>
+            </div>
+            <div class="veo-stage">
+              <div class="veo-play">▶</div>
+              <div style="font-size:12px;font-weight:800;color:#e2e8f0;margin-top:8px">The Clay in the Potter’s Hands (0:45)</div>
+              <div style="font-size:10.5px;color:#94a3b8">Custom Family Animation · Tap to Watch</div>
+            </div>
+            <div class="sf-actions" style="border-top-color:rgba(52,211,153,0.2)">
+              <button class="sf-btn liked" onclick="this.classList.toggle('liked')">❤️ 4 Family Likes</button>
+              <button class="sf-btn">💬 Discuss in Chat</button>
+              <button class="sf-btn primary" style="margin-left:auto">+ Add Veo Video</button>
+            </div>
+          </div>
+
+          <!-- Instagram Visual Poster Quote Card -->
+          <article class="sf-card" style="padding:12px">
+            <div class="sf-head">
+              <div class="sf-author">
+                <div class="sf-avatar">🖼️</div>
+                <div>
+                  <span class="sf-name">Daily Scripture Poster · Double-Tap to ❤️</span>
+                  <span class="sf-sub">Jeremiah 1:5 · President Russell M. Nelson</span>
+                </div>
+              </div>
+            </div>
+            <div class="ig-poster" ondblclick="this.nextElementSibling.querySelector('.sf-btn').classList.add('liked')">
+              <div class="ig-poster-kicker">✦ BEFORE I FORMED THEE ✦</div>
+              <div class="ig-poster-quote">“You were reserved to come to earth at this precise time, the most crucial time in the history of the world.”</div>
+              <div class="ig-poster-ref">— President Russell M. Nelson · Jeremiah 1:5</div>
+            </div>
+            <div class="sf-actions">
+              <button class="sf-btn liked" onclick="this.classList.toggle('liked')">❤️ Amen</button>
+              <button class="sf-btn">✍️ Save to My Notes</button>
+              <button class="sf-btn primary">💬 Post to Family Chat</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PILLAR 5: VERSE COMMENTARY & SCRIPTURE NOTES
+       ===================================================================== -->
+  <section class="pillar-sec" id="p5">
+    <div class="pillar-intro">
+      <div>
+        <h2>Pillar 5: Non-Redundant Scripture Notes & Tabbed Verse Commentary</h2>
+        <p>Your vision: <i>"Dial in the notes that appear in the scriptures and make those just really good—non-redundant, deep without having to leave the app, and effortless to quote into your personal notes."</i></p>
+        <div class="dial-list">
+          <span class="dial-tag">✓ Built in 45df1e6: 💡 N Commentaries Badge + `+ Quote in Note`</span>
+          <span class="dial-tag">✨ Dial-In Idea: Tabbed Commentary Switcher so Note Box Never Gets Pushed Off-Screen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-grid">
+      <!-- LEFT: CURRENT (45df1e6) -->
+      <div class="cmp-col">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">Current Vertical Stack (`45df1e6`)</span>
+          <span class="cmp-col-badge badge-curr">Live in Repo</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">✍️ Jeremiah 1:5 · Note & Commentary</div>
+          <p class="sh-small" style="font-style:italic">“Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee...”</p>
+
+          <div class="vn-comm-box">
+            <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:6px">
+              <span>📚 Verse Commentary & Translation (4)</span>
+              <span>Scroll down for more ↓</span>
+            </div>
+            <div class="vn-comm-item">
+              <div class="vn-comm-top"><span>✨ Plain English Rendering</span><button class="vn-insert-btn">+ Quote in Note</button></div>
+              <div>Before I shaped you in your mother’s womb, I knew you personally...</div>
+            </div>
+            <div class="vn-comm-item">
+              <div class="vn-comm-top"><span>📖 Berean Standard Bible (BSB)</span><button class="vn-insert-btn">+ Quote in Note</button></div>
+              <div>“Before I formed you in the womb I knew you, and before you were born I set you apart...”</div>
+            </div>
+            <div class="vn-comm-item">
+              <div class="vn-comm-top"><span>💎 Hebrew: יָדַע (yada‘)</span><button class="vn-insert-btn">+ Quote in Note</button></div>
+              <div>“I knew thee” — Covenant intimacy and foreordination before mortality.</div>
+            </div>
+          </div>
+
+          <textarea class="bp-textarea" rows="3" placeholder="What does this verse teach you?"></textarea>
+          <button class="btn-gold">Save Note</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: DIALED-IN UPGRADE -->
+      <div class="cmp-col upgrade">
+        <div class="cmp-col-head">
+          <span class="cmp-col-title">✨ Tabbed Lens Bar (Zero Clutter, Instant Depth)</span>
+          <span class="cmp-col-badge badge-next">Interactive Proposal</span>
+        </div>
+        <div class="phone-frame">
+          <div class="sh-title">✍️ Jeremiah 1:5 · Study Lens & Note</div>
+          <p class="sh-small" style="font-style:italic">“Before I formed thee in the belly I knew thee...”</p>
+
+          <!-- Clean Lens Selector Tabs -->
+          <div class="chip-row" style="margin-bottom:8px">
+            <button class="chip on" onclick="setVnLens('hebrew', this)">💎 Hebrew Gem</button>
+            <button class="chip" onclick="setVnLens('scholar', this)">💡 Scholar Insight</button>
+            <button class="chip" onclick="setVnLens('plain', this)">✨ Plain & BSB</button>
+          </div>
+
+          <!-- Single Crisp Active Lens Card -->
+          <div id="vnLensCard" style="background:linear-gradient(145deg, rgba(251,191,36,0.12), rgba(15,23,42,0.9));border:1px solid rgba(251,191,36,0.4);border-radius:12px;padding:12px;margin-bottom:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <span style="font-size:12px;font-weight:900;color:#fde68a" id="vnLensTitle">💎 Hebrew Root: יָדַע (yada‘)</span>
+              <button class="vn-insert-btn" onclick="insertDemoQuote()">+ Quote into My Note ↓</button>
+            </div>
+            <p style="font-size:13px;color:#f1f5f9" id="vnLensBody">In Hebrew, <b>yada‘</b> means covenantal, relational knowing—not mere facts. God knew your spirit, your strengths, and your mission before you were born.</p>
+          </div>
+
+          <!-- Note Composer Always Front & Center -->
+          <div style="font-size:11px;font-weight:800;color:#94a3b8;margin-bottom:4px">✍️ MY PERSONAL VERSE NOTE</div>
+          <textarea class="bp-textarea" id="demoVnInput" rows="3">Knowing that God knew us personally (yada‘) before birth changes how I face hard days.</textarea>
+
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn-gold" style="margin-top:0;flex:1">Save Note</button>
+            <button class="btn-gold" style="margin-top:0;flex:1;background:rgba(56,189,248,0.2);color:#bae6fd;border:1px solid #38bdf8">💬 Save & Share to Chat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Pillar Navigation
+  document.querySelectorAll('#pillarNav .wb-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#pillarNav .wb-tab').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('.pillar-sec').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById(btn.dataset.pillar).classList.add('on');
+    });
+  });
+
+  // Pillar 2: CliftonStrengths interactive truth box
+  function showStrengthInfo(name, desc) {
+    const box = document.getElementById('strengthTruthBox');
+    if (box) box.innerHTML = `✨ <b>${name}:</b> ${desc}`;
+  }
+
+  // Pillar 3: Story Deck Slide Switcher
+  const curSlides = [
+    `<div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#fbbf24">
+      <span>💡 Scripture Central</span><span>Jeremiah 1:5</span>
+    </div>
+    <div class="sh-title" style="font-size:17px">“Before I Formed Thee in the Belly I Knew Thee”</div>
+    <p style="font-size:13.5px;color:#e2e8f0">The Hebrew verb <b>yada‘</b> (“knew”) means far more than intellectual awareness—it is covenantal, personal intimacy and foreordination.</p>
+    <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:12px;padding:10px;font-size:12.5px;color:#fef3c7">
+      <b>📖 Jeremiah 1:5 (Plain English):</b> “Before I shaped you in your mother’s womb, I knew you personally; before you were born, I set you apart for a holy calling.”
+    </div>`,
+    `<div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#38bdf8">
+      <span>🤿 Deep Discovery (2m read)</span><span>Scripture Central</span>
+    </div>
+    <p style="font-size:13.5px;color:#e2e8f0">When Jeremiah felt too young and inadequate (“Ah, Lord GOD! behold, I cannot speak: for I am a child”), the Lord did not tell him to rely on his own talent. Instead, He anchored Jeremiah in premortal identity.</p>
+    <p style="font-size:13.5px;color:#e2e8f0">In ancient Near Eastern royal texts, a king or prophet being “known” and “sanctified” from the womb meant their life had divine architecture before they took their first breath.</p>`,
+    `<div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:#34d399">
+      <span>🏛️ Sources & Reflection</span><span>Jeremiah 1:5</span>
+    </div>
+    <div style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.35);border-radius:12px;padding:10px">
+      <div style="font-size:11px;font-weight:900;color:#fbbf24;text-transform:uppercase">💭 Quick Takeaway</div>
+      <p style="font-size:13px;color:#fff;margin-top:4px">What is one truth from Jeremiah 1:5 you want to remember or share today?</p>
+    </div>
+    <button class="chip on" style="padding:8px 12px;width:100%">✍️ Save Takeaway to My Notes</button>`
+  ];
+  let curIdx = 0;
+  function setCurSlide(i) {
+    curIdx = Math.max(0, Math.min(2, i));
+    document.getElementById('curSlideBox').innerHTML = curSlides[curIdx];
+    document.getElementById('curSlideLbl').textContent = `Slide ${curIdx + 1} of 3`;
+    [0,1,2].forEach(k => {
+      document.getElementById('curBar' + k).classList.toggle('on', k <= curIdx);
+    });
+    document.querySelectorAll('#p3 .deck-pill').forEach((p, k) => p.classList.toggle('on', k === curIdx));
+  }
+  function stepCurSlide(d) { setCurSlide(curIdx + d); }
+
+  // Pillar 5: Tabbed Lens Switcher
+  const lenses = {
+    hebrew: {
+      title: '💎 Hebrew Root: יָדַע (yada‘)',
+      body: 'In Hebrew, <b>yada‘</b> means covenantal, relational knowing—not mere facts. God knew your spirit, your strengths, and your mission before you were born.',
+      quote: '💎 Hebrew yada‘ (Jeremiah 1:5): Covenantal, personal knowing before birth.'
+    },
+    scholar: {
+      title: '💡 Scripture Central · Premortal Calling',
+      body: 'When Jeremiah felt inadequate (“I am a child”), the Lord answered his self-doubt with premortal identity: “I ordained thee a prophet unto the nations.”',
+      quote: '💡 Scripture Central (Jeremiah 1:5): God answers self-doubt with premortal identity.'
+    },
+    plain: {
+      title: '✨ Plain English & BSB Rendering',
+      body: '<b>Plain English:</b> “Before I shaped you in your mother’s womb, I knew you personally; before you were born, I set you apart.”',
+      quote: '✨ Plain English (Jeremiah 1:5): “Before I shaped you in your mother’s womb, I knew you personally.”'
+    }
+  };
+  let curLens = 'hebrew';
+  function setVnLens(k, btn) {
+    curLens = k;
+    btn.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('vnLensTitle').innerHTML = lenses[k].title;
+    document.getElementById('vnLensBody').innerHTML = lenses[k].body;
+  }
+  function insertDemoQuote() {
+    const box = document.getElementById('demoVnInput');
+    box.value = box.value.trim() + '\n\n' + lenses[curLens].quote;
+  }
+</script>
+</body>
+</html>

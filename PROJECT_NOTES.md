@@ -54,7 +54,28 @@ TreasureUp is a vanilla HTML/JS/CSS offline-first web application.
 
 ## Current Status (October 2026)
 - **Active Branch**: `gemini/conference-story-decks`
-- **Latest Work**:
+- **Live Hosting (Private Repo → Firebase Hosting)**:
+  - Primary Live URL: **`https://treasureup.web.app`** (Firebase project `treasure-up-54eeb`, site `treasureup`).
+  - To build chapters and deploy to live Firebase Hosting:
+    ```bash
+    node tools/check-parse.mjs && node tools/wika-words.mjs && node tools/build-reading.mjs
+    npx -y firebase-tools@latest deploy --only hosting --project treasure-up-54eeb
+    ```
+- **Interactive Wireframes & Coaching Prototypes (For Home PC Continuation)**:
+  1. **`coaching_discovery_exercise_mockup.html`** — **4-Step Self-Discovery Coaching Exercise**:
+     - *Step 1 (Broad Values Card Sort)*: Gut-sort 12–16 real human value cards into a "🔥 This is Me" pile (5–8 cards).
+     - *Step 2 (The Crucible — Narrow to 3)*: Uses two psychological mirror questions (*🏔️ Peak Alive Moment* and *⚡ Frustration Shadow / ACT Mirror*) to crown the **Top 3 Bedrock Pillars**, while remaining pulled cards become **Supporting Sub-Values**.
+     - *Step 3 (Strengths S.I.G.N. Scenario Mirror)*: Real-life instinct scenarios (first 10 minutes on a new problem, 9 PM daily fuel, acting under pressure) to map CliftonStrengths across the 4 Gallup Domains.
+     - *Step 4 (Truth Portrait, Blind-Spot Radar & Daily Seeding)*: Generates the Best Self Charter, highlights each strength's overuse blind spot, and shows how the discovered Values + Strengths seed Morning Council and Evening Return & Report.
+  2. **`app_flow_wireframe_canvas.html`** — **4-Column System Wireframe & Data-Wiring Storyboard**:
+     - Visualizes the 4 color-coded data wires connecting **Column 1 (Upstream Coaching & Season/Pro Modals)** → **Column 2 (`🌅 Morning Council` Sheet)** → **Column 3 (`☀️ Today` Main Screen)** → **Column 4 (`🌙 Evening` & `🌱 Season` Sync)** for both Adult and Youth personas.
+     - Documents the 3 Morning Council seeding gaps to wire next:
+       - **Wire B (`#bpOneThing`)**: Connect `activeGoalChipsHtml()` to ✨ Pro Weekly Big Rocks (`S.pro`) and Growth Coach interest quests (`coachSuggestedIdeas()`), not just Simple Mode `S.seasons` goals.
+       - **Wire C (`#bpUplift`)**: Seed from actual Family members (`F.members`), Pro Roles (`S.pro.roles`), and Signature Strengths.
+       - **Wire D (`#bpGratitude` & Stillness)**: Surface today's rotating `gratefulPrompt(dayKey()).q` and inline 60s *Be Still* breath at the top of Morning Council.
+  3. **`phase2_visual_walkthrough_mockup.html`** — **5-Pillar Side-by-Side UI Workbench**:
+     - Compares current `45df1e6` implementation against dialed-in UI upgrades across Today/Morning Council, Best Self & Values Deck, Swipeable Story Decks, Instagram Poster Cards + Google Veo Family Cartoon Studio, and Tabbed Verse Commentary Notes.
+- **Latest Implemented Work on Branch**:
   - **Phase 1: Conference Story Decks (`openTalk`)**:
     - Replaced the legacy bulleted worksheet layout with a modern 3-Slide Swipeable Story Deck (`.ins-deck`).
     - **Slide 1 (The Living Word)**: Conference session kicker, talk title, speaker, core quick summary, hero power quote, and Gospel Library link.
