@@ -3928,15 +3928,36 @@ const TreasureUp = (function () {
     return BOM_DAILY[Math.abs(day) % BOM_DAILY.length];
   }
 
+  function nextUnreadBomChapter() {
+    const lib = window.TU_LIBRARY || [];
+    const bomVol = lib.find(v => v.name === 'Book of Mormon');
+    if (!bomVol) return '1 Nephi 1';
+    for (const [bookName, count] of bomVol.books || []) {
+      for (let i = 1; i <= count; i++) {
+        const ref = bookName + ' ' + i;
+        if (!everRead(ref)) return ref;
+      }
+    }
+    return '1 Nephi 1';
+  }
+
   function bomSheetHtml(k, ch) {
     const b = bomOf(k) || { ch, hook: '', verse: ch };
+    const nextCh = nextUnreadBomChapter();
     const dn = pathDoneOf(k);
     const done = !!dn.bom;
     return `<div class="sh-title">📜 Book of Mormon · Living Water</div>
-      <p class="sh-small" style="margin-top:2px">Daily micro-dose companion · 3 min</p>
+      <p class="sh-small" style="margin-top:2px">Daily micro-dose companion &amp; sequential chapter tracker</p>
       <div style="margin:14px 0;padding:14px;border-radius:14px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);">
         <div style="font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">${esc(b.verse || b.ch)}</div>
         <div style="font-family:Georgia,serif;font-size:15px;line-height:1.45;color:#fff;font-style:italic">${esc(b.hook)}</div>
+      </div>
+      <div style="margin:0 0 12px;padding:10px 12px;border-radius:12px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.28);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#7dd3fc">📘 Your Next Unread Chapter</div>
+          <div style="font-size:14px;font-weight:800;color:#fff">${esc(nextCh)}</div>
+        </div>
+        <button type="button" class="btn" style="padding:7px 12px;font-size:12px;width:auto" data-lib-ch="${esc(nextCh)}" data-bom-resume="${esc(nextCh)}">📖 Resume ${esc(nextCh)} ›</button>
       </div>
       <p style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.4">“Feast upon the words of Christ; for behold, the words of Christ will tell you all things what ye should do.” <small>(2 Nephi 32:3)</small></p>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
@@ -7545,11 +7566,55 @@ const TreasureUp = (function () {
       'Friday deep dive · ' + (S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question · ' + XP.bonus + ' XP')));
     if (pz >= 0) { const won = entryItems(plan[pz]).every(x => x.done); rows.push(moreRow(`data-lesson="5.${pz}" data-focus="puzzle"`, won, 'The weekly puzzle', won ? 'Solved' : reelsLeft() ? 'Opens when every reel is answered' : PUZZLE_XP + ' XP and a streak freeze')); }
     if (all.length > best.length) rows.push(moreRow('data-tab="study"', false, 'All ' + all.length + ' cards for this day', 'In the Study tab', '💡'));
+    const deepLogged = !!Object.values(S.impressions || {}).find(x => x && !x.gone && x.kind === 'deeplog' && x.day === dayKey());
+    rows.push(moreRow('data-open-deep-log', deepLogged, '🤿 Log Extra / Deep Study', deepLogged ? 'Saved in your study notes today' : 'Log a podcast, talk, chapter, or insight you studied', '🤿'));
     const key = WEEK.title + '|' + d;
     // Go further (it was Keep going ›, and More if you want before that): one section of the path, folded.
     return `<details class="more tsec" data-sec="further" data-more="${esc(key)}"${moreOpen === key ? ' open' : ''}><summary class="tsec-h"><i aria-hidden="true"></i><b>Go further<small>${esc([furtherParts(d), fri >= 0 && 'the Friday deep dive', pz >= 0 && 'the weekly puzzle'].filter(Boolean).join(' · '))}</small></b><span class="more-n">${!total ? '' : done === total ? '✓' : done + '/' + total}</span></summary>
       <div class="tsec-list more-list">${rows.join('')}</div>
     </details>`;
+  }
+
+  function openDeepLogSheet() {
+    const k = dayKey(), had = Object.entries(S.impressions || {}).find(([, x]) => x && !x.gone && x.kind === 'deeplog' && x.day === k);
+    const cur = had ? had[1] : {};
+    openSheet(`<div class="sh-title">🤿 Deep / Extra Study Log</div>
+      <p class="sh-small">Record extra scripture chapters, podcasts (followHIM, Scripture Central), Conference talks, or personal research.</p>
+      <div class="sheet-group">
+        <label>📚 What did you study?</label>
+        <input class="field sheet-in" id="deepStudyTitle" maxlength="160" value="${esc(cur.title || '')}" placeholder="e.g. followHIM Part 1, Alma 32, or Hugh Nibley lecture">
+      </div>
+      <div class="sheet-group">
+        <label>💡 Key Insight or Takeaway</label>
+        <textarea class="field sheet-in" id="deepStudyNotes" rows="3" maxlength="600" placeholder="What stood out or how will you apply it?">${esc(cur.text || '')}</textarea>
+      </div>
+      <div class="sea-imp-bar" style="margin-top:16px">
+        <span class="sh-small">🔒 Saved to your study notes</span>
+        <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-save-deep-log>Save Deep Study Log</button>
+      </div>`);
+  }
+
+  function saveDeepLog() {
+    const k = dayKey();
+    const title = ($('deepStudyTitle') ? $('deepStudyTitle').value.trim() : '').slice(0, 160);
+    const text = ($('deepStudyNotes') ? $('deepStudyNotes').value.trim() : '').slice(0, 600);
+    if (!title && !text) { closeSheet(); return; }
+    const imps = S.impressions || (S.impressions = {});
+    const had = Object.entries(imps).find(([, x]) => x && !x.gone && x.kind === 'deeplog' && x.day === k);
+    const id = had ? had[0] : seaId('dl');
+    imps[id] = {
+      kind: 'deeplog',
+      day: k,
+      title: title || 'Deep Study',
+      text: text || title,
+      ref: title || 'Deep Study',
+      at: had ? had[1].at : Date.now(),
+      upd: Date.now()
+    };
+    save();
+    closeSheet();
+    refreshHome();
+    toast('🤿 Deep Study Logged', title || 'Saved to your study notes');
   }
   const KIND_NAME = { quote: 'Quote', video: 'Video' };
   function cardRowHtml(i) {
@@ -7611,7 +7676,7 @@ const TreasureUp = (function () {
 
   // Study: every card of the week by day, filtered by kind; a tap opens one,
   // and opening it marks it read (✓).
-  let studyKind = 'all';
+  let studyKind = 'all', videoFilterUnwatched = false;
 
   function weekVideos(week = WEEK) {
     const list = [];
@@ -7682,17 +7747,31 @@ const TreasureUp = (function () {
     return list;
   }
 
+  function toggleWatchedVideo(vidId) {
+    if (!vidId) return;
+    const map = S.watchedVideos || (S.watchedVideos = {});
+    if (map[vidId]) delete map[vidId];
+    else map[vidId] = dayKey();
+    save();
+    refreshHome();
+  }
+
   function videoShelfHtml(week = WEEK) {
     const vids = weekVideos(week);
     if (!vids.length) return '<p class="lb-help">No video lessons for this week yet.</p>';
+    const watchedMap = S.watchedVideos || {};
+    const watchedCount = vids.filter(v => watchedMap[v.id]).length;
+    const shownVids = videoFilterUnwatched ? vids.filter(v => !watchedMap[v.id]) : vids;
     return `<div class="shorts-sec" style="margin-top:10px">
-      <div class="shorts-sec-head">
-        <span class="shorts-sec-title" style="color:#f87171">▶ This Week's Video Lessons (${vids.length})</span>
-        <span class="shorts-sec-hint" style="color:rgba(248,113,113,.75)">Latter Day Kids & Church Media ›</span>
+      <div class="shorts-sec-head" style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <span class="shorts-sec-title" style="color:#f87171">▶ This Week's Video Lessons (${watchedCount}/${vids.length} Watched)</span>
+        <button type="button" class="bp-edit-btn${videoFilterUnwatched ? ' on' : ''}" data-filter-unwatched style="font-size:11px">${videoFilterUnwatched ? '👁️ Unwatched Only (' + shownVids.length + ')' : '👁️ Show Unwatched Only'}</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;margin-top:6px">
-        ${vids.map(v => `
-          <div class="vid-card" style="padding:14px;border-radius:16px;background:rgba(239,68,68,.08);border:1.5px solid rgba(239,68,68,.25);display:flex;flex-direction:column;gap:8px">
+        ${shownVids.length ? shownVids.map(v => {
+          const isWatched = !!watchedMap[v.id];
+          return `
+          <div class="vid-card${isWatched ? ' is-watched' : ''}" style="padding:14px;border-radius:16px;background:rgba(239,68,68,.08);border:1.5px solid ${isWatched ? 'rgba(16,185,129,.4)' : 'rgba(239,68,68,.25)'};display:flex;flex-direction:column;gap:8px">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
               <span style="font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fca5a5;background:rgba(239,68,68,.2);padding:2px 8px;border-radius:6px">▶ ${esc(v.channel)}</span>
               <span style="font-size:11px;font-family:monospace;color:rgba(255,255,255,.6)">${esc(v.ref)}</span>
@@ -7700,10 +7779,15 @@ const TreasureUp = (function () {
             <div style="font-size:15px;font-weight:800;color:#fff;line-height:1.3">${esc(v.title)}</div>
             ${v.text && v.text !== v.title ? `<div style="font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.4">${esc(v.text)}</div>` : ''}
             <div style="margin-top:2px">${clipHtml(v.video)}</div>
-            ${v.shortId ? `<div style="display:flex;justify-content:flex-end"><button class="sp-back-btn" data-short-id="${esc(v.shortId)}" style="margin:0;font-size:11.5px;padding:4px 12px;width:auto">Open 2-Min Interactive Short ›</button></div>` : ''}
-            ${v.cardId ? `<div style="display:flex;justify-content:flex-end"><button class="sp-back-btn" data-card="${esc(v.cardId)}" style="margin:0;font-size:11.5px;padding:4px 12px;width:auto">Open Card Details ›</button></div>` : ''}
-          </div>
-        `).join('')}
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+              <button type="button" class="sp-back-btn${isWatched ? ' on' : ''}" data-watch-video="${esc(v.id)}" style="margin:0;font-size:11.5px;padding:4px 12px;width:auto;${isWatched ? 'background:rgba(16,185,129,.2);border-color:#10b981;color:#6ee7b7' : ''}">${isWatched ? '✓ Watched' : '○ Mark Watched'}</button>
+              <div style="display:flex;gap:6px">
+                ${v.shortId ? `<button class="sp-back-btn" data-short-id="${esc(v.shortId)}" style="margin:0;font-size:11.5px;padding:4px 12px;width:auto">Open 2-Min Interactive Short ›</button>` : ''}
+                ${v.cardId ? `<button class="sp-back-btn" data-card="${esc(v.cardId)}" style="margin:0;font-size:11.5px;padding:4px 12px;width:auto">Open Card Details ›</button>` : ''}
+              </div>
+            </div>
+          </div>`;
+        }).join('') : '<p class="lb-help">🎉 All videos for this week are marked watched!</p>'}
       </div>
     </div>`;
   }
@@ -8200,6 +8284,12 @@ const TreasureUp = (function () {
     const done = !!(S.talks || {})[t.id];
     return { done, html: tcRow(`data-talk="${esc(t.id)}"`, { done, title: `🎤 Talk a day · ${i + 1} of ${c.talks.length}`, sub: esc(t.title) + ' · ' + esc(t.speaker) }) };
   }
+  function nextUnreadTalk(excludeId) {
+    const c = curConf();
+    if (!c || !Array.isArray(c.talks)) return null;
+    const seenMap = S.talks || {};
+    return c.talks.find(t => t && t.id !== excludeId && !seenMap[t.id]) || null;
+  }
   // A talk on its own: swipeable 3-slide story deck with the speaker's power quote,
   // core doctrinal truths, scripture anchors, invitation to act, and personal notes.
   function openTalk(id, initialSlide = 0) {
@@ -8207,6 +8297,7 @@ const TreasureUp = (function () {
     if (!t) return;
     use('talk');
     const own = sunShow(t), draft = own && !sunApproved(t), seen = (S.talks || {})[t.id];
+    const nxt = nextUnreadTalk(t.id);
     const list = (h, xs) => xs && xs.length ? `<div class="talk-h">${h}</div><ul class="talk-list">${xs.map(x => `<li>${linkRefs(x)}</li>`).join('')}</ul>` : '';
     const quotes = t.quotes || [];
     const firstQuote = quotes.length ? quotes[0] : '';
@@ -8240,6 +8331,7 @@ const TreasureUp = (function () {
           <a class="ins-src" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><span>Study in Gospel Library</span> <b>${esc(t.title)} ↗</b></a>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
             <button type="button" class="ins-save-btn" data-save-card-note="${esc(t.id)}">✍️ Save Takeaway to My Notes</button>
+            ${nxt ? `<button type="button" class="ins-save-btn" data-next-unread-talk="${esc(nxt.id)}">⏭️ Next Unread Talk: ${esc(nxt.title)} ›</button>` : ''}
           </div>
           ${seen ? `<p class="fam-note" style="margin-top:14px;color:#34d399;font-weight:700">✓ Studied${seasonWho() === 'adult' ? '' : ' · +15 XP'}</p>` : `<div class="board-actions" style="margin-top:14px"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk${seasonWho() === 'adult' ? '' : ` · +${TALK_XP} XP`}</button></div>`}`
       }
@@ -14696,6 +14788,25 @@ const TreasureUp = (function () {
       </div>
     </article>`;
   }
+  function scholarlyVaultHtml(u, week) {
+    if (!u || !u.ref) return '';
+    const q = encodeURIComponent(u.ch || u.ref);
+    const gl = readLink(u.ref);
+    return `<details class="scholarly-vault" data-scholarly-vault style="margin:12px 0;padding:10px 12px;border-radius:12px;background:rgba(15,23,42,.55);border:1px solid rgba(251,191,36,.24)">
+      <summary style="cursor:pointer;font-size:12px;font-weight:800;color:var(--gold);display:flex;align-items:center;justify-content:space-between;gap:8px;list-style:none">
+        <span>🔍 Verse Insights &amp; Scholarly Vault · ${esc(u.ref)}</span>
+        <span style="font-size:10.5px;color:rgba(255,255,255,.65);font-weight:700">Commentary &amp; Sources ▾</span>
+      </summary>
+      <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.82);line-height:1.45">
+        <p style="margin:0 0 8px">Use the layer pills above (<b>Plain</b>, <b>BSB</b>, <b>Hebrew/Greek</b>, <b>1830</b>, <b>Notes</b>) for verse-by-verse textual comparison and historical context, or open verified commentary below:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <a class="sp-back-btn" href="https://scripturecentral.org/search?q=${q}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">🏛️ Scripture Central (${esc(u.ch || u.ref)}) ↗</a>
+          <a class="sp-back-btn" href="https://www.youtube.com/results?search_query=${encodeURIComponent('followHIM podcast ' + (u.ch || u.ref))}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">🎙️ followHIM Podcast ↗</a>
+          ${gl ? `<a class="sp-back-btn" href="${esc(gl)}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">📖 Gospel Library ↗</a>` : ''}
+        </div>
+      </div>
+    </details>`;
+  }
   const pastChapterHtml = u => readerHtml(u, past.week, pastReadEndHtml(u));
   // A chapter in the reader over the page: this week's or a past week's.
   function readerHtml(u, week, end) {
@@ -14707,7 +14818,7 @@ const TreasureUp = (function () {
         <div class="eyebrow">${esc(week.title)}</div>
         <h2 class="reel-hook">${esc(u.ref)}${chapterFixHtml(week, u.ch)}</h2>
         ${listenHtml(u)}
-        ${u.verses ? stillFirstHtml() + tldrHtml(u, week) + treasureStripHtml(u, week) + coachRowHtml(u) + layersBarHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>`
+        ${u.verses ? stillFirstHtml() + tldrHtml(u, week) + treasureStripHtml(u, week) + coachRowHtml(u) + layersBarHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>` + scholarlyVaultHtml(u, week)
           : link ? `<a class="deep-open" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Read ${esc(u.ref)} in Gospel Library ↗</a>` : ''}
         ${end || ''}
         <button class="today-alt sea-impress" data-impress="${esc(u.ref)}">✍️ Write an impression about ${esc(u.ref)}</button>
@@ -20551,7 +20662,7 @@ const TreasureUp = (function () {
         ${part ? `<div class="ls-coming"><small>What’s coming · verses ${part.from}–${part.to}</small>${linkRefs(part.line, part.u.ch)}</div>` : ''}
         ${gl ? `<a class="ls-gl" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">${u.verses ? 'Or read it in Gospel Library ↗' : 'Read it in Gospel Library ↗'}</a>` : ''}
         ${!part || part.n === 1 ? listenHtml(whole) : ''}
-        ${u.verses ? (L.steps.findIndex(x => x.kind === 'chapter') === L.at ? stillFirstHtml() : '') + (part ? '' : tldrHtml(u, WEEK)) + (!part || part.n === 1 ? treasureStripHtml(whole, WEEK) : '') + layersBarHtml(u, WEEK) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>`
+        ${u.verses ? (L.steps.findIndex(x => x.kind === 'chapter') === L.at ? stillFirstHtml() : '') + (part ? '' : tldrHtml(u, WEEK)) + (!part || part.n === 1 ? treasureStripHtml(whole, WEEK) : '') + layersBarHtml(u, WEEK) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>` + scholarlyVaultHtml(u, WEEK)
                    : `<p class="reel-body">Read ${esc(u.ref)} in Gospel Library, then come back and tap “I read it”.</p>`}
       </div>`;
     } else if (step.kind === 'find') {
@@ -21877,6 +21988,10 @@ const TreasureUp = (function () {
       if (sm) { S.studyMode = sm.dataset.studyMode; save(); refreshHome(); return; }
       if (e.target.closest('[data-open-blueprint]')) { openBlueprint(); return; }
       if (e.target.closest('[data-open-evening]')) { openEvening(); return; }
+      if (e.target.closest('[data-open-deep-log]')) { openDeepLogSheet(); return; }
+      const wv = e.target.closest('[data-watch-video]');
+      if (wv) { toggleWatchedVideo(wv.dataset.watchVideo); return; }
+      if (e.target.closest('[data-filter-unwatched]')) { videoFilterUnwatched = !videoFilterUnwatched; refreshHome(); return; }
       const bpc = e.target.closest('[data-bp-check]');
       if (bpc) { toggleBlueprintCheck(bpc.dataset.bpCheck); return; }
       const bmo = e.target.closest('[data-bom-open]');
@@ -22660,6 +22775,9 @@ const TreasureUp = (function () {
       }
       const td = e.target.closest('[data-talkdone]');
       if (td) { markTalk(td.dataset.talkdone); return openTalk(td.dataset.talkdone, 2); }
+      const nut = e.target.closest('[data-next-unread-talk]');
+      if (nut) { return openTalk(nut.dataset.nextUnreadTalk, 0); }
+      if (e.target.closest('[data-save-deep-log]')) { saveDeepLog(); return; }
       const sp = e.target.closest('[data-setpick]');
       if (sp) { const [slot, k, id] = sp.dataset.setpick.split('|'); closeSheet(); setPick(slot, k, id); return; }
       const t = e.target.closest('[data-set-text]');
