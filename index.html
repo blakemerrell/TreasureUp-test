@@ -5476,7 +5476,7 @@ const TreasureUp = (function () {
       </div>
 
       ${!kid && w40 ? `
-        <div class="bp-sec" style="margin-bottom:12px;padding:12px;border-radius:14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3)">
+        <div class="bp-sec" data-w40-card style="margin-bottom:12px;padding:12px;border-radius:14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3)">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px">
             <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fcd34d">🌿 Wilderness 40 · Day ${w40.d[0]} of 40 · Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
             <div style="display:flex;gap:5px;align-items:center">
@@ -8372,7 +8372,7 @@ const TreasureUp = (function () {
           <a class="ins-src" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><span>Study in Gospel Library</span> <b>${esc(t.title)} ↗</b></a>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
             <button type="button" class="ins-save-btn" data-save-card-note="${esc(t.id)}">✍️ Save Takeaway to My Notes</button>
-            ${nxt ? `<button type="button" class="ins-save-btn" data-next-unread-talk="${esc(nxt.id)}">⏭️ Next Unread Talk: ${esc(nxt.title)} ›</button>` : ''}
+            ${nxt ? `<button type="button" class="ins-save-btn" data-next-unread-talk="${esc(t.id)}">⏭️ Next Unread Talk ›</button>` : ''}
           </div>
           ${seen ? `<p class="fam-note" style="margin-top:14px;color:#34d399;font-weight:700">✓ Studied${seasonWho() === 'adult' ? '' : ' · +15 XP'}</p>` : `<div class="board-actions" style="margin-top:14px"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk${seasonWho() === 'adult' ? '' : ` · +${TALK_XP} XP`}</button></div>`}`
       }
@@ -22818,7 +22818,7 @@ const TreasureUp = (function () {
       const td = e.target.closest('[data-talkdone]');
       if (td) { markTalk(td.dataset.talkdone); return openTalk(td.dataset.talkdone, 2); }
       const nut = e.target.closest('[data-next-unread-talk]');
-      if (nut) { return openTalk(nut.dataset.nextUnreadTalk, 0); }
+      if (nut) { const nxt = nextUnreadTalk(nut.dataset.nextUnreadTalk); if (nxt) openTalk(nxt.id, 0); return; }
       if (e.target.closest('[data-save-deep-log]')) { saveDeepLog(); return; }
       const sp = e.target.closest('[data-setpick]');
       if (sp) { const [slot, k, id] = sp.dataset.setpick.split('|'); closeSheet(); setPick(slot, k, id); return; }

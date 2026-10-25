@@ -139,6 +139,97 @@ export default async function growth({ port }) {
   const evAfterClear = Object.values((await state(p)).impressions || {}).find(x => x && x.kind === 'evening' && x.day === '2027-01-11') || {};
   check((evAfterClear.surrender || '') === '', 'Clearing #evSurrender in Evening Return & Report persists empty string');
 
+  // Slice 5: Youth streamlined Morning Council (no adult jargon by default) & Together Family Bridge card on Today.
+  await p.evaluate(() => localStorage.setItem('fakeNow', '2026-10-20T12:00:00')); await p.reload(); await wait(1200);
+  await p.click('#tabs [data-tab="today"]'); await wait(400);
+  await p.click('#home [data-open-blueprint]'); await wait(300);
+  const youthBpHtml = await txt(p, '#appBody');
+  check(!/Wilderness 40|makrothumei/i.test(youthBpHtml) && await p.locator('#appBody [data-w40-card]').count() === 0, 'Youth Morning Council hides adult Wilderness 40 and Greek/Hebrew jargon');
+  await p.click('#appClose'); await wait(250);
+  check(await p.locator('#home .tsec[data-sec="goals"] [data-together-check]').count() === 1, 'Youth Today Action Plan renders Do Together with Mom or Dad card');
+  await p.click('#home .tsec[data-sec="goals"] [data-together-check]'); await wait(300);
+  const stAfterTogether = await state(p);
+  const tgImp = Object.values(stAfterTogether.impressions || {}).find(x => x && !x.gone && x.kind === 'together' && x.day === '2026-10-20');
+  check((stAfterTogether.togetherDone || {})['2026-10-20'] === 1 && tgImp && tgImp.share === true, 'Youth Together check marks togetherDone and creates shared family impression');
+
+  // Switch to Adult mode for Slices 1, 2, 3, and 4 verification.
+  await p.evaluate(() => {
+    const k = Object.keys(localStorage).find(x => /v1$/.test(x) && !x.includes('@'));
+    const s = JSON.parse(localStorage.getItem(k));
+    s.seasonWho = 'adult';
+    if (s.profile) { s.profile.who = 'adult'; s.profile.born = '1985-06'; s.profile.age = 41; }
+    localStorage.setItem(k, JSON.stringify(s));
+  });
+  await p.reload(); await wait(1200);
+
+  // Slice 1: Adult True Zero-XP View.
+  const hudHidden = await p.evaluate(() => ({
+    levelHidden: document.getElementById('levelBtn').hidden,
+    xpHidden: document.querySelector('.hud-xp').hidden,
+    pathXpCount: document.querySelectorAll('#home .tday .pth-xp').length
+  }));
+  check(hudHidden.levelHidden && hudHidden.xpHidden && hudHidden.pathXpCount === 0, 'Adult mode hides HUD Level/XP pills and all path +XP badges');
+
+  // Slice 2 & 3: Adult Morning Council Top 3 -> S.pro.tops[day] (private) + Pace-Driven Wilderness 40.
+  await p.click('#home [data-open-blueprint]'); await wait(350);
+  check(await p.locator('#appBody [data-w40-card]').count() === 1 && /Day 1 of 40/i.test(await txt(p, '#appBody [data-w40-card]')), 'Adult Morning Council renders Wilderness 40 Day 1 card');
+  await p.click('#appBody [data-w40-complete]'); await wait(300);
+  check(/Day 2 of 40/i.test(await txt(p, '#appBody [data-w40-card]')), 'Wilderness 40 advances to Day 2 on explicit completion');
+  await p.fill('#bpOneThing', 'Ship quarterly architecture');
+  await p.fill('#bpPrio2', 'Review shop floor metrics');
+  await p.fill('#bpPrio3', 'Prepare family council');
+  await p.fill('#bpUplift', 'Send encouragement note to a teammate');
+  await p.click('#appBody [data-bp-save]'); await wait(400);
+  const stAdultBp = await state(p);
+  const adultTops = ((((stAdultBp.pro || {}).tops) || {})['2026-10-20'] || {}).items || [];
+  const adultBpImp = Object.values(stAdultBp.impressions || {}).find(x => x && x.kind === 'blueprint' && x.day === '2026-10-20') || {};
+  check(adultTops.length === 3 && adultTops[0].text === 'Ship quarterly architecture' && adultBpImp.oneThing === '' && adultBpImp.share === false, 'Adult Morning Council stores Top 3 privately in S.pro.tops and keeps S.impressions oneThing empty');
+  check(await p.locator('#home .tsec[data-sec="goals"] [data-bp-check="top:0"]').count() === 1 && await p.locator('#home .tsec[data-sec="goals"] [data-bp-check="w40"]').count() === 1, 'Adult Today Action Plan renders interactive Top 3 and Wilderness 40 checkboxes');
+  await p.click('#home .tsec[data-sec="goals"] [data-bp-check="top:0"]'); await wait(300);
+  check(((((((await state(p)).pro || {}).tops || {})['2026-10-20'] || {}).items || [])[0] || {}).done === true, 'Ticking Priority #1 on Today updates S.pro.tops[day].items[0].done');
+
+  // Evening Return & Report shows Wilderness Day 2 prompt and Top 3 Scorecard (1/3).
+  await triggerEvening(); await wait(300);
+  const evAdultText = await txt(p, '#appBody');
+  check(/Wilderness Day 2/i.test(evAdultText) && /Top Priorities:\s*1\/3/i.test(evAdultText), 'Adult Evening Return & Report merges Wilderness Day prompt and Top 3 Scorecard');
+  await p.click('#appClose'); await wait(250);
+
+  // Slice 4: Book of Mormon sequential resume, Scholarly Vault, Deep Study Log, Watched Video filter & Next Unread Talk.
+  await p.click('#home [data-bom-open]'); await wait(300);
+  check(await p.locator('#appBody [data-bom-resume="1 Nephi 1"]').count() === 1, 'Book of Mormon sheet displays sequential Next Unread Chapter resume button');
+  await p.click('#appBody [data-bom-resume="1 Nephi 1"]'); await wait(500);
+  check(await p.locator('#viewBody [data-scholarly-vault]').count() === 1, 'Chapter reader includes collapsible Scholarly Vault with commentary links');
+  await p.click('#viewBack'); await wait(250);
+  await p.evaluate(() => { const d = document.querySelector('#home details.more'); if (d) d.open = true; });
+  await p.click('#home [data-open-deep-log]'); await wait(300);
+  await p.fill('#deepStudyTitle', 'followHIM Jeremiah Part 1');
+  await p.fill('#deepStudyNotes', 'Covenant faithfulness in tough seasons');
+  await p.click('#appBody [data-save-deep-log]'); await wait(350);
+  const dlImp = Object.values((await state(p)).impressions || {}).find(x => x && !x.gone && x.kind === 'deeplog' && x.day === '2026-10-20');
+  check(dlImp && dlImp.title === 'followHIM Jeremiah Part 1', 'Deep Study Log saves extra study entry');
+
+  await p.click('#tabs [data-tab="study"]'); await wait(400);
+  await p.click('#home [data-study-kind="video"]'); await wait(350);
+  const totalVids = await p.locator('#home [data-watch-video]').count();
+  if (totalVids > 0) {
+    const firstVidId = await p.locator('#home [data-watch-video]').first().getAttribute('data-watch-video');
+    await p.locator('#home [data-watch-video]').first().click(); await wait(250);
+    await p.click('#home [data-filter-unwatched]'); await wait(250);
+    const filteredVids = await p.locator('#home [data-watch-video]').count();
+    check(Boolean(((await state(p)).watchedVideos || {})[firstVidId]) && filteredVids === totalVids - 1, 'Video shelf marks video watched and filters to unwatched only');
+  }
+
+  await p.click('#home [data-study-kind="sunday"]'); await wait(350);
+  if (await p.locator('#home [data-talk]').count() > 1) {
+    const firstTalkId = await p.locator('#home [data-talk]').first().getAttribute('data-talk');
+    await p.locator('#home [data-talk]').first().click(); await wait(350);
+    check(await p.locator('#appBody [data-next-unread-talk]').count() === 1, 'General Conference talk renders Next Unread Talk button');
+    await p.locator('#appBody [data-next-unread-talk]').dispatchEvent('click'); await wait(350);
+    const nextTalkBtnId = await p.locator('#appBody [data-talkdone]').getAttribute('data-talkdone');
+    check(Boolean(nextTalkBtnId && nextTalkBtnId !== firstTalkId), 'Clicking Next Unread Talk advances to the next unread Conference talk');
+    await p.click('#appClose'); await wait(250);
+  }
+
   // Verify standalone 6-stage Self-Discovery & Christ-Centered Leader Coach page (coaching_discovery_exercise_mockup.html).
   const cp = await dev.ctx.newPage();
   const cpErrs = [];
