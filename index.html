@@ -2616,6 +2616,10 @@
     background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.32); color: #fde68a; cursor: pointer;
   }
 
+  .hud-xp[hidden], #levelBtn[hidden] { display: none !important; }
+  body.adult-zero-xp #streakBtn { margin-right: auto; }
+  body.adult-zero-xp .pth-xp { display: none !important; }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .blob { animation: none; }
@@ -3584,11 +3588,15 @@ const TreasureUp = (function () {
         const on = ticked(rec, st.id, today), n = ticksIn(rec, st.id, mon, dayAdd(mon, 6));
         rows.push({ card: 'tick-' + st.id, done: on, html: flowRow(`data-tick="${esc(s.id)}|${esc(st.id)}"`, on, '🌱 ' + esc(st.text), 'My Season · ' + (!started ? 'a head start: it begins ' + starts : st.n === 7 ? n + ' of 7 days' : n + ' of ' + st.n + ' this week'), { box: true }) });
       }
-      if (started && chk && !(seasonRec(chk.s.id).checks || {})[chk.w]) rows.push({ card: 'check', done: false, go: { attr: 'data-season="check"', title: 'Weekend check-in', sub: 'My Season · ' + SEASON_CHECK_XP + ' XP' },
-        html: flowRow('data-season="check"', false, '🗓️ Weekend check-in', 'My Season · how’s it going? · ' + SEASON_CHECK_XP + ' XP') });
+      const isAdult = seasonWho() === 'adult';
+      if (started && chk && !(seasonRec(chk.s.id).checks || {})[chk.w]) rows.push({ card: 'check', done: false, go: { attr: 'data-season="check"', title: 'Weekend check-in', sub: isAdult ? 'My Season' : 'My Season · ' + SEASON_CHECK_XP + ' XP' },
+        html: flowRow('data-season="check"', false, '🗓️ Weekend check-in', isAdult ? 'My Season · how’s it going?' : 'My Season · how’s it going? · ' + SEASON_CHECK_XP + ' XP') });
     }
-    if (refl) rows.push({ card: 'reflect', done: false, go: { attr: 'data-season="reflect"', title: 'Look back on ' + refl.name, sub: 'My Season · ' + SEASON_REFLECT_XP + ' XP' },
-      html: flowRow('data-season="reflect"', false, '🌟 Look back on ' + esc(refl.name), SEASON_REFLECT_XP + ' XP') });
+    if (refl) {
+      const isAdult = seasonWho() === 'adult';
+      rows.push({ card: 'reflect', done: false, go: { attr: 'data-season="reflect"', title: 'Look back on ' + refl.name, sub: isAdult ? 'My Season' : 'My Season · ' + SEASON_REFLECT_XP + ' XP' },
+        html: flowRow('data-season="reflect"', false, '🌟 Look back on ' + esc(refl.name), isAdult ? 'My Season' : SEASON_REFLECT_XP + ' XP') });
+    }
     // The way into My Season: a 🌱, not a circle, since there's nothing to tick on it.
     if (goals.length) rows.push({ card: 'season', done: null, html: flowRow('data-season="home"', false, 'My Season', started ? esc(s.name) + ' · week ' + weekOfSeason(s, today) + ' of ' + s.weeks + ' · goals, the grid, impressions'
       : 'Starts ' + starts + ' · ' + goals.length + (goals.length === 1 ? ' goal' : ' goals') + ' planned', { muted: true, icon: '🌱' }) });
@@ -3850,8 +3858,8 @@ const TreasureUp = (function () {
         </div>
         <div class="core-walk-bar"><div style="width:${walkPct}%"></div></div>
         <div class="core-walk-sub">${!next && rows.length
-          ? 'Daily streak locked in! Everything in Go Further below is bonus explorer credit whenever you have extra time.'
-          : 'Finish these core steps to lock in today’s streak. Go Further below is always optional bonus XP.'}</div>
+          ? (kid ? 'Daily streak locked in! Everything in Go Further below is bonus explorer credit whenever you have extra time.' : 'Daily streak locked in! Everything in Go Further below is ready whenever you want deeper study.')
+          : (kid ? 'Finish these core steps to lock in today’s streak. Go Further below is always optional bonus XP.' : 'Finish these core steps to lock in today’s streak. Go Further below is always optional deep study.')}</div>
       </div>` : '';
     const secs = isToday ? [
       tsecHtml('morning', 'Morning', of('still', 'blueprint')),
@@ -3934,7 +3942,7 @@ const TreasureUp = (function () {
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
         <button type="button" class="btn" data-lib-ch="${esc(b.ch)}">📖 Read Full Chapter (${esc(b.ch)})</button>
         <button type="button" class="${done ? 'today-alt' : 'btn'}" style="${done ? '' : 'background:linear-gradient(135deg,#10b981,#059669);color:#fff;'}" data-bom-sheet-mark="${esc(b.ch)}">
-          ${done ? '✓ Completed Today (+10 XP)' : '✓ Mark Micro-Dose Read (+10 XP)'}
+          ${done ? (seasonWho() === 'adult' ? '✓ Completed Today' : '✓ Completed Today (+10 XP)') : (seasonWho() === 'adult' ? '✓ Mark Micro-Dose Read' : '✓ Mark Micro-Dose Read (+10 XP)')}
         </button>
       </div>`;
   }
@@ -4961,7 +4969,7 @@ const TreasureUp = (function () {
         </div>
 
         <div class="board-actions" style="margin-top:18px">
-          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>🚀 Lock In My Profile (+25 XP)</button>
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In My Profile'}</button>
           <button type="button" class="btn ghost" data-open-cclm-coach>💬 Live Situation Coach ›</button>
           <button type="button" class="btn ghost" data-coach-goto="3">‹ Back</button>
         </div>`;
@@ -5038,7 +5046,7 @@ const TreasureUp = (function () {
       </div>
 
       <div class="board-actions" style="margin-top:20px">
-        <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>🚀 Lock In My Profile (+25 XP)</button>
+        <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In My Profile'}</button>
         <button type="button" class="btn ghost" data-coach-goto="4">🏛️ Step 4: Christ-Centered Leader Engine ›</button>
         <button type="button" class="btn ghost" data-coach-goto="2">‹ Back</button>
       </div>`;
@@ -5135,7 +5143,7 @@ const TreasureUp = (function () {
 
       <div class="sea-imp-bar" style="margin-top:16px">
         ${kid ? `<button type="button" class="sh-pill${bpShare ? ' on' : ''}" data-bp-share>${bpShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Just yours</span>'}
-        <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-bp-save>Save Morning Council (+15 XP)</button>
+        <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-bp-save>${kid ? 'Save Morning Council (+15 XP)' : 'Save Morning Council'}</button>
       </div>
 
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px">
@@ -5251,7 +5259,7 @@ const TreasureUp = (function () {
 
       <div class="sea-imp-bar" style="margin-top:16px">
         ${kid ? `<button type="button" class="sh-pill${evShare ? ' on' : ''}" data-ev-share>${evShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Just yours</span>'}
-        <button type="button" class="btn" style="background:linear-gradient(135deg,#a78bfa,#818cf8);color:#1e1b4b;font-weight:900" data-ev-save>Close Day in Prayer · Return & Report (+20 XP)</button>
+        <button type="button" class="btn" style="background:linear-gradient(135deg,#a78bfa,#818cf8);color:#1e1b4b;font-weight:900" data-ev-save>${kid ? 'Close Day in Prayer · Return & Report (+20 XP)' : 'Close Day in Prayer · Return & Report'}</button>
       </div>`;
   }
 
@@ -5304,7 +5312,7 @@ const TreasureUp = (function () {
     const ch = chargeOf(streakNow());
     const sub = done ? esc(ev.mercies || ev.wins || ev.improve || ev.surrender) : kid ? 'Tonight: talk with Heavenly Father about your day' : 'Notice His mercies · review today’s wins · a lesson for tomorrow';
     const got = ((pathDoneOf(k).eveningXp) || {}).xp;
-    const xp = done ? (got ? `<em class="pth-xp ok">+${got}<small>earned</small></em>` : '') : `<em class="pth-xp">+${Math.round(EVENING_XP * ch)}${ch > 1 ? ' ⚡' : ' XP'}</em>`;
+    const xp = !kid ? '' : done ? (got ? `<em class="pth-xp ok">+${got}<small>earned</small></em>` : '') : `<em class="pth-xp">+${Math.round(EVENING_XP * ch)}${ch > 1 ? ' ⚡' : ' XP'}</em>`;
     return [{ done, html: tcRow('data-open-evening', { done, cls: 'evening-card', title: '🌙 Return &amp; Report', sub, xp }) }];
   }
 
@@ -7113,8 +7121,9 @@ const TreasureUp = (function () {
         [x.kind === 'quote' ? 'Quote' + (s.who ? ' · ' + s.who : '') : KIND_NAME[x.kind] || (isJsp(x) ? 'Joseph Smith Papers' : 'Insight'), x.ref].filter(Boolean).join(' · ')));
     }
     if (fk) {
+      const isAdult = seasonWho() === 'adult';
       for (const x of dayDeep(d)) rows.push(moreRow(`data-lesson="${fk}" data-focus="deep-${esc(x.id)}"`, !!S.deep[x.id], 'Go deeper: ' + x.read,
-        S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question · ' + XP.bonus + ' XP'));
+        S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question' + (isAdult ? '' : ' · ' + XP.bonus + ' XP')));
       const bon = reels.flatMap(r => bonusesOf(r).map((_, n) => ({ r, k: bonusKey(r.id, n) })));
       if (bon.length) {
         const got = bon.filter(b => S.bonus[b.k]).length, open = bon.filter(b => S.answers[b.r.id]).length;
@@ -7830,7 +7839,7 @@ const TreasureUp = (function () {
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
             <button type="button" class="ins-save-btn" data-save-card-note="${esc(t.id)}">✍️ Save Takeaway to My Notes</button>
           </div>
-          ${seen ? '<p class="fam-note" style="margin-top:14px;color:#34d399;font-weight:700">✓ Studied · +15 XP</p>' : `<div class="board-actions" style="margin-top:14px"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk · +${TALK_XP} XP</button></div>`}`
+          ${seen ? `<p class="fam-note" style="margin-top:14px;color:#34d399;font-weight:700">✓ Studied${seasonWho() === 'adult' ? '' : ' · +15 XP'}</p>` : `<div class="board-actions" style="margin-top:14px"><button class="btn" data-talkdone="${esc(t.id)}">✓ I studied this talk${seasonWho() === 'adult' ? '' : ` · +${TALK_XP} XP`}</button></div>`}`
       }
     ];
 
@@ -8421,7 +8430,7 @@ const TreasureUp = (function () {
     return `<div class="ch-mark">${libAsk === u.ref ? `<p>That was quick. Did you read all of ${esc(u.ref)}?</p>
       <button class="btn" data-lib-readyes="${esc(u.ref)}">Yes, I read every verse</button>
       <button class="today-alt" data-lib-readnot>Not yet</button>`
-      : `<p>Read it all? Mark it read for ${READ_XP} XP.</p><button class="btn" data-lib-mark="${esc(u.ref)}">I read ${esc(u.ref)}</button>`}</div>`;
+      : `<p>Read it all? Mark it read${seasonWho() === 'adult' ? '.' : ` for ${READ_XP} XP.`}</p><button class="btn" data-lib-mark="${esc(u.ref)}">I read ${esc(u.ref)}</button>`}</div>`;
   }
   function libMark(ref, said) {
     const u = libUnit && libUnit.u;
@@ -8522,6 +8531,7 @@ const TreasureUp = (function () {
 
   function renderHome() {
     setTimeout(maybeCelebrate, 0);   // a goal a parent said done: his celebration, once the home is drawn
+    renderHud();
     const was = $('home').querySelector('.strip'), left = was ? was.scrollLeft : null;
     $('home').innerHTML = homeHtml();
     document.querySelectorAll('#tabs [data-tab]').forEach(b => b.classList.toggle('on', b.dataset.tab === homeTab));
@@ -8623,11 +8633,18 @@ const TreasureUp = (function () {
   /* ---------------- HUD ---------------- */
 
   function renderHud() {
+    const isAdult = seasonWho() === 'adult';
+    document.body.classList.toggle('adult-zero-xp', isAdult);
     const L = levelFor(S.xp);
     const capped = L >= LEVEL_TITLES.length;
     const floor = xpAt(L);
     const ceil = capped ? floor : xpAt(L + 1);
     const pct = capped ? 100 : Math.max(0, Math.min(100, ((S.xp - floor) / (ceil - floor)) * 100));
+
+    const lvBtn = $('levelBtn');
+    if (lvBtn) lvBtn.hidden = isAdult;
+    const hudXp = document.querySelector('.hud-xp');
+    if (hudXp) hudXp.hidden = isAdult;
 
     $('levelNum').textContent = L;
     $('levelTitle').textContent = LEVEL_TITLES[L - 1];
@@ -8638,7 +8655,7 @@ const TreasureUp = (function () {
       : fmtN(ceil - S.xp) + ' XP to level ' + (L + 1) + ' · ' + LEVEL_TITLES[L];
     const streak = streakNow(), charge = chargeOf(streak);
     $('streakNum').textContent = streak;
-    $('chargeNum').hidden = charge <= 1;
+    $('chargeNum').hidden = isAdult || charge <= 1;
     $('chargeNum').textContent = '⚡×' + charge;
     $('freezeNum').hidden = !(S.freezes > 0);
     $('freezeNum').textContent = '❄️' + (S.freezes || 0);
@@ -8649,6 +8666,7 @@ const TreasureUp = (function () {
   // Every XP he earns, supercharged by the streak (chargeOf); exactly as
   // given (`exact`) when a parent picked it, for a finished goal.
   function grantXp(amount, reason, exact) {
+    const isAdult = seasonWho() === 'adult';
     const charge = exact ? 1 : chargeOf(streakNow());
     amount = Math.round(amount * charge);
     const beforeXp = S.xp;
@@ -8659,13 +8677,13 @@ const TreasureUp = (function () {
     // In a lesson the XP shows on the step, and a reward or a new level on
     // its last screen, since the lesson covers the toasts.
     if (lesson) unlocked.forEach(r => lesson.rewards.push(r.text));
-    else {
+    else if (!isAdult) {
       if (!exact) toast('＋' + amount + ' XP' + (charge > 1 ? ' ⚡×' + charge : ''), reason);
       unlocked.forEach(r => toast('🎁 Reward unlocked', r.text + ' · show a parent'));
     }
     renderHud();
     if (P.rewards.length) refreshHome();
-    if (after > before) { if (lesson) lesson.level = after; else levelUp(after); }
+    if (after > before && !isAdult) { if (lesson) lesson.level = after; else levelUp(after); }
   }
 
   // XP for a record (an answer, a note…), which keeps what it paid: with the
@@ -10402,6 +10420,7 @@ const TreasureUp = (function () {
     return 0;
   }
   function pathRowXp(r) {
+    if (seasonWho() === 'adult') return '';
     if (r.done) { const n = pathRowEarned(r); return n ? `<em class="pth-xp ok">+${n}<small>earned</small></em>` : ''; }
     const [base, upTo] = pathRowBase(r), ch = chargeOf(streakNow());
     return base ? `<em class="pth-xp">${upTo ? '<small>up to</small>' : ''}+${Math.round(base * ch)}${ch > 1 ? ' ⚡' : ' XP'}</em>` : '';
