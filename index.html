@@ -4705,7 +4705,7 @@ const TreasureUp = (function () {
   };
 
   function generateCclmPlaybook(opts = {}) {
-    const prof = profileOf(), triad = valuesTriadOf(prof), strs = prof.strengths || [];
+    const prof = opts.profile || profileOf(), triad = valuesTriadOf(prof), strs = prof.strengths || [];
     const who = opts.who || 'child';
     const sit = opts.sit || 'resist';
     const driftKey = opts.drift || prof.cclmDrift || 'fixer';
@@ -5059,7 +5059,7 @@ const TreasureUp = (function () {
       { id: 'physical', icon: '💪', label: 'Physical · Stature', cclm: '🪞 With Self', fallback: isAdult ? 'Physical training & restorative rest' : 'Active play, sports, or outdoor practice' },
       { id: 'intellectual', icon: '🧠', label: 'Intellectual · Wisdom', cclm: '🏛️ Stewardships', fallback: isAdult ? 'The ONE Thing high-leverage deep work' : 'Build, create, or practice a new skill' }
     ];
-    const quickDays = [1, 3, 5, 13, 27, 40];
+    const quickDays = [1, 6, 12, 19, 27, 34, 40];
 
     return `<div class="today-compass${!isAdult ? ' youth-mode youth-' + esc(yTheme) : ''}" data-today-compass>
       <div class="tc-top-bar">
@@ -5068,8 +5068,8 @@ const TreasureUp = (function () {
           <button type="button" class="tc-mode-btn${!isAdult ? ' on' : ''}" data-compass-mode="youth" aria-pressed="${!isAdult}">🎮 Youth Flow (Luke 2:52)</button>
         </div>
         <div class="tc-act-pills">
-          <button type="button" class="tc-act-pill" data-hub-profile="me">🧭 6-Stage Growth Coach</button>
-          <button type="button" class="tc-act-pill" data-open-cclm-coach>🏛️ Situation Leader Coach</button>
+          <button type="button" class="tc-act-pill" data-hub-profile="me" data-compass-coach="1">🧭 6-Stage Growth Coach</button>
+          <button type="button" class="tc-act-pill" data-open-cclm-coach data-compass-coach="5">🏛️ Situation Leader Coach</button>
           <a class="tc-act-pill" href="./flow.html" style="color:#93c5fd;border-color:rgba(147,197,253,.3)">🗺️ Full Flow</a>
           <a class="tc-act-pill" href="./coaching.html" style="color:#c4b5fd;border-color:rgba(196,181,253,.3)">🧪 Workshop</a>
         </div>
@@ -5081,7 +5081,7 @@ const TreasureUp = (function () {
             <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fcd34d">🌿 Wilderness 40 · Day ${w40.d[0]} of 40 · Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
             <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
               <button type="button" class="bp-edit-btn" data-compass-w40-step="-1" ${w40.d[0] <= 1 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">‹ Prev</button>
-              ${quickDays.map(dn => `<button type="button" class="bp-edit-btn" data-compass-w40-day="${dn}" style="font-size:10px;padding:2px 6px;${w40.d[0] === dn ? 'background:var(--gold);color:#1c1406;border-color:var(--gold);font-weight:900' : ''}">D${dn}</button>`).join('')}
+              ${quickDays.map(dn => `<button type="button" class="bp-edit-btn" data-compass-w40-day="${dn}" aria-pressed="${w40.d[0] === dn}" style="font-size:10px;padding:2px 6px;${w40.d[0] === dn ? 'background:var(--gold);color:#1c1406;border-color:var(--gold);font-weight:900' : ''}">D${dn}</button>`).join('')}
               <button type="button" class="bp-edit-btn" data-compass-w40-step="1" ${w40.d[0] >= 40 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">Next ›</button>
             </div>
           </div>
@@ -5100,9 +5100,9 @@ const TreasureUp = (function () {
               <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''} · 🏛️ ${esc(triad.join(' · '))}</div>
             </div>
             <div style="display:flex;gap:4px;flex-wrap:wrap" role="group" aria-label="Youth Theme Style">
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" aria-pressed="${yTheme === 'nintendo'}" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" aria-pressed="${yTheme === 'rpg'}" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" aria-pressed="${yTheme === 'booklet'}" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
             </div>
           </div>
         </div>
@@ -5347,16 +5347,16 @@ const TreasureUp = (function () {
         <p class="sh-small">“And Jesus increased in wisdom and stature, and in favour with God and man.” (Luke 2:52) · <b>🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect</b> across 🕊️ Spiritual, 🤝 Social, 💪 Physical, 🧠 Intellectual.</p>
 
         <div class="sheet-group">
-          <label>What is your name?</label>
+          <label for="coachName">What is your name?</label>
           <input class="field sheet-in" id="coachName" maxlength="40" value="${esc(d.name)}" placeholder="Your name">
         </div>
 
         <div class="sheet-group">
           <label>Who is this profile for?</label>
           <div class="coach-chip-group">
-            <button type="button" class="coach-chip${d.who === 'child' ? ' on' : ''}" data-coach-who="child">👦 Child (Primary)</button>
-            <button type="button" class="coach-chip${d.who === 'youth' ? ' on' : ''}" data-coach-who="youth">⚡ Youth (Young Men / Women)</button>
-            <button type="button" class="coach-chip${d.who === 'adult' ? ' on' : ''}" data-coach-who="adult">👔 Adult (Best Self PRO)</button>
+            <button type="button" class="coach-chip${d.who === 'child' ? ' on' : ''}" data-coach-who="child" aria-pressed="${d.who === 'child'}">👦 Child (Primary)</button>
+            <button type="button" class="coach-chip${d.who === 'youth' ? ' on' : ''}" data-coach-who="youth" aria-pressed="${d.who === 'youth'}">⚡ Youth (Young Men / Women)</button>
+            <button type="button" class="coach-chip${d.who === 'adult' ? ' on' : ''}" data-coach-who="adult" aria-pressed="${d.who === 'adult'}">👔 Adult (Best Self PRO)</button>
           </div>
         </div>
 
@@ -5395,7 +5395,7 @@ const TreasureUp = (function () {
         <div class="sheet-group">
           <label>Interests & Talents (${selected.size} selected)</label>
           <div class="coach-chip-group">
-            ${available.map(item => `<button type="button" class="coach-chip${selected.has(item.id) ? ' on' : ''}" data-coach-toggle-int="${esc(item.id)}">${item.icon} ${esc(item.id)}</button>`).join('')}
+            ${available.map(item => `<button type="button" class="coach-chip${selected.has(item.id) ? ' on' : ''}" data-coach-toggle-int="${esc(item.id)}" aria-pressed="${selected.has(item.id)}">${item.icon} ${esc(item.id)}</button>`).join('')}
             ${customPicked.map(item => {
               const ca = customAreas[item] || 'intellectual';
               return `<button type="button" class="coach-chip on" data-coach-rm-custom="${esc(item)}" title="Tap to remove custom interest">${areaOf(ca).icon || '⭐'} ${esc(item)} <span style="opacity:.7;margin-left:3px">✕</span></button>`;
@@ -5404,7 +5404,7 @@ const TreasureUp = (function () {
         </div>
 
         <div class="sheet-group">
-          <label>Add Custom Hobby, Pursuit, or Skill</label>
+          <label for="coachCustomInt">Add Custom Hobby, Pursuit, or Skill</label>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
             <input class="field sheet-in" id="coachCustomInt" maxlength="40" placeholder="e.g. Swimming, AI Building, Guitar..." style="flex:1 1 160px">
             <select class="field sheet-in" id="coachCustomArea" aria-label="Growth area for custom interest" style="flex:0 0 auto;width:auto">
@@ -5419,10 +5419,16 @@ const TreasureUp = (function () {
 
         ${!isKid ? `
           <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25)">
-            <label style="color:#fde68a">🔥 Stage 2 Crucible Reflection (100% Blank Slate · Auto-Detects Candidate Values)</label>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px">
+              <label for="coachPeakMoment" style="color:#fde68a;margin:0">🔥 Stage 2 Crucible Reflection (100% Blank Slate · Auto-Detects Candidate Values)</label>
+              <div style="display:flex;gap:4px">
+                <button type="button" class="bp-edit-btn" data-coach-seed-crucible style="font-size:10px;padding:2px 7px">✨ Seed Example Reflection</button>
+                <button type="button" class="bp-edit-btn" data-coach-clear-crucible style="font-size:10px;padding:2px 7px">🧹 Clear</button>
+              </div>
+            </div>
             <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized, aligned, and proud recently?" style="margin-bottom:6px">
-            <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow (Pinch): What drains or frustrates you fastest when violated?">
-            ${crucibleMatches.length ? `<div style="font-size:11.5px;color:#6ee7b7;margin-top:6px">✨ <b>Crucible Auto-Detected Values:</b> ${esc(crucibleMatches.join(' · '))}</div>` : `<small>Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</small>`}
+            <input class="field sheet-in" id="coachPinchMirror" aria-label="Frustration Shadow (Pinch)" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow (Pinch): What drains or frustrates you fastest when violated?">
+            <div id="coachCruciblePreview" style="font-size:11.5px;color:#6ee7b7;margin-top:6px">${crucibleMatches.length ? `✨ <b>Crucible Auto-Detected Values:</b> ${esc(crucibleMatches.join(' · '))}` : `<span style="color:#94a3b8">Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</span>`}</div>
           </div>
         ` : ''}
 
@@ -5450,12 +5456,12 @@ const TreasureUp = (function () {
               ${STRENGTH_SCENARIOS.map(sc => `<div style="padding:7px 9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)">
                 <div style="font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:4px">${esc(sc.q)}</div>
                 <div class="coach-chip-group">
-                  ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}">${esc(o.label)}</button>`).join('')}
+                  ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}" aria-pressed="${myStrengths.has(o.code)}">${esc(o.label)}</button>`).join('')}
                 </div>
               </div>`).join('')}
             </div>
             <div class="coach-chip-group">
-              ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}">${esc(st)}</button>`).join('')}
+              ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}" aria-pressed="${myStrengths.has(st)}">${esc(st)}</button>`).join('')}
             </div>
             ${primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `
               <div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);font-size:11.5px;color:#fecdd3">
@@ -5470,7 +5476,7 @@ const TreasureUp = (function () {
           <div style="display:flex;flex-direction:column;gap:6px">
             ${Object.values(CCLM_DRIFTS).map(dr => {
               const on = driftKey === dr.id;
-              return `<button type="button" style="text-align:left;padding:9px 11px;border-radius:11px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'};color:#fff;cursor:pointer" data-coach-cclm-drift="${dr.id}">
+              return `<button type="button" style="text-align:left;padding:9px 11px;border-radius:11px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'};color:#fff;cursor:pointer" data-coach-cclm-drift="${dr.id}" aria-pressed="${on}">
                 <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:800">
                   <span>${dr.icon} ${esc(dr.title)} <small style="color:#94a3b8;font-weight:600">(${esc(dr.formula)})</small></span>
                   <span style="color:#fde68a;font-size:11px">${esc(dr.antidoteLabel)}</span>
@@ -5487,13 +5493,13 @@ const TreasureUp = (function () {
         <div class="sheet-group">
           <label>🏛️ 3. Outer-Ring Stewardship Focus: Which domain needs your primary focus right now?</label>
           <div class="coach-chip-group">
-            ${CCLM_DOMAINS.map(dom => `<button type="button" class="coach-chip${domKey === dom.id ? ' on' : ''}" data-coach-cclm-dom="${dom.id}">${dom.icon} ${esc(dom.label)}</button>`).join('')}
+            ${CCLM_DOMAINS.map(dom => `<button type="button" class="coach-chip${domKey === dom.id ? ' on' : ''}" data-coach-cclm-dom="${dom.id}" aria-pressed="${domKey === dom.id}">${dom.icon} ${esc(dom.label)}</button>`).join('')}
           </div>
           <p class="sh-small" style="margin-top:6px;color:#fde68a"><b>Diagnostic Question (${esc(domObj.short)}):</b> “${esc(domObj.auditQ)}”</p>
         </div>
 
         <div class="sheet-group">
-          <label>🕊️ 4. Blank-Slate Stewardship Reflection (Private to your device)</label>
+          <label for="coachCclmNote">🕊️ 4. Blank-Slate Stewardship Reflection (Private to your device)</label>
           <textarea class="field sheet-in" id="coachCclmNote" rows="2" maxlength="300" placeholder="Optional: Who or what stewardship are you learning to lead with faithfulness over control?">${esc(d.cclmNote || '')}</textarea>
         </div>
 
@@ -5510,7 +5516,7 @@ const TreasureUp = (function () {
       const driftKey = d.cclmDrift || 'fixer';
       const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
       const triad = valuesTriadOf(d);
-      const pb = generateCclmPlaybook({ who, sit, drift: driftKey });
+      const pb = generateCclmPlaybook({ who, sit, drift: driftKey, profile: d });
       const whoOpts = [
         { id: 'child', label: '👦 Child / Youth' },
         { id: 'spouse', label: '💑 Spouse' },
@@ -5532,14 +5538,14 @@ const TreasureUp = (function () {
         <div class="sheet-group">
           <label>1. Who are you leading or walking with right now?</label>
           <div class="coach-chip-group">
-            ${whoOpts.map(o => `<button type="button" class="bp-quick-pill${who === o.id ? ' on' : ''}" style="${who === o.id ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-sit-who="${o.id}">${o.label}</button>`).join('')}
+            ${whoOpts.map(o => `<button type="button" class="bp-quick-pill${who === o.id ? ' on' : ''}" style="${who === o.id ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-sit-who="${o.id}" aria-pressed="${who === o.id}">${o.label}</button>`).join('')}
           </div>
         </div>
 
         <div class="sheet-group">
           <label>2. What is happening in this moment?</label>
           <div class="coach-chip-group">
-            ${sitOpts.map(o => `<button type="button" class="bp-quick-pill${sit === o.id ? ' on' : ''}" style="${sit === o.id ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-sit-what="${o.id}">${o.label}</button>`).join('')}
+            ${sitOpts.map(o => `<button type="button" class="bp-quick-pill${sit === o.id ? ' on' : ''}" style="${sit === o.id ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-sit-what="${o.id}" aria-pressed="${sit === o.id}">${o.label}</button>`).join('')}
           </div>
         </div>
 
@@ -5565,6 +5571,7 @@ const TreasureUp = (function () {
       const drift = CCLM_DRIFTS[d.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer;
       const domObj = CCLM_DOMAINS.find(x => x.id === (d.cclmDomain || 'children')) || CCLM_DOMAINS[2];
       const ratings = d.cclmRatings || { god: 4, self: 3, children: 4, stewardships: 3 };
+      const topCardObj = CORE_VALUES_DECK.find(x => x.id === triad[0]) || CORE_VALUES_DECK[0];
       return `<div class="sh-title">📜 Stage 6: 4-Domain Audit & Personal Charter</div>
         ${coachStageNavHtml(6)}
         <p class="sh-small">Rate your current alignment across the 4 Outer-Ring Stewardship Domains and lock in your Personal Identity & Leadership Charter.</p>
@@ -5574,11 +5581,11 @@ const TreasureUp = (function () {
             const on = (d.cclmDomain || 'children') === dom.id;
             const r = ratings[dom.id] || 4;
             return `<div style="padding:8px;border-radius:10px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'}">
-              <button type="button" style="background:none;border:none;color:#fff;font-weight:800;font-size:12px;text-align:left;cursor:pointer;width:100%;padding:0" data-coach-cclm-dom="${dom.id}">${dom.icon} ${esc(dom.short)} ${on ? '★' : ''}</button>
+              <button type="button" style="background:none;border:none;color:#fff;font-weight:800;font-size:12px;text-align:left;cursor:pointer;width:100%;padding:0" data-coach-cclm-dom="${dom.id}" aria-pressed="${on}">${dom.icon} ${esc(dom.short)} ${on ? '★' : ''}</button>
               <div style="font-size:10.5px;color:#cbd5e1;margin:3px 0 6px">${esc(dom.auditQ)}</div>
               <div style="display:flex;gap:3px;align-items:center">
                 <small style="font-size:10px;color:#94a3b8;margin-right:3px">Align:</small>
-                ${[1, 2, 3, 4, 5].map(n => `<button type="button" class="bp-quick-pill" style="padding:2px 6px;font-size:10px;${r === n ? 'background:var(--gold);color:#1c1406;border-color:var(--gold)' : ''}" data-coach-cclm-rate="${dom.id}:${n}">${n}</button>`).join('')}
+                ${[1, 2, 3, 4, 5].map(n => `<button type="button" class="bp-quick-pill" style="padding:2px 6px;font-size:10px;${r === n ? 'background:var(--gold);color:#1c1406;border-color:var(--gold)' : ''}" data-coach-cclm-rate="${dom.id}:${n}" aria-pressed="${r === n}">${n}</button>`).join('')}
               </div>
             </div>`;
           }).join('')}
@@ -5589,16 +5596,22 @@ const TreasureUp = (function () {
           <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Core Values Triad:</b> <span style="color:#fde68a">${esc(triad.join(' · '))}</span>${subs.length ? ` <small style="color:#cbd5e1">(${esc(subs.join(' · '))})</small>` : ''}</div>
           ${strs.length ? `<div style="font-size:12px;color:#fff;margin-bottom:4px"><b>CliftonStrengths:</b> <span style="color:#bae6fd">${esc(strs.join(' · '))}</span></div>` : ''}
           <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Stress Drift & Antidote:</b> ${drift.icon} ${esc(drift.title)} → <span style="color:#6ee7b7">${esc(drift.antidoteLabel)}</span></div>
-          <div style="font-size:12px;color:#fff"><b>Primary Stewardship Focus:</b> ${domObj.icon} ${esc(domObj.label)}</div>
+          <div style="font-size:12px;color:#fff;margin-bottom:8px"><b>Primary Stewardship Focus:</b> ${domObj.icon} ${esc(domObj.label)}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1)">
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.04);font-size:10.5px;color:#cbd5e1"><b style="color:#fde68a">1. Today’s Bedrock Touchstone Question:</b> “${esc(topCardObj ? topCardObj.q : '')}”</div>
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.04);font-size:10.5px;color:#cbd5e1"><b style="color:#6ee7b7">2. Christ-Centered Principle & Stress-Drift Guardrail:</b> ${esc(drift.habit)}</div>
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.04);font-size:10.5px;color:#cbd5e1"><b style="color:#7dd3fc">3. Strength & Stewardship Season Focus:</b> ${domObj.icon} ${esc(domObj.short)}${strs[0] ? ` · ${esc(strs[0])}` : ''}</div>
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.04);font-size:10.5px;color:#cbd5e1"><b style="color:#fda4af">4. Evening Jeremiah 1:8 Check:</b> Faithfulness over control in ${esc(domObj.short)}.</div>
+          </div>
         </div>
 
         <div class="sheet-group">
-          <label>🕊️ Personal Covenant & Stewardship Commitment</label>
+          <label for="coachCclmNote">🕊️ Personal Covenant & Stewardship Commitment</label>
           <textarea class="field sheet-in" id="coachCclmNote" rows="2" maxlength="300" placeholder="Who or what stewardship are you handing to the Savior while practicing ${esc(drift.antidoteLabel)}?">${esc(d.cclmNote || '')}</textarea>
         </div>
 
         <div class="board-actions" style="margin-top:16px">
-          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In & Sync Charter'}</button>
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '✨ Save & Sync to My Daily Walk'}</button>
           <button type="button" class="btn ghost" data-coach-goto="5">‹ Back to Playbook</button>
         </div>`;
     }
@@ -5621,10 +5634,10 @@ const TreasureUp = (function () {
 
       ${!isKid ? `
         <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-          <label>🔥 The Crucible Mirror (100% Blank Slate · Auto-Highlights Values Below)</label>
+          <label for="coachPeakMoment">🔥 The Crucible Mirror (100% Blank Slate · Auto-Highlights Values Below)</label>
           <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized and proud recently?" style="margin-bottom:6px">
-          <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
-          ${crucibleMatches.length ? `<div style="font-size:11px;color:#6ee7b7;margin-top:5px">✨ <b>Crucible-Suggested Pillars:</b> ${esc(crucibleMatches.join(' · '))}</div>` : ''}
+          <input class="field sheet-in" id="coachPinchMirror" aria-label="Frustration Shadow" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
+          <div id="coachCruciblePreview" style="font-size:11px;color:#6ee7b7;margin-top:5px">${crucibleMatches.length ? `✨ <b>Crucible-Suggested Pillars:</b> ${esc(crucibleMatches.join(' · '))}` : ''}</div>
         </div>
 
         <div class="sheet-group">
@@ -5633,7 +5646,7 @@ const TreasureUp = (function () {
             ${CORE_VALUES_DECK.map(v => {
               const inFunnel = funnelSet.has(v.id);
               const isCrucible = crucibleMatches.includes(v.id);
-              return `<button type="button" class="bp-quick-pill${inFunnel ? ' on' : ''}" style="font-size:11px;${inFunnel ? 'background:rgba(56,189,248,.18);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-funnel="${esc(v.id)}">${v.icon} ${esc(v.label)}${isCrucible ? ' 🔥' : ''}</button>`;
+              return `<button type="button" class="bp-quick-pill${inFunnel ? ' on' : ''}" style="font-size:11px;${inFunnel ? 'background:rgba(56,189,248,.18);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-funnel="${esc(v.id)}" aria-pressed="${inFunnel}">${v.icon} ${esc(v.label)}${isCrucible ? ' 🔥' : ''}</button>`;
             }).join('')}
           </div>
         </div>
@@ -5642,17 +5655,17 @@ const TreasureUp = (function () {
       <div class="sheet-group">
         <label>🏛️ ${!isKid ? 'Step B: Crown Your Top 3 ' : ''}Core Values Triad (Pick up to 3 · Default: FAITH · ADVENTURE · INTEGRITY)</label>
         <div class="coach-chip-group">
-          ${CORE_VALUES_DECK.map(v => `<button type="button" class="coach-chip${cVals.has(v.id) ? ' on' : ''}" data-coach-val="${esc(v.id)}">${v.icon} ${esc(v.label)}</button>`).join('')}
+          ${CORE_VALUES_DECK.map(v => `<button type="button" class="coach-chip${cVals.has(v.id) ? ' on' : ''}" data-coach-val="${esc(v.id)}" aria-pressed="${cVals.has(v.id)}">${v.icon} ${esc(v.label)}</button>`).join('')}
         </div>
         <div class="coach-chip-group" style="margin-top:6px">
-          ${CORE_VALUES_DECK.filter(v => cVals.has(v.id)).flatMap(v => v.subs).map(sub => `<button type="button" class="bp-quick-pill${sVals.has(sub) ? ' on' : ''}" style="${sVals.has(sub) ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-subval="${esc(sub)}">✨ ${esc(sub)}</button>`).join('')}
+          ${CORE_VALUES_DECK.filter(v => cVals.has(v.id)).flatMap(v => v.subs).map(sub => `<button type="button" class="bp-quick-pill${sVals.has(sub) ? ' on' : ''}" style="${sVals.has(sub) ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-subval="${esc(sub)}" aria-pressed="${sVals.has(sub)}">✨ ${esc(sub)}</button>`).join('')}
         </div>
       </div>
 
       <div class="sheet-group">
         <label>⚡ Primary Superpower</label>
         <div class="coach-chip-group">
-          ${superpowers.map(sp => `<button type="button" class="coach-chip${d.superpower === sp ? ' on' : ''}" data-coach-sp="${esc(sp)}">⚡ ${esc(sp)}</button>`).join('')}
+          ${superpowers.map(sp => `<button type="button" class="coach-chip${d.superpower === sp ? ' on' : ''}" data-coach-sp="${esc(sp)}" aria-pressed="${d.superpower === sp}">⚡ ${esc(sp)}</button>`).join('')}
         </div>
       </div>
 
@@ -5663,12 +5676,12 @@ const TreasureUp = (function () {
             ${STRENGTH_SCENARIOS.map(sc => `<div style="padding:7px 9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)">
               <div style="font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:4px">${esc(sc.q)}</div>
               <div class="coach-chip-group">
-                ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}">${esc(o.label)}</button>`).join('')}
+                ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}" aria-pressed="${myStrengths.has(o.code)}">${esc(o.label)}</button>`).join('')}
               </div>
             </div>`).join('')}
           </div>
           <div class="coach-chip-group">
-            ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}">${esc(st)}</button>`).join('')}
+            ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}" aria-pressed="${myStrengths.has(st)}">${esc(st)}</button>`).join('')}
           </div>
           ${primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `
             <div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);font-size:11.5px;color:#fecdd3">
@@ -5679,7 +5692,7 @@ const TreasureUp = (function () {
       ` : ''}
 
       <div class="sheet-group">
-        <label>🎯 Current Season Milestone / North Star</label>
+        <label for="coachMilestone">🎯 Current Season Milestone / North Star</label>
         <input class="field sheet-in" id="coachMilestone" maxlength="80" value="${esc(d.milestone || '')}" placeholder="${isKid ? 'e.g. Preparing for Deacons Quorum at 12' : 'e.g. Live Faith, Adventure & Integrity with my family'}">
       </div>
 
@@ -19464,9 +19477,24 @@ const TreasureUp = (function () {
     }
     if (L.profile || R.profile) {
       const lp = L.profile || {}, rp = R.profile || {}, bp = B.profile || {};
-      if ((lp.upd || 0) !== (rp.upd || 0)) M.profile = (lp.upd || 0) > (rp.upd || 0) ? lp : rp;
-      else if (JSON.stringify(lp) !== JSON.stringify(bp) && L.profile !== undefined) M.profile = lp;
-      else M.profile = rp.upd ? rp : lp;
+      const lNewer = (lp.upd || 0) !== (rp.upd || 0) ? (lp.upd || 0) > (rp.upd || 0)
+        : (JSON.stringify(lp) !== JSON.stringify(bp) && L.profile !== undefined) ? true : !rp.upd;
+      const newer = lNewer ? lp : rp, older = lNewer ? rp : lp;
+      const mp = Object.assign({}, bp, older, newer);
+      for (const k of Object.keys(older)) {
+        if (k === 'upd') continue;
+        if (JSON.stringify(older[k]) !== JSON.stringify(bp[k]) && JSON.stringify(newer[k]) === JSON.stringify(bp[k])) {
+          mp[k] = older[k];
+        } else if ((k === 'cclmRatings' || k === 'customAreas') && older[k] && newer[k] && typeof older[k] === 'object' && typeof newer[k] === 'object') {
+          const subB = (bp && bp[k]) || {}, subM = Object.assign({}, subB, older[k], newer[k]);
+          for (const sk of Object.keys(older[k])) {
+            if (older[k][sk] !== subB[sk] && newer[k][sk] === subB[sk]) subM[sk] = older[k][sk];
+          }
+          mp[k] = subM;
+        }
+      }
+      if (lp.upd || rp.upd) mp.upd = Math.max(lp.upd || 0, rp.upd || 0);
+      M.profile = mp;
     }
     delete M.preferredTrans;
     M.arcadeOpen = [R.arcadeOpen, L.arcadeOpen].filter(Boolean).sort().pop() || '';
@@ -22477,7 +22505,7 @@ const TreasureUp = (function () {
         const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
         S.seasonWho = nextWho;
         S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
-        if (S.profile) S.profile.who = nextWho;
+        if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
         save();
         refreshHome();
         return;
@@ -22634,6 +22662,24 @@ const TreasureUp = (function () {
         openSheet(coachWalkthroughSheetHtml());
         return;
       }
+      if (e.target.closest('[data-coach-seed-crucible]')) {
+        syncCoachInputs();
+        coachDraft.peakMoment = 'Leading a deep family council at the kitchen table where we listened with patience and solved a hard problem together in peace.';
+        coachDraft.pinchMirror = 'When someone rushes a commitment, cuts corners on integrity, or speaks harshly under pressure instead of honoring the relationship.';
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        detectCrucibleValues(coachDraft.peakMoment, coachDraft.pinchMirror).forEach(id => {
+          if (!arr.includes(id)) arr.push(id);
+        });
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      if (e.target.closest('[data-coach-clear-crucible]')) {
+        syncCoachInputs();
+        coachDraft.peakMoment = '';
+        coachDraft.pinchMirror = '';
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
       const cw = e.target.closest('[data-coach-who]');
       if (cw) {
         syncCoachInputs();
@@ -22766,6 +22812,7 @@ const TreasureUp = (function () {
       const syncCclmSheetProfile = () => {
         if (!S.profile) S.profile = profileOf();
         if ($('cclmAuditNote')) S.profile.cclmNote = $('cclmAuditNote').value.trim();
+        S.profile.upd = Date.now();
         return S.profile;
       };
       if (e.target.closest('[data-open-cclm-coach]')) {
@@ -22836,6 +22883,10 @@ const TreasureUp = (function () {
       }
       const cseed = e.target.closest('[data-cclm-seed-bp]');
       if (cseed) {
+        if (coachDraft && document.querySelector('#appBody [data-coach-goto]')) {
+          syncCoachInputs();
+          saveProfile(coachDraft);
+        }
         const seedText = cseed.dataset.cclmSeedBp || '';
         const seedMove = cseed.dataset.cclmSeedMove || 'love';
         openBlueprint({ uplift: seedText, cclmMove: seedMove });
@@ -23188,6 +23239,18 @@ const TreasureUp = (function () {
     $('appSheet').addEventListener('input', e => {
       if (e.target && e.target.classList.contains('bp-textarea')) {
         fitTextarea(e.target);
+      }
+      if (coachDraft && e.target && (e.target.id === 'coachPeakMoment' || e.target.id === 'coachPinchMirror')) {
+        syncCoachInputs();
+        const matches = detectCrucibleValues(coachDraft.peakMoment, coachDraft.pinchMirror);
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        matches.forEach(id => { if (!arr.includes(id)) arr.push(id); });
+        const prev = $('coachCruciblePreview');
+        if (prev) {
+          prev.innerHTML = matches.length
+            ? `✨ <b>Crucible Auto-Detected Values:</b> ${esc(matches.join(' · '))}`
+            : `<span style="color:#94a3b8">Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</span>`;
+        }
       }
     });
     // The coach's birthday: month and year give the stage (Primary, then Youth in January of the year he turns 12).

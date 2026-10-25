@@ -10,7 +10,7 @@ export default async function merge({ port }) {
   const d = await device('merge', { url });
   const run = cases => d.page.evaluate(cases => cases.map(([R, L, B]) => TreasureUp.mergeProgress(R, L, B)), cases);
   const day = '2026-10-15', base = { xp: 1000 };
-  const [still, recall, climb, won, back, both, who1, who2, hist, prof, shorts, toggles] = await run([
+  const [still, recall, climb, won, back, both, who1, who2, hist, prof, shorts, toggles, profFields] = await run([
     // Be still: 10 minutes when they last met; 15 on the family's copy, 13 here.
     [{ ...base, still: { [day]: 15 } }, { ...base, still: { [day]: 13 } }, { ...base, still: { [day]: 10 } }],
     // The warm-up's question answered right on both devices the same day: paid on both.
@@ -35,6 +35,12 @@ export default async function merge({ port }) {
     [{ ...base, xp: 1010, shortsDone: { s1: { day, xp: 10 } } }, { ...base, xp: 1030, shortsDone: { s1: { day, xp: 10 }, s2: { day, xp: 20 } } }, { ...base }],
     // Un-toggled watchedVideos / togetherDone on this device stay un-toggled; newer remote profile upd wins when local profile is older.
     [{ ...base, profile: { name: 'Alex', upd: 50 }, watchedVideos: { v1: day, v2: day }, togetherDone: { [day]: 1 } }, { ...base, profile: { name: 'Old', upd: 10 }, watchedVideos: { v1: '', v2: day }, togetherDone: { [day]: 0 } }, { ...base, watchedVideos: { v1: day, v2: day }, togetherDone: { [day]: 1 } }],
+    // 3-way field-level profile merge: L edits peakMoment & cclmRatings.self (upd: 20), R edits coreValues & cclmRatings.stewardships (upd: 30) from B (upd: 10).
+    [
+      { ...base, profile: { name: 'Alex', peakMoment: '', coreValues: ['WISDOM', 'PEACE', 'COURAGE'], cclmRatings: { god: 4, self: 3, children: 4, stewardships: 5 }, upd: 30 } },
+      { ...base, profile: { name: 'Alex', peakMoment: 'Kitchen table council', coreValues: ['FAITH', 'FAMILY', 'INTEGRITY'], cclmRatings: { god: 4, self: 5, children: 4, stewardships: 3 }, upd: 20 } },
+      { ...base, profile: { name: 'Alex', peakMoment: '', coreValues: ['FAITH', 'FAMILY', 'INTEGRITY'], cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 }, upd: 10 } }
+    ],
   ]);
   check(still.still[day] === 18, `Be still: 15 on the family's copy and 13 here, from 10, make 18 (${still.still[day]})`);
   check(recall.xp === 1015, `the warm-up's question answered on both devices pays once (${recall.xp}, want 1015)`);
@@ -46,6 +52,7 @@ export default async function merge({ port }) {
   check(prof.profile && prof.profile.name === 'Sam' && prof.studyMode === 'family' && prof.feedLikes && prof.feedLikes['sf:1'] && prof.feedLikes['sf:2'], `the growth profile, study mode, and feedLikes changed on either device aren't lost (${JSON.stringify(prof.profile)}, ${prof.studyMode})`);
   check(!!(shorts.shortsDone || {}).s1 && !!(shorts.shortsDone || {}).s2 && shorts.xp === 1030, `shorts done on either device are kept, paid once (${Object.keys(shorts.shortsDone || {})}, xp ${shorts.xp}, want 1030)`);
   check(toggles.profile && toggles.profile.name === 'Alex' && toggles.watchedVideos.v1 === '' && toggles.togetherDone[day] === 0, `newer profile upd wins and local un-toggles in watchedVideos/togetherDone are preserved`);
+  check(profFields.profile && profFields.profile.peakMoment === 'Kitchen table council' && JSON.stringify(profFields.profile.coreValues) === '["WISDOM","PEACE","COURAGE"]' && profFields.profile.cclmRatings.self === 5 && profFields.profile.cclmRatings.stewardships === 5 && profFields.profile.upd === 30, `3-way field-level profile merge preserves non-conflicting field and nested cclmRatings edits from both devices`);
   check(hist.history.length === 2, `2026's and 2027's week 39 are both kept (${hist.history.length})`);
 
   // Start-up: last week filed in history already (a merge brought its title back) isn't filed again;

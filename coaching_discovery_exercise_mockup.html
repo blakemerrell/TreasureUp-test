@@ -1094,6 +1094,7 @@
         st.seasonWho = prof.who;
       }
       prof.coreValues = [...triad];
+      prof.funnelValues = [...pulled];
       prof.subValues = [
         ...pulledCards.map(c => c.sub).filter(Boolean),
         ...subCards.map(c => c.title).filter(Boolean)
@@ -1105,6 +1106,7 @@
       prof.cclmDomain = focusDomain;
       prof.cclmRatings = { ...domainRatings };
       prof.cclmNote = (document.getElementById('cclmAuditNote') && document.getElementById('cclmAuditNote').value.trim()) || '';
+      prof.upd = Date.now();
       st.profile = prof;
       localStorage.setItem('treasureup.v1', JSON.stringify(st));
       const btn = document.getElementById('syncBtn');

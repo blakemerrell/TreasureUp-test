@@ -263,6 +263,8 @@ export default async function growth({ port }) {
   cp.on('pageerror', e => cpErrs.push(e.message));
   await cp.goto(`http://127.0.0.1:${port}/coaching.html`, { waitUntil: 'domcontentloaded' });
   await wait(250);
+  const badHrefs = await cp.$$eval('a[href]', as => as.map(a => a.getAttribute('href')).filter(h => h.includes('.//') || h.includes('localhost:8090')));
+  check(badHrefs.length === 0, 'Standalone coaching.html has zero broken .// or localhost:8090 links');
   check(await cp.locator('.ce-step-tab').count() === 6, 'Standalone Coaching Discovery Exercise renders all 6 stages');
   check((await cp.inputValue('#mirrorPeak')) === '' && (await cp.inputValue('#mirrorPinch')) === '', 'Standalone Coaching Crucible mirrors start 100% blank-slate');
   await cp.click('[data-stage="2"]'); await wait(150);
@@ -278,7 +280,7 @@ export default async function growth({ port }) {
   await cp.click('[data-stage="6"]'); await wait(150);
   await cp.click('#syncBtn'); await wait(200);
   const syncedProf = ((await state(cp)).profile) || {};
-  check(syncedProf.cclmDrift === 'harmony' && Array.isArray(syncedProf.coreValues) && syncedProf.coreValues.includes('HESED / LOVE') && (syncedProf.subValues || []).includes('Loyal Covenant Love') && syncedProf.who && !cpErrs.length, 'Standalone Coach syncs canonical HESED / LOVE ID, subValues, and who directly to localStorage with 0 errors');
+  check(syncedProf.cclmDrift === 'harmony' && Array.isArray(syncedProf.coreValues) && syncedProf.coreValues.includes('HESED / LOVE') && (syncedProf.subValues || []).includes('Loyal Covenant Love') && Array.isArray(syncedProf.funnelValues) && syncedProf.upd > 0 && syncedProf.who && !cpErrs.length, 'Standalone Coach syncs canonical HESED / LOVE ID, subValues, funnelValues, upd timestamp, and who directly to localStorage with 0 errors');
   await cp.goto(`http://127.0.0.1:${port}/flow.html`, { waitUntil: 'domcontentloaded' });
   await wait(200);
   check((await cp.locator('.compass-banner').count()) === 1 && !cpErrs.length, 'Standalone flow.html renders Unified Daily Walk preview with 0 errors');
@@ -287,6 +289,7 @@ export default async function growth({ port }) {
   // Verify in-app Today Compass Banner & 6-Stage Coaching Workshop directly in index.html
   await p.click('#tabs [data-tab="today"]'); await wait(200);
   check((await p.locator('#home [data-today-compass]').count()) === 1, 'Today tab renders Unified Daily Walk Compass Banner');
+  check((await p.locator('#home [data-today-compass] [data-compass-w40-day]').count()) === 7, 'Today Compass Banner renders all 7 Wilderness 40 Movement start day pills (D1, D6, D12, D19, D27, D34, D40)');
   await p.click('#home [data-compass-w40-day="27"]'); await wait(150);
   const compassD27Txt = await p.textContent('#home [data-today-compass]');
   check(/Day 27 of 40/i.test(compassD27Txt) && /D&C 121:46/i.test(compassD27Txt), 'Today Compass Banner quick day jumper switches Wilderness 40 to Day 27');
@@ -297,20 +300,29 @@ export default async function growth({ port }) {
 
   await p.click('#home [data-today-compass] [data-hub-profile="me"]'); await wait(200);
   check((await p.locator('#appSheet .coach-stage-tab').count()) === 6, 'In-app Growth Coach sheet renders all 6 stage tabs');
+  await p.click('#appSheet [data-coach-goto="2"]'); await wait(150);
+  await p.fill('#coachPeakMoment', 'Standing with courage and bold conviction when the team felt afraid');
+  await wait(100);
+  check(/Courage/i.test(await p.textContent('#coachCruciblePreview')), 'In-app Stage 2 Crucible live input auto-detects matching pillar in real time without losing focus');
+  await p.click('#appSheet [data-coach-seed-crucible]'); await wait(150);
+  check((await p.inputValue('#coachPeakMoment')).includes('kitchen table') && /Auto-Detected Values/i.test(await p.textContent('#coachCruciblePreview')), 'In-app Stage 2 sample reflection seed populates Crucible mirrors and auto-detected pillars');
   await p.click('#appSheet [data-coach-goto="3"]'); await wait(150);
   check((await p.locator('#appSheet [data-coach-val]').count()) === 16 && (await p.locator('#appSheet [data-coach-funnel]').count()) === 16, 'In-app Stage 3 renders full 16-card Core Values deck and 16->5 winnowing funnel');
+  await p.click('#appSheet [data-coach-val="COURAGE"]'); await wait(150);
   await p.click('#appSheet [data-coach-goto="5"]'); await wait(150);
   await p.click('#appSheet [data-coach-sit-who="spouse"]'); await wait(150);
   await p.click('#appSheet [data-coach-sit-what="burnout"]'); await wait(150);
   const inAppStage5Txt = await p.textContent('#appSheet');
-  check(/Stage 5: Situational Leadership Playbook/i.test(inAppStage5Txt) && /spouse/i.test(inAppStage5Txt), 'In-app Stage 5 generates tailored Situational Leadership Playbook');
+  check(/Stage 5: Situational Leadership Playbook/i.test(inAppStage5Txt) && /spouse/i.test(inAppStage5Txt) && /COURAGE/i.test(inAppStage5Txt), 'In-app Stage 5 generates tailored Situational Leadership Playbook reflecting unsaved Stage 3 coachDraft Triad');
   await p.click('#appSheet [data-coach-goto="6"]'); await wait(150);
   await p.click('#appSheet [data-coach-cclm-rate="stewardships:5"]'); await wait(150);
   const inAppStage6Txt = await p.textContent('#appSheet');
-  check(/Personal Identity & Leadership Charter/i.test(inAppStage6Txt), 'In-app Stage 6 renders 4-Domain Stewardship Self-Audit and Personal Charter');
-  await p.click('#appSheet [data-coach-finish]'); await wait(200);
-  const finalProf = ((await state(p)).profile) || {};
-  check(finalProf.cclmRatings && finalProf.cclmRatings.stewardships === 5, 'In-app Stage 6 saves 4-Domain Stewardship rating to S.profile');
+  check(/Personal Identity & Leadership Charter/i.test(inAppStage6Txt) && /Today’s Bedrock Touchstone Question/i.test(inAppStage6Txt) && /Evening Jeremiah 1:8 Check/i.test(inAppStage6Txt), 'In-app Stage 6 renders 4-Domain Stewardship Self-Audit and 4-card Live Personal Charter');
+  await p.click('#appSheet [data-coach-goto="5"]'); await wait(150);
+  await p.click('#appSheet [data-cclm-seed-bp]'); await wait(250);
+  const profAfterSeedFromCoach = ((await state(p)).profile) || {};
+  check(profAfterSeedFromCoach.cclmRatings && profAfterSeedFromCoach.cclmRatings.stewardships === 5 && (profAfterSeedFromCoach.coreValues || []).includes('COURAGE'), 'Seeding Morning Council directly from Stage 5 persists in-progress coachDraft edits to S.profile');
+  await p.click('#appClose'); await wait(200);
 
   check(!p.errors.length, 'no page errors' + (p.errors.length ? ': ' + p.errors.join(' | ') : ''));
   await dev.ctx.close();

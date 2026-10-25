@@ -537,8 +537,8 @@
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button class="btn-ghost" style="padding:6px 12px;font-size:12px;border-color:var(--gold)" id="modeAdult" onclick="setMode('adult')">👔 Adult / Parent Mode</button>
       <button class="btn-ghost" style="padding:6px 12px;font-size:12px" id="modeKid" onclick="setMode('kid')">🌱 Youth / Primary Mode</button>
-      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none" href=".//compare">⚖️ Master Workbench ›</a>
-      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none;border-color:rgba(52,211,153,0.45);color:#6ee7b7" href=".//">📲 Live App ›</a>
+      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none" href="./flow.html">☀️ Unified Daily Walk Flow ›</a>
+      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none;border-color:rgba(52,211,153,0.45);color:#6ee7b7" href="./">📲 Live App ›</a>
     </div>
   </div>
   <div class="ce-steps">
@@ -777,7 +777,7 @@
         </div>
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
           <button class="btn-primary" onclick="syncToLiveApp()" id="syncBtn">💾 Sync Calibration to Live App</button>
-          <a class="btn-ghost" href=".//" style="text-decoration:none">Open Live App (localhost:8090) ›</a>
+          <a class="btn-ghost" href="./" style="text-decoration:none">Open TreasureUp App ›</a>
         </div>
       </div>
     </div>
@@ -791,7 +791,7 @@
 
     <div class="btn-row">
       <button class="btn-ghost" onclick="goStage(5)">‹ Back to Situational Coach</button>
-      <a class="btn-primary" href=".//compare" style="text-decoration:none">Open Master Now-vs-Planned Workbench ›</a>
+      <a class="btn-primary" href="./flow.html" style="text-decoration:none">Open Unified Daily Walk Flow ›</a>
     </div>
   </section>
 
@@ -1101,6 +1101,7 @@
         st.seasonWho = prof.who;
       }
       prof.coreValues = [...triad];
+      prof.funnelValues = [...pulled];
       prof.subValues = [
         ...pulledCards.map(c => c.sub).filter(Boolean),
         ...subCards.map(c => c.title).filter(Boolean)
@@ -1112,6 +1113,7 @@
       prof.cclmDomain = focusDomain;
       prof.cclmRatings = { ...domainRatings };
       prof.cclmNote = (document.getElementById('cclmAuditNote') && document.getElementById('cclmAuditNote').value.trim()) || '';
+      prof.upd = Date.now();
       st.profile = prof;
       localStorage.setItem('treasureup.v1', JSON.stringify(st));
       const btn = document.getElementById('syncBtn');
