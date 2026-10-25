@@ -3,128 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TreasureUp — Self-Discovery Coaching Exercise (Values Card Sort & Strengths Mirror)</title>
+<title>Self-Discovery & Christ-Centered Leader Coach — Interactive 6-Step Engine</title>
 <style>
   :root {
-    --bg: #080b13;
-    --panel: #111726;
-    --card: #182034;
-    --border: rgba(255, 255, 255, 0.12);
+    --bg: #080d19;
+    --panel: #111827;
+    --card: #192236;
+    --border: rgba(255, 255, 255, 0.11);
     --gold: #fbbf24;
-    --gold-bg: rgba(251, 191, 36, 0.14);
     --sky: #38bdf8;
-    --sky-bg: rgba(56, 189, 248, 0.14);
     --emerald: #34d399;
-    --emerald-bg: rgba(52, 211, 153, 0.14);
     --rose: #fb7185;
-    --rose-bg: rgba(251, 113, 133, 0.14);
     --purple: #c084fc;
     --text: #f8fafc;
     --muted: #94a3b8;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-    background: var(--bg);
+    margin: 0;
+    background: radial-gradient(circle at 50% 0%, #17233f 0%, #080d19 70%);
     color: var(--text);
-    line-height: 1.48;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    min-height: 100vh;
     padding-bottom: 80px;
   }
 
-  /* Header */
+  /* Header & Stepper */
   .ce-header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(8, 11, 19, 0.94);
+    background: rgba(8, 13, 25, 0.92);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     padding: 14px 24px;
   }
   .ce-top {
-    max-width: 1060px;
-    margin: 0 auto;
+    max-width: 1120px;
+    margin: 0 auto 12px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  .ce-title { font-size: 18px; font-weight: 900; color: #fff; }
   .ce-badge {
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: #1c1406;
-    font-weight: 900;
     font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 99px;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(251, 191, 36, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+  }
+  .ce-title {
+    font-size: 17px;
+    font-weight: 900;
+    color: #fff;
   }
   .ce-steps {
-    max-width: 1060px;
-    margin: 12px auto 0;
+    max-width: 1120px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+  @media (max-width: 860px) {
+    .ce-steps { grid-template-columns: repeat(3, 1fr); }
   }
   .ce-step-tab {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 10px;
     color: var(--muted);
-    padding: 10px 12px;
-    border-radius: 12px;
-    font-size: 12.5px;
+    font-size: 11.5px;
     font-weight: 800;
     cursor: pointer;
     text-align: left;
-    transition: all 0.15s;
+    transition: all 0.18s;
+  }
+  .ce-step-tab small {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-top: 2px;
   }
   .ce-step-tab.on {
-    background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.06));
+    background: rgba(251, 191, 36, 0.14);
     border-color: var(--gold);
-    color: #fde68a;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(251, 191, 36, 0.14);
   }
-  .ce-step-tab small { display: block; font-size: 11px; font-weight: 600; opacity: 0.75; margin-top: 2px; }
 
   .ce-main {
-    max-width: 1060px;
+    max-width: 1120px;
     margin: 24px auto;
-    padding: 0 24px;
+    padding: 0 20px;
   }
   .stage-view { display: none; }
   .stage-view.on { display: block; }
 
-  /* Coach Voice Box */
+  /* Coach Prompt Box */
   .coach-box {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.95));
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    background: linear-gradient(145deg, rgba(25, 34, 54, 0.95), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(56, 189, 248, 0.3);
     border-radius: 18px;
-    padding: 20px 22px;
-    margin-bottom: 20px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   }
   .coach-kicker {
     font-size: 11px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
     color: var(--sky);
     margin-bottom: 6px;
   }
-  .coach-h { font-size: 21px; font-weight: 900; color: #fff; margin-bottom: 6px; }
-  .coach-p { font-size: 14px; color: #cbd5e1; max-width: 820px; }
+  .coach-h {
+    font-size: 21px;
+    font-weight: 900;
+    margin: 0 0 8px;
+    color: #fff;
+  }
+  .coach-p {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.55;
+    margin: 0;
+  }
 
-  /* Stage 1: Values Card Sort Deck */
+  /* Pile Status Bar */
   .pile-bar {
     display: flex;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
   }
   .pile-counter {
     flex: 1;
     min-width: 200px;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 10px 14px;
@@ -134,118 +157,328 @@
     font-size: 13px;
     font-weight: 800;
   }
-  .pile-counter.core { border-color: rgba(251, 191, 36, 0.45); background: rgba(251, 191, 36, 0.08); color: #fde68a; }
+  .pile-counter.core {
+    border-color: rgba(251, 191, 36, 0.45);
+    background: rgba(251, 191, 36, 0.08);
+    color: #fde68a;
+  }
 
+  /* Values Cards Grid */
   .vcard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .vcard {
     background: var(--card);
     border: 1.5px solid var(--border);
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 14px;
     cursor: pointer;
-    transition: all 0.16s;
+    transition: all 0.16s ease;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 132px;
-    user-select: none;
   }
-  .vcard:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.3); }
+  .vcard:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.28);
+  }
   .vcard.in-core {
-    background: linear-gradient(155deg, rgba(251, 191, 36, 0.2), rgba(24, 32, 52, 0.95));
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.18), rgba(25, 34, 54, 0.95));
     border-color: var(--gold);
-    box-shadow: 0 8px 22px rgba(251, 191, 36, 0.15);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.16);
   }
-  .vcard-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .vcard-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
   .vcard-icon { font-size: 22px; }
   .vcard-status {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 900;
+    text-transform: uppercase;
     padding: 3px 8px;
-    border-radius: 99px;
-    background: rgba(255,255,255,0.07);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
     color: var(--muted);
   }
   .vcard.in-core .vcard-status {
     background: var(--gold);
     color: #1c1406;
   }
-  .vcard-title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: 4px; }
-  .vcard-desc { font-size: 12px; color: #cbd5e1; line-height: 1.35; }
+  .vcard-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .vcard-desc {
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.4;
+  }
 
   /* Stage 2: Crucible Prompts */
   .crucible-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .crucible-card {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 16px;
   }
-  .crucible-card h4 { font-size: 14px; font-weight: 900; color: #fde68a; margin-bottom: 6px; }
-  .crucible-card p { font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+  .crucible-card h4 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--gold);
+  }
+  .crucible-card p {
+    margin: 0 0 10px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
   .crucible-input {
     width: 100%;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 9px 11px;
+    padding: 10px 12px;
     color: #fff;
     font-size: 13px;
     font-family: inherit;
-    resize: none;
+    resize: vertical;
   }
 
-  /* Stage 3: Strengths Scenario Mirror */
+  /* Stage 3: Scenario Cards */
   .scenario-card {
-    background: var(--panel);
+    background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border-radius: 16px;
     padding: 18px 20px;
     margin-bottom: 16px;
   }
   .sc-num {
     font-size: 11px;
     font-weight: 900;
-    color: var(--sky);
+    color: var(--purple);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-  .sc-q { font-size: 16px; font-weight: 900; color: #fff; margin: 4px 0 12px; }
-  .sc-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .sc-q {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    margin: 4px 0 12px;
+  }
+  .sc-opts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
   .sc-opt {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border: 1.5px solid var(--border);
     border-radius: 12px;
     padding: 12px;
-    cursor: pointer;
     text-align: left;
     color: #e2e8f0;
+    cursor: pointer;
     font-size: 12.5px;
+    line-height: 1.4;
     transition: all 0.15s;
   }
-  .sc-opt:hover { border-color: rgba(255,255,255,0.3); }
+  .sc-opt b {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
   .sc-opt.on {
-    background: rgba(56, 189, 248, 0.16);
-    border-color: var(--sky);
+    background: rgba(192, 132, 252, 0.16);
+    border-color: var(--purple);
+    box-shadow: 0 4px 14px rgba(192, 132, 252, 0.18);
+  }
+
+  /* Stage 4: BYU CCLM Engine & Concentric Rings */
+  .cclm-layout {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 860px) {
+    .cclm-layout { grid-template-columns: 1fr; }
+  }
+  .rings-box {
+    background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.14), rgba(15, 23, 42, 0.95) 72%);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+  }
+  .ring-outer {
+    width: 265px;
+    height: 265px;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 2px dashed rgba(52, 211, 153, 0.45);
+    background: rgba(52, 211, 153, 0.05);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ring-inner {
+    width: 176px;
+    height: 176px;
+    border-radius: 50%;
+    border: 2px solid rgba(56, 189, 248, 0.55);
+    background: rgba(56, 189, 248, 0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ring-center {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #1c1406;
+    font-weight: 900;
+    font-size: 11.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px rgba(251, 191, 36, 0.45);
+    padding: 6px;
+    line-height: 1.2;
+  }
+  .ring-tag {
+    position: absolute;
+    font-size: 9.5px;
+    font-weight: 900;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #e2e8f0;
+    white-space: nowrap;
+  }
+
+  .drift-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .drift-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid var(--border);
+    border-radius: 13px;
+    padding: 13px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+  }
+  .drift-card.on {
+    border-color: var(--rose);
+    background: rgba(251, 113, 133, 0.12);
+    box-shadow: 0 4px 16px rgba(251, 113, 133, 0.15);
+  }
+  .domain-audit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .domain-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .domain-card.focus {
+    border-color: var(--emerald);
+    background: linear-gradient(145deg, rgba(52, 211, 153, 0.13), rgba(25, 34, 54, 0.95));
+  }
+  .rate-bar {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .rate-btn {
+    flex: 1;
+    padding: 5px 0;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.04);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .rate-btn.on {
+    background: var(--emerald);
+    border-color: var(--emerald);
+    color: #06281e;
+  }
+
+  /* Stage 5: Live Situational Coach Playbook */
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 16px;
+  }
+  .sel-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1.5px solid var(--border);
+    color: #cbd5e1;
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sel-chip.on {
+    background: rgba(251, 191, 36, 0.16);
+    border-color: var(--gold);
     color: #fff;
   }
-  .sc-opt b { display: block; color: #bae6fd; margin-bottom: 3px; font-size: 12px; }
+  .playbook-card {
+    background: linear-gradient(155deg, rgba(25, 34, 54, 0.96), rgba(12, 19, 34, 0.98));
+    border: 1.5px solid rgba(52, 211, 153, 0.4);
+    border-radius: 18px;
+    padding: 20px 22px;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.4);
+  }
+  .pb-step {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
 
-  /* Stage 4: Best Self Portrait & Daily Seed */
+  /* Stage 6: Final Portrait Card */
   .portrait-card {
-    background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.16), rgba(17, 23, 38, 0.96) 65%);
-    border: 1.5px solid rgba(251, 191, 36, 0.45);
-    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.14), rgba(17, 24, 39, 0.96));
+    border: 1.5px solid var(--gold);
+    border-radius: 20px;
     padding: 24px;
     margin-bottom: 20px;
     box-shadow: 0 16px 40px rgba(0,0,0,0.45);
@@ -263,7 +496,7 @@
     padding: 14px;
   }
 
-  .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; gap: 12px; }
+  .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
     background: linear-gradient(135deg, #fbbf24, #f59e0b);
     color: #1c1406;
@@ -290,32 +523,41 @@
 
 <header class="ce-header">
   <div class="ce-top">
-    <div style="display:flex;align-items:center;gap:10px">
-      <span class="ce-badge">Self-Discovery Coach</span>
-      <span class="ce-title">The 4-Step Exercise That Discovers Your Truth & Seeds Your App</span>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span class="ce-badge">Self-Discovery & CCLM Coach</span>
+      <span class="ce-title">Values Card Sort · CliftonStrengths Mirror · BYU Christ-Centered Leader Engine</span>
     </div>
-    <div style="display:flex;gap:8px">
-      <button class="btn-ghost" style="padding:6px 12px;font-size:12px" id="modeAdult" onclick="setMode('adult')">👔 Adult Mode (Parent)</button>
-      <button class="btn-ghost" style="padding:6px 12px;font-size:12px" id="modeKid" onclick="setMode('kid')">👦 Youth Mode (Age 11)</button>
-      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none" href="app_flow_wireframe_canvas.html">🗺️ System Wireframe ›</a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn-ghost" style="padding:6px 12px;font-size:12px;border-color:var(--gold)" id="modeAdult" onclick="setMode('adult')">👔 Adult / Parent Mode</button>
+      <button class="btn-ghost" style="padding:6px 12px;font-size:12px" id="modeKid" onclick="setMode('kid')">🌱 Youth / Primary Mode</button>
+      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none" href="http://localhost:8090/compare">⚖️ Master Workbench ›</a>
+      <a class="btn-ghost" style="padding:6px 12px;font-size:12px;text-decoration:none;border-color:rgba(52,211,153,0.45);color:#6ee7b7" href="http://localhost:8090/">📲 Live App ›</a>
     </div>
   </div>
   <div class="ce-steps">
     <button class="ce-step-tab on" data-stage="1" onclick="goStage(1)">
-      1. 🎴 The Broad Card Sort
-      <small>Pull 6–8 cards that feel like YOU</small>
+      1. 🎴 Broad Values Sort
+      <small>Pull 5–8 cards that feel like YOU</small>
     </button>
     <button class="ce-step-tab" data-stage="2" onclick="goStage(2)">
-      2. 🔥 The Crucible (Narrow to 3)
-      <small>Peak Moment & Frustration Mirror</small>
+      2. 🔥 The Crucible (Top 3)
+      <small>Blank-Slate Mirror → 3 Pillars</small>
     </button>
     <button class="ce-step-tab" data-stage="3" onclick="goStage(3)">
-      3. 🧬 Strengths S.I.G.N. Mirror
-      <small>5 real-life scenarios → Top Talents</small>
+      3. 🧬 Strengths S.I.G.N.
+      <small>Instinct Scenarios + Blind Spots</small>
     </button>
     <button class="ce-step-tab" data-stage="4" onclick="goStage(4)">
-      4. 🌅 Your Portrait & Daily Seed
-      <small>How this drives Season & Morning Council</small>
+      4. 🏛️ Leader Model Audit
+      <small>BYU 3 Principles & 4 Domains</small>
+    </button>
+    <button class="ce-step-tab" data-stage="5" onclick="goStage(5)">
+      5. 💬 Situational Coach
+      <small>Live 5-Step Playbook Generator</small>
+    </button>
+    <button class="ce-step-tab" data-stage="6" onclick="goStage(6)">
+      6. 🌅 Charter & App Sync
+      <small>Seed Morning Council & Season</small>
     </button>
   </div>
 </header>
@@ -323,13 +565,13 @@
 <main class="ce-main">
 
   <!-- =========================================================================
-       STAGE 1: THE PERSONAL VALUES CARD SORT (18 REAL HUMAN CARDS -> PULL 6-8)
+       STAGE 1: THE PERSONAL VALUES CARD SORT (12 UNIVERSAL CARDS -> PULL 5-8)
        ========================================================================= -->
   <section class="stage-view on" id="stage1">
     <div class="coach-box">
-      <div class="coach-kicker">Step 1 of 4 · Personal Values Card Sort (Miller & Brené Brown Method)</div>
+      <div class="coach-kicker">Step 1 of 6 · Personal Values Card Sort (Miller & Brené Brown Method)</div>
       <h2 class="coach-h" id="s1Title">Don’t think about who you “should” be. Tap every card that genuinely lights you up.</h2>
-      <p class="coach-p" id="s1Desc">In a real values sort, you first do a rapid gut-check across 16 real human drivers. Pull <b>5 to 8 cards</b> into your <b>“🔥 This is Me”</b> pile—in Step 2, we’ll use two coaching questions to separate your <b>3 Bedrock Values</b> from your supporting habits.</p>
+      <p class="coach-p" id="s1Desc">In a real values sort, you first do a rapid gut-check across 12 universal human drivers. Pull <b>5 to 8 cards</b> into your <b>“🔥 This is Me”</b> pile—in Step 2, we’ll use two blank-slate coaching questions to separate your <b>3 Bedrock Values</b> from your supporting habits.</p>
     </div>
 
     <div class="pile-bar">
@@ -339,7 +581,7 @@
       </div>
       <div class="pile-counter">
         <span>💡 Coach Tip</span>
-        <span style="font-weight:600;color:var(--muted)">Tap any card below to add/remove it from your pile</span>
+        <span style="font-weight:600;color:var(--muted)">Tap any card below to add or remove it from your pile (keep at least 3)</span>
       </div>
     </div>
 
@@ -352,25 +594,25 @@
   </section>
 
   <!-- =========================================================================
-       STAGE 2: THE CRUCIBLE — NARROWING FROM 6-8 DOWN TO YOUR TRUE 3 TRIAD
+       STAGE 2: THE CRUCIBLE — NARROWING FROM 5-8 DOWN TO YOUR TRUE 3 TRIAD
        ========================================================================= -->
   <section class="stage-view" id="stage2">
     <div class="coach-box">
-      <div class="coach-kicker">Step 2 of 4 · The Crucible (Separating Bedrock Values from Good Habits)</div>
+      <div class="coach-kicker">Step 2 of 6 · The Crucible (Separating Bedrock Values from Supporting Habits)</div>
       <h2 class="coach-h">“If you have more than 3 core values, you have a wish list.”</h2>
-      <p class="coach-p">Most people pull 6–8 good values in Round 1. To discover which <b>3 are your true bedrock</b> (and which ones are supporting sub-values underneath them), answer these two mirror questions first:</p>
+      <p class="coach-p">Most people pull 5–8 good values in Round 1. To discover which <b>3 are your true bedrock</b> (and which ones are supporting sub-values underneath them), reflect on these two blank-slate mirror questions first:</p>
     </div>
 
     <div class="crucible-grid">
       <div class="crucible-card">
         <h4>🏔️ Mirror 1: The Peak Alive Moment</h4>
         <p>Think of a day in the last year when you went to bed exhausted, proud, and deeply alive. What were you doing, and what value were you honoring?</p>
-        <textarea class="crucible-input" rows="2" id="mirrorPeak">Building something real with my team during the day, then playing outside with my kids with my phone put away.</textarea>
+        <textarea class="crucible-input" rows="2" id="mirrorPeak" placeholder="Write your own reflection here (e.g., finishing a hard build, unhurried time outdoors, helping someone break through)..."></textarea>
       </div>
       <div class="crucible-card">
         <h4>⚡ Mirror 2: The Frustration Shadow (ACT Method)</h4>
         <p>What triggers or drains you fastest when it’s violated? <i>(Your sharpest frustration is almost always the flip-side of your highest core value.)</i></p>
-        <textarea class="crucible-input" rows="2" id="mirrorPinch">Half-hearted effort, dishonesty/excuses, or drifting through a week without a clear plan.</textarea>
+        <textarea class="crucible-input" rows="2" id="mirrorPinch" placeholder="Write your own reflection here (e.g., broken promises, drifting without a plan, hurried disconnection)..."></textarea>
       </div>
     </div>
 
@@ -387,75 +629,181 @@
   </section>
 
   <!-- =========================================================================
-       STAGE 3: STRENGTHS S.I.G.N. MIRROR (5 REAL-LIFE SCENARIOS)
+       STAGE 3: STRENGTHS S.I.G.N. MIRROR (REAL-LIFE SCENARIOS + BLIND SPOTS)
        ========================================================================= -->
   <section class="stage-view" id="stage3">
     <div class="coach-box">
-      <div class="coach-kicker">Step 3 of 4 · CliftonStrengths & Buckingham S.I.G.N. Discovery</div>
-      <h2 class="coach-h">Values are your WHY. Strengths are HOW you are wired to win.</h2>
-      <p class="coach-p">Instead of guessing from a list of 34 jargon words, answer these <b>4 real-life instinct scenarios</b> (or tap any Gallup themes below if you already know your report). Watch how it maps your natural talent and its blind spot!</p>
+      <div class="coach-kicker">Step 3 of 6 · CliftonStrengths & Buckingham S.I.G.N. Discovery</div>
+      <h2 class="coach-h">Values are your WHY. Strengths are HOW you are wired to contribute.</h2>
+      <p class="coach-p">Instead of guessing from abstract jargon, answer these <b>3 real-life instinct scenarios</b>. Every strength also carries an <b>Overuse Blind Spot</b> when pushed too hard under stress—awareness of that shadow is half of leadership maturity.</p>
     </div>
 
     <div id="scenarioList"></div>
 
+    <div class="coach-box" style="border-color:rgba(251,113,133,0.38);background:rgba(251,113,133,0.06)">
+      <div class="coach-kicker" style="color:var(--rose)">⚠️ Live Overuse Blind-Spot Radar</div>
+      <div id="stage3BlindSpots" style="font-size:13.5px;color:#fecdd3;line-height:1.55"></div>
+    </div>
+
     <div class="btn-row">
       <button class="btn-ghost" onclick="goStage(2)">‹ Back to Values Crucible</button>
-      <button class="btn-primary" onclick="goStage(4)">Reveal My Best Self Portrait & Daily Seeds ›</button>
+      <button class="btn-primary" onclick="goStage(4)">Next: BYU Christ-Centered Leader Engine (Step 4) ›</button>
     </div>
   </section>
 
   <!-- =========================================================================
-       STAGE 4: YOUR TRUTH PORTRAIT & HOW IT SEEDS THE APP
+       STAGE 4: BYU SORENSEN CENTER CHRIST-CENTERED LEADER MODEL (CCLM) ENGINE
        ========================================================================= -->
   <section class="stage-view" id="stage4">
+    <div class="coach-box">
+      <div class="coach-kicker" style="color:var(--emerald)">Step 4 of 6 · BYU Sorensen Center Christ-Centered Leader Model (Dr. Jeff Thompson / Jeremiah 1–20)</div>
+      <h2 class="coach-h">How Values & Strengths Become Christ-Centered Leadership</h2>
+      <p class="coach-p">Inspired by BYU’s Sorensen Center for Moral & Ethical Leadership: <b>Jesus Christ is the unchanging Center</b>. Around Him are <b>3 Core Principles</b> (<i>Express Love, Honor Agency, Invite Accountability</i>) practiced across <b>4 Concentric Stewardship Domains</b> (<i>1. Relationship with God, 2. Relationship with Self, 3. God’s Children, 4. Stewardships</i>).</p>
+    </div>
+
+    <div class="cclm-layout">
+      <!-- Concentric Rings Visual -->
+      <div class="rings-box">
+        <div style="font-size:11px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:0.06em">Concentric Architecture</div>
+        <div class="ring-outer">
+          <span class="ring-tag" style="top:6px;left:50%;transform:translateX(-50%);border-color:#a78bfa;color:#ddd6fe">1. Relationship w/ God</span>
+          <span class="ring-tag" style="bottom:6px;left:50%;transform:translateX(-50%);border-color:#38bdf8;color:#bae6fd">2. Relationship w/ Self</span>
+          <span class="ring-tag" style="left:-8px;top:50%;transform:translateY(-50%);border-color:#f43f5e;color:#fecdd3">3. God’s Children</span>
+          <span class="ring-tag" style="right:-8px;top:50%;transform:translateY(-50%);border-color:#10b981;color:#a7f3d0">4. Stewardships</span>
+          <div class="ring-inner">
+            <span class="ring-tag" style="top:14px;background:rgba(244,63,94,0.2);border-color:#f43f5e;color:#fda4af">❤️ Love</span>
+            <span class="ring-tag" style="bottom:16px;left:8px;background:rgba(56,189,248,0.2);border-color:#38bdf8;color:#7dd3fc">🕊️ Agency</span>
+            <span class="ring-tag" style="bottom:16px;right:8px;background:rgba(245,158,11,0.2);border-color:#f59e0b;color:#fde68a">🧭 Accountable</span>
+            <div class="ring-center">
+              <span style="font-size:18px">✝️</span>
+              <span>JESUS CHRIST</span>
+              <span style="font-size:9px;font-weight:700;opacity:0.85">The Center</span>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:11.5px;color:#cbd5e1;line-height:1.45;margin-top:6px">
+          <b>The Jeremiah 1–20 Anchor:</b> God measures <i>faithfulness to the call</i>, never control over other people’s choices.
+        </div>
+      </div>
+
+      <!-- 3-Principle Tension Diagnostic -->
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 20px">
+        <div class="coach-kicker" style="color:var(--rose)">1. The 3-Principle Tension Diagnostic (What happens when 2 of 3 operate without the 3rd?)</div>
+        <p style="font-size:13px;color:#cbd5e1;margin:0 0 10px;line-height:1.45">When a leader is tired, stressed, or hurried, they rarely lose all three principles at once—they hold onto two and drop the third. <b>Tap your most common natural drift under pressure:</b></p>
+        <div class="drift-grid" id="driftGrid"></div>
+      </div>
+    </div>
+
+    <!-- 4-Domain Stewardship Self-Audit -->
+    <div class="coach-box" style="border-color:rgba(52,211,153,0.4);background:rgba(52,211,153,0.05)">
+      <div class="coach-kicker" style="color:var(--emerald)">2. The 4 Stewardship Domains · Rate Your Current Alignment (1–5) & Pick Your #1 Growth Domain</div>
+      <p class="coach-p">Tap a 1–5 alignment rating for each domain, and choose which domain is your <b>#1 Focus Domain</b> for this Season:</p>
+      <div class="domain-audit-grid" id="domainAuditGrid"></div>
+      <div style="margin-top:14px">
+        <label style="font-size:12px;font-weight:800;color:#fde68a;display:block;margin-bottom:6px">✍️ Personal Stewardship Reflection (Optional — Blank Slate):</label>
+        <textarea class="crucible-input" rows="2" id="cclmAuditNote" placeholder="Where is the Lord inviting you to lead with more Love, Agency, or Accountability right now?"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goStage(3)">‹ Back to Strengths Mirror</button>
+      <button class="btn-primary" onclick="goStage(5)">Next: Test the Live Situational Coach (Step 5) ›</button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       STAGE 5: LIVE SITUATIONAL LEADERSHIP COACH (5-STEP PLAYBOOK GENERATOR)
+       ========================================================================= -->
+  <section class="stage-view" id="stage5">
+    <div class="coach-box">
+      <div class="coach-kicker" style="color:var(--gold)">Step 5 of 6 · Interactive Situational Leadership Coach</div>
+      <h2 class="coach-h">“Coach Me Through a Real Moment Today”</h2>
+      <p class="coach-p">Pick a real relationship and a live leadership or parenting moment below. Watch the engine combine the <b>BYU Christ-Centered Leader Model</b> + your <b>Core Values Triad</b> + your <b>CliftonStrengths</b> into a concrete 5-step script:</p>
+
+      <div style="margin-top:14px">
+        <div style="font-size:11px;font-weight:900;color:var(--sky);text-transform:uppercase">1. Who are you leading or loving in this moment?</div>
+        <div class="chip-row" id="sitWhoRow"></div>
+
+        <div style="font-size:11px;font-weight:900;color:var(--emerald);text-transform:uppercase">2. What is happening right now?</div>
+        <div class="chip-row" id="sitWhatRow"></div>
+      </div>
+    </div>
+
+    <div class="playbook-card" id="playbookOutput"></div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goStage(4)">‹ Back to 4-Domain Audit</button>
+      <button class="btn-primary" onclick="goStage(6)">Next: View Complete Charter & Sync to App (Step 6) ›</button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       STAGE 6: YOUR TRUTH & LEADERSHIP CHARTER + LIVE APP SYNC
+       ========================================================================= -->
+  <section class="stage-view" id="stage6">
     <div class="portrait-card">
-      <div class="coach-kicker" style="color:var(--gold)">Step 4 of 4 · Your Best Self Truth Charter</div>
-      <h2 class="coach-h" id="portraitTitle">Parent’s Core Identity, Strengths & Blind-Spot Radar</h2>
-      <p class="coach-p">Here is what your Card Sort and Strengths Mirror revealed about you—and how the app uses this every single week and morning:</p>
+      <div class="coach-kicker" style="color:var(--gold)">Step 6 of 6 · Your Complete Identity & Christ-Centered Leadership Charter</div>
+      <h2 class="coach-h" id="portraitTitle">Your Calibrated Core Values, Strengths & Leadership Engine</h2>
+      <p class="coach-p">Here is what your 6-stage calibration revealed—and how it drives your Morning Council, Season Quests, and Evening Return & Report:</p>
 
       <div class="triad-showcase" id="portraitTriad"></div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px">
         <div style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.35);border-radius:14px;padding:14px">
           <div style="font-size:11px;font-weight:900;color:var(--sky);text-transform:uppercase">🧬 Signature Strengths Combination</div>
           <div id="portraitStrengths" style="font-size:13.5px;color:#fff;margin-top:6px"></div>
         </div>
         <div style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.35);border-radius:14px;padding:14px">
-          <div style="font-size:11px;font-weight:900;color:var(--rose);text-transform:uppercase">⚠️ Overuse Shadow / Blind Spot to Watch</div>
+          <div style="font-size:11px;font-weight:900;color:var(--rose);text-transform:uppercase">⚠️ Overuse Shadow & Leadership Drift</div>
           <div id="portraitBlindSpot" style="font-size:13px;color:#fecdd3;margin-top:6px"></div>
+        </div>
+        <div style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:14px;padding:14px">
+          <div style="font-size:11px;font-weight:900;color:var(--emerald);text-transform:uppercase">🏛️ BYU Christ-Centered Leader Focus</div>
+          <div id="portraitCclm" style="font-size:13px;color:#d1fae5;margin-top:6px"></div>
+        </div>
+      </div>
+
+      <!-- Direct Sync to Live App -->
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.12);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div style="font-size:13px;color:#fde68a">
+          <b>📲 Ready to use this in the live TreasureUp app?</b> Sync your calibrated Values Triad, Strengths, and CCLM Audit directly to your browser’s live profile:
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <button class="btn-primary" onclick="syncToLiveApp()" id="syncBtn">💾 Sync Calibration to Live App</button>
+          <a class="btn-ghost" href="http://localhost:8090/" style="text-decoration:none">Open Live App (localhost:8090) ›</a>
         </div>
       </div>
     </div>
 
     <!-- How this Coaching Exercise directly seeds Season Goals & Morning Council -->
     <div class="coach-box">
-      <div class="coach-kicker" style="color:var(--emerald)">How This Coaching Feeds Your Main App Flow</div>
-      <h3 class="coach-h" style="font-size:18px">Because of your Values + Strengths, here is what gets seeded into your Morning Council:</h3>
+      <div class="coach-kicker" style="color:var(--emerald)">How This Coaching Engine Feeds Your Daily Rhythm</div>
+      <h3 class="coach-h" style="font-size:18px">Every morning, season, and evening is now personalized by your charter:</h3>
       <div id="seededPreviews" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px"></div>
     </div>
 
     <div class="btn-row">
-      <button class="btn-ghost" onclick="goStage(3)">‹ Back to Scenarios</button>
-      <a class="btn-primary" href="app_flow_wireframe_canvas.html" style="text-decoration:none">See This Flowing in the 4-Column App Wireframe ›</a>
+      <button class="btn-ghost" onclick="goStage(5)">‹ Back to Situational Coach</button>
+      <a class="btn-primary" href="http://localhost:8090/compare" style="text-decoration:none">Open Master Now-vs-Planned Workbench ›</a>
     </div>
   </section>
 
 </main>
 
 <script>
-  const DECK_ADULT = [
-    { id: 'FAITH', icon: '🕊️', title: 'Faith & Stillness', desc: 'Trusting God’s timing, quiet communion, and eternal perspective over noise.', q: 'Where do I need to be still and trust God today instead of forcing?' },
-    { id: 'ADVENTURE', icon: '🏔️', title: 'Adventure & Exploration', desc: 'Saying yes to new frontiers, outdoor memories, and courageous growth.', q: 'What would make today feel like a meaningful adventure?' },
-    { id: 'INTEGRITY', icon: '🛡️', title: 'Integrity & Ownership', desc: 'My inner life matches my outer promises. Zero excuses, honest stewardship.', q: 'What promise to myself or my family will I keep wholeheartedly today?' },
-    { id: 'HESED LOVE', icon: '❤️', title: 'Loyal Family Love (Hesed)', desc: 'Showing up unhurried for my spouse and kids; covenant loyalty that never quits.', q: 'Who in my circle needs unhurried 1-on-1 presence from me today?' },
-    { id: 'CRAFT & BUILDING', icon: '🚀', title: 'Craft & Building', desc: 'Creating systems, businesses, and tools that solve real problems and endure.', q: 'What is the #1 high-leverage thing I can build or move forward today?' },
-    { id: 'WISDOM', icon: '💡', title: 'Wisdom & Truth', desc: 'Going beneath the surface—studying deeply and seeing how things really work.', q: 'What truth or insight am I hungry to understand more deeply today?' },
-    { id: 'VITALITY', icon: '⚡', title: 'Vitality & Discipline', desc: 'Treating my body, sleep, and physical conditioning as the engine for everything else.', q: 'How will I honor my physical energy, training, and rest today?' },
-    { id: 'AUTONOMY', icon: '🧭', title: 'Freedom & Autonomy', desc: 'Owning my time, financial independence, and choosing my own path.', q: 'What distraction or obligation should I say NO to today?' },
-    { id: 'MENTORSHIP', icon: '🤝', title: 'Lifting & Developing Others', desc: 'Spotting potential in my kids and team and helping them win.', q: 'Who can I coach or encourage with specific praise today?' },
-    { id: 'SIMPLICITY', icon: '🍃', title: 'Essentialism & Peace', desc: 'Less but better—clearing away clutter so the main thing stays the main thing.', q: 'What can I simplify or eliminate today?' },
-    { id: 'COURAGE', icon: '🦁', title: 'Courage & Candor', desc: 'Having the hard conversation, facing reality, and acting despite uncertainty.', q: 'What hard conversation or bold step am I avoiding?' },
-    { id: 'GENEROSITY', icon: '🎁', title: 'Generosity & Service', desc: 'Using our resources, home, and talents to bless neighbors and build Zion.', q: 'How can I quietly bless someone today?' }
+  const DECK_VALUES = [
+    { id: 'FAITH', sub: 'Trust in God', icon: '🕊️', title: 'Faith & Stillness', kidTitle: 'Trusting God', desc: 'Trusting God’s timing, quiet communion, and eternal perspective over noise.', kidDesc: 'Talking with Heavenly Father and trusting Him when things feel hard.', q: 'Where do I need to be still and trust God today instead of forcing?' },
+    { id: 'ADVENTURE', sub: 'Growth Mindset', icon: '🏔️', title: 'Adventure & Exploration', kidTitle: 'Adventure & Trying New Things', desc: 'Saying yes to new frontiers, outdoor memories, and courageous growth.', kidDesc: 'Exploring outside, playing hard, and being brave enough to try new things.', q: 'What would make today feel like a meaningful adventure?' },
+    { id: 'INTEGRITY', sub: 'Wholeheartedness', icon: '🛡️', title: 'Integrity & Ownership', kidTitle: 'Honesty & Keeping Promises', desc: 'My inner life matches my outer promises. Zero excuses, honest stewardship.', kidDesc: 'Doing what is right even when nobody is looking and owning my choices.', q: 'What promise to myself or my family will I keep wholeheartedly today?' },
+    { id: 'HESED / LOVE', sub: 'Loyal Covenant Love', icon: '❤️', title: 'Loyal Family Love (Hesed)', kidTitle: 'Loyal Family & Friendship', desc: 'Showing up unhurried for my spouse and kids; covenant loyalty that never quits.', kidDesc: 'Being a loyal friend and brother/sister who notices who needs a lift.', q: 'Who in my circle needs unhurried 1-on-1 presence from me today?' },
+    { id: 'CRAFT & BUILDING', sub: 'High-Leverage Creation', icon: '🚀', title: 'Craft & Building', kidTitle: 'Building & Creating', desc: 'Creating systems, projects, and tools that solve real problems and endure.', kidDesc: 'Making cool projects, practicing skills, and finishing what I start.', q: 'What is the #1 high-leverage thing I can build or move forward today?' },
+    { id: 'WISDOM', sub: 'Lifelong Learning', icon: '💡', title: 'Wisdom & Truth', kidTitle: 'Curiosity & Learning', desc: 'Going beneath the surface—studying deeply and seeing how things really work.', kidDesc: 'Asking great questions and figuring out how the world and scriptures work.', q: 'What truth or insight am I hungry to understand more deeply today?' },
+    { id: 'VITALITY', sub: 'Physical Stature', icon: '⚡', title: 'Vitality & Discipline', kidTitle: 'Energy & Strength', desc: 'Treating my body, sleep, and physical conditioning as the engine for everything else.', kidDesc: 'Training my body, sleeping well, and bringing strong energy to my team.', q: 'How will I honor my physical energy, training, and rest today?' },
+    { id: 'AUTONOMY', sub: 'Intentional Time', icon: '🧭', title: 'Freedom & Intentional Time', kidTitle: 'Using My Agency Wisely', desc: 'Owning my time, financial stewardship, and choosing my path deliberately.', kidDesc: 'Choosing what matters most without needing someone to remind me.', q: 'What distraction or obligation should I say NO to today?' },
+    { id: 'MENTORSHIP', sub: 'Spotting Potential', icon: '🤝', title: 'Lifting & Developing Others', kidTitle: 'Encouraging Teammates', desc: 'Spotting potential in my kids and team and helping them win.', kidDesc: 'Cheering on my family and friends and helping them get better.', q: 'Who can I coach or encourage with specific praise today?' },
+    { id: 'SIMPLICITY', sub: 'Less But Better', icon: '🍃', title: 'Essentialism & Peace', kidTitle: 'Peace & Focus', desc: 'Less but better—clearing away clutter so the main thing stays the main thing.', kidDesc: 'Clearing away distractions so I can focus on one thing at a time.', q: 'What can I simplify or eliminate today?' },
+    { id: 'COURAGE', sub: 'Hard Conversations', icon: '🦁', title: 'Courage & Candor', kidTitle: 'Courage & Standing Tall', desc: 'Having the hard conversation, facing reality, and acting despite uncertainty.', kidDesc: 'Standing up for what is right and speaking kindly and bravely.', q: 'What hard conversation or bold step am I avoiding?' },
+    { id: 'GENEROSITY', sub: 'Quiet Kindness', icon: '🎁', title: 'Generosity & Service', kidTitle: 'Kindness & Service', desc: 'Using our resources, home, and talents to bless neighbors and build Zion.', kidDesc: 'Sharing what I have and helping someone before I am asked.', q: 'How can I quietly bless someone today?' }
   ];
 
   const SCENARIOS = [
@@ -476,7 +824,7 @@
         { code: 'Achiever', domain: 'Executing', title: '✅ Tangible Progress', text: 'I moved the needle and crossed off the hard, important things on my list.' },
         { code: 'Maximizer', domain: 'Influencing', title: '✨ Dialed It In', text: 'I took something that was merely “okay” and refined it until it was crisp and excellent.' },
         { code: 'Learner', domain: 'Strategic Thinking', title: '🧠 Figured It Out', text: 'I went deep into a topic, scripture, or system and understood something I didn’t know this morning.' },
-        { code: 'Developer', domain: 'Relationship Building', title: '🌱 Helped Someone Grow', text: 'I had a real 1-on-1 moment where my kid, spouse, or teammate lit up and grew.' }
+        { code: 'Developer', domain: 'Relationship Building', title: '🌱 Helped Someone Grow', text: 'I had a real 1-on-1 moment where a child, spouse, or teammate lit up and grew.' }
       ]
     },
     {
@@ -492,27 +840,83 @@
   ];
 
   const BLIND_SPOTS = {
-    Strategic: 'Can jump three steps ahead so fast that others feel left behind—slow down and show the steps.',
+    Strategic: 'Can jump three steps ahead so fast that others feel left behind—slow down and invite them into the discovery.',
     Ideation: 'Can get excited by shiny new ideas before finishing the current build—anchor in your #1 Domino.',
-    Activator: 'Can leap before everyone is aligned—pair your speed with a 60-second Morning Council pause.',
-    Achiever: 'Can tie self-worth to the checklist and feel guilty resting—remember the Core Walk celebration banner!',
-    Maximizer: 'Can keep tweaking something that is already 95% done—know when to ship and celebrate.',
-    Learner: 'Can spend hours researching without shipping—turn every study insight into 1 concrete takeaway.',
-    Focus: 'Can get so locked into the task that interruptions from family feel like friction—protect 1-on-1 Hesed time.',
-    Responsibility: 'Can take on too much alone instead of delegating—let others grow by carrying their part.',
-    Relator: 'Can stay in comfort zones—lean into courageous conversations when needed.',
-    Developer: 'Can invest more in someone’s potential than they do—coach the willing.',
-    Arranger: 'Constant re-juggling can confuse people who need a steady routine.',
-    Positivity: 'Make sure people feel heard in their hard moments before cheering them up.'
+    Activator: 'Can leap before everyone is aligned—pair your speed with a 60-second listening pause.',
+    Achiever: 'Can tie self-worth to the checklist and treat family moments like tasks—remember that presence is the win.',
+    Maximizer: 'Can keep tweaking something that is already 95% done or notice flaws before effort—lead with specific praise first.',
+    Learner: 'Can spend hours researching without shipping—turn every study insight into 1 lived action.',
+    Focus: 'Can get so locked into the goal that interruptions from people you love feel like friction—protect unhurried Hesed time.',
+    Responsibility: 'Can over-rescue and carry other people’s loads instead of honoring their agency.',
+    Relator: 'Can stay in comfortable circles or hold back hard feedback to protect closeness.',
+    Developer: 'Can invest more energy in someone’s growth than they are investing themselves.',
+    Arranger: 'Constant re-juggling on the fly can overwhelm people who need a predictable rhythm.',
+    Positivity: 'Can rush past someone’s real pain by trying to cheer them up before they feel deeply heard.'
   };
 
+  const CCLM_DRIFTS = [
+    {
+      id: 'fixer',
+      icon: '🛠️',
+      title: 'The Well-Intentioned Fixer',
+      formula: 'Express Love + Invite Accountability − Honor Agency',
+      symptom: 'When someone struggles or moves slowly, I step in, solve it for them, or script every step so it gets done right.',
+      antidote: '🕊️ Restore Agency: Pause before rescuing. Ask: “What is your plan for this, and how can I support your choice?”'
+    },
+    {
+      id: 'harmony',
+      icon: '🕊️',
+      title: 'The Harmony Keeper',
+      formula: 'Express Love + Honor Agency − Invite Accountability',
+      symptom: 'To keep peace and warmth, I soften expectations, avoid hard follow-ups, or silently pick up the slack myself.',
+      antidote: '🧭 Restore Accountability: Pair warmth with clarity. Ask: “What are you committing to by when, and when should we Return & Report?”'
+    },
+    {
+      id: 'taskmaster',
+      icon: '📋',
+      title: 'The Transactional Taskmaster',
+      formula: 'Honor Agency + Invite Accountability − Express Love',
+      symptom: 'Under pressure, I go straight to metrics, deadlines, and corrections—and people feel managed rather than loved.',
+      antidote: '❤️ Restore Hesed Love: Connect before you direct. See the person’s heart and effort before discussing the outcome.'
+    }
+  ];
+
+  const CCLM_DOMAINS = [
+    { id: 'god', num: 1, icon: '🙏', title: 'Relationship with God', subtitle: 'Vertical Stillness & Alignment', q: 'Am I leading from quiet communion with God, or from my own hurry?' },
+    { id: 'self', num: 2, icon: '🪞', title: 'Relationship with Self', subtitle: 'Integrity, Vitality & Peace', q: 'Am I honoring my own physical energy, covenants, and peace without self-neglect?' },
+    { id: 'children', num: 3, icon: '❤️', title: 'God’s Children', subtitle: 'Family, Neighbor & 1-on-1 Presence', q: 'Does the person in front of me feel seen as a child of God—not a project?' },
+    { id: 'stewardships', num: 4, icon: '🏛️', title: 'Stewardships', subtitle: 'Home, Calling, Work & Craft', q: 'Am I building people while we build the work, and surrendering results to the Lord?' }
+  ];
+
+  const SIT_WHOS = [
+    { id: 'child', icon: '🌱', label: 'Child or Youth' },
+    { id: 'spouse', icon: '💑', label: 'Spouse / Partner' },
+    { id: 'team', icon: '🤝', label: 'Team / Colleague' },
+    { id: 'calling', icon: '⛪', label: 'Calling / Friend' },
+    { id: 'self', icon: '🪞', label: 'Myself (Inner Stewardship)' }
+  ];
+
+  const SIT_WHATS = [
+    { id: 'dropped', icon: '📉', label: 'Dropped the Ball / Missed Commitment' },
+    { id: 'overwhelmed', icon: '🌊', label: 'Discouraged, Anxious, or Overwhelmed' },
+    { id: 'conflict', icon: '⚡', label: 'Defensive, Pushback, or Friction' },
+    { id: 'decision', icon: '🧭', label: 'Facing a Big Choice & Seeking Direction' }
+  ];
+
   let mode = 'adult';
-  let pulled = new Set(['FAITH', 'ADVENTURE', 'INTEGRITY', 'HESED LOVE', 'CRAFT & BUILDING', 'WISDOM']);
+  let modeTouched = false;
+  let pulled = new Set(['FAITH', 'ADVENTURE', 'INTEGRITY', 'HESED / LOVE', 'CRAFT & BUILDING', 'WISDOM']);
   let triad = ['FAITH', 'ADVENTURE', 'INTEGRITY'];
-  let pickedStrengths = ['Strategic', 'Achiever', 'Maximizer'];
+  let pickedStrengths = ['Strategic', 'Achiever', 'Focus'];
+  let selectedDrift = 'fixer';
+  let focusDomain = 'children';
+  let domainRatings = { god: 4, self: 3, children: 4, stewardships: 4 };
+  let sitWho = 'child';
+  let sitWhat = 'dropped';
 
   function setMode(m) {
     mode = m;
+    modeTouched = true;
     document.getElementById('modeAdult').style.borderColor = m === 'adult' ? 'var(--gold)' : 'var(--border)';
     document.getElementById('modeKid').style.borderColor = m === 'kid' ? 'var(--gold)' : 'var(--border)';
     renderAll();
@@ -556,41 +960,202 @@
     renderAll();
   }
 
+  function pickDrift(id) {
+    selectedDrift = id;
+    renderAll();
+  }
+
+  function pickFocusDomain(id) {
+    focusDomain = id;
+    renderAll();
+  }
+
+  function setDomainRating(id, val) {
+    domainRatings[id] = val;
+    renderAll();
+  }
+
+  function pickSitWho(id) {
+    sitWho = id;
+    renderAll();
+  }
+
+  function pickSitWhat(id) {
+    sitWhat = id;
+    renderAll();
+  }
+
+  function buildPlaybook() {
+    const whoObj = SIT_WHOS.find(w => w.id === sitWho) || SIT_WHOS[0];
+    const whatObj = SIT_WHATS.find(w => w.id === sitWhat) || SIT_WHATS[0];
+    const driftObj = CCLM_DRIFTS.find(d => d.id === selectedDrift) || CCLM_DRIFTS[0];
+    const topCard = DECK_VALUES.find(c => c.id === triad[0]) || DECK_VALUES[0];
+    const topStrength = pickedStrengths[0] || 'Strategic';
+
+    const isSelf = sitWho === 'self';
+    const isTeam = sitWho === 'team';
+    const isSpouse = sitWho === 'spouse';
+    const isCalling = sitWho === 'calling';
+
+    const scripts = {
+      dropped: {
+        heart: isSelf
+          ? `Pause self-criticism. Remember Jeremiah 1–20: your worth before God is intact; examine this missed commitment with honesty and grace.`
+          : `Pause before reacting (${whoObj.label}). Remember Jeremiah 1–20: your stewardship is faithfulness and loving leadership, not controlling outcomes.`,
+        love: isSelf
+          ? `“My worth is anchored in Christ, not a flawless streak. I can look honestly at where I fell short without shame.”`
+          : isTeam
+          ? `“I value your contribution and trust on this team far more than one missed deliverable. Let’s look at this constructively together.”`
+          : isSpouse
+          ? `“I love you and we’re on the same team—our unity matters way more to me than this ball getting dropped.”`
+          : `“I care way more about you and our relationship than just checking this box. Before we look at what happened, I want you to know I’m on your team.”`,
+        agency: isSelf
+          ? `“What actually got in my way here, and what is the most honest, high-leverage adjustment I choose to make?”`
+          : `“Walk me through how you saw this situation—what got in the way, and what do you think is the best way forward from here?”`,
+        accountability: isSelf
+          ? `“What one concrete repair step will I complete by tomorrow, and when will I Return & Report on it in Prayer & Reflection?”`
+          : `“What specific step do you feel good about owning between now and tomorrow, and when should we do a 2-minute Return & Report?”`
+      },
+      overwhelmed: {
+        heart: isSelf
+          ? `Stop forcing through exhaustion. Step back into Domain 1 (God) & Domain 2 (Self) and breathe before making another demand on yourself.`
+          : `Resist the urge to immediately fix or lecture (${whoObj.label}). Lower your voice, slow your pace, and bring unhurried stillness into the room.`,
+        love: isSelf
+          ? `“God does not ask me to run faster than I have strength. I am allowed to rest, simplify, and be held by His grace right now.”`
+          : isTeam
+          ? `“Your well-being and clarity matter to me—let’s take the pressure off and look at the workload together so you aren’t carrying this alone.”`
+          : `“You don’t have to carry all of this alone right now. Take a breath—I’m right here with you, and we can take this one small piece at a time.”`,
+        agency: isSelf
+          ? `“Out of everything on my plate today, what is the ONE essential thing I choose to do, and what will I consciously set down?”`
+          : `“Out of everything swirling around right now, what feels like the one piece you want to tackle first, and what can we set down for today?”`,
+        accountability: isSelf
+          ? `“I will protect a 30-minute recovery block and one small win today, then surrender the rest at tonight’s Return & Report.”`
+          : `“Let’s pick just ONE small win for the next hour and check back in together when you’re done.”`
+      },
+      conflict: {
+        heart: isSelf
+          ? `Notice your inner defensiveness or tension without judging it. Ask the Lord to show you what truth you might be resisting.`
+          : `Drop defensiveness with ${whoObj.label}. Ask silently: “What is it like to be on the other side of me right now?”`,
+        love: isSelf
+          ? `“I want truth and peace in my heart more than I want to justify my ego.”`
+          : isTeam
+          ? `“I respect your perspective and care about our working trust more than winning this debate. Help me understand what you’re seeing.”`
+          : isCalling
+          ? `“I love serving alongside you, and our unity in the Savior’s work matters most to me. Help me understand your heart on this.”`
+          : `“Our trust matters more to me than winning this argument. Help me make sure I really understand what you’re feeling and seeing.”`,
+        agency: isSelf
+          ? `“What 10% of this friction is mine to own and change right now?”`
+          : `“What part of this feels most important to you, and what would a fair path forward look like in your eyes?”`,
+        accountability: isSelf
+          ? `“Here is the specific behavior I will change today, and I will review how I showed up tonight.”`
+          : `“Here is the part I will own and change on my side—what part are you willing to own so we can move forward together?”`
+      },
+      decision: {
+        heart: isSelf
+          ? `Quiet the noise and urgency. Seek stillness before the Lord (Domain 1) rather than rushing out of fear.`
+          : `Hold back from giving ${whoObj.label} your answer in the first 60 seconds so you don’t rob them of the revelation or growth of choosing.`,
+        love: isSelf
+          ? `“God trusts me to counsel with Him and use my agency wisely; He will guide me as I move forward in faith.”`
+          : isTeam
+          ? `“I really value how thoughtfully you’re weighing this decision, and I trust your judgment in leading this forward.”`
+          : `“I love watching how thoughtfully you’re approaching this. I trust your heart and your capacity to figure this out.”`,
+        agency: isSelf
+          ? `“Which path best aligns with my Core Values Triad (${topCard.title}) and the person I feel called to become?”`
+          : `“If both paths went well, which one aligns best with who you want to become? What are the pros and cons you see?”`,
+        accountability: isSelf
+          ? `“I will make my decision by [time], take the first step, and Return & Report to the Lord tonight.”`
+          : `“Once you make your call, tell me your decision and how I can best back you up as you execute it.”`
+      }
+    };
+
+    const sc = scripts[sitWhat] || scripts.dropped;
+    return {
+      whoObj,
+      whatObj,
+      driftObj,
+      topCard,
+      topStrength,
+      ...sc,
+      guardrail: `Because your top strength is <b>${topStrength}</b> (${BLIND_SPOTS[topStrength] || ''}) and your natural pressure drift is <b>${driftObj.title}</b>, anchor in your #1 Value (<b>${topCard.title}</b>) and practice: <i>${driftObj.antidote}</i>`
+    };
+  }
+
+  function syncToLiveApp() {
+    try {
+      const raw = localStorage.getItem('treasureup.v1');
+      const st = raw ? JSON.parse(raw) : {};
+      const prof = st.profile || {};
+      const pulledCards = DECK_VALUES.filter(c => pulled.has(c.id));
+      const subCards = pulledCards.filter(c => !triad.includes(c.id));
+      if (!prof.who || modeTouched) {
+        prof.who = mode === 'kid' ? 'youth' : 'adult';
+      }
+      if (!st.seasonWho || modeTouched) {
+        st.seasonWho = prof.who;
+      }
+      prof.coreValues = [...triad];
+      prof.subValues = [
+        ...pulledCards.map(c => c.sub).filter(Boolean),
+        ...subCards.map(c => c.title).filter(Boolean)
+      ];
+      prof.strengths = [...pickedStrengths];
+      prof.peakMoment = (document.getElementById('mirrorPeak') && document.getElementById('mirrorPeak').value.trim()) || '';
+      prof.pinchMirror = (document.getElementById('mirrorPinch') && document.getElementById('mirrorPinch').value.trim()) || '';
+      prof.cclmDrift = selectedDrift;
+      prof.cclmDomain = focusDomain;
+      prof.cclmRatings = { ...domainRatings };
+      prof.cclmNote = (document.getElementById('cclmAuditNote') && document.getElementById('cclmAuditNote').value.trim()) || '';
+      st.profile = prof;
+      localStorage.setItem('treasureup.v1', JSON.stringify(st));
+      const btn = document.getElementById('syncBtn');
+      if (btn) {
+        btn.textContent = '✓ Synced to Live TreasureUp Profile!';
+        btn.style.background = 'linear-gradient(135deg, #34d399, #10b981)';
+      }
+    } catch (e) {
+      alert('Could not sync to localStorage: ' + e.message);
+    }
+  }
+
   function renderAll() {
     // Stage 1 Grid
     document.getElementById('corePileCount').textContent = `${pulled.size} Cards in Your Pile`;
-    document.getElementById('stage1Grid').innerHTML = DECK_ADULT.map(c => {
+    document.getElementById('stage1Grid').innerHTML = DECK_VALUES.map(c => {
       const on = pulled.has(c.id);
+      const t = mode === 'kid' ? c.kidTitle : c.title;
+      const d = mode === 'kid' ? c.kidDesc : c.desc;
       return `<div class="vcard ${on ? 'in-core' : ''}" onclick="togglePulled('${c.id}')">
         <div>
           <div class="vcard-head">
             <span class="vcard-icon">${c.icon}</span>
             <span class="vcard-status">${on ? '🔥 In My Pile' : '+ Tap to Pull'}</span>
           </div>
-          <div class="vcard-title">${c.title}</div>
-          <div class="vcard-desc">${c.desc}</div>
+          <div class="vcard-title">${t}</div>
+          <div class="vcard-desc">${d}</div>
         </div>
       </div>`;
     }).join('');
 
-    // Stage 2 Grid (Only Pulled Cards -> Pick Top 3 Triad)
-    const pulledCards = DECK_ADULT.filter(c => pulled.has(c.id));
+    // Stage 2 Grid
+    const pulledCards = DECK_VALUES.filter(c => pulled.has(c.id));
     document.getElementById('stage2Grid').innerHTML = pulledCards.map(c => {
       const rank = triad.indexOf(c.id);
       const isTop3 = rank >= 0;
+      const t = mode === 'kid' ? c.kidTitle : c.title;
+      const d = mode === 'kid' ? c.kidDesc : c.desc;
       return `<div class="vcard ${isTop3 ? 'in-core' : ''}" onclick="toggleTriad('${c.id}')">
         <div>
           <div class="vcard-head">
             <span class="vcard-icon">${c.icon}</span>
             <span class="vcard-status">${isTop3 ? `👑 Pillar #${rank + 1}` : '✨ Supporting Value'}</span>
           </div>
-          <div class="vcard-title">${c.title}</div>
-          <div class="vcard-desc">${c.desc}</div>
+          <div class="vcard-title">${t}</div>
+          <div class="vcard-desc">${d}</div>
         </div>
       </div>`;
     }).join('');
 
-    // Stage 3 Scenarios
+    // Stage 3 Scenarios + Blind Spots
     document.getElementById('scenarioList').innerHTML = SCENARIOS.map((sc, idx) => `
       <div class="scenario-card">
         <div class="sc-num">${sc.num}</div>
@@ -607,15 +1172,93 @@
       </div>
     `).join('');
 
-    // Stage 4 Portrait & Daily Seeds
-    const topCards = triad.map(id => DECK_ADULT.find(c => c.id === id)).filter(Boolean);
+    document.getElementById('stage3BlindSpots').innerHTML = pickedStrengths.map(st =>
+      `<div style="margin-bottom:6px">• <b>${st}:</b> ${BLIND_SPOTS[st] || ''}</div>`
+    ).join('');
+
+    // Stage 4: Drift Grid & 4-Domain Audit
+    document.getElementById('driftGrid').innerHTML = CCLM_DRIFTS.map(d => {
+      const on = selectedDrift === d.id;
+      return `<div class="drift-card ${on ? 'on' : ''}" onclick="pickDrift('${d.id}')">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-size:14px;font-weight:900;color:#fff">${d.icon} ${d.title}</span>
+          <span style="font-size:10px;font-weight:900;padding:2px 7px;border-radius:999px;background:${on ? 'var(--rose)' : 'rgba(255,255,255,0.08)'};color:${on ? '#1c060b' : 'var(--muted)'}">${on ? 'Selected Drift' : 'Tap'}</span>
+        </div>
+        <div style="font-size:11px;font-weight:800;color:#fda4af;margin-bottom:5px">${d.formula}</div>
+        <div style="font-size:12px;color:#cbd5e1;line-height:1.4;margin-bottom:8px">${d.symptom}</div>
+        <div style="font-size:11.5px;color:#a7f3d0;background:rgba(16,185,129,0.12);padding:6px 8px;border-radius:8px">${d.antidote}</div>
+      </div>`;
+    }).join('');
+
+    document.getElementById('domainAuditGrid').innerHTML = CCLM_DOMAINS.map(dom => {
+      const isFocus = focusDomain === dom.id;
+      const curRate = domainRatings[dom.id] || 4;
+      return `<div class="domain-card ${isFocus ? 'focus' : ''}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-size:14px;font-weight:900;color:#fff">${dom.num}. ${dom.icon} ${dom.title}</span>
+          <button onclick="pickFocusDomain('${dom.id}')" style="font-size:10px;font-weight:900;padding:3px 8px;border-radius:999px;border:1px solid ${isFocus ? 'var(--emerald)' : 'var(--border)'};background:${isFocus ? 'var(--emerald)' : 'rgba(255,255,255,0.06)'};color:${isFocus ? '#052e16' : '#cbd5e1'};cursor:pointer">
+            ${isFocus ? '🎯 #1 Focus Domain' : 'Set as Focus'}
+          </button>
+        </div>
+        <div style="font-size:11px;font-weight:800;color:var(--sky);margin-bottom:4px">${dom.subtitle}</div>
+        <div style="font-size:12px;color:#cbd5e1;line-height:1.4;margin-bottom:8px"><i>“${dom.q}”</i></div>
+        <div style="font-size:10.5px;color:var(--muted);font-weight:800">Current Alignment: ${curRate} / 5</div>
+        <div class="rate-bar">
+          ${[1, 2, 3, 4, 5].map(n => `<button class="rate-btn ${curRate === n ? 'on' : ''}" onclick="setDomainRating('${dom.id}', ${n})">${n}</button>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+
+    // Stage 5: Situational Coach
+    document.getElementById('sitWhoRow').innerHTML = SIT_WHOS.map(w =>
+      `<button class="sel-chip ${sitWho === w.id ? 'on' : ''}" onclick="pickSitWho('${w.id}')">${w.icon} ${w.label}</button>`
+    ).join('');
+    document.getElementById('sitWhatRow').innerHTML = SIT_WHATS.map(w =>
+      `<button class="sel-chip ${sitWhat === w.id ? 'on' : ''}" onclick="pickSitWhat('${w.id}')">${w.icon} ${w.label}</button>`
+    ).join('');
+
+    const pb = buildPlaybook();
+    document.getElementById('playbookOutput').innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+        <div>
+          <div style="font-size:11px;font-weight:900;color:var(--emerald);text-transform:uppercase;letter-spacing:0.06em">Generated Christ-Centered Playbook</div>
+          <h3 style="margin:2px 0 0;font-size:18px;color:#fff">${pb.whoObj.icon} ${pb.whoObj.label} · ${pb.whatObj.icon} ${pb.whatObj.label}</h3>
+        </div>
+        <span class="ce-badge">Anchored in Jesus Christ</span>
+      </div>
+      <div class="pb-step">
+        <div style="font-size:11px;font-weight:900;color:#a78bfa;text-transform:uppercase">Step 1 · 🙏 Heart Check Before Speaking (Domain 1 & 2)</div>
+        <div style="font-size:13.5px;color:#e2e8f0;margin-top:4px">${pb.heart}</div>
+      </div>
+      <div class="pb-step">
+        <div style="font-size:11px;font-weight:900;color:#fb7185;text-transform:uppercase">Step 2 · ❤️ Principle 1: Express Love First (Say This Out Loud)</div>
+        <div style="font-size:13.5px;color:#fff;margin-top:4px;font-style:italic">${pb.love}</div>
+      </div>
+      <div class="pb-step">
+        <div style="font-size:11px;font-weight:900;color:#38bdf8;text-transform:uppercase">Step 3 · 🕊️ Principle 2: Honor Agency (Ask & Listen)</div>
+        <div style="font-size:13.5px;color:#fff;margin-top:4px;font-style:italic">${pb.agency}</div>
+      </div>
+      <div class="pb-step">
+        <div style="font-size:11px;font-weight:900;color:#fbbf24;text-transform:uppercase">Step 4 · 🧭 Principle 3: Invite Accountability (Co-Created Return & Report)</div>
+        <div style="font-size:13.5px;color:#fff;margin-top:4px;font-style:italic">${pb.accountability}</div>
+      </div>
+      <div class="pb-step" style="margin-bottom:0;background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.3)">
+        <div style="font-size:11px;font-weight:900;color:var(--gold);text-transform:uppercase">Step 5 · 🧬 Your Personal Values & Strengths Guardrail</div>
+        <div style="font-size:13px;color:#fde68a;margin-top:4px;line-height:1.45">${pb.guardrail}</div>
+      </div>
+    `;
+
+    // Stage 6: Complete Charter & Daily Seeds
+    const topCards = triad.map(id => DECK_VALUES.find(c => c.id === id)).filter(Boolean);
     const subCards = pulledCards.filter(c => !triad.includes(c.id));
+    const driftObj = CCLM_DRIFTS.find(d => d.id === selectedDrift) || CCLM_DRIFTS[0];
+    const domObj = CCLM_DOMAINS.find(d => d.id === focusDomain) || CCLM_DOMAINS[2];
 
     document.getElementById('portraitTriad').innerHTML = topCards.map((c, i) => `
       <div class="triad-pillar">
         <div style="font-size:11px;font-weight:900;color:var(--gold)">👑 CORE PILLAR #${i + 1}</div>
-        <div style="font-size:17px;font-weight:900;color:#fff;margin:4px 0">${c.icon} ${c.title}</div>
-        <div style="font-size:12px;color:#cbd5e1;margin-bottom:8px">${c.desc}</div>
+        <div style="font-size:17px;font-weight:900;color:#fff;margin:4px 0">${c.icon} ${mode === 'kid' ? c.kidTitle : c.title}</div>
+        <div style="font-size:12px;color:#cbd5e1;margin-bottom:8px">${mode === 'kid' ? c.kidDesc : c.desc}</div>
         <div style="font-size:11.5px;color:#fde68a;background:rgba(251,191,36,0.1);padding:6px 8px;border-radius:8px">
           <b>Morning Council Question:</b> “${c.q}”
         </div>
@@ -623,27 +1266,31 @@
     `).join('');
 
     document.getElementById('portraitStrengths').innerHTML =
-      `<b>${pickedStrengths.join(' · ')}</b><br>` +
-      `<span style="font-size:12.5px;color:#cbd5e1">Supporting Sub-Values from your sort: <b>${subCards.map(s => s.title).join(', ') || 'None'}</b></span>`;
+      `<b>${pickedStrengths.join(' · ')}</b><br><br>` +
+      `<span style="font-size:12.5px;color:#cbd5e1">Supporting Sub-Values from your sort:<br><b>${subCards.map(s => mode === 'kid' ? s.kidTitle : s.title).join(' · ') || 'None'}</b></span>`;
 
     const primarySt = pickedStrengths[0] || 'Strategic';
-    const secondSt = pickedStrengths[1] || 'Achiever';
     document.getElementById('portraitBlindSpot').innerHTML =
-      `<b>${primarySt}:</b> ${BLIND_SPOTS[primarySt] || ''}<br><br>` +
-      `<b>${secondSt}:</b> ${BLIND_SPOTS[secondSt] || ''}`;
+      `<b>Strength Shadow (${primarySt}):</b> ${BLIND_SPOTS[primarySt] || ''}<br><br>` +
+      `<b>Pressure Drift (${driftObj.icon} ${driftObj.title}):</b> ${driftObj.antidote}`;
+
+    document.getElementById('portraitCclm').innerHTML =
+      `<b>#1 Stewardship Focus:</b> ${domObj.icon} ${domObj.title}<br>` +
+      `<span style="font-size:12px;color:#a7f3d0">“${domObj.q}”</span><br><br>` +
+      `<span style="font-size:12px;color:#cbd5e1">Domain Scores: God ${domainRatings.god}/5 · Self ${domainRatings.self}/5 · Children ${domainRatings.children}/5 · Stewardships ${domainRatings.stewardships}/5</span>`;
 
     document.getElementById('seededPreviews').innerHTML = `
       <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:14px">
-        <div style="font-size:11px;font-weight:900;color:var(--gold);text-transform:uppercase">1. Morning Council Touchstone Prompt</div>
-        <p style="font-size:13px;color:#fff;margin-top:6px">Instead of a static banner, Morning Council rotates through your 3 Bedrock Questions:<br><i style="color:#fde68a">“${topCards[0] ? topCards[0].q : ''}”</i></p>
+        <div style="font-size:11px;font-weight:900;color:var(--gold);text-transform:uppercase">1. Morning Council Touchstone & CCLM Move</div>
+        <p style="font-size:13px;color:#fff;margin-top:6px">Morning Council rotates through your 3 Bedrock Questions:<br><i style="color:#fde68a">“${topCards[0] ? topCards[0].q : ''}”</i><br>And lets you choose today’s Christ-Centered Principle move (<b>❤️ Express Love</b>, <b>🕊️ Honor Agency</b>, or <b>🧭 Invite Accountability</b>).</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:14px">
-        <div style="font-size:11px;font-weight:900;color:var(--sky);text-transform:uppercase">2. Strength-Matched “ONE Thing” Chips</div>
-        <p style="font-size:13px;color:#fff;margin-top:6px">Because your top talents are <b>${pickedStrengths.join(' + ')}</b>, Morning Council seeds:<br>• <b>🗺️ ${primarySt} Block:</b> Map & execute today's #1 lead domino<br>• <b>✨ ${secondSt} Win:</b> Dial in one high-leverage priority</p>
+        <div style="font-size:11px;font-weight:900;color:var(--sky);text-transform:uppercase">2. Strength & Stewardship Season Quests</div>
+        <p style="font-size:13px;color:#fff;margin-top:6px">Because your top talents are <b>${pickedStrengths.join(' + ')}</b> and your focus domain is <b>${domObj.title}</b>, your Season Coach suggests quests anchored in ${domObj.title} and ${primarySt}.</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:14px">
-        <div style="font-size:11px;font-weight:900;color:var(--rose);text-transform:uppercase">3. Evening Blind-Spot Check</div>
-        <p style="font-size:13px;color:#fff;margin-top:6px">In Evening Return & Report, it gently checks your shadow:<br><i style="color:#fecdd3">“Did I slow down and celebrate today's Core Walk instead of living only in the checklist?”</i></p>
+        <div style="font-size:11px;font-weight:900;color:var(--rose);text-transform:uppercase">3. Evening Jeremiah Check (Faithfulness Over Control)</div>
+        <p style="font-size:13px;color:#fff;margin-top:6px">In Evening Return & Report, you reflect on:<br><i style="color:#fecdd3">“Where did I lead with Love & Honor Agency today, and what outcome am I placing back into the Lord’s hands tonight?”</i></p>
       </div>
     `;
   }

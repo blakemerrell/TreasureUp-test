@@ -4104,6 +4104,7 @@ const TreasureUp = (function () {
       goalSid: data.goalSid || '',
       goalStepId: data.goalStepId || '',
       uplift: data.uplift || '',
+      cclmMove: data.cclmMove || (had ? had[1].cclmMove || '' : ''),
       gratitude: data.gratitude || [],
       done: data.done || (had ? had[1].done || {} : {}),
       youthArea: data.youthArea || '',
@@ -4164,18 +4165,277 @@ const TreasureUp = (function () {
     'Business / Building', 'Writing / Creating', 'Financial Stewardship'
   ];
   const CORE_VALUES_DECK = [
-    { id: 'FAITH', icon: '🕊️', label: 'FAITH', subs: ['Trust in God', 'Eternal Perspective', 'Covenant Devotion', 'Stillness'] },
-    { id: 'ADVENTURE', icon: '🏔️', label: 'ADVENTURE', subs: ['Growth Mindset', 'Joyful Exploration', 'Courageous Action', 'Family Memories'] },
-    { id: 'INTEGRITY', icon: '🛡️', label: 'INTEGRITY', subs: ['Wholeheartedness', 'Honest Stewardship', 'Keeping Promises', 'Pure Intent'] },
-    { id: 'HESED / LOVE', icon: '❤️', label: 'HESED & AGAPE', subs: ['Loyal Covenant Love', 'Compassion', 'Peacemaking', 'Generosity'] },
-    { id: 'WISDOM', icon: '💡', label: 'WISDOM', subs: ['Lifelong Learning', 'Strategic Clarity', 'Curiosity', 'Discernment'] },
-    { id: 'VITALITY', icon: '⚡', label: 'VITALITY', subs: ['Physical Stature', 'Energy & Rest', 'Discipline', 'Endurance'] }
+    { id: 'FAITH', icon: '🕊️', label: 'FAITH', subs: ['Trust in God', 'Eternal Perspective', 'Covenant Devotion', 'Stillness'], q: 'Where do I need to be still and trust God today instead of forcing the outcome?' },
+    { id: 'ADVENTURE', icon: '🏔️', label: 'ADVENTURE', subs: ['Growth Mindset', 'Joyful Exploration', 'Courageous Action', 'Family Memories'], q: 'What courageous step or shared memory will make today feel like a meaningful adventure?' },
+    { id: 'INTEGRITY', icon: '🛡️', label: 'INTEGRITY', subs: ['Wholeheartedness', 'Honest Stewardship', 'Keeping Promises', 'Pure Intent'], q: 'What promise to God, myself, or my family will I keep wholeheartedly today?' },
+    { id: 'HESED / LOVE', icon: '❤️', label: 'HESED & AGAPE', subs: ['Loyal Covenant Love', 'Compassion', 'Peacemaking', 'Generosity'], q: 'Who in my circle needs unhurried 1-on-1 presence and loyal covenant love today?' },
+    { id: 'WISDOM', icon: '💡', label: 'WISDOM', subs: ['Lifelong Learning', 'Strategic Clarity', 'Curiosity', 'Discernment'], q: 'What truth or insight am I hungry to understand more deeply today?' },
+    { id: 'VITALITY', icon: '⚡', label: 'VITALITY', subs: ['Physical Stature', 'Energy & Rest', 'Discipline', 'Endurance'], q: 'How will I honor my physical energy, training, and restorative rest today?' },
+    { id: 'CRAFT & BUILDING', icon: '🚀', label: 'CRAFT & BUILDING', subs: ['High-Leverage Creation', 'Excellence', 'Problem Solving', 'Stewardship'], q: 'What is the #1 high-leverage thing I can build or move forward today?' },
+    { id: 'AUTONOMY', icon: '🧭', label: 'AUTONOMY & FREEDOM', subs: ['Intentional Time', 'Essentialism', 'Financial Peace', 'Self-Direction'], q: 'What distraction or low-value obligation should I say no to today?' },
+    { id: 'MENTORSHIP', icon: '🤝', label: 'DEVELOPING OTHERS', subs: ['Spotting Potential', 'Patient Coaching', 'Encouragement', 'Empowerment'], q: 'Who can I coach or lift today by honoring their agency and potential?' },
+    { id: 'SIMPLICITY', icon: '🍃', label: 'SIMPLICITY & PEACE', subs: ['Less But Better', 'Unhurried Presence', 'Clear Space', 'Gratitude'], q: 'What can I simplify today so the main thing stays the main thing?' },
+    { id: 'COURAGE', icon: '🦁', label: 'COURAGE & CANDOR', subs: ['Hard Conversations', 'Standing for Truth', 'Resilience', 'Bold Faith'], q: 'What honest conversation or brave action am I being prompted to take today?' },
+    { id: 'GENEROSITY', icon: '🎁', label: 'SERVICE & ZION', subs: ['Quiet Kindness', 'Hospitality', 'Lifting Burdens', 'Abundance'], q: 'Whose burden can I quietly lighten today with no expectation of return?' }
   ];
   const GALLUP_STRENGTHS = [
     'Strategic', 'Achiever', 'Learner', 'Ideation', 'Futuristic', 'Maximizer',
     'Relator', 'Connectedness', 'Arranger', 'Responsibility', 'Belief', 'Positivity',
     'Activator', 'Communication', 'Empathy', 'Developer', 'Individualization', 'Focus'
   ];
+  const STRENGTH_BLIND_SPOTS = {
+    Strategic: 'Can jump three steps ahead so fast that others feel left behind—slow down and invite them into the process.',
+    Achiever: 'Can tie self-worth to the checklist and feel restless at home—celebrate presence over productivity.',
+    Learner: 'Can spend hours researching without shipping—turn every study insight into one lived action.',
+    Ideation: 'Can chase shiny new concepts before finishing current commitments—anchor in today’s #1 domino.',
+    Futuristic: 'Can live in tomorrow’s vision while missing today’s small mercies—practice present gratitude.',
+    Maximizer: 'Can keep polishing what is already good enough—know when to ship and affirm effort.',
+    Relator: 'Can stay inside comfortable circles—lean into courageous conversations when needed.',
+    Connectedness: 'Can over-spiritualize simple practical problems—pair eternal perspective with clear action.',
+    Arranger: 'Constant re-juggling can overwhelm family or teammates who need a steady plan.',
+    Responsibility: 'Can carry everyone else’s load instead of honoring their agency—let others own their part.',
+    Belief: 'High conviction can sound rigid if not paired with curiosity and empathy first.',
+    Positivity: 'Make sure people feel heard in their hard moments before cheering them up.',
+    Activator: 'Can leap into action before alignment—pause 60 seconds in Morning Council first.',
+    Communication: 'Can talk more than listen—ask two curiosity questions before sharing your answer.',
+    Empathy: 'Can absorb others’ heavy emotions as your own—hand their burden to the Savior.',
+    Developer: 'Can invest more in someone’s growth than they do—invite accountability and let them choose.',
+    Individualization: 'Customizing for everyone can fragment shared standards—keep core expectations simple.',
+    Focus: 'Can lock onto the task so tightly that family interruptions feel like friction—protect unhurried 1-on-1 time.'
+  };
+  const STRENGTH_SCENARIOS = [
+    {
+      q: '1. New Challenge Instinct: What does your mind naturally do in the first 10 minutes?',
+      opts: [
+        { code: 'Strategic', label: '🗺️ Map the Pattern (Strategic)' },
+        { code: 'Ideation', label: '💡 Spark New Angles (Ideation)' },
+        { code: 'Activator', label: '⚡ Start Moving Now (Activator)' },
+        { code: 'Relator', label: '🤝 Think of the People (Relator)' }
+      ]
+    },
+    {
+      q: '2. Daily Fuel: At 9:00 PM, what makes today feel like a great win?',
+      opts: [
+        { code: 'Achiever', label: '✅ Crossed Off Hard Priorities (Achiever)' },
+        { code: 'Maximizer', label: '✨ Refined Something to Excellence (Maximizer)' },
+        { code: 'Learner', label: '🧠 Figured Out Something Deep (Learner)' },
+        { code: 'Developer', label: '🌱 Helped Someone Grow (Developer)' }
+      ]
+    },
+    {
+      q: '3. Under Pressure: When things get chaotic, what is your natural move?',
+      opts: [
+        { code: 'Focus', label: '🎯 Lock Onto the #1 Domino (Focus)' },
+        { code: 'Arranger', label: '🧩 Re-Orchestrate on the Fly (Arranger)' },
+        { code: 'Responsibility', label: '🛡️ Carry the Load & Deliver (Responsibility)' },
+        { code: 'Positivity', label: '☀️ Lift the Room’s Hope (Positivity)' }
+      ]
+    }
+  ];
+
+  // BYU Sorensen Center Christ-Centered Leader Model (CCLM) Coaching Engine
+  const CCLM_PRINCIPLES = {
+    love: {
+      id: 'love', icon: '❤️', label: 'Express Love',
+      color: '#fda4af', bg: 'rgba(244,63,94,.12)', border: 'rgba(244,63,94,.38)',
+      desc: 'Lead with genuine compassion, empathy, and covenant loyalty (hesed) focused on their eternal worth, not transactional output.',
+      prompt: '❤️ Express Love prompt: How can you show unconditional appreciation, empathy, or unhurried 1-on-1 presence today with zero strings attached?'
+    },
+    agency: {
+      id: 'agency', icon: '🕊️', label: 'Honor Agency',
+      color: '#7dd3fc', bg: 'rgba(56,189,248,.12)', border: 'rgba(56,189,248,.38)',
+      desc: 'Let go of anxious control or coercion. Give others space to choose, learn from mistakes, and build intrinsic motivation.',
+      prompt: '🕊️ Honor Agency prompt: Where are you tempted to control, lecture, or force compliance today—and what curiosity question can you ask instead?'
+    },
+    accountability: {
+      id: 'accountability', icon: '🎯', label: 'Invite Accountability',
+      color: '#6ee7b7', bg: 'rgba(16,185,129,.12)', border: 'rgba(16,185,129,.38)',
+      desc: 'Instead of micromanaging, lecturing, or rescuing, invite people to own their commitments, standards, and growth.',
+      prompt: '🎯 Invite Accountability prompt: Instead of rescuing or lowering the bar, what clear commitment or coaching question can you invite them to own today?'
+    }
+  };
+  const CCLM_DOMAINS = [
+    { id: 'god', icon: '🙏', label: '1. Relationship with God', short: 'With God', desc: 'Aligning motives with divine will; waking morning by morning to listen (Isaiah 50:4) and surrendering outcomes to Christ.', auditQ: 'Am I listening to the Spirit first and trusting God with results, or carrying the weight of outcomes alone?' },
+    { id: 'self', icon: '🪞', label: '2. Relationship with Self', short: 'With Self', desc: 'Anchoring identity in divine worth over ego or checklists; living your Core Values Triad with integrity and peace.', auditQ: 'Is my inner life aligned with my Core Values Triad, or am I running on anxious achievement?' },
+    { id: 'children', icon: '🤝', label: '3. God’s Children', short: 'God’s Children', desc: 'Seeing spouse, children, friends, and teammates with eternal dignity and potential rather than problems to fix.', auditQ: 'Who in my home or circle needs to feel seen, heard, and unconditionally loved before any correction?' },
+    { id: 'stewardships', icon: '🏛️', label: '4. Stewardships', short: 'Stewardships', desc: 'Tending home, work, and callings with faithfulness over control (the Jeremiah Principle).', auditQ: 'Where in my home, work, or calling am I measuring success by controlling others instead of by my own faithfulness?' }
+  ];
+  const CCLM_DRIFTS = {
+    fixer: {
+      id: 'fixer', icon: '⚡', title: 'Over-Control / Fix It',
+      formula: 'High Love + High Accountability · Low Agency',
+      desc: 'Because you care deeply and hold high standards, under stress you step in to take over, lecture, micromanage, or force the right outcome.',
+      antidote: 'agency', antidoteLabel: '🕊️ Antidote: Honor Agency',
+      habit: 'Pause 10 seconds before fixing. Ask one curiosity question (“What is your plan for this?”) and let them own the choice.'
+    },
+    harmony: {
+      id: 'harmony', icon: '🌊', title: 'Avoid / Rescue',
+      formula: 'High Love + High Agency · Low Accountability',
+      desc: 'Because you value warmth and harmony, under stress you soften expectations, avoid hard truth, or quietly clean up others’ messes.',
+      antidote: 'accountability', antidoteLabel: '🎯 Antidote: Invite Accountability',
+      habit: 'Pair warmth with clear standards. Ask: “What did we agree on, and when will you have your part done?”'
+    },
+    taskmaster: {
+      id: 'taskmaster', icon: '📋', title: 'Transactional / Rush',
+      formula: 'High Accountability + High Agency · Low Expressing Love',
+      desc: 'When busy or pressured, you jump straight to checklists, corrections, and efficiency—leaving others feeling managed rather than cherished.',
+      antidote: 'love', antidoteLabel: '❤️ Antidote: Express Covenant Love',
+      habit: 'Connection before correction: give 60 seconds of unhurried warmth and eye contact before discussing tasks.'
+    }
+  };
+
+  function generateCclmPlaybook(opts = {}) {
+    const prof = profileOf(), triad = valuesTriadOf(prof), strs = prof.strengths || [];
+    const who = opts.who || 'child';
+    const sit = opts.sit || 'resist';
+    const driftKey = opts.drift || prof.cclmDrift || 'fixer';
+    const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
+    const primaryStr = strs[0] || '';
+    const blindSpot = primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `Watch your ${primaryStr} shadow: ${STRENGTH_BLIND_SPOTS[primaryStr]}` : drift.habit;
+
+    const whoLabels = {
+      child: 'your child or youth',
+      spouse: 'your spouse',
+      team: 'your team member or colleague',
+      calling: 'the person you serve or minister to',
+      self: 'your own heart and stewardship'
+    };
+    const whoTarget = whoLabels[who] || 'them';
+    const isSelf = who === 'self', isWork = who === 'team', isSpouse = who === 'spouse', isCalling = who === 'calling';
+
+    const loveScripts = isSelf ? {
+      resist: `Offer yourself grace instead of harsh self-criticism: “Lord, help me lay down my pride or resistance and remember I am Thy covenant son/daughter first.”`,
+      missed: `Separate your eternal worth from a missed target: “Falling short on a goal does not diminish my worth before God—His grace is sufficient as I begin again.”`,
+      discouraged: `Pause in stillness before the Savior (Isaiah 50:4): “Lord, I am weary today. Help me receive Thy peace and love before I try to carry my checklist.”`,
+      conflict: `Bring inner turmoil to Christ in honest prayer: “Search my heart, Lord, and replace my defensiveness or resentment with Thy charity.”`,
+      burnout: `Pause and receive the Savior’s love first (Isaiah 50:4): “Lord, I don’t have to earn my worth by carrying everything alone today.”`
+    } : isWork ? {
+      resist: `Lead with psychological safety and respect, not friction: “I value your perspective and we’re on the same team—help me understand the roadblocks you’re seeing.”`,
+      missed: `Affirm the person before addressing the gap: “I appreciate the strengths you bring to this team, and I’m here to help you succeed.”`,
+      discouraged: `Offer genuine appreciation before solutions: “I see how hard you’ve been pushing on this. Let’s take a breath and look at the load together.”`,
+      conflict: `Lower the temperature and seek shared purpose: “We both want a great outcome here. Help me see what this looks like from your vantage point.”`,
+      burnout: `Protect your teammate’s sustainability: “Your well-being matters more than Hero-mode burnout. Let’s clear the noise together.”`
+    } : isSpouse ? {
+      resist: `Soften your tone and lead with covenant warmth: “I love you and we’re on the same side. Our unity matters way more to me than winning my point.”`,
+      missed: `Lead with covenant loyalty (hesed) before logistics: “I love you and appreciate all you carry—how can I best support you today?”`,
+      discouraged: `Offer unhurried presence before problem-solving: sit beside your spouse, listen fully, and say, “You don’t have to carry this alone—I’m right here with you.”`,
+      conflict: `Disarm defensiveness with tenderness: “I love you too much to contend with you. Help me truly understand what this feels like from your side.”`,
+      burnout: `Step in with tangible relief and gratitude: “Thank you for everything you’re carrying for our family—what can I take off your plate tonight?”`
+    } : isCalling ? {
+      resist: `Lead with unfeigned love (D&C 121:41), never pressure: “I care about you as a brother/sister in Christ—no guilt, I’m just grateful to walk beside you.”`,
+      missed: `Keep relationship above the assignment: “Thank you for your heart to serve. How are you doing personally right now?”`,
+      discouraged: `Speak a word in season to the weary (Isaiah 50:4): listen without rushing and say, “The Lord sees your quiet effort, and you don’t walk alone.”`,
+      conflict: `Be a peacemaker first: “Our fellowship in the gospel comes first. Help me understand how you see this so we can counsel in unity.”`,
+      burnout: `Lift the weight of perfectionism: “The Lord asks for a willing heart, not exhaustion—let’s simplify what we’re doing.”`
+    } : {
+      resist: `Start with calm warmth, not frustration: “I love you and I’m on your team. Our relationship matters more to me than winning an argument.”`,
+      missed: `Lead with relationship before the missed standard: “I care about you and believe in who you are becoming—nothing changes that.”`,
+      discouraged: `Offer unhurried presence before solutions: sit beside ${whoTarget}, listen fully, and say, “You don’t have to carry this alone. I’m right here with you.”`,
+      conflict: `Lower your voice and disarm defensiveness: “I value you too much to fight against you. Help me understand what this feels like from your side.”`,
+      burnout: `Pause and receive the Savior’s love first (Isaiah 50:4): “Lord, I don’t have to earn my worth by carrying everything alone today.”`
+    };
+
+    const agencyScripts = isSelf ? {
+      resist: `Examine your own agency honestly: “Why am I resisting this priority, and what path am I freely choosing to walk today?”`,
+      missed: `Ask with honest curiosity instead of shame: “What distraction or friction got in my way, and how will I redesign my environment today?”`,
+      discouraged: `Honor your capacity to choose one small step: “I don’t have to solve the whole mountain today—what is one faithful step I choose right now?”`,
+      conflict: `Reclaim your moral agency: “I cannot control their reaction, but what response do I choose that aligns with ${triad[0] || 'FAITH'}?”`,
+      burnout: `Step back from over-functioning for others: “Whose agency am I accidentally carrying right now that belongs to them?”`
+    } : isSpouse ? {
+      resist: `Counsel as equal partners instead of pushing: “How are you feeling about our options here, and what path feels most peaceful to you?”`,
+      missed: `Ask with warmth and zero scorekeeping: “Life has been full—how should we adjust our plan on this together?”`,
+      discouraged: `Give space for what they actually need: “Would it help more right now for me to just listen, or to brainstorm options together?”`,
+      conflict: `Invite shared perspective: “What feels most important to you in this, and what would a win-win look like for both of us?”`,
+      burnout: `Protect shared boundaries together: “What obligation can we say no to this week so we both have breathing room?”`
+    } : isWork ? {
+      resist: `Invite their ownership instead of prescribing every step: “How do you see the tradeoffs here, and what approach would you recommend we take?”`,
+      missed: `Coach with curiosity rather than micromanaging: “Walk me through what blocked progress here, and how you want to tackle it next.”`,
+      discouraged: `Narrow the scope so they can regain momentum: “Of everything on the board, which single deliverable feels highest-leverage to focus on first?”`,
+      conflict: `Create space for candid problem-solving: “What part of this workflow do you want to reshape, and what support do you need from me?”`,
+      burnout: `Empower them to reprioritize: “If we protect only the #1 priority this week, which secondary tasks should we defer or delegate?”`
+    } : {
+      resist: `Instead of forcing compliance or lecturing, ask: “How do you see this situation? Which of these two paths feels best to you, and what do you think happens with each?”`,
+      missed: `Resist taking over or rescuing. Ask with genuine curiosity: “What got in the way of what we agreed on, and what is your plan to handle it from here?”`,
+      discouraged: `Honor their capacity to choose one small step: “We don’t have to solve the whole mountain today. What is one small step you feel ready to choose?”`,
+      conflict: `Give space for honest agency: “What part of this do you want to own, and what do you need from me so we can move forward together?”`,
+      burnout: `Step back from over-functioning for others: “Whose agency am I accidentally carrying right now that belongs to them?”`
+    };
+
+    const accountScripts = isSelf ? {
+      resist: `Lock in a clear personal commitment: “For the next 30 minutes, I will put away distractions and complete my #1 domino.”`,
+      missed: `Practice calm self-accountability: “What specific time today will I complete this and Return & Report to the Lord tonight?”`,
+      discouraged: `Anchor in one doable promise: “I will keep one small promise to myself today and celebrate faithful effort tonight.”`,
+      conflict: `Own your 100% of the relationship: “What is the one concrete apology or peacemaking action I will take within the next hour?”`,
+      burnout: `Set an honest boundary aligned with ${triad[0] || 'FAITH'}: “What is the ONE thing the Lord actually asked of me today, and what will I delegate or decline?”`
+    } : isSpouse ? {
+      resist: `Co-create a united plan: “Let’s pick a simple plan we both feel good about and check in on it together tonight.”`,
+      missed: `Divide and conquer as partners: “Here is the piece I’ll own today—which piece feels doable for you so we finish this together?”`,
+      discouraged: `Share the load with a concrete commitment: “I will handle this part today so you can rest, and let’s check in after dinner.”`,
+      conflict: `Make a mutual covenant commitment: “Let’s each name one specific way we’ll love and support each other over the next 24 hours.”`,
+      burnout: `Protect your marriage rhythm: “Let’s lock in 20 minutes of unhurried couch or walk time tonight with phones off.”`
+    } : isWork ? {
+      resist: `Align on clear outcomes and checkpoints: “Here is the target outcome we need—what milestone and check-in time can we lock in?”`,
+      missed: `Hold the standard with calm clarity: “I trust your ownership on this. By what time will you have the update ready so we stay on track?”`,
+      discouraged: `Set a clear, winnable checkpoint: “Let’s lock in that one milestone for 3:00 PM and do a quick 5-minute sync.”`,
+      conflict: `Agree on concrete next steps: “Let’s document the two actions we each own from this conversation and review progress tomorrow.”`,
+      burnout: `Establish sustainable execution guardrails: “Let’s lock in the top 2 priorities for the week and explicitly pause the rest.”`
+    } : {
+      resist: `Invite clear ownership: “Here is the standard we need to meet. How and when will you accomplish your part so I don’t have to remind you?”`,
+      missed: `Hold the standard with calm confidence: “I trust your ability to make this right. By what time today will you complete it and report back to me?”`,
+      discouraged: `Anchor in a doable commitment: “Let’s pick one specific promise you can keep today, and check in tonight to celebrate your effort.”`,
+      conflict: `Co-create a shared agreement: “Let’s both state one concrete thing we will each do differently over the next 24 hours.”`,
+      burnout: `Set an honest boundary aligned with ${triad[0] || 'FAITH'}: “What is the ONE thing the Lord actually asked of me today, and what will I delegate or decline?”`
+    };
+    const morningSeeds = {
+      child: {
+        resist: '🕊️ Honor Agency with my child: ask “What is your plan?” instead of lecturing',
+        missed: '🎯 Invite Accountability with my child: warm connection first, then ask when they will report back',
+        discouraged: '❤️ Express Hesed Love to my child: 10 min unhurried listening with zero fixing',
+        conflict: '❤️ Express Love & disarm tension with my child: listen first before correcting',
+        burnout: '🕊️ Step back from over-functioning at home and let my child own their responsibility'
+      },
+      spouse: {
+        resist: '❤️ Express Covenant Love to my spouse: listen to understand with zero defensiveness',
+        missed: '🤝 Check in with my spouse with warmth and ask how we can support each other today',
+        discouraged: '❤️ Lighten my spouse’s load today with unhurried presence and encouragement',
+        conflict: '🕊️ Soften my tone with my spouse and ask: “Help me see what this feels like to you”',
+        burnout: '🙏 Counsel together with my spouse and hand our shared worry over to the Lord'
+      },
+      team: {
+        resist: '🕊️ Honor Agency with a teammate: ask for their proposed solution before giving mine',
+        missed: '🎯 Invite Accountability with a teammate: clarify the standard and ask when they will deliver',
+        discouraged: '❤️ Express specific appreciation for a teammate’s strengths and effort today',
+        conflict: '🤝 Have a candid, caring 1-on-1 with a colleague to align on shared goals',
+        burnout: '🎯 Delegate one responsibility to a teammate and trust them to own it'
+      },
+      calling: {
+        resist: '❤️ Express unconditional Christlike love to someone I serve with zero pressure',
+        missed: '🎯 Extend a clear, loving invitation in my calling and trust their agency',
+        discouraged: '❤️ Send a personal note of encouragement to someone who is weary today (Isaiah 50:4)',
+        conflict: '🕊️ Be a peacemaker today by listening first and honoring agency',
+        burnout: '🙏 Remember Jeremiah: measure my service by faithfulness, not controlling others’ choices'
+      },
+      self: {
+        resist: '🙏 Pause for 5 minutes of stillness and align my will with Heavenly Father',
+        missed: '🎯 Practice honest self-accountability on my #1 domino without self-criticism',
+        discouraged: '❤️ Anchor in my divine identity and Core Values Triad before looking at my checklist',
+        conflict: '🕊️ Release resentment and choose peace in my own heart today',
+        burnout: '🌙 Hand the heavy burden of outcomes over to Jesus Christ today'
+      }
+    };
+    const recommendedMove = drift.antidote || (sit === 'discouraged' || sit === 'conflict' ? 'love' : sit === 'resist' || sit === 'burnout' ? 'agency' : 'accountability');
+    const seedText = (morningSeeds[who] && morningSeeds[who][sit]) || morningSeeds.child.resist;
+
+    return {
+      center: `Anchor in your Core Values Triad (${triad.join(' · ')}). ${isSelf ? 'Before rushing into your checklist' : 'Before speaking to ' + whoTarget}, take one slow breath and remember your stress drift (${drift.icon} ${drift.title}). ${blindSpot}`,
+      love: loveScripts[sit] || loveScripts.resist,
+      agency: agencyScripts[sit] || agencyScripts.resist,
+      accountability: accountScripts[sit] || accountScripts.resist,
+      release: `Dr. Jeff Thompson’s Jeremiah Check: You do not control ${isSelf ? 'every external result' : 'their choices'}—you only steward your own faithfulness to Express Love, Honor Agency, and Invite Accountability. Once you do your part, hand the outcome to Jesus Christ.`,
+      recommendedMove,
+      seedText
+    };
+  }
 
   // A birthday month ("2015-04") gives the age and the Children and Youth stage:
   // Primary until January of the year a child turns 12, then youth through the
@@ -4219,6 +4479,12 @@ const TreasureUp = (function () {
       subValues: ['Trust in God', 'Growth Mindset', 'Wholeheartedness'],
       strengths: [],
       superpower: '',
+      peakMoment: '',
+      pinchMirror: '',
+      cclmDrift: 'fixer',
+      cclmDomain: 'children',
+      cclmNote: '',
+      cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 },
       who
     };
   }
@@ -4248,6 +4514,13 @@ const TreasureUp = (function () {
     const p = profileOf();
     const triad = valuesTriadOf(p).join(' · ');
     return p.who === 'adult' ? `${esc(p.name || 'My profile')} · ${esc(triad)}` : `${esc(p.name || 'My profile')}${profileAge(p) ? ' · Age ' + profileAge(p) : ''} (${(p.interests || []).length} interests)`;
+  }
+
+  function cclmSummaryHtml() {
+    const p = profileOf();
+    const drift = CCLM_DRIFTS[p.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer;
+    const dom = CCLM_DOMAINS.find(d => d.id === (p.cclmDomain || 'children')) || CCLM_DOMAINS[2];
+    return `${drift.antidoteLabel} · Focus: ${dom.short}`;
   }
 
   function coachSuggestedIdeas(area) {
@@ -4291,14 +4564,17 @@ const TreasureUp = (function () {
         list.push({ icon: '🙏', title: 'Counsel in prayer', step: 'Pray morning and night and ask Heavenly Father for guidance', n: 7, ref: 'Alma 37:37' });
       }
     } else {
+      const drift = CCLM_DRIFTS[prof.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer;
       if (area === 'spiritual' || !area) {
         list.push({ icon: '🕊️', title: 'Morning stillness', step: '10 min stillness & Alma 37:37 counsel before checking email', n: 7, ref: 'Alma 37:37' });
         list.push({ icon: '📖', title: 'Scripture feast', step: 'Read Come Follow Me & Book of Mormon with focus', n: 6 });
+        list.push({ icon: '🙏', title: 'Christ-Centered Surrender (Jeremiah Check)', step: 'Hand the heavy burden of outcomes over to Christ in evening prayer', n: 5, ref: 'Isaiah 50:4' });
         if (ints.has('Temple Worship')) list.push({ icon: '🏛️', title: 'House of the Lord', step: 'Attend the temple or prepare family names', n: 1, ref: 'D&C 109:8' });
       }
       if (area === 'social' || !area) {
         list.push({ icon: '🤝', title: 'Dad 1-on-1 time', step: '30 min protected 1-on-1 time with one of your kids', n: 2 });
         list.push({ icon: '❤️', title: 'Hesed & Agape marriage date', step: 'Weekly intentional date night & covenant gratitude with spouse', n: 1 });
+        list.push({ icon: '🏛️', title: `Christ-Centered Leader: ${drift.antidoteLabel.replace(/^[^\s]+\s*/, '')}`, step: drift.habit, n: 4 });
         if (ints.has('Mentoring Team')) list.push({ icon: '👥', title: 'Lift & mentor', step: 'Encourage or coach a team member with specific praise', n: 3 });
       }
       if (area === 'physical' || !area) {
@@ -4346,21 +4622,181 @@ const TreasureUp = (function () {
   }
 
   let coachStep = 1, coachDraft = null;
+  let cclmCoachState = { tab: 'situation', who: 'child', sit: 'resist', drift: 'fixer' };
 
   function syncCoachInputs() {
     if (!coachDraft) return;
     if (coachStep === 1 && $('coachName')) coachDraft.name = $('coachName').value.trim() || coachDraft.name;
-    if (coachStep === 3 && $('coachMilestone')) coachDraft.milestone = $('coachMilestone').value.trim() || coachDraft.milestone;
+    if (coachStep === 3) {
+      if ($('coachMilestone')) coachDraft.milestone = $('coachMilestone').value.trim();
+      if ($('coachPeakMoment')) coachDraft.peakMoment = $('coachPeakMoment').value.trim();
+      if ($('coachPinchMirror')) coachDraft.pinchMirror = $('coachPinchMirror').value.trim();
+    }
+    if (coachStep === 4 && $('coachCclmNote')) coachDraft.cclmNote = $('coachCclmNote').value.trim();
   }
 
-  function openCoachProfile() {
-    coachStep = 1;
+  function openCoachProfile(startStep = 1) {
+    coachStep = startStep || 1;
     coachDraft = JSON.parse(JSON.stringify(profileOf()));
     coachDraft.coreValues = valuesTriadOf(coachDraft);
     if (!Array.isArray(coachDraft.subValues)) coachDraft.subValues = ['Trust in God', 'Growth Mindset', 'Wholeheartedness'];
     if (!Array.isArray(coachDraft.strengths)) coachDraft.strengths = [];
     if (!coachDraft.customAreas || typeof coachDraft.customAreas !== 'object') coachDraft.customAreas = {};
+    if (!coachDraft.cclmDrift) coachDraft.cclmDrift = 'fixer';
+    if (!coachDraft.cclmDomain) coachDraft.cclmDomain = 'children';
+    if (!coachDraft.cclmRatings || typeof coachDraft.cclmRatings !== 'object') coachDraft.cclmRatings = { god: 4, self: 3, children: 4, stewardships: 3 };
     openSheet(coachWalkthroughSheetHtml());
+  }
+
+  function openCclmCoach(initialTab) {
+    const p = profileOf();
+    if (initialTab) cclmCoachState.tab = initialTab;
+    cclmCoachState.drift = p.cclmDrift || 'fixer';
+    openSheet(cclmCoachSheetHtml());
+  }
+
+  function cclmCoachSheetHtml() {
+    const p = profileOf(), triad = valuesTriadOf(p), strs = p.strengths || [];
+    const tab = cclmCoachState.tab || 'situation';
+    const who = cclmCoachState.who || 'child';
+    const sit = cclmCoachState.sit || 'resist';
+    const driftKey = cclmCoachState.drift || p.cclmDrift || 'fixer';
+    const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
+    const curDomain = p.cclmDomain || 'children';
+    const ratings = p.cclmRatings || { god: 4, self: 3, children: 4, stewardships: 3 };
+    const pb = generateCclmPlaybook({ who, sit, drift: driftKey });
+
+    const whoOpts = [
+      { id: 'child', label: '👦 Child / Youth' },
+      { id: 'spouse', label: '💑 Spouse' },
+      { id: 'team', label: '🚀 Team / Work' },
+      { id: 'calling', label: '⛪ Calling / Friend' },
+      { id: 'self', label: '🪞 Myself' }
+    ];
+    const sitOpts = [
+      { id: 'resist', label: '🧱 Pushing Back / Resisting' },
+      { id: 'missed', label: '📉 Missed a Commitment' },
+      { id: 'discouraged', label: '🌧️ Discouraged / Weary' },
+      { id: 'conflict', label: '⚡ In Tension / Conflict' },
+      { id: 'burnout', label: '🏋️ Carrying Outcome Alone' }
+    ];
+
+    return `<div class="sh-title">🏛️ Christ-Centered Leader Coach</div>
+      <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>): Lead with <b>Express Love</b>, <b>Honor Agency</b>, and <b>Invite Accountability</b> across all 4 stewardship domains.</p>
+
+      <div class="coach-chip-group" style="margin:10px 0 14px">
+        <button type="button" class="coach-chip${tab === 'situation' ? ' on' : ''}" data-cclm-tab="situation">💬 Live Situation Coach</button>
+        <button type="button" class="coach-chip${tab === 'model' ? ' on' : ''}" data-cclm-tab="model">🏛️ 4 Domains & Tension Audit</button>
+      </div>
+
+      ${tab === 'situation' ? `
+        <div class="sheet-group">
+          <label>1. Who are you leading or walking with right now?</label>
+          <div class="coach-chip-group">
+            ${whoOpts.map(o => `<button type="button" class="bp-quick-pill${who === o.id ? ' on' : ''}" style="${who === o.id ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-cclm-who="${o.id}">${o.label}</button>`).join('')}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>2. What is happening in this moment?</label>
+          <div class="coach-chip-group">
+            ${sitOpts.map(o => `<button type="button" class="bp-quick-pill${sit === o.id ? ' on' : ''}" style="${sit === o.id ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-cclm-sit="${o.id}">${o.label}</button>`).join('')}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>3. Which stress ditch are you tempted to drift into?</label>
+          <div class="coach-chip-group">
+            ${Object.values(CCLM_DRIFTS).map(d => `<button type="button" class="bp-quick-pill${driftKey === d.id ? ' on' : ''}" style="${driftKey === d.id ? 'background:rgba(167,139,250,.22);border-color:#a78bfa;color:#ddd6fe' : ''}" data-cclm-drift="${d.id}">${d.icon} ${esc(d.title)}</button>`).join('')}
+          </div>
+        </div>
+
+        <div id="cclmPlaybookOut" style="padding:13px;border-radius:16px;background:linear-gradient(145deg,rgba(18,21,38,.96),rgba(15,23,42,.92));border:1.5px solid rgba(251,191,36,.4);margin-top:10px;display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+            <span style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--gold)">✨ Your 5-Step Christ-Centered Playbook</span>
+            <span style="font-size:11px;font-weight:800;color:#6ee7b7">${esc(drift.antidoteLabel)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(251,191,36,.1);border-left:3px solid var(--gold);font-size:12px;color:#fde68a">
+            <b>✝️ 0. Center in Christ & Your Triad (${esc(triad.join(' · '))}):</b><br>
+            <span style="color:#f8fafc">${esc(pb.center)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border-left:3px solid #f43f5e;font-size:12px">
+            <b style="color:#fda4af">❤️ 1. Express Love (Connection First):</b><br>
+            <span style="color:#f8fafc">${esc(pb.love)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(56,189,248,.1);border-left:3px solid #38bdf8;font-size:12px">
+            <b style="color:#7dd3fc">🕊️ 2. Honor Agency (Curiosity Over Control):</b><br>
+            <span style="color:#f8fafc">${esc(pb.agency)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(16,185,129,.1);border-left:3px solid #10b981;font-size:12px">
+            <b style="color:#6ee7b7">🎯 3. Invite Accountability (Shared Standard):</b><br>
+            <span style="color:#f8fafc">${esc(pb.accountability)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(167,139,250,.1);border-left:3px solid #a78bfa;font-size:12px">
+            <b style="color:#ddd6fe">🌙 4. The Jeremiah Release (Faithfulness Over Control):</b><br>
+            <span style="color:#f8fafc">${esc(pb.release)}</span>
+          </div>
+
+          <div style="padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.05);font-size:12px;color:#fde68a">
+            <b>🌅 Ready for Today’s Morning Council:</b> “${esc(pb.seedText)}”
+          </div>
+        </div>
+
+        <div class="board-actions" style="margin-top:14px">
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-cclm-seed-bp="${esc(pb.seedText)}" data-cclm-seed-move="${esc(pb.recommendedMove)}">🌅 Send Move to Today’s Morning Council</button>
+          <button type="button" class="btn ghost" data-hub-profile="me">🧭 Full Growth Profile ›</button>
+        </div>
+      ` : `
+        <div style="padding:12px;border-radius:14px;background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.3);margin-bottom:12px">
+          <div style="font-size:11px;font-weight:900;text-transform:uppercase;color:#a5b4fc;margin-bottom:6px">Concentric Rings · Center: ✝️ Jesus Christ</div>
+          <div style="font-size:12px;color:#e2e8f0;margin-bottom:8px">Inner Ring: <b>❤️ Express Love · 🕊️ Honor Agency · 🎯 Invite Accountability</b><br>Outer Ring: <b>4 Domains of Relationship & Stewardship</b> (Tap your #1 focus domain below):</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+            ${CCLM_DOMAINS.map(dom => {
+              const on = curDomain === dom.id;
+              const r = ratings[dom.id] || 4;
+              return `<div style="padding:8px;border-radius:10px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'}">
+                <button type="button" style="background:none;border:none;color:#fff;font-weight:800;font-size:12px;text-align:left;cursor:pointer;width:100%;padding:0" data-cclm-pick-dom="${dom.id}">${dom.icon} ${esc(dom.short)} ${on ? '★' : ''}</button>
+                <div style="font-size:10.5px;color:#cbd5e1;margin:3px 0 6px">${esc(dom.desc)}</div>
+                <div style="display:flex;gap:3px;align-items:center">
+                  <small style="font-size:10px;color:#94a3b8;margin-right:3px">Align:</small>
+                  ${[1, 2, 3, 4, 5].map(n => `<button type="button" class="bp-quick-pill" style="padding:2px 6px;font-size:10px;${r === n ? 'background:var(--gold);color:#1c1406;border-color:var(--gold)' : ''}" data-cclm-rate="${dom.id}:${n}">${n}</button>`).join('')}
+                </div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>⚖️ Your Default Stress Drift & Antidote</label>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            ${Object.values(CCLM_DRIFTS).map(d => {
+              const on = driftKey === d.id;
+              return `<button type="button" style="text-align:left;padding:9px 11px;border-radius:11px;background:${on ? 'rgba(251,191,36,.14)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'};color:#fff;cursor:pointer" data-cclm-drift="${d.id}">
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:800">
+                  <span>${d.icon} ${esc(d.title)} <small style="color:#94a3b8;font-weight:600">(${esc(d.formula)})</small></span>
+                  <span style="color:#fde68a;font-size:11px">${esc(d.antidoteLabel)}</span>
+                </div>
+                <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">${esc(d.desc)}</div>
+              </button>`;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>🕊️ Blank-Slate Stewardship Reflection (Private to your device)</label>
+          <textarea class="field sheet-in" id="cclmAuditNote" rows="2" maxlength="300" placeholder="Which relationship or stewardship are you handing to the Savior while practicing ${esc(drift.antidoteLabel)}?">${esc(p.cclmNote || '')}</textarea>
+        </div>
+
+        <div class="board-actions" style="margin-top:14px">
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-cclm-save-audit>💾 Save Leadership Calibration</button>
+          <button type="button" class="btn ghost" data-cclm-tab="situation">💬 Back to Situation Coach</button>
+        </div>
+      `}`;
   }
 
   function coachWalkthroughSheetHtml() {
@@ -4390,6 +4826,7 @@ const TreasureUp = (function () {
       return `<div class="sh-title">🧭 Growth Coach Setup</div>
         <div class="coach-step-bar">
           <div class="coach-step-dot on"></div>
+          <div class="coach-step-dot"></div>
           <div class="coach-step-dot"></div>
           <div class="coach-step-dot"></div>
         </div>
@@ -4426,8 +4863,8 @@ const TreasureUp = (function () {
           </div>
         ` : `
           <div class="ev-row" style="background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.35);margin-top:6px">
-            <small style="color:#c4b5fd">🌟 Best Self PRO · Core Values Triad</small>
-            <p style="color:#e0e7ff">Core Values Triad (Faith · Adventure · Integrity), Gary Keller’s <i>The ONE Thing</i>, CliftonStrengths, and daily morning & evening discipleship.</p>
+            <small style="color:#c4b5fd">🌟 Best Self PRO · Core Values Triad & Christ-Centered Leader Engine</small>
+            <p style="color:#e0e7ff">Core Values Card Sort & Crucible, CliftonStrengths Blind-Spot Mirror, Gary Keller’s <i>The ONE Thing</i>, and the BYU Sorensen Center Christ-Centered Leader Model.</p>
           </div>
         `}
 
@@ -4441,6 +4878,7 @@ const TreasureUp = (function () {
         <div class="coach-step-bar">
           <div class="coach-step-dot on"></div>
           <div class="coach-step-dot on"></div>
+          <div class="coach-step-dot"></div>
           <div class="coach-step-dot"></div>
         </div>
         <p class="sh-small">Tap your favorite hobbies, talents, and focus areas! Your coach uses these to suggest customized Luke 2:52 quests and daily habits.</p>
@@ -4476,19 +4914,74 @@ const TreasureUp = (function () {
         </div>`;
     }
 
-    // Step 3: Core Values Triad + Superpowers / CliftonStrengths + Milestone
+    if (coachStep === 4) {
+      const driftKey = d.cclmDrift || 'fixer';
+      const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
+      const domKey = d.cclmDomain || 'children';
+      const domObj = CCLM_DOMAINS.find(x => x.id === domKey) || CCLM_DOMAINS[2];
+      return `<div class="sh-title">🏛️ Christ-Centered Leader Engine</div>
+        <div class="coach-step-bar">
+          <div class="coach-step-dot on"></div>
+          <div class="coach-step-dot on"></div>
+          <div class="coach-step-dot on"></div>
+          <div class="coach-step-dot on"></div>
+        </div>
+        <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>): Center in <b>Jesus Christ</b>, balance <b>Express Love · Honor Agency · Invite Accountability</b>, and steward your 4 Outer-Ring Domains.</p>
+
+        <div class="sheet-group">
+          <label>⚖️ 1. Leadership Tension Diagnostic: Under stress, which ditch are you most tempted to drift into?</label>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            ${Object.values(CCLM_DRIFTS).map(dr => {
+              const on = driftKey === dr.id;
+              return `<button type="button" style="text-align:left;padding:9px 11px;border-radius:11px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'};color:#fff;cursor:pointer" data-coach-cclm-drift="${dr.id}">
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:800">
+                  <span>${dr.icon} ${esc(dr.title)} <small style="color:#94a3b8;font-weight:600">(${esc(dr.formula)})</small></span>
+                  <span style="color:#fde68a;font-size:11px">${esc(dr.antidoteLabel)}</span>
+                </div>
+                <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">${esc(dr.desc)}</div>
+              </button>`;
+            }).join('')}
+          </div>
+          <div style="margin-top:6px;padding:8px 10px;border-radius:10px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);font-size:11.5px;color:#6ee7b7">
+            <b>${esc(drift.antidoteLabel)}:</b> ${esc(drift.habit)}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>🏛️ 2. Outer-Ring Stewardship Focus: Which domain needs your primary focus right now?</label>
+          <div class="coach-chip-group">
+            ${CCLM_DOMAINS.map(dom => `<button type="button" class="coach-chip${domKey === dom.id ? ' on' : ''}" data-coach-cclm-dom="${dom.id}">${dom.icon} ${esc(dom.label)}</button>`).join('')}
+          </div>
+          <p class="sh-small" style="margin-top:6px;color:#fde68a"><b>Diagnostic Question (${esc(domObj.short)}):</b> “${esc(domObj.auditQ)}”</p>
+        </div>
+
+        <div class="sheet-group">
+          <label>🕊️ 3. Blank-Slate Stewardship Reflection (Private to your device)</label>
+          <textarea class="field sheet-in" id="coachCclmNote" rows="2" maxlength="300" placeholder="Optional: Who or what stewardship are you learning to lead with faithfulness over control?">${esc(d.cclmNote || '')}</textarea>
+        </div>
+
+        <div class="board-actions" style="margin-top:18px">
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>🚀 Lock In My Profile (+25 XP)</button>
+          <button type="button" class="btn ghost" data-open-cclm-coach>💬 Live Situation Coach ›</button>
+          <button type="button" class="btn ghost" data-coach-goto="3">‹ Back</button>
+        </div>`;
+    }
+
+    // Step 3: Core Values Triad + Crucible Reflection + Superpowers / CliftonStrengths + Milestone
     const superpowers = isKid
       ? ['Creative Builder', 'Fast Learner', 'Loyal Friend', 'Joyful Energy', 'Peacekeeper', 'Hard Worker']
       : ['Strategic Clarity', 'Disciple Leader', 'Family Anchor', 'Visionary Builder', 'Resilient Coach'];
     const cVals = new Set(valuesTriadOf(d));
     const sVals = new Set(d.subValues || ['Trust in God', 'Growth Mindset', 'Wholeheartedness']);
     const myStrengths = new Set(d.strengths || []);
+    const primaryStr = (d.strengths || [])[0] || '';
 
     return `<div class="sh-title">🧭 Your Superpower & Focus · Core Values</div>
       <div class="coach-step-bar">
         <div class="coach-step-dot on"></div>
         <div class="coach-step-dot on"></div>
         <div class="coach-step-dot on"></div>
+        <div class="coach-step-dot"></div>
       </div>
       <p class="sh-small">Anchor your Best Self in your Core Values Triad (up to 3 pillars) and signature strengths.</p>
 
@@ -4502,6 +4995,14 @@ const TreasureUp = (function () {
         </div>
       </div>
 
+      ${!isKid ? `
+        <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+          <label>🔥 The Crucible Mirror (Optional · 100% Blank Slate & Private)</label>
+          <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized and proud recently?" style="margin-bottom:6px">
+          <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
+        </div>
+      ` : ''}
+
       <div class="sheet-group">
         <label>⚡ Primary Superpower</label>
         <div class="coach-chip-group">
@@ -4511,10 +5012,23 @@ const TreasureUp = (function () {
 
       ${!isKid ? `
         <div class="sheet-group">
-          <label>🧬 Signature CliftonStrengths (Pick up to 5)</label>
+          <label>🧬 Signature CliftonStrengths (Tap Scenarios or Pick up to 5)</label>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px">
+            ${STRENGTH_SCENARIOS.map(sc => `<div style="padding:7px 9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)">
+              <div style="font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:4px">${esc(sc.q)}</div>
+              <div class="coach-chip-group">
+                ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}">${esc(o.label)}</button>`).join('')}
+              </div>
+            </div>`).join('')}
+          </div>
           <div class="coach-chip-group">
             ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}">${esc(st)}</button>`).join('')}
           </div>
+          ${primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `
+            <div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);font-size:11.5px;color:#fecdd3">
+              <b>⚠️ ${esc(primaryStr)} Blind Spot to Watch:</b> ${esc(STRENGTH_BLIND_SPOTS[primaryStr])}
+            </div>
+          ` : ''}
         </div>
       ` : ''}
 
@@ -4525,17 +5039,34 @@ const TreasureUp = (function () {
 
       <div class="board-actions" style="margin-top:20px">
         <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>🚀 Lock In My Profile (+25 XP)</button>
+        <button type="button" class="btn ghost" data-coach-goto="4">🏛️ Step 4: Christ-Centered Leader Engine ›</button>
         <button type="button" class="btn ghost" data-coach-goto="2">‹ Back</button>
       </div>`;
   }
 
-  let bpShare = false, bpYouthArea = 'spiritual';
+  let bpShare = false, bpYouthArea = 'spiritual', bpCclmMove = 'love', bpDraft = null;
 
-  function blueprintSheetHtml() {
+  function stashBlueprintDraft() {
+    if (!$('bpOneThing')) return;
+    bpDraft = {
+      oneThing: $('bpOneThing').value,
+      goalSid: $('bpGoalSid') ? $('bpGoalSid').value : '',
+      goalStepId: $('bpGoalStepId') ? $('bpGoalStepId').value : '',
+      uplift: $('bpUplift') ? $('bpUplift').value : '',
+      cclmMove: $('bpCclmMove') ? $('bpCclmMove').value : bpCclmMove,
+      gratitude: $('bpGratitude') ? $('bpGratitude').value : ''
+    };
+  }
+
+  function blueprintSheetHtml(overrideMove) {
     const k = dayKey(), had = blueprintOf(k), bp = had ? had[1] : {}, kid = seasonWho() !== 'adult';
     const gratefulHad = gratefulOf(k), grItems = gratefulHad ? (gratefulHad[1].items || []) : (bp.gratitude || []);
     const grText = grItems.slice(0, 3).join('\n');
     const prof = profileOf(), triad = valuesTriadOf(prof), subs = (prof.subValues || []).slice(0, 3);
+    const dayIdx = Math.abs(Math.round(Date.parse(k + 'T12:00:00Z') / 864e5)) % Math.max(1, triad.length);
+    const activeValObj = CORE_VALUES_DECK.find(x => x.id === triad[dayIdx]) || CORE_VALUES_DECK[0];
+    const moveKey = overrideMove || bp.cclmMove || bpCclmMove || (CCLM_DRIFTS[prof.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
+    const moveObj = CCLM_PRINCIPLES[moveKey] || CCLM_PRINCIPLES.love;
 
     return `<div class="sh-title">${kid ? '🌟 Morning Council · Walk with Him' : '🌅 Morning Council · Best Self'}</div>
       <p class="sh-small">${kid ? 'Alma 37:37 & Luke 2:52 · Counsel with Heavenly Father' : 'Alma 37:37 · Counsel with the Lord in all thy doings'}</p>
@@ -4543,7 +5074,10 @@ const TreasureUp = (function () {
       <div class="values-triad-banner">
         <div class="vt-row">
           <span style="font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fde68a">🏛️ My Core Values Triad</span>
-          <button type="button" class="bp-edit-btn" data-hub-profile="me" style="font-size:11px">Calibrate Coach ✎</button>
+          <div style="display:flex;gap:6px">
+            <button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:11px">🏛️ Leader Coach</button>
+            <button type="button" class="bp-edit-btn" data-hub-profile="me" style="font-size:11px">Calibrate Coach ✎</button>
+          </div>
         </div>
         <div class="vt-pillars">
           ${triad.map(v => {
@@ -4552,6 +5086,7 @@ const TreasureUp = (function () {
           }).join('')}
         </div>
         ${subs.length ? `<small style="font-size:11.5px;color:rgba(255,255,255,.78)">Living today with: <b>${esc(subs.join(' · '))}</b></small>` : ''}
+        ${activeValObj && activeValObj.q ? `<small style="font-size:11.5px;color:#fde68a;margin-top:2px">💡 <b>Today’s ${esc(activeValObj.label)} Touchstone:</b> “${esc(activeValObj.q)}”</small>` : ''}
       </div>
 
       <div class="bp-sheet-wrap">
@@ -4567,18 +5102,26 @@ const TreasureUp = (function () {
           <input type="hidden" id="bpGoalStepId" value="${esc(bp.goalStepId || '')}">
         </div>
 
-        <!-- 2. Someone to Uplift (Hesed & Agape Covenant Love) -->
+        <!-- 2. Someone to Uplift & Lead (Hesed & Agape + BYU Christ-Centered Leader Model) -->
         <div class="bp-sec bp-sec-uplift">
-          <div class="bp-sec-head">
-            <span class="bp-sec-title">🤝 Someone to Uplift · Hesed & Agape</span>
+          <div class="bp-sec-head" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+            <span class="bp-sec-title">🤝 Someone to Uplift · Christ-Centered Leader</span>
+            <button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:10.5px">💬 Situation Coach ›</button>
           </div>
-          <p class="sh-small" style="margin:0 0 6px;font-size:12px;color:rgba(255,255,255,.72)">${kid ? 'Who can you show Christlike kindness to today?' : 'Who needs loyal covenant love (hesed) or self-giving Christlike love (agape) from me today?'}</p>
+          <p class="sh-small" style="margin:0 0 6px;font-size:12px;color:rgba(255,255,255,.72)">${kid ? 'Who can you show Christlike kindness to today?' : 'Who are you called to lift or lead today, and which Christ-centered principle do they need most from you?'}</p>
+          <div class="bp-quick-pills" style="margin-bottom:6px">
+            ${Object.values(CCLM_PRINCIPLES).map(pr => `<button type="button" class="bp-quick-pill${moveKey === pr.id ? ' on' : ''}" style="${moveKey === pr.id ? `background:${pr.bg};border-color:${pr.border};color:${pr.color}` : ''}" data-bp-cclm-move="${pr.id}">${pr.icon} ${esc(pr.label)}</button>`).join('')}
+          </div>
+          <div id="bpCclmHint" style="font-size:11.5px;color:${moveObj.color};background:${moveObj.bg};border:1px solid ${moveObj.border};padding:6px 9px;border-radius:8px;margin-bottom:7px">
+            ${esc(moveObj.prompt)}
+          </div>
           <div class="bp-quick-pills">
             ${(kid ? ['Mom or Dad', 'Friend at school', 'Brother / Sister', 'Someone lonely']
                   : ['My spouse', 'One of my kids (1-on-1)', 'A team member', 'A neighbor']
             ).map(p => `<button type="button" class="bp-quick-pill" data-bp-pick-uplift="${esc(p)}">+ ${esc(p)}</button>`).join('')}
           </div>
-          <textarea class="field bp-textarea sm" id="bpUplift" maxlength="200" rows="1" data-min-height="42" placeholder="Who can I serve, encourage, text, or pray for?">${esc(bp.uplift || '')}</textarea>
+          <textarea class="field bp-textarea sm" id="bpUplift" maxlength="200" rows="1" data-min-height="42" placeholder="Who can I serve, encourage, honor agency with, or invite to accountability?">${esc(bp.uplift || '')}</textarea>
+          <input type="hidden" id="bpCclmMove" value="${esc(moveKey)}">
         </div>
 
         <!-- 3. Morning Gratitude & Creative Visualization -->
@@ -4601,21 +5144,35 @@ const TreasureUp = (function () {
       </div>`;
   }
 
-  function openBlueprint() {
+  function openBlueprint(seed) {
     const had = blueprintOf(dayKey());
     bpShare = !!(had && had[1].share);
     bpYouthArea = (had && had[1].youthArea) || 'spiritual';
-    openSheet(blueprintSheetHtml());
+    const overrideMove = (seed && seed.cclmMove) || (bpDraft && bpDraft.cclmMove) || '';
+    bpCclmMove = overrideMove || (had && had[1].cclmMove) || (CCLM_DRIFTS[profileOf().cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
+    openSheet(blueprintSheetHtml(overrideMove));
+    if (bpDraft) {
+      if ($('bpOneThing') && bpDraft.oneThing) $('bpOneThing').value = bpDraft.oneThing;
+      if ($('bpGoalSid') && bpDraft.goalSid) $('bpGoalSid').value = bpDraft.goalSid;
+      if ($('bpGoalStepId') && bpDraft.goalStepId) $('bpGoalStepId').value = bpDraft.goalStepId;
+      if ($('bpUplift') && bpDraft.uplift) $('bpUplift').value = bpDraft.uplift;
+      if ($('bpGratitude') && bpDraft.gratitude) $('bpGratitude').value = bpDraft.gratitude;
+      bpDraft = null;
+    }
+    if (seed && seed.uplift && $('bpUplift')) $('bpUplift').value = seed.uplift;
+    if (seed && seed.cclmMove && $('bpCclmMove')) $('bpCclmMove').value = seed.cclmMove;
     document.querySelectorAll('#appBody .bp-textarea').forEach(fitTextarea);
     const first = document.querySelector('#appBody #bpOneThing');
-    if (first && !had) first.focus();
+    if (first && !had && !(seed && seed.uplift)) first.focus();
   }
 
   function saveBlueprint() {
+    bpDraft = null;
     const oneThing = ($('bpOneThing') ? $('bpOneThing').value.trim() : '').slice(0, 200);
     const goalSid = oneThing && $('bpGoalSid') ? $('bpGoalSid').value : '';
     const goalStepId = oneThing && $('bpGoalStepId') ? $('bpGoalStepId').value : '';
     const uplift = ($('bpUplift') ? $('bpUplift').value.trim() : '').slice(0, 200);
+    const cclmMove = ($('bpCclmMove') ? $('bpCclmMove').value.trim() : bpCclmMove) || 'love';
     let grList = [];
     if ($('bpGratitude')) {
       const raw = $('bpGratitude').value.trim();
@@ -4627,6 +5184,7 @@ const TreasureUp = (function () {
       goalSid,
       goalStepId,
       uplift,
+      cclmMove,
       gratitude: grList,
       youthArea: bpYouthArea,
       share: bpShare
@@ -4648,6 +5206,7 @@ const TreasureUp = (function () {
       mercies: data.mercies || '',
       wins: data.wins || '',
       improve: data.improve || '',
+      surrender: data.surrender !== undefined ? data.surrender : (had ? had[1].surrender || '' : ''),
       at: had ? had[1].at : Date.now(),
       upd: Date.now(),
       ref: 'Alma 34:38',
@@ -4685,6 +5244,11 @@ const TreasureUp = (function () {
         <input class="field sheet-in" id="evImprove" maxlength="200" value="${esc(ev.improve || '')}" placeholder="A lesson learned or something to do better tomorrow">
       </div>
 
+      <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.28)">
+        <label style="color:#6ee7b7">🕊️ The Jeremiah Check · Faithfulness Over Control (Christ-Centered Leader)</label>
+        <input class="field sheet-in" id="evSurrender" maxlength="200" value="${esc(ev.surrender || '')}" placeholder="Did I express love, honor agency & invite accountability? What outcome will I hand to Christ tonight?">
+      </div>
+
       <div class="sea-imp-bar" style="margin-top:16px">
         ${kid ? `<button type="button" class="sh-pill${evShare ? ' on' : ''}" data-ev-share>${evShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Just yours</span>'}
         <button type="button" class="btn" style="background:linear-gradient(135deg,#a78bfa,#818cf8);color:#1e1b4b;font-weight:900" data-ev-save>Close Day in Prayer · Return & Report (+20 XP)</button>
@@ -4703,11 +5267,13 @@ const TreasureUp = (function () {
     const mercies = ($('evMercies') ? $('evMercies').value.trim() : '').slice(0, 500);
     const wins = ($('evWins') ? $('evWins').value.trim() : '').slice(0, 200);
     const improve = ($('evImprove') ? $('evImprove').value.trim() : '').slice(0, 200);
-    if (!mercies && !wins && !improve) { closeSheet(); return; }
+    const surrender = ($('evSurrender') ? $('evSurrender').value.trim() : '').slice(0, 200);
+    if (!mercies && !wins && !improve && !surrender && !eveningOf(dayKey())) { closeSheet(); return; }
     storeEvening({
       mercies,
       wins,
       improve,
+      surrender,
       share: evShare
     });
     closeSheet();
@@ -4734,9 +5300,9 @@ const TreasureUp = (function () {
   // what he noticed (the sheet shows it all, to review).
   function eveningCards(k) {
     const had = eveningOf(k), ev = had ? had[1] : null, kid = seasonWho() !== 'adult';
-    const done = !!(ev && (ev.mercies || ev.wins || ev.improve));
+    const done = !!(ev && (ev.mercies || ev.wins || ev.improve || ev.surrender));
     const ch = chargeOf(streakNow());
-    const sub = done ? esc(ev.mercies || ev.wins || ev.improve) : kid ? 'Tonight: talk with Heavenly Father about your day' : 'Notice His mercies · review today’s wins · a lesson for tomorrow';
+    const sub = done ? esc(ev.mercies || ev.wins || ev.improve || ev.surrender) : kid ? 'Tonight: talk with Heavenly Father about your day' : 'Notice His mercies · review today’s wins · a lesson for tomorrow';
     const got = ((pathDoneOf(k).eveningXp) || {}).xp;
     const xp = done ? (got ? `<em class="pth-xp ok">+${got}<small>earned</small></em>` : '') : `<em class="pth-xp">+${Math.round(EVENING_XP * ch)}${ch > 1 ? ' ⚡' : ' XP'}</em>`;
     return [{ done, html: tcRow('data-open-evening', { done, cls: 'evening-card', title: '🌙 Return &amp; Report', sub, xp }) }];
@@ -5211,7 +5777,7 @@ const TreasureUp = (function () {
   // An impression's words, wherever they're listed: a day's gratitude as its lines.
   const impWords = x => x.kind === 'grateful' ? '🙏 ' + (x.items || []).join(' · ')
     : x.kind === 'blueprint' ? '🌅 Blueprint: ' + x.oneThing + (x.uplift ? ' · Uplift: ' + x.uplift : '')
-    : x.kind === 'evening' ? '🌙 Evening: ' + (x.mercies || '') + (x.wins ? ' · Wins: ' + x.wins : '')
+    : x.kind === 'evening' ? '🌙 Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ')
     : x.text;
 
   // Who's using the app, by name (2026-10-05: "Make it so the app tells
@@ -6827,13 +7393,13 @@ const TreasureUp = (function () {
     // 1. Recent personal/family notes & blueprints from this week
     const start = weekStart(week.dates) || dayAdd(dayKey(), -6);
     const myRecent = Object.entries(S.impressions || {})
-      .filter(([, x]) => x && !x.gone && x.day >= start && (x.text || x.oneThing || x.mercies))
+      .filter(([, x]) => x && !x.gone && x.day >= start && (x.text || x.oneThing || x.mercies || x.wins || x.surrender))
       .sort((a, b) => (b[1].upd || 0) - (a[1].upd || 0))
       .slice(0, 3);
     for (const [id, x] of myRecent) {
       const isBp = x.kind === 'blueprint', isEv = x.kind === 'evening';
       const title = isBp ? '🌅 Morning Council · The ONE Thing' : isEv ? '🌙 Evening Return & Report' : '✍️ My Scripture Note';
-      const body = isBp ? `${x.oneThing}${x.uplift ? ' · Uplift: ' + x.uplift : ''}` : isEv ? `${x.mercies || ''}${x.wins ? ' · Win: ' + x.wins : ''}` : x.text;
+      const body = isBp ? `${x.oneThing}${x.uplift ? ' · Uplift: ' + x.uplift : ''}` : isEv ? [x.mercies, x.wins ? 'Win: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.text;
       const fid = 'mine:' + id;
       const liked = !!likes[fid];
       items.push({
@@ -10011,6 +10577,7 @@ const TreasureUp = (function () {
     return `<div class="sh-title">Settings</div>
       <p class="sh-small set-who">${who ? `Signed in as <b>${esc((F && F.name) || who)}</b>${F && F.role ? ' (' + esc(F.role === 'kid' ? 'a kid' : F.role) + ')' : ''}${u && u.email ? ' · ' + esc(u.email) : ''}` : 'Not signed in. Join your family below to keep progress safe and see your name.'}</p>
       <button class="sh-row sh-go" data-set-go="profile"><span>🌱 My Growth Profile<small>${profileSummaryHtml()}</small></span><span>›</span></button>
+      <button class="sh-row sh-go" data-set-go="cclm"><span>🏛️ Christ-Centered Leader Coach<small>${cclmSummaryHtml()}</small></span><span>›</span></button>
       <button class="sh-row sh-go" data-set-go="family"><span>👪 Family${unread ? ' <b class="set-new">· new message</b>' : ''}<small>${F ? 'This week, chat, people, everyone’s Season' : 'Sign in or join your family'}</small></span><span>›</span></button>
       <div class="sh-row"><span>Listen voice</span><span>${pill(voice === 'male', 'data-set-voice="male"', 'Man')}${pill(voice === 'female', 'data-set-voice="female"', 'Woman')}</span></div>
       <div class="sh-row"><span>Verse size</span><span>${[['m', 'Normal'], ['l', 'Large'], ['xl', 'Larger']].map(([k, l]) => pill(textSize() === k, `data-set-text="${k}"`, l)).join('')}</span></div>
@@ -10749,7 +11316,7 @@ const TreasureUp = (function () {
     const inS = d => typeof d === 'string' && d <= s.end && d >= dayAdd(s.start, -7) && noteSeason(d) === s.id;
     const imps = Object.entries(S.impressions || {}).filter(([, x]) => x && !x.gone && inS(x.day) && (!print || nb.priv || x.share))
       .map(([id, x]) => ({ id, imp: true, icon: x.kind === 'grateful' ? '🙏' : x.kind === 'still' ? '🕊️' : x.kind === 'blueprint' ? '🌅' : x.kind === 'evening' ? '🌙' : /:\d/.test(x.ref || '') ? '🖍' : '✍️', day: x.day, at: x.at || 0, ref: x.kind === 'grateful' ? '' : x.ref || '',
-        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + x.oneThing + (x.uplift ? ' · Uplift: ' + x.uplift : '') : x.kind === 'evening' ? 'Evening: ' + (x.mercies || '') + (x.wins ? ' · Wins: ' + x.wins : '') : x.text || '', share: !!x.share }));
+        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + x.oneThing + (x.uplift ? ' · Uplift: ' + x.uplift : '') : x.kind === 'evening' ? 'Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.text || '', share: !!x.share }));
     const reels = Object.values(S.notes || {}).filter(n => n && n.text && inS(n.day)).map(n => ({ icon: '✏️', day: n.day, at: n.at || 0, ref: n.ref || '', text: n.text, share: true }));
     return imps.concat(reels).sort((a, b) => b.day.localeCompare(a.day) || b.at - a.at);
   }
@@ -11228,7 +11795,7 @@ const TreasureUp = (function () {
       <div class="values-triad-banner" style="background:rgba(180,140,60,.1);border-color:rgba(180,140,60,.35);margin-bottom:10px">
         <div class="vt-row">
           <b style="font-size:12px;letter-spacing:.04em;text-transform:uppercase">🏛️ Core Values Triad: ${esc(triad.join(' · '))}</b>
-          <button type="button" class="nb-link" data-hub-profile="me">Calibrate ✎</button>
+          <span><button type="button" class="nb-link" data-hub-profile="me">Calibrate ✎</button> · <button type="button" class="nb-link" data-open-cclm-coach="1">🏛️ Leader Coach ›</button></span>
         </div>
         ${subs.length ? `<small style="font-size:12px;opacity:.85">Sub-values: ${esc(subs.join(' · '))}</small>` : ''}
         ${strs.length ? `<small style="font-size:12px;opacity:.85">🧬 CliftonStrengths: ${esc(strs.join(' · '))}</small>` : ''}
@@ -21026,6 +21593,7 @@ const TreasureUp = (function () {
       }
       const hprof = e.target.closest('[data-hub-profile]');
       if (hprof) { openCoachProfile(); return; }
+      if (e.target.closest('[data-open-cclm-coach]')) { openCclmCoach(); return; }
       const pc = e.target.closest('[data-past-chapter]');
       if (pc) { openPastItem('read', pc.dataset.pastChapter); return; }
       const pr = e.target.closest('[data-past-reel]');
@@ -21219,7 +21787,7 @@ const TreasureUp = (function () {
         else if (arr.length < 3) arr.push(id);
         else { arr.shift(); arr.push(id); }
         const allowedSub = new Set();
-        arr.forEach(vid => { const p = CORE_VALUES_POOL.find(x => x.id === vid); if (p && p.sub) p.sub.forEach(s => allowedSub.add(s)); });
+        arr.forEach(vid => { const p = CORE_VALUES_DECK.find(x => x.id === vid); if (p && p.subs) p.subs.forEach(s => allowedSub.add(s)); });
         coachDraft.subValues = (coachDraft.subValues || []).filter(s => allowedSub.has(s));
         openSheet(coachWalkthroughSheetHtml());
         return;
@@ -21251,6 +21819,118 @@ const TreasureUp = (function () {
         syncCoachInputs();
         coachDraft.superpower = csp.dataset.coachSp;
         openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const ccd = e.target.closest('[data-coach-cclm-drift]');
+      if (ccd) {
+        syncCoachInputs();
+        coachDraft.cclmDrift = ccd.dataset.coachCclmDrift;
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const cdom = e.target.closest('[data-coach-cclm-dom]');
+      if (cdom) {
+        syncCoachInputs();
+        coachDraft.cclmDomain = cdom.dataset.coachCclmDom;
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const syncCclmSheetProfile = () => {
+        if (!S.profile) S.profile = profileOf();
+        if ($('cclmAuditNote')) S.profile.cclmNote = $('cclmAuditNote').value.trim();
+        return S.profile;
+      };
+      if (e.target.closest('[data-open-cclm-coach]')) {
+        syncCoachInputs();
+        stashBlueprintDraft();
+        if (coachDraft && ($('coachName') || $('coachCclmNote') || document.querySelector('#appBody [data-coach-finish]'))) {
+          saveProfile(coachDraft);
+        }
+        openCclmCoach();
+        return;
+      }
+      const ctab = e.target.closest('[data-cclm-tab]');
+      if (ctab) {
+        syncCclmSheetProfile();
+        cclmCoachState.tab = ctab.dataset.cclmTab;
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const cwho = e.target.closest('[data-cclm-who]');
+      if (cwho) {
+        cclmCoachState.who = cwho.dataset.cclmWho;
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const csit = e.target.closest('[data-cclm-sit]');
+      if (csit) {
+        cclmCoachState.sit = csit.dataset.cclmSit;
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const cdrf = e.target.closest('[data-cclm-drift]');
+      if (cdrf) {
+        const p = syncCclmSheetProfile();
+        const dId = cdrf.dataset.cclmDrift;
+        cclmCoachState.drift = dId;
+        if (cclmCoachState.tab === 'model') {
+          p.cclmDrift = dId;
+          save();
+        }
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const cpdom = e.target.closest('[data-cclm-pick-dom]');
+      if (cpdom) {
+        const p = syncCclmSheetProfile();
+        p.cclmDomain = cpdom.dataset.cclmPickDom;
+        save();
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const crate = e.target.closest('[data-cclm-rate]');
+      if (crate) {
+        const p = syncCclmSheetProfile();
+        const [domId, score] = crate.dataset.cclmRate.split(':');
+        if (!p.cclmRatings || typeof p.cclmRatings !== 'object') p.cclmRatings = { god: 4, self: 3, children: 4, stewardships: 4 };
+        p.cclmRatings[domId] = Number(score) || 3;
+        save();
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      if (e.target.closest('[data-cclm-save-audit]')) {
+        const p = syncCclmSheetProfile();
+        if (cclmCoachState.drift) p.cclmDrift = cclmCoachState.drift;
+        saveProfile(p);
+        toast('🏛️ Leader Calibration Saved!', 'Your 4-Domain Stewardship & Principle focus is active.');
+        openSheet(cclmCoachSheetHtml());
+        return;
+      }
+      const cseed = e.target.closest('[data-cclm-seed-bp]');
+      if (cseed) {
+        const seedText = cseed.dataset.cclmSeedBp || '';
+        const seedMove = cseed.dataset.cclmSeedMove || 'love';
+        openBlueprint({ uplift: seedText, cclmMove: seedMove });
+        toast('🌅 Seeded to Morning Council!', 'Review and save your Morning Council blueprint.');
+        return;
+      }
+      const bpmv = e.target.closest('[data-bp-cclm-move]');
+      if (bpmv) {
+        bpCclmMove = bpmv.dataset.bpCclmMove || 'love';
+        if ($('bpCclmMove')) $('bpCclmMove').value = bpCclmMove;
+        const pObj = CCLM_PRINCIPLES[bpCclmMove] || CCLM_PRINCIPLES.love;
+        document.querySelectorAll('#appBody [data-bp-cclm-move]').forEach(b => {
+          const on = b === bpmv;
+          b.classList.toggle('on', on);
+          b.style.cssText = on ? `background:${pObj.bg};border-color:${pObj.border};color:${pObj.color}` : '';
+        });
+        const hint = $('bpCclmHint');
+        if (hint) {
+          hint.style.color = pObj.color;
+          hint.style.background = pObj.bg;
+          hint.style.borderColor = pObj.border;
+          hint.textContent = pObj.prompt;
+        }
         return;
       }
       const sfsh = e.target.closest('[data-feed-share]');
@@ -21292,7 +21972,7 @@ const TreasureUp = (function () {
         return;
       }
       const hubProf = e.target.closest('[data-hub-profile]');
-      if (hubProf) { openCoachProfile(); return; }
+      if (hubProf) { stashBlueprintDraft(); openCoachProfile(); return; }
 
       // Blueprint and Evening save/toggle
       if (e.target.closest('[data-bp-save]')) { saveBlueprint(); return; }
@@ -21553,6 +22233,7 @@ const TreasureUp = (function () {
       if (e.target.closest('[data-shop-parent]')) { closeSheet(); return openParent(); }
       const g = e.target.closest('[data-set-go]');
       if (g && g.dataset.setGo === 'profile') { openCoachProfile(); return; }
+      if (g && g.dataset.setGo === 'cclm') { openCclmCoach(); return; }
       if (g && g.dataset.setGo === 'feedback') { feedbackFrom = screenName(); return openSheet(feedbackSheetHtml()); }
       if (g && g.dataset.setGo === 'family') { closeSheet(); homeTab = 'family'; renderHome(); $('home').scrollTop = 0; return; }
       if (g) { closeSheet(); return openParent(); }

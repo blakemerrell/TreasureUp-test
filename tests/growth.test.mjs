@@ -65,6 +65,106 @@ export default async function growth({ port }) {
   await p.evaluate(() => localStorage.setItem('fakeNow', '2027-01-11T16:30:00')); await p.reload(); await wait(1800);
   const sp2 = await ideas('spiritual');
   check(sp2.some(t => /For the Strength of Youth/.test(t)) && !sp2.some(t => /Getting ready for 12/.test(t)), 'in January 2027 he is a youth without anyone changing it: ' + sp2.join(', '));
+
+  // Christ-Centered Leader Model (CCLM) Coach Engine & Step 4 calibration.
+  await p.click('#setBtn'); await wait(300);
+  await p.click('#appSheet [data-set-go="profile"]'); await wait(350);
+  await p.click('#appSheet [data-coach-goto="2"]'); await wait(250);
+  await p.click('#appSheet [data-coach-goto="3"]'); await wait(250);
+  await p.click('#appSheet [data-coach-val="WISDOM"]'); await wait(200);
+  await p.click('#appSheet [data-coach-goto="4"]'); await wait(250);
+  check(/Christ-Centered Leader Engine/i.test(await sheet()), 'Step 4 renders BYU Christ-Centered Leader Engine calibration');
+  await p.click('#appSheet [data-coach-cclm-drift="harmony"]'); await wait(200);
+  await p.click('#appSheet [data-coach-cclm-dom="god"]'); await wait(200);
+  await p.click('#appSheet [data-coach-finish]'); await wait(500);
+  const profCclm = (await state(p)).profile || {};
+  check(profCclm.cclmDrift === 'harmony' && profCclm.cclmDomain === 'god' && (profCclm.coreValues || []).includes('WISDOM'),
+    `Step 4 saves CCLM calibration: drift=${profCclm.cclmDrift}, domain=${profCclm.cclmDomain}, values=${JSON.stringify(profCclm.coreValues)}`);
+
+  // Open standalone Christ-Centered Leader Coach from Settings, generate playbook, audit domains, and seed Morning Council.
+  await p.click('#setBtn'); await wait(300);
+  await p.click('#appSheet [data-set-go="cclm"]'); await wait(350);
+  await p.click('#appSheet [data-cclm-who="spouse"]'); await wait(200);
+  await p.click('#appSheet [data-cclm-sit="discouraged"]'); await wait(200);
+  const pbTxt = await sheet();
+  check(/Your 5-Step Christ-Centered Playbook/i.test(pbTxt) && /Express Love/i.test(pbTxt) && /Honor Agency/i.test(pbTxt), 'Live Situational Coach generates 5-step Christ-Centered Playbook');
+  await p.click('#appSheet [data-cclm-tab="model"]'); await wait(250);
+  await p.fill('#cclmAuditNote', 'Lead with unhurried presence before problem-solving');
+  await p.click('#appSheet [data-cclm-drift="fixer"]'); await wait(200);
+  check((await p.inputValue('#cclmAuditNote')) === 'Lead with unhurried presence before problem-solving', 'Clicking a drift button in 4-Domain tab preserves unsaved #cclmAuditNote input');
+  await p.click('#appSheet [data-cclm-rate="self:5"]'); await wait(200);
+  await p.click('#appSheet [data-cclm-save-audit]'); await wait(300);
+  const profAudit = (await state(p)).profile || {};
+  check(profAudit.cclmRatings && profAudit.cclmRatings.self === 5 && profAudit.cclmDrift === 'fixer' && /unhurried presence/.test(profAudit.cclmNote || ''), '4-Domain Stewardship self-audit saves ratings, drift, and reflection note');
+
+  // Verify relationship-specific playbook scripts (team vs self) and Morning Council round-trip preservation + seeded move pill.
+  await p.click('#appSheet [data-cclm-tab="situation"]'); await wait(250);
+  await p.click('#appSheet [data-cclm-who="team"]'); await wait(200);
+  const teamPbTxt = await sheet();
+  await p.click('#appSheet [data-cclm-who="self"]'); await wait(200);
+  const selfPbTxt = await sheet();
+  check(teamPbTxt !== selfPbTxt && /weary today|one faithful step/i.test(selfPbTxt), 'Situational Coach adapts scripts to selected relationship (team vs self)');
+  await p.click('#appSheet [data-cclm-seed-bp]'); await wait(350);
+  const bpUpliftVal = await p.inputValue('#bpUplift');
+  check(bpUpliftVal.length > 10 && await p.locator('#appSheet [data-bp-cclm-move]').count() === 3, 'Seeding from Leader Coach opens Morning Council with populated Christ-Centered Uplift move');
+  check(await p.locator('#appSheet [data-bp-cclm-move="agency"].on').count() === 1, 'Seeding from fixer drift activates the matching antidote pill (agency) in Morning Council');
+
+  // Clicking Morning Council CCLM Principle pills updates active state and hint without throwing TypeError.
+  await p.click('#appSheet [data-bp-cclm-move="accountability"]'); await wait(150);
+  check(await p.locator('#appSheet [data-bp-cclm-move="accountability"].on').count() === 1 && /Invite Accountability/i.test(await txt(p, '#bpCclmHint')), 'Clicking Morning Council CCLM pill switches active principle and updates #bpCclmHint');
+  await p.fill('#bpOneThing', 'Finish high-leverage architecture review');
+  await p.click('#appSheet [data-open-cclm-coach]'); await wait(300);
+  await p.click('#appSheet [data-cclm-seed-bp]'); await wait(350);
+  check((await p.inputValue('#bpOneThing')) === 'Finish high-leverage architecture review', 'Round-trip from Morning Council to Situation Coach and back preserves unsaved #bpOneThing');
+  await p.click('#appSheet [data-bp-save]'); await wait(350);
+
+  // Evening Return & Report Jeremiah Check (#evSurrender) marks Evening done and supports clearing.
+  const triggerEvening = () => p.evaluate(() => {
+    const el = document.createElement('button');
+    el.setAttribute('data-open-evening', '1');
+    document.getElementById('home').appendChild(el);
+    el.click();
+    el.remove();
+  });
+  await triggerEvening(); await wait(300);
+  await p.fill('#evMercies', '');
+  await p.fill('#evWins', '');
+  await p.fill('#evSurrender', 'Placing the project timeline into the Lord’s hands');
+  await p.click('#appSheet [data-ev-save]'); await wait(350);
+  const evAfterSave = Object.values((await state(p)).impressions || {}).find(x => x && x.kind === 'evening' && x.day === '2027-01-11') || {};
+  check(/project timeline/.test(evAfterSave.surrender || ''), 'Evening Return & Report saves #evSurrender (Jeremiah Check)');
+  await triggerEvening(); await wait(300);
+  await p.fill('#evSurrender', '');
+  await p.click('#appSheet [data-ev-save]'); await wait(350);
+  const evAfterClear = Object.values((await state(p)).impressions || {}).find(x => x && x.kind === 'evening' && x.day === '2027-01-11') || {};
+  check((evAfterClear.surrender || '') === '', 'Clearing #evSurrender in Evening Return & Report persists empty string');
+
+  // Verify standalone 6-stage Self-Discovery & Christ-Centered Leader Coach page (coaching_discovery_exercise_mockup.html).
+  const cp = await dev.ctx.newPage();
+  const cpErrs = [];
+  cp.on('pageerror', e => cpErrs.push(e.message));
+  await cp.goto(`http://127.0.0.1:${port}/coaching_discovery_exercise_mockup.html`, { waitUntil: 'domcontentloaded' });
+  await wait(250);
+  check(await cp.locator('.ce-step-tab').count() === 6, 'Standalone Coaching Discovery Exercise renders all 6 stages');
+  check((await cp.inputValue('#mirrorPeak')) === '' && (await cp.inputValue('#mirrorPinch')) === '', 'Standalone Coaching Crucible mirrors start 100% blank-slate');
+  await cp.click('[data-stage="2"]'); await wait(150);
+  await cp.click('#stage2Grid .vcard >> nth=3'); await wait(150); // crown HESED / LOVE
+  await cp.click('[data-stage="4"]'); await wait(150);
+  await cp.click('.drift-card >> nth=1'); await wait(150);
+  await cp.click('[data-stage="5"]'); await wait(150);
+  await cp.click('#sitWhoRow .sel-chip >> nth=2'); await wait(150); // Team
+  const cpTeamPlaybook = await cp.textContent('#playbookOutput');
+  await cp.click('#sitWhoRow .sel-chip >> nth=4'); await wait(150); // Myself
+  const cpSelfPlaybook = await cp.textContent('#playbookOutput');
+  check(/Generated Christ-Centered Playbook/i.test(cpSelfPlaybook) && cpTeamPlaybook !== cpSelfPlaybook, 'Standalone Situational Coach generates 5-step playbook and adapts to Who selection');
+  await cp.click('[data-stage="6"]'); await wait(150);
+  await cp.click('#syncBtn'); await wait(200);
+  const syncedProf = ((await state(cp)).profile) || {};
+  check(syncedProf.cclmDrift === 'harmony' && Array.isArray(syncedProf.coreValues) && syncedProf.coreValues.includes('HESED / LOVE') && (syncedProf.subValues || []).includes('Loyal Covenant Love') && syncedProf.who && !cpErrs.length, 'Standalone Coach syncs canonical HESED / LOVE ID, subValues, and who directly to localStorage with 0 errors');
+  await cp.close();
+
   check(!p.errors.length, 'no page errors' + (p.errors.length ? ': ' + p.errors.join(' | ') : ''));
   await dev.ctx.close();
 }
+
+
