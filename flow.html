@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreasureUp — Unified Daily Walk (Best Self + Wilderness 40 + Christ-Centered Leader + Luke 2:52)</title>
+<style>
+  :root {
+    --bg: #080d1a;
+    --panel: #111827;
+    --card: #182235;
+    --card-alt: #1e293b;
+    --border: rgba(255, 255, 255, 0.11);
+    --gold: #fbbf24;
+    --gold-soft: rgba(251, 191, 36, 0.14);
+    --sky: #38bdf8;
+    --sky-soft: rgba(56, 189, 248, 0.14);
+    --emerald: #34d399;
+    --emerald-soft: rgba(52, 211, 153, 0.14);
+    --rose: #fb7185;
+    --rose-soft: rgba(251, 113, 133, 0.14);
+    --purple: #c084fc;
+    --purple-soft: rgba(192, 132, 252, 0.14);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --radius: 18px;
+  }
+
+  /* Youth Theme Overrides */
+  body.youth-mode.theme-nintendo {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --card: #1e293b;
+    --gold: #facc15;
+    --sky: #38bdf8;
+    --emerald: #4ade80;
+    --rose: #f43f5e;
+  }
+  body.youth-mode.theme-rpg {
+    --bg: #140f26;
+    --panel: #21193b;
+    --card: #281f47;
+    --gold: #ffd166;
+    --sky: #06d6a0;
+    --emerald: #4cc9f0;
+    --rose: #ef476f;
+    font-family: "Courier New", Courier, monospace;
+  }
+  body.youth-mode.theme-booklet {
+    --bg: #1c1917;
+    --panel: #292524;
+    --card: #292524;
+    --gold: #f59e0b;
+    --sky: #38bdf8;
+    --emerald: #10b981;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 50% 0%, #172544 0%, var(--bg) 70%);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    line-height: 1.5;
+    padding-bottom: 100px;
+  }
+
+  /* Sticky Top Bar */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 13, 26, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+  }
+  .top-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-badge {
+    background: var(--gold-soft);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .brand-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .mode-switch {
+    display: flex;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .mode-btn {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.16s;
+  }
+  .mode-btn.on {
+    background: var(--gold);
+    color: #1c1406;
+    box-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+  }
+  .top-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .action-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    color: #e2e8f0;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .action-pill:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Main Container */
+  .container {
+    max-width: 920px;
+    margin: 22px auto;
+    padding: 0 18px;
+  }
+
+  /* Compass Header Banner (Luke 2:52 + Wilderness 40 + Values/Strengths) */
+  .compass-banner {
+    background: linear-gradient(145deg, rgba(24, 34, 53, 0.96), rgba(15, 23, 42, 0.96));
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  }
+  .compass-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .kicker {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gold);
+  }
+  .compass-h {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 4px 0;
+    color: #fff;
+  }
+  .compass-sub {
+    font-size: 13.5px;
+    color: #cbd5e1;
+    margin: 0;
+  }
+
+  /* Luke 2:52 4-Area Strip */
+  .luke-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  @media (max-width: 720px) {
+    .luke-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .luke-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .luke-card b {
+    display: block;
+    font-size: 12.5px;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .luke-card span {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .luke-card .domain-tag {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--sky);
+  }
+
+  /* Wilderness 40 Scroller inside Banner */
+  .w40-bar {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .w40-pills {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .w40-pill {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 5px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .w40-pill.on {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+
+  /* Daily Walk Step Rail */
+  .walk-rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .walk-step {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    transition: border-color 0.2s;
+  }
+  .walk-step.step-done {
+    border-color: rgba(52, 211, 153, 0.45);
+  }
+  .step-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .step-num-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.14);
+    color: var(--sky);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+  .step-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 6px 0 2px;
+    color: #fff;
+  }
+  .step-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* Sub-boxes inside steps */
+  .sub-box {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px 16px;
+    margin-bottom: 14px;
+  }
+  .sub-box:last-child { margin-bottom: 0; }
+  .sub-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .sub-label {
+    font-size: 13px;
+    font-weight: 900;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sub-hint {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+
+  /* Inputs */
+  .in-field, .in-area {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font: inherit;
+    font-size: 13.5px;
+    outline: none;
+  }
+  .in-field:focus, .in-area:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .in-area { resize: vertical; min-height: 56px; }
+
+  /* Chips */
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .chip {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .chip.on {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+    color: #fde68a;
+  }
+  .chip.love.on { background: var(--rose-soft); border-color: var(--rose); color: #fda4af; }
+  .chip.agency.on { background: var(--sky-soft); border-color: var(--sky); color: #7dd3fc; }
+  .chip.account.on { background: var(--gold-soft); border-color: var(--gold); color: #fde68a; }
+
+  /* Priority Rows */
+  .prio-row {
+    display: grid;
+    grid-template-columns: 28px 1fr 150px;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 640px) {
+    .prio-row { grid-template-columns: 28px 1fr; }
+    .prio-row select { grid-column: 2; }
+  }
+  .prio-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    border: 1px solid rgba(251, 191, 36, 0.45);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+  }
+  .area-sel {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 9px 8px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Study Triad Grid */
+  .study-triad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 820px) {
+    .study-triad { grid-template-columns: 1fr; }
+  }
+  .study-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .study-card.done {
+    border-color: rgba(52, 211, 153, 0.5);
+    background: rgba(16, 185, 129, 0.07);
+  }
+  .study-kicker {
+    font-size: 10.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--sky);
+  }
+  .study-h {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    margin: 4px 0 6px;
+  }
+  .study-p {
+    font-size: 12.5px;
+    color: #cbd5e1;
+    margin: 0 0 12px;
+  }
+
+  /* Reader & Commentary Vault */
+  .reader-box {
+    background: rgba(10, 15, 29, 0.85);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .verse-line {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--gold);
+  }
+  .verse-plain {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    color: #7dd3fc;
+    font-size: 13px;
+  }
+  .vault-drawer {
+    margin-top: 12px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 12px;
+    padding: 14px;
+  }
+
+  /* Action Plan Checklist */
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .todo-item.checked {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(52, 211, 153, 0.45);
+  }
+  .todo-item.checked .todo-text {
+    text-decoration: line-through;
+    color: var(--muted);
+  }
+  .todo-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+  .todo-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid var(--gold);
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    color: #1c1406;
+    flex-shrink: 0;
+  }
+  .todo-item.checked .todo-box {
+    background: var(--emerald);
+    border-color: var(--emerald);
+  }
+  .todo-text {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .todo-tag {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #cbd5e1;
+    white-space: nowrap;
+  }
+
+  /* Video Stream Grid */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  .video-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .video-card.watched {
+    opacity: 0.68;
+    border-color: rgba(52, 211, 153, 0.4);
+  }
+
+  /* Buttons */
+  .btn-gold {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #1c1406;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.06);
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 13px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .btn-outline.done {
+    background: var(--emerald-soft);
+    border-color: var(--emerald);
+    color: #6ee7b7;
+  }
+
+  /* Youth-only & Adult-only visibility */
+  .youth-only { display: none; }
+  body.youth-mode .youth-only { display: block; }
+  body.youth-mode .adult-only { display: none; }
+
+  /* Modal */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(4, 7, 15, 0.84);
+    backdrop-filter: blur(8px);
+    padding: 24px 16px;
+    overflow-y: auto;
+  }
+  .modal-backdrop.open { display: block; }
+  .modal-sheet {
+    max-width: 760px;
+    margin: 20px auto;
+    background: #111827;
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  }
+</style>
+</head>
+<body>
+<div style="background:#1c2541;color:#fff;padding:8px 16px;font-size:12px;font-weight:700;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.12);">
+  <a href="./" style="color:#fcd34d;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">← Back to TreasureUp App (Today Tab)</a>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <span style="color:#94a3b8;">Standalone Preview</span>
+    <a href="./coaching.html" style="color:#93c5fd;text-decoration:none;">🧭 6-Stage Coaching Workshop →</a>
+  </div>
+</div>
+
+<!-- TOP NAVIGATION BAR -->
+<header class="top-bar">
+  <div class="top-inner">
+    <div class="brand-wrap">
+      <span class="brand-badge">Unified Daily Flow</span>
+      <span class="brand-title">TreasureUp · Today’s Walk</span>
+    </div>
+
+    <div class="mode-switch" role="group" aria-label="Profile Mode">
+      <button type="button" class="mode-btn on" id="btnModeAdult" onclick="setProfileMode('adult')">👔 Adult Flow (Zero-XP · Best Self + Wilderness 40)</button>
+      <button type="button" class="mode-btn" id="btnModeYouth" onclick="setProfileMode('youth')">🎮 Son’s Flow (Luke 2:52 Quest + XP + Arcade)</button>
+    </div>
+
+    <div class="top-actions">
+      <button type="button" class="action-pill" onclick="openModal('coachModal')">🧭 5-Stage Growth Coach</button>
+      <button type="button" class="action-pill" onclick="openModal('cclmModal')">🏛️ Situation Leader Coach</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ===================================================================== -->
+  <!-- COMPASS HEADER: LUKE 2:52 + WILDERNESS 40 + VALUES & STRENGTHS        -->
+  <!-- ===================================================================== -->
+  <section class="compass-banner">
+    <div class="compass-top">
+      <div>
+        <div class="kicker adult-only" id="w40Kicker">Wilderness 40 · Movement II (The Verbs of Charity) · Day 5 of 40</div>
+        <div class="kicker youth-only">Children &amp; Youth Guidebook · Luke 2:52 Adventure</div>
+        <h1 class="compass-h" id="w40Title">Long-suffering (makrothumei) — “Charity suffereth long” (Moroni 7:45)</h1>
+        <p class="compass-sub" id="w40Desc">Patience is strength under control, extended over time. It gives the people you love room to be imperfect while walking beside them.</p>
+      </div>
+      <div class="adult-only" style="text-align:right">
+        <div style="font-size:11px;font-weight:800;color:#fde68a">🏛️ Core Values Triad</div>
+        <div style="font-size:12.5px;font-weight:900;color:#fff">FAITH · HESED / LOVE · INTEGRITY</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">🧬 Strengths: Strategic · Ideation · Achiever</div>
+      </div>
+      <div class="youth-only" style="text-align:right">
+        <div style="font-size:12px;font-weight:900;color:var(--gold)">⚡ Level 7 Disciple · 1,420 XP · 🔥 12-Day Streak</div>
+        <div class="chip-row" style="margin-top:6px;justify-content:flex-end">
+          <button type="button" class="chip on" onclick="setYouthTheme('nintendo', this)">🎮 Nintendo</button>
+          <button type="button" class="chip" onclick="setYouthTheme('rpg', this)">👾 16-Bit RPG</button>
+          <button type="button" class="chip" onclick="setYouthTheme('booklet', this)">📘 Guidebook</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luke 2:52 4 Balanced Growth Areas (Shared Family Spine!) -->
+    <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.07em;color:var(--sky);margin-bottom:6px">
+      🌱 Luke 2:52 Whole-Soul Compass (“Jesus increased in wisdom and stature, and in favour with God and man”)
+    </div>
+    <div class="luke-grid">
+      <div class="luke-card">
+        <b>🕊️ Spiritual · Favor with God</b>
+        <span id="lukeGoalSpiritual">90-Day Goal: Daily CFM, BoM &amp; 3m Be Still</span>
+        <span class="domain-tag">CCLM Domain 1: God</span>
+      </div>
+      <div class="luke-card">
+        <b>🤝 Social · Favor with Man</b>
+        <span id="lukeGoalSocial">90-Day Goal: Unhurried Hesed presence at home</span>
+        <span class="domain-tag">CCLM Domains 3–4: People</span>
+      </div>
+      <div class="luke-card">
+        <b>💪 Physical · Stature</b>
+        <span id="lukeGoalPhysical">90-Day Goal: Strength training 4x/wk &amp; rest</span>
+        <span class="domain-tag">CCLM Domain 2: Self</span>
+      </div>
+      <div class="luke-card">
+        <b>🧠 Intellectual · Wisdom</b>
+        <span id="lukeGoalIntellectual">90-Day Goal: Deep scripture &amp; leadership study</span>
+        <span class="domain-tag">CCLM Domain 2: Gifts</span>
+      </div>
+    </div>
+
+    <!-- Wilderness 40 Day Switcher (Adult Mode) -->
+    <div class="w40-bar adult-only">
+      <span style="font-size:11.5px;font-weight:800;color:var(--muted)">Preview Wilderness 40 Day:</span>
+      <div class="w40-pills">
+        <button type="button" class="w40-pill" onclick="setW40Day(1, this)">Day 1 · Desire (Seed)</button>
+        <button type="button" class="w40-pill" onclick="setW40Day(3, this)">Day 3 · Covenant Hesed</button>
+        <button type="button" class="w40-pill on" onclick="setW40Day(5, this)">Day 5 · Long-suffering</button>
+        <button type="button" class="w40-pill" onclick="setW40Day(13, this)">Day 13 · Thinketh No Evil</button>
+        <button type="button" class="w40-pill" onclick="setW40Day(27, this)">Day 27 · D&amp;C 121 Persuasion</button>
+        <button type="button" class="w40-pill" onclick="setW40Day(40, this)">Day 40 · Bestowed Charity</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- THE 4-STEP UNIFIED DAILY WALK RAIL                                    -->
+  <!-- ===================================================================== -->
+  <div class="walk-rail">
+
+    <!-- STEP 1: MORNING COUNCIL & BE STILL -->
+    <section class="walk-step" id="stepMorning">
+      <div class="step-head">
+        <div>
+          <span class="step-num-badge">Step 1 · Verso (Spiritual Creation Precedes Natural Creation)</span>
+          <h2 class="step-title">🌅 Morning Council &amp; 🕊️ Be Still</h2>
+          <p class="step-sub">Center your heart in Christ first. Everything you enter here automatically populates your <b>Today’s Action Plan (Step 3)</b> below.</p>
+        </div>
+        <button type="button" class="btn-outline" id="btnStillTimer" onclick="toggleStillTimer()">🕊️ Be Still Timer: <b id="stillTimeDisplay">3:00</b></button>
+      </div>
+
+      <!-- 1A. Morning Gratitude & Stillness -->
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label">🙏 1. Be Still &amp; Morning Gratitude</span>
+          <span style="font-size:11px;color:var(--gold);font-weight:800" id="w40MorningAsk">“Pray to be made patient—not merely to act patient.”</span>
+        </div>
+        <input class="in-field" id="mcGratitude" value="Grateful for quiet morning light, family health, and a fresh start today." oninput="syncActionPlan()" placeholder="1–3 things you are grateful for this morning…">
+      </div>
+
+      <!-- 1B. Someone to Uplift & Lead (Wilderness 40 Practice + BYU Christ-Centered Leader) -->
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label">🤝 2. Someone to Uplift &amp; Lead (Christ-Centered Leader + Wilderness 40 Practice)</span>
+          <button type="button" class="btn-outline" style="padding:4px 10px;font-size:11px" onclick="openModal('cclmModal')">💬 Open Situation Playbook ›</button>
+        </div>
+        <p class="sub-hint" id="w40SeeCue">Where will patience be tested today—and which Christ-centered leadership principle do they need from you?</p>
+        <div class="chip-row">
+          <button type="button" class="chip love" id="chipMoveLove" onclick="setCclmMove('love')">❤️ Express Love</button>
+          <button type="button" class="chip agency on" id="chipMoveAgency" onclick="setCclmMove('agency')">🕊️ Honor Agency</button>
+          <button type="button" class="chip account" id="chipMoveAccount" onclick="setCclmMove('account')">🧭 Invite Accountability</button>
+        </div>
+        <div id="mcMoveHint" style="font-size:12px;color:#7dd3fc;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);padding:8px 11px;border-radius:10px;margin-bottom:9px">
+          🕊️ <b>Honor Agency (Antidote to Fixing):</b> Ask “What is your plan for tackling this?” and give space to choose instead of taking over the wheel.
+        </div>
+        <input class="in-field" id="mcUplift" value="Ask my son about his plan for his Luke 2:52 goal and listen 100% without lecturing" oninput="syncActionPlan()" placeholder="Who will you lift or lead today, and how?">
+        <div style="margin-top:8px;font-size:12px;color:#fde68a;display:flex;align-items:center;gap:6px">
+          <span>✋ <b>Today’s Wilderness 40 Practice:</b></span>
+          <span id="w40PracticeText">When your fuse flares, pause three seconds before you answer—every time.</span>
+        </div>
+      </div>
+
+      <!-- 1C. Best Self Top 3 Priorities (Lead Domino #1 + Supporting 2, Tagged to Luke 2:52) -->
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label">🎯 3. Today’s Best Self Top 3 Priorities (Hardest / Lead Domino First)</span>
+          <span style="font-size:11px;color:var(--muted)">Linked to Luke 2:52 Season Goals</span>
+        </div>
+        <p class="sub-hint">“What is the ONE Thing I can do today such that by doing it, everything else will be easier or better?”</p>
+
+        <div class="prio-row">
+          <span class="prio-num">1</span>
+          <input class="in-field" id="mcPrio1" value="Finish Q4 strategy brief before checking email (Lead Domino)" oninput="syncActionPlan()">
+          <select class="area-sel" id="mcArea1" onchange="syncActionPlan()">
+            <option value="🧠 Intellectual">🧠 Intellectual (Wisdom)</option>
+            <option value="🕊️ Spiritual">🕊️ Spiritual (God)</option>
+            <option value="🤝 Social">🤝 Social (People)</option>
+            <option value="💪 Physical">💪 Physical (Stature)</option>
+          </select>
+        </div>
+
+        <div class="prio-row">
+          <span class="prio-num">2</span>
+          <input class="in-field" id="mcPrio2" value="45-minute strength workout + afternoon walk" oninput="syncActionPlan()">
+          <select class="area-sel" id="mcArea2" onchange="syncActionPlan()">
+            <option value="💪 Physical" selected>💪 Physical (Stature)</option>
+            <option value="🕊️ Spiritual">🕊️ Spiritual (God)</option>
+            <option value="🤝 Social">🤝 Social (People)</option>
+            <option value="🧠 Intellectual">🧠 Intellectual (Wisdom)</option>
+          </select>
+        </div>
+
+        <div class="prio-row">
+          <span class="prio-num">3</span>
+          <input class="in-field" id="mcPrio3" value="15-minute phone-free check-in with my wife after dinner" oninput="syncActionPlan()">
+          <select class="area-sel" id="mcArea3" onchange="syncActionPlan()">
+            <option value="🤝 Social" selected>🤝 Social (People)</option>
+            <option value="🕊️ Spiritual">🕊️ Spiritual (God)</option>
+            <option value="💪 Physical">💪 Physical (Stature)</option>
+            <option value="🧠 Intellectual">🧠 Intellectual (Wisdom)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: DAILY STUDY TRIAD + CURATED VIDEO STREAM -->
+    <section class="walk-step" id="stepStudy">
+      <div class="step-head">
+        <div>
+          <span class="step-num-badge">Step 2 · Daily Nourishment (Plain English First · 1-Tap Scholarly Depth)</span>
+          <h2 class="step-title">📖 The Daily Study Triad &amp; 🎬 Channel Stream</h2>
+          <p class="step-sub">Your 3 daily study anchors—effortless to read with the family, with instant verse-by-verse scholarly commentary when you want to go deep.</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button type="button" class="btn-outline" id="btnTogglePlain" onclick="togglePlainEnglish()">✨ Plain English: <b>ON</b></button>
+          <button type="button" class="btn-outline" onclick="toggleVault()">🔍 Scholarly Vault</button>
+        </div>
+      </div>
+
+      <!-- 3 Study Pillar Cards -->
+      <div class="study-triad">
+        <div class="study-card done" id="studyCardCfm">
+          <div>
+            <div class="study-kicker">1 · Come, Follow Me (Old Testament)</div>
+            <div class="study-h">Jeremiah 1:4–9 · Called Before Birth</div>
+            <p class="study-p">God knew you premortally, consecrated you, and promises: “Be not afraid of their faces: for I am with thee.”</p>
+          </div>
+          <button type="button" class="btn-outline done" id="btnReadCfm" onclick="toggleStudyDone('Cfm')">✓ Today’s CFM Read</button>
+        </div>
+
+        <div class="study-card" id="studyCardBom">
+          <div>
+            <div class="study-kicker">2 · Daily Book of Mormon</div>
+            <div class="study-h">Alma 32:21–27 · Experiment Upon the Word</div>
+            <p class="study-p">Auto-advancing daily slice: “Awake and arouse your faculties, even to an experiment upon my words…”</p>
+          </div>
+          <button type="button" class="btn-outline" id="btnReadBom" onclick="toggleStudyDone('Bom')">○ Mark BoM Read</button>
+        </div>
+
+        <div class="study-card" id="studyCardConf">
+          <div>
+            <div class="study-kicker">3 · Daily General Conference</div>
+            <div class="study-h">Pres. Russell M. Nelson · “The Everlasting Covenant”</div>
+            <p class="study-p">Part 2 of 4: How <i>Hesed</i> binds God to never tire in His relentless pursuit to help us.</p>
+          </div>
+          <button type="button" class="btn-outline" id="btnReadConf" onclick="toggleStudyDone('Conf')">○ Mark Conference Read</button>
+        </div>
+      </div>
+
+      <!-- Clutter-Free Reader + Plain English + 1-Tap Scholarly Vault -->
+      <div class="reader-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+          <b style="font-size:14px;color:#fff">📖 Jeremiah 1:4–5, 7–8 (Clean Reader Header)</b>
+          <span style="font-size:11.5px;color:var(--gold)">Tap any verse for Scripture Central, BYU, Institute &amp; Hebrew</span>
+        </div>
+
+        <div class="verse-line" onclick="toggleVault()" style="cursor:pointer">
+          <div><b>4</b> Then the word of the <span style="font-variant:small-caps">Lord</span> came unto me, saying, <b>5</b> Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, <i>and</i> I ordained thee a prophet unto the nations.</div>
+          <div class="verse-plain" id="plainV1">💬 <b>Plain English for Family:</b> Before you were even born, God knew you personally, set you apart for a sacred purpose, and prepared you for the mission ahead of you.</div>
+        </div>
+
+        <div class="verse-line" onclick="toggleVault()" style="cursor:pointer;margin-bottom:0">
+          <div><b>7</b> But the <span style="font-variant:small-caps">Lord</span> said unto me, Say not, I <i>am</i> a child: for thou shalt go to all that I shall send thee… <b>8</b> Be not afraid of their faces: for I <i>am</i> with thee to deliver thee, saith the <span style="font-variant:small-caps">Lord</span>.</div>
+          <div class="verse-plain" id="plainV2">💬 <b>Plain English for Family:</b> When you feel unqualified or overwhelmed, the Lord says: Don’t focus on what you lack—I will walk beside you and give you the words.</div>
+        </div>
+
+        <!-- Direct Verse-by-Verse Scholarly Commentary Vault -->
+        <div class="vault-drawer" id="scholarlyVault">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+            <b style="font-size:12.5px;color:var(--gold)">🏛️ Direct Scholarly &amp; Commentary Vault — Jeremiah 1:5 (`yada` &amp; `qadash`)</b>
+            <div class="chip-row" style="margin:0">
+              <button type="button" class="chip on" onclick="setVaultTab('sc', this)">📚 Scripture Central</button>
+              <button type="button" class="chip" onclick="setVaultTab('byu', this)">🎓 BYU / FollowHIM</button>
+              <button type="button" class="chip" onclick="setVaultTab('inst', this)">🏛️ OT Institute Manual</button>
+              <button type="button" class="chip" onclick="setVaultTab('trans', this)">🌐 4 Translations &amp; Hebrew</button>
+            </div>
+          </div>
+          <div id="vaultBody" style="font-size:12.5px;color:#e2e8f0;line-height:1.55">
+            <b>Scripture Central / Donald W. Parry:</b> The Hebrew verb <i>yādaʿ</i> (“I knew thee”) denotes intimate covenant relationship and premortal acquaintance—not mere foresight. Paired with <i>hikdîšeka</i> (“I sanctified/consecrated thee”), Jeremiah 1:5 is one of the clearest Old Testament witnesses of premortal identity and foreordination (compare Abraham 3:22–23; Alma 13:3).
+          </div>
+        </div>
+      </div>
+
+      <!-- Curated Channel Stream with ✓ Watched Tracking + Deep Study Log -->
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label">🎬 Curated Video Stream (<span id="watchedCountLabel">1 of 3 Watched</span>)</span>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="btn-outline" id="btnFilterUnwatched" onclick="toggleUnwatchedFilter()">Show Unwatched Only: OFF</button>
+            <button type="button" class="btn-outline" onclick="toggleDeepLog()">🤿 + Log Extra / Deep Study</button>
+          </div>
+        </div>
+        <div class="video-grid" id="videoGrid">
+          <div class="video-card watched" data-watched="1">
+            <div>
+              <div style="font-size:10.5px;font-weight:900;color:var(--emerald)">SCRIPTURE CENTRAL · 8 MIN</div>
+              <b style="font-size:13px;color:#fff">Jeremiah’s Call &amp; Premortal Foreordination</b>
+            </div>
+            <button type="button" class="btn-outline done" onclick="toggleVideoWatched(this)">✓ Watched</button>
+          </div>
+          <div class="video-card" data-watched="0">
+            <div>
+              <div style="font-size:10.5px;font-weight:900;color:var(--sky)">FOLLOWHIM / DR. JEFF THOMPSON · 14 MIN</div>
+              <b style="font-size:13px;color:#fff">Jeremiah 1–20: Christ-Centered Leadership in Hard Times</b>
+            </div>
+            <button type="button" class="btn-outline" onclick="toggleVideoWatched(this)">○ Mark Watched</button>
+          </div>
+          <div class="video-card" data-watched="0">
+            <div>
+              <div style="font-size:10.5px;font-weight:900;color:var(--gold)">LINE UPON LINE / KIDS &amp; YOUTH · 4 MIN</div>
+              <b style="font-size:13px;color:#fff">Be Not Afraid: Jeremiah’s Mission (Do With Son!)</b>
+            </div>
+            <button type="button" class="btn-outline" onclick="toggleVideoWatched(this)">○ Mark Watched</button>
+          </div>
+        </div>
+
+        <!-- Deep Study Log Drawer -->
+        <div id="deepLogDrawer" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+          <label style="font-size:12px;font-weight:800;color:var(--gold);display:block;margin-bottom:6px">🤿 Deep Study &amp; Extra Study Log (Cross-References, Podcasts, Personal Insights)</label>
+          <div style="display:flex;gap:8px">
+            <input class="in-field" id="deepLogInput" placeholder="e.g., Listened to followHIM Part 1; cross-referenced Jeremiah 1:5 with Abraham 3:22–23…">
+            <button type="button" class="btn-gold" onclick="saveDeepLog()">Save Log</button>
+          </div>
+          <div id="deepLogSavedList" style="margin-top:8px;font-size:12px;color:#6ee7b7"></div>
+        </div>
+      </div>
+
+      <!-- Youth Arcade Unlock Banner (Visible in Son's Mode) -->
+      <div class="sub-box youth-only" style="border-color:rgba(250,204,21,0.5);background:rgba(250,204,21,0.08);margin-top:12px">
+        <div class="sub-head">
+          <span class="sub-label" style="color:var(--gold)">🎮 Scripture Arcade Unlocked! (+50 XP Bonus)</span>
+          <span style="font-size:11.5px;color:#fde68a">Play solo or challenge Dad!</span>
+        </div>
+        <div class="chip-row" style="margin:0">
+          <button type="button" class="chip on">🐍 Wilderness Caravan</button>
+          <button type="button" class="chip on">🏰 Babylon Falls</button>
+          <button type="button" class="chip on">⚔️ Scripture Showdown</button>
+          <button type="button" class="chip on">🏔️ Climb the Mount</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: TODAY'S ACTION PLAN (AUTO-POPULATED FROM MORNING COUNCIL + DO TOGETHER WITH YOUTH) -->
+    <section class="walk-step" id="stepAction">
+      <div class="step-head">
+        <div>
+          <span class="step-num-badge">Step 3 · Recto (Natural Creation · Putting Discipleship into Action)</span>
+          <h2 class="step-title">⚡ Today’s Action Plan &amp; 👨‍👦 Do Together with Youth</h2>
+          <p class="step-sub">Automatically built from your Morning Council above. Check off your priorities and ministry actions as you walk through the day (<b id="todoProgressText">1 of 6 Done</b>).</p>
+        </div>
+      </div>
+
+      <div class="todo-list" id="actionTodoList">
+        <!-- Populated dynamically by syncActionPlan() -->
+      </div>
+
+      <!-- Parent-Youth Luke 2:52 Bridge Card -->
+      <div class="sub-box" style="margin-top:14px;border-color:rgba(56,189,248,0.35);background:rgba(56,189,248,0.06)">
+        <div class="sub-head">
+          <span class="sub-label" style="color:var(--sky)">👨‍👦 Do Together with Youth · Luke 2:52 Family Bridge</span>
+          <span style="font-size:11.5px;color:#7dd3fc">Zero-XP for you · +25 XP for your son when you do it together!</span>
+        </div>
+        <div class="todo-list">
+          <div class="todo-item" onclick="toggleStaticTodo(this)">
+            <div class="todo-left">
+              <div class="todo-box"></div>
+              <div>
+                <div class="todo-text">🎬 Watch the 4-min Jeremiah video together &amp; ask 1 question</div>
+                <div style="font-size:11.5px;color:var(--muted)">🕊️ Spiritual · Connects to his Temple &amp; Priesthood prep</div>
+              </div>
+            </div>
+            <span class="todo-tag">🕊️ Spiritual</span>
+          </div>
+          <div class="todo-item" onclick="toggleStaticTodo(this)">
+            <div class="todo-left">
+              <div class="todo-box"></div>
+              <div>
+                <div class="todo-text">🏀 Practice his Luke 2:52 Physical/Intellectual quest step together (15m)</div>
+                <div style="font-size:11.5px;color:var(--muted)">🕊️ Honor Agency: Let him lead the drill and tell you how it’s going</div>
+              </div>
+            </div>
+            <span class="todo-tag">💪 Physical / 🧠 Wisdom</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: EVENING RETURN & REPORT -->
+    <section class="walk-step" id="stepEvening">
+      <div class="step-head">
+        <div>
+          <span class="step-num-badge">Step 4 · Nightly Realignment (Alma 34:38 · Bednar “Report Back”)</span>
+          <h2 class="step-title">🌙 Evening Return &amp; Report</h2>
+          <p class="step-sub">“Repentance is simply realignment.” Review His hand today, celebrate honest progress, and hand unfinished outcomes over to the Savior.</p>
+        </div>
+        <span style="font-size:12px;font-weight:800;color:var(--emerald)" id="evScorecardBadge">Action Scorecard: 1 of 5 Completed</span>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label" style="color:var(--gold)">✨ 1. His Hand Today (Rotating Wilderness 40 Prompt)</span>
+          <span style="font-size:11px;color:var(--muted)" id="w40EvDayBadge">Day 5 Question</span>
+        </div>
+        <p class="sub-hint" id="w40EveningPrompt" style="color:#fde68a;font-weight:700;font-size:13px">“What didn’t happen today that could have—where did the Lord’s patience or restraint protect your home today?”</p>
+        <textarea class="in-area" id="evMercies" placeholder="Write where you saw God’s relentless pursuit (Hesed) or tender mercies today…"></textarea>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">
+          <span class="sub-label">🌱 2. Luke 2:52 Guidebook Reflection (“What did I learn &amp; how did it help me follow Jesus?”)</span>
+        </div>
+        <input class="in-field" id="evLearn" placeholder="One win from today’s Top 3 or one adjustment for tomorrow…">
+      </div>
+
+      <div class="sub-box" style="border-color:rgba(52,211,153,0.35);background:rgba(16,185,129,0.07)">
+        <div class="sub-head">
+          <span class="sub-label" style="color:#6ee7b7">🕊️ 3. The Jeremiah Check · Faithfulness Over Control (Christ-Centered Leader)</span>
+        </div>
+        <p class="sub-hint">Jeremiah preached faithfully for 40 years while Jerusalem resisted—and God called him a complete success. What outcome or person do you need to hand over to Christ tonight so you can sleep in peace?</p>
+        <input class="in-field" id="evSurrender" placeholder="e.g., Handing over my anxiety about tomorrow’s meeting / trusting my child’s agency…">
+      </div>
+
+      <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <span style="font-size:12px;color:var(--muted);font-style:italic">“An honest space is better than a manufactured performance.”</span>
+        <button type="button" class="btn-gold" onclick="completeEveningReport()">🙏 Close Day in Prayer · Save Return &amp; Report</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- MODAL 1: 5-STAGE BLANK-SLATE COACHING WORKSHOP -->
+<div class="modal-backdrop" id="coachModal" onclick="if(event.target===this)closeModal('coachModal')">
+  <div class="modal-sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div>
+        <div class="kicker">100% Blank-Slate Coaching Engine (Zero Personal Notes)</div>
+        <h3 style="margin:4px 0 0;font-size:20px;color:#fff">🧭 Unified 5-Stage Discovery &amp; Luke 2:52 Coach</h3>
+      </div>
+      <button type="button" class="btn-outline" onclick="closeModal('coachModal')">✕ Close</button>
+    </div>
+    <p style="font-size:13px;color:#cbd5e1;margin-top:0">
+      Guides any adult or youth through the Church’s 4-step pattern (<b>🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect</b>) enriched with Best Self, CliftonStrengths, and BYU Christ-Centered Leadership:
+    </p>
+    <div class="todo-list" style="margin-bottom:16px">
+      <div class="sub-box" style="margin:0"><b>Stage 1 · 🔍 Discover Through Crucible Mirrors &amp; 3-Round Values Sort:</b> Peak vs. Pinch reflection prompts → Sort 16–30 values → Crown 3 Anchor Pillars + tuck supporting sub-values underneath.</div>
+      <div class="sub-box" style="margin:0"><b>Stage 2 · 🧬 Discover God-Given Strengths &amp; Spiritual Gifts:</b> CliftonStrengths S.I.G.N. behavioral scenarios + Moroni 10 / D&amp;C 46 Spiritual Gifts.</div>
+      <div class="sub-box" style="margin:0"><b>Stage 3 · 🏛️ BYU Christ-Centered Leader Calibration:</b> Diagnose your stress drift (<i>Fixer, Harmony-Pleaser, Taskmaster, Overburdened Martyr</i>) and audit the 4 Stewardship Domains.</div>
+      <div class="sub-box" style="margin:0"><b>Stage 4 · 🗺️ Plan 90-Day Season Goals Across Luke 2:52:</b> Set goals in <b>🕊️ Spiritual, 🤝 Social, 💪 Physical, 🧠 Intellectual</b> + opt into the <b>40-Day Wilderness Track</b>.</div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px">
+      <a href="./coaching.html" class="btn-gold" style="text-decoration:none">Open Full 6-Stage Interactive Coach (/coaching) ›</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2: LIVE SITUATIONAL LEADERSHIP COACH -->
+<div class="modal-backdrop" id="cclmModal" onclick="if(event.target===this)closeModal('cclmModal')">
+  <div class="modal-sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div>
+        <div class="kicker">BYU Sorensen Center · Dr. Jeff Thompson (followHIM)</div>
+        <h3 style="margin:4px 0 0;font-size:20px;color:#fff">🏛️ Live Christ-Centered Situation Coach</h3>
+      </div>
+      <button type="button" class="btn-outline" onclick="closeModal('cclmModal')">✕ Close</button>
+    </div>
+    <p style="font-size:13px;color:#cbd5e1;margin-top:0">Pick who you are leading and what is happening to generate a custom 5-step script and send it straight into today’s Morning Council:</p>
+    <div class="sub-box">
+      <div style="font-size:12px;font-weight:800;color:var(--gold);margin-bottom:6px">Generated Move Ready to Seed:</div>
+      <div style="font-size:13.5px;color:#fff;font-style:italic">“🕊️ Honor Agency with my son: Ask ‘What is your plan for tackling this?’ and listen 100% before offering ideas.”</div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:14px">
+      <button type="button" class="btn-gold" onclick="seedFromModal()">🌅 Send to Morning Council &amp; Today’s Action Plan</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const W40_DAYS = {
+    1: {
+      kicker: 'Wilderness 40 · Movement I (Foundations) · Day 1 of 40',
+      title: 'Desire — The Seed · “Let this desire work in you” (Alma 32:27)',
+      desc: 'You cannot manufacture charity by willpower, but you can want it—and that wanting is the seed God asks for.',
+      ask: '“Tell Him honestly where you are, and ask for the desire itself.”',
+      see: 'Where in today will the wanting be weakest—and what will you do right then?',
+      practice: 'Name what is hardest for you to love right now and carry it to the Lord in prayer.',
+      evening: '“What went right today that you had nothing to do with?”'
+    },
+    3: {
+      kicker: 'Wilderness 40 · Movement I (Foundations) · Day 3 of 40',
+      title: 'Covenant Hesed (חֶסֶד) · “Abundant in goodness and truth” (Exodus 34:6)',
+      desc: 'Hesed is God’s relentless, staying covenant love. We don’t pray to earn His favor; we pray because we are already held in His hands.',
+      ask: '“Thank Him for keeping covenant with you when you fell short.”',
+      see: 'Who needs your steady, loyal presence today regardless of mood?',
+      practice: 'Renew one promise concretely today—show up with unhurried loyalty.',
+      evening: '“Where has God kept faith with you today, whether or not you kept it with Him?”'
+    },
+    5: {
+      kicker: 'Wilderness 40 · Movement II (The Verbs of Charity) · Day 5 of 40',
+      title: 'Long-suffering (makrothumei) — “Charity suffereth long” (Moroni 7:45)',
+      desc: 'Patience is strength under control, extended over time. It gives the people you love room to be imperfect while walking beside them.',
+      ask: '“Pray to be made patient—not merely to act patient.”',
+      see: 'Where will patience be tested today—and which Christ-centered leadership principle do they need from you?',
+      practice: 'When your fuse flares, pause three seconds before you answer—every time.',
+      evening: '“What didn’t happen today that could have—where did the Lord’s restraint protect your home?”'
+    },
+    13: {
+      kicker: 'Wilderness 40 · Movement II (The Verbs of Charity) · Day 13 of 40',
+      title: 'Thinketh No Evil (logizetai) — “Keeps no ledger of wrongs” (Moroni 7:45)',
+      desc: 'Score-keeping is the slow death of relationships; charity refuses to open the ledger of past grievances.',
+      ask: '“Hand Him the ledger. Pray to be relieved of the counting.”',
+      see: 'Which old grievance will try to reopen its account today?',
+      practice: 'Close one mental account of someone’s past mistake as an act of covenant will.',
+      evening: '“What have you been forgiven by God that you could never repay?”'
+    },
+    27: {
+      kicker: 'Wilderness 40 · Movement IV (Christ-Centered Leadership) · Day 27 of 40',
+      title: 'By Persuasion & Meekness — “Without compulsory means” (D&C 121:41–46)',
+      desc: 'Real spiritual leadership flows only through Expressing Love, Honoring Agency, and Inviting Accountability—never anxious control.',
+      ask: '“Pray for the security in Christ to lead without forcing outcomes.”',
+      see: 'Where will you be tempted to micromanage or rescue instead of honoring agency?',
+      practice: 'Replace one lecture or directive today with an agency-honoring question.',
+      evening: '“Where did honoring someone’s agency allow them to step up on their own today?”'
+    },
+    40: {
+      kicker: 'Wilderness 40 · Movement V (Becoming & Consecration) · Day 40 of 40',
+      title: 'Bestowed Charity — “Filled with this love” (Moroni 7:48)',
+      desc: 'The wilderness ends not with a checklist completed, but with a changed heart bestowed by the Father upon all true followers of His Son.',
+      ask: '“Pray with all the energy of heart for the gift of charity (Moroni 7:48).”',
+      see: 'Who can you love today with the pure love of Christ?',
+      practice: 'Walk through today noticing every person as a beloved child of God.',
+      evening: '“What comes naturally to your heart now that used to cost you everything?”'
+    }
+  };
+
+  let currentMove = 'agency';
+  let currentDay = 5;
+  let plainOn = true;
+  let unwatchedOnly = false;
+  const todoCheckedState = { prio1: true, prio2: false, prio3: false, uplift: false, w40: false };
+
+  function setProfileMode(mode) {
+    document.body.classList.toggle('youth-mode', mode === 'youth');
+    if (mode === 'youth' && !document.body.className.includes('theme-')) {
+      document.body.classList.add('theme-nintendo');
+    }
+    document.getElementById('btnModeAdult').classList.toggle('on', mode === 'adult');
+    document.getElementById('btnModeYouth').classList.toggle('on', mode === 'youth');
+  }
+
+  function setYouthTheme(theme, btn) {
+    document.body.classList.remove('theme-nintendo', 'theme-rpg', 'theme-booklet');
+    document.body.classList.add('theme-' + theme);
+    btn.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+    btn.classList.add('on');
+  }
+
+  function setW40Day(day, btn) {
+    currentDay = day;
+    const d = W40_DAYS[day];
+    if (btn) {
+      btn.parentElement.querySelectorAll('.w40-pill').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+    }
+    document.getElementById('w40Kicker').textContent = d.kicker;
+    document.getElementById('w40Title').textContent = d.title;
+    document.getElementById('w40Desc').textContent = d.desc;
+    document.getElementById('w40MorningAsk').textContent = d.ask;
+    document.getElementById('w40SeeCue').textContent = d.see;
+    document.getElementById('w40PracticeText').textContent = d.practice;
+    document.getElementById('w40EvDayBadge').textContent = 'Day ' + day + ' Question';
+    document.getElementById('w40EveningPrompt').textContent = d.evening;
+    syncActionPlan();
+  }
+
+  function setCclmMove(move) {
+    currentMove = move;
+    document.getElementById('chipMoveLove').classList.toggle('on', move === 'love');
+    document.getElementById('chipMoveAgency').classList.toggle('on', move === 'agency');
+    document.getElementById('chipMoveAccount').classList.toggle('on', move === 'account');
+    const hints = {
+      love: {
+        text: '❤️ <b>Express Love (Compassion & Hesed):</b> Affirm their eternal worth and your unconditional support before discussing any task or mistake.',
+        color: '#fda4af', bg: 'rgba(251,113,133,0.1)', border: 'rgba(251,113,133,0.35)'
+      },
+      agency: {
+        text: '🕊️ <b>Honor Agency (Antidote to Fixing):</b> Ask “What is your plan for tackling this?” and give space to choose instead of taking over the wheel.',
+        color: '#7dd3fc', bg: 'rgba(56,189,248,0.1)', border: 'rgba(56,189,248,0.35)'
+      },
+      account: {
+        text: '🧭 <b>Invite Accountability (Return & Report):</b> Invite them to name their own commitment and when they will Return & Report back.',
+        color: '#fde68a', bg: 'rgba(251,191,36,0.1)', border: 'rgba(251,191,36,0.35)'
+      }
+    };
+    const h = hints[move];
+    const box = document.getElementById('mcMoveHint');
+    box.innerHTML = h.text;
+    box.style.color = h.color;
+    box.style.background = h.bg;
+    box.style.borderColor = h.border;
+    syncActionPlan();
+  }
+
+  function syncActionPlan() {
+    const p1 = document.getElementById('mcPrio1').value.trim() || 'Lead Domino Priority #1';
+    const a1 = document.getElementById('mcArea1').value;
+    const p2 = document.getElementById('mcPrio2').value.trim() || 'Priority #2';
+    const a2 = document.getElementById('mcArea2').value;
+    const p3 = document.getElementById('mcPrio3').value.trim() || 'Priority #3';
+    const a3 = document.getElementById('mcArea3').value;
+    const up = document.getElementById('mcUplift').value.trim() || 'Someone to uplift today';
+    const pr = document.getElementById('w40PracticeText').textContent;
+    const moveBadges = { love: '❤️ Express Love', agency: '🕊️ Honor Agency', account: '🧭 Invite Accountability' };
+
+    const items = [
+      { key: 'prio1', label: '🎯 #1 Lead Domino: ' + p1, sub: 'Best Self Top Priority · Linked to 90-Day Season Goal', tag: a1 },
+      { key: 'prio2', label: '⚡ Priority #2: ' + p2, sub: 'Best Self Top 3', tag: a2 },
+      { key: 'prio3', label: '⚡ Priority #3: ' + p3, sub: 'Best Self Top 3', tag: a3 },
+      { key: 'uplift', label: '🤝 Uplift & Lead: ' + up, sub: 'Christ-Centered Leader Move: ' + moveBadges[currentMove], tag: moveBadges[currentMove] },
+      { key: 'w40', label: '✋ Wilderness 40 Practice (Day ' + currentDay + '): ' + pr, sub: 'Hesed & Agape Daily Action (Felt or Unfelt)', tag: '🕊️ Spiritual / Hesed' }
+    ];
+
+    const list = document.getElementById('actionTodoList');
+    list.innerHTML = items.map(it => {
+      const ck = !!todoCheckedState[it.key];
+      return `<div class="todo-item${ck ? ' checked' : ''}" onclick="toggleTodoKey('${it.key}')">
+        <div class="todo-left">
+          <div class="todo-box">${ck ? '✓' : ''}</div>
+          <div>
+            <div class="todo-text">${it.label}</div>
+            <div style="font-size:11.5px;color:var(--muted)">${it.sub}</div>
+          </div>
+        </div>
+        <span class="todo-tag">${it.tag}</span>
+      </div>`;
+    }).join('');
+
+    const doneCount = Object.values(todoCheckedState).filter(Boolean).length;
+    document.getElementById('todoProgressText').textContent = doneCount + ' of 5 Done';
+    document.getElementById('evScorecardBadge').textContent = 'Action Scorecard: ' + doneCount + ' of 5 Completed';
+  }
+
+  function toggleTodoKey(k) {
+    todoCheckedState[k] = !todoCheckedState[k];
+    syncActionPlan();
+  }
+
+  function toggleStaticTodo(el) {
+    el.classList.toggle('checked');
+    const box = el.querySelector('.todo-box');
+    box.textContent = el.classList.contains('checked') ? '✓' : '';
+  }
+
+  function toggleStudyDone(which) {
+    const card = document.getElementById('studyCard' + which);
+    const btn = document.getElementById('btnRead' + which);
+    const isDone = card.classList.toggle('done');
+    btn.classList.toggle('done', isDone);
+    const labels = { Cfm: 'Today’s CFM Read', Bom: 'BoM Read', Conf: 'Conference Read' };
+    btn.textContent = (isDone ? '✓ ' : '○ Mark ') + labels[which];
+  }
+
+  function togglePlainEnglish() {
+    plainOn = !plainOn;
+    document.getElementById('plainV1').style.display = plainOn ? 'block' : 'none';
+    document.getElementById('plainV2').style.display = plainOn ? 'block' : 'none';
+    document.getElementById('btnTogglePlain').innerHTML = '✨ Plain English: <b>' + (plainOn ? 'ON' : 'OFF') + '</b>';
+  }
+
+  function toggleVault() {
+    const v = document.getElementById('scholarlyVault');
+    v.style.display = v.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function setVaultTab(tab, btn) {
+    btn.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+    btn.classList.add('on');
+    const copy = {
+      sc: '<b>Scripture Central / Donald W. Parry:</b> The Hebrew verb <i>yādaʿ</i> (“I knew thee”) denotes intimate covenant relationship and premortal acquaintance—not mere foresight. Paired with <i>hikdîšeka</i> (“I sanctified/consecrated thee”), Jeremiah 1:5 is one of the clearest Old Testament witnesses of premortal identity and foreordination (compare Abraham 3:22–23; Alma 13:3).',
+      byu: '<b>BYU / Dr. Jeff Thompson (followHIM):</b> Jeremiah felt completely inadequate (“I cannot speak: for I am a child”), yet the Lord anchored him in premortal identity and promised presence (“I am with thee”). In Christ-Centered Leadership, we measure success by faithfulness to God’s call, never by trying to control other people’s agency.',
+      inst: '<b>Old Testament Institute Manual:</b> When the Lord touched Jeremiah’s mouth (Jeremiah 1:9), He symbolized that prophets speak the Lord’s words, not their own. Notice the dual mission in v. 10: to pluck up falsehood and to build and plant in covenant hope.',
+      trans: '<b>4 Translations &amp; Hebrew Root:</b><br>• <b>BSB:</b> “Before I formed you in the womb I knew you, and before you were born I set you apart…”<br>• <b>Septuagint (LXX):</b> <i>πρὸ τοῦ με πλάσαι σε ἐν κοιλίᾳ ἐπίσταμαί σε</i><br>• <b>Hebrew:</b> <i>beterem etzorcha va-beten yeda‘tikha</i> (בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן יְדַעְתִּיךָ)'
+    };
+    document.getElementById('vaultBody').innerHTML = copy[tab];
+  }
+
+  function toggleVideoWatched(btn) {
+    const card = btn.closest('.video-card');
+    const watched = card.dataset.watched === '1' ? '0' : '1';
+    card.dataset.watched = watched;
+    card.classList.toggle('watched', watched === '1');
+    btn.classList.toggle('done', watched === '1');
+    btn.textContent = watched === '1' ? '✓ Watched' : '○ Mark Watched';
+    updateWatchedCounter();
+  }
+
+  function toggleUnwatchedFilter() {
+    unwatchedOnly = !unwatchedOnly;
+    document.getElementById('btnFilterUnwatched').textContent = 'Show Unwatched Only: ' + (unwatchedOnly ? 'ON' : 'OFF');
+    updateWatchedCounter();
+  }
+
+  function updateWatchedCounter() {
+    const cards = [...document.querySelectorAll('#videoGrid .video-card')];
+    const watchedN = cards.filter(c => c.dataset.watched === '1').length;
+    document.getElementById('watchedCountLabel').textContent = watchedN + ' of ' + cards.length + ' Watched';
+    cards.forEach(c => {
+      c.style.display = (unwatchedOnly && c.dataset.watched === '1') ? 'none' : 'flex';
+    });
+  }
+
+  function toggleDeepLog() {
+    const d = document.getElementById('deepLogDrawer');
+    d.style.display = d.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function saveDeepLog() {
+    const inp = document.getElementById('deepLogInput');
+    if (!inp.value.trim()) return;
+    const list = document.getElementById('deepLogSavedList');
+    const div = document.createElement('div');
+    div.textContent = '✓ Logged: ' + inp.value.trim();
+    list.appendChild(div);
+    inp.value = '';
+  }
+
+  let stillTimer = null, stillSecs = 180;
+  function toggleStillTimer() {
+    if (stillTimer) {
+      clearInterval(stillTimer);
+      stillTimer = null;
+      return;
+    }
+    stillTimer = setInterval(() => {
+      if (stillSecs > 0) stillSecs--;
+      const m = Math.floor(stillSecs / 60), s = String(stillSecs % 60).padStart(2, '0');
+      document.getElementById('stillTimeDisplay').textContent = m + ':' + s;
+    }, 1000);
+  }
+
+  function openModal(id) { document.getElementById(id).classList.add('open'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+  function seedFromModal() {
+    setCclmMove('agency');
+    document.getElementById('mcUplift').value = 'Ask my son about his plan for his Luke 2:52 goal and listen 100% without lecturing';
+    syncActionPlan();
+    closeModal('cclmModal');
+  }
+  function completeEveningReport() {
+    document.getElementById('stepEvening').classList.add('step-done');
+    alert('🌙 Evening Return & Report saved! Your day is realigned in Christ.');
+  }
+
+  syncActionPlan();
+</script>
+</body>
+</html>

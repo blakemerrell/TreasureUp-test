@@ -1859,6 +1859,24 @@
   .bp-goal-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 8px; font: inherit; font-size: 12px; font-weight: 700; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: #fff; cursor: pointer; }
   .bp-goal-chip:hover { background: rgba(255,255,255,.18); border-color: #fbbf24; }
   .bp-goal-chip.on { background: rgba(251,191,36,.22); border-color: #fbbf24; color: #fde68a; }
+  .today-compass { background: linear-gradient(145deg, rgba(18,24,43,.94), rgba(15,23,42,.9)); border: 1.5px solid rgba(251,191,36,.32); border-radius: 18px; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.22); }
+  .today-compass.youth-mode { border-color: rgba(56,189,248,.42); background: linear-gradient(145deg, rgba(15,23,42,.95), rgba(18,34,56,.92)); }
+  .today-compass.youth-rpg { border-color: rgba(167,139,250,.48); background: linear-gradient(145deg, rgba(24,18,43,.95), rgba(30,27,75,.92)); }
+  .today-compass.youth-booklet { border-color: rgba(52,211,153,.42); background: linear-gradient(145deg, rgba(14,32,28,.95), rgba(15,38,34,.92)); }
+  .tc-top-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 10px; }
+  .tc-mode-pills { display: inline-flex; background: rgba(0,0,0,.32); padding: 3px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); gap: 3px; }
+  .tc-mode-btn { border: 0; background: none; color: rgba(255,255,255,.72); font: inherit; font-size: 11.5px; font-weight: 800; padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
+  .tc-mode-btn.on { background: linear-gradient(135deg, #f59e0b, #d97706); color: #1c1406; box-shadow: 0 2px 6px rgba(245,158,11,.35); }
+  .today-compass.youth-mode .tc-mode-btn.on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
+  .tc-act-pills { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+  .tc-act-pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.08); color: #fde68a; border: 1px solid rgba(251,191,36,.3); cursor: pointer; text-decoration: none; }
+  .tc-act-pill:hover { background: rgba(251,191,36,.16); }
+  .tc-luke-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
+  .tc-luke-cell { padding: 8px 10px; border-radius: 11px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); text-align: left; color: #fff; font: inherit; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+  .tc-luke-cell:hover { background: rgba(255,255,255,.08); border-color: rgba(251,191,36,.4); }
+  .coach-stage-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 12px; }
+  .coach-stage-tab { flex: 1 1 auto; padding: 5px 8px; border-radius: 8px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.06); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.12); cursor: pointer; text-align: center; }
+  .coach-stage-tab.on { background: rgba(56,189,248,.2); color: #bae6fd; border-color: #38bdf8; }
 
   /* ---- Developer mode ---- */
   .dv-wrap { width: 100%; max-width: 640px; margin: 12px auto 120px; }
@@ -3428,6 +3446,7 @@ const TreasureUp = (function () {
           ${stripHtml()}
         </div>
         <div class="tt-main">
+          ${isFamilyStudy() ? '' : todayCompassBannerHtml()}
           ${dayCardHtml(selDay || dayKey())}
           ${weekRowHtml()}
         </div>
@@ -4436,6 +4455,13 @@ const TreasureUp = (function () {
     save();
   }
 
+  function w40SetDay(dayNum) {
+    const st = w40State();
+    st.day = Math.max(1, Math.min(40, Number(dayNum) || 1));
+    st.upd = Date.now();
+    save();
+  }
+
   function w40CompleteDay() {
     const st = w40State(), curDay = st.day;
     st.practiceDone[curDay] = true;
@@ -4543,19 +4569,28 @@ const TreasureUp = (function () {
     'Business / Building', 'Writing / Creating', 'Financial Stewardship'
   ];
   const CORE_VALUES_DECK = [
-    { id: 'FAITH', icon: '🕊️', label: 'FAITH', subs: ['Trust in God', 'Eternal Perspective', 'Covenant Devotion', 'Stillness'], q: 'Where do I need to be still and trust God today instead of forcing the outcome?' },
-    { id: 'ADVENTURE', icon: '🏔️', label: 'ADVENTURE', subs: ['Growth Mindset', 'Joyful Exploration', 'Courageous Action', 'Family Memories'], q: 'What courageous step or shared memory will make today feel like a meaningful adventure?' },
-    { id: 'INTEGRITY', icon: '🛡️', label: 'INTEGRITY', subs: ['Wholeheartedness', 'Honest Stewardship', 'Keeping Promises', 'Pure Intent'], q: 'What promise to God, myself, or my family will I keep wholeheartedly today?' },
-    { id: 'HESED / LOVE', icon: '❤️', label: 'HESED & AGAPE', subs: ['Loyal Covenant Love', 'Compassion', 'Peacemaking', 'Generosity'], q: 'Who in my circle needs unhurried 1-on-1 presence and loyal covenant love today?' },
-    { id: 'WISDOM', icon: '💡', label: 'WISDOM', subs: ['Lifelong Learning', 'Strategic Clarity', 'Curiosity', 'Discernment'], q: 'What truth or insight am I hungry to understand more deeply today?' },
-    { id: 'VITALITY', icon: '⚡', label: 'VITALITY', subs: ['Physical Stature', 'Energy & Rest', 'Discipline', 'Endurance'], q: 'How will I honor my physical energy, training, and restorative rest today?' },
-    { id: 'CRAFT & BUILDING', icon: '🚀', label: 'CRAFT & BUILDING', subs: ['High-Leverage Creation', 'Excellence', 'Problem Solving', 'Stewardship'], q: 'What is the #1 high-leverage thing I can build or move forward today?' },
-    { id: 'AUTONOMY', icon: '🧭', label: 'AUTONOMY & FREEDOM', subs: ['Intentional Time', 'Essentialism', 'Financial Peace', 'Self-Direction'], q: 'What distraction or low-value obligation should I say no to today?' },
-    { id: 'MENTORSHIP', icon: '🤝', label: 'DEVELOPING OTHERS', subs: ['Spotting Potential', 'Patient Coaching', 'Encouragement', 'Empowerment'], q: 'Who can I coach or lift today by honoring their agency and potential?' },
-    { id: 'SIMPLICITY', icon: '🍃', label: 'SIMPLICITY & PEACE', subs: ['Less But Better', 'Unhurried Presence', 'Clear Space', 'Gratitude'], q: 'What can I simplify today so the main thing stays the main thing?' },
-    { id: 'COURAGE', icon: '🦁', label: 'COURAGE & CANDOR', subs: ['Hard Conversations', 'Standing for Truth', 'Resilience', 'Bold Faith'], q: 'What honest conversation or brave action am I being prompted to take today?' },
-    { id: 'GENEROSITY', icon: '🎁', label: 'SERVICE & ZION', subs: ['Quiet Kindness', 'Hospitality', 'Lifting Burdens', 'Abundance'], q: 'Whose burden can I quietly lighten today with no expectation of return?' }
+    { id: 'FAITH', icon: '🕊️', label: 'FAITH', subs: ['Trust in God', 'Eternal Perspective', 'Covenant Devotion', 'Stillness'], kw: ['faith', 'god', 'lord', 'pray', 'spirit', 'temple', 'trust', 'christ', 'scripture'], q: 'Where do I need to be still and trust God today instead of forcing the outcome?' },
+    { id: 'ADVENTURE', icon: '🏔️', label: 'ADVENTURE', subs: ['Growth Mindset', 'Joyful Exploration', 'Courageous Action', 'Family Memories'], kw: ['adventure', 'explore', 'travel', 'outdoor', 'trip', 'fun', 'memory', 'discover'], q: 'What courageous step or shared memory will make today feel like a meaningful adventure?' },
+    { id: 'INTEGRITY', icon: '🛡️', label: 'INTEGRITY', subs: ['Wholeheartedness', 'Honest Stewardship', 'Keeping Promises', 'Pure Intent'], kw: ['integrity', 'honest', 'truth', 'promise', 'character', 'trustworthy', 'word'], q: 'What promise to God, myself, or my family will I keep wholeheartedly today?' },
+    { id: 'HESED / LOVE', icon: '❤️', label: 'HESED & AGAPE', subs: ['Loyal Covenant Love', 'Compassion', 'Peacemaking', 'Generosity'], kw: ['love', 'family', 'kids', 'spouse', 'wife', 'husband', 'child', 'present', 'rush', 'listen', 'kind'], q: 'Who in my circle needs unhurried 1-on-1 presence and loyal covenant love today?' },
+    { id: 'WISDOM', icon: '💡', label: 'WISDOM', subs: ['Lifelong Learning', 'Strategic Clarity', 'Curiosity', 'Discernment'], kw: ['wisdom', 'learn', 'study', 'clarity', 'strategy', 'understand', 'think', 'insight'], q: 'What truth or insight am I hungry to understand more deeply today?' },
+    { id: 'VITALITY', icon: '⚡', label: 'VITALITY', subs: ['Physical Stature', 'Energy & Rest', 'Discipline', 'Endurance'], kw: ['health', 'energy', 'sleep', 'workout', 'train', 'run', 'tired', 'fitness', 'rest'], q: 'How will I honor my physical energy, training, and restorative rest today?' },
+    { id: 'CRAFT & BUILDING', icon: '🚀', label: 'CRAFT & BUILDING', subs: ['High-Leverage Creation', 'Excellence', 'Problem Solving', 'Stewardship'], kw: ['ship', 'build', 'system', 'team', 'create', 'work', 'project', 'craft', 'solve', 'launch'], q: 'What is the #1 high-leverage thing I can build or move forward today?' },
+    { id: 'AUTONOMY', icon: '🧭', label: 'AUTONOMY & FREEDOM', subs: ['Intentional Time', 'Essentialism', 'Financial Peace', 'Self-Direction'], kw: ['freedom', 'time', 'autonomy', 'margin', 'control', 'schedule', 'independent'], q: 'What distraction or low-value obligation should I say no to today?' },
+    { id: 'MENTORSHIP', icon: '🤝', label: 'DEVELOPING OTHERS', subs: ['Spotting Potential', 'Patient Coaching', 'Encouragement', 'Empowerment'], kw: ['mentor', 'coach', 'teach', 'help', 'lift', 'encourage', 'develop', 'empower'], q: 'Who can I coach or lift today by honoring their agency and potential?' },
+    { id: 'SIMPLICITY', icon: '🍃', label: 'SIMPLICITY & PEACE', subs: ['Less But Better', 'Unhurried Presence', 'Clear Space', 'Gratitude'], kw: ['simple', 'peace', 'calm', 'quiet', 'still', 'noise', 'clutter', 'slow', 'hurry'], q: 'What can I simplify today so the main thing stays the main thing?' },
+    { id: 'COURAGE', icon: '🦁', label: 'COURAGE & CANDOR', subs: ['Hard Conversations', 'Standing for Truth', 'Resilience', 'Bold Faith'], kw: ['courage', 'brave', 'bold', 'fear', 'hard', 'candor', 'stand', 'speak'], q: 'What honest conversation or brave action am I being prompted to take today?' },
+    { id: 'GENEROSITY', icon: '🎁', label: 'SERVICE & ZION', subs: ['Quiet Kindness', 'Hospitality', 'Lifting Burdens', 'Abundance'], kw: ['serve', 'give', 'generous', 'zion', 'share', 'minister', 'hospitality'], q: 'Whose burden can I quietly lighten today with no expectation of return?' },
+    { id: 'GRATITUDE', icon: '🙏', label: 'GRATITUDE & JOY', subs: ['Daily Mercies', 'Rejoicing', 'Contentment', 'Wonder'], kw: ['grateful', 'thank', 'joy', 'blessing', 'mercy', 'appreciate'], q: 'What quiet tender mercy from the Lord can I notice and thank Him for today?' },
+    { id: 'RESILIENCE', icon: '🔥', label: 'GRIT & RESILIENCE', subs: ['Enduring Well', 'Failing Forward', 'Perseverance', 'Fortitude'], kw: ['grit', 'resilient', 'endure', 'hard', 'trial', 'overcome', 'persevere', 'tough'], q: 'How can I meet today’s hardest friction with calm endurance and trust in Christ?' },
+    { id: 'CREATIVITY', icon: '🎨', label: 'CREATIVITY & WONDER', subs: ['Original Design', 'Storytelling', 'Curiosity', 'Beauty'], kw: ['creative', 'design', 'art', 'music', 'write', 'imagine', 'idea', 'beauty'], q: 'Where can I bring fresh creativity, beauty, or curiosity to my work and home today?' },
+    { id: 'STEWARDSHIP', icon: '🏛️', label: 'WISE STEWARDSHIP', subs: ['Faithfulness Over Control', 'Order', 'Preparedness', 'Accountability'], kw: ['steward', 'accountable', 'order', 'prepare', 'resource', 'budget', 'organize', 'faithful'], q: 'How can I steward my time, resources, and callings with quiet faithfulness today?' }
   ];
+  function detectCrucibleValues(peak, pinch) {
+    const txt = `${peak || ''} ${pinch || ''}`.toLowerCase();
+    if (!txt.trim()) return [];
+    return CORE_VALUES_DECK.filter(v => (v.kw || []).some(w => txt.includes(w))).map(v => v.id);
+  }
   const GALLUP_STRENGTHS = [
     'Strategic', 'Achiever', 'Learner', 'Ideation', 'Futuristic', 'Maximizer',
     'Relator', 'Connectedness', 'Arranger', 'Responsibility', 'Belief', 'Positivity',
@@ -4659,6 +4694,13 @@ const TreasureUp = (function () {
       desc: 'When busy or pressured, you jump straight to checklists, corrections, and efficiency—leaving others feeling managed rather than cherished.',
       antidote: 'love', antidoteLabel: '❤️ Antidote: Express Covenant Love',
       habit: 'Connection before correction: give 60 seconds of unhurried warmth and eye contact before discussing tasks.'
+    },
+    burnout: {
+      id: 'burnout', icon: '🏋️', title: 'Over-Carrying Outcomes (Hero Burnout)',
+      formula: 'High Responsibility · Forgetting the Jeremiah Principle',
+      desc: 'Measuring your worth by controlling everyone’s results rather than your own faithfulness—leading to exhaustion and heavy shoulders.',
+      antidote: 'agency', antidoteLabel: '🙏 Antidote: Jeremiah Surrender & Agency',
+      habit: 'Do your faithful part to love, honor agency, and invite accountability—then explicitly hand the outcome to Jesus Christ.'
     }
   };
 
@@ -5002,21 +5044,102 @@ const TreasureUp = (function () {
   let coachStep = 1, coachDraft = null;
   let cclmCoachState = { tab: 'situation', who: 'child', sit: 'resist', drift: 'fixer' };
 
+  function todayCompassBannerHtml() {
+    const prof = profileOf(), isAdult = seasonWho() === 'adult';
+    const triad = valuesTriadOf(prof), strs = (prof.strengths || []).slice(0, 3);
+    const driftKey = prof.cclmDrift || 'fixer';
+    const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
+    const domObj = CCLM_DOMAINS.find(d => d.id === (prof.cclmDomain || 'children')) || CCLM_DOMAINS[2];
+    const w40 = w40Current();
+    const yTheme = S.youthTheme || 'nintendo';
+    const s = seasonNow(), rec = seasonRec(s.id), goals = activeGoals(rec);
+    const areaMap = [
+      { id: 'spiritual', icon: '🕊️', label: 'Spiritual · Favor with God', cclm: '🙏 With God', fallback: isAdult ? 'Alma 37:37 Morning Stillness & Come Follow Me' : 'Pray morning & night and read scriptures' },
+      { id: 'social', icon: '🤝', label: 'Social · Favor with Man', cclm: '🤝 God’s Children', fallback: isAdult ? drift.antidoteLabel + ' · Unhurried 1-on-1s' : 'Encourage family or a friend today' },
+      { id: 'physical', icon: '💪', label: 'Physical · Stature', cclm: '🪞 With Self', fallback: isAdult ? 'Physical training & restorative rest' : 'Active play, sports, or outdoor practice' },
+      { id: 'intellectual', icon: '🧠', label: 'Intellectual · Wisdom', cclm: '🏛️ Stewardships', fallback: isAdult ? 'The ONE Thing high-leverage deep work' : 'Build, create, or practice a new skill' }
+    ];
+    const quickDays = [1, 3, 5, 13, 27, 40];
+
+    return `<div class="today-compass${!isAdult ? ' youth-mode youth-' + esc(yTheme) : ''}" data-today-compass>
+      <div class="tc-top-bar">
+        <div class="tc-mode-pills" role="group" aria-label="Daily Walk Mode">
+          <button type="button" class="tc-mode-btn${isAdult ? ' on' : ''}" data-compass-mode="adult" aria-pressed="${isAdult}">👔 Adult Flow (Zero-XP)</button>
+          <button type="button" class="tc-mode-btn${!isAdult ? ' on' : ''}" data-compass-mode="youth" aria-pressed="${!isAdult}">🎮 Youth Flow (Luke 2:52)</button>
+        </div>
+        <div class="tc-act-pills">
+          <button type="button" class="tc-act-pill" data-hub-profile="me">🧭 6-Stage Growth Coach</button>
+          <button type="button" class="tc-act-pill" data-open-cclm-coach>🏛️ Situation Leader Coach</button>
+          <a class="tc-act-pill" href="./flow.html" style="color:#93c5fd;border-color:rgba(147,197,253,.3)">🗺️ Full Flow</a>
+          <a class="tc-act-pill" href="./coaching.html" style="color:#c4b5fd;border-color:rgba(196,181,253,.3)">🧪 Workshop</a>
+        </div>
+      </div>
+
+      ${isAdult ? `
+        <div style="padding:10px 12px;border-radius:12px;background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.28);margin-bottom:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px">
+            <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fcd34d">🌿 Wilderness 40 · Day ${w40.d[0]} of 40 · Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
+            <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
+              <button type="button" class="bp-edit-btn" data-compass-w40-step="-1" ${w40.d[0] <= 1 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">‹ Prev</button>
+              ${quickDays.map(dn => `<button type="button" class="bp-edit-btn" data-compass-w40-day="${dn}" style="font-size:10px;padding:2px 6px;${w40.d[0] === dn ? 'background:var(--gold);color:#1c1406;border-color:var(--gold);font-weight:900' : ''}">D${dn}</button>`).join('')}
+              <button type="button" class="bp-edit-btn" data-compass-w40-step="1" ${w40.d[0] >= 40 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">Next ›</button>
+            </div>
+          </div>
+          <div style="font-size:13.5px;font-weight:900;color:#fff">${esc(w40.d[2])}${w40.d[5] ? ` <span style="font-size:11px;color:#fde68a;font-weight:700">(${esc(w40.d[5])})</span>` : ''} · <span style="font-size:11.5px;font-weight:600;color:#fef3c7;font-style:italic">“${esc(w40.d[3])}” (${esc(w40.d[4])})</span></div>
+          <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">🎯 <b>Today’s Practice:</b> ${esc(w40.d[9])}</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;font-size:11.5px;color:#e2e8f0;padding:4px 2px">
+          <span>🏛️ <b>Triad:</b> <b style="color:#fde68a">${esc(triad.join(' · '))}</b>${strs.length ? ` · 🧬 <b>Strengths:</b> ${esc(strs.join(', '))}` : ''}</span>
+          <span style="color:#6ee7b7;font-weight:800">${esc(drift.antidoteLabel)} · Focus: ${esc(domObj.short)}</span>
+        </div>
+      ` : `
+        <div style="padding:10px 12px;border-radius:12px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);margin-bottom:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+            <div>
+              <div style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#7dd3fc">🌟 Children & Youth · Luke 2:52 Quest Compass</div>
+              <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''} · 🏛️ ${esc(triad.join(' · '))}</div>
+            </div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap" role="group" aria-label="Youth Theme Style">
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
+              <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
+            </div>
+          </div>
+        </div>
+      `}
+
+      <div class="tc-luke-grid">
+        ${areaMap.map(a => {
+          const g = goals.find(x => x.area === a.id);
+          const stepTxt = g ? ((g.steps && g.steps[0] && g.steps[0].text) || g.text) : a.fallback;
+          return `<button type="button" class="tc-luke-cell" data-tab="season" title="Open ${esc(a.label)} in Season tab">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:900;color:#fde68a">
+              <span>${a.icon} ${esc(a.label)}</span>
+              <span style="font-size:10px;color:#94a3b8">${esc(a.cclm)}</span>
+            </div>
+            <div style="font-size:11.5px;color:#e2e8f0;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g ? '🎯 ' : '✨ '}${esc(stepTxt)}</div>
+          </button>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }
+
   function syncCoachInputs() {
     if (!coachDraft) return;
-    if (coachStep === 1 && $('coachName')) coachDraft.name = $('coachName').value.trim() || coachDraft.name;
-    if (coachStep === 3) {
-      if ($('coachMilestone')) coachDraft.milestone = $('coachMilestone').value.trim();
-      if ($('coachPeakMoment')) coachDraft.peakMoment = $('coachPeakMoment').value.trim();
-      if ($('coachPinchMirror')) coachDraft.pinchMirror = $('coachPinchMirror').value.trim();
-    }
-    if (coachStep === 4 && $('coachCclmNote')) coachDraft.cclmNote = $('coachCclmNote').value.trim();
+    if ($('coachName')) coachDraft.name = $('coachName').value.trim() || coachDraft.name;
+    if ($('coachMilestone')) coachDraft.milestone = $('coachMilestone').value.trim();
+    if ($('coachPeakMoment')) coachDraft.peakMoment = $('coachPeakMoment').value.trim();
+    if ($('coachPinchMirror')) coachDraft.pinchMirror = $('coachPinchMirror').value.trim();
+    if ($('coachCclmNote')) coachDraft.cclmNote = $('coachCclmNote').value.trim();
   }
 
   function openCoachProfile(startStep = 1) {
     coachStep = startStep || 1;
     coachDraft = JSON.parse(JSON.stringify(profileOf()));
     coachDraft.coreValues = valuesTriadOf(coachDraft);
+    if (!Array.isArray(coachDraft.funnelValues) || !coachDraft.funnelValues.length) {
+      coachDraft.funnelValues = [...new Set([...coachDraft.coreValues, 'HESED / LOVE', 'WISDOM', 'CRAFT & BUILDING'])];
+    }
     if (!Array.isArray(coachDraft.subValues)) coachDraft.subValues = ['Trust in God', 'Growth Mindset', 'Wholeheartedness'];
     if (!Array.isArray(coachDraft.strengths)) coachDraft.strengths = [];
     if (!coachDraft.customAreas || typeof coachDraft.customAreas !== 'object') coachDraft.customAreas = {};
@@ -5177,6 +5300,23 @@ const TreasureUp = (function () {
       `}`;
   }
 
+  function coachStageNavHtml(step) {
+    const stages = [
+      { n: 1, label: '1. Identity' },
+      { n: 2, label: '2. Crucible' },
+      { n: 3, label: '3. Values 16→3' },
+      { n: 4, label: '4. Strengths & Drift' },
+      { n: 5, label: '5. Playbook' },
+      { n: 6, label: '6. Audit & Charter' }
+    ];
+    return `<div class="coach-step-bar">
+      ${stages.map(s => `<div class="coach-step-dot${step >= s.n ? ' on' : ''}"></div>`).join('')}
+    </div>
+    <div class="coach-stage-tabs" role="tablist" aria-label="6-Stage Coaching Workshop">
+      ${stages.map(s => `<button type="button" class="coach-stage-tab${step === s.n ? ' on' : ''}" data-coach-goto="${s.n}" role="tab" aria-selected="${step === s.n}">${s.label}</button>`).join('')}
+    </div>`;
+  }
+
   function coachWalkthroughSheetHtml() {
     const d = coachDraft || (coachDraft = JSON.parse(JSON.stringify(profileOf())));
     const isKid = d.who !== 'adult';
@@ -5199,15 +5339,11 @@ const TreasureUp = (function () {
     const customAreas = d.customAreas || {};
     const [bornY, bornM] = d.born ? d.born.split('-').map(Number) : [0, 0], thisY = Number(dayKey().slice(0, 4));
     const bornYears = Array.from({ length: 13 }, (_, i) => thisY - 6 - i);
+    const crucibleMatches = detectCrucibleValues(d.peakMoment, d.pinchMirror);
 
     if (coachStep === 1) {
       return `<div class="sh-title">🧭 Growth Coach Setup</div>
-        <div class="coach-step-bar">
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot"></div>
-          <div class="coach-step-dot"></div>
-          <div class="coach-step-dot"></div>
-        </div>
+        ${coachStageNavHtml(1)}
         <p class="sh-small">“And Jesus increased in wisdom and stature, and in favour with God and man.” (Luke 2:52) · <b>🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect</b> across 🕊️ Spiritual, 🤝 Social, 💪 Physical, 🧠 Intellectual.</p>
 
         <div class="sheet-group">
@@ -5241,25 +5377,20 @@ const TreasureUp = (function () {
           </div>
         ` : `
           <div class="ev-row" style="background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.35);margin-top:6px">
-            <small style="color:#c4b5fd">🌟 Best Self PRO · Core Values Triad & Christ-Centered Leader Engine</small>
-            <p style="color:#e0e7ff">Core Values Card Sort & Crucible, CliftonStrengths Blind-Spot Mirror, Gary Keller’s <i>The ONE Thing</i>, and the BYU Sorensen Center Christ-Centered Leader Model.</p>
+            <small style="color:#c4b5fd">🌟 6-Stage Best Self PRO & Christ-Centered Leader Workshop</small>
+            <p style="color:#e0e7ff">1. Identity → 2. Crucible Reflection → 3. 16→5→3 Core Values Winnowing Funnel → 4. CliftonStrengths & Stress Drift → 5. Situational Playbook → 6. 4-Domain Stewardship Audit.</p>
           </div>
         `}
 
         <div class="board-actions" style="margin-top:18px">
-          <button type="button" class="btn" data-coach-goto="2">Next: Interests & Custom Pursuits ›</button>
+          <button type="button" class="btn" data-coach-goto="2">Next: Interests & Crucible Mirror ›</button>
         </div>`;
     }
 
     if (coachStep === 2) {
-      return `<div class="sh-title">🧭 What do you love to do?</div>
-        <div class="coach-step-bar">
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot"></div>
-          <div class="coach-step-dot"></div>
-        </div>
-        <p class="sh-small">Tap your favorite hobbies, talents, and focus areas! Your coach uses these to suggest customized Luke 2:52 quests and daily habits.</p>
+      return `<div class="sh-title">🧭 What do you love to do? · Crucible Mirror</div>
+        ${coachStageNavHtml(2)}
+        <p class="sh-small">Tap your favorite hobbies, talents, and focus areas—and reflect on your Peak Moment & Frustration Shadow to surface your authentic values.</p>
 
         <div class="sheet-group">
           <label>Interests & Talents (${selected.size} selected)</label>
@@ -5286,8 +5417,17 @@ const TreasureUp = (function () {
           </div>
         </div>
 
+        ${!isKid ? `
+          <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25)">
+            <label style="color:#fde68a">🔥 Stage 2 Crucible Reflection (100% Blank Slate · Auto-Detects Candidate Values)</label>
+            <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized, aligned, and proud recently?" style="margin-bottom:6px">
+            <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow (Pinch): What drains or frustrates you fastest when violated?">
+            ${crucibleMatches.length ? `<div style="font-size:11.5px;color:#6ee7b7;margin-top:6px">✨ <b>Crucible Auto-Detected Values:</b> ${esc(crucibleMatches.join(' · '))}</div>` : `<small>Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</small>`}
+          </div>
+        ` : ''}
+
         <div class="board-actions" style="margin-top:18px">
-          <button type="button" class="btn" data-coach-goto="3">Next: Core Values & Strengths ›</button>
+          <button type="button" class="btn" data-coach-goto="3">Next: 16→5→3 Core Values Funnel ›</button>
           <button type="button" class="btn ghost" data-coach-goto="1">‹ Back</button>
         </div>`;
     }
@@ -5297,17 +5437,36 @@ const TreasureUp = (function () {
       const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
       const domKey = d.cclmDomain || 'children';
       const domObj = CCLM_DOMAINS.find(x => x.id === domKey) || CCLM_DOMAINS[2];
+      const myStrengths = new Set(d.strengths || []);
+      const primaryStr = (d.strengths || [])[0] || '';
       return `<div class="sh-title">🏛️ Christ-Centered Leader Engine</div>
-        <div class="coach-step-bar">
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot on"></div>
-          <div class="coach-step-dot on"></div>
-        </div>
-        <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>): Center in <b>Jesus Christ</b>, balance <b>Express Love · Honor Agency · Invite Accountability</b>, and steward your 4 Outer-Ring Domains.</p>
+        ${coachStageNavHtml(4)}
+        <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>) + CliftonStrengths Blind-Spot Radar: Center in <b>Jesus Christ</b>, balance <b>Express Love · Honor Agency · Invite Accountability</b>, and diagnose your stress drift.</p>
+
+        ${!isKid ? `
+          <div class="sheet-group">
+            <label>🧬 1. Signature CliftonStrengths (Tap S.I.G.N. Scenarios or Pick up to 5)</label>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px">
+              ${STRENGTH_SCENARIOS.map(sc => `<div style="padding:7px 9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)">
+                <div style="font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:4px">${esc(sc.q)}</div>
+                <div class="coach-chip-group">
+                  ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}">${esc(o.label)}</button>`).join('')}
+                </div>
+              </div>`).join('')}
+            </div>
+            <div class="coach-chip-group">
+              ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}">${esc(st)}</button>`).join('')}
+            </div>
+            ${primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `
+              <div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);font-size:11.5px;color:#fecdd3">
+                <b>⚠️ ${esc(primaryStr)} Blind Spot to Watch:</b> ${esc(STRENGTH_BLIND_SPOTS[primaryStr])}
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
 
         <div class="sheet-group">
-          <label>⚖️ 1. Leadership Tension Diagnostic: Under stress, which ditch are you most tempted to drift into?</label>
+          <label>⚖️ 2. Leadership Tension Diagnostic: Under stress, which ditch are you most tempted to drift into?</label>
           <div style="display:flex;flex-direction:column;gap:6px">
             ${Object.values(CCLM_DRIFTS).map(dr => {
               const on = driftKey === dr.id;
@@ -5326,7 +5485,7 @@ const TreasureUp = (function () {
         </div>
 
         <div class="sheet-group">
-          <label>🏛️ 2. Outer-Ring Stewardship Focus: Which domain needs your primary focus right now?</label>
+          <label>🏛️ 3. Outer-Ring Stewardship Focus: Which domain needs your primary focus right now?</label>
           <div class="coach-chip-group">
             ${CCLM_DOMAINS.map(dom => `<button type="button" class="coach-chip${domKey === dom.id ? ' on' : ''}" data-coach-cclm-dom="${dom.id}">${dom.icon} ${esc(dom.label)}</button>`).join('')}
           </div>
@@ -5334,37 +5493,154 @@ const TreasureUp = (function () {
         </div>
 
         <div class="sheet-group">
-          <label>🕊️ 3. Blank-Slate Stewardship Reflection (Private to your device)</label>
+          <label>🕊️ 4. Blank-Slate Stewardship Reflection (Private to your device)</label>
           <textarea class="field sheet-in" id="coachCclmNote" rows="2" maxlength="300" placeholder="Optional: Who or what stewardship are you learning to lead with faithfulness over control?">${esc(d.cclmNote || '')}</textarea>
         </div>
 
         <div class="board-actions" style="margin-top:18px">
           <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In My Profile'}</button>
-          <button type="button" class="btn ghost" data-open-cclm-coach>💬 Live Situation Coach ›</button>
+          <button type="button" class="btn ghost" data-coach-goto="5">💬 Stage 5: Situational Playbook ›</button>
           <button type="button" class="btn ghost" data-coach-goto="3">‹ Back</button>
         </div>`;
     }
 
-    // Step 3: Core Values Triad + Crucible Reflection + Superpowers / CliftonStrengths + Milestone
+    if (coachStep === 5) {
+      const who = cclmCoachState.who || 'child';
+      const sit = cclmCoachState.sit || 'resist';
+      const driftKey = d.cclmDrift || 'fixer';
+      const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
+      const triad = valuesTriadOf(d);
+      const pb = generateCclmPlaybook({ who, sit, drift: driftKey });
+      const whoOpts = [
+        { id: 'child', label: '👦 Child / Youth' },
+        { id: 'spouse', label: '💑 Spouse' },
+        { id: 'team', label: '🚀 Team / Work' },
+        { id: 'calling', label: '⛪ Calling / Friend' },
+        { id: 'self', label: '🪞 Myself' }
+      ];
+      const sitOpts = [
+        { id: 'resist', label: '🧱 Pushing Back / Resisting' },
+        { id: 'missed', label: '📉 Missed a Commitment' },
+        { id: 'discouraged', label: '🌧️ Discouraged / Weary' },
+        { id: 'conflict', label: '⚡ In Tension / Conflict' },
+        { id: 'burnout', label: '🏋️ Carrying Outcome Alone' }
+      ];
+      return `<div class="sh-title">💬 Stage 5: Situational Leadership Playbook</div>
+        ${coachStageNavHtml(5)}
+        <p class="sh-small">Generate a tailored 5-step Christ-Centered response combining your Core Values Triad (<b>${esc(triad.join(' · '))}</b>) and Stress-Drift Antidote (<b>${esc(drift.antidoteLabel)}</b>).</p>
+
+        <div class="sheet-group">
+          <label>1. Who are you leading or walking with right now?</label>
+          <div class="coach-chip-group">
+            ${whoOpts.map(o => `<button type="button" class="bp-quick-pill${who === o.id ? ' on' : ''}" style="${who === o.id ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-sit-who="${o.id}">${o.label}</button>`).join('')}
+          </div>
+        </div>
+
+        <div class="sheet-group">
+          <label>2. What is happening in this moment?</label>
+          <div class="coach-chip-group">
+            ${sitOpts.map(o => `<button type="button" class="bp-quick-pill${sit === o.id ? ' on' : ''}" style="${sit === o.id ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-sit-what="${o.id}">${o.label}</button>`).join('')}
+          </div>
+        </div>
+
+        <div style="padding:12px;border-radius:14px;background:rgba(15,23,42,.92);border:1.5px solid rgba(251,191,36,.38);margin-top:10px;display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:11.5px;color:#fde68a"><b>✝️ 0. Center in Christ & Triad:</b> ${esc(pb.center)}</div>
+          <div style="font-size:11.5px;color:#fda4af"><b>❤️ 1. Express Love:</b> <span style="color:#f8fafc">${esc(pb.love)}</span></div>
+          <div style="font-size:11.5px;color:#7dd3fc"><b>🕊️ 2. Honor Agency:</b> <span style="color:#f8fafc">${esc(pb.agency)}</span></div>
+          <div style="font-size:11.5px;color:#6ee7b7"><b>🎯 3. Invite Accountability:</b> <span style="color:#f8fafc">${esc(pb.accountability)}</span></div>
+          <div style="font-size:11.5px;color:#ddd6fe"><b>🌙 4. Jeremiah Release:</b> <span style="color:#f8fafc">${esc(pb.release)}</span></div>
+        </div>
+
+        <div class="board-actions" style="margin-top:16px">
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-cclm-seed-bp="${esc(pb.seedText)}" data-cclm-seed-move="${esc(pb.recommendedMove)}">🌅 Seed Move to Morning Council</button>
+          <button type="button" class="btn ghost" data-coach-goto="6">📜 Stage 6: 4-Domain Audit & Charter ›</button>
+          <button type="button" class="btn ghost" data-coach-goto="4">‹ Back</button>
+        </div>`;
+    }
+
+    if (coachStep === 6) {
+      const triad = valuesTriadOf(d);
+      const subs = (d.subValues || []).slice(0, 4);
+      const strs = (d.strengths || []).slice(0, 5);
+      const drift = CCLM_DRIFTS[d.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer;
+      const domObj = CCLM_DOMAINS.find(x => x.id === (d.cclmDomain || 'children')) || CCLM_DOMAINS[2];
+      const ratings = d.cclmRatings || { god: 4, self: 3, children: 4, stewardships: 3 };
+      return `<div class="sh-title">📜 Stage 6: 4-Domain Audit & Personal Charter</div>
+        ${coachStageNavHtml(6)}
+        <p class="sh-small">Rate your current alignment across the 4 Outer-Ring Stewardship Domains and lock in your Personal Identity & Leadership Charter.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px">
+          ${CCLM_DOMAINS.map(dom => {
+            const on = (d.cclmDomain || 'children') === dom.id;
+            const r = ratings[dom.id] || 4;
+            return `<div style="padding:8px;border-radius:10px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'}">
+              <button type="button" style="background:none;border:none;color:#fff;font-weight:800;font-size:12px;text-align:left;cursor:pointer;width:100%;padding:0" data-coach-cclm-dom="${dom.id}">${dom.icon} ${esc(dom.short)} ${on ? '★' : ''}</button>
+              <div style="font-size:10.5px;color:#cbd5e1;margin:3px 0 6px">${esc(dom.auditQ)}</div>
+              <div style="display:flex;gap:3px;align-items:center">
+                <small style="font-size:10px;color:#94a3b8;margin-right:3px">Align:</small>
+                ${[1, 2, 3, 4, 5].map(n => `<button type="button" class="bp-quick-pill" style="padding:2px 6px;font-size:10px;${r === n ? 'background:var(--gold);color:#1c1406;border-color:var(--gold)' : ''}" data-coach-cclm-rate="${dom.id}:${n}">${n}</button>`).join('')}
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+
+        <div style="padding:12px;border-radius:14px;background:linear-gradient(145deg,rgba(251,191,36,.12),rgba(15,23,42,.95));border:1.5px solid rgba(251,191,36,.45);margin-bottom:12px">
+          <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px">🏛️ ${esc(d.name || 'My')} Personal Identity & Leadership Charter</div>
+          <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Core Values Triad:</b> <span style="color:#fde68a">${esc(triad.join(' · '))}</span>${subs.length ? ` <small style="color:#cbd5e1">(${esc(subs.join(' · '))})</small>` : ''}</div>
+          ${strs.length ? `<div style="font-size:12px;color:#fff;margin-bottom:4px"><b>CliftonStrengths:</b> <span style="color:#bae6fd">${esc(strs.join(' · '))}</span></div>` : ''}
+          <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Stress Drift & Antidote:</b> ${drift.icon} ${esc(drift.title)} → <span style="color:#6ee7b7">${esc(drift.antidoteLabel)}</span></div>
+          <div style="font-size:12px;color:#fff"><b>Primary Stewardship Focus:</b> ${domObj.icon} ${esc(domObj.label)}</div>
+        </div>
+
+        <div class="sheet-group">
+          <label>🕊️ Personal Covenant & Stewardship Commitment</label>
+          <textarea class="field sheet-in" id="coachCclmNote" rows="2" maxlength="300" placeholder="Who or what stewardship are you handing to the Savior while practicing ${esc(drift.antidoteLabel)}?">${esc(d.cclmNote || '')}</textarea>
+        </div>
+
+        <div class="board-actions" style="margin-top:16px">
+          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In & Sync Charter'}</button>
+          <button type="button" class="btn ghost" data-coach-goto="5">‹ Back to Playbook</button>
+        </div>`;
+    }
+
+    // Step 3: 16 -> 5 -> 3 Core Values Winnowing Funnel + Crucible Reflection + Superpowers / CliftonStrengths + Milestone
     const superpowers = isKid
       ? ['Creative Builder', 'Fast Learner', 'Loyal Friend', 'Joyful Energy', 'Peacekeeper', 'Hard Worker']
       : ['Strategic Clarity', 'Disciple Leader', 'Family Anchor', 'Visionary Builder', 'Resilient Coach'];
     const cVals = new Set(valuesTriadOf(d));
+    const funnelSet = new Set(Array.isArray(d.funnelValues) && d.funnelValues.length ? d.funnelValues : [...cVals, 'HESED / LOVE', 'WISDOM']);
+    cVals.forEach(v => funnelSet.add(v));
+    crucibleMatches.forEach(v => funnelSet.add(v));
     const sVals = new Set(d.subValues || ['Trust in God', 'Growth Mindset', 'Wholeheartedness']);
     const myStrengths = new Set(d.strengths || []);
     const primaryStr = (d.strengths || [])[0] || '';
 
     return `<div class="sh-title">🧭 Your Superpower & Focus · Core Values</div>
-      <div class="coach-step-bar">
-        <div class="coach-step-dot on"></div>
-        <div class="coach-step-dot on"></div>
-        <div class="coach-step-dot on"></div>
-        <div class="coach-step-dot"></div>
-      </div>
-      <p class="sh-small">Anchor your Best Self in your Core Values Triad (up to 3 pillars) and signature strengths.</p>
+      ${coachStageNavHtml(3)}
+      <p class="sh-small">Winnow your values from the 16-card deck down to your Candidate Pile (${funnelSet.size} in pile) and crown your Top 3 Core Values Triad.</p>
+
+      ${!isKid ? `
+        <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
+          <label>🔥 The Crucible Mirror (100% Blank Slate · Auto-Highlights Values Below)</label>
+          <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized and proud recently?" style="margin-bottom:6px">
+          <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
+          ${crucibleMatches.length ? `<div style="font-size:11px;color:#6ee7b7;margin-top:5px">✨ <b>Crucible-Suggested Pillars:</b> ${esc(crucibleMatches.join(' · '))}</div>` : ''}
+        </div>
+
+        <div class="sheet-group">
+          <label>🗂️ Step A: 16 → 5 Candidate Winnowing Pile (${funnelSet.size} candidates · Tap to add/remove)</label>
+          <div class="coach-chip-group">
+            ${CORE_VALUES_DECK.map(v => {
+              const inFunnel = funnelSet.has(v.id);
+              const isCrucible = crucibleMatches.includes(v.id);
+              return `<button type="button" class="bp-quick-pill${inFunnel ? ' on' : ''}" style="font-size:11px;${inFunnel ? 'background:rgba(56,189,248,.18);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-funnel="${esc(v.id)}">${v.icon} ${esc(v.label)}${isCrucible ? ' 🔥' : ''}</button>`;
+            }).join('')}
+          </div>
+        </div>
+      ` : ''}
 
       <div class="sheet-group">
-        <label>🏛️ Core Values Triad (Pick up to 3 · Default: FAITH · ADVENTURE · INTEGRITY)</label>
+        <label>🏛️ ${!isKid ? 'Step B: Crown Your Top 3 ' : ''}Core Values Triad (Pick up to 3 · Default: FAITH · ADVENTURE · INTEGRITY)</label>
         <div class="coach-chip-group">
           ${CORE_VALUES_DECK.map(v => `<button type="button" class="coach-chip${cVals.has(v.id) ? ' on' : ''}" data-coach-val="${esc(v.id)}">${v.icon} ${esc(v.label)}</button>`).join('')}
         </div>
@@ -5372,14 +5648,6 @@ const TreasureUp = (function () {
           ${CORE_VALUES_DECK.filter(v => cVals.has(v.id)).flatMap(v => v.subs).map(sub => `<button type="button" class="bp-quick-pill${sVals.has(sub) ? ' on' : ''}" style="${sVals.has(sub) ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-coach-subval="${esc(sub)}">✨ ${esc(sub)}</button>`).join('')}
         </div>
       </div>
-
-      ${!isKid ? `
-        <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-          <label>🔥 The Crucible Mirror (Optional · 100% Blank Slate & Private)</label>
-          <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized and proud recently?" style="margin-bottom:6px">
-          <input class="field sheet-in" id="coachPinchMirror" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
-        </div>
-      ` : ''}
 
       <div class="sheet-group">
         <label>⚡ Primary Superpower</label>
@@ -22204,6 +22472,22 @@ const TreasureUp = (function () {
       const hprof = e.target.closest('[data-hub-profile]');
       if (hprof) { openCoachProfile(); return; }
       if (e.target.closest('[data-open-cclm-coach]')) { openCclmCoach(); return; }
+      const cmode = e.target.closest('[data-compass-mode]');
+      if (cmode) {
+        const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
+        S.seasonWho = nextWho;
+        S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
+        if (S.profile) S.profile.who = nextWho;
+        save();
+        refreshHome();
+        return;
+      }
+      const cwstep = e.target.closest('[data-compass-w40-step]');
+      if (cwstep) { w40Step(+cwstep.dataset.compassW40Step || 0); refreshHome(); return; }
+      const cwday = e.target.closest('[data-compass-w40-day]');
+      if (cwday) { w40SetDay(+cwday.dataset.compassW40Day || 1); refreshHome(); return; }
+      const cytheme = e.target.closest('[data-compass-youth-theme]');
+      if (cytheme) { S.youthTheme = cytheme.dataset.compassYouthTheme || 'nintendo'; saveLocal(); refreshHome(); return; }
       const pc = e.target.closest('[data-past-chapter]');
       if (pc) { openPastItem('read', pc.dataset.pastChapter); return; }
       const pr = e.target.closest('[data-past-reel]');
@@ -22387,6 +22671,17 @@ const TreasureUp = (function () {
         openSheet(coachWalkthroughSheetHtml());
         return;
       }
+      const cfun = e.target.closest('[data-coach-funnel]');
+      if (cfun) {
+        syncCoachInputs();
+        const id = cfun.dataset.coachFunnel;
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        const idx = arr.indexOf(id);
+        if (idx >= 0) { if (!valuesTriadOf(coachDraft).includes(id)) arr.splice(idx, 1); }
+        else arr.push(id);
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
       const cval = e.target.closest('[data-coach-val]');
       if (cval) {
         syncCoachInputs();
@@ -22442,6 +22737,29 @@ const TreasureUp = (function () {
       if (cdom) {
         syncCoachInputs();
         coachDraft.cclmDomain = cdom.dataset.coachCclmDom;
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const cswho = e.target.closest('[data-coach-sit-who]');
+      if (cswho) {
+        syncCoachInputs();
+        cclmCoachState.who = cswho.dataset.coachSitWho;
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const cswhat = e.target.closest('[data-coach-sit-what]');
+      if (cswhat) {
+        syncCoachInputs();
+        cclmCoachState.sit = cswhat.dataset.coachSitWhat;
+        openSheet(coachWalkthroughSheetHtml());
+        return;
+      }
+      const ccrate = e.target.closest('[data-coach-cclm-rate]');
+      if (ccrate) {
+        syncCoachInputs();
+        const [domId, score] = ccrate.dataset.coachCclmRate.split(':');
+        if (!coachDraft.cclmRatings || typeof coachDraft.cclmRatings !== 'object') coachDraft.cclmRatings = { god: 4, self: 3, children: 4, stewardships: 3 };
+        coachDraft.cclmRatings[domId] = Number(score) || 3;
         openSheet(coachWalkthroughSheetHtml());
         return;
       }

@@ -1,9 +1,9 @@
-# Implementation Plan: Blake's "Best Self PRO" System
+# Implementation Plan: Alex's "Best Self PRO" System
 
 ## Goal Description
-Implement Blake's personal Adult / Best Self PRO system in TreasureUp:
+Implement Alex's personal Adult / Best Self PRO system in TreasureUp:
 1. **Fix Custom Interests & Area Tagging**: Resolve the bug where custom interests didn't render or save; add executive defaults (`Business / Building`, `Writing / Creating`, `Financial Stewardship`); allow assigning custom interests to Luke 2:52 areas.
-2. **Core Values & StrengthsFinder Engine**: Introduce Blake's Core Values triad (**FAITH**, **ADVENTURE**, **INTEGRITY** with their sub-values) and Gallup CliftonStrengths signature talent picker.
+2. **Core Values & StrengthsFinder Engine**: Introduce Alex's Core Values triad (**FAITH**, **ADVENTURE**, **INTEGRITY** with their sub-values) and Gallup CliftonStrengths signature talent picker.
 3. **Morning Planning & The ONE Thing**:
    * Grounded, clean tone: *"Here is how your Core Values board actively anchors your daily planning"*.
    * In the spirit of the book *The ONE Thing*: *"The single most important thing that will make everything else easier or better if you get it done today."*
@@ -32,7 +32,7 @@ Implement Blake's personal Adult / Best Self PRO system in TreasureUp:
    Initialize adult profile with `values: ['FAITH', 'ADVENTURE', 'INTEGRITY']` and CliftonStrengths defaults.
 3. **`coachWalkthroughSheetHtml()`**:
    * Step 2: Render standard `available` chips + any custom interests with their assigned area icon and `✕` remove button; provide 4-quadrant area selector above `#coachCustomInt`.
-   * Step 3: Display Blake's Core Values Triad (**FAITH · ADVENTURE · INTEGRITY**) with expandable sub-values, plus CliftonStrengths theme picker (`Strategic`, `Futuristic`, `Relator`, `Maximizer`, `Achiever`, `Ideation`, `Focus`, etc.).
+   * Step 3: Display Alex's Core Values Triad (**FAITH · ADVENTURE · INTEGRITY**) with expandable sub-values, plus CliftonStrengths theme picker (`Strategic`, `Futuristic`, `Relator`, `Maximizer`, `Achiever`, `Ideation`, `Focus`, etc.).
 4. **`coachSuggestedIdeas(area)`**:
    * Add high-leverage suggestions for `Business / Building`, `Writing / Creating`, `Financial Stewardship`.
    * Suggest custom interests in their assigned quadrant in Discover!

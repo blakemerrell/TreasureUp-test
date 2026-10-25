@@ -196,7 +196,7 @@ async function cards({ port, sun }) {
   const stripped = await p.evaluate(html => { const d = document.createElement('div'); d.innerHTML = html; d.querySelectorAll('.talk-story, .talk-invite, .talk-try').forEach(e => e.remove()); return d.innerHTML; }, withNew);
   check(stripped === without, 'cards: a talk without the new fields renders exactly as before (the same HTML as one with them, less their blocks)');
 
-  // Not approved: the invitation and promise wait too (Blake, 2026-10-12: which promise goes with which
+  // Not approved: the invitation and promise wait too (the owner, 2026-10-12: which promise goes with which
   // invitation is our choice), with our story and Try this week; the speaker's quotes still show.
   await openTalkSheet(p, 'fx-talk-draft');
   check(await p.locator('#appBody .talk-invite, #appBody .talk-story, #appBody .talk-try').count() === 0 && await p.locator('#appBody blockquote.ins-quote').count() > 0,

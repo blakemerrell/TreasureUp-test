@@ -257,11 +257,11 @@ export default async function growth({ port }) {
     await p.click('#appClose'); await wait(250);
   }
 
-  // Verify standalone 6-stage Self-Discovery & Christ-Centered Leader Coach page (coaching_discovery_exercise_mockup.html).
+  // Verify standalone 6-stage Self-Discovery & Christ-Centered Leader Coach page (coaching_discovery_exercise_mockup.html & coaching.html & flow.html).
   const cp = await dev.ctx.newPage();
   const cpErrs = [];
   cp.on('pageerror', e => cpErrs.push(e.message));
-  await cp.goto(`http://127.0.0.1:${port}/coaching_discovery_exercise_mockup.html`, { waitUntil: 'domcontentloaded' });
+  await cp.goto(`http://127.0.0.1:${port}/coaching.html`, { waitUntil: 'domcontentloaded' });
   await wait(250);
   check(await cp.locator('.ce-step-tab').count() === 6, 'Standalone Coaching Discovery Exercise renders all 6 stages');
   check((await cp.inputValue('#mirrorPeak')) === '' && (await cp.inputValue('#mirrorPinch')) === '', 'Standalone Coaching Crucible mirrors start 100% blank-slate');
@@ -279,7 +279,38 @@ export default async function growth({ port }) {
   await cp.click('#syncBtn'); await wait(200);
   const syncedProf = ((await state(cp)).profile) || {};
   check(syncedProf.cclmDrift === 'harmony' && Array.isArray(syncedProf.coreValues) && syncedProf.coreValues.includes('HESED / LOVE') && (syncedProf.subValues || []).includes('Loyal Covenant Love') && syncedProf.who && !cpErrs.length, 'Standalone Coach syncs canonical HESED / LOVE ID, subValues, and who directly to localStorage with 0 errors');
+  await cp.goto(`http://127.0.0.1:${port}/flow.html`, { waitUntil: 'domcontentloaded' });
+  await wait(200);
+  check((await cp.locator('.compass-banner').count()) === 1 && !cpErrs.length, 'Standalone flow.html renders Unified Daily Walk preview with 0 errors');
   await cp.close();
+
+  // Verify in-app Today Compass Banner & 6-Stage Coaching Workshop directly in index.html
+  await p.click('#tabs [data-tab="today"]'); await wait(200);
+  check((await p.locator('#home [data-today-compass]').count()) === 1, 'Today tab renders Unified Daily Walk Compass Banner');
+  await p.click('#home [data-compass-w40-day="27"]'); await wait(150);
+  const compassD27Txt = await p.textContent('#home [data-today-compass]');
+  check(/Day 27 of 40/i.test(compassD27Txt) && /D&C 121:46/i.test(compassD27Txt), 'Today Compass Banner quick day jumper switches Wilderness 40 to Day 27');
+  await p.click('#home [data-compass-mode="youth"]'); await wait(150);
+  await p.click('#home [data-compass-youth-theme="rpg"]'); await wait(150);
+  check((await p.locator('#home .today-compass.youth-mode.youth-rpg').count()) === 1, 'Today Compass Banner switches to Youth Flow and applies 16-Bit RPG theme');
+  await p.click('#home [data-compass-mode="adult"]'); await wait(150);
+
+  await p.click('#home [data-today-compass] [data-hub-profile="me"]'); await wait(200);
+  check((await p.locator('#appSheet .coach-stage-tab').count()) === 6, 'In-app Growth Coach sheet renders all 6 stage tabs');
+  await p.click('#appSheet [data-coach-goto="3"]'); await wait(150);
+  check((await p.locator('#appSheet [data-coach-val]').count()) === 16 && (await p.locator('#appSheet [data-coach-funnel]').count()) === 16, 'In-app Stage 3 renders full 16-card Core Values deck and 16->5 winnowing funnel');
+  await p.click('#appSheet [data-coach-goto="5"]'); await wait(150);
+  await p.click('#appSheet [data-coach-sit-who="spouse"]'); await wait(150);
+  await p.click('#appSheet [data-coach-sit-what="burnout"]'); await wait(150);
+  const inAppStage5Txt = await p.textContent('#appSheet');
+  check(/Stage 5: Situational Leadership Playbook/i.test(inAppStage5Txt) && /spouse/i.test(inAppStage5Txt), 'In-app Stage 5 generates tailored Situational Leadership Playbook');
+  await p.click('#appSheet [data-coach-goto="6"]'); await wait(150);
+  await p.click('#appSheet [data-coach-cclm-rate="stewardships:5"]'); await wait(150);
+  const inAppStage6Txt = await p.textContent('#appSheet');
+  check(/Personal Identity & Leadership Charter/i.test(inAppStage6Txt), 'In-app Stage 6 renders 4-Domain Stewardship Self-Audit and Personal Charter');
+  await p.click('#appSheet [data-coach-finish]'); await wait(200);
+  const finalProf = ((await state(p)).profile) || {};
+  check(finalProf.cclmRatings && finalProf.cclmRatings.stewardships === 5, 'In-app Stage 6 saves 4-Domain Stewardship rating to S.profile');
 
   check(!p.errors.length, 'no page errors' + (p.errors.length ? ': ' + p.errors.join(' | ') : ''));
   await dev.ctx.close();

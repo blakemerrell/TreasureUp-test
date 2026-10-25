@@ -660,7 +660,7 @@
   <div class="proto-controls">
     <button class="proto-btn active" id="btnModeAdult" onclick="setPersona('adult')">👨 Adult Discovery</button>
     <button class="proto-btn" id="btnModeYouth" onclick="setPersona('youth')">👦 Youth Discovery (Age 11)</button>
-    <button class="proto-btn" onclick="loadBlakeExactBoard()">⚡ Load Blake’s Exact Board</button>
+    <button class="proto-btn" onclick="loadBlakeExactBoard()">⚡ Load Alex’s Exact Board</button>
     <button class="proto-btn" onclick="startFreshSort()">🔄 Start Fresh Blank Sort</button>
   </div>
 </div>
@@ -677,7 +677,7 @@
   //  - Miller, C'de Baca, Matthews & Wilbourne (UNM Personal Values Card Sort)
   //  - Gary Keller's The ONE Thing / BestSelf Core Values Deck
   //  - Brené Brown's Dare to Lead Values List
-  //  - Every single card on Blake's physical board (Faith, Adventure, Integrity + all 24 sub-values)
+  //  - Every single card on Alex's physical board (Faith, Adventure, Integrity + all 24 sub-values)
   // =========================================================================
   const ADULT_VALUE_DECK = [
     // Character & Integrity
@@ -864,7 +864,7 @@
   let state = {
     persona: 'adult',
     step: 2,
-    name: 'Blake',
+    name: 'Alex',
     seasonFocus: 'Intentional family presence, discipleship & business leverage',
 
     // Step 2: Values Card Sort State
@@ -901,14 +901,14 @@
 
     // Step 4: Roles & 90-Day Goals
     roles: [
-      { role: 'Husband, Father & Covenant Man', pillar: 'FAITH', goal90: 'Unrushed family dinners, morning stillness & weekly 1-on-1 with Javan' },
+      { role: 'Husband, Father & Covenant Man', pillar: 'FAITH', goal90: 'Unrushed family dinners, morning stillness & weekly 1-on-1 with Sam' },
       { role: 'Explorer & Lifelong Learner', pillar: 'ADVENTURE', goal90: 'Build & ship creative projects and plan one outdoor family adventure a month' },
       { role: 'Builder & Executive (Merit3D)', pillar: 'INTEGRITY', goal90: 'Zero-spin customer trust, predictable floor ops & 90-min daily deep work' }
     ],
 
     // Step 5: Daily ONE Thing & Plain-English Reflection
     oneThingToday: '90-minute deep work sprint on the highest-leverage bottleneck before 11 AM',
-    onePersonToHelp: 'Protect 1-on-1 time with Javan after school',
+    onePersonToHelp: 'Protect 1-on-1 time with Sam after school',
     morningScriptureNote: 'Stay grounded in truth and take the next faithful step.',
     eveningWhereWorked: 'Finished the deep work block early and kept my promise on a hard call.',
     eveningEnergyAudit: 'Energized by building and problem-solving; drained by context-switching.',
@@ -1047,7 +1047,7 @@
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
             <button class="btn btn-sm" onclick="startFreshSort()">🔄 Empty Table &amp; Sort from Scratch</button>
-            <button class="btn btn-sm btn-gold" onclick="loadBlakeExactBoard()">⚡ Load Blake’s Exact Board</button>
+            <button class="btn btn-sm btn-gold" onclick="loadBlakeExactBoard()">⚡ Load Alex’s Exact Board</button>
           </div>
         </div>
 
