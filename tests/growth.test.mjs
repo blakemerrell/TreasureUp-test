@@ -162,13 +162,27 @@ export default async function growth({ port }) {
   });
   await p.reload(); await wait(1200);
 
-  // Slice 1: Adult True Zero-XP View.
+  // Slice 1: Adult True Zero-XP View (HUD, Today, Go further, Games) + Honor Streak Kept.
   const hudHidden = await p.evaluate(() => ({
     levelHidden: document.getElementById('levelBtn').hidden,
     xpHidden: document.querySelector('.hud-xp').hidden,
-    pathXpCount: document.querySelectorAll('#home .tday .pth-xp').length
+    streakVisible: !document.getElementById('streakBtn').hidden,
+    pathXpCount: document.querySelectorAll('#home .tday .pth-xp').length,
+    moreHasXp: /\b\d+\s*XP\b/i.test((document.querySelector('#home details.more') || {}).textContent || '')
   }));
-  check(hudHidden.levelHidden && hudHidden.xpHidden && hudHidden.pathXpCount === 0, 'Adult mode hides HUD Level/XP pills and all path +XP badges');
+  check(hudHidden.levelHidden && hudHidden.xpHidden && hudHidden.streakVisible && hudHidden.pathXpCount === 0 && !hudHidden.moreHasXp, 'Adult mode hides HUD Level/XP pills and Go further XP strings while keeping Honor Streak visible');
+  await p.click('#tabs [data-tab="games"]'); await wait(300);
+  const gamesAudit = await p.evaluate(() => ({
+    shopCount: document.querySelectorAll('#home .shop-card').length,
+    hasXpText: /\b\d+\s*XP\b/i.test(document.getElementById('home').textContent || '')
+  }));
+  check(gamesAudit.shopCount === 0 && !gamesAudit.hasXpText, 'Adult mode hides Prize Shop card and XP labels on Games tab');
+  await p.click('#tabs [data-tab="today"]'); await wait(300);
+
+  // Adult Family Bridge ("Do Together with Youth") on Today.
+  check(await p.locator('#home .tsec[data-sec="goals"] [data-together-check]').count() === 1 && /Do Together with Youth/i.test(await txt(p, '#home .tsec[data-sec="goals"] [data-together-check]')), 'Adult Today Action Plan renders Do Together with Youth Family Bridge card');
+  await p.click('#home .tsec[data-sec="goals"] [data-together-check]'); await wait(250);
+  check(((await state(p)).togetherDone || {})['2026-10-20'] === 0, 'Un-toggling Together check persists sync-safe 0 in S.togetherDone');
 
   // Slice 2 & 3: Adult Morning Council Top 3 -> S.pro.tops[day] (private) + Pace-Driven Wilderness 40.
   await p.click('#home [data-open-blueprint]'); await wait(350);
@@ -188,13 +202,26 @@ export default async function growth({ port }) {
   await p.click('#home .tsec[data-sec="goals"] [data-bp-check="top:0"]'); await wait(300);
   check(((((((await state(p)).pro || {}).tops || {})['2026-10-20'] || {}).items || [])[0] || {}).done === true, 'Ticking Priority #1 on Today updates S.pro.tops[day].items[0].done');
 
-  // Evening Return & Report shows Wilderness Day 2 prompt and Top 3 Scorecard (1/3).
+  // Verify linking Priority #2 to a Big Rock stores YYYY-MM-DD date string (not boolean true) in S.pro.rocks.
+  await p.evaluate(() => {
+    const k = Object.keys(localStorage).find(x => /v1$/.test(x) && !x.includes('@'));
+    const s = JSON.parse(localStorage.getItem(k));
+    s.pro.rocks = { rk1: { text: 'Review shop floor metrics', wk: '2026-10-19', day: '2026-10-20', done: '', upd: Date.now() } };
+    s.pro.tops['2026-10-20'].items[1].rock = 'rk1';
+    localStorage.setItem(k, JSON.stringify(s));
+  });
+  await p.reload(); await wait(800);
+  await p.click('#home .tsec[data-sec="goals"] [data-bp-check="top:1"]'); await wait(300);
+  check((((((await state(p)).pro || {}).rocks || {}).rk1) || {}).done === '2026-10-20', 'Ticking a Big-Rock-linked priority on Today stores YYYY-MM-DD date string on the rock');
+
+  // Evening Return & Report shows Wilderness Day 2 prompt and Top 3 Scorecard (2/3).
   await triggerEvening(); await wait(300);
   const evAdultText = await txt(p, '#appBody');
-  check(/Wilderness Day 2/i.test(evAdultText) && /Top Priorities:\s*1\/3/i.test(evAdultText), 'Adult Evening Return & Report merges Wilderness Day prompt and Top 3 Scorecard');
+  check(/Wilderness Day 2/i.test(evAdultText) && /Top Priorities:\s*2\/3/i.test(evAdultText), 'Adult Evening Return & Report merges Wilderness Day prompt and Top 3 Scorecard');
   await p.click('#appClose'); await wait(250);
 
   // Slice 4: Book of Mormon sequential resume, Scholarly Vault, Deep Study Log, Watched Video filter & Next Unread Talk.
+  check(/Next:\s*1 Nephi 1/i.test(await txt(p, '#home [data-bom-open]')), 'Today Book of Mormon row displays sequential Next Unread Chapter');
   await p.click('#home [data-bom-open]'); await wait(300);
   check(await p.locator('#appBody [data-bom-resume="1 Nephi 1"]').count() === 1, 'Book of Mormon sheet displays sequential Next Unread Chapter resume button');
   await p.click('#appBody [data-bom-resume="1 Nephi 1"]'); await wait(500);
@@ -202,11 +229,11 @@ export default async function growth({ port }) {
   await p.click('#viewBack'); await wait(250);
   await p.evaluate(() => { const d = document.querySelector('#home details.more'); if (d) d.open = true; });
   await p.click('#home [data-open-deep-log]'); await wait(300);
-  await p.fill('#deepStudyTitle', 'followHIM Jeremiah Part 1');
+  await p.fill('#deepStudyTitle', 'followHIM Jeremiah 1:5 study');
   await p.fill('#deepStudyNotes', 'Covenant faithfulness in tough seasons');
   await p.click('#appBody [data-save-deep-log]'); await wait(350);
   const dlImp = Object.values((await state(p)).impressions || {}).find(x => x && !x.gone && x.kind === 'deeplog' && x.day === '2026-10-20');
-  check(dlImp && dlImp.title === 'followHIM Jeremiah Part 1', 'Deep Study Log saves extra study entry');
+  check(dlImp && dlImp.title === 'followHIM Jeremiah 1:5 study' && dlImp.ref === '', 'Deep Study Log saves extra study entry with empty ref so titles with colons do not collide with verse notes');
 
   await p.click('#tabs [data-tab="study"]'); await wait(400);
   await p.click('#home [data-study-kind="video"]'); await wait(350);

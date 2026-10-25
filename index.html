@@ -2618,7 +2618,7 @@
 
   .hud-xp[hidden], #levelBtn[hidden] { display: none !important; }
   body.adult-zero-xp #streakBtn { margin-right: auto; }
-  body.adult-zero-xp .pth-xp { display: none !important; }
+  body.adult-zero-xp .pth-xp, body.adult-zero-xp .shop-card, body.adult-zero-xp .ls-earn { display: none !important; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -3511,11 +3511,11 @@ const TreasureUp = (function () {
   // One part of the plan as rows: { card, done (null: not counted), html }.
   function entryRows(e, from) {
     const d = flowDay(e), at = flowAt(e), rows = [], add = (card, done, html) => rows.push({ card, done, html });
-    const was = from ? 'From ' + DAY_NAMES[d] + ' · ' : '';
+    const was = from ? 'From ' + DAY_NAMES[d] + ' · ' : '', isAdult = seasonWho() === 'adult';
     if (e.kind === 'day') {
       for (const u of readingPlan()[d]) {
         const done = unitRead(u), min = minutesOf([u]);
-        add('read-' + u.ref, done, flowRow(`data-chapter="${esc((u.chapter || u).ref)}"`, done, 'Read ' + esc(u.ref), was + (done ? 'Read' : min ? min + ' min · ' + READ_XP + ' XP' : READ_XP + ' XP')));
+        add('read-' + u.ref, done, flowRow(`data-chapter="${esc((u.chapter || u).ref)}"`, done, 'Read ' + esc(u.ref), was + (done ? 'Read' : min ? min + ' min' + (isAdult ? '' : ' · ' + READ_XP + ' XP') : (isAdult ? 'Chapter reading' : READ_XP + ' XP'))));
       }
       for (const r of dayReels(d)) {
         const a = S.answers[r.id];
@@ -3530,7 +3530,7 @@ const TreasureUp = (function () {
       add('friday', done, flowRow(`data-lesson="${at}"`, done, '🔭 ' + esc(entryName(e)), was + (items.length === 1 ? '1 reading' : items.length + ' readings')));
     } else if (e.kind === 'puzzle') {
       const done = entryItems(e).every(x => x.done);
-      add('puzzle', done, flowRow(`data-lesson="${at}"`, done, '🧩 The weekly puzzle', was + (done ? 'Solved' : reelsLeft() ? 'Opens when every reel is answered' : PUZZLE_XP + ' XP and a streak freeze')));
+      add('puzzle', done, flowRow(`data-lesson="${at}"`, done, '🧩 The weekly puzzle', was + (done ? 'Solved' : reelsLeft() ? 'Opens when every reel is answered' : (isAdult ? 'Sort 16 ideas · earns a streak freeze' : PUZZLE_XP + ' XP and a streak freeze'))));
     }
     return rows;
   }
@@ -3972,7 +3972,8 @@ const TreasureUp = (function () {
   }
   function bomRecord(k) {
     const day = k || dayKey(), dn = pathDoneOf(day);
-    if (!dn.bom) {
+    const alreadyLibToday = Object.entries(S.libRead || {}).some(([r, x]) => x && x.day === day && isBoM(r));
+    if (!dn.bom && !alreadyLibToday) {
       const rec = {}; payXp(rec, BOM_XP, 'Book of Mormon Living Water'); setPathDone(day, 'bomXp', rec);
     }
     setPathDone(day, 'bom', 1);
@@ -4468,7 +4469,7 @@ const TreasureUp = (function () {
       const idx = +field.slice(4), list = proTop(k), item = list[idx];
       if (!item) return;
       const nextState = !proItemDone(item);
-      if (item.rock) proPut('rocks', item.rock, { done: nextState });
+      if (item.rock) proPut('rocks', item.rock, { done: nextState ? k : '' });
       else { item.done = nextState; setTop(k, list); }
       if (idx === 0 && had && had[1].goalSid && had[1].goalStepId && ticked(seasonRec(had[1].goalSid), had[1].goalStepId, k) !== nextState) {
         tickStep(had[1].goalSid, had[1].goalStepId, k);
@@ -4503,11 +4504,10 @@ const TreasureUp = (function () {
   }
 
   function toggleTogetherCheck() {
-    const k = dayKey();
+    const k = dayKey(), isAdult = seasonWho() === 'adult';
     const map = S.togetherDone || (S.togetherDone = {});
     const nextState = !map[k];
-    if (nextState) map[k] = 1;
-    else delete map[k];
+    map[k] = nextState ? 1 : 0;
     const imps = S.impressions || (S.impressions = {});
     const had = Object.entries(imps).find(([, x]) => x && !x.gone && x.kind === 'together' && x.day === k);
     if (nextState) {
@@ -4515,7 +4515,7 @@ const TreasureUp = (function () {
       imps[id] = {
         kind: 'together',
         day: k,
-        text: 'Shared today’s scripture question or insight with Mom & Dad!',
+        text: isAdult ? 'Did a shared Luke 2:52 study, video, or game together with youth!' : 'Shared today’s scripture question or insight with Mom & Dad!',
         ref: 'Family Bridge',
         share: true,
         at: had ? had[1].at : Date.now(),
@@ -4527,7 +4527,7 @@ const TreasureUp = (function () {
     }
     save();
     refreshHome();
-    if (nextState) toast('👨‍👩‍👦 Shared with Mom & Dad!', 'Great job connecting your study with your family.');
+    if (nextState) toast(isAdult ? '👨‍👦 Done Together with Youth!' : '👨‍👩‍👦 Shared with Mom & Dad!', isAdult ? 'Strengthening the Luke 2:52 bond at home.' : 'Great job connecting your study with your family.');
   }
 
   /* ---------------- Growth Profile & Coach Engine ---------------- */
@@ -5208,7 +5208,7 @@ const TreasureUp = (function () {
           <div class="coach-step-dot"></div>
           <div class="coach-step-dot"></div>
         </div>
-        <p class="sh-small">“And Jesus increased in wisdom and stature, and in favour with God and man.” (Luke 2:52)</p>
+        <p class="sh-small">“And Jesus increased in wisdom and stature, and in favour with God and man.” (Luke 2:52) · <b>🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect</b> across 🕊️ Spiritual, 🤝 Social, 💪 Physical, 🧠 Intellectual.</p>
 
         <div class="sheet-group">
           <label>What is your name?</label>
@@ -5752,19 +5752,19 @@ const TreasureUp = (function () {
       out.push(bpCard('oneThing', !!isDoneOne, (bp.goalStepId && bp.youthArea ? areaOf(bp.youthArea).icon + ' ' + esc(areaOf(bp.youthArea).name) + ' growth' : 'Growth focus') + (bp.goalStepId ? ' · Season goal' : ''), bp.oneThing));
     }
     if (bp && bp.uplift) out.push(bpCard('uplift', isDoneUplift, kid ? '🤝 Someone to be kind to' : '🤝 Someone to uplift', bp.uplift));
-    if (kid) {
-      const togetherDone = !!(S.togetherDone || {})[k];
-      out.push({
+    const togetherDone = !!(S.togetherDone || {})[k];
+    out.push({
+      done: togetherDone,
+      html: tcRow(`data-together-check role="checkbox" aria-checked="${togetherDone}"`, {
         done: togetherDone,
-        html: tcRow(`data-together-check role="checkbox" aria-checked="${togetherDone}"`, {
-          done: togetherDone,
-          cls: 'together-check-item' + (togetherDone ? ' done' : ''),
-          title: 'Ask Mom or Dad 1 question from today’s reading or share 1 thing you learned',
-          sub: '👨‍👩‍👦 Do Together with Mom or Dad · Family Bridge',
-          go: ''
-        })
-      });
-    }
+        cls: 'together-check-item' + (togetherDone ? ' done' : ''),
+        title: kid
+          ? 'Ask Mom or Dad 1 question from today’s reading or share 1 thing you learned'
+          : 'Watch today’s video together, play 1 round of today’s Scripture game, or encourage a Luke 2:52 goal step',
+        sub: kid ? '👨‍👩‍👦 Do Together with Mom or Dad · Family Bridge' : '👨‍👦 Do Together with Youth · Luke 2:52 Family Bridge',
+        go: ''
+      })
+    });
     return out.concat(goalRows.filter(x => !(x.kind === 'goal' && bp && bp.goalStepId && x.r && x.r.x && x.r.x.st && x.r.x.st.id === bp.goalStepId)));
   }
 
@@ -7281,9 +7281,9 @@ const TreasureUp = (function () {
             <button class="sp-action-btn" data-sunday-step="${idx + 1}" style="background:#818cf8;color:#0f172a">Next Card ›</button>
           ` : `
             ${done ? `
-              <button class="sp-action-btn done" disabled>✓ Sunday Lesson Done (+25 XP)</button>
+              <button class="sp-action-btn done" disabled>✓ Sunday Lesson Done${seasonWho() === 'adult' ? '' : ' (+25 XP)'}</button>
             ` : `
-              <button class="sp-action-btn" data-sunday-finish="${esc(l.id)}" style="background:#818cf8;color:#0f172a">Finish Sunday Lesson 🎉 +25 XP</button>
+              <button class="sp-action-btn" data-sunday-finish="${esc(l.id)}" style="background:#818cf8;color:#0f172a">Finish Sunday Lesson 🎉${seasonWho() === 'adult' ? '' : ' +25 XP'}</button>
             `}
           `}
         </div>
@@ -7371,9 +7371,9 @@ const TreasureUp = (function () {
           ${lotPickerHtml('shares an impression')}
           <div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">
             ${done ? `
-              <button class="sp-action-btn done" disabled style="flex:1;justify-content:center">✓ Deep Dive Completed (+15 XP)</button>
+              <button class="sp-action-btn done" disabled style="flex:1;justify-content:center">✓ Deep Dive Completed${seasonWho() === 'adult' ? '' : ' (+15 XP)'}</button>
             ` : `
-              <button class="sp-action-btn" data-cream-finish="${esc(item.id)}" style="flex:1;justify-content:center;background:#f59e0b;color:#1c1406">Done ✓ +15 XP</button>
+              <button class="sp-action-btn" data-cream-finish="${esc(item.id)}" style="flex:1;justify-content:center;background:#f59e0b;color:#1c1406">Done ✓${seasonWho() === 'adult' ? '' : ' +15 XP'}</button>
             `}
           </div>
         ` : ''}
@@ -7584,28 +7584,28 @@ const TreasureUp = (function () {
       rows.push(moreRow(`data-card="${esc(x.id)}"`, !!(S.insights || {})[x.id], x.kind === 'quote' ? '“' + cut(x.quote, 70) + '”' : x.title,
         [x.kind === 'quote' ? 'Quote' + (s.who ? ' · ' + s.who : '') : KIND_NAME[x.kind] || (isJsp(x) ? 'Joseph Smith Papers' : 'Insight'), x.ref].filter(Boolean).join(' · ')));
     }
+    const isAdult = seasonWho() === 'adult';
     if (fk) {
-      const isAdult = seasonWho() === 'adult';
       for (const x of dayDeep(d)) rows.push(moreRow(`data-lesson="${fk}" data-focus="deep-${esc(x.id)}"`, !!S.deep[x.id], 'Go deeper: ' + x.read,
         S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question' + (isAdult ? '' : ' · ' + XP.bonus + ' XP')));
       const bon = reels.flatMap(r => bonusesOf(r).map((_, n) => ({ r, k: bonusKey(r.id, n) })));
       if (bon.length) {
         const got = bon.filter(b => S.bonus[b.k]).length, open = bon.filter(b => S.answers[b.r.id]).length;
         rows.push(moreRow(`data-lesson="${fk}" data-focus="bonus-"`, got === bon.length, bon.length === 1 ? 'A bonus question' : bon.length + ' bonus questions',
-          got === bon.length ? 'All done' : !open ? 'They open after the day’s questions · ' + XP.bonus + ' XP each'
-            : (got ? got + ' of ' + bon.length + ' done · ' : 'Find it in the reading · ') + XP.bonus + ' XP each'));
+          got === bon.length ? 'All done' : !open ? 'They open after the day’s questions' + (isAdult ? '' : ' · ' + XP.bonus + ' XP each')
+            : (got ? got + ' of ' + bon.length + ' done' : 'Find it in the reading') + (isAdult ? '' : ' · ' + XP.bonus + ' XP each')));
       }
       if (say) rows.push(moreRow(`data-lesson="${fk}" data-focus="say-${esc(say.id)}"`, !!S.sayings[say.id], 'Who said it?',
-        S.sayings[say.id] ? (S.sayings[say.id].right ? 'Right first time' : 'Answered') : 'A line from ' + say.ref + ' · ' + SAY_XP + ' XP'));
+        S.sayings[say.id] ? (S.sayings[say.id].right ? 'Right first time' : 'Answered') : 'A line from ' + say.ref + (isAdult ? '' : ' · ' + SAY_XP + ' XP')));
       if (reels.length) {
         const wrote = reels.some(r => S.notes[r.id]);
         rows.push(moreRow(`data-lesson="${fk}" data-focus="note-"`, wrote, 'Write a note',
-          wrote ? 'Saved in your notes' : reels.some(r => S.answers[r.id]) ? 'On a verse from today · ' + NOTE_XP + ' XP' : 'After the day’s questions · ' + NOTE_XP + ' XP'));
+          wrote ? 'Saved in your notes' : (reels.some(r => S.answers[r.id]) ? 'On a verse from today' : 'After the day’s questions') + (isAdult ? '' : ' · ' + NOTE_XP + ' XP')));
       }
     }
     if (fri >= 0) for (const x of fridayItems()) rows.push(moreRow(`data-lesson="4.${fri}" data-focus="deep-${esc(x.id)}"`, !!S.deep[x.id], x.title || 'Deep dive: ' + x.read,
-      'Friday deep dive · ' + (S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question · ' + XP.bonus + ' XP')));
-    if (pz >= 0) { const won = entryItems(plan[pz]).every(x => x.done); rows.push(moreRow(`data-lesson="5.${pz}" data-focus="puzzle"`, won, 'The weekly puzzle', won ? 'Solved' : reelsLeft() ? 'Opens when every reel is answered' : PUZZLE_XP + ' XP and a streak freeze')); }
+      'Friday deep dive · ' + (S.deep[x.id] ? (S.deep[x.id].right ? 'Right first time' : 'Answered') : 'Read it, then a question' + (isAdult ? '' : ' · ' + XP.bonus + ' XP'))));
+    if (pz >= 0) { const won = entryItems(plan[pz]).every(x => x.done); rows.push(moreRow(`data-lesson="5.${pz}" data-focus="puzzle"`, won, 'The weekly puzzle', won ? 'Solved' : reelsLeft() ? 'Opens when every reel is answered' : (isAdult ? 'Sort 16 ideas · earns a streak freeze' : PUZZLE_XP + ' XP and a streak freeze'))); }
     if (all.length > best.length) rows.push(moreRow('data-tab="study"', false, 'All ' + all.length + ' cards for this day', 'In the Study tab', '💡'));
     const deepLogged = !!Object.values(S.impressions || {}).find(x => x && !x.gone && x.kind === 'deeplog' && x.day === dayKey());
     rows.push(moreRow('data-open-deep-log', deepLogged, '🤿 Log Extra / Deep Study', deepLogged ? 'Saved in your study notes today' : 'Log a podcast, talk, chapter, or insight you studied', '🤿'));
@@ -7648,7 +7648,7 @@ const TreasureUp = (function () {
       day: k,
       title: title || 'Deep Study',
       text: text || title,
-      ref: title || 'Deep Study',
+      ref: '',
       at: had ? had[1].at : Date.now(),
       upd: Date.now()
     };
@@ -7693,7 +7693,7 @@ const TreasureUp = (function () {
     };
     return `<div class="day-card">${head}
       ${units.length ? `<div class="dc-chips">${units.map(u => chipHtml(u.ref, read(u), `data-past-chapter="${w.num}|${esc(at(u))}"`)).join('')}</div>` : ''}
-      ${left.length ? `<button class="board-link ls-start" data-past-chapter="${w.num}|${esc(at(left[0]))}">▶ Read ${esc(at(left[0]))}<small>Catch up: ${READ_XP} XP a chapter, marked read at its end</small></button>` : units.length ? '<p class="dc-note">✓ Every chapter of this day is read.</p>' : ''}
+      ${left.length ? `<button class="board-link ls-start" data-past-chapter="${w.num}|${esc(at(left[0]))}">▶ Read ${esc(at(left[0]))}<small>${seasonWho() === 'adult' ? 'Catch up: marked read at its end' : 'Catch up: ' + READ_XP + ' XP a chapter, marked read at its end'}</small></button>` : units.length ? '<p class="dc-note">✓ Every chapter of this day is read.</p>' : ''}
       ${reels.length ? `<div class="dc-rows">${reels.map(reelRow).join('')}</div>` : ''}
       ${weekRow}
     </div>`;
@@ -7791,7 +7791,7 @@ const TreasureUp = (function () {
   function toggleWatchedVideo(vidId) {
     if (!vidId) return;
     const map = S.watchedVideos || (S.watchedVideos = {});
-    if (map[vidId]) delete map[vidId];
+    if (map[vidId]) map[vidId] = '';
     else map[vidId] = dayKey();
     save();
     refreshHome();
@@ -8974,15 +8974,19 @@ const TreasureUp = (function () {
     if (!said && secs < readMinSecs(u)) libAsk = ref;
     else {
       libAsk = null;
+      const today = dayKey();
       const L = S.libRead || (S.libRead = {});
-      L[ref] = { day: dayKey(), secs: start ? Math.round(secs) : null, said: !!said, xp: 0 };
+      L[ref] = { day: today, secs: start ? Math.round(secs) : null, said: !!said, xp: 0 };
       if (S.libClock) delete S.libClock[ref];
       if (S.readPos) delete S.readPos[ref];
       markStudied();
-      const before = S.xp, rest = Math.max(0, READ_XP - partsPaid(ref));
+      const bomPaid = isBoM(ref) && bomOf(today) && bomOf(today).ch === ref ? ((pathDoneOf(today).bomXp || {}).xp || 0) : 0;
+      const before = S.xp, rest = Math.max(0, READ_XP - partsPaid(ref) - bomPaid);
       if (rest) grantXp(rest, 'Read ' + ref);
       L[ref].xp = S.xp - before;
+      if (isBoM(ref)) setPathDone(today, 'bom', 1);
       save();
+      refreshHome();
     }
     const end = $('viewBody').querySelector('.ch-mark');
     if (end) end.outerHTML = libReadEndHtml(u);
@@ -9051,7 +9055,7 @@ const TreasureUp = (function () {
       allBonus.length ? tile('🔎', 'Bonus finds', found, allBonus.length) : '',
       deep.length ? tile('🧭', 'Went deeper', deepRight, deep.length) : '',
       ins.length ? tile('💡', 'Insights read', insRead, ins.length) : '',
-      word('✏️', 'Notes', String(notes), notes ? `${notes * NOTE_XP} XP from notes` : 'Write one on a reel below'),
+      word('✏️', 'Notes', String(notes), notes ? (seasonWho() === 'adult' ? 'Saved in your notes' : `${notes * NOTE_XP} XP from notes`) : 'Write one on a reel below'),
       puzzle
     ].join('');
 
@@ -10890,7 +10894,7 @@ const TreasureUp = (function () {
     if (r.kind === 'part') return [r.p.of > 1 && 'Part ' + r.p.n + ' of ' + r.p.of, pathRowMin(r) + ' min', r.reels.length && 'then ' + qWord(r.reels.length)].filter(Boolean).join(' · ');
     if (r.kind === 'reels') return 'This week’s reels · ' + qWord(r.reels.length);
     if (r.kind === 'cfm') return r.c.x.h.replace(/^[“"]|[”"]$/g, '').replace(/\.$/, '');
-    if (r.kind === 'bom') return r.b.ch + ' · ' + r.b.hook.replace(/^[“"]|[”"]$/g, '');
+    if (r.kind === 'bom') return 'Next: ' + nextUnreadBomChapter() + ' · ' + r.b.ch + ' · ' + r.b.hook.replace(/^[“"]|[”"]$/g, '');
     if (r.kind === 'fsy') return `FSY Ch ${r.y.yl.m.chapter}: ${r.y.card.hook.replace(/^[“"]|[”"]$/g, '')} · 2 min`;
     if (r.kind === 'gc') return r.t.t.speaker;
     if (r.kind === 'goal') return 'My Season · ' + r.x.sub;
@@ -11767,11 +11771,11 @@ const TreasureUp = (function () {
   }
   function seasonHomeHtml() {
     if (nb.shelf) return shelfHtml();
-    const { s, rec, cur } = nbBook(), today = dayKey(), started = s.start <= today;
+    const { s, rec, cur } = nbBook(), today = dayKey(), started = s.start <= today, isAdult = seasonWho() === 'adult';
     const fg = cur && famHome && famHome.seasonGoal && famHome.seasonGoal.sid === s.id ? famHome.seasonGoal.text : '';
     const chk = cur ? checkWeek() : null, refl = seasonToReflect(), was = chk && chk.s.id === s.id && ((rec && rec.checks) || {})[chk.w];
-    const due = (chk && chk.s.id === s.id ? `<button class="nb-due${was ? ' done' : ''}" data-season="check"><span>🗓️ ${was ? 'This week’s check-in' : 'Weekend check-in'}<small>${was ? 'Done · change it' : 'How’s it going? · ' + SEASON_CHECK_XP + ' XP'}</small></span><span>›</span></button>` : '')
-      + (refl ? `<button class="nb-due" data-season="reflect"><span>🌟 Look back on ${esc(refl.name)}<small>Three questions for each goal · ${SEASON_REFLECT_XP} XP</small></span><span>›</span></button>` : '');
+    const due = (chk && chk.s.id === s.id ? `<button class="nb-due${was ? ' done' : ''}" data-season="check"><span>🗓️ ${was ? 'This week’s check-in' : 'Weekend check-in'}<small>${was ? 'Done · change it' : 'How’s it going?' + (isAdult ? '' : ' · ' + SEASON_CHECK_XP + ' XP')}</small></span><span>›</span></button>` : '')
+      + (refl ? `<button class="nb-due" data-season="reflect"><span>🌟 Look back on ${esc(refl.name)}<small>Three questions for each goal${isAdult ? '' : ' · ' + SEASON_REFLECT_XP + ' XP'}</small></span><span>›</span></button>` : '');
     // Pro (proOn): its five pages first, on this Season's notebook only; it opens on ⭐ Today.
     const pro = cur && proOn();
     if (pro && !nb.proSeen) { nb.proSeen = true; if (nb.tab === 'goals') nb.tab = proRoles().length ? 'ptoday' : 'pmission'; }
@@ -11826,7 +11830,7 @@ const TreasureUp = (function () {
     if (!d) return live ? `<button class="nb-done" data-done-ask="${esc(g.id)}">🏆 I finished it! ${adult ? 'Mark it done' : 'Ask Mom and Dad'}</button>` : '';
     if (d.st === 'pending') return `<div class="nb-wait">⏳ Waiting for Mom or Dad<small>Asked ${esc(mdShort(d.day))}${live ? ` · <button class="nb-link" data-done-undo="${esc(g.id)}">Take back</button>` : ''}</small></div>`;
     if (d.st === 'notyet') return `<div class="nb-notyet">Not yet${d.pnote ? `<span class="nb-hand">“${esc(d.pnote)}”${d.by ? ' — ' + esc(d.by) : ''}</span>` : ''}</div>${live ? `<button class="nb-done" data-done-ask="${esc(g.id)}">🏆 Ask again when it’s done</button>` : ''}`;
-    if (d.st === 'approved') return `<p class="nb-won">🏆 ${esc(d.by || 'Mom and Dad')} said done · +${fmtN(d.xp || 0)} XP</p>`;
+    if (d.st === 'approved') return `<p class="nb-won">🏆 ${esc(d.by || 'Mom and Dad')} said done${adult ? '' : ' · +' + fmtN(d.xp || 0) + ' XP'}</p>`;
     return `<p class="nb-won">🏆 Done${d.st === 'private' ? ', kept private' : ''}${live ? ` · <button class="nb-link" data-done-undo="${esc(g.id)}">Undo</button>` : ''}</p>`;
   }
   // A title whose last word keeps the 🔒 and the stamp with it, so they never wrap onto a line alone.
@@ -11848,7 +11852,7 @@ const TreasureUp = (function () {
       </div>`;
     };
     return `<section class="nb-page"><div class="nb-run"><span>My goals</span><span>${esc(s.name)}</span></div><h2 class="nb-h">My goals</h2>
-      <p class="nb-sub">What I picked, why, and every day I did it.</p>
+      <p class="nb-sub">What I picked, why, and every day I did it · 🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect across 🕊️ Spiritual, 🤝 Social, 💪 Physical, 🧠 Intellectual.</p>
       ${goals.map(goal).join('') || `<p class="nb-empty">${cur ? `No goals yet for ${esc(s.name)}. ${who === 'child' ? 'One is plenty.' : who === 'youth' ? 'Two is a good number: by the end of the year that’s two in every area.' : 'Pick what matters most.'}` : 'No goals to show.'}</p>`}
       ${goals.length ? '<p class="nb-key">Weekend check-ins: 👍 progressing · 🙋 needed help · 🔄 tried something different</p>' : ''}
       ${live && n < WHO[who].max ? (all ? '<button class="nb-add" data-season="discover">+ Add a goal</button>' : '<div class="board-actions"><button class="btn" data-season="discover">Plan my Season</button></div>') : ''}
@@ -11868,8 +11872,8 @@ const TreasureUp = (function () {
   function seasonNotes(s, print) {
     const inS = d => typeof d === 'string' && d <= s.end && d >= dayAdd(s.start, -7) && noteSeason(d) === s.id;
     const imps = Object.entries(S.impressions || {}).filter(([, x]) => x && !x.gone && inS(x.day) && (!print || nb.priv || x.share))
-      .map(([id, x]) => ({ id, imp: true, icon: x.kind === 'grateful' ? '🙏' : x.kind === 'still' ? '🕊️' : x.kind === 'blueprint' ? '🌅' : x.kind === 'evening' ? '🌙' : /:\d/.test(x.ref || '') ? '🖍' : '✍️', day: x.day, at: x.at || 0, ref: x.kind === 'grateful' ? '' : x.ref || '',
-        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + x.oneThing + (x.uplift ? ' · Uplift: ' + x.uplift : '') : x.kind === 'evening' ? 'Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.text || '', share: !!x.share }));
+      .map(([id, x]) => ({ id, imp: true, icon: x.kind === 'grateful' ? '🙏' : x.kind === 'still' ? '🕊️' : x.kind === 'blueprint' ? '🌅' : x.kind === 'evening' ? '🌙' : x.kind === 'deeplog' ? '🤿' : x.kind === 'together' ? '👨‍👩‍👦' : /:\d/.test(x.ref || '') ? '🖍' : '✍️', day: x.day, at: x.at || 0, ref: x.kind === 'grateful' ? '' : x.ref || '',
+        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + ([x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ') || 'Morning Council') : x.kind === 'evening' ? 'Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.kind === 'deeplog' ? 'Deep Study: ' + [x.title, x.text && x.text !== x.title ? x.text : ''].filter(Boolean).join(' — ') : x.text || '', share: !!x.share }));
     const reels = Object.values(S.notes || {}).filter(n => n && n.text && inS(n.day)).map(n => ({ icon: '✏️', day: n.day, at: n.at || 0, ref: n.ref || '', text: n.text, share: true }));
     return imps.concat(reels).sort((a, b) => b.day.localeCompare(a.day) || b.at - a.at);
   }
@@ -11890,12 +11894,12 @@ const TreasureUp = (function () {
   // Keep going (a goal carried into the next Season) is open from a Season's last two weeks to four weeks after it.
   const keepWindow = s => dayKey() >= dayAdd(s.end, -13) && dayDiff(s.end, dayKey()) <= 28;
   function nbLookHtml({ s, rec }, print) {
-    const who = seasonWho(), today = dayKey(), refl = seasonToReflect(), due = !!refl && refl.id === s.id, open = !print && due;
+    const who = seasonWho(), isAdult = who === 'adult', today = dayKey(), refl = seasonToReflect(), due = !!refl && refl.id === s.id, open = !print && due;
     const qs = [['learned', 'What did I learn?'], ['follow', who === 'child' ? 'How did working on this help me follow Jesus?' : 'How am I closer to the Savior?'], ['serve', 'How can I use it to serve others?']];
     const opens = dayAdd(s.end, -13), keep = !print && keepWindow(s), next = seasonAt(dayAdd(s.end, 1)), answers = (rec && rec.reflect) || {};
     const begun = Object.values(answers).some(r => r && Object.values(r).some(Boolean));
-    const sub = rec && rec.reflected ? 'Written ' + mdShort(rec.reflected.day) + ' · ' + SEASON_REFLECT_XP + ' XP'
-      : due ? (begun ? 'Started: finish it for ' : 'Open now: three questions for each goal · ') + SEASON_REFLECT_XP + ' XP'
+    const sub = rec && rec.reflected ? 'Written ' + mdShort(rec.reflected.day) + (isAdult ? '' : ' · ' + SEASON_REFLECT_XP + ' XP')
+      : due ? (isAdult ? (begun ? 'Started: finish your look back' : 'Open now: three questions for each goal') : (begun ? 'Started: finish it for ' : 'Open now: three questions for each goal · ') + SEASON_REFLECT_XP + ' XP')
       : today < opens ? 'Opens ' + mdShort(opens) + ', in the Season’s last two weeks.' : begun ? 'Started, not finished.' : 'Not written.';
     return `<section class="nb-page ruled"><div class="nb-run"><span>Looking back</span><span>${esc(s.name)}</span></div><h2 class="nb-h">Looking back</h2>
       <p class="nb-sub">${esc(sub)}</p>
@@ -12612,7 +12616,7 @@ const TreasureUp = (function () {
       : ['How can I develop my talents?', 'What responsibilities do I have right now?', 'What do I want to do better?'];
     const a = seasonArea, coachList = a ? coachSuggestedIdeas(a) : [];
     return `<div class="sh-title">🔎 Discover</div>
-      <p class="sh-small">Before you pick, think about it, and “ask Heavenly Father to help you know what you need to work on right now.”</p>
+      <p class="sh-small"><b>🔍 Discover → 🗺️ Plan → ⚡ Act → 🌟 Reflect</b> · Before you pick, think about it, and “ask Heavenly Father to help you know what you need to work on right now.”</p>
       <ul class="sea-qs">${qs.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
       <div class="eyebrow" style="margin-top:16px">Pick an area</div>
       <div class="sea-areas">${AREAS.map(x => `<button class="sea-areab${a === x.id ? ' on' : ''}" data-season-area="${x.id}"><b>${x.icon} ${esc(x.name)}</b><small>${esc(x.luke)}${thisYear(x.id) ? ' · ' + thisYear(x.id) + ' this year' : ''}</small></button>`).join('')}</div>
@@ -12686,7 +12690,7 @@ const TreasureUp = (function () {
   function checkHtml() {
     const c = checkWeek();
     if (!c) return `<div class="sh-title">🗓️ Check-in</div><p class="sh-small">The check-in opens on Saturday.</p><button class="today-alt" data-season="home">Back</button>`;
-    const rec = seasonRec(c.s.id), was = (rec.checks || {})[c.w];
+    const rec = seasonRec(c.s.id), was = (rec.checks || {})[c.w], isAdult = seasonWho() === 'adult';
     return `<div class="sh-title">🗓️ How's it going?</div>
       <p class="sh-small">The week of ${esc(mdShort(c.w))}. “How are you feeling about what you are learning?”</p>
       ${activeGoals(rec).map(g => {
@@ -12694,7 +12698,7 @@ const TreasureUp = (function () {
         return `<div class="sea-g"><div class="sea-g-text">${areaOf(g.area).icon} ${esc(g.text)}${g.private ? ' 🔒' : ''}</div><p class="sea-why">Ticked ${wk.done} of ${wk.of} this week</p>
           <div class="sea-stat">${Object.entries(STATUS).map(([k, w]) => `<button class="sh-pill${pick === k ? ' on' : ''}" data-check="${esc(g.id)}|${k}">${esc(w)}</button>`).join('')}</div></div>`;
       }).join('')}
-      <div class="board-actions"><button class="btn" data-check-save>${was ? 'Save' : 'Check in · +' + SEASON_CHECK_XP + ' XP'}</button><button class="btn ghost" data-season="home">Back</button></div>`;
+      <div class="board-actions"><button class="btn" data-check-save>${was ? 'Save' : (isAdult ? 'Check in' : 'Check in · +' + SEASON_CHECK_XP + ' XP')}</button><button class="btn ghost" data-season="home">Back</button></div>`;
   }
   function saveCheck() {
     const c = checkWeek();
@@ -12717,7 +12721,7 @@ const TreasureUp = (function () {
   function reflectHtml() {
     const s = seasonToReflect();
     if (!s) return `<div class="sh-title">🌟 Look back</div><p class="sh-small">This opens in a Season's last two weeks.</p><button class="today-alt" data-season="home">Back</button>`;
-    const rec = seasonRec(s.id), who = seasonWho();
+    const rec = seasonRec(s.id), who = seasonWho(), isAdult = who === 'adult';
     const qs = [['learned', 'What did I learn?'], ['follow', who === 'child' ? 'How did working on this help me follow Jesus?' : 'How am I closer to the Savior?'], ['serve', 'How can I use it to serve others?']];
     return `<div class="sh-title">🌟 Look back on ${esc(s.name)}</div>
       <p class="sh-small">${esc(seasonDates(s))}. Then celebrate!</p>
@@ -12728,7 +12732,7 @@ const TreasureUp = (function () {
           ${qs.map(([k, q]) => `<label class="sea-lbl">${esc(q)}</label><textarea class="field" data-refl="${esc(g.id)}|${k}" maxlength="500" rows="2">${esc(r[k] || '')}</textarea>`).join('')}
           ${keepWindow(s) && !isDone(g) ? `<div class="sea-stat"><button class="sh-pill${to ? ' on' : ''}" data-keep="${esc(s.id)}|${esc(g.id)}">${to ? '✓ Going on into ' + esc(next.name) : '↪ Keep going in ' + esc(next.name)}</button></div>` : ''}</div>`;
       }).join('')}
-      <div class="board-actions"><button class="btn" data-refl-save>${rec.reflected ? 'Save' : 'Done · +' + SEASON_REFLECT_XP + ' XP'}</button><button class="btn ghost" data-season="home">Back</button></div>`;
+      <div class="board-actions"><button class="btn" data-refl-save>${rec.reflected ? 'Save' : (isAdult ? 'Done' : 'Done · +' + SEASON_REFLECT_XP + ' XP')}</button><button class="btn ghost" data-season="home">Back</button></div>`;
   }
   // What's typed in the look back, kept (a Keep going redraws it, and saving reads it).
   function keepReflect() {
@@ -13756,7 +13760,7 @@ const TreasureUp = (function () {
     const pz = puzzleState();
     if (pz.status === 'won') return 'Solved ✓';
     if (pz.status === 'lost' && pzMode() === 'hard') return 'Out of Hard tries today · try Easy';
-    return pz.rewarded ? 'Ready' : 'Ready · ' + PUZZLE_XP + ' XP and a streak freeze';
+    return pz.rewarded ? 'Ready' : (seasonWho() === 'adult' ? 'Ready · earns a streak freeze' : 'Ready · ' + PUZZLE_XP + ' XP and a streak freeze');
   }
 
   const gameRow = (id, icon, title, desc, status, locked) => `
@@ -13766,7 +13770,7 @@ const TreasureUp = (function () {
     </button>`;
 
   function gamesHtml() {
-    const rows = [], family = [];
+    const rows = [], family = [], isAdult = seasonWho() === 'adult';
     // The Word of the day, from Today since the day became one path (2026-10-07).
     const tw = wordOfDay();
     if (tw) {
@@ -13778,7 +13782,7 @@ const TreasureUp = (function () {
     }
     if (WEEK.sayings && WEEK.sayings.length) {
       const got = WEEK.sayings.filter(x => S.sayings[x.id] && S.sayings[x.id].right).length;
-      rows.push(gameRow('sayings', '🗣️', 'Who said it?', 'Match ' + WEEK.sayings.length + ' lines from this week to who said them.', got + ' of ' + WEEK.sayings.length + ' right · ' + SAY_XP + ' XP each', false));
+      rows.push(gameRow('sayings', '🗣️', 'Who said it?', 'Match ' + WEEK.sayings.length + ' lines from this week to who said them.', got + ' of ' + WEEK.sayings.length + ' right' + (isAdult ? '' : ' · ' + SAY_XP + ' XP each'), false));
     }
     if (WEEK.words && WEEK.words.length) {
       rows.push(gameRow('word', '🔤', 'Verse Word', "Today's word is hiding in a verse. Six tries.", wordStatus(), false));
@@ -13796,10 +13800,10 @@ const TreasureUp = (function () {
     try { amigo = JSON.parse(localStorage.getItem('amigo.v1')) || {}; } catch (e) { /* storage blocked */ }
     const lessonsDone = Object.values(amigo.courses || {}).reduce((n, c) => n + Object.keys(c.done || {}).length, 0);
     const language = gameRow('amigo', '🌎', 'Wika', 'Wika is Tagalog for “language”: Spanish for friends at school, Tagalog from Tatay, and the treasure words in Hebrew and Greek. Five-minute lessons, a streak, and the letters: Baybayin, the alef-bet and Greek.',
-      lessonsDone ? lessonsDone + (lessonsDone > 1 ? ' lessons' : ' lesson') + ' done · its own XP, apart from Treasure Up’s' : 'Five minutes a day · its own XP, apart from Treasure Up’s', false);
+      lessonsDone ? lessonsDone + (lessonsDone > 1 ? ' lessons' : ' lesson') + ' done' + (isAdult ? '' : ' · its own XP, apart from Treasure Up’s') : 'Five minutes a day' + (isAdult ? '' : ' · its own XP, apart from Treasure Up’s'), false);
     const lock = arcadeLeft(), arc = id => lock ? '🔒 ' + arcadeLockLine(lock) : arcadeStatus(id);
     const strategy = gameRow('liberty', '🛡️', 'Title of Liberty', 'A strategy game from the Book of Mormon: Captain Moroni at the river Sidon, the Nephites against the Gadianton robbers, and a free battle where you build a city. Read each chapter to open its mission.',
-      lock ? '🔒 ' + arcadeLockLine(lock) : (libWon ? libWon + (libWon > 1 ? ' missions' : ' mission') + ' won · no XP, just for fun' : 'Read a chapter to open its mission · no XP, just for fun'), !!lock);
+      lock ? '🔒 ' + arcadeLockLine(lock) : (libWon ? libWon + (libWon > 1 ? ' missions' : ' mission') + ' won · just for fun' : 'Read a chapter to open its mission · just for fun'), !!lock);
     const arcade = gameRow('snake', '🚶', 'Wilderness Caravan', 'Gather manna in the camp of Israel, and eat the jar with the right answer to this week’s questions. Play locally or over the network.', arc('snake'), !!lock)
       + gameRow('ammon', '⚔️', 'Ammon at Sebus', 'Robbers come to scatter king Lamoni’s flock at the waters of Sebus (Alma 17). Stand against them with your sword and sling, and gather the sheep back. A question from this week after each level.', arc('ammon'), !!lock)
       + gameRow('look', '👀', 'Look and Live', 'Dodge the fiery serpents, and stop to look at the brass serpent on Moses’s pole to heal (Numbers 21). A question from this week after each level.', arc('look'), !!lock);
@@ -13807,8 +13811,9 @@ const TreasureUp = (function () {
   }
   // The Games tab: every game, in its groups.
   function gamesTabHtml() {
+    const isAdult = seasonWho() === 'adult';
     return `<div class="eyebrow">Games</div><h1 class="reel-hook lib-h">Play</h1>
-      <button class="shop-card" data-shop><span>🎁</span><span>Rewards shop<small>${fmtN(xpToSpend())} XP to spend on prizes</small></span><span>›</span></button>
+      ${isAdult ? '' : `<button class="shop-card" data-shop><span>🎁</span><span>Rewards shop<small>${fmtN(xpToSpend())} XP to spend on prizes</small></span><span>›</span></button>`}
       <div class="games-tab">${gamesHtml()}</div>`;
   }
   // A link to the games (Today's "Family games") opens the Games tab.
@@ -14312,7 +14317,7 @@ const TreasureUp = (function () {
   function wordStatus() {
     if (!todaysWord()) return '';
     const st = wordState();
-    return st.status === 'won' ? 'Solved today ✓' : st.status === 'lost' ? 'New word tomorrow' : 'Up to 15 XP · a new word every day';
+    return st.status === 'won' ? 'Solved today ✓' : st.status === 'lost' ? 'New word tomorrow' : (seasonWho() === 'adult' ? 'A new word every day' : 'Up to 15 XP · a new word every day');
   }
 
   function openWord() { vwTyped = ''; vwMsg = ''; openPlay('word', 'Verse Word'); renderGameStart('word', wordStatus(), '', wordState().guesses.length > 0 && wordState().status === 'playing'); }
@@ -14417,7 +14422,7 @@ const TreasureUp = (function () {
   }
 
   const climbStatus = () => reelsLeft() ? 'Answer all ' + WEEK.reels.length + ' reels to unlock · ' + reelsLeft() + ' left'
-    : S.climbDay === dayKey() ? 'Climbed today · more climbs are practice' : 'Up to 20 XP today';
+    : S.climbDay === dayKey() ? 'Climbed today · more climbs are practice' : (seasonWho() === 'adult' ? 'Ready to climb today' : 'Up to 20 XP today');
 
   // The first climb each day pays 2 XP for each right answer, as he gives
   // it; the day's climb is taken from the first answer on, so leaving and
@@ -14825,7 +14830,7 @@ const TreasureUp = (function () {
         <h2 class="reel-hook">${friday ? esc(d.title) : 'Read ' + linkRefs(d.read)}</h2>
         <p class="reel-body">${linkRefs(d.intro, deepPassage(d))}</p>
         ${url ? `<a class="deep-open" href="${esc(url)}" target="_blank" rel="noopener noreferrer">Open ${esc(web ? sourceLabel(d.read) : d.read)} ↗</a>` : ''}
-        ${pastQuizHtml(d, 'deep|' + d.id, t, deepHome(d), t ? 'Find it in the reading' : 'Find it in the reading · +' + XP.bonus + ' XP', ['deep', d.id])}
+        ${pastQuizHtml(d, 'deep|' + d.id, t, deepHome(d), t ? 'Find it in the reading' : 'Find it in the reading' + (seasonWho() === 'adult' ? '' : ' · +' + XP.bonus + ' XP'), ['deep', d.id])}
       </div>
     </article>`;
   }
@@ -14833,17 +14838,24 @@ const TreasureUp = (function () {
     if (!u || !u.ref) return '';
     const q = encodeURIComponent(u.ch || u.ref);
     const gl = readLink(u.ref);
+    const manual = week && week.lesson;
+    const words = treasureOf(week).filter(t => {
+      const m = /^(.+) (\d+):(\d+)$/.exec(t.x.ref), v = m ? Number(m[3]) : 0;
+      return m && `${m[1]} ${m[2]}` === u.ch && (u.whole || !u.from || (v >= u.from && v <= u.to));
+    });
     return `<details class="scholarly-vault" data-scholarly-vault style="margin:12px 0;padding:10px 12px;border-radius:12px;background:rgba(15,23,42,.55);border:1px solid rgba(251,191,36,.24)">
       <summary style="cursor:pointer;font-size:12px;font-weight:800;color:var(--gold);display:flex;align-items:center;justify-content:space-between;gap:8px;list-style:none">
         <span>🔍 Verse Insights &amp; Scholarly Vault · ${esc(u.ref)}</span>
         <span style="font-size:10.5px;color:rgba(255,255,255,.65);font-weight:700">Commentary &amp; Sources ▾</span>
       </summary>
       <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.82);line-height:1.45">
-        <p style="margin:0 0 8px">Use the layer pills above (<b>Plain</b>, <b>BSB</b>, <b>Hebrew/Greek</b>, <b>1830</b>, <b>Notes</b>) for verse-by-verse textual comparison and historical context, or open verified commentary below:</p>
+        <p style="margin:0 0 8px">Built-in textual layers above: <b>Plain</b>, <b>BSB</b> (Berean Standard Bible), <b>LXX / Dead Sea Scrolls</b>, <b>Hebrew/Greek</b> lexicon, <b>JST / 1830</b> textual changes, and <b>Notes</b>.</p>
+        ${words.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">${words.map(t => `<button type="button" class="tw-chip" data-treasure="${esc(t.x.id)}">💎 ${twWordHtml(t.x, 'tw-w')} <span class="tw-k">${esc(t.x.kjv)} (${esc(t.x.ref)})</span></button>`).join('')}</div>` : ''}
         <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="sp-back-btn" href="https://scripturecentral.org/search?q=${q}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">🏛️ Scripture Central (${esc(u.ch || u.ref)}) ↗</a>
-          <a class="sp-back-btn" href="https://www.youtube.com/results?search_query=${encodeURIComponent('followHIM podcast ' + (u.ch || u.ref))}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">🎙️ followHIM Podcast ↗</a>
-          ${gl ? `<a class="sp-back-btn" href="${esc(gl)}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">📖 Gospel Library ↗</a>` : ''}
+          <a class="sp-back-btn" href="https://www.youtube.com/results?search_query=${encodeURIComponent('followHIM podcast ' + (u.ch || u.ref))}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">🎙️ followHIM / BYU ↗</a>
+          ${manual ? `<a class="sp-back-btn" href="${esc(manual)}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">📘 Gospel Library Manual ↗</a>` : ''}
+          ${gl ? `<a class="sp-back-btn" href="${esc(gl)}" target="_blank" rel="noopener noreferrer" style="margin:0;font-size:11px;padding:5px 10px;width:auto;text-decoration:none">📖 Gospel Library (${esc(u.ref)}) ↗</a>` : ''}
         </div>
       </div>
     </details>`;
@@ -19178,15 +19190,27 @@ const TreasureUp = (function () {
     M.impressions = newerById(R.impressions, L.impressions);
     M.marks = newerById(R.marks, L.marks);
     // Settings: one changed on this device since they last met wins; else the family's.
-    for (const key of ['seasonWho', 'stagePin', 'proMode', 'stillPrefs', 'sayPos', 'profile', 'studyMode']) {
+    for (const key of ['seasonWho', 'stagePin', 'proMode', 'stillPrefs', 'sayPos', 'studyMode']) {
       if (JSON.stringify(L[key]) !== JSON.stringify(B[key]) && L[key] !== undefined) M[key] = L[key];
       else if (M[key] === undefined && L[key] !== undefined) M[key] = L[key];
+    }
+    if (L.profile || R.profile) {
+      const lp = L.profile || {}, rp = R.profile || {}, bp = B.profile || {};
+      if ((lp.upd || 0) !== (rp.upd || 0)) M.profile = (lp.upd || 0) > (rp.upd || 0) ? lp : rp;
+      else if (JSON.stringify(lp) !== JSON.stringify(bp) && L.profile !== undefined) M.profile = lp;
+      else M.profile = rp.upd ? rp : lp;
     }
     delete M.preferredTrans;
     M.arcadeOpen = [R.arcadeOpen, L.arcadeOpen].filter(Boolean).sort().pop() || '';
     // This week's shorts and mini-lessons: done on either device stays done, its XP paid once.
     M.shortsDone = Object.assign({}, L.shortsDone || {}, R.shortsDone || {});
-    for (const key of ['answers', 'bonus', 'deep', 'sayings', 'recall', 'sayRecall', 'read', 'found', 'insights', 'sunday', 'talks', 'picks', 'watchedVideos', 'togetherDone']) M[key] = Object.assign({}, L[key] || {}, R[key] || {});
+    for (const key of ['answers', 'bonus', 'deep', 'sayings', 'recall', 'sayRecall', 'read', 'found', 'insights', 'sunday', 'talks', 'picks']) M[key] = Object.assign({}, L[key] || {}, R[key] || {});
+    for (const key of ['watchedVideos', 'togetherDone']) {
+      M[key] = Object.assign({}, R[key] || {}, L[key] || {});
+      for (const k in L[key] || {}) {
+        if (has(B[key], k) && L[key][k] === B[key][k] && has(R[key], k)) M[key][k] = R[key][k];
+      }
+    }
     if (L.w40 || R.w40) {
       const lw = L.w40 || {}, rw = R.w40 || {};
       M.w40 = Object.assign({}, rw, lw, {
@@ -20669,10 +20693,10 @@ const TreasureUp = (function () {
   }
   function renderLesson() {
     if (!lesson) return;
-    const L = lesson, step = L.steps[L.at], xp = S.xp - L.xp0;
+    const L = lesson, step = L.steps[L.at], xp = S.xp - L.xp0, isAdult = seasonWho() === 'adult';
     L.bar = Math.max(L.bar || 0, Math.round(L.at / L.steps.length * 100));   // a miss queued for the end never moves it back
     $('lessonBar').style.width = L.bar + '%';
-    $('lessonXp').textContent = xp ? '+' + xp + ' XP' : '';
+    $('lessonXp').textContent = xp && !isAdult ? '+' + xp + ' XP' : '';
     const body = $('lessonBody'), foot = $('lessonFoot');
     foot.className = 'ls-foot' + (L.checked ? (L.ok ? ' good' : ' bad') : '');
     body.dataset.step = step ? step.kind : 'end';
@@ -20686,7 +20710,7 @@ const TreasureUp = (function () {
       : step.kind === 'cfm' ? 'Come Follow Me · part ' + step.c.n + ' of ' + step.c.of : step.kind === 'bom' ? '📜 Book of Mormon · Living Water' : step.kind === 'fsy' ? (step.y.kind === 'mag' ? '📖 FSY Magazine' : '⛪ Youth Study · FSY Ch ' + step.y.yl.m.chapter)
       : step.kind === 'gc' ? '🎤 General conference · talk ' + step.t.n + ' of ' + step.t.of
       : step.kind === 'goals' ? '🌱 My Season · ' + esc(seasonNow().name) : step.kind === 'thanks' ? '🙏 Grateful for…'
-      : step.kind === 'bonus' ? esc('Bonus · find it in ' + sourceLabel(step.q.source) + ' · +' + XP.bonus + ' XP')
+      : step.kind === 'bonus' ? esc('Bonus · find it in ' + sourceLabel(step.q.source) + (isAdult ? '' : ' · +' + XP.bonus + ' XP'))
       : step.kind === 'insight' ? { quote: '💬 Quote', video: '🎬 Video' }[step.x.kind] || LESSON_KIND.insight : LESSON_KIND[step.kind]}${stepFixHtml(step)}</div>`;
     if (step.kind === 'chapter') {
       // The chapter itself, or, without its text, the way to it in Gospel Library.
@@ -20826,7 +20850,7 @@ const TreasureUp = (function () {
       const left = reelsLeft();
       html += `<div class="ls-prompt">The weekly puzzle</div>
         <p class="reel-body">${left ? `It opens once the week's reels are answered: ${left === 1 ? '1 is' : left + ' are'} left.`
-          : `Sixteen ideas from this week. Put each one in its lesson section, for ${PUZZLE_XP} XP and a streak freeze.`}</p>`;
+          : `Sixteen ideas from this week. Put each one in its lesson section${isAdult ? ', to earn a streak freeze' : `, for ${PUZZLE_XP} XP and a streak freeze`}.`}</p>`;
     }
     body.innerHTML = html;
     body.scrollTop = 0;
@@ -20839,18 +20863,18 @@ const TreasureUp = (function () {
     let footHtml;
     if (step.kind === 'read' || step.kind === 'insight' || step.kind === 'sunintro' || step.kind === 'sunread') footHtml = `<button class="ls-go" data-ls="next">Continue</button>`;
     else if (step.kind === 'cfm' || step.kind === 'gc' || step.kind === 'goals') footHtml = `<button class="ls-go" data-ls="${step.kind}done">Continue</button>`;
-    else if (step.kind === 'bom') footHtml = `<button class="ls-go" data-ls="bomdone">I read it · +${BOM_XP} XP</button><button class="ls-alt" data-ls="bomskip">Not today</button>`;
-    else if (step.kind === 'fsy' && !step.choices) footHtml = `<button class="ls-go" data-ls="fsydone">Done · +${FSY_XP} XP</button>`;
+    else if (step.kind === 'bom') footHtml = `<button class="ls-go" data-ls="bomdone">I read it${isAdult ? '' : ' · +' + BOM_XP + ' XP'}</button><button class="ls-alt" data-ls="bomskip">Not today</button>`;
+    else if (step.kind === 'fsy' && !step.choices) footHtml = `<button class="ls-go" data-ls="fsydone">Done${isAdult ? '' : ' · +' + FSY_XP + ' XP'}</button>`;
     else if (step.kind === 'thanks') footHtml = `<button class="ls-go" data-ls="thanks">Finish</button><button class="ls-alt" data-ls="thanksskip">Skip for today</button>`;
     else if (step.kind === 'note') {
-      footHtml = L.checked ? `<div class="ls-say">Saved in your notes${L.earned ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div><button class="ls-go" data-ls="next">Continue</button>`
+      footHtml = L.checked ? `<div class="ls-say">Saved in your notes${L.earned && !isAdult ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div><button class="ls-go" data-ls="next">Continue</button>`
         : `<button class="ls-go" data-ls="savenote">Save note</button><button class="ls-alt" data-ls="next">Skip</button>`;
     }
     else if (step.kind === 'chapter') {
       // Opens once he's reached the end of the chapter here, or gone to read it in Gospel Library.
       // Quicker than a real read, it asks him first; then the XP.
       const what = part ? 'verses ' + part.from + '–' + part.to : step.u.ref;
-      if (L.checked) footHtml = `<div class="ls-say">✓ ${esc(step.u.ref)}${L.earned ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div><button class="ls-go" data-ls="next">Continue</button>`;
+      if (L.checked) footHtml = `<div class="ls-say">✓ ${esc(step.u.ref)}${L.earned && !isAdult ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div><button class="ls-go" data-ls="next">Continue</button>`;
       else if (L.askRead) footHtml = `<div class="ls-say">That was quick. Did you read all of ${esc(what)}?</div>
         <button class="ls-go" data-ls="readyes">Yes, I read every verse</button>
         <button class="ls-alt" data-ls="readnot">Not yet</button>`;
@@ -20861,7 +20885,7 @@ const TreasureUp = (function () {
       footHtml = reelsLeft() ? `<button class="ls-go" data-ls="next">Continue</button>` : `<button class="ls-go" data-ls="puzzle">Start the puzzle</button>`;
     } else if (L.checked) {
       const answer = step.kind === 'find' ? step.answer : step.right;
-      footHtml = `<div class="ls-say">${L.ok ? ['Nice!', 'Great job!', 'You got it!'][L.at % 3] : 'Correct answer:'}${L.earned ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div>
+      footHtml = `<div class="ls-say">${L.ok ? ['Nice!', 'Great job!', 'You got it!'][L.at % 3] : 'Correct answer:'}${L.earned && !isAdult ? ` <span class="ls-earn">+${L.earned} XP</span>` : ''}</div>
         ${!L.ok ? `<div class="ls-why" style="font-weight:800;color:#fff">${esc(answer)}</div>` : ''}
         ${step.why ? `<div class="ls-why">${linkRefs(step.why, step.home)}</div>` : ''}
         ${/^say/.test(step.kind) ? `<div class="ls-why">${linkRefs(step.ref)}</div>` : ''}
@@ -20880,14 +20904,14 @@ const TreasureUp = (function () {
   }
 
   function renderLessonEnd(body, foot) {
-    const L = lesson, e = L.entry, secs = Math.round((Date.now() - L.start) / 1000), xp = S.xp - L.xp0, streak = streakNow(), charge = chargeOf(streak), up = nextCharge(streak);
+    const L = lesson, e = L.entry, secs = Math.round((Date.now() - L.start) / 1000), xp = S.xp - L.xp0, streak = streakNow(), charge = chargeOf(streak), up = nextCharge(streak), isAdult = seasonWho() === 'adult';
     const name = e ? entryName(e) : "Today's warm-up";
     // Keep going, once he's said yes today: a part of it done leads straight into the next.
     const keeping = keepOn === dayKey() && !L.practice && !L.focus && e && /^(further|friday|puzzle)$/.test(e.kind);
     const queue = !L.practice && !L.focus ? keepQueue() : [];
     if (keeping && queue.length) {
       const lvl = L.level;
-      toast('✓ ' + name, (xp ? '+' + xp + ' XP · ' : '') + 'Next: ' + entryName(queue[0].e));
+      toast('✓ ' + name, (xp && !isAdult ? '+' + xp + ' XP · ' : '') + 'Next: ' + entryName(queue[0].e));
       closeLesson();
       if (!lvl) openLesson(queue[0].key);   // a new level shows its moment first; Today's button goes on from there
       return;
@@ -20907,13 +20931,13 @@ const TreasureUp = (function () {
       <div class="ls-prompt">${L.practice ? 'Practice done!' : todays ? 'Today’s study: done!' : 'Lesson complete!'}</div>
       <p class="reel-body">${esc(name)}</p>${e && e.kind === 'sunday' ? sunAfterHtml(e.l) : ''}
       <div class="ls-stats">
-        <div class="ls-stat"><b>+${xp}</b><span>XP</span></div>
+        ${isAdult ? '' : `<div class="ls-stat"><b>+${xp}</b><span>XP</span></div>`}
         <div class="ls-stat"><b>${L.scored ? Math.round(L.right / L.scored * 100) : 100}%</b><span>Right first time</span></div>
         <div class="ls-stat"><b>${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}</b><span>Time</span></div></div>
-      ${streak ? `<p class="ls-streak">🔥 ${streak}-day streak${charge > 1 ? ` · ⚡ XP ×${charge}` : ''}</p>` : ''}
-      ${streak && up ? `<p class="fam-note" style="margin-top:4px">${up[0] - streak === 1 ? '1 more day' : up[0] - streak + ' more days'} to ⚡ XP ×${up[1]}</p>` : ''}
-      ${L.level ? `<p class="ls-news">⭐ Level ${L.level}: ${esc(LEVEL_TITLES[L.level - 1])}</p>` : ''}
-      ${L.rewards.map(t => `<p class="ls-news">🎁 Reward unlocked: ${esc(t)} · show a parent</p>`).join('')}
+      ${streak ? `<p class="ls-streak">🔥 ${streak}-day streak${charge > 1 && !isAdult ? ` · ⚡ XP ×${charge}` : ''}</p>` : ''}
+      ${streak && up && !isAdult ? `<p class="fam-note" style="margin-top:4px">${up[0] - streak === 1 ? '1 more day' : up[0] - streak + ' more days'} to ⚡ XP ×${up[1]}</p>` : ''}
+      ${L.level && !isAdult ? `<p class="ls-news">⭐ Level ${L.level}: ${esc(LEVEL_TITLES[L.level - 1])}</p>` : ''}
+      ${isAdult ? '' : L.rewards.map(t => `<p class="ls-news">🎁 Reward unlocked: ${esc(t)} · show a parent</p>`).join('')}
       ${fk && !ask ? `<button class="ls-further" data-ls="further" data-key="${fk}">🔭 Go further<small>${esc(furtherParts(e.d))}</small></button>` : ''}
       ${ask ? `<p class="fam-note">${esc(queue.map(q => q.e.kind === 'further' ? furtherParts(q.e.d) : q.e.kind === 'friday' ? 'the Friday deep dive' : 'the weekly puzzle').join(' · '))}</p>` : ''}
       ${allDone ? '<p class="ls-news">✓ Everything for today is done</p>' : ''}
@@ -22934,6 +22958,8 @@ const TreasureUp = (function () {
     $('lesson').addEventListener('click', e => {
       const clip = e.target.closest('button.clip');
       if (clip) { playClip(clip); return; }
+      const tw = e.target.closest('[data-treasure]');
+      if (tw) { openTreasure(tw.dataset.treasure); return; }
       const layer = e.target.closest('[data-layer]');
       if (layer) { toggleLayer(layer); return; }
       const jump = e.target.closest('[data-jump]');
