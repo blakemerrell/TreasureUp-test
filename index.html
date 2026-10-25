@@ -4502,6 +4502,34 @@ const TreasureUp = (function () {
     if (nextState) toast('✓ Focus Accomplished', 'Living your blueprint today!');
   }
 
+  function toggleTogetherCheck() {
+    const k = dayKey();
+    const map = S.togetherDone || (S.togetherDone = {});
+    const nextState = !map[k];
+    if (nextState) map[k] = 1;
+    else delete map[k];
+    const imps = S.impressions || (S.impressions = {});
+    const had = Object.entries(imps).find(([, x]) => x && !x.gone && x.kind === 'together' && x.day === k);
+    if (nextState) {
+      const id = had ? had[0] : seaId('tg');
+      imps[id] = {
+        kind: 'together',
+        day: k,
+        text: 'Shared today’s scripture question or insight with Mom & Dad!',
+        ref: 'Family Bridge',
+        share: true,
+        at: had ? had[1].at : Date.now(),
+        upd: Date.now()
+      };
+    } else if (had) {
+      imps[had[0]].gone = true;
+      imps[had[0]].upd = Date.now();
+    }
+    save();
+    refreshHome();
+    if (nextState) toast('👨‍👩‍👦 Shared with Mom & Dad!', 'Great job connecting your study with your family.');
+  }
+
   /* ---------------- Growth Profile & Coach Engine ---------------- */
   const PROFILE_XP = 25;
   const DEFAULT_KID_INTERESTS = [
@@ -5724,6 +5752,19 @@ const TreasureUp = (function () {
       out.push(bpCard('oneThing', !!isDoneOne, (bp.goalStepId && bp.youthArea ? areaOf(bp.youthArea).icon + ' ' + esc(areaOf(bp.youthArea).name) + ' growth' : 'Growth focus') + (bp.goalStepId ? ' · Season goal' : ''), bp.oneThing));
     }
     if (bp && bp.uplift) out.push(bpCard('uplift', isDoneUplift, kid ? '🤝 Someone to be kind to' : '🤝 Someone to uplift', bp.uplift));
+    if (kid) {
+      const togetherDone = !!(S.togetherDone || {})[k];
+      out.push({
+        done: togetherDone,
+        html: tcRow(`data-together-check role="checkbox" aria-checked="${togetherDone}"`, {
+          done: togetherDone,
+          cls: 'together-check-item' + (togetherDone ? ' done' : ''),
+          title: 'Ask Mom or Dad 1 question from today’s reading or share 1 thing you learned',
+          sub: '👨‍👩‍👦 Do Together with Mom or Dad · Family Bridge',
+          go: ''
+        })
+      });
+    }
     return out.concat(goalRows.filter(x => !(x.kind === 'goal' && bp && bp.goalStepId && x.r && x.r.x && x.r.x.st && x.r.x.st.id === bp.goalStepId)));
   }
 
@@ -21994,6 +22035,7 @@ const TreasureUp = (function () {
       if (e.target.closest('[data-filter-unwatched]')) { videoFilterUnwatched = !videoFilterUnwatched; refreshHome(); return; }
       const bpc = e.target.closest('[data-bp-check]');
       if (bpc) { toggleBlueprintCheck(bpc.dataset.bpCheck); return; }
+      if (e.target.closest('[data-together-check]')) { toggleTogetherCheck(); return; }
       const bmo = e.target.closest('[data-bom-open]');
       if (bmo) { openBomSheet(dayKey(), bmo.dataset.bomOpen); return; }
       const fso = e.target.closest('[data-fsy-open]');
