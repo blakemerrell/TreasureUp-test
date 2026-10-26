@@ -6477,8 +6477,8 @@ const TreasureUp = (function () {
   }
   // An impression's words, wherever they're listed: a day's gratitude as its lines.
   const impWords = x => x.kind === 'grateful' ? '🙏 ' + (x.items || []).join(' · ')
-    : x.kind === 'blueprint' ? '🌅 Blueprint: ' + [x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ')
-    : x.kind === 'evening' ? '🌙 Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ')
+    : x.kind === 'blueprint' ? (x.oneThing || x.uplift ? '🌅 Blueprint: ' + [x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ') : '')
+    : x.kind === 'evening' ? (x.mercies || x.wins || x.surrender ? '🌙 Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : '')
     : x.text;
 
   // Who's using the app, by name (2026-10-05: "Make it so the app tells
@@ -12183,9 +12183,9 @@ const TreasureUp = (function () {
   // cards already.
   function seasonNotes(s, print) {
     const inS = d => typeof d === 'string' && d <= s.end && d >= dayAdd(s.start, -7) && noteSeason(d) === s.id;
-    const imps = Object.entries(S.impressions || {}).filter(([, x]) => x && !x.gone && inS(x.day) && (!print || nb.priv || x.share))
+    const imps = Object.entries(S.impressions || {}).filter(([, x]) => x && !x.gone && inS(x.day) && (!print || nb.priv || x.share) && (x.kind !== 'blueprint' || x.oneThing || x.uplift))
       .map(([id, x]) => ({ id, imp: true, icon: x.kind === 'grateful' ? '🙏' : x.kind === 'still' ? '🕊️' : x.kind === 'blueprint' ? '🌅' : x.kind === 'evening' ? '🌙' : x.kind === 'deeplog' ? '🤿' : x.kind === 'together' ? '👨‍👩‍👦' : /:\d/.test(x.ref || '') ? '🖍' : '✍️', day: x.day, at: x.at || 0, ref: x.kind === 'grateful' ? '' : x.ref || '',
-        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + ([x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ') || 'Morning Council') : x.kind === 'evening' ? 'Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.kind === 'deeplog' ? 'Deep Study: ' + [x.title, x.text && x.text !== x.title ? x.text : ''].filter(Boolean).join(' — ') : x.text || '', share: !!x.share }));
+        text: x.kind === 'grateful' ? 'Grateful for ' + (x.items || []).join(' · ') : x.kind === 'blueprint' ? 'Blueprint: ' + [x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ') : x.kind === 'evening' ? 'Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ') : x.kind === 'deeplog' ? 'Deep Study: ' + [x.title, x.text && x.text !== x.title ? x.text : ''].filter(Boolean).join(' — ') : x.text || '', share: !!x.share }));
     const reels = Object.values(S.notes || {}).filter(n => n && n.text && inS(n.day)).map(n => ({ icon: '✏️', day: n.day, at: n.at || 0, ref: n.ref || '', text: n.text, share: true }));
     return imps.concat(reels).sort((a, b) => b.day.localeCompare(a.day) || b.at - a.at);
   }
