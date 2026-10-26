@@ -3010,12 +3010,29 @@ const TreasureUp = (function () {
     weekChapters: 0  // how many chapters this week's reading has, for the year's count
   });
 
+  const COACH_PRIVATE_KEYS = [
+    'peakMoment', 'pinchMirror', 'cclmNote', 'cclmRatings', 'cclmDrift', 'cclmDrifts',
+    'cclmDomain', 'cclmPlaybook', 'cclmFocusWho', 'cclmSituation', 'superpower', 'milestone', 'funnelValues'
+  ];
+
+  function migrateProfileCoach(st) {
+    if (!st || !st.profile || !COACH_PRIVATE_KEYS.some(k => st.profile[k] !== undefined)) return st;
+    const pro = st.pro || (st.pro = { mission: { text: '', upd: 0 }, coach: {}, roles: {}, goals: {}, rocks: {}, tops: {}, months: {} });
+    const coach = pro.coach || (pro.coach = {});
+    for (const k of COACH_PRIVATE_KEYS) {
+      if (st.profile[k] !== undefined && coach[k] === undefined) coach[k] = st.profile[k];
+      delete st.profile[k];
+    }
+    if (!coach.upd) coach.upd = st.profile.upd || Date.now();
+    return st;
+  }
+
   // Every storage access is wrapped: private windows and blocked site data
   // throw here, and the app should still work when they do.
   function load() {
     try {
       const raw = localStorage.getItem(STORE_KEY);
-      if (raw) return Object.assign(freshState(), JSON.parse(raw));
+      if (raw) return migrateProfileCoach(Object.assign(freshState(), JSON.parse(raw)));
     } catch (e) { /* fall through to a fresh profile */ }
     return freshState();
   }
@@ -4864,11 +4881,6 @@ const TreasureUp = (function () {
     };
   }
 
-  const COACH_PRIVATE_KEYS = [
-    'peakMoment', 'pinchMirror', 'cclmNote', 'cclmRatings', 'cclmDrift', 'cclmDrifts',
-    'cclmDomain', 'cclmPlaybook', 'cclmFocusWho', 'cclmSituation', 'superpower', 'milestone', 'funnelValues'
-  ];
-
   // A birthday month ("2015-04") gives the age and the Children and Youth stage:
   // Primary until January of the year a child turns 12, then youth through the
   // year they turn 18 (2026-10-11: "will turn 12 next April"; the stage moves
@@ -4891,16 +4903,12 @@ const TreasureUp = (function () {
   const turning12 = p => !!(p && p.born && stageFrom(p.born) === 'child' && Number(dayKey().slice(0, 4)) === Number(p.born.slice(0, 4)) + 11);
   function profileOf() {
     const coach = (S.pro && S.pro.coach) || {};
-    if (S.profile) {
-      // His stage today, from the birthday (or a stage picked in the Season this year): a copy, so
-      // reading it never looks like an edit to the family's merge.
-      const who = S.profile.who === 'adult' || !S.profile.born ? S.profile.who : S.stagePin && S.stagePin.y === dayKey().slice(0, 4) ? S.stagePin.who : stageFrom(S.profile.born);
-      return Object.assign({}, S.profile, coach, { who });
-    }
-    const who = seasonWho();
+    const who = S.profile
+      ? (S.profile.who === 'adult' || !S.profile.born ? S.profile.who : S.stagePin && S.stagePin.y === dayKey().slice(0, 4) ? S.stagePin.who : stageFrom(S.profile.born))
+      : seasonWho();
     const isKid = who !== 'adult';
     const name = (F && F.name) || S.ownerName || '';
-    return Object.assign({
+    const defaults = {
       name,
       role: isKid ? 'kid' : 'parent',
       age: null,   // asked in the profile, never written into the (public) code
@@ -4919,7 +4927,8 @@ const TreasureUp = (function () {
       cclmNote: '',
       cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 },
       who
-    }, coach);
+    };
+    return S.profile ? Object.assign(defaults, S.profile, coach, { who }) : Object.assign(defaults, coach);
   }
 
   function valuesTriadOf(p = profileOf()) {
@@ -4932,11 +4941,11 @@ const TreasureUp = (function () {
     const was = profileOf(), now = Date.now();
     const p = Object.assign({}, was, data, { upd: now });
     const mustBeKid = (F && F.role === 'kid') || !!(p.born && stageFrom(p.born) !== 'adult');
-    if (mustBeKid && p.who === 'adult') {
-      p.who = p.born ? stageFrom(p.born) : (was.who && was.who !== 'adult' ? was.who : 'youth');
-    }
-    if (p.born && p.who !== 'adult') {
-      p.who = stageFrom(p.born);
+    if (p.born) {
+      const bStage = stageFrom(p.born);
+      p.who = (F && F.role === 'kid' && bStage === 'adult') ? (was.who && was.who !== 'adult' ? was.who : 'youth') : bStage;
+    } else if (mustBeKid && p.who === 'adult') {
+      p.who = was.who && was.who !== 'adult' ? was.who : 'youth';
     }
     if (p.who) { S.seasonWho = p.who; S.stagePin = null; }
     const coachObj = Object.assign({}, (proData().coach) || {});
@@ -5766,9 +5775,10 @@ const TreasureUp = (function () {
       if (raw) grList = raw.split(/\n+/).map(s => s.trim().replace(/^[-•*]\s*/, '')).filter(Boolean).slice(0, 3).map(s => s.slice(0, 200));
     }
     const rawTop = [oneThing, prio2, prio3].filter(Boolean);
-    if (!rawTop.length && !uplift && !grList.length) { closeSheet(); return; }
+    const prevTop = isAdult ? proTop(k) : [];
+    const hadBp = blueprintOf(k);
+    if (!rawTop.length && !uplift && !grList.length && !prevTop.length && !hadBp) { closeSheet(); return; }
     if (isAdult) {
-      const prevTop = proTop(k);
       const nextTop = rawTop.map((txt, idx) => {
         const match = prevTop.find(x => proItemText(x) === txt) || prevTop[idx];
         if (match && match.rock && proItemText(match) === txt) return match;
@@ -5776,7 +5786,7 @@ const TreasureUp = (function () {
       });
       if (nextTop.length || prevTop.length) setTop(k, nextTop);
     }
-    if (!isAdult || Boolean(uplift)) {
+    if ((!isAdult && Boolean(oneThing)) || Boolean(uplift)) {
       storeBlueprint({
         oneThing: isAdult ? '' : oneThing,
         goalSid,
@@ -5788,11 +5798,10 @@ const TreasureUp = (function () {
         share: isAdult ? false : bpShare
       });
     } else {
-      if (grList.length) storeGrateful(grList, false);
-      const had = blueprintOf(k);
-      if (had && S.impressions && S.impressions[had[0]]) {
-        S.impressions[had[0]].gone = true;
-        S.impressions[had[0]].upd = Date.now();
+      if (grList.length) storeGrateful(grList, !isAdult && bpShare);
+      if (hadBp && S.impressions && S.impressions[hadBp[0]]) {
+        S.impressions[hadBp[0]].gone = true;
+        S.impressions[hadBp[0]].upd = Date.now();
       }
       save();
     }
@@ -12243,19 +12252,31 @@ const TreasureUp = (function () {
     save();
   }
   // Two devices' Pro data: each record's later change, and the later mission.
-  function mergePro(R, L) {
+  function mergePro(R, L, B) {
     if (!R && !L) return undefined;
-    const r = R || {}, l = L || {}, out = {};
+    const r = R || {}, l = L || {}, b = B || {}, out = {};
     for (const k of ['roles', 'goals', 'rocks', 'tops', 'months']) out[k] = newerById(r[k], l[k]);
     out.mission = ((l.mission || {}).upd || 0) > ((r.mission || {}).upd || 0) ? l.mission : r.mission || l.mission || { text: '', upd: 0 };
     if ((l.coach && Object.keys(l.coach).length) || (r.coach && Object.keys(r.coach).length)) {
-      const lc = l.coach || {}, rc = r.coach || {};
-      const lNewer = (lc.upd || 0) >= (rc.upd || 0);
-      out.coach = Object.assign({}, lNewer ? rc : lc, lNewer ? lc : rc);
-      if (lc.cclmRatings || rc.cclmRatings) {
-        out.coach.cclmRatings = Object.assign({}, lNewer ? rc.cclmRatings : lc.cclmRatings, lNewer ? lc.cclmRatings : rc.cclmRatings);
+      const lc = l.coach || {}, rc = r.coach || {}, bc = b.coach || {};
+      const lNewer = (lc.upd || 0) !== (rc.upd || 0) ? (lc.upd || 0) > (rc.upd || 0)
+        : (JSON.stringify(lc) !== JSON.stringify(bc)) ? true : !rc.upd;
+      const newer = lNewer ? lc : rc, older = lNewer ? rc : lc;
+      const mc = Object.assign({}, bc, older, newer);
+      for (const k of Object.keys(older)) {
+        if (k === 'upd') continue;
+        if (JSON.stringify(older[k]) !== JSON.stringify(bc[k]) && JSON.stringify(newer[k]) === JSON.stringify(bc[k])) {
+          mc[k] = older[k];
+        } else if (k === 'cclmRatings' && older[k] && newer[k] && typeof older[k] === 'object' && typeof newer[k] === 'object') {
+          const subB = bc.cclmRatings || {}, subM = Object.assign({}, subB, older[k], newer[k]);
+          for (const sk of Object.keys(older[k])) {
+            if (older[k][sk] !== subB[sk] && newer[k][sk] === subB[sk]) subM[sk] = older[k][sk];
+          }
+          mc[k] = subM;
+        }
       }
-      if (lc.upd || rc.upd) out.coach.upd = Math.max(lc.upd || 0, rc.upd || 0);
+      if (lc.upd || rc.upd) mc.upd = Math.max(lc.upd || 0, rc.upd || 0);
+      out.coach = mc;
     }
     return out;
   }
@@ -12361,7 +12382,7 @@ const TreasureUp = (function () {
       await fs().runTransaction(async t => {
         const snap = await t.get(ref), theirs = snap.exists ? snap.data().v : null;
         let part = docs[p];
-        if (theirs && theirs !== synced[p] && theirs !== canon(part)) { const m = mergePro(JSON.parse(theirs), part); part = jSplit(m)[p] || part; got = mergePro(got, m); }
+        if (theirs && theirs !== synced[p] && theirs !== canon(part)) { const basePart = synced[p] ? JSON.parse(synced[p]) : null; const m = mergePro(JSON.parse(theirs), part, basePart); part = jSplit(m)[p] || part; got = mergePro(got, m, basePart); }
         wrote = canon(part);
         if (wrote !== theirs) t.set(ref, { v: wrote, upd: TS() });
       });
@@ -19380,31 +19401,8 @@ const TreasureUp = (function () {
     M.libClock = Object.assign({}, L.libClock || {}, R.libClock || {});
     M.weekBonus = [L.weekBonus, R.weekBonus].find(b => b && b.week === WEEK.title) || R.weekBonus || L.weekBonus || null;
     M.seasons = mergeSeasons(R.seasons, L.seasons);
-    const pro = mergePro(R.pro, L.pro);
-    if (pro) {
-      const lc = (L.pro && L.pro.coach) || null, rc = (R.pro && R.pro.coach) || null, bc = (B.pro && B.pro.coach) || {};
-      if (lc && rc && pro.coach) {
-        const lNewer = (lc.upd || 0) !== (rc.upd || 0) ? (lc.upd || 0) > (rc.upd || 0)
-          : (JSON.stringify(lc) !== JSON.stringify(bc)) ? true : !rc.upd;
-        const newer = lNewer ? lc : rc, older = lNewer ? rc : lc;
-        const mc = Object.assign({}, bc, older, newer);
-        for (const k of Object.keys(older)) {
-          if (k === 'upd') continue;
-          if (JSON.stringify(older[k]) !== JSON.stringify(bc[k]) && JSON.stringify(newer[k]) === JSON.stringify(bc[k])) {
-            mc[k] = older[k];
-          } else if (k === 'cclmRatings' && older[k] && newer[k] && typeof older[k] === 'object' && typeof newer[k] === 'object') {
-            const subB = bc.cclmRatings || {}, subM = Object.assign({}, subB, older[k], newer[k]);
-            for (const sk of Object.keys(older[k])) {
-              if (older[k][sk] !== subB[sk] && newer[k][sk] === subB[sk]) subM[sk] = older[k][sk];
-            }
-            mc[k] = subM;
-          }
-        }
-        if (lc.upd || rc.upd) mc.upd = Math.max(lc.upd || 0, rc.upd || 0);
-        pro.coach = mc;
-      }
-      M.pro = pro;
-    }
+    const pro = mergePro(R.pro, L.pro, B.pro);
+    if (pro) M.pro = pro;
     // Be still: each device's minutes since they last met, added (the larger alone lost the other's).
     M.still = Object.assign({}, R.still || {});
     for (const d in L.still || {}) {
@@ -19452,30 +19450,41 @@ const TreasureUp = (function () {
         if (has(B[key], k) && L[key][k] === B[key][k] && has(R[key], k)) M[key][k] = R[key][k];
       }
     }
-    const mergeMap3 = (rMap, lMap, bMap) => {
-      const r = rMap || {}, l = lMap || {}, b = bMap || {}, out = {};
-      for (const k of new Set([...Object.keys(r), ...Object.keys(l), ...Object.keys(b)])) {
-        const inR = has(r, k) && Boolean(r[k]), inL = has(l, k) && Boolean(l[k]), inB = has(b, k) && Boolean(b[k]);
-        if (inB) {
-          if (inR && inL) out[k] = Math.max(Number(r[k]) || 1, Number(l[k]) || 1);
-        } else if (inR || inL) {
-          out[k] = Math.max(Number(r[k]) || 0, Number(l[k]) || 0) || 1;
-        }
-      }
-      return out;
-    };
     if (L.w40 || R.w40) {
       const lw = L.w40 || {}, rw = R.w40 || {}, bw = B.w40 || {};
+      const mergeW40Map = (rMap, lMap, bMap) => {
+        const rm = rMap || {}, lm = lMap || {}, bm = bMap || {};
+        const out = Object.assign({}, rm, lm);
+        for (const k of Object.keys(bm)) {
+          if (!lm[k] && has(rm, k) && rm[k] === bm[k]) delete out[k];
+          else if (!rm[k] && has(lm, k) && lm[k] === bm[k]) delete out[k];
+        }
+        for (const k of Object.keys(out)) {
+          if (!lm[k] && !rm[k]) delete out[k];
+        }
+        return out;
+      };
       M.w40 = Object.assign({}, rw, lw, {
         day: (JSON.stringify(lw.day) !== JSON.stringify(bw.day) && lw.day !== undefined) ? lw.day
           : (JSON.stringify(rw.day) !== JSON.stringify(bw.day) && rw.day !== undefined) ? rw.day
           : (((lw.upd || 0) >= (rw.upd || 0) ? lw.day : rw.day) || lw.day || rw.day || 1),
-        completedDays: mergeMap3(rw.completedDays, lw.completedDays, bw.completedDays),
-        practiceDone: mergeMap3(rw.practiceDone, lw.practiceDone, bw.practiceDone),
+        completedDays: mergeW40Map(rw.completedDays, lw.completedDays, bw.completedDays),
+        practiceDone: mergeW40Map(rw.practiceDone, lw.practiceDone, bw.practiceDone),
         upd: Math.max(lw.upd || 0, rw.upd || 0)
       });
     }
-    M.feedLikes = mergeMap3(R.feedLikes, L.feedLikes, B.feedLikes);
+    {
+      const bf = B.feedLikes || {}, lf = L.feedLikes || {}, rf = R.feedLikes || {};
+      M.feedLikes = Object.assign({}, rf, lf);
+      for (const k of new Set([...Object.keys(bf), ...Object.keys(lf), ...Object.keys(rf)])) {
+        if (has(bf, k)) {
+          if (!lf[k] && rf[k] === bf[k]) delete M.feedLikes[k];
+          else if (!rf[k] && lf[k] === bf[k]) delete M.feedLikes[k];
+          else if (lf[k] && rf[k]) M.feedLikes[k] = Math.max(lf[k], rf[k]);
+        }
+        if (!lf[k] && !rf[k]) delete M.feedLikes[k];
+      }
+    }
     // The reading clock: a chapter finished on either device keeps its record.
     M.readLog = Object.assign({}, L.readLog || {}, R.readLog || {});
     M.partRead = {};
@@ -22636,7 +22645,13 @@ const TreasureUp = (function () {
         const lockYouthOrChild = (F && F.role === 'kid') || Boolean(coachDraft && coachDraft.born && stageFrom(coachDraft.born) !== 'adult');
         const nextWho = cw.dataset.coachWho;
         if (lockYouthOrChild && nextWho === 'adult') return;
-        coachDraft.who = nextWho;
+        if (coachDraft && coachDraft.born) {
+          if (stageFrom(coachDraft.born) !== 'adult') coachDraft.who = stageFrom(coachDraft.born);
+          else if (nextWho !== 'adult') { delete coachDraft.born; coachDraft.age = null; coachDraft.who = nextWho; }
+          else coachDraft.who = 'adult';
+        } else {
+          coachDraft.who = nextWho;
+        }
         // Switching to or from adult clears the other list's picks; nothing is picked for anyone (2026-10-11).
         const list = (coachDraft.who === 'adult' ? DEFAULT_ADULT_INTERESTS : DEFAULT_KID_INTERESTS);
         coachDraft.interests = (coachDraft.interests || []).filter(x => list.includes(x) || ![...DEFAULT_KID_INTERESTS, ...DEFAULT_ADULT_INTERESTS].includes(x));
