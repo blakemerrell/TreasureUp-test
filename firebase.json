@@ -1,5 +1,25 @@
 {
   "firestore": { "rules": "firestore.rules" },
+  "hosting": {
+    "site": "treasureup",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "firestore.rules",
+      "**/.*",
+      "**/node_modules/**",
+      "tools/**",
+      "tests/**",
+      "liberty/art/**",
+      "*mockup*.html",
+      "*canvas*.html",
+      "*.md"
+    ],
+    "redirects": [
+      { "source": "/TreasureUp", "destination": "/", "type": 301 },
+      { "source": "/TreasureUp/:path*", "destination": "/:path", "type": 301 }
+    ]
+  },
   "emulators": {
     "auth": { "port": 9099, "host": "127.0.0.1" },
     "firestore": { "port": 8080, "host": "127.0.0.1" },
