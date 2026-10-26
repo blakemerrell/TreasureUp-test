@@ -2616,6 +2616,47 @@
     padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 800;
     background: rgba(52,211,153,.16); border: 1px solid rgba(52,211,153,.42); color: #6ee7b7; cursor: pointer;
   }
+  .ch-head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .ch-gl-pill {
+    font-size: 11.5px; font-weight: 800; color: #cbd5e1; text-decoration: none;
+    padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14); white-space: nowrap;
+  }
+  .ch-drawers-wrap { margin: -4px 0 12px; }
+  .ch-drawers-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .ch-drawer-pill {
+    padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11.5px; font-weight: 800;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13);
+    color: #cbd5e1; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
+    transition: all .15s;
+  }
+  .ch-drawer-pill.on {
+    background: rgba(251,191,36,.16); border-color: rgba(251,191,36,.45); color: #fde68a;
+  }
+  .ch-drawer-panel {
+    margin-top: 8px; padding: 10px 12px; border-radius: 13px;
+    background: rgba(15,23,42,.82); border: 1px solid rgba(255,255,255,.12);
+  }
+  .ch-drawer-panel .ls-sum, .ch-drawer-panel .tw-strip, .ch-drawer-panel .listen, .ch-drawer-panel .still-first {
+    margin: 0 0 8px;
+  }
+  .ch-drawer-panel > :last-child { margin-bottom: 0; }
+  .comm-tabs {
+    display: flex; gap: 5px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none;
+  }
+  .comm-tabs::-webkit-scrollbar { display: none; }
+  .comm-tab {
+    flex: 0 0 auto; padding: 4px 9px; border-radius: 8px; font: inherit; font-size: 11px; font-weight: 800;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+    color: #cbd5e1; cursor: pointer; white-space: nowrap;
+  }
+  .comm-tab.on {
+    background: rgba(167,139,250,.24); border-color: rgba(167,139,250,.55); color: #fff;
+  }
+  .vbar-comm-vault {
+    width: 100%; margin-top: 6px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.12);
+    display: flex; flex-direction: column; gap: 7px;
+  }
 
   /* Core Values Triad & Best Self Touchstone */
   .values-triad-banner {
@@ -10307,11 +10348,37 @@ const TreasureUp = (function () {
         return `<button class="lay lay-${k}${on[k] ? ' on' : ''}" data-layer="${k}" aria-pressed="${on[k]}" aria-label="${LAYER_NAMES[k] || name}">${name}</button>`; }).join('') +
       (x && x.draft ? '<span class="plain-draft">Draft: not approved yet</span>' : '') + '</div>';
   }
+  function chapterDrawersHtml(u, week, opts) {
+    if (!u || !u.verses) return '';
+    const o = opts || {}, wUnit = o.whole || u;
+    const sumHtml = o.noSum ? '' : tldrHtml(u, week);
+    const sumCount = sumHtml ? (sumHtml.match(/<li\b/g) || []).length : 0;
+    const twHtml = o.noTw ? '' : treasureStripHtml(wUnit, week);
+    const twCount = twHtml ? (twHtml.match(/data-treasure=/g) || []).length : 0;
+    const twHe = !/Greek/.test(twHtml);
+    const lisHtml = o.noListen ? '' : listenHtml(wUnit);
+    const stillHtml = o.noStill ? '' : stillFirstHtml();
+    const doorHtml = u.ch ? scDoorHtml(u.ch) : '';
+    const toolsHtml = [lisHtml, stillHtml, doorHtml].filter(Boolean).join('');
+    if (!sumHtml && !twHtml && !toolsHtml) return '';
+    return `<div class="ch-drawers-wrap" data-ch-drawers>
+      <div class="ch-drawers-row">
+        ${sumHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="sum" aria-expanded="false">📋 Summary (${sumCount}) ▾</button>` : ''}
+        ${twHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="tw" aria-expanded="false">💎 ${twHe ? 'Hebrew' : 'Greek'} Words (${twCount}) ▾</button>` : ''}
+        ${toolsHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="tools" aria-expanded="false">🏛️ Chapter Tools ▾</button>` : ''}
+        ${lisHtml ? `<button type="button" class="ch-drawer-pill" data-listen="${esc(wUnit.ch)}">🔊 Listen</button>` : ''}
+      </div>
+      ${sumHtml ? `<div class="ch-drawer-panel" data-ch-panel="sum" hidden>${sumHtml}</div>` : ''}
+      ${twHtml ? `<div class="ch-drawer-panel" data-ch-panel="tw" hidden>${twHtml}</div>` : ''}
+      ${toolsHtml ? `<div class="ch-drawer-panel" data-ch-panel="tools" hidden>${toolsHtml}</div>` : ''}
+    </div>`;
+  }
   function versesHtml(u, week) {
     const x = plainOf(week, u.ch), on = shownLayers(haveOf(u, week)), bsb = on.bsb && bsbOf(week, u.ch), lang = on.lang && transOf(on.lang, week, u.ch);
     const tip = on.orig && origOf(u.ch) ? `<p class="ls-orig-tip">${origLang(u.ch) === 'el' ? 'Greek' : 'Hebrew reads right to left, but here its'} words are in English order: what each means on top, then the word, then how to say it (the loud part in capitals). Tap a word to learn more${treasureOf(week).length ? '; 💎 is a treasure word' : ''}.</p>` : '';
     const mn = on.notes ? marginNotesOf(week, u.ch) : [], own = ownLinesOf(u.ch);
-    const top = on.notes ? `<div class="ls-tops">${scDoorHtml(u.ch)}${mn.filter(n => !n.v).map(n => noteLineHtml(n, u, week, true)).join('')}</div>` : '';
+    const topNotes = mn.filter(n => !n.v);
+    const top = on.notes && topNotes.length ? `<div class="ls-tops">${topNotes.map(n => noteLineHtml(n, u, week, true)).join('')}</div>` : '';
     const chg = on.changes && chgOf(u.ch), e18 = on.e1830 && e1830Of(u.ch);
     return tip + (on.jsp ? jspBoxHtml(u.ch) : '') + (on.changes ? chgTopHtml(u.ch) : '') + (on.e1830 ? e1830KeyHtml(u.ch) : '') + top + u.verses.map(v => {
       const lines = [];
@@ -10353,6 +10420,14 @@ const TreasureUp = (function () {
   const markOf = ref => { const m = (S.marks || {})[ref]; return m && HL_COLORS.includes(m.c) ? m.c : ''; };
   const myNotesOf = ref => Object.entries(S.impressions || {}).filter(([, x]) => x && !x.gone && x.ref === ref).sort((a, b) => (a[1].at || 0) - (b[1].at || 0));
 
+  const COMM_CATS = [
+    ['all', '📚 All'],
+    ['sc', '🎺 Scripture Central'],
+    ['manual', '📘 Manual & Prophets'],
+    ['byu', '🎓 BYU & JSP'],
+    ['trans', '✨ Translations & JST'],
+    ['word', '💎 Hebrew / Greek']
+  ];
   function verseCommentariesOf(ref) {
     const m = /^(.+? \d+):(\d+)/.exec(ref || '');
     if (!m) return [];
@@ -10363,15 +10438,20 @@ const TreasureUp = (function () {
     const pl = plainOf(wk, ch);
     if (pl && pl.p) {
       if (pl.p.verses && pl.p.verses[vNum - 1]) {
-        out.push({ icon: '✨', src: 'Plain English Rendering', text: pl.p.verses[vNum - 1], quote: `Plain English (${ref}): ${pl.p.verses[vNum - 1]}` });
+        out.push({ cat: 'trans', icon: '✨', src: 'Plain English Rendering', text: pl.p.verses[vNum - 1], quote: `Plain English (${ref}): ${pl.p.verses[vNum - 1]}` });
       }
       for (const n of (pl.p.notes || []).filter(n => n.v === vNum)) {
-        out.push({ icon: '📝', src: 'Verse Context Note', text: n.text, quote: n.text });
+        out.push({ cat: 'trans', icon: '📝', src: 'Verse Context & Translation Note', text: n.text, quote: n.text });
       }
     }
     const bsb = bsbOf(wk, ch);
     if (bsb && bsb[vNum - 1]) {
-      out.push({ icon: '📖', src: 'Berean Standard Bible (BSB)', text: bsb[vNum - 1], quote: `BSB (${ref}): ${bsb[vNum - 1]}` });
+      out.push({ cat: 'trans', icon: '📖', src: 'Berean Standard Bible (BSB)', text: bsb[vNum - 1], quote: `BSB (${ref}): ${bsb[vNum - 1]}` });
+    }
+    const chg = chgOf(ch), chgList = (chg && chg.v && chg.v[vNum] || []).filter(c => c[3] === 'w');
+    if (chgList.length) {
+      const chgTxt = chgList.map(c => `${chgEd(c[0])}: “${c[1]}” → “${c[2]}”`).join(' · ');
+      out.push({ cat: 'trans', icon: '✎', src: '1830 Edition Wording Changes', text: chgTxt, quote: `1830 Changes (${ref}): ${chgTxt}` });
     }
     // 2. Scholar & Church Margin Notes (Scripture Central, BYU, FollowHIM, Church Manuals)
     for (const n of marginNotesOf(wk, ch)) {
@@ -10381,29 +10461,56 @@ const TreasureUp = (function () {
       const from = rm ? Number(rm[1]) : n.v, to = rm ? Number(rm[2] || rm[1]) : n.v;
       if (n.v === vNum || (from && vNum >= from && vNum <= to)) {
         const s = noteSrc(ix), body = ix.quote || ix.text || (n.i.m && n.i.m.short) || '';
-        if (body) out.push({ icon: s.ic, src: (ix.source && (ix.source.who || ix.source.by)) || s.name, text: body, quote: `${(ix.source && (ix.source.who || ix.source.by)) || s.name}: “${cut(body, 220)}”` });
+        const cat = s.c === 'sc' ? 'sc' : (s.c === 'byu' || s.c === 'fhim' || s.c === 'jsp') ? 'byu' : 'manual';
+        if (body) out.push({ cat, icon: s.ic, src: (ix.source && (ix.source.who || ix.source.by)) || s.name, text: body, quote: `${(ix.source && (ix.source.who || ix.source.by)) || s.name}: “${cut(body, 220)}”` });
       }
     }
     // 3. Joseph Smith Papers Notes
     for (const j of jspNotesOf(wk, ch).filter(n => n.v === vNum)) {
-      out.push({ icon: '📜', src: 'Joseph Smith Papers', text: j.text, quote: `Joseph Smith Papers (${ref}): ${j.text}` });
+      out.push({ cat: 'byu', icon: '📜', src: 'Joseph Smith Papers', text: j.text, quote: `Joseph Smith Papers (${ref}): ${j.text}` });
     }
     // 4. Hebrew / Greek Treasure Words on this verse
     for (const t of treasureOf(wk)) {
       const tw = t.x || t;
       if (tw && tw.ref === ref) {
         const he = twLang(tw) === 'he';
-        out.push({ icon: '💎', src: `${he ? 'Hebrew' : 'Greek'}: ${tw.word} (${tw.say})`, text: `“${tw.kjv}” — ${tw.means}`, quote: `${tw.word} (${tw.say}, “${tw.kjv}”): ${cut(tw.means || '', 180)}` });
+        out.push({ cat: 'word', icon: '💎', src: `${he ? 'Hebrew' : 'Greek'}: ${tw.word} (${tw.say})`, text: `“${tw.kjv}” — ${tw.means}`, quote: `${tw.word} (${tw.say}, “${tw.kjv}”): ${cut(tw.means || '', 180)}` });
       }
     }
     return out;
+  }
+
+  function commVaultHtml(ref, comms, mode) {
+    if (!comms || !comms.length) return '';
+    const cats = new Set(comms.map(c => c.cat));
+    const tabs = COMM_CATS.filter(([k]) => k === 'all' || cats.has(k));
+    const isVbar = mode === 'vbar';
+    return `<div class="${isVbar ? 'vbar-comm-vault' : 'vn-comm-box'}" data-comm-vault="${esc(ref)}">
+      <div class="vn-comm-head">
+        <span>📚 ${isVbar ? `${esc(ref)} · Direct Study Vault (${comms.length})` : `Verse Commentary & Translation (${comms.length})`}</span>
+        <span style="font-size:10px;opacity:.75">${tabs.length > 2 ? 'Tap a source tab below' : 'Tap + Quote to add to your note'}</span>
+      </div>
+      ${tabs.length > 2 ? `<div class="comm-tabs">
+        ${tabs.map(([k, label], i) => `<button type="button" class="comm-tab${i === 0 ? ' on' : ''}" data-comm-tab="${k}">${label}${k === 'all' ? ` (${comms.length})` : ''}</button>`).join('')}
+      </div>` : ''}
+      <div class="comm-items" style="display:flex;flex-direction:column;gap:7px">
+        ${comms.map(c => `<div class="vn-comm-item" data-comm-cat="${esc(c.cat || 'manual')}">
+          <div class="vn-comm-top">
+            <span>${c.icon} ${esc(c.src)}</span>
+            <button type="button" class="vn-comm-insert" ${isVbar ? `data-vbar-quote="${esc(ref)}|${esc(c.quote)}"` : `data-vn-insert="${esc(c.quote)}"`}>+ Quote in Note</button>
+          </div>
+          <div>${linkRefs(c.text, ref)}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
   }
 
   function verseBarHtml(ref) {
     const c = markOf(ref), gl = readLink(ref), comms = verseCommentariesOf(ref);
     return `<div class="vbar" data-ref="${esc(ref)}">
       <span class="vb-dots">${HL_COLORS.map(h => `<button class="vb-dot${c === h ? ' on' : ''}" data-hl-set="${h}" aria-label="Highlight ${h}${c === h ? ' (on)' : ''}"></button>`).join('')}${c ? '<button class="vb-x" data-hl-set="" aria-label="Clear the highlight">✕</button>' : ''}</span>
-      <button class="vb-btn" data-vnote="${esc(ref)}">✍️ Note${comms.length ? ` · 💡 ${comms.length}` : ''}</button>${gl ? `<a class="vb-btn" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">📖 Gospel Library ↗</a>` : ''}</div>`;
+      <button class="vb-btn" data-vnote="${esc(ref)}">✍️ Note${comms.length ? ` · 💡 ${comms.length}` : ''}</button>${gl ? `<a class="vb-btn" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">📖 Gospel Library ↗</a>` : ''}
+      ${commVaultHtml(ref, comms, 'vbar')}</div>`;
   }
   const verseEls = ref => [...document.querySelectorAll('.ls-vv')].filter(x => x.dataset.ref === ref);
   function closeVerseBar() {
@@ -10435,19 +10542,7 @@ const TreasureUp = (function () {
     const comms = verseCommentariesOf(ref);
     return `<div class="sh-title">✍️ ${esc(ref)} · Note & Commentary</div>
       ${said ? `<p class="vn-verse">“${esc(said)}”</p>` : ''}
-      ${comms.length ? `<div class="vn-comm-box">
-        <div class="vn-comm-head">
-          <span>📚 Verse Commentary & Translation (${comms.length})</span>
-          <span style="font-size:10px;opacity:.75">Tap + Quote to add to your note</span>
-        </div>
-        ${comms.map(c => `<div class="vn-comm-item">
-          <div class="vn-comm-top">
-            <span>${c.icon} ${esc(c.src)}</span>
-            <button type="button" class="vn-comm-insert" data-vn-insert="${esc(c.quote)}">+ Quote in Note</button>
-          </div>
-          <div>${linkRefs(c.text, ref)}</div>
-        </div>`).join('')}
-      </div>` : ''}
+      ${commVaultHtml(ref, comms, 'sheet')}
       <textarea id="vnText" class="field sea-imp" maxlength="1000" rows="4" placeholder="What does this verse teach you? (Tap + Quote in Note above to weave in commentary or translation insights)">${esc(x ? x.text : '')}</textarea>
       <div class="sea-imp-bar">${kid ? `<button class="sh-pill${vnShare ? ' on' : ''}" data-vn-share>${vnShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Just yours</span>'}
         <div style="display:flex;gap:6px;align-items:center">
@@ -10490,6 +10585,29 @@ const TreasureUp = (function () {
     const t = e.target;
     const hs = t.closest('[data-hl-set]');
     if (hs) { const bar = hs.closest('.vbar'); if (bar) setMark(bar.dataset.ref, hs.dataset.hlSet); return true; }
+    const ct = t.closest('[data-comm-tab]');
+    if (ct) {
+      const vault = ct.closest('[data-comm-vault]');
+      if (vault) {
+        const cat = ct.dataset.commTab;
+        vault.querySelectorAll('[data-comm-tab]').forEach(b => b.classList.toggle('on', b === ct));
+        vault.querySelectorAll('[data-comm-cat]').forEach(el => { el.hidden = cat !== 'all' && el.dataset.commCat !== cat; });
+      }
+      return true;
+    }
+    const vbq = t.closest('[data-vbar-quote]');
+    if (vbq) {
+      const idx = vbq.dataset.vbarQuote.indexOf('|');
+      const ref = idx >= 0 ? vbq.dataset.vbarQuote.slice(0, idx) : vbq.dataset.vbarQuote;
+      const quote = idx >= 0 ? vbq.dataset.vbarQuote.slice(idx + 1) : '';
+      openVerseNote(ref);
+      const box = $('vnText');
+      if (box && quote && !box.value.includes(quote)) {
+        box.value = ((box.value.trim() ? box.value.trim() + '\n\n' : '') + quote).slice(0, 1000);
+        box.focus();
+      }
+      return true;
+    }
     const vn = t.closest('[data-vnote]');
     if (vn) { openVerseNote(vn.dataset.vnote, vn.dataset.vnoteId); return true; }
     const vni = t.closest('[data-vn-insert]');
@@ -15096,10 +15214,14 @@ const TreasureUp = (function () {
     <article class="reel" data-id="read-${esc(u.ref)}" data-index="0">
       ${backdrop({ gradient: 'linear-gradient(160deg,#1c1917 0%,#292524 60%,#44403c 100%)', blobA: 'rgba(252,211,77,.12)', blobB: 'rgba(0,0,0,.45)' })}
       <div class="relative z-20 px-5 pr-7 content-pad ls-chapter">
-        <div class="eyebrow">${esc(week.title)}</div>
-        <h2 class="reel-hook">${esc(u.ref)}${chapterFixHtml(week, u.ch)}</h2>
-        ${listenHtml(u)}
-        ${u.verses ? stillFirstHtml() + tldrHtml(u, week) + treasureStripHtml(u, week) + coachRowHtml(u) + layersBarHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>` + scholarlyVaultHtml(u, week)
+        <div class="ch-head-row">
+          <div>
+            <div class="eyebrow">${esc(week.title)}</div>
+            <h2 class="reel-hook" style="margin:2px 0 0">${esc(u.ref)}${chapterFixHtml(week, u.ch)}</h2>
+          </div>
+          ${u.verses && link ? `<a class="ch-gl-pill" href="${esc(link)}" target="_blank" rel="noopener noreferrer">📖 Gospel Library ↗</a>` : ''}
+        </div>
+        ${u.verses ? coachRowHtml(u) + layersBarHtml(u, week) + chapterDrawersHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>` + scholarlyVaultHtml(u, week)
           : link ? `<a class="deep-open" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Read ${esc(u.ref)} in Gospel Library ↗</a>` : ''}
         ${end || ''}
         <button class="today-alt sea-impress" data-impress="${esc(u.ref)}">✍️ Write an impression about ${esc(u.ref)}</button>
@@ -20990,11 +21112,12 @@ const TreasureUp = (function () {
       else if (!S.read[u.ref] && !(log[u.ref] && log[u.ref].start)) { log[u.ref] = { start: Date.now() }; saveLocal(); }
       if (!part && log[u.ref] && log[u.ref].gl) L.readOk = true;
       html += `<div class="ls-chapter">
-        <div class="ls-prompt">${esc(u.ref)}</div>
+        <div class="ch-head-row">
+          <div class="ls-prompt" style="margin:0">${esc(u.ref)}</div>
+          ${gl ? `<a class="ls-gl ch-gl-pill" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">${u.verses ? '📖 Gospel Library ↗' : 'Read it in Gospel Library ↗'}</a>` : ''}
+        </div>
         ${part ? `<div class="ls-coming"><small>What’s coming · verses ${part.from}–${part.to}</small>${linkRefs(part.line, part.u.ch)}</div>` : ''}
-        ${gl ? `<a class="ls-gl" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">${u.verses ? 'Or read it in Gospel Library ↗' : 'Read it in Gospel Library ↗'}</a>` : ''}
-        ${!part || part.n === 1 ? listenHtml(whole) : ''}
-        ${u.verses ? (L.steps.findIndex(x => x.kind === 'chapter') === L.at ? stillFirstHtml() : '') + (part ? '' : tldrHtml(u, WEEK)) + (!part || part.n === 1 ? treasureStripHtml(whole, WEEK) : '') + layersBarHtml(u, WEEK) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>` + scholarlyVaultHtml(u, WEEK)
+        ${u.verses ? layersBarHtml(u, WEEK) + chapterDrawersHtml(u, WEEK, { whole, noSum: !!part, noTw: !!(part && part.n !== 1), noListen: !!(part && part.n !== 1), noStill: L.steps.findIndex(x => x.kind === 'chapter') !== L.at }) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>` + scholarlyVaultHtml(u, WEEK)
                    : `<p class="reel-body">Read ${esc(u.ref)} in Gospel Library, then come back and tap “I read it”.</p>`}
       </div>`;
     } else if (step.kind === 'find') {
@@ -23229,6 +23352,22 @@ const TreasureUp = (function () {
     });
     // A note in the reader, Scripture Central's line, and a note's study card.
     document.addEventListener('click', e => {
+      const dr = e.target.closest('[data-ch-drawer]');
+      if (dr) {
+        const wrap = dr.closest('[data-ch-drawers]');
+        if (wrap) {
+          const key = dr.dataset.chDrawer;
+          const panel = wrap.querySelector(`[data-ch-panel="${key}"]`);
+          const willOpen = panel ? panel.hidden : false;
+          wrap.querySelectorAll('[data-ch-drawer]').forEach(b => {
+            const on = b === dr && willOpen;
+            b.classList.toggle('on', on);
+            b.setAttribute('aria-expanded', on ? 'true' : 'false');
+          });
+          wrap.querySelectorAll('[data-ch-panel]').forEach(p => { p.hidden = !(p === panel && willOpen); });
+        }
+        return;
+      }
       const n = e.target.closest('[data-insnote]');
       if (n) { openInsNote(n.dataset.insnote); return; }
       const c = e.target.closest('[data-insnote-card]');
