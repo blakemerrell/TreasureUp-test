@@ -1566,10 +1566,12 @@
   .ls-jsp { background: rgba(147,197,253,.09); }
   .ls-jsp a { color: #bfdbfe; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
   /* A card's note in the reader: one line, its source's color; a tap opens the rest */
-  .ls-m { display: flex; gap: 8px; align-items: flex-start; width: 100%; margin: 6px 0 0; border: 0; font: inherit; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.8); text-align: left; cursor: pointer; }
+  .ls-m { display: flex; gap: 8px; align-items: flex-start; width: 100%; margin: 6px 0 0; border: 0; font: inherit; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,.85); text-align: left; cursor: pointer; }
   .ls-m.ls-top { width: 100%; margin: 0 0 8px; }
   .ls-tops { margin: 0 0 14px; }
-  .lm-sum { min-width: 0; } .lm-go { margin-left: auto; color: rgba(255,255,255,.35); font-weight: 900; }
+  .lm-sum { min-width: 0; flex: 1; } .lm-go { margin-left: auto; color: rgba(255,255,255,.35); font-weight: 900; align-self: center; padding-left: 4px; }
+  .lm-head { display: block; font-size: 12.5px; line-height: 1.35; margin-bottom: 3px; }
+  .lm-body { display: block; font-size: 13.5px; line-height: 1.48; color: rgba(255,255,255,.88); }
   .lm-both { margin-left: 6px; font-size: 12px; font-weight: 800; color: var(--gold); white-space: nowrap; }
   .ls-m.ls-jsp b, .lm-k-jsp { color: #93c5fd; }
   .ls-m.ls-sc { background: rgba(94,234,212,.08); } .ls-m.ls-sc b, .lm-k-sc { color: #5eead4; }
@@ -10286,17 +10288,32 @@ const TreasureUp = (function () {
     }).filter(Boolean);
   }
   // The cards' notes in a chapter: v is the first verse of each, 0 for the whole chapter.
+  function marginOfCard(i) {
+    if (i.m) return i.m;
+    const x = i.x, s = x && x.source;
+    if (!x || x.kind === 'video' || (isJsp(x) && x.note)) return null;
+    const body = x.quote || x.text || '';
+    if (!body) return null;
+    return {
+      glance: x.title || (s && (s.who || s.title)) || 'Scholarly Note',
+      short: body,
+      place: 'both',
+      draft: !!i.draft
+    };
+  }
   function marginNotesOf(week, ch) {
-    return insightsOf(week).filter(i => i.m).map(i => {
-      const m = /^(.+? \d+)(?::(\d+))?/.exec(i.x.ref || '');
-      return m && m[1] === ch ? { v: Number(m[2] || 0), i } : null;
+    return insightsOf(week).map(i => {
+      const m = marginOfCard(i);
+      if (!m) return null;
+      const r = /^(.+? \d+)(?::(\d+))?/.exec(i.x.ref || '');
+      return r && r[1] === ch ? { v: Number(r[2] || 0), i: i.m ? i : Object.assign({}, i, { m }) } : null;
     }).filter(Boolean);
   }
   // Where a note is from, by its page: the line's icon, name and color.
   const ICON_MORONI = `<svg class="nic-svg nic-sc" viewBox="0 0 24 24" width="1.2em" height="1.2em" aria-label="Scripture Central"><polygon points="8.8,5.0 21.5,1.9 21.6,2.7 8.8,5.6" fill="#fde047"/><polygon points="21.3,1.9 23.5,1.1 23.5,3.7 21.4,2.7" fill="#fde047"/><ellipse cx="7.6" cy="4.8" rx="1.5" ry="1.7" fill="#fbbf24"/><path fill="#fbbf24" d="M8.2 6.8 L7.0 8.5 L8.2 9.0 L9.4 6.2 L8.8 5.2 Z"/><path fill="#f59e0b" d="M6.2 7.0 L5.0 10.5 L6.4 11.0 L7.2 7.5 Z"/><rect x="4.4" y="10.2" width="1.8" height="2.8" rx=".3" fill="#fbbf24" transform="rotate(-5 5 11)"/><path fill="#fbbf24" d="M6.2 7.0 L8.8 6.8 L8.4 11.5 L9.6 15.5 L10.2 20.8 L5.4 20.8 L5.8 14.5 L6.4 11.5 Z"/><path fill="#f59e0b" d="M6.8 11.5 L7.5 20.8 L6.2 20.8 L5.8 14.5 Z"/><ellipse cx="7.8" cy="22.2" rx="2.2" ry="1.3" fill="#d97706"/></svg>`;
   const ICON_BYU = `<svg class="nic-svg nic-byu" viewBox="0 0 24 24" width="1.15em" height="1.15em" aria-label="BYU"><rect width="24" height="24" rx="4.5" fill="#002e5d"/><path fill="#ffffff" d="M4.5 5h5v1.6H8.2l2.6 4.7 2.6-4.7h-1.3V5h5v1.6h-1.3l-3.8 6.4v4.4h1.6V19h-6.4v-1.6h1.6V13L6.4 6.6H4.5V5z"/></svg>`;
   const NOTE_SRC = [[/josephsmithpapers\.org/, 'jsp', '📜', 'Joseph Smith Papers'], [/scripturecentral\.org/, 'sc', ICON_MORONI, 'Scripture Central'],
-    [/churchofjesuschrist\.org/, 'gl', '📘', 'Gospel Library'], [/followhim\.co/, 'fhim', '🎙️', 'followHIM'], [/byu\.edu/, 'byu', ICON_BYU, 'BYU']];
+    [/churchofjesuschrist\.org/, 'gl', '📘', 'Gospel Library'], [/followhim\.co/, 'fhim', '🎙️', 'followHIM'], [/byu\.edu|johnhiltoniii\.com/, 'byu', ICON_BYU, 'BYU']];
   function noteSrc(x) {
     const s = x.source || {}, f = NOTE_SRC.find(([re]) => re.test(s.url || ''));
     return f ? { c: f[1], ic: f[2], name: f[3] } : { c: 'gl', ic: '📝', name: s.by || 'Note' };
@@ -10304,10 +10321,15 @@ const TreasureUp = (function () {
   // The notes drawn so far, for their sheet: id -> { i, week, verses (the KJV lines it's about) }.
   const noteKnown = new Map();
   function noteLineHtml(n, u, week, top) {
-    const x = n.i.x, k = noteSrc(x), r = /:(\d+)(?:–(\d+))?/.exec(x.ref || ''), from = r ? +r[1] : 0, to = r ? +(r[2] || r[1]) : 0;
+    const x = n.i.x, m = n.i.m, s = x.source || {}, k = noteSrc(x), r = /:(\d+)(?:–(\d+))?/.exec(x.ref || ''), from = r ? +r[1] : 0, to = r ? +(r[2] || r[1]) : 0;
     noteKnown.set(x.id, { i: n.i, week, verses: u.verses.filter(v => v.n >= from && v.n <= to) });
-    return `<button type="button" class="ls-note ls-m ls-${k.c}${top ? ' ls-top' : ''}" data-insnote="${esc(x.id)}"><span class="lm-sum"><span class="lm-ic">${k.ic}</span>${esc(n.i.m.glance)}` +
-      `${n.i.m.place === 'both' ? '<span class="lm-both">📖 Also a card</span>' : ''}${n.i.m.draft ? ' <span class="plain-draft">Draft</span>' : ''}</span><span class="lm-go" aria-hidden="true">›</span></button>`;
+    const srcLabel = [s.by || k.name, s.who].filter(Boolean).join(' · ');
+    const title = x.title && x.title !== s.who ? x.title : '';
+    const head = [srcLabel, title].filter(Boolean).join(' — ') || (m && m.glance) || k.name;
+    const body = x.kind === 'quote'
+      ? `“${x.quote.replace(/“/g, '‘').replace(/”/g, '’')}”${x.text ? ' — ' + x.text : ''}`
+      : (x.text || (m && m.short) || (m && m.glance) || '');
+    return `<button type="button" class="ls-note ls-m ls-${k.c}${top ? ' ls-top' : ''}" data-insnote="${esc(x.id)}"><span class="lm-sum"><span class="lm-head"><span class="lm-ic">${k.ic}</span><b>${esc(head)}</b>${hasDeep(x) ? '<span class="lm-both">· Deep dive</span>' : ''}${m && m.draft ? ' <span class="plain-draft">Draft</span>' : ''}</span>${body && body !== head ? `<span class="lm-body">${esc(body)}</span>` : ''}</span><span class="lm-go" aria-hidden="true">›</span></button>`;
   }
   // Scripture Central's archive (2026-10-07: "What about scripture
   // Central content. Their archives are deep!"): a line at the top of every
@@ -10423,7 +10445,7 @@ const TreasureUp = (function () {
       if (lang && lang[v.n - 1]) lines.push(['ls-lang', lang[v.n - 1], on.lang]);
       if (on.kjv || !lines.length) lines.unshift(['ls-v', v.t]);          // a text not in yet, or without this verse: the KJV
       const vMn = mn.filter(n => n.v === v.n), jsp = on.notes ? jspNotesOf(week, u.ch).filter(n => n.v === v.n) : [];
-      const notes = on.notes && x && !vMn.length && !jsp.length ? (x.p.notes || []).filter(n => n.v === v.n) : [];
+      const notes = on.notes && x ? (x.p.notes || []).filter(n => n.v === v.n) : [];
       const ref = u.ch + ':' + v.n, hl = markOf(ref), changed = chg && (chg.v[v.n] || []).some(c => c[3] === 'w');
       return `<div class="ls-vv${changed ? ' chg' : ''}" data-v="${v.n}" data-ref="${esc(ref)}"${hl ? ` data-hl="${hl}"` : ''}>` +
         lines.map(([c, t, l], i) => `<p class="${c}${i ? '' : ' lead'}"${l ? ` lang="${l}"` : ''}>${i ? '' : `<sup>${v.n}</sup>`}${c === 'ls-v' && e18 && e18.u[v.n - 1] ? underline1830(t, e18.u[v.n - 1]) : esc(t)}</p>`).join('') +
@@ -10435,7 +10457,7 @@ const TreasureUp = (function () {
         notes.map(n => `<p class="ls-note"><span class="lm-ic">📝</span>${linkRefs(n.text, u.ch + ':' + v.n)}</p>`).join('') +
         jsp.map(n => `<p class="ls-note ls-jsp"><span class="lm-ic">📜</span>${linkRefs(n.text, u.ch + ':' + v.n)} <a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)} ↗</a>${n.draft ? ' <span class="plain-draft">Draft</span>' : ''}</p>`).join('') +
         vMn.map(n => noteLineHtml(n, u, week)).join('') + '</div>';
-    }).join('') + (on.notes && u.ch ? scDoorHtml(u.ch) : '') + `<p class="ls-ch-end">End of ${esc(u.ref)}</p>` +
+    }).join('') + `<p class="ls-ch-end">End of ${esc(u.ref)}</p>` +
       (lang ? `<p class="ls-orig-credit">${LANGS[on.lang].name}: ${LANGS[on.lang].full} (public domain)</p>` : '') +
       (on.orig && origOf(u.ch) ? `<p class="ls-orig-credit">${origLang(u.ch) === 'el' ? 'Greek' : 'Hebrew'} words: STEPBible.org, from work at Tyndale House, Cambridge (CC BY 4.0)</p>` : '') +
       (chg && e18 ? '<p class="ls-orig-credit">Changes and 1830 text: BYU Office of Digital Humanities, OpenScripture.</p>'
@@ -15263,7 +15285,7 @@ const TreasureUp = (function () {
           </div>
           ${chHeadIconsHtml(u)}
         </div>
-        ${u.verses ? coachRowHtml(u) + layersBarHtml(u, week) + chapterDrawersHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>` + scholarlyVaultHtml(u, week)
+        ${u.verses ? coachRowHtml(u) + layersBarHtml(u, week) + chapterDrawersHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>`
           : link ? `<a class="deep-open" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Read ${esc(u.ref)} in Gospel Library ↗</a>` : ''}
         ${end || ''}
         <button class="today-alt sea-impress" data-impress="${esc(u.ref)}">✍️ Write an impression about ${esc(u.ref)}</button>
@@ -21159,7 +21181,7 @@ const TreasureUp = (function () {
           ${u.verses ? chHeadIconsHtml(u, { whole, noListen: !!(part && part.n !== 1) }) : (gl ? `<a class="ls-gl ch-gl-pill" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">Read it in Gospel Library ↗</a>` : '')}
         </div>
         ${part ? `<div class="ls-coming"><small>What’s coming · verses ${part.from}–${part.to}</small>${linkRefs(part.line, part.u.ch)}</div>` : ''}
-        ${u.verses ? layersBarHtml(u, WEEK) + chapterDrawersHtml(u, WEEK, { whole, noSum: !!part, noTw: !!(part && part.n !== 1), noListen: !!(part && part.n !== 1), noStill: L.steps.findIndex(x => x.kind === 'chapter') !== L.at }) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>` + scholarlyVaultHtml(u, WEEK)
+        ${u.verses ? layersBarHtml(u, WEEK) + chapterDrawersHtml(u, WEEK, { whole, noSum: !!part, noTw: !!(part && part.n !== 1), noListen: !!(part && part.n !== 1), noStill: L.steps.findIndex(x => x.kind === 'chapter') !== L.at }) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>`
                    : `<p class="reel-body">Read ${esc(u.ref)} in Gospel Library, then come back and tap “I read it”.</p>`}
       </div>`;
     } else if (step.kind === 'find') {

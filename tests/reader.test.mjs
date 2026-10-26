@@ -18,7 +18,7 @@ export default async function reader({ port }) {
   if (!built('content/library.js')) files['content/library.js'] = 'window.TU_LIBRARY = ' + JSON.stringify([
     { name: 'Old Testament', books: [['Genesis', 50], ['Isaiah', 66]] }, { name: 'Book of Mormon', books: [['1 Nephi', 22], ['Alma', 63]] },
     { name: 'Doctrine and Covenants', books: [['Doctrine and Covenants', 138]] }]) + ';';
-  for (const [ch, n] of [['1 Nephi 11', 36], ['Genesis 1', 31], ['Isaiah 26', 21], ['Doctrine and Covenants 4', 7]]) {
+  for (const [ch, n] of [['1 Nephi 11', 36], ['Genesis 1', 31], ['Isaiah 26', 21], ['Jeremiah 31', 40], ['Doctrine and Covenants 4', 7]]) {
     const f = `content/lib/${ch.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.js`;
     if (!built(f)) files[f] = lib(ch, n);
   }
@@ -124,19 +124,27 @@ export default async function reader({ port }) {
     'chapter heading itself is the direct Gospel Library hyperlink');
   check(await p.locator('#viewBody .ch-head-row .ch-head-icons [data-still]').count() === 1,
     'Be still is a compact icon button in the chapter header');
-  check(await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 0 && await p.locator('#viewBody .ls-verses [data-scdoor]').count() === 1,
-    'Scripture Central commentary door lives inside Notes instead of a separate Chapter Tools pill');
+  check(await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 0 && await p.locator('#viewBody [data-scholarly-vault]').count() === 0,
+    'no separate Chapter Tools pill or bottom external-links box');
+  await close();
+
+  // Current week chapter (Jeremiah 31 in content/weeks.js): scholarly notes render interlinearly under verses when Notes is on.
+  await open('Jeremiah 31');
+  const insNotesOn = await p.locator('#viewBody .ls-verses [data-insnote] .lm-body').count();
+  check(insNotesOn >= 5, `Jeremiah 31 weaves outside scholarly note text interlinearly under verses (${insNotesOn} notes)`);
   await p.click('#viewBody [data-layer="notes"]'); await wait(200);
-  check(await p.locator('#viewBody .ls-verses [data-scdoor]').count() === 0, 'turning Notes off hides the Scripture Central door');
+  check(await p.locator('#viewBody .ls-verses [data-insnote]').count() === 0, 'turning Notes off hides the interlinear scholarly notes');
   await p.click('#viewBody [data-layer="notes"]'); await wait(200);
   await close();
 
-  // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words and Summary drawer.
+  // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words, Summary drawer, and interlinear scholarly notes.
   await open('Isaiah 26');
   b = await buttons();
   check(b.includes('plain'), `Isaiah 26 (from past/week-39.js) has its Plain words button (${b.join(', ')})`);
   check(await p.locator('#viewBody [data-ch-drawer="sum"]').count() === 1 && await p.locator('#viewBody .ch-head-row a.ch-title-link').count() === 1,
     'Isaiah 26 includes its Summary drawer and Gospel Library title link');
+  check(await p.locator('#viewBody .ls-verses .ls-note').count() >= 1,
+    'Isaiah 26 renders interlinear verse notes under its verses');
   await close();
 
   // The Doctrine and Covenants: no KJV button either; Notes stays.

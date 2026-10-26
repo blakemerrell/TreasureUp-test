@@ -264,7 +264,8 @@ export default async function growth({ port }) {
   await p.click('#home [data-bom-open]'); await wait(300);
   check(await p.locator('#appBody [data-bom-resume="1 Nephi 1"]').count() === 1, 'Book of Mormon sheet displays sequential Next Unread Chapter resume button');
   await p.click('#appBody [data-bom-resume="1 Nephi 1"]'); await wait(500);
-  check(await p.locator('#viewBody [data-scholarly-vault]').count() === 1, 'Chapter reader includes collapsible Scholarly Vault with commentary links');
+  check(await p.locator('#viewBody .ch-head-row a.ch-title-link').count() === 1 && await p.locator('#viewBody [data-scholarly-vault]').count() === 0,
+    'Chapter reader uses direct Gospel Library title link without bottom external-links vault');
   await p.click('#viewBack'); await wait(250);
   await p.evaluate(() => { const d = document.querySelector('#home details.more'); if (d) d.open = true; });
   await p.click('#home [data-open-deep-log]'); await wait(300);
