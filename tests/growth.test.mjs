@@ -133,11 +133,14 @@ export default async function growth({ port }) {
   await p.fill('#evMercies', '');
   await p.click('#appSheet [data-ev-more] summary'); await wait(100);
   await p.fill('#evWins', '');
+  await p.fill('#evImprove', 'Listen first before jumping to solutions');
   await p.fill('#evSurrender', 'Placing the project timeline into the Lord’s hands');
   await p.click('#appSheet [data-ev-save]'); await wait(350);
   const evAfterSave = Object.values((await state(p)).impressions || {}).find(x => x && x.kind === 'evening' && x.day === '2027-01-11') || {};
   check(/project timeline/.test(evAfterSave.surrender || ''), 'Evening Return & Report saves #evSurrender (Jeremiah Check)');
   await triggerEvening(); await wait(300);
+  check(await p.evaluate(() => Boolean(document.querySelector('#appSheet [data-ev-more]') && document.querySelector('#appSheet [data-ev-more]').open)), 'Reopening Evening Return & Report auto-opens expander when only ev.improve is populated');
+  await p.fill('#evImprove', '');
   await p.fill('#evSurrender', '');
   await p.click('#appSheet [data-ev-save]'); await wait(350);
   const evAfterClear = Object.values((await state(p)).impressions || {}).find(x => x && x.kind === 'evening' && x.day === '2027-01-11') || {};
@@ -192,6 +195,10 @@ export default async function growth({ port }) {
   await p.click('#home [data-open-blueprint] >> nth=0'); await wait(350);
   check(await p.evaluate(() => !document.activeElement || document.activeElement.id !== 'bpOneThing'), 'Opening Morning Council does not auto-focus #bpOneThing');
   check(await p.locator('#appBody [data-w40-card]').count() === 1 && /Day 1/i.test(await txt(p, '#appBody [data-w40-card]')), 'Adult Morning Council renders Wilderness 40 Day 1 card');
+  await p.click('#appBody .w40-details summary'); await wait(100);
+  await p.click('#appBody [data-w40-step="1"]'); await wait(150);
+  check(await p.evaluate(() => Boolean(document.querySelector('#appBody .w40-details') && document.querySelector('#appBody .w40-details').open)) && /Day 2 of 40/i.test(await txt(p, '#appBody [data-w40-card]')), 'Stepping Wilderness 40 day inside Morning Council keeps .w40-details expanded');
+  await p.click('#appBody [data-w40-step="-1"]'); await wait(150);
   await p.click('#appBody [data-w40-complete]'); await wait(300);
   check(/Day 2/i.test(await txt(p, '#appBody [data-w40-card]')), 'Wilderness 40 advances to Day 2 on explicit completion');
   await p.fill('#bpOneThing', 'Ship quarterly architecture');
@@ -316,9 +323,21 @@ export default async function growth({ port }) {
   check((await p.locator('#home .today-compass.youth-mode.youth-rpg').count()) === 1, 'Deep Coaching & Tools mode switch sets Youth Flow and applies 16-Bit RPG theme on Today Compass Bar');
   await p.click('#appSheet [data-compass-mode="adult"]'); await wait(150);
 
+  // Verify Live Situation Playbook button in Deep Coaching & Tools opens situation tab even after model tab was viewed
+  await p.click('#appSheet [data-open-cclm-coach="situation"]'); await wait(150);
+  await p.click('#appSheet [data-cclm-tab="model"]'); await wait(150);
+  await p.click('#appClose'); await wait(150);
+  await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(150);
+  await p.click('#appSheet [data-open-cclm-coach="situation"]'); await wait(150);
+  check((await p.locator('#appSheet #cclmPlaybookOut').count()) === 1, 'Tapping Live Situation Playbook in Deep Coaching & Tools explicitly opens situation tab even after model tab was active');
+  await p.click('#appClose'); await wait(150);
+  await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(150);
+
   await p.click('#appSheet [data-compass-coach="1"]'); await wait(200);
   check((await p.locator('#appSheet .coach-stage-tab').count()) === 6, 'In-app Growth Coach sheet renders all 6 stage tabs');
   await p.click('#appSheet [data-coach-goto="2"]'); await wait(150);
+  const peakBox = await p.locator('#coachPeakMoment').boundingBox();
+  check(peakBox && peakBox.y < 450, `On 412x780 viewport, Stage 2 Crucible Reflection leads above the fold (y=${Math.round(peakBox ? peakBox.y : 999)})`);
   await p.fill('#coachPeakMoment', 'Standing with courage and bold conviction when the team felt afraid');
   await wait(100);
   check(/Courage/i.test(await p.textContent('#coachCruciblePreview')), 'In-app Stage 2 Crucible live input auto-detects matching pillar in real time without losing focus');
@@ -338,6 +357,8 @@ export default async function growth({ port }) {
   check(/Personal Identity & Leadership Charter/i.test(inAppStage6Txt) && /Today’s Bedrock Touchstone Question/i.test(inAppStage6Txt) && /Evening Jeremiah 1:8 Check/i.test(inAppStage6Txt), 'In-app Stage 6 renders 4-Domain Stewardship Self-Audit and 4-card Live Personal Charter');
   await p.click('#appSheet [data-coach-goto="5"]'); await wait(150);
   await p.click('#appSheet [data-cclm-seed-bp]'); await wait(250);
+  const bpOneThingBox = await p.locator('#bpOneThing').boundingBox();
+  check(bpOneThingBox && bpOneThingBox.y > 0 && bpOneThingBox.y < 700, `On 412x780 viewport, Morning Council #1 Priority (#bpOneThing) is visible above the fold (y=${Math.round(bpOneThingBox ? bpOneThingBox.y : 999)})`);
   const profAfterSeedFromCoach = ((await state(p)).profile) || {};
   check(profAfterSeedFromCoach.cclmRatings && profAfterSeedFromCoach.cclmRatings.stewardships === 5 && (profAfterSeedFromCoach.coreValues || []).includes('COURAGE'), 'Seeding Morning Council directly from Stage 5 persists in-progress coachDraft edits to S.profile');
   await p.click('#appClose'); await wait(200);

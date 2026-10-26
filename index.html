@@ -1872,7 +1872,7 @@
   .tc-mode-pills { display: inline-flex; background: rgba(0,0,0,.32); padding: 3px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); gap: 3px; }
   .tc-mode-btn { border: 0; background: none; color: rgba(255,255,255,.72); font: inherit; font-size: 11.5px; font-weight: 800; padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
   .tc-mode-btn.on { background: linear-gradient(135deg, #f59e0b, #d97706); color: #1c1406; box-shadow: 0 2px 6px rgba(245,158,11,.35); }
-  .today-compass.youth-mode .tc-mode-btn.on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
+  .today-compass.youth-mode .tc-mode-btn.on, .tc-mode-btn[data-compass-mode="youth"].on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
   .tc-act-pills { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
   .tc-act-pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.08); color: #fde68a; border: 1px solid rgba(251,191,36,.3); cursor: pointer; text-decoration: none; flex-shrink: 0; }
   .tc-act-pill:hover { background: rgba(251,191,36,.16); }
@@ -5415,9 +5415,24 @@ const TreasureUp = (function () {
     }
 
     if (coachStep === 2) {
-      return `<div class="sh-title">🧭 What do you love to do? · Crucible Mirror</div>
+      return `<div class="sh-title">🧭 ${!isKid ? 'Stage 2: Crucible Mirror & Pursuits' : 'What do you love to do?'}</div>
         ${coachStageNavHtml(2)}
-        <p class="sh-small">Tap your favorite hobbies, talents, and focus areas—and reflect on your Peak Moment & Frustration Shadow to surface your authentic values.</p>
+        <p class="sh-small">${!isKid ? 'Reflect on your Peak Moment & Frustration Shadow to auto-detect your authentic values, and calibrate your pursuits.' : 'Tap your favorite hobbies, talents, and focus areas.'}</p>
+
+        ${!isKid ? `
+          <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25)">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px">
+              <label for="coachPeakMoment" style="color:#fde68a;margin:0">🔥 Stage 2 Crucible Reflection (100% Blank Slate · Auto-Detects Candidate Values)</label>
+              <div style="display:flex;gap:4px">
+                <button type="button" class="bp-edit-btn" data-coach-seed-crucible style="font-size:10px;padding:2px 7px">✨ Seed Example Reflection</button>
+                <button type="button" class="bp-edit-btn" data-coach-clear-crucible style="font-size:10px;padding:2px 7px">🧹 Clear</button>
+              </div>
+            </div>
+            <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized, aligned, and proud recently?" style="margin-bottom:6px">
+            <input class="field sheet-in" id="coachPinchMirror" aria-label="Frustration Shadow (Pinch)" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow (Pinch): What drains or frustrates you fastest when violated?">
+            <div id="coachCruciblePreview" style="font-size:11.5px;color:#6ee7b7;margin-top:6px">${crucibleMatches.length ? `✨ <b>Crucible Auto-Detected Values:</b> ${esc(crucibleMatches.join(' · '))}` : `<span style="color:#94a3b8">Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</span>`}</div>
+          </div>
+        ` : ''}
 
         <div class="sheet-group">
           <label>Interests & Talents (${selected.size} selected)</label>
@@ -5443,21 +5458,6 @@ const TreasureUp = (function () {
             <button type="button" class="btn ghost" data-coach-add-custom style="white-space:nowrap">+ Add</button>
           </div>
         </div>
-
-        ${!isKid ? `
-          <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25)">
-            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-              <label for="coachPeakMoment" style="color:#fde68a;margin:0">🔥 Stage 2 Crucible Reflection (100% Blank Slate · Auto-Detects Candidate Values)</label>
-              <div style="display:flex;gap:4px">
-                <button type="button" class="bp-edit-btn" data-coach-seed-crucible style="font-size:10px;padding:2px 7px">✨ Seed Example Reflection</button>
-                <button type="button" class="bp-edit-btn" data-coach-clear-crucible style="font-size:10px;padding:2px 7px">🧹 Clear</button>
-              </div>
-            </div>
-            <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized, aligned, and proud recently?" style="margin-bottom:6px">
-            <input class="field sheet-in" id="coachPinchMirror" aria-label="Frustration Shadow (Pinch)" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow (Pinch): What drains or frustrates you fastest when violated?">
-            <div id="coachCruciblePreview" style="font-size:11.5px;color:#6ee7b7;margin-top:6px">${crucibleMatches.length ? `✨ <b>Crucible Auto-Detected Values:</b> ${esc(crucibleMatches.join(' · '))}` : `<span style="color:#94a3b8">Write a phrase above—your words automatically highlight matching Core Values in Stage 3.</span>`}</div>
-          </div>
-        ` : ''}
 
         <div class="board-actions" style="margin-top:18px">
           <button type="button" class="btn" data-coach-goto="3">Next: 16→5→3 Core Values Funnel ›</button>
@@ -5704,7 +5704,13 @@ const TreasureUp = (function () {
 
   function stashBlueprintDraft() {
     if (!$('bpOneThing')) return;
+    const w40Det = document.querySelector('#appBody .w40-details');
+    const prioDet = document.querySelector('#appBody [data-bp-more-prios]');
     bpDraft = {
+      day: dayKey(),
+      who: seasonWho(),
+      w40Open: Boolean(w40Det && w40Det.open),
+      morePriosOpen: Boolean(prioDet && prioDet.open),
       oneThing: $('bpOneThing').value,
       prio2: $('bpPrio2') ? $('bpPrio2').value : '',
       prio3: $('bpPrio3') ? $('bpPrio3').value : '',
@@ -5718,6 +5724,7 @@ const TreasureUp = (function () {
 
   function blueprintSheetHtml(overrideMove) {
     const k = dayKey(), had = blueprintOf(k), bp = had ? had[1] : {}, kid = seasonWho() !== 'adult';
+    const validDraft = bpDraft && bpDraft.day === k && bpDraft.who === seasonWho() ? bpDraft : null;
     const showCclm = !kid || !!overrideMove;
     const tops = !kid ? proTop(k) : [];
     const top1Text = !kid ? (tops[0] ? proItemText(tops[0]) : (bp.oneThing || '')) : (bp.oneThing || '');
@@ -5731,7 +5738,8 @@ const TreasureUp = (function () {
     const moveKey = overrideMove || bp.cclmMove || bpCclmMove || (CCLM_DRIFTS[prof.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
     const moveObj = CCLM_PRINCIPLES[moveKey] || CCLM_PRINCIPLES.love;
     const w40 = !kid ? w40Current() : null;
-    const hasMorePrios = !!(top2Text || top3Text || (bpDraft && (bpDraft.prio2 || bpDraft.prio3)));
+    const hasMorePrios = !!(top2Text || top3Text || (validDraft && (validDraft.morePriosOpen || validDraft.prio2 || validDraft.prio3)));
+    const w40IsOpen = !!(validDraft && validDraft.w40Open);
 
     return `<div class="sh-title">${kid ? '🌟 Morning Council · Walk with Him' : '🌅 Morning Council · Best Self'}</div>
       <p class="sh-small">${kid ? 'Alma 37:37 & Luke 2:52 · Counsel with Heavenly Father' : 'Alma 37:37 · Counsel with the Lord in all thy doings'}</p>
@@ -5750,7 +5758,7 @@ const TreasureUp = (function () {
       ${!kid && w40 ? `
         <div class="bp-sec" data-w40-card style="margin-bottom:8px;padding:8px 10px;border-radius:12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.28)">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-            <details class="w40-details" style="flex:1;min-width:0">
+            <details class="w40-details" ${w40IsOpen ? 'open' : ''} style="flex:1;min-width:0">
               <summary style="cursor:pointer;font-size:12px;color:#fef3c7;list-style:none;display:flex;align-items:center;gap:5px">
                 <span>🌿 <b>Day ${w40.d[0]} of 40 · ${esc(w40.d[2])}</b> — ${esc(w40.d[9])}</span>
                 <span style="font-size:10px;color:#fcd34d;margin-left:auto">▾</span>
@@ -5836,22 +5844,23 @@ const TreasureUp = (function () {
   }
 
   function openBlueprint(seed) {
-    const had = blueprintOf(dayKey());
+    const k = dayKey(), had = blueprintOf(k);
+    const validDraft = bpDraft && bpDraft.day === k && bpDraft.who === seasonWho() ? bpDraft : null;
     bpShare = !!(had && had[1].share);
     bpYouthArea = (had && had[1].youthArea) || 'spiritual';
-    const overrideMove = (seed && seed.cclmMove) || (bpDraft && bpDraft.cclmMove) || '';
+    const overrideMove = (seed && seed.cclmMove) || (validDraft && validDraft.cclmMove) || '';
     bpCclmMove = overrideMove || (had && had[1].cclmMove) || (CCLM_DRIFTS[profileOf().cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
     openSheet(blueprintSheetHtml(overrideMove));
-    if (bpDraft) {
-      if ($('bpOneThing') && bpDraft.oneThing) $('bpOneThing').value = bpDraft.oneThing;
-      if ($('bpPrio2') && bpDraft.prio2) $('bpPrio2').value = bpDraft.prio2;
-      if ($('bpPrio3') && bpDraft.prio3) $('bpPrio3').value = bpDraft.prio3;
-      if ($('bpGoalSid') && bpDraft.goalSid) $('bpGoalSid').value = bpDraft.goalSid;
-      if ($('bpGoalStepId') && bpDraft.goalStepId) $('bpGoalStepId').value = bpDraft.goalStepId;
-      if ($('bpUplift') && bpDraft.uplift) $('bpUplift').value = bpDraft.uplift;
-      if ($('bpGratitude') && bpDraft.gratitude) $('bpGratitude').value = bpDraft.gratitude;
-      bpDraft = null;
+    if (validDraft) {
+      if ($('bpOneThing') && validDraft.oneThing !== undefined) $('bpOneThing').value = validDraft.oneThing;
+      if ($('bpPrio2') && validDraft.prio2 !== undefined) $('bpPrio2').value = validDraft.prio2;
+      if ($('bpPrio3') && validDraft.prio3 !== undefined) $('bpPrio3').value = validDraft.prio3;
+      if ($('bpGoalSid') && validDraft.goalSid !== undefined) $('bpGoalSid').value = validDraft.goalSid;
+      if ($('bpGoalStepId') && validDraft.goalStepId !== undefined) $('bpGoalStepId').value = validDraft.goalStepId;
+      if ($('bpUplift') && validDraft.uplift !== undefined) $('bpUplift').value = validDraft.uplift;
+      if ($('bpGratitude') && validDraft.gratitude !== undefined) $('bpGratitude').value = validDraft.gratitude;
     }
+    bpDraft = null;
     if (seed && seed.uplift && $('bpUplift')) $('bpUplift').value = seed.uplift;
     if (seed && seed.cclmMove && $('bpCclmMove')) $('bpCclmMove').value = seed.cclmMove;
     document.querySelectorAll('#appBody .bp-textarea').forEach(fitTextarea);
@@ -11383,7 +11392,7 @@ const TreasureUp = (function () {
 
   // The header's panels (2026-10-02: the streak "into the top header",
   // and "dev mode goes into settings"): one sheet from the bottom.
-  function openSheet(html) { $('appBody').innerHTML = html; $('appSheet').hidden = false; $('appSheet').scrollTop = 0; }
+  function openSheet(html) { $('appBody').innerHTML = html; $('appSheet').hidden = false; $('appSheet').scrollTop = 0; const c = document.querySelector('#appSheet .ws-card'); if (c) c.scrollTop = 0; }
   function closeSheet() { $('appSheet').hidden = true; $('appBody').innerHTML = ''; }
   // The streak: its length, the supercharge's ladder with the steps reached,
   // the next one, and freezes. Missed days aren't shown (the owner: "Hide them"):
@@ -22493,12 +22502,14 @@ const TreasureUp = (function () {
         }
         return;
       }
-      const hprof = e.target.closest('[data-hub-profile]');
-      if (hprof) { openCoachProfile(); return; }
-      if (e.target.closest('[data-open-cclm-coach]')) { openCclmCoach(); return; }
+      const hprof = e.target.closest('[data-hub-profile], [data-compass-coach]');
+      if (hprof && !hprof.hasAttribute('data-open-cclm-coach')) { openCoachProfile(Number(hprof.dataset.compassCoach) || 1); return; }
+      const occHome = e.target.closest('[data-open-cclm-coach]');
+      if (occHome) { openCclmCoach(occHome.dataset.openCclmCoach || undefined); return; }
       const cmode = e.target.closest('[data-compass-mode]');
       if (cmode) {
         const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
+        bpDraft = null;
         S.seasonWho = nextWho;
         S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
         if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
@@ -22811,13 +22822,14 @@ const TreasureUp = (function () {
         S.profile.upd = Date.now();
         return S.profile;
       };
-      if (e.target.closest('[data-open-cclm-coach]')) {
+      const occ = e.target.closest('[data-open-cclm-coach]');
+      if (occ) {
         syncCoachInputs();
         stashBlueprintDraft();
         if (coachDraft && ($('coachName') || $('coachCclmNote') || document.querySelector('#appBody [data-coach-finish]'))) {
           saveProfile(coachDraft);
         }
-        openCclmCoach();
+        openCclmCoach(occ.dataset.openCclmCoach || undefined);
         return;
       }
       const ctab = e.target.closest('[data-cclm-tab]');
@@ -22946,12 +22958,13 @@ const TreasureUp = (function () {
         $('home').scrollTop = 0;
         return;
       }
-      const hubProf = e.target.closest('[data-hub-profile]');
-      if (hubProf) { stashBlueprintDraft(); openCoachProfile(); return; }
+      const hubProf = e.target.closest('[data-hub-profile], [data-compass-coach]');
+      if (hubProf) { stashBlueprintDraft(); openCoachProfile(Number(hubProf.dataset.compassCoach) || 1); return; }
       if (e.target.closest('[data-open-deep-tools]')) { openDeepToolsSheet(); return; }
       const cmode = e.target.closest('[data-compass-mode]');
       if (cmode) {
         const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
+        bpDraft = null;
         S.seasonWho = nextWho;
         S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
         if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
