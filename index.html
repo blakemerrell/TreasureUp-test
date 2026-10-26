@@ -7735,9 +7735,15 @@ const TreasureUp = (function () {
   function dayCardHtml(k) {
     const start = weekStart(WEEK.dates), d = start ? dayDiff(start, k) : -1;
     if (d >= 0 && d <= 6) return dayFlowHtml(d, k);
-    // Today outside the weeks the app has (the next one not added yet): My Season still shows.
+    // Today outside the weeks the app has (the next one not added yet): My Season and Pro's top 3 still show.
     if (k === dayKey()) {
-      const rows = seasonRows(), btn = upNext([], rows, -1, k);
+      const pRows = [];
+      if (proOn()) {
+        const top = proTop(k);
+        if (top.length) top.forEach((x, i) => { const r = { kind: 'pro', x, i, k, done: proItemDone(x), own: true }; pRows.push({ card: 'pro', done: r.done, html: flowRow(pathRowAttr(r, { d: -1, isToday: true }), r.done, esc(pathRowTitle(r)), esc(pathRowSub(r)), { box: true }) }); });
+        else { const r = { kind: 'pro', pick: true, k, done: false, own: true }; pRows.push({ card: 'pro', done: false, html: flowRow(pathRowAttr(r, { d: -1, isToday: true }), false, esc(pathRowTitle(r)), esc(pathRowSub(r))) }); }
+      }
+      const rows = pRows.concat(seasonRows()), btn = upNext([], rows, -1, k);
       return `<div class="flow"><div class="fl-date"><b>${DAY_NAMES[(new Date(k + 'T12:00:00').getDay() + 6) % 7]} · ${esc(shortDay(k))}</b><small></small></div>
         ${btn.html}<div class="fl-list">${rows.filter(r => !(btn.hide.includes(r.card) && !r.done)).map(r => r.html).join('')}</div></div>` + dayCardOther(k, start);
     }
