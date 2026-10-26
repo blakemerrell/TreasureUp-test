@@ -120,20 +120,23 @@ export default async function reader({ port }) {
   await open('Genesis 1');
   b = await buttons();
   check(b.includes('kjv') && !b.includes('changes') && !b.includes('e1830') && !b.includes('jsp'), `Genesis 1 keeps its KJV button and has no Changes, 1830 or JS Papers (${b.join(', ')})`);
-  check(await p.locator('#viewBody .ch-head-row .ch-gl-pill').count() === 1, 'clean chapter header includes compact Gospel Library pill');
-  check(await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 1 && await p.$eval('#viewBody [data-ch-panel="tools"]', el => el.hidden), 'chapter tools drawer starts collapsed so Verse 1 appears immediately');
-  await p.click('#viewBody [data-ch-drawer="tools"]'); await wait(200);
-  check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => !el.hidden), 'tapping Chapter Tools pill expands the tools drawer');
-  await p.click('#viewBody [data-ch-drawer="tools"]'); await wait(200);
-  check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => el.hidden), 'tapping Chapter Tools pill again collapses the drawer');
+  check(await p.locator('#viewBody .ch-head-row a.ch-title-link[href*="churchofjesuschrist.org"]').count() === 1 && await p.locator('#viewBody .ch-head-row .ch-gl-pill').count() === 0,
+    'chapter heading itself is the direct Gospel Library hyperlink');
+  check(await p.locator('#viewBody .ch-head-row .ch-head-icons [data-still]').count() === 1,
+    'Be still is a compact icon button in the chapter header');
+  check(await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 0 && await p.locator('#viewBody .ls-verses [data-scdoor]').count() === 1,
+    'Scripture Central commentary door lives inside Notes instead of a separate Chapter Tools pill');
+  await p.click('#viewBody [data-layer="notes"]'); await wait(200);
+  check(await p.locator('#viewBody .ls-verses [data-scdoor]').count() === 0, 'turning Notes off hides the Scripture Central door');
+  await p.click('#viewBody [data-layer="notes"]'); await wait(200);
   await close();
 
   // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words and Summary drawer.
   await open('Isaiah 26');
   b = await buttons();
   check(b.includes('plain'), `Isaiah 26 (from past/week-39.js) has its Plain words button (${b.join(', ')})`);
-  check(await p.locator('#viewBody [data-ch-drawer="sum"]').count() === 1 && await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 1,
-    'Isaiah 26 includes its Summary and Chapter Tools drawers from Week 39');
+  check(await p.locator('#viewBody [data-ch-drawer="sum"]').count() === 1 && await p.locator('#viewBody .ch-head-row a.ch-title-link').count() === 1,
+    'Isaiah 26 includes its Summary drawer and Gospel Library title link');
   await close();
 
   // The Doctrine and Covenants: no KJV button either; Notes stays.
