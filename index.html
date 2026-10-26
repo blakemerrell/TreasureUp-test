@@ -2616,7 +2616,21 @@
     padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 800;
     background: rgba(52,211,153,.16); border: 1px solid rgba(52,211,153,.42); color: #6ee7b7; cursor: pointer;
   }
-  .ch-head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .ch-head-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .ch-title-link {
+    color: inherit; text-decoration: none; display: inline-flex; align-items: baseline; gap: 5px;
+    border-bottom: 1.5px dashed rgba(255,255,255,.28); padding-bottom: 1px;
+  }
+  .ch-title-link:hover, .ch-title-link:active { border-bottom-color: var(--gold); color: var(--gold); }
+  .ch-title-ext { font-size: .66em; opacity: .65; font-weight: 700; }
+  .ch-head-icons { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+  .ch-icon-btn {
+    width: 34px; height: 34px; border-radius: 999px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+    color: #f3e3c3; font-size: 16px; display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; padding: 0; line-height: 1; transition: all .15s;
+  }
+  .ch-icon-btn:active, .ch-icon-btn.on { background: rgba(251,191,36,.2); border-color: rgba(251,191,36,.5); }
   .ch-gl-pill {
     font-size: 11.5px; font-weight: 800; color: #cbd5e1; text-decoration: none;
     padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.06);
@@ -10365,6 +10379,15 @@ const TreasureUp = (function () {
         return `<button class="lay lay-${k}${on[k] ? ' on' : ''}" data-layer="${k}" aria-pressed="${on[k]}" aria-label="${LAYER_NAMES[k] || name}">${name}</button>`; }).join('') +
       (x && x.draft ? '<span class="plain-draft">Draft: not approved yet</span>' : '') + '</div>';
   }
+  function chHeadIconsHtml(u, opts) {
+    if (!u || !u.verses) return '';
+    const o = opts || {}, wUnit = o.whole || u;
+    const hasAudio = !o.noListen && !!audioOf(wUnit);
+    return `<div class="ch-head-icons">
+      ${hasAudio ? `<button type="button" class="ch-icon-btn" data-listen="${esc(wUnit.ch)}" aria-label="Listen to ${esc(wUnit.ch)}" title="Listen to ${esc(wUnit.ch)}">🔊</button>` : ''}
+      <button type="button" class="ch-icon-btn" data-still aria-label="Be still first: a quiet minute before you read" title="Be still">🕊️</button>
+    </div>`;
+  }
   function chapterDrawersHtml(u, week, opts) {
     if (!u || !u.verses) return '';
     const o = opts || {}, wUnit = o.whole || u;
@@ -10374,21 +10397,17 @@ const TreasureUp = (function () {
     const twCount = twHtml ? (twHtml.match(/data-treasure=/g) || []).length : 0;
     const twHe = !/Greek/.test(twHtml);
     const lisHtml = o.noListen ? '' : listenHtml(wUnit);
-    const stillHtml = o.noStill ? '' : stillFirstHtml();
-    const doorHtml = u.ch ? scDoorHtml(u.ch) : '';
-    const toolsHtml = [lisHtml, stillHtml, doorHtml].filter(Boolean).join('');
-    if (!sumHtml && !twHtml && !toolsHtml) return '';
-    return `<div class="ch-drawers-wrap" data-ch-drawers>
+    const lisActive = !!(listen.ch === wUnit.ch && listen.audio);
+    const lisWrap = lisHtml ? `<div class="listen-wrap"${lisActive ? '' : ' hidden'}>${lisHtml}</div>` : '';
+    if (!sumHtml && !twHtml && !lisWrap) return '';
+    return `${lisWrap}${sumHtml || twHtml ? `<div class="ch-drawers-wrap" data-ch-drawers>
       <div class="ch-drawers-row">
         ${sumHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="sum" aria-expanded="false">📋 Summary (${sumCount}) ▾</button>` : ''}
         ${twHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="tw" aria-expanded="false">💎 ${twHe ? 'Hebrew' : 'Greek'} Words (${twCount}) ▾</button>` : ''}
-        ${toolsHtml ? `<button type="button" class="ch-drawer-pill" data-ch-drawer="tools" aria-expanded="false">🏛️ Chapter Tools ▾</button>` : ''}
-        ${lisHtml ? `<button type="button" class="ch-drawer-pill" data-listen="${esc(wUnit.ch)}">🔊 Listen</button>` : ''}
       </div>
       ${sumHtml ? `<div class="ch-drawer-panel" data-ch-panel="sum" hidden>${sumHtml}</div>` : ''}
       ${twHtml ? `<div class="ch-drawer-panel" data-ch-panel="tw" hidden>${twHtml}</div>` : ''}
-      ${toolsHtml ? `<div class="ch-drawer-panel" data-ch-panel="tools" hidden>${toolsHtml}</div>` : ''}
-    </div>`;
+    </div>` : ''}`;
   }
   function versesHtml(u, week) {
     const x = plainOf(week, u.ch), on = shownLayers(haveOf(u, week)), bsb = on.bsb && bsbOf(week, u.ch), lang = on.lang && transOf(on.lang, week, u.ch);
@@ -10416,7 +10435,7 @@ const TreasureUp = (function () {
         notes.map(n => `<p class="ls-note"><span class="lm-ic">📝</span>${linkRefs(n.text, u.ch + ':' + v.n)}</p>`).join('') +
         jsp.map(n => `<p class="ls-note ls-jsp"><span class="lm-ic">📜</span>${linkRefs(n.text, u.ch + ':' + v.n)} <a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)} ↗</a>${n.draft ? ' <span class="plain-draft">Draft</span>' : ''}</p>`).join('') +
         vMn.map(n => noteLineHtml(n, u, week)).join('') + '</div>';
-    }).join('') + `<p class="ls-ch-end">End of ${esc(u.ref)}</p>` +
+    }).join('') + (on.notes && u.ch ? scDoorHtml(u.ch) : '') + `<p class="ls-ch-end">End of ${esc(u.ref)}</p>` +
       (lang ? `<p class="ls-orig-credit">${LANGS[on.lang].name}: ${LANGS[on.lang].full} (public domain)</p>` : '') +
       (on.orig && origOf(u.ch) ? `<p class="ls-orig-credit">${origLang(u.ch) === 'el' ? 'Greek' : 'Hebrew'} words: STEPBible.org, from work at Tyndale House, Cambridge (CC BY 4.0)</p>` : '') +
       (chg && e18 ? '<p class="ls-orig-credit">Changes and 1830 text: BYU Office of Digital Humanities, OpenScripture.</p>'
@@ -11649,7 +11668,13 @@ const TreasureUp = (function () {
         if (bar) bar.style.width = (d ? Math.round(el.currentTime / d * 100) : 0) + '%';
         if (time) time.textContent = d ? clock(el.currentTime) + ' / ' + clock(d) : clock(el.currentTime);
       });
-    } else document.querySelectorAll('.listen').forEach(row => { row.innerHTML = listenInner(row.dataset.listenCh); });
+    } else {
+      document.querySelectorAll('.listen').forEach(row => {
+        row.innerHTML = listenInner(row.dataset.listenCh);
+        const wrap = row.closest('.listen-wrap');
+        if (wrap) wrap.hidden = !(listen.ch === row.dataset.listenCh && listen.audio);
+      });
+    }
     const fab = $('listenFab'), on = listen.audio && !listen.audio.ended;
     fab.hidden = !on;
     if (on) fab.textContent = (listen.audio.paused ? '▶ ' : '⏸ ') + listen.ch + ' · ' + clock(listen.audio.currentTime);
@@ -15236,9 +15261,9 @@ const TreasureUp = (function () {
         <div class="ch-head-row">
           <div>
             <div class="eyebrow">${esc(week.title)}</div>
-            <h2 class="reel-hook" style="margin:2px 0 0">${esc(u.ref)}${chapterFixHtml(week, u.ch)}</h2>
+            <h2 class="reel-hook" style="margin:2px 0 0">${u.verses && link ? `<a class="ch-title-link" href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(u.ref)} <span class="ch-title-ext" aria-hidden="true">↗</span></a>` : esc(u.ref)}${chapterFixHtml(week, u.ch)}</h2>
           </div>
-          ${u.verses && link ? `<a class="ch-gl-pill" href="${esc(link)}" target="_blank" rel="noopener noreferrer">📖 Gospel Library ↗</a>` : ''}
+          ${chHeadIconsHtml(u)}
         </div>
         ${u.verses ? coachRowHtml(u) + layersBarHtml(u, week) + chapterDrawersHtml(u, week) + `<div class="ls-verses">${versesHtml(u, week)}</div>` + scholarlyVaultHtml(u, week)
           : link ? `<a class="deep-open" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Read ${esc(u.ref)} in Gospel Library ↗</a>` : ''}
@@ -21132,8 +21157,8 @@ const TreasureUp = (function () {
       if (!part && log[u.ref] && log[u.ref].gl) L.readOk = true;
       html += `<div class="ls-chapter">
         <div class="ch-head-row">
-          <div class="ls-prompt" style="margin:0">${esc(u.ref)}</div>
-          ${gl ? `<a class="ls-gl ch-gl-pill" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">${u.verses ? '📖 Gospel Library ↗' : 'Read it in Gospel Library ↗'}</a>` : ''}
+          <div class="ls-prompt" style="margin:0">${u.verses && gl ? `<a class="ls-gl ch-title-link" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">${esc(u.ref)} <span class="ch-title-ext" aria-hidden="true">↗</span></a>` : esc(u.ref)}</div>
+          ${u.verses ? chHeadIconsHtml(u, { whole, noListen: !!(part && part.n !== 1) }) : (gl ? `<a class="ls-gl ch-gl-pill" data-ls="gl" href="${esc(gl)}" target="_blank" rel="noopener noreferrer">Read it in Gospel Library ↗</a>` : '')}
         </div>
         ${part ? `<div class="ls-coming"><small>What’s coming · verses ${part.from}–${part.to}</small>${linkRefs(part.line, part.u.ch)}</div>` : ''}
         ${u.verses ? layersBarHtml(u, WEEK) + chapterDrawersHtml(u, WEEK, { whole, noSum: !!part, noTw: !!(part && part.n !== 1), noListen: !!(part && part.n !== 1), noStill: L.steps.findIndex(x => x.kind === 'chapter') !== L.at }) + `<div class="ls-verses">${versesHtml(u, WEEK)}</div>` + scholarlyVaultHtml(u, WEEK)
