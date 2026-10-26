@@ -120,6 +120,12 @@ export default async function reader({ port }) {
   await open('Genesis 1');
   b = await buttons();
   check(b.includes('kjv') && !b.includes('changes') && !b.includes('e1830') && !b.includes('jsp'), `Genesis 1 keeps its KJV button and has no Changes, 1830 or JS Papers (${b.join(', ')})`);
+  check(await p.locator('#viewBody .ch-head-row .ch-gl-pill').count() === 1, 'clean chapter header includes compact Gospel Library pill');
+  check(await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 1 && await p.$eval('#viewBody [data-ch-panel="tools"]', el => el.hidden), 'chapter tools drawer starts collapsed so Verse 1 appears immediately');
+  await p.click('#viewBody [data-ch-drawer="tools"]'); await wait(200);
+  check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => !el.hidden), 'tapping Chapter Tools pill expands the tools drawer');
+  await p.click('#viewBody [data-ch-drawer="tools"]'); await wait(200);
+  check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => el.hidden), 'tapping Chapter Tools pill again collapses the drawer');
   await close();
 
   // The Doctrine and Covenants: no KJV button either; Notes stays.
