@@ -1,6 +1,25 @@
 // The app opens on today's date (a Sunday: the Saturday before) with no errors; every tab, Be still and the
 // settings sheet open; the TV page, Wika and Title of Liberty load.
-import { check, device, txt, wait } from './lib.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import { check, device, txt, wait, liveWeek, ROOT } from './lib.mjs';
+import { qaHash } from '../tools/questions.mjs';
+
+// Whether the live week has a video the app shows off the test site: an approved video card or a deep dive's
+// clip that the owner has watched (previewed), or a lesson section's video (CFM_MEDIA, keyed by the week's dates).
+// A week whose only video still waits to be watched (October 26, 2026) has none, so no family video card.
+function weekHasVideo() {
+  const box = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'content', 'weeks.js'), 'utf8'), box);
+  const w = box.window.TU_WEEKS.find(x => x.title === liveWeek().title);
+  if (!w) return false;
+  const ready = v => !!(v && v.youtube && v.previewed === true);
+  const ins = w.insights || [];
+  const card = x => { const c = Object.assign({}, x); delete c.deep; delete c.margin; return c; };   // a card's fingerprint leaves these out
+  return ins.some(i => i.approved === qaHash(card(i)) && ((i.kind === 'video' && ready(i.video)) || (i.deep && ready(i.deep.listen))))
+    || fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').includes(`'${w.dates}:`);
+}
 
 export default async function smoke({ port }) {
   const base = `http://127.0.0.1:${port}/`;
@@ -18,7 +37,10 @@ export default async function smoke({ port }) {
   // Family Study toggle on Today
   await p.click('[data-study-mode="family"]'); await wait(400);
   check(/Family Study/i.test(await txt(p, '#home .fl-date')), 'Family Study switches on');
-  check(await p.locator('.video-hero-card').count() > 0, 'Family video hero card renders');
+  {
+    const want = weekHasVideo(), got = await p.locator('.video-hero-card').count() > 0;
+    check(got === want, want ? 'Family video hero card renders' : 'Family Study: no video card in a week with no video ready (its video waits to be watched)');
+  }
   const readerBefore = await p.$eval('[data-pass-turn]', e => e.closest('div').querySelector('b').textContent.trim());
   await p.click('[data-pass-turn]'); await wait(300);
   const readerAfter = await p.$eval('[data-pass-turn]', e => e.closest('div').querySelector('b').textContent.trim());
