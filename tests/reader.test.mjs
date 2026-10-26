@@ -16,9 +16,9 @@ const lib = (ch, n) => `(window.TU_LIB = window.TU_LIB || {})[${JSON.stringify(c
 export default async function reader({ port }) {
   const files = {};
   if (!built('content/library.js')) files['content/library.js'] = 'window.TU_LIBRARY = ' + JSON.stringify([
-    { name: 'Old Testament', books: [['Genesis', 50]] }, { name: 'Book of Mormon', books: [['1 Nephi', 22], ['Alma', 63]] },
+    { name: 'Old Testament', books: [['Genesis', 50], ['Isaiah', 66]] }, { name: 'Book of Mormon', books: [['1 Nephi', 22], ['Alma', 63]] },
     { name: 'Doctrine and Covenants', books: [['Doctrine and Covenants', 138]] }]) + ';';
-  for (const [ch, n] of [['1 Nephi 11', 36], ['Genesis 1', 31], ['Doctrine and Covenants 4', 7]]) {
+  for (const [ch, n] of [['1 Nephi 11', 36], ['Genesis 1', 31], ['Isaiah 26', 21], ['Doctrine and Covenants 4', 7]]) {
     const f = `content/lib/${ch.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.js`;
     if (!built(f)) files[f] = lib(ch, n);
   }
@@ -126,6 +126,14 @@ export default async function reader({ port }) {
   check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => !el.hidden), 'tapping Chapter Tools pill expands the tools drawer');
   await p.click('#viewBody [data-ch-drawer="tools"]'); await wait(200);
   check(await p.$eval('#viewBody [data-ch-panel="tools"]', el => el.hidden), 'tapping Chapter Tools pill again collapses the drawer');
+  await close();
+
+  // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words and Summary drawer.
+  await open('Isaiah 26');
+  b = await buttons();
+  check(b.includes('plain'), `Isaiah 26 (from past/week-39.js) has its Plain words button (${b.join(', ')})`);
+  check(await p.locator('#viewBody [data-ch-drawer="sum"]').count() === 1 && await p.locator('#viewBody [data-ch-drawer="tools"]').count() === 1,
+    'Isaiah 26 includes its Summary and Chapter Tools drawers from Week 39');
   await close();
 
   // The Doctrine and Covenants: no KJV button either; Notes stays.

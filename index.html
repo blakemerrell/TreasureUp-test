@@ -9175,10 +9175,18 @@ const TreasureUp = (function () {
     const u = { ref: ch, ch, book: m[1], c: Number(m[2]), whole: true, from: 1, to: d.v.length, verses: d.v.map((t, i) => ({ n: i + 1, t })), words: d.v.reduce((n, t) => n + countWords(t), 0) };
     // A chapter he hasn't read: its reading clock starts now (it pays XP once, below).
     if (!everRead(ch)) { const c = S.libClock || (S.libClock = {}); if (!c[ch]) { c[ch] = Date.now(); saveLocal(); } }
-    // Its plain words and notes: a week's, or content/plain.js for a chapter no week reads (all of Isaiah, 2026-10-02).
-    if (!window.TU_PLAIN) await loadOnce('content/plain.js').catch(() => {});
-    const week = (window.TU_WEEKS || []).find(w => readingUnits(w.reference).some(x => x.ch === ch))
-      || { title: vol ? vol.name : 'Scriptures', plain: (window.TU_PLAIN && window.TU_PLAIN.plain) || [] };
+    // Its plain words and notes: a week's (in weeks.js or content/past/), or content/plain.js for a chapter no week reads (all of Isaiah, 2026-10-02).
+    let week = (window.TU_WEEKS || []).find(w => readingUnits(w.reference).some(x => x.ch === ch));
+    if (!week) {
+      const p = (window.TU_PAST_INDEX || []).find(w => readingUnits(w.reference).some(x => x.ch === ch));
+      if (p) {
+        window.TU_PAST = window.TU_PAST || {};
+        if (!window.TU_PAST[p.num]) await loadScript('content/past/week-' + p.num + '.js').catch(() => {});
+        week = window.TU_PAST[p.num] || null;
+      }
+    }
+    if (!week && !d.p && !window.TU_PLAIN) await loadOnce('content/plain.js').catch(() => {});
+    if (!week) week = { title: vol ? vol.name : 'Scriptures', plain: d.p ? [d.p] : (window.TU_PLAIN && window.TU_PLAIN.plain) || [], tldr: d.t ? [d.t] : [] };
     stopClips();
     use('library');
     readUnit = null; libUnit = { u, week };
@@ -9825,7 +9833,10 @@ const TreasureUp = (function () {
     }
   } catch (e) {}
   function plainOf(week, ch) {
-    const p = ((week && week.plain) || []).find(x => x.ch === ch);
+    const p = ((week && week.plain) || []).find(x => x.ch === ch)
+      || (((window.TU_LIB || {})[ch] || {}).p)
+      || Object.values(window.TU_PAST || {}).reduce((f, w) => f || ((w && w.plain) || []).find(x => x.ch === ch), null)
+      || ((window.TU_PLAIN && window.TU_PLAIN.plain) || []).find(x => x && x.ch === ch);
     if (!p || !Array.isArray(p.verses)) return null;
     const approved = !!p.approved && p.approved === approvalHash(noApproval(p));
     return approved || TEST_SITE ? { p, draft: !approved } : null;
@@ -9837,7 +9848,9 @@ const TreasureUp = (function () {
   // heading names, under the lines. Shown like the plain words: once the owner
   // has approved it, or on the test site as a marked draft.
   function tldrOf(week, ch) {
-    const t = ((week && week.tldr) || []).find(x => x.ch === ch);
+    const t = ((week && week.tldr) || []).find(x => x.ch === ch)
+      || (((window.TU_LIB || {})[ch] || {}).t)
+      || Object.values(window.TU_PAST || {}).reduce((f, w) => f || ((w && w.tldr) || []).find(x => x.ch === ch), null);
     if (!t || !Array.isArray(t.lines) || !t.lines.length) return null;
     const approved = !!t.approved && t.approved === approvalHash(noApproval(t));
     return approved || TEST_SITE ? { t, draft: !approved } : null;
@@ -10035,7 +10048,11 @@ const TreasureUp = (function () {
   // content/past/ in its own bsb-<num>.js (es-, tl-), a chapter of the
   // Scriptures tab in its own file with the KJV (b, es, tl).
   const isBible = ch => /^(ot|nt)\//.test(BOOK_PATHS[(/^(.+) \d+$/.exec(ch) || [])[1]] || '');
-  const pastNumOf = week => past && past.week === week && !past.p.week ? past.p.num : null;
+  const pastNumOf = week => {
+    if (past && past.week === week && !past.p.week) return past.p.num;
+    for (const [k, v] of Object.entries(window.TU_PAST || {})) if (v === week) return Number(k);
+    return null;
+  };
   const TRANS = { bsb: ['TU_BSB', 'TU_PAST_BSB', 'b'], es: ['TU_ES', 'TU_PAST_ES', 'es'], tl: ['TU_TL', 'TU_PAST_TL', 'tl'] };
   const transSrcOf = (key, week) => pastNumOf(week) != null ? `content/past/${key}-${pastNumOf(week)}.js` : `content/${key}.js`;
   function transOf(key, week, ch) {
