@@ -19,5 +19,11 @@ window.TU_PAST_INDEX = [
     "dates": "October 5–11, 2026",
     "title": "He Hath Borne Our Griefs, and Carried Our Sorrows",
     "reference": "Isaiah 50–57"
+  },
+  {
+    "num": 42,
+    "dates": "October 12–18, 2026",
+    "title": "The Redeemer Shall Come to Zion",
+    "reference": "Isaiah 58–66"
   }
 ];
