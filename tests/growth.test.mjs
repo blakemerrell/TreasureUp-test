@@ -26,6 +26,8 @@ export default async function growth({ port }) {
   const s1 = await sheet();
   check(/Age 11 · Primary until January 2027, then Youth/.test(s1), 'born April 2015, in October 2026: ' + (/Age[^|]*/.exec(s1) || [''])[0]);
   check(await p.locator('#appSheet .coach-chip.on[data-coach-who="child"]').count() === 1, 'so the profile is for a child (Primary)');
+  await p.click('#appSheet [data-coach-who="youth"]'); await wait(150);
+  check(await p.locator('#appSheet .coach-chip.on[data-coach-who="child"]').count() === 1, 'tapping Youth when a child birthday is set keeps stage as child');
   check(await p.locator('#appSheet [data-coach-who="adult"]').count() === 0, 'Adult option is hidden when a child/youth birthday is set');
   check(/Turning 12 this year/i.test(s1), 'with the turning-12 note');
   check(await p.inputValue('#coachName') === 'Sam', 'and the name typed before the birthday is kept');
@@ -351,6 +353,30 @@ export default async function growth({ port }) {
   const stAfterSeed = await state(p), profAfterSeedFromCoach = stAfterSeed.profile || {}, coachAfterSeed = (stAfterSeed.pro && stAfterSeed.pro.coach) || {};
   check(coachAfterSeed.cclmRatings && coachAfterSeed.cclmRatings.stewardships === 5 && profAfterSeedFromCoach.cclmRatings === undefined && (profAfterSeedFromCoach.coreValues || []).includes('COURAGE'), 'Seeding Morning Council directly from Stage 5 persists in-progress coachDraft edits to S.pro.coach and S.profile');
   await p.click('#appClose'); await wait(200);
+
+  // Verify legacy S.profile private coaching fields are migrated to S.pro.coach on load() and survive famCopy / saveLocal()
+  await p.evaluate(() => {
+    const raw = JSON.parse(localStorage.getItem('treasureup.v1') || '{}');
+    raw.profile = Object.assign({}, raw.profile, {
+      peakMoment: 'Legacy peak moment from older version',
+      cclmNote: 'Legacy private audit note',
+      cclmRatings: { self: 2, spouse: 5, children: 4, stewardships: 3 }
+    });
+    delete raw.pro;
+    localStorage.setItem('treasureup.v1', JSON.stringify(raw));
+    localStorage.removeItem('treasureup.pro.v1');
+  });
+  await p.reload(); await wait(300);
+  await p.click('#home [data-together-check]'); await wait(150);
+  const legacySurvives = await state(p);
+  check(
+    !(legacySurvives.profile && legacySurvives.profile.peakMoment) &&
+    !(legacySurvives.profile && legacySurvives.profile.cclmNote) &&
+    legacySurvives.pro && legacySurvives.pro.coach && legacySurvives.pro.coach.peakMoment === 'Legacy peak moment from older version' &&
+    legacySurvives.pro.coach.cclmNote === 'Legacy private audit note' &&
+    legacySurvives.pro.coach.cclmRatings && legacySurvives.pro.coach.cclmRatings.self === 2,
+    'Legacy S.profile private coaching fields migrate into S.pro.coach on load() and survive non-profile saves'
+  );
 
   check(!p.errors.length, 'no page errors' + (p.errors.length ? ': ' + p.errors.join(' | ') : ''));
   await dev.ctx.close();
