@@ -5,2376 +5,6 @@
 // semicolon: developer mode reads and writes it as JSON.
 window.TU_WEEKS = [
   {
-    "dates": "October 12–18, 2026",
-    "title": "The Redeemer Shall Come to Zion",
-    "reference": "Isaiah 58–66",
-    "lesson": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/42?lang=eng",
-    "sections": [
-      "Fasting builds spiritual power and blesses people in need",
-      "Honoring the Lord on the Sabbath brings joy",
-      "Jesus Christ is my Savior and Redeemer",
-      "“The Lord shall be unto thee an everlasting light.”",
-      "Christ will reign on earth during the Millennium"
-    ],
-    "puzzle": {
-      "groups": [
-        {
-          "section": 0,
-          "tiles": [
-            {
-              "text": "Undo heavy burdens",
-              "ref": "Isaiah 58:6"
-            },
-            {
-              "text": "Bread to the hungry",
-              "ref": "Isaiah 58:7"
-            },
-            {
-              "text": "Here I am",
-              "ref": "Isaiah 58:9"
-            },
-            {
-              "text": "Repairer of the breach",
-              "ref": "Isaiah 58:12"
-            }
-          ]
-        },
-        {
-          "section": 2,
-          "tiles": [
-            {
-              "text": "Liberty to the captives",
-              "ref": "Isaiah 61:1"
-            },
-            {
-              "text": "Beauty for ashes",
-              "ref": "Isaiah 61:3"
-            },
-            {
-              "text": "Oil of joy",
-              "ref": "Isaiah 61:3"
-            },
-            {
-              "text": "Trodden the winepress",
-              "ref": "Isaiah 63:3"
-            }
-          ]
-        },
-        {
-          "section": 3,
-          "tiles": [
-            {
-              "text": "Arise, shine",
-              "ref": "Isaiah 60:1"
-            },
-            {
-              "text": "Everlasting light",
-              "ref": "Isaiah 60:19"
-            },
-            {
-              "text": "Walls called Salvation",
-              "ref": "Isaiah 60:18"
-            },
-            {
-              "text": "A crown of glory",
-              "ref": "Isaiah 62:3"
-            }
-          ]
-        },
-        {
-          "section": 4,
-          "tiles": [
-            {
-              "text": "New heavens, new earth",
-              "ref": "Isaiah 65:17"
-            },
-            {
-              "text": "Wolf and lamb together",
-              "ref": "Isaiah 65:25"
-            },
-            {
-              "text": "Before they call",
-              "ref": "Isaiah 65:24"
-            },
-            {
-              "text": "Rend the heavens",
-              "ref": "Isaiah 64:1"
-            }
-          ]
-        }
-      ],
-      "approved": "55f7971b"
-    },
-    "sayings": [
-      {
-        "id": "say-this-day-fulfilled",
-        "text": "This day is this scripture fulfilled in your ears",
-        "ref": "Luke 4:21",
-        "speaker": "Jesus, in Nazareth",
-        "wrong": [
-          "Isaiah, in Jerusalem",
-          "Joseph, in Nazareth"
-        ],
-        "why": "Jesus read Isaiah 61 aloud in the synagogue where He grew up, then said this about Himself (Luke 4:16–21).",
-        "approved": "46a0dd64"
-      },
-      {
-        "id": "say-here-i-am",
-        "text": "Here I am",
-        "ref": "Isaiah 58:9",
-        "speaker": "The Lord, to those who call",
-        "wrong": [
-          "Isaiah, when the Lord called",
-          "Samuel, when the Lord called"
-        ],
-        "why": "The Lord promises, “he shall say, Here I am.” Young Samuel answered the Lord with “Here am I” (1 Samuel 3:4).",
-        "approved": "f0ec4b13"
-      },
-      {
-        "id": "say-winepress-alone",
-        "text": "I have trodden the winepress alone",
-        "ref": "Isaiah 63:3",
-        "speaker": "The Lord, in red robes",
-        "wrong": [
-          "A farmer, at harvest time",
-          "Isaiah, in a vision"
-        ],
-        "why": "In Isaiah 63 the Lord comes in red, like one who treads grapes, and says “of the people there was none with me.”",
-        "approved": "98243b13"
-      },
-      {
-        "id": "say-we-are-the-clay",
-        "text": "We are the clay, and thou our potter",
-        "ref": "Isaiah 64:8",
-        "speaker": "Isaiah, praying to the Lord",
-        "wrong": [
-          "The Lord, speaking to Israel",
-          "Jeremiah, at a potter's house"
-        ],
-        "why": "Isaiah prays for his people: “thou art our father; we are the clay.” Jeremiah watches a potter in Jeremiah 18.",
-        "approved": "36cbcdd6"
-      },
-      {
-        "id": "say-new-heavens",
-        "text": "I create new heavens and a new earth",
-        "ref": "Isaiah 65:17",
-        "speaker": "The Lord",
-        "wrong": [
-          "Isaiah",
-          "Moses"
-        ],
-        "why": "The Lord promises to make the earth new, so that “the former shall not be remembered, nor come into mind.”",
-        "approved": "74ba3d27"
-      },
-      {
-        "id": "say-holier-than-thou",
-        "text": "Stand by thyself, come not near to me; for I am holier than thou",
-        "ref": "Isaiah 65:5",
-        "speaker": "Proud people, to others",
-        "wrong": [
-          "The Lord, to the wicked",
-          "A priest, at the temple"
-        ],
-        "why": "Rebellious people said it, sure they were better than everyone else. That’s where the saying “holier than thou” comes from.",
-        "approved": "68515271"
-      },
-      {
-        "id": "say-earth-footstool",
-        "text": "The heaven is my throne, and the earth is my footstool",
-        "ref": "Isaiah 66:1",
-        "speaker": "The Lord",
-        "wrong": [
-          "King David",
-          "King Solomon"
-        ],
-        "why": "“Thus saith the LORD.” No house anyone builds can hold Him. Solomon said much the same when he dedicated the temple (1 Kings 8:27).",
-        "approved": "2f3a401a"
-      },
-      {
-        "id": "say-mother-comforteth",
-        "text": "As one whom his mother comforteth, so will I comfort you",
-        "ref": "Isaiah 66:13",
-        "speaker": "The Lord",
-        "wrong": [
-          "A mother",
-          "Isaiah"
-        ],
-        "why": "The Lord compares His comfort to a mother comforting her child.",
-        "approved": "7c91787c"
-      }
-    ],
-    "words": [
-      {
-        "word": "FAST",
-        "clue": "Is not this the ____ that I have chosen?",
-        "ref": "Isaiah 58:6",
-        "mean": "The Lord's kind of fast lifts other people's heavy loads, not just our own hunger."
-      },
-      {
-        "word": "DELIGHT",
-        "clue": "call the sabbath a ____",
-        "ref": "Isaiah 58:13",
-        "mean": "The Sabbath is meant to be a joy: a day to enjoy being close to the Lord."
-      },
-      {
-        "word": "ASHES",
-        "clue": "to give unto them beauty for ____",
-        "ref": "Isaiah 61:3",
-        "mean": "Jesus trades our sad and ruined things for something beautiful."
-      },
-      {
-        "word": "SHINE",
-        "clue": "Arise, ____; for thy light is come",
-        "ref": "Isaiah 60:1",
-        "mean": "The Lord's light has come to us, so we can let it shine."
-      },
-      {
-        "word": "ANSWER",
-        "clue": "before they call, I will ____",
-        "ref": "Isaiah 65:24",
-        "mean": "The Lord hears our prayers even before we finish praying them."
-      },
-      {
-        "word": "STRAW",
-        "clue": "the lion shall eat ____ like the bullock",
-        "ref": "Isaiah 65:25",
-        "mean": "When Jesus reigns, even lions will be gentle, eating straw instead of hunting."
-      },
-      {
-        "word": "POTTER",
-        "clue": "we are the clay, and thou our ____",
-        "ref": "Isaiah 64:8",
-        "mean": "The Lord shapes us like a potter shapes clay, if we let Him."
-      }
-    ],
-    "deep": [
-      {
-        "id": "deep42-fast-complaint",
-        "section": 0,
-        "read": "Isaiah 58:3–5",
-        "intro": "Before telling what a true fast is, the Lord repeats what the people said about their fasting. Read their complaint in verse 3.",
-        "q": "In Isaiah 58:3, what did the people complain about?",
-        "right": "God didn't seem to notice their fasting",
-        "wrong": [
-          "They were too hungry to do their work",
-          "The Lord made them fast every single day"
-        ],
-        "why": "They asked, “Wherefore have we fasted… and thou seest not?” But they were fasting for show while still fighting and making others work.",
-        "source": "Isaiah 58:3",
-        "find": "Wherefore have we fasted, say they, and thou seest not",
-        "hunt": "In Isaiah 58, what did the people complain about when they fasted?",
-        "approved": "06d5631a"
-      },
-      {
-        "id": "deep42-high-places",
-        "section": 1,
-        "read": "Isaiah 58:13–14",
-        "intro": "The Sabbath verse comes with a promise. Read verse 14 to see what the Lord will do for those who delight in Him.",
-        "q": "In Isaiah 58:14, where will the Lord cause those who delight in Him to ride?",
-        "right": "On the high places of the earth",
-        "wrong": [
-          "Through the open gates of Jerusalem",
-          "Across the sea on the ships of Tarshish"
-        ],
-        "why": "Verse 14: “I will cause thee to ride upon the high places of the earth.” The Scripture Helps say high places can mean sacred places where you feel God near.",
-        "source": "Isaiah 58:14",
-        "find": "I will cause thee to ride upon the high places of the earth",
-        "hunt": "In Isaiah 58, where will the Lord cause those who delight in Him to ride?",
-        "approved": "bd6c21f1"
-      },
-      {
-        "id": "deep42-helmet",
-        "section": 2,
-        "read": "Isaiah 59:16–20",
-        "intro": "Isaiah describes the Redeemer stepping in when no one else would help, and dressing for battle. Verse 20 gives this week its title.",
-        "q": "In Isaiah 59:17, what does the Redeemer wear as a helmet?",
-        "right": "Salvation",
-        "wrong": [
-          "Righteousness",
-          "Zeal"
-        ],
-        "why": "Verse 17: “an helmet of salvation upon his head.” Paul uses the same armor for us: “take the helmet of salvation” (Ephesians 6:17).",
-        "source": "Isaiah 59:17",
-        "find": "an helmet of salvation upon his head",
-        "hunt": "In Isaiah 59, what does the Redeemer wear as a helmet?",
-        "approved": "42f35b52"
-      },
-      {
-        "id": "deep42-gentiles",
-        "section": 3,
-        "read": "Isaiah 60:1–5",
-        "intro": "After “Arise, shine,” Isaiah tells who will be drawn to that light. Read verses 2 and 3.",
-        "q": "In Isaiah 60:3, who shall come to the light?",
-        "right": "The Gentiles, and kings",
-        "wrong": [
-          "The sun, and the moon",
-          "Only Zion's priests"
-        ],
-        "why": "Verse 3: “And the Gentiles shall come to thy light, and kings to the brightness of thy rising.” The light draws people from every nation.",
-        "source": "Isaiah 60:3",
-        "find": "the Gentiles shall come to thy light",
-        "hunt": "In Isaiah 60, who shall come to the light?",
-        "approved": "53b03d36"
-      },
-      {
-        "id": "deep42-houses",
-        "section": 4,
-        "read": "Isaiah 65:17–23",
-        "intro": "Isaiah describes a “new earth” where nothing anyone works for is lost. Read what people will do with the houses they build.",
-        "q": "In Isaiah 65:21, what will people do with the houses they build?",
-        "right": "Live in them themselves",
-        "wrong": [
-          "Give them away to strangers",
-          "Tear them down and start over"
-        ],
-        "why": "Verse 21: “they shall build houses, and inhabit them.” In the Millennium, no one’s work is wasted or taken away.",
-        "source": "Isaiah 65:21",
-        "find": "they shall build houses, and inhabit them",
-        "hunt": "In Isaiah 65, what will people do with the houses they build?",
-        "approved": "027ac19e"
-      },
-      {
-        "id": "deep42-kids",
-        "day": "friday",
-        "title": "From the children's part of the lesson",
-        "read": "lesson",
-        "intro": "The children’s part of this week’s lesson has ideas for making the Sabbath “a delight” (Isaiah 58:13). One is a place to keep your ideas.",
-        "q": "Where does the lesson suggest putting your drawings of Sabbath ideas?",
-        "right": "In a box of Sabbath delights",
-        "wrong": [
-          "On a calendar by the Sabbath day",
-          "In a jar of family blessings"
-        ],
-        "why": "It suggests drawing your ideas and putting them in a box of Sabbath delights, so you can pull one out when you need something to do.",
-        "source": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/42?lang=eng",
-        "find": "box of Sabbath delights",
-        "approved": "a418b824"
-      },
-      {
-        "id": "deep42-ftsoy",
-        "day": "friday",
-        "title": "From For the Strength of Youth",
-        "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/what-do-we-know-about-the-millennium?lang=eng",
-        "intro": "A short article lists what the Lord has revealed about the Millennium, the time of peace Isaiah 65 describes.",
-        "q": "According to the article, how long does the Millennium last?",
-        "right": "A thousand years",
-        "wrong": [
-          "A hundred years",
-          "Forever"
-        ],
-        "why": "It says the Millennium is a 1,000-year period after Jesus Christ’s Second Coming, when He reigns on the earth in peace.",
-        "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/what-do-we-know-about-the-millennium?lang=eng",
-        "find": "It is a 1,000-year period",
-        "approved": "1359644e"
-      }
-    ],
-    "reels": [
-      {
-        "id": "isa58-true-fast",
-        "section": 0,
-        "hook": "The fast the Lord wants lifts someone else's load.",
-        "body": "Going without food isn't the whole point. Isaiah 58 says the fast the Lord chose is “to undo the heavy burdens” and to “deal thy bread to the hungry” (verse 7). On fast Sunday, members skip two meals and give what the food would have cost as a fast offering. The bishop uses those offerings to help people in need, maybe even someone in your own ward.",
-        "verse": {
-          "text": "Is not this the fast that I have chosen? to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free, and that ye break every yoke?",
-          "ref": "Isaiah 58:6"
-        },
-        "question": {
-          "q": "Your family is fasting today. What does Isaiah 58 say makes it the Lord's kind of fast?",
-          "right": "Using what you save to help people who need it",
-          "wrong": [
-            "Going as long as you can without any food",
-            "Letting everyone at church see you fasting"
-          ],
-          "why": "His fast is “to undo the heavy burdens” and to “deal thy bread to the hungry” (Isaiah 58:7). Fasting is about lifting someone."
-        },
-        "bonus": {
-          "q": "This week's Scripture Helps explain why the Lord didn't accept the Israelites' fasting. What had it become?",
-          "right": "Only an outward ritual, not true worship",
-          "wrong": [
-            "A real way to repent and draw near to God",
-            "A day to rest from all of their hard work"
-          ],
-          "why": "It says they fasted with selfish motives and even made others work, so their fast was only an outward ritual, not true worship.",
-          "source": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/40-isaiah-58-66?lang=eng",
-          "find": "nothing more than an outward ritual"
-        },
-        "media": {
-          "image": {
-            "src": "media/feeding-the-hungry-alkmaar.jpg",
-            "alt": "Painting from 1504 of a young man handing out bread from a basket to hungry people in a town street, with Jesus Christ standing among them",
-            "credit": "The Seven Works of Mercy (detail: feeding the hungry), by the Master of Alkmaar, 1504. Public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Master_of_Alkmaar_-_The_Seven_Works_of_Mercy_(detail)_-_WGA14368.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#422006 0%,#92400e 50%,#fcd34d 115%)",
-        "blobA": "rgba(252,211,77,.4)",
-        "blobB": "rgba(0,0,0,.45)",
-        "approved": "842982d9"
-      },
-      {
-        "id": "isa58-here-i-am",
-        "section": 0,
-        "hook": "Call on Him, and He says He's right there.",
-        "body": "Fasting isn't only about food. It's a way of asking for help. Isaiah 58 promises that when we fast the Lord's way, “Then shalt thou call, and the LORD shall answer.” President Jeffrey R. Holland said he had cried out while fasting more than once, and God answered, “Here I am.” Picture calling for help and hearing that back.",
-        "verse": {
-          "text": "Then shalt thou call, and the LORD shall answer; thou shalt cry, and he shall say, Here I am…",
-          "ref": "Isaiah 58:9"
-        },
-        "question": {
-          "q": "What does Isaiah 58:9 promise when you call on the Lord?",
-          "right": "He'll answer, and He'll be right there",
-          "wrong": [
-            "He'll answer, but only after a long wait",
-            "He'll answer only if you fast all day"
-          ],
-          "why": "“Then shalt thou call, and the LORD shall answer… he shall say, Here I am.” He is near when you call."
-        },
-        "bonus": {
-          "q": "In Isaiah 58:11, what will you be like when the Lord guides you?",
-          "right": "A garden that's always watered",
-          "wrong": [
-            "A desert that blooms again",
-            "A lamp that never goes out"
-          ],
-          "why": "“Thou shalt be like a watered garden, and like a spring of water, whose waters fail not” (Isaiah 58:11).",
-          "source": "Isaiah 58:11",
-          "find": "thou shalt be like a watered garden",
-          "hunt": "In Isaiah 58, what will you be like when the Lord guides you?"
-        },
-        "media": {
-          "image": {
-            "src": "media/praying-hands-durer.jpg",
-            "alt": "Drawing of two hands pressed together in prayer, in fine white lines on blue paper",
-            "credit": "Praying Hands, by Albrecht Dürer, 1508. Public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Praying_Hands,_1508_-_Google_Art_Project.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#0c4a6e 0%,#0e7490 50%,#67e8f9 115%)",
-        "blobA": "rgba(103,232,249,.35)",
-        "blobB": "rgba(0,0,0,.4)",
-        "approved": "28b355c3"
-      },
-      {
-        "id": "isa58-sabbath-delight",
-        "section": 1,
-        "hook": "Sunday can be the best day of your week.",
-        "body": "Isaiah says to “call the sabbath a delight.” President Russell M. Nelson once kept lists of what he could and couldn't do on Sunday. Later he asked himself a better question: what sign do I want to give to God? Church, family time, scriptures and helping someone make the day a delight. Then comes a promise: “Then shalt thou delight thyself in the LORD” (verse 14).",
-        "verse": {
-          "text": "If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of the LORD, honourable…",
-          "ref": "Isaiah 58:13"
-        },
-        "question": {
-          "q": "Which of these fits calling the Sabbath “a delight”?",
-          "right": "Visiting Grandma and reading scriptures together",
-          "wrong": [
-            "Spending the whole day on your favorite hobby",
-            "Keeping a long list of things you can't do"
-          ],
-          "why": "It's a delight when you turn from “doing thy pleasure” to things that honor Him. Then “thou delight thyself in the LORD” (Isaiah 58:14)."
-        },
-        "bonus": [
-          {
-            "q": "In this week's Scripture Helps, President Nelson says faith in the Sabbath leads to what?",
-            "right": "A love for God",
-            "wrong": [
-              "A love for the Sabbath",
-              "A love for His rules"
-            ],
-            "why": "He says faith in God grows a love for the Sabbath, and faith in the Sabbath grows a love for God. Each one feeds the other.",
-            "source": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/40-isaiah-58-66?lang=eng",
-            "find": "faith in the Sabbath engenders a love for God"
-          },
-          {
-            "q": "In D&C 59:10, the Sabbath is a day to rest from what?",
-            "right": "Your everyday labors",
-            "wrong": [
-              "All of your prayers",
-              "Your family and friends"
-            ],
-            "why": "“This is a day appointed unto you to rest from your labors, and to pay thy devotions unto the Most High” (D&C 59:10).",
-            "source": "D&C 59:10",
-            "find": "a day appointed unto you to rest from your labors",
-            "hunt": "In D&C 59, the Sabbath is a day to rest from what?"
-          }
-        ],
-        "media": {
-          "image": {
-            "src": "media/meetinghouse-utah.jpg",
-            "alt": "A meetinghouse of The Church of Jesus Christ of Latter-day Saints with a tall white steeple, below a grassy mountain",
-            "credit": "A meetinghouse near Salt Lake City, Utah. Photo: public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Latter-day_Saint_Chapel_in_Utah.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#14532d 0%,#15803d 50%,#86efac 115%)",
-        "blobA": "rgba(134,239,172,.35)",
-        "blobB": "rgba(0,0,0,.4)",
-        "approved": "dc36eb0d"
-      },
-      {
-        "id": "isa61-fulfilled",
-        "section": 2,
-        "hook": "Jesus read this out loud, then said it was about Him.",
-        "body": "Hundreds of years after Isaiah, Jesus stood up in the synagogue in Nazareth, where He grew up, and read these words aloud: He was sent “to bind up the brokenhearted, to proclaim liberty to the captives.” Then He sat down and said, “This day is this scripture fulfilled in your ears” (Luke 4:21). Isaiah had been writing about Him.",
-        "verse": {
-          "text": "The Spirit of the Lord GOD is upon me; because the LORD hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;",
-          "ref": "Isaiah 61:1"
-        },
-        "question": {
-          "q": "What was Jesus telling the people in Nazareth when He read Isaiah 61?",
-          "right": "That He was the one Isaiah wrote about",
-          "wrong": [
-            "That Isaiah had come back as a new prophet",
-            "That the captives in Nazareth would go free today"
-          ],
-          "why": "He read it, then said, “This day is this scripture fulfilled in your ears” (Luke 4:21)."
-        },
-        "bonus": {
-          "q": "This week's Scripture Helps connect the acceptable year of the Lord with a special year in the law of Moses. How often did it come?",
-          "right": "Every 50 years",
-          "wrong": [
-            "Every 7 years",
-            "Every 100 years"
-          ],
-          "why": "It says the acceptable year is often connected with the year of Jubilee, which came every 50 years. Captives were freed and land was given back.",
-          "source": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/40-isaiah-58-66?lang=eng",
-          "find": "observed every 50 years"
-        },
-        "media": {
-          "image": {
-            "src": "media/jesus-synagogue-nazareth.jpg",
-            "alt": "Jesus Christ standing in a stone synagogue in Nazareth, light streaming down on Him, as the people around Him listen",
-            "credit": "Jesus Declares He Is the Messiah, from the Church Media Library",
-            "link": "https://www.churchofjesuschrist.org/media/image/bible-pictures-jesus-messiah-2aec8c4?lang=eng"
-          },
-          "video": {
-            "youtube": "h9M2mprzCF8",
-            "start": 0,
-            "end": 180,
-            "title": "Jesus reads Isaiah in Nazareth (Luke 4)",
-            "channel": "The Church of Jesus Christ of Latter-day Saints",
-            "previewed": false
-          }
-        },
-        "gradient": "linear-gradient(160deg,#1c1917 0%,#44403c 50%,#e7e5e4 115%)",
-        "blobA": "rgba(231,229,228,.35)",
-        "blobB": "rgba(0,0,0,.5)",
-        "approved": "51797f40"
-      },
-      {
-        "id": "isa61-beauty-for-ashes",
-        "section": 2,
-        "hook": "He trades what's burned up for something beautiful.",
-        "body": "In Isaiah’s day, people in deep sorrow poured ashes on their heads. Isaiah promises the Savior would give “beauty for ashes, the oil of joy for mourning.” He doesn’t just take away the sad thing. He trades it for something better, like flowers springing up where a fire burned. His people become “trees of righteousness, the planting of the LORD.”",
-        "verse": {
-          "text": "To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness…",
-          "ref": "Isaiah 61:3"
-        },
-        "question": {
-          "q": "Someone in your family is really sad. What does Isaiah 61:3 say the Savior can give?",
-          "right": "Joy in place of the sadness they feel",
-          "wrong": [
-            "A way to forget that it ever happened",
-            "Ashes to show how sad they really are"
-          ],
-          "why": "He gives “the oil of joy for mourning”: joy in place of sadness, not just less of it."
-        },
-        "bonus": {
-          "q": "In Isaiah 61:10, what does the Lord cover His people with?",
-          "right": "A robe of righteousness",
-          "wrong": [
-            "A cloak made of zeal",
-            "A crown of pure gold"
-          ],
-          "why": "“He hath covered me with the robe of righteousness” (Isaiah 61:10).",
-          "source": "Isaiah 61:10",
-          "find": "he hath covered me with the robe of righteousness",
-          "hunt": "In Isaiah 61, what does the Lord cover His people with?"
-        },
-        "media": {
-          "image": {
-            "src": "media/fireweed-after-fire.jpg",
-            "alt": "Pink fireweed flowers and green plants growing up through black ash among burned trees after a forest fire",
-            "credit": "Fireweed grows in a burned area, Kenai National Wildlife Refuge, Alaska. Photo: U.S. Fish and Wildlife Service, public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:R7-ak-knr-fireweed_grows_in_burned_area_-_DPLA_-_5411e39258a66aff3cf25f28101bb03e.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#1f2937 0%,#9d174d 55%,#f9a8d4 115%)",
-        "blobA": "rgba(249,168,212,.4)",
-        "blobB": "rgba(0,0,0,.45)",
-        "approved": "db571afe"
-      },
-      {
-        "id": "isa63-afflicted",
-        "section": 2,
-        "hook": "When you hurt, He hurts with you.",
-        "body": "Isaiah remembers how the Lord treated His people: “In all their affliction he was afflicted.” He didn’t watch from far away. He felt their hurt with them, “and he bare them, and carried them all the days of old.” Jesus Christ knows your hard days from the inside, and He carries you through them, the way a shepherd carries a lamb.",
-        "verse": {
-          "text": "In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old.",
-          "ref": "Isaiah 63:9"
-        },
-        "question": {
-          "q": "What does “in all their affliction he was afflicted” tell you about the Savior?",
-          "right": "He feels your hurt right along with you",
-          "wrong": [
-            "He sends hard things to make you stronger",
-            "He watches your hard days from far away"
-          ],
-          "why": "He didn’t stay far off: “In all their affliction he was afflicted… and he bare them, and carried them.”"
-        },
-        "bonus": {
-          "q": "In Isaiah 63:7, what does Isaiah say he will mention?",
-          "right": "The lovingkindnesses of the Lord",
-          "wrong": [
-            "The many sins of all the people",
-            "The names of all the prophets"
-          ],
-          "why": "“I will mention the lovingkindnesses of the LORD, and the praises of the LORD” (Isaiah 63:7).",
-          "source": "Isaiah 63:7",
-          "find": "I will mention the lovingkindnesses of the LORD",
-          "hunt": "In Isaiah 63, what does Isaiah say he will mention?"
-        },
-        "media": {
-          "image": {
-            "src": "media/good-shepherd-plockhorst.jpg",
-            "alt": "Painting of Jesus Christ as a shepherd, carrying a lamb in His arms while His flock of sheep walks beside Him",
-            "credit": "The Good Shepherd, by Bernhard Plockhorst. Public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Bernhard_Plockhorst_-_Good_Shephard.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#450a0a 0%,#b91c1c 50%,#fde68a 115%)",
-        "blobA": "rgba(253,230,138,.4)",
-        "blobB": "rgba(0,0,0,.4)",
-        "approved": "f0410c21"
-      },
-      {
-        "id": "isa60-arise-shine",
-        "section": 3,
-        "hook": "Get up! God's glory is shining on you.",
-        "body": "Isaiah 60 opens with a wake-up call to Zion: “Arise, shine; for thy light is come.” Darkness would cover the earth (verse 2), but the Lord would rise on His people like the sunrise. When you follow Jesus, His light shows on you. The Friend’s idea for this week: color a picture of Him and hold it up to a window so the light shines through.",
-        "verse": {
-          "text": "Arise, shine; for thy light is come, and the glory of the LORD is risen upon thee.",
-          "ref": "Isaiah 60:1"
-        },
-        "question": {
-          "q": "A friend at school seems to be in a dark time. What does Isaiah 60:1 invite you to do?",
-          "right": "Let the Lord's light shine through you",
-          "wrong": [
-            "Wait for the sunrise to shine through the dark",
-            "Make your own light, without His help"
-          ],
-          "why": "“Arise, shine; for thy light is come.” His light is on you, so it can reach others too."
-        },
-        "bonus": {
-          "q": "In Isaiah 60:22, what will a little one become?",
-          "right": "A thousand",
-          "wrong": [
-            "A great king",
-            "A tall tree"
-          ],
-          "why": "“A little one shall become a thousand, and a small one a strong nation” (Isaiah 60:22).",
-          "source": "Isaiah 60:22",
-          "find": "A little one shall become a thousand",
-          "hunt": "In Isaiah 60, what will a little one become?"
-        },
-        "media": {
-          "image": {
-            "src": "media/sunrise-harding-icefield.jpg",
-            "alt": "The sun rising over snowy mountains, lighting a wide white field of snow with orange and pink",
-            "credit": "Sunrise on the Harding Icefield, Kenai Fjords National Park. Photo: NPS, public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Sunrise_on_the_Harding_Icefield,_Kenai_Fjords_National_Park.jpg"
-          }
-        },
-        "gradient": "linear-gradient(165deg,#312e81 0%,#c2410c 55%,#fdba74 115%)",
-        "blobA": "rgba(253,186,116,.45)",
-        "blobB": "rgba(0,0,0,.4)",
-        "approved": "0a091658"
-      },
-      {
-        "id": "isa60-everlasting-light",
-        "section": 3,
-        "hook": "One day you won't need the sun to see.",
-        "body": "Isaiah looks ahead to a day when the sun and moon won’t be needed, because “the LORD shall be unto thee an everlasting light.” The next verse adds, “the days of thy mourning shall be ended” (verse 20). John saw the same city: no night there, because God gives it light (Revelation 22:5). Even now, His light is the one that never sets.",
-        "verse": {
-          "text": "The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but the LORD shall be unto thee an everlasting light, and thy God thy glory.",
-          "ref": "Isaiah 60:19"
-        },
-        "question": {
-          "q": "In Isaiah 60:19, why won't the people need the sun or moon?",
-          "right": "The Lord Himself will shine on them forever",
-          "wrong": [
-            "The sun and moon will be taken away",
-            "Their city will have its own bright lamps"
-          ],
-          "why": "“The LORD shall be unto thee an everlasting light, and thy God thy glory.”"
-        },
-        "media": {
-          "image": {
-            "src": "media/transfiguration-bloch.jpg",
-            "alt": "Painting of Jesus Christ glowing with bright white light on a mountain, with two prophets beside Him and three disciples shielding their eyes",
-            "credit": "The Transfiguration, by Carl Bloch, 1872. Public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Transfiguration_bloch.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#1e3a8a 0%,#3b82f6 50%,#f8fafc 115%)",
-        "blobA": "rgba(248,250,252,.4)",
-        "blobB": "rgba(0,0,0,.35)",
-        "approved": "a76f6c80"
-      },
-      {
-        "id": "isa65-wolf-lamb",
-        "section": 4,
-        "hook": "A wolf and a lamb, eating lunch together.",
-        "body": "When Jesus Christ reigns on the earth, even animals will be at peace: “The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock.” Nothing will hurt or destroy on the Lord’s holy mountain. That time of peace, when Jesus reigns on the earth, is called the Millennium. It begins when He comes again.",
-        "verse": {
-          "text": "The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock: and dust shall be the serpent's meat. They shall not hurt nor destroy in all my holy mountain, saith the LORD.",
-          "ref": "Isaiah 65:25"
-        },
-        "question": {
-          "q": "What does the wolf and the lamb eating together show about the Millennium?",
-          "right": "Even old enemies will live in peace",
-          "wrong": [
-            "The lamb will grow strong enough to fight",
-            "Even the lion will stop eating completely"
-          ],
-          "why": "They “shall not hurt nor destroy in all my holy mountain”: when He reigns, there is peace everywhere."
-        },
-        "bonus": {
-          "q": "Isaiah 11:6 paints a similar picture. Who will lead the animals?",
-          "right": "A little child",
-          "wrong": [
-            "A strong shepherd",
-            "A mighty lion"
-          ],
-          "why": "“The wolf also shall dwell with the lamb… and a little child shall lead them” (Isaiah 11:6).",
-          "source": "Isaiah 11:6",
-          "find": "a little child shall lead them",
-          "hunt": "Isaiah 11 paints a similar picture. Who will lead the animals?"
-        },
-        "media": {
-          "image": {
-            "src": "media/ewe-and-lambs.jpg",
-            "alt": "A white mother sheep standing between her two newborn lambs in a farmyard",
-            "credit": "Ewe with her newborn twins. Photo: NPS, public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Ewe_with_her_newborn_twins_(5c923ea1-bf7e-76f0-a417-54b699ccc285).jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#365314 0%,#65a30d 50%,#d9f99d 115%)",
-        "blobA": "rgba(217,249,157,.4)",
-        "blobB": "rgba(0,0,0,.4)",
-        "seek": "Wild animals that used to hunt will share a meal in peace",
-        "approved": "e906815d"
-      },
-      {
-        "id": "isa65-before-they-call",
-        "section": 4,
-        "hook": "He hears your prayer before you even ask.",
-        "body": "In the world Isaiah describes, the Lord promises, “before they call, I will answer; and while they are yet speaking, I will hear.” Jesus taught that Heavenly Father already knows what you need before you ask (Matthew 6:8). He still wants you to pray. Prayer isn’t telling Him news; it’s talking with Someone who is already listening.",
-        "verse": {
-          "text": "And it shall come to pass, that before they call, I will answer; and while they are yet speaking, I will hear.",
-          "ref": "Isaiah 65:24"
-        },
-        "question": {
-          "q": "You're about to pray about a worry. What does Isaiah 65:24 tell you?",
-          "right": "He's listening, even before you start",
-          "wrong": [
-            "He answers only after you finish praying",
-            "He already knows, so you don't need to pray"
-          ],
-          "why": "“Before they call, I will answer; and while they are yet speaking, I will hear.” He is already listening."
-        },
-        "media": {
-          "image": {
-            "src": "media/angelus-millet.jpg",
-            "alt": "Painting of a farmer and his wife standing in a field at sunset, heads bowed in prayer, with a church steeple far away",
-            "credit": "The Angelus, by Jean-François Millet, 1857–1859, Musée d'Orsay. Public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#1c1917 0%,#57534e 50%,#fde68a 115%)",
-        "blobA": "rgba(253,230,138,.35)",
-        "blobB": "rgba(0,0,0,.45)",
-        "approved": "dec396ee"
-      },
-      {
-        "id": "isa64-clay-potter",
-        "section": 4,
-        "hook": "Hands shaping soft clay: that's how He works with you.",
-        "body": "Isaiah prays for his people: “thou art our father; we are the clay, and thou our potter.” A potter presses, spins and reshapes clay until it becomes something useful and beautiful. Soft clay can be shaped; hard, dry clay cracks. In Jeremiah 18 the Lord sends Jeremiah to watch a potter, too. Staying soft means letting the Lord shape you.",
-        "verse": {
-          "text": "But now, O LORD, thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand.",
-          "ref": "Isaiah 64:8"
-        },
-        "question": {
-          "q": "What does being “the clay” in Isaiah 64:8 mean for you?",
-          "right": "Letting the Lord shape who you become",
-          "wrong": [
-            "Staying exactly the way you are right now",
-            "Making your own shape without any help"
-          ],
-          "why": "“We are the clay, and thou our potter; and we all are the work of thy hand.” The Potter shapes; the clay lets Him."
-        },
-        "media": {
-          "image": {
-            "src": "media/potter-nazareth-1940.jpg",
-            "alt": "Old black-and-white photo of a potter in Nazareth shaping a clay jar on his wheel while children watch",
-            "credit": "A potter at work in Nazareth, 1940. Photo: Matson Collection, Library of Congress, public domain",
-            "link": "https://commons.wikimedia.org/wiki/File:Galilee_trip._Nazareth._A_potter_at_work,_showing_table_%26_wheel_LOC_matpc.20728.jpg"
-          }
-        },
-        "gradient": "linear-gradient(150deg,#431407 0%,#9a3412 50%,#fed7aa 115%)",
-        "blobA": "rgba(254,215,170,.4)",
-        "blobB": "rgba(0,0,0,.4)",
-        "approved": "5e083a87"
-      }
-    ],
-    "approved": "103a63e4",
-    "wordsApproved": "1b2dec33",
-    "plain": [
-      {
-        "ch": "Isaiah 58",
-        "verses": [
-          "Shout it out loud! Don’t hold back! Lift up your voice like a trumpet. Tell my people what they have done wrong, and tell the house of Jacob their sins.",
-          "Every day they come looking for me and are eager to learn my ways, as if they were a nation that lived in righteousness and had not left the laws of their God. They ask me for righteous judgments, and they are eager to come near to God.",
-          "“Why have we fasted,” they say, “and you don’t see it? Why have we humbled ourselves, and you don’t notice?” Look, on the day you fast, you do whatever you please, and you push all your workers hard.",
-          "Look, you fast, but you argue and fight and hit people with cruel fists. Fasting the way you do today will not make your voice heard in heaven.",
-          "Is that the kind of fast I have chosen—a day for a person to humble himself? To bow his head like a reed and lie on sackcloth and ashes (signs of sorrow)? Is that what you call a fast, a day the Lord will accept?",
-          "Isn’t this the fast I have chosen: to break the chains of wickedness, to take away heavy burdens, to set the oppressed free, and to break every yoke that holds people down?",
-          "Isn’t it to share your food with the hungry, to bring poor people who have no home into your house, to give clothes to someone you see without any, and not to hide from your own family?",
-          "Then your light will break out like the sunrise, and you will be healed quickly. Your righteousness will go in front of you, and the glory of the Lord will guard you from behind.",
-          "Then you will call, and the Lord will answer. You will cry for help, and He will say, “Here I am.” If you stop putting heavy loads on others, pointing your finger at them, and saying wicked things,",
-          "And if you give yourself to feeding the hungry and helping those who are suffering, then your light will rise in the darkness, and your darkest times will be as bright as noon.",
-          "The Lord will guide you always. He will satisfy you in dry places and make your bones strong. You will be like a garden with plenty of water, like a spring whose water never runs out.",
-          "Your people will rebuild the ruins from long ago. You will build again on foundations laid many generations back. You will be called the Repairer of the Breach (the one who fixes the gap in the wall) and the Restorer of Streets to Live In.",
-          "If you stop doing whatever you want on the Sabbath, my holy day; if you call the Sabbath a delight and the Lord’s holy day worthy of honor; if you honor Him by not going your own way, not chasing your own pleasures, and not speaking your own words,",
-          "Then you will find joy in the Lord. I will make you ride on the high places of the earth, and I will feed you with the inheritance of your father Jacob. The Lord Himself has said it."
-        ],
-        "notes": [],
-        "approved": "055ff9eb"
-      },
-      {
-        "ch": "Isaiah 59",
-        "verses": [
-          "Look, the Lord’s hand is not too short to save you, and His ear is not too dull to hear you.",
-          "But your wrongs have come between you and your God, and your sins have hidden His face from you, so that He will not hear.",
-          "For your hands are stained with blood and your fingers with sin. Your lips have told lies, and your tongue mutters wicked things.",
-          "No one asks for justice, and no one argues their case honestly. They trust in empty words and tell lies. They plan trouble and give birth to wickedness.",
-          "They hatch the eggs of poisonous snakes and weave spider webs. Whoever eats their eggs dies, and when one is crushed, a viper comes out.",
-          "Their webs can’t be made into clothes, and they can’t cover themselves with what they make. What they do is wicked, and their hands are full of violence.",
-          "Their feet run to do evil, and they rush to kill innocent people. Their thoughts are wicked thoughts. Ruin and destruction are everywhere they go.",
-          "They don’t know the way of peace, and there is no justice in the paths they take. They have made their roads crooked, and no one who walks on them will know peace.",
-          "That is why justice is far from us, and righteousness does not reach us. We hope for light, but everything is dark. We hope for brightness, but we walk in gloom.",
-          "We feel our way along the wall like blind people, groping as if we had no eyes. We trip at noon as if it were night. In lonely places we are like dead people.",
-          "We all growl like bears and moan sadly like doves. We look for justice, but there isn’t any. We look for salvation, but it is far away from us.",
-          "For we have done so many wrongs against you, and our sins speak against us. Our wrongs are always with us, and we know our sins well.",
-          "We have rebelled and lied to the Lord. We have turned away from following our God. We have talked about hurting others and turning against God, and we have made up lies in our hearts and spoken them.",
-          "So justice is pushed back, and righteousness stands far away. Truth has fallen down in the street, and honesty cannot come in.",
-          "Truth is missing, and anyone who turns away from evil gets attacked. The Lord saw it, and He was not pleased that there was no justice.",
-          "He saw that there was no one to help, and He was amazed that there was no one to plead for the people. So His own arm brought salvation, and His own righteousness held Him up.",
-          "He put on righteousness like a breastplate and salvation like a helmet on His head. He put on clothes of vengeance and wrapped Himself in zeal like a cloak.",
-          "He will pay them back for what they have done: anger for His enemies and punishment for those who fight Him. He will pay back the islands too.",
-          "Then people in the west will fear the name of the Lord, and people in the east will fear His glory. When the enemy comes in like a flood, the Spirit of the Lord will raise a banner against him.",
-          "The Redeemer will come to Zion, to those in Jacob who turn away from their sins, says the Lord.",
-          "As for me, this is my covenant with them, says the Lord: My Spirit that is on you, and my words that I have put in your mouth, will not leave your mouth, or the mouths of your children, or the mouths of their children, from now on and forever, says the Lord."
-        ],
-        "notes": [
-          {
-            "v": 19,
-            "text": "The KJV reads the Hebrew as an enemy who will “come in like a flood.” Many modern translations read it as the Lord Himself coming like a rushing river, driven by the breath of the Lord."
-          },
-          {
-            "v": 20,
-            "text": "Paul quotes this promise when he teaches that “all Israel shall be saved” (Romans 11:26)."
-          }
-        ],
-        "review": [
-          {
-            "v": 19,
-            "about": "The KJV and modern translations read the second half differently. The plain words keep the KJV’s enemy and banner, with a note giving the other reading."
-          }
-        ],
-        "approved": "2b6ff837"
-      },
-      {
-        "ch": "Isaiah 60",
-        "verses": [
-          "Arise, Zion, and shine! Your light has come, and the glory of the Lord has risen on you.",
-          "Look, darkness will cover the earth, and thick darkness will cover the peoples. But the Lord will rise on you, and His glory will be seen on you.",
-          "The Gentiles will come to your light, and kings to the brightness of your sunrise.",
-          "Look up and look all around you. They are all gathering together and coming to you. Your sons will come from far away, and your daughters will be carried at your side.",
-          "Then you will see it and shine with joy. Your heart will thrill and swell with happiness, because the riches of the sea will be turned toward you, and the wealth of the Gentiles will come to you.",
-          "Crowds of camels will cover your land, young camels from Midian and Ephah. Everyone from Sheba will come, bringing gold and incense and telling the praises of the Lord.",
-          "All the flocks of Kedar will be gathered to you, and the rams of Nebaioth will serve you. They will be accepted as offerings on my altar, and I will make my glorious house even more glorious.",
-          "Who are these flying like clouds, like doves flying home?",
-          "For the islands are waiting for me, with the ships of Tarshish first, to bring your children from far away, with their silver and gold, to honor the name of the Lord your God, the Holy One of Israel, because He has made you glorious.",
-          "Foreigners will rebuild your walls, and their kings will serve you. In my anger I struck you, but in my favor I have had mercy on you.",
-          "Your gates will always be open. They will not be shut day or night, so that people can bring you the wealth of the Gentiles, with their kings led along.",
-          "For the nation or kingdom that will not serve you will be destroyed. Yes, those nations will be completely ruined.",
-          "The glory of Lebanon will come to you—fir, pine, and box trees together—to make my holy place beautiful. I will make the place where my feet rest glorious.",
-          "The children of those who hurt you will come bowing to you. Everyone who looked down on you will bow at your feet. They will call you the City of the Lord, the Zion of the Holy One of Israel.",
-          "You were left alone and hated, so that no one even passed through you. But I will make you majestic forever, a joy for every generation.",
-          "You will drink the milk of the Gentiles and be nursed by kings. Then you will know that I, the Lord, am your Savior and your Redeemer, the Mighty One of Jacob.",
-          "Instead of bronze I will bring gold, instead of iron silver, instead of wood bronze, and instead of stones iron. I will appoint peace to be your officers and righteousness to be your rulers.",
-          "Violence will not be heard in your land anymore, or ruin and destruction inside your borders. You will call your walls Salvation and your gates Praise.",
-          "The sun will no longer be your light by day, and the moon will not shine on you for light. The Lord will be your everlasting light, and your God will be your glory.",
-          "Your sun will never go down again, and your moon will not fade, because the Lord will be your everlasting light, and your days of mourning will be over.",
-          "All your people will be righteous. They will own the land forever. They are the branch I planted, the work of my hands, to show my glory.",
-          "The smallest one will become a thousand, and the least one a strong nation. I, the Lord, will hurry it along when its time comes."
-        ],
-        "notes": [
-          {
-            "v": 1,
-            "text": "The Lord gives the same call to His Church in the latter days: “Arise and shine forth, that thy light may be a standard for the nations” (D&C 115:5)."
-          },
-          {
-            "v": 5,
-            "text": "The KJV has “flow together.” Most modern translations read the Hebrew word as ‘be radiant’: shine with joy."
-          },
-          {
-            "v": 16,
-            "text": "Nephi explains the same picture from Isaiah 49:22–23: the Lord’s marvelous work among the Gentiles will bless Israel, and “it is likened unto their being nourished by the Gentiles” (1 Nephi 22:8)."
-          },
-          {
-            "v": 19,
-            "text": "In John’s vision the holy city needs no sun, because “the glory of God did lighten it, and the Lamb is the light thereof” (Revelation 21:23)."
-          },
-          {
-            "v": 22,
-            "text": "The Joseph Smith Translation changes “his time” to my time: the Lord will hasten it in His own time."
-          }
-        ],
-        "review": [
-          {
-            "v": 1,
-            "about": "Added “Zion”: every you in this chapter is feminine (verse 14 names her). The note under verse 1 gives the Lord’s same call to His Church (D&C 115:5)."
-          }
-        ],
-        "approved": "f63cbf4a"
-      },
-      {
-        "ch": "Isaiah 61",
-        "verses": [
-          "The Spirit of the Lord God is on me, because the Lord has anointed me to bring good news to the meek. He has sent me to heal those whose hearts are broken, to announce freedom to the captives, and to open the prison doors for those who are locked up.",
-          "He sent me to announce the year of the Lord’s favor and the day of our God’s vengeance, and to comfort all who mourn.",
-          "He sent me to care for those who mourn in Zion—to give them beauty instead of ashes, the oil of joy instead of mourning, and clothes of praise instead of a heavy spirit. They will be called trees of righteousness, planted by the Lord, to show His glory.",
-          "They will rebuild the ancient ruins and restore places that were destroyed long ago. They will repair the ruined cities that have lain empty for generations.",
-          "Strangers will stand and take care of your flocks, and foreigners will plow your fields and tend your vineyards.",
-          "But you will be called the Priests of the Lord. People will call you the Ministers of our God. You will enjoy the riches of the Gentiles and take pride in their glory.",
-          "Instead of shame, you will get a double share. Instead of disgrace, your people will be glad about what they receive. So in their land they will receive a double portion, and they will have joy that lasts forever.",
-          "For I, the Lord, love justice. I hate stealing, even to give a burnt offering. I will reward their work faithfully, and I will make an everlasting covenant with them.",
-          "Their children will be known among the Gentiles, and their descendants among the peoples. Everyone who sees them will know that they are the people the Lord has blessed.",
-          "I will be very glad in the Lord. My soul will rejoice in my God, because He has dressed me in clothes of salvation and wrapped me in a robe of righteousness, like a bridegroom dressed in his finest and a bride wearing her jewels.",
-          "For just as the earth makes plants sprout and a garden makes seeds grow, the Lord God will make righteousness and praise spring up in front of all the nations."
-        ],
-        "notes": [
-          {
-            "v": 1,
-            "text": "Jesus read verse 1 and the first part of verse 2 in the synagogue at Nazareth, stopping before the words about vengeance. Then He said, “This day is this scripture fulfilled in your ears” (Luke 4:16–21)."
-          },
-          {
-            "v": 8,
-            "text": "The KJV has “direct their work in truth.” The Hebrew word for work can also mean the pay for work, so most modern translations read it as the Lord faithfully giving them their reward."
-          }
-        ],
-        "approved": "59984ee3"
-      },
-      {
-        "ch": "Isaiah 62",
-        "verses": [
-          "For Zion’s sake I will not keep quiet, and for Jerusalem’s sake I will not rest, until her righteousness shines out like the dawn and her salvation blazes like a burning torch.",
-          "The Gentiles will see your righteousness, Zion, and all kings will see your glory. You will be called by a new name that the Lord Himself will give you.",
-          "You will be a crown of glory in the Lord’s hand, a royal crown in the hand of your God.",
-          "No one will call you Forsaken anymore, or call your land Desolate. Instead you will be called Hephzi-bah (My Delight Is in Her), and your land Beulah (Married), because the Lord delights in you, and your land will be married.",
-          "As a young man marries a young woman, so your sons will marry you. As a groom is happy with his bride, so your God will be happy with you.",
-          "Jerusalem, I have put watchmen on your walls who will never be silent, day or night. You who call on the Lord, do not be silent.",
-          "Give Him no rest until He makes Jerusalem strong and makes it something the whole earth praises.",
-          "The Lord has made a promise by His right hand and His strong arm: I will never again give your grain to your enemies for food, and foreigners will not drink the new wine you worked so hard for.",
-          "But those who harvest the grain will eat it and praise the Lord, and those who gather the grapes will drink the wine in the courtyards of my holy temple.",
-          "Go through, go through the gates! Clear the road for the people! Build up, build up the highway! Clear away the stones! Raise a banner for the peoples!",
-          "Look, the Lord has announced to the ends of the earth: Tell the daughter of Zion, “Look, your salvation is coming! His reward is with Him, and His prize goes before Him.”",
-          "They will be called the Holy People, the Redeemed of the Lord. And you will be called Sought Out, the City Not Forsaken."
-        ],
-        "notes": [],
-        "review": [
-          {
-            "v": 2,
-            "about": "Added “Zion”: every you here is feminine (verse 1 names her), so the new names belong to Zion."
-          }
-        ],
-        "approved": "c57ce9d6"
-      },
-      {
-        "ch": "Isaiah 63",
-        "verses": [
-          "Who is this coming from Edom, from Bozrah, with clothes dyed red? Who is this, dressed in glory, marching in His great strength? “It is I, who speak in righteousness, mighty to save.”",
-          "Why are your clothes red, like the clothes of someone who stomps grapes in a winepress?",
-          "I have stomped the grapes in the winepress alone, and no one from the nations was with me. I will stomp them in my anger and trample them in my fury. Their blood will splash on my clothes, and I will stain everything I wear.",
-          "For the day of vengeance is in my heart, and the year of my redeemed people has come.",
-          "I looked, and there was no one to help. I was amazed that no one would hold me up. So my own arm brought salvation, and my fury held me up.",
-          "I will trample the peoples in my anger, make them drunk with my fury, and bring their strength down to the ground.",
-          "I will tell about the Lord’s loving kindnesses and His praises, for everything the Lord has done for us—the great goodness He has shown the house of Israel because of His mercy and His many loving kindnesses.",
-          "For He said, “Surely they are my people, children who will not lie.” So He became their Savior.",
-          "In all their troubles He was troubled too, and the angel of His presence saved them. In His love and pity He redeemed them. He lifted them up and carried them all through the days of old.",
-          "But they rebelled and made His Holy Spirit sad. So He turned and became their enemy, and He fought against them.",
-          "Then His people remembered the days long ago, the days of Moses: Where is the one who brought them up out of the sea with the shepherd of His flock? Where is the one who put His Holy Spirit among them?",
-          "He led them by Moses’ right hand with His glorious arm. He split the water in front of them to make His name known forever.",
-          "He led them through the deep sea like a horse running in the open country, so they did not stumble.",
-          "Like cattle going down into a valley, the Spirit of the Lord gave them rest. That is how you led your people, to make a glorious name for yourself.",
-          "Look down from heaven and see us from your holy and glorious home. Where are your zeal and your strength? Where are your tender love and mercy for me? Are you holding them back?",
-          "You are our Father, even though Abraham does not know us and Israel does not recognize us. You, O Lord, are our Father, our Redeemer. That has been your name forever.",
-          "O Lord, why have you made us wander from your ways and hardened our hearts so that we don’t fear you? Come back for the sake of your servants, the tribes that belong to you.",
-          "Your holy people owned your holy place for only a little while. Now our enemies have trampled your temple.",
-          "We have become like people you never ruled, like people who were never called by your name."
-        ],
-        "notes": [
-          {
-            "v": 1,
-            "text": "The Doctrine and Covenants uses these verses for the Lord’s Second Coming: “the Lord shall be red in his apparel” (D&C 133:46–51)."
-          },
-          {
-            "v": 11,
-            "text": "The KJV says “he remembered.” The Hebrew can mean the Lord or His people; many modern translations have His people remembering."
-          },
-          {
-            "v": 17,
-            "text": "The Joseph Smith Translation asks why the Lord has allowed (suffered) them to wander from His ways and to harden their hearts, instead of saying He made them."
-          },
-          {
-            "v": 19,
-            "text": "The KJV reads “We are thine.” Many modern translations read the Hebrew as ‘We have become like those you never ruled.’"
-          }
-        ],
-        "review": [
-          {
-            "v": 3,
-            "about": "The KJV has the Lord speaking of the trampling as still to come (I will tread); many translations put it in the past, and so does the Doctrine and Covenants: “I have trampled them in my fury” (D&C 133:51). The plain words keep the KJV."
-          },
-          {
-            "v": 17,
-            "about": "The plain words follow the Hebrew (you made us wander, hardened our hearts); the Joseph Smith Translation says the Lord allowed it. A note gives the JST. You may want the plain words to follow the JST instead."
-          }
-        ],
-        "approved": "918c5891"
-      },
-      {
-        "ch": "Isaiah 64",
-        "verses": [
-          "Oh, if only you would tear open the heavens and come down, and the mountains would melt at your presence!",
-          "It would be like a blazing fire that makes water boil. Your enemies would know your name, and the nations would tremble at your presence!",
-          "When you did fearsome things that we never expected, you came down, and the mountains melted at your presence.",
-          "Since the world began, no one has heard or listened, and no eye has seen, O God, except yours, what you have prepared for the one who waits for you.",
-          "You welcome those who joyfully do righteous things and who remember you in your ways. But you were angry, because we sinned. Your ways last forever, and in them we will be saved.",
-          "All of us have become like something unclean, and all our righteous deeds are like filthy rags. We all dry up like a leaf, and our sins carry us away like the wind.",
-          "No one calls on your name or wakes up to take hold of you. For you have hidden your face from us and have made us melt away because of our sins.",
-          "But now, O Lord, you are our Father. We are the clay, and you are our potter. We are all the work of your hands.",
-          "Don’t be so very angry, O Lord, and don’t remember our sins forever. Please look at us—we are all your people.",
-          "Your holy cities have become a wilderness. Zion is a wilderness, and Jerusalem is empty and ruined.",
-          "Our holy and beautiful temple, where our fathers praised you, has been burned with fire, and all the things we loved are in ruins.",
-          "After all this, O Lord, will you hold yourself back? Will you stay silent and keep making us suffer so much?"
-        ],
-        "notes": [
-          {
-            "v": 1,
-            "text": "In the Doctrine and Covenants, the Lord’s servants pray these words for His coming: “O that thou wouldst rend the heavens” (D&C 133:40)."
-          },
-          {
-            "v": 4,
-            "text": "Paul quotes this verse about “the things which God hath prepared for them that love him” (1 Corinthians 2:9)."
-          },
-          {
-            "v": 5,
-            "text": "The KJV ends this verse with hope: “we shall be saved.” Many modern translations read the Hebrew as a question: ‘How can we be saved?’"
-          }
-        ],
-        "review": [
-          {
-            "v": 5,
-            "about": "The KJV reads the end of the verse as hope, modern translations as a worried question. The plain words keep the KJV’s hope, with a note."
-          }
-        ],
-        "approved": "faaa65a6"
-      },
-      {
-        "ch": "Isaiah 65",
-        "verses": [
-          "I let myself be found by people who did not ask for me. I was found by people who did not look for me. To a nation that was not called by my name, I said, “Here I am, here I am!”",
-          "All day long I have held out my hands to a rebellious people, who walk in a way that is not good and follow their own ideas.",
-          "They are a people who keep making me angry right to my face. They offer sacrifices in gardens and burn incense on brick altars.",
-          "They sit among the graves and spend the night in secret places. They eat pig meat, and their pots are full of disgusting broth.",
-          "They say, “Stay away! Don’t come near me, because I am holier than you!” People like that are like smoke in my nose, a fire that burns all day long.",
-          "Look, it is written down in front of me: I will not keep quiet. I will pay them back—yes, I will pay them back in full.",
-          "I will pay back your sins and your fathers’ sins together, says the Lord. They burned incense on the mountains and insulted me on the hills, so I will measure out to them the full payment for what they did before.",
-          "This is what the Lord says: When there is still juice in a bunch of grapes, people say, “Don’t destroy it, because there is a blessing in it.” That is what I will do for my servants’ sake: I will not destroy them all.",
-          "I will bring children out of Jacob, and out of Judah someone to inherit my mountains. My chosen people will inherit it, and my servants will live there.",
-          "The plain of Sharon will be a pasture for flocks, and the valley of Achor a place for herds to rest, for my people who have looked for me.",
-          "But you have left the Lord and forgotten my holy mountain. You set a table for the god of luck and fill cups of mixed wine for the god of fate.",
-          "So I will destine you for the sword, and you will all bow down to be killed, because when I called, you did not answer. When I spoke, you did not listen. You did evil right in front of me and chose what I do not like.",
-          "So this is what the Lord God says: Look, my servants will eat, but you will be hungry. My servants will drink, but you will be thirsty. My servants will be glad, but you will be ashamed.",
-          "My servants will sing because their hearts are happy, but you will cry because your hearts are hurting, and you will wail because your spirits are broken.",
-          "You will leave behind your name for my chosen people to use in curses. The Lord God will put you to death, but He will call His servants by another name.",
-          "Anyone in the land who asks for a blessing will ask it by the God of truth, and anyone who makes a promise will promise by the God of truth, because the old troubles will be forgotten and hidden from my eyes.",
-          "Look, I am creating new heavens and a new earth. The things of the past will not be remembered or even come to mind.",
-          "But be glad and rejoice forever in what I create. For look, I am creating Jerusalem to be a joy and her people to be a delight.",
-          "I will rejoice over Jerusalem and be happy with my people. The sound of weeping and crying will not be heard in her anymore.",
-          "No baby there will live only a few days, and no old man will die before he has lived a full life. Someone who dies at a hundred will be thought of as a child, and a sinner who lives a hundred years will still be cursed.",
-          "They will build houses and live in them. They will plant vineyards and eat their fruit.",
-          "They will not build houses for someone else to live in, or plant for someone else to eat. My people will live as long as trees live, and my chosen ones will enjoy the work of their hands for a long time.",
-          "They will not work for nothing or have children who are born into disaster, for they are the children of those the Lord has blessed, and their children will be with them.",
-          "Before they call, I will answer. While they are still speaking, I will hear.",
-          "The wolf and the lamb will eat together, and the lion will eat straw like an ox. Dust will be the snake’s food. They will not hurt or destroy anything on all my holy mountain, says the Lord."
-        ],
-        "notes": [
-          {
-            "v": 1,
-            "text": "Paul uses this verse about the Gentiles finding God: “I was found of them that sought me not” (Romans 10:20)."
-          },
-          {
-            "v": 2,
-            "text": "Paul says these words were spoken to Israel: “But to Israel he saith, All day long I have stretched forth my hands” (Romans 10:21)."
-          },
-          {
-            "v": 4,
-            "text": "The KJV has “monuments.” The Hebrew word means guarded or hidden places, so modern translations say ‘secret places.’"
-          },
-          {
-            "v": 11,
-            "text": "The KJV reads the Hebrew words as “that troop” and “that number.” Most modern translations read them as the names of two false gods, Fortune and Destiny."
-          },
-          {
-            "v": 20,
-            "text": "The Doctrine and Covenants says of the Millennium: “an infant shall not die until he is old; and his life shall be as the age of a tree” (D&C 101:30)."
-          }
-        ],
-        "review": [
-          {
-            "v": 11,
-            "about": "The KJV’s “that troop” and “that number” are read today as two false gods, Fortune and Destiny. The plain words follow the modern reading, with a note."
-          }
-        ],
-        "approved": "e04e31f2"
-      },
-      {
-        "ch": "Isaiah 66",
-        "verses": [
-          "This is what the Lord says: Heaven is my throne, and the earth is my footstool. What house could you build for me? What place could be my resting place?",
-          "My hand made all these things, and that is how they came to be, says the Lord. But this is the person I will look to: the one who is poor and has a contrite spirit (a humble, sorry heart), and who trembles at my word.",
-          "Whoever kills an ox is like someone who kills a man. Whoever sacrifices a lamb is like someone who breaks a dog’s neck. Whoever gives an offering is like someone who offers pig’s blood. Whoever burns incense is like someone who praises an idol. They have chosen their own ways, and they love their disgusting practices.",
-          "So I too will choose their punishment and bring on them the very things they fear, because when I called, no one answered, and when I spoke, they did not listen. They did evil right in front of me and chose what I do not like.",
-          "Listen to the word of the Lord, you who tremble at His word: Your own brothers who hate you and throw you out because of my name have said, “Let the Lord be glorified, so we can see your joy!” But they will be put to shame.",
-          "Listen to the noise from the city, a voice from the temple! It is the voice of the Lord, paying back His enemies what they deserve.",
-          "Before she was in labor, she gave birth. Before the pain came, she had a baby boy.",
-          "Who has ever heard of such a thing? Who has seen anything like it? Can a land be born in one day, or a nation be born all at once? Yet as soon as Zion was in labor, she gave birth to her children.",
-          "Would I bring a baby to the moment of birth and not let it be born? says the Lord. Would I, the one who makes birth happen, close the womb? says your God.",
-          "Rejoice with Jerusalem and be glad for her, all you who love her. Rejoice with her, all you who have been mourning for her.",
-          "Then you will drink from her comfort like babies nursing at their mother’s breast and be satisfied, and you will enjoy her rich glory.",
-          "For this is what the Lord says: Look, I will send peace to her like a river, and the glory of the Gentiles like an overflowing stream. You will nurse and be carried on her hip and bounced on her knees.",
-          "As a mother comforts her child, so I will comfort you, and you will be comforted in Jerusalem.",
-          "When you see this, your heart will be glad, and your bones will grow strong like fresh grass. The Lord’s hand will be shown to His servants, and His anger to His enemies.",
-          "Look, the Lord will come with fire, and His chariots will be like a whirlwind. He will pour out His anger with fury and His rebuke with flames of fire.",
-          "For the Lord will judge all people with fire and with His sword, and many will be killed by the Lord.",
-          "Those who make themselves holy and clean to go into the gardens, following the one in the middle, and who eat pig’s meat, disgusting things, and mice, will all come to an end together, says the Lord.",
-          "For I know what they do and what they think. The time is coming when I will gather all nations and languages, and they will come and see my glory.",
-          "I will set a sign among them. I will send some who survive to the nations: to Tarshish, Pul, and Lud (who are skilled with the bow), to Tubal and Javan, and to the faraway islands that have not heard about me or seen my glory. They will tell about my glory among the Gentiles.",
-          "And they will bring all your brothers from all the nations as an offering to the Lord—on horses, in chariots and wagons, on mules and on fast animals—to my holy mountain Jerusalem, says the Lord, just as the children of Israel bring an offering in a clean dish to the house of the Lord.",
-          "I will also take some of them to be priests and Levites, says the Lord.",
-          "For just as the new heavens and the new earth that I will make will last before me, says the Lord, so your descendants and your name will last.",
-          "From one new moon to the next and from one Sabbath to the next (every month and every week), all people will come to worship me, says the Lord.",
-          "They will go out and look at the dead bodies of the people who rebelled against me. Their worm will not die, and their fire will not go out, and everyone will be disgusted by them."
-        ],
-        "notes": [
-          {
-            "v": 4,
-            "text": "The KJV reads “choose their delusions.” The Hebrew word is rare; many modern translations read it as ‘punishment’ or ‘harsh treatment.’"
-          },
-          {
-            "v": 5,
-            "text": "The KJV reads “he shall appear to your joy”: the Lord will come, and the faithful will rejoice. Modern translations read it as the mockers’ words: ‘so we can see your joy.’"
-          },
-          {
-            "v": 17,
-            "text": "The word “tree” is not in the Hebrew; the KJV added it. The Hebrew says only ‘one in the midst.’"
-          },
-          {
-            "v": 24,
-            "text": "Jesus used these words to describe hell: “where their worm dieth not, and the fire is not quenched” (Mark 9:44)."
-          }
-        ],
-        "review": [
-          {
-            "v": 5,
-            "about": "The KJV reads the last line as the Lord appearing to their joy; the plain words follow the Hebrew vowels (the enemies mocking), with a note. Your call."
-          }
-        ],
-        "approved": "c1399948"
-      }
-    ],
-    "tldr": [
-      {
-        "ch": "Isaiah 58",
-        "lines": [
-          "The people ask why God doesn’t notice when they fast. But they fight and push their workers hard, so heaven won’t hear them. (verses 1–5)",
-          "The fast the Lord wants means freeing people from heavy burdens and sharing food, homes, and clothes with those in need. (verses 6–7)",
-          "Then their light will shine like the sunrise. The Lord will answer when they call and make them like a watered garden. (verses 8–12)",
-          "The Lord commands them to keep the Sabbath holy. If they call it a delight, they will find joy in the Lord. (verses 13–14)"
-        ],
-        "review": [
-          {
-            "v": 13,
-            "about": "“Commands” comes from the heading (“The commandment to keep the Sabbath is given”); the verse itself is an “if you…” promise."
-          }
-        ],
-        "approved": "e3bbdba7"
-      },
-      {
-        "ch": "Isaiah 59",
-        "lines": [
-          "The Lord can save and hear, but Israel’s sins have come between them and their God. They lie, hurt others, and kill. (verses 1–8)",
-          "The people admit they walk in darkness, feeling along the wall like the blind. Their own sins speak against them. (verses 9–15)",
-          "No one pleads for the people, so the Messiah steps in Himself. He puts on righteousness like armor and pays back His enemies. (verses 16–19)",
-          "“The Redeemer shall come to Zion” for those who repent. His covenant is that His Spirit and words will stay with them forever. (verses 20–21)"
-        ],
-        "review": [
-          {
-            "v": 16,
-            "about": "The line names the Messiah as the one who steps in, from the heading; the verse itself says the Lord saw no one to plead for the people and brought salvation with His own arm."
-          }
-        ],
-        "approved": "d29555b8"
-      },
-      {
-        "ch": "Isaiah 60",
-        "lines": [
-          "Israel will arise and shine with the Lord’s light in the last days, while darkness covers the earth. (verses 1–2)",
-          "The Gentiles will come to her light. She will look up and see her children coming home from far away with riches. (verses 3–9)",
-          "Foreigners will rebuild her walls and serve her. She will be called Zion and will know the Lord is her Savior and Redeemer. (verses 10–18)",
-          "The Lord, not the sun, will be her everlasting light. Her people will all be righteous and will grow into a strong nation. (verses 19–22)"
-        ],
-        "review": [
-          {
-            "v": 1,
-            "about": "The plain words and the helps name Zion here; the line says Israel, from the heading."
-          }
-        ],
-        "approved": "2791c8b4"
-      },
-      {
-        "ch": "Isaiah 61",
-        "lines": [
-          "The Spirit is on the Messiah to preach the gospel, heal broken hearts, and free captives. In Luke 4:16–21, Jesus reads this about Himself. (verses 1–2)",
-          "He gives those who mourn in Zion beauty instead of ashes, joy instead of sadness, and praise instead of a heavy heart. (verse 3)",
-          "In the last days, they will rebuild old ruins and be called the Lord’s priests and ministers. Their joy will last forever. (verses 4–7)",
-          "The Lord will make an everlasting covenant with them. He will make righteousness and praise spring up like a garden before all nations. (verses 8–11)"
-        ],
-        "approved": "69d9008f"
-      },
-      {
-        "ch": "Isaiah 62",
-        "lines": [
-          "In the last days, Zion’s righteousness will shine like the dawn for the Gentiles to see. The Lord will give her a new name. (verses 1–2)",
-          "She won’t be called Forsaken, or left alone, anymore. The Lord delights in her like a groom rejoicing over his bride. (verses 3–5)",
-          "Watchmen on Jerusalem’s walls will speak of the Lord day and night, and pray until He makes Jerusalem strong and praised. (verses 6–9)",
-          "The gospel banner will be raised, and Israel will be gathered. They will be called the holy people, the redeemed of the Lord. (verses 10–12)"
-        ],
-        "review": [
-          {
-            "v": 6,
-            "about": "The heading says the watchmen teach about the Lord and the KJV has “make mention of the LORD,” but the plain words read “You who call on the Lord,” so the line has them both speak of the Lord and pray."
-          },
-          {
-            "v": 10,
-            "about": "“Gospel banner” and “Israel will be gathered” are two separate parts of the heading (the gospel standard lifted up; Israel gathered); verse 10 lifts the banner “for the peoples.”"
-          }
-        ],
-        "approved": "d4acd073"
-      },
-      {
-        "ch": "Isaiah 63",
-        "lines": [
-          "D&C 133 says this is the Second Coming. The Lord comes mighty to save, in red clothes like someone who stomps grapes. (verses 1–2)",
-          "He treads the winepress alone, and His enemies’ blood stains His clothes. It’s a day of vengeance and the year He redeems His people. (verses 3–6)",
-          "The Saints praise the Lord for His loving kindness. He became Israel’s Savior, felt their troubles, and redeemed them in His love. (verses 7–9)",
-          "Israel rebelled, and He fought against them. They remember how He split the sea in Moses’ day, and call Him their Father and Redeemer. (verses 10–19)"
-        ],
-        "review": [
-          {
-            "v": 7,
-            "about": "The verse says “I will tell about the Lord’s loving kindnesses”; naming the speakers as the Saints comes from the heading."
-          },
-          {
-            "v": 11,
-            "about": "The KJV says “he remembered”; the Hebrew can mean the Lord or His people, and the line follows the plain words, where His people remember."
-          }
-        ],
-        "approved": "48d10169"
-      },
-      {
-        "ch": "Isaiah 64",
-        "lines": [
-          "God’s people pray for Him to tear open the heavens and come down. D&C 133 uses this prayer for the Second Coming. (verses 1–3)",
-          "Only God has seen what He has prepared for those who wait for Him. In His ways they will be saved. (verses 4–5)",
-          "They admit even their good deeds are like dirty rags. But the Lord is their Father, the potter, and they are His clay. (verses 6–8)",
-          "They beg Him not to stay angry, because they are His people. Zion is in ruins, and the temple has burned. (verses 9–12)"
-        ],
-        "review": [
-          {
-            "v": 5,
-            "about": "The line follows the KJV and plain words (“in them we will be saved”); the note says many modern translations read the Hebrew as a question, “How can we be saved?”"
-          }
-        ],
-        "approved": "18c3d918"
-      },
-      {
-        "ch": "Isaiah 65",
-        "lines": [
-          "Israel rejected the Lord, though He reached out to them all day long. So He will pay them back for their sins. (verses 1–7)",
-          "But He will spare His servants and bring the sword on those who left Him for false gods. His servants will sing for joy. (verses 8–16)",
-          "In the Millennium, the Lord will make new heavens and a new earth. Old troubles will be forgotten, and His people will rejoice forever. (verses 17–19)",
-          "People will live long and enjoy what they build. The Lord will answer before they call, and the wolf and lamb will eat together. (verses 20–25)"
-        ],
-        "review": [
-          {
-            "v": 11,
-            "about": "“False gods” follows the plain words and note (the god of luck and the god of fate); the KJV reads the same Hebrew words as “that troop” and “that number.”"
-          }
-        ],
-        "approved": "3ad52b85"
-      },
-      {
-        "ch": "Isaiah 66",
-        "lines": [
-          "The Lord looks to the humble who tremble at His word, but He will punish those who choose their own ways. (verses 1–6)",
-          "At the Second Coming, Zion will give birth to the nation of Israel in one day, before her labor even starts. (verses 7–9)",
-          "All who love Jerusalem will rejoice. The Lord will give her peace like a river and comfort His people as a mother does. (verses 10–14)",
-          "The Lord will come with fire to destroy the wicked. The gospel will reach the Gentiles, and all people will worship Him. (verses 15–24)"
-        ],
-        "review": [
-          {
-            "v": 8,
-            "about": "The verse says Zion gives birth to her children, a nation, all at once; naming that nation Israel and placing it at the Second Coming comes from the heading."
-          }
-        ],
-        "approved": "ce2311d3"
-      }
-    ],
-    "insights": [
-      {
-        "id": "isa58-ramshorn",
-        "ref": "Isaiah 58:1",
-        "title": "A voice like a ram’s horn",
-        "text": "The Lord told Isaiah, “lift up thy voice like a trumpet, and shew my people their transgression.” Donald W. Parry translates that trumpet as a ram’s horn. Picture a voice as loud and clear as a horn blast, so the message can’t be missed. Parry adds that God gave this same command again in our day (Doctrine and Covenants 34:10).",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 58",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-58"
-        },
-        "find": "The Lord commands Isaiah to raise his voice, in loudness and clarity",
-        "approved": "b6364596",
-        "margin": {
-          "glance": "The “trumpet” here is a ram’s horn: a loud, clear blast that no one can miss.",
-          "short": "Isaiah was told to speak like a ram’s horn, loud and clear so nobody misses it. God gave the same command again in our day.",
-          "place": "note",
-          "approved": "df720332"
-        }
-      },
-      {
-        "id": "isa58-rearguard",
-        "ref": "Isaiah 58:8",
-        "title": "God has your back",
-        "text": "Isaiah 58:8 promises, “the glory of the LORD shall be thy rearward.” The Old Testament Student Manual, which spells it rereward, explains that it’s an old word for “rear guard”: the soldiers who protect the back of an army on the march. Your righteousness leads in front, and God’s glory closes in behind, gathering stragglers so that no one is left behind.",
-        "source": {
-          "by": "Old Testament Student Manual",
-          "title": "The Last Days and the Millennium (Isaiah 55–66)",
-          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-18?lang=eng"
-        },
-        "find": "it is applied to the gathering up of the scattered rear of an army",
-        "approved": "8fb4e086",
-        "margin": {
-          "glance": "“Rearward” is an old word for rear guard: God’s glory guards from behind, so no one is left behind.",
-          "short": "Soldiers at the back of an army protect it from behind. God’s glory is like that, gathering up anyone left behind.",
-          "place": "note",
-          "approved": "f511383b"
-        }
-      },
-      {
-        "id": "isa58-repairer",
-        "ref": "Isaiah 58:12",
-        "title": "Fixing the breach",
-        "text": "In Isaiah 58:12, people who keep the Lord’s fast are called “The repairer of the breach.” One Christmas night, a shower nozzle in Elder Clark G. Gilbert’s home broke and sprayed water everywhere, and no plumber could come. A friend shut off the main water line and fixed the breach. Elder Gilbert used that night to teach about Jesus: “Christ is the repairer of the breaches in our lives.”",
-        "source": {
-          "by": "BYU Speeches",
-          "who": "Elder Clark G. Gilbert",
-          "title": "Christ’s Peace in Perilous Times",
-          "url": "https://speeches.byu.edu/talks/clark-g-gilbert/christs-peace-in-perilous-times/"
-        },
-        "find": "In these troubled times, Christ is the repairer of the breaches in our lives",
-        "approved": "f4f50603",
-        "margin": {
-          "glance": "“The repairer of the breach”: Elder Gilbert teaches that Christ fixes the breaches in our lives.",
-          "short": "When water sprayed everywhere in Elder Gilbert’s home, a friend stopped it and fixed the break. Jesus can fix what breaks in your life.",
-          "place": "note",
-          "approved": "74cf956f"
-        }
-      },
-      {
-        "id": "isa59-reach",
-        "ref": "Isaiah 59:1–2",
-        "title": "His reach is long enough",
-        "text": "Isaiah 59:1 says the Lord’s “hand is not shortened, that it cannot save; neither his ear heavy, that it cannot hear.” A seminary lesson explains that His power to save hasn’t shrunk at all. Verse 2 shows where the distance comes from: when we sin, we pull ourselves away from God. But when we repent, He steps in to help us and redeem us.",
-        "source": {
-          "by": "Seminary manual",
-          "title": "Lesson 131: Isaiah 59–66",
-          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-teacher-manual/introduction-to-the-book-of-isaiah/lesson-131-isaiah-59-66?lang=eng"
-        },
-        "find": "power to save has not decreased",
-        "approved": "ae1bc624",
-        "margin": {
-          "glance": "The Lord’s “hand is not shortened”: His power to save hasn’t shrunk, and our sins make the distance.",
-          "short": "God can always reach you. When we sin, we pull away from Him, but when we repent, He comes to help.",
-          "place": "note",
-          "approved": "d8765389"
-        }
-      },
-      {
-        "id": "isa59-webs",
-        "ref": "Isaiah 59:5–6",
-        "title": "Clothes made of cobwebs",
-        "text": "Isaiah says the wicked weave spider webs, but “Their webs shall not become garments, neither shall they cover themselves with their works.” Donald W. Parry explains the picture. Instead of letting God clothe them, sinners try to hide their sins under spider webs. It never works. Webs can’t really cover anything, and they end up tangling and trapping the very people who spun them.",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 59",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-59"
-        },
-        "find": "the webs end up binding and restricting the sinners",
-        "approved": "de5b87df",
-        "margin": {
-          "glance": "Sinners try to hide under spider webs instead of letting God clothe them, and the webs trap them.",
-          "short": "Trying to hide your sins is like covering up with a spider web. It hides nothing, and it gets you stuck.",
-          "place": "note",
-          "approved": "66f04f2b"
-        }
-      },
-      {
-        "id": "isa59-redeemer",
-        "ref": "Isaiah 59:20",
-        "title": "Bought back",
-        "text": "“And the Redeemer shall come to Zion” (Isaiah 59:20). What does a redeemer do? Elder LeGrand R. Curtis Jr. explained that to redeem something means to buy it back. Under the law of Moses, a servant could be set free, or property bought back, by paying money. Jesus didn’t redeem us with silver or gold. He paid the price for our sins Himself, so we can be forgiven when we repent.",
-        "source": {
-          "by": "General Conference",
-          "who": "Elder LeGrand R. Curtis Jr.",
-          "title": "Redemption",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2011/10/redemption?lang=eng"
-        },
-        "find": "the law of Moses provided different ways that servants and property could be freed",
-        "approved": "32c5d81c",
-        "margin": {
-          "glance": "To redeem means to buy back, and Jesus paid for our sins Himself, not with silver or gold.",
-          "short": "To redeem something is to buy it back. Jesus paid the price for your sins, so you can be forgiven when you repent.",
-          "place": "note",
-          "approved": "cc77e439"
-        }
-      },
-      {
-        "id": "isa60-temples",
-        "ref": "Isaiah 60:6–7",
-        "title": "Treasures for the temple",
-        "text": "Isaiah 60 pictures camels, gold, incense, flocks, and rams streaming into Zion, and the Lord says, “I will glorify the house of my glory” (verse 7). Donald W. Parry explains that gold, frankincense, flocks, and rams were part of Solomon’s temple long ago. He reads them here as a picture of God’s temples being built and run today, in places all over the world.",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 60",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-60"
-        },
-        "find": "is used to build His temples, which exist throughout the world",
-        "approved": "4ac9a6db",
-        "margin": {
-          "glance": "Parry reads the gold, incense, flocks and rams as a picture of God’s temples built all over the world today.",
-          "short": "Gold, incense and rams were part of Solomon’s temple long ago. Parry sees them as a picture of temples all over the world today.",
-          "place": "note",
-          "approved": "88d0bc48"
-        }
-      },
-      {
-        "id": "isa60-doves",
-        "ref": "Isaiah 60:8",
-        "title": "Doves to the windows",
-        "text": "Isaiah 60:8 asks, “Who are these that fly as a cloud, and as the doves to their windows?” In 1830, all the members of the Church met for conference in one room 20 feet square. Even then, they talked about people from all nations coming “as doves to the windows.” Elder Jeffrey R. Holland shared their words in 2000, speaking to a Church of nearly 11 million members.",
-        "source": {
-          "by": "General Conference",
-          "who": "Elder Jeffrey R. Holland",
-          "title": "As Doves to Our Windows",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2000/04/as-doves-to-our-windows?lang=eng"
-        },
-        "find": "people coming as doves to the windows, that all nations should flock unto",
-        "approved": "c733aada",
-        "margin": {
-          "glance": "In 1830 the whole Church fit in one small room, yet they spoke of nations coming “as doves to the windows.”",
-          "short": "In 1830 every Church member fit in one room, yet they talked about people from all nations coming. By 2000 there were nearly 11 million.",
-          "place": "note",
-          "approved": "f2db4a31"
-        }
-      },
-      {
-        "id": "isa60-isles",
-        "ref": "Isaiah 60:9",
-        "title": "The isles are people",
-        "text": "“Surely the isles shall wait for me, and the ships of Tarshish first, to bring thy sons from far” (Isaiah 60:9). Terry B. Ball notes that Isaiah often uses “isles” as a name for the Lord’s scattered covenant people. So Isaiah sees ships bringing Zion’s children home from far away. Ball writes that Isaiah knew this gathering would start when the gospel was restored through Joseph Smith.",
-        "source": {
-          "by": "BYU Religious Studies Center",
-          "who": "Terry B. Ball",
-          "title": "Isaiah and the Restoration of Israel",
-          "url": "https://rsc.byu.edu/witness-restoration/isaiah-restoration-israel"
-        },
-        "find": "Isaiah often refers to these scattered covenant people metaphorically as",
-        "approved": "800bcee7",
-        "margin": {
-          "glance": "“Isles” is often Isaiah’s name for the Lord’s scattered covenant people, so the ships bring Zion’s children home.",
-          "short": "Isaiah often calls God’s scattered people “isles.” He saw ships bringing them home, a gathering that would start when the gospel was restored.",
-          "place": "note",
-          "approved": "7c3f0db5"
-        }
-      },
-      {
-        "id": "isa61-anointed",
-        "ref": "Isaiah 61:1",
-        "title": "What “Christ” means",
-        "text": "Isaiah 61:1 says, “the LORD hath anointed me.” The seminary manual explains that anointed means set apart or sent for a special purpose. And here’s the key: Christ is a Greek word and Messiah is a Hebrew word, and both mean “the anointed.” So when Jesus read this verse in Nazareth and said it was about Him, He was declaring that He is the Christ.",
-        "source": {
-          "by": "Seminary manual",
-          "title": "Isaiah 61: The Mission of Jesus the Messiah",
-          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/41-isaiah-58-66/413-isaiah-61?lang=eng"
-        },
-        "find": "anointed in verse 1 means that Jesus Christ was set apart or sent with a specific purpose",
-        "approved": "9f0def03",
-        "margin": {
-          "glance": "“Christ” in Greek and “Messiah” in Hebrew both mean “the anointed,” the word this verse uses.",
-          "short": "Anointed means sent for a special job. The word Christ means “the anointed,” so when Jesus said this verse was about Him, He was saying He is the Christ.",
-          "place": "note",
-          "approved": "8d6c131d"
-        }
-      },
-      {
-        "id": "isa61-stopped",
-        "ref": "Isaiah 61:2",
-        "title": "He stopped mid-verse",
-        "text": "When Jesus read Isaiah 61 in Nazareth, He stopped partway through verse 2. He read “To proclaim the acceptable year of the LORD,” and went no further. He left out the next words, “and the day of vengeance of our God.” Scripture Central notes that stopping there split Isaiah’s prophecy in two: the part about who the Messiah is, and the part about the last days, when He comes to judge.",
-        "source": {
-          "by": "Scripture Central",
-          "title": "Why Does Jesus Announce that Isaiah 61:1–2 Is Fulfilled?",
-          "url": "https://scripturecentral.org/knowhy/why-does-jesus-announce-that-isaiah-611-2-is-fulfilled"
-        },
-        "find": "By ending His citation where He did, Jesus effectively separated the two aspects of Isaiah",
-        "approved": "4dda427c",
-        "margin": {
-          "glance": "Reading this in Nazareth, Jesus stopped mid-verse, before “the day of vengeance,” splitting the prophecy in two.",
-          "short": "Jesus read this verse but stopped halfway. The part He skipped is about the last days, when He comes to judge.",
-          "place": "note",
-          "approved": "32cdc2d4"
-        }
-      },
-      {
-        "id": "isa62-reward",
-        "ref": "Isaiah 62:11",
-        "title": "Coming with a reward",
-        "text": "Look closely at Isaiah 62:11: “Behold, thy salvation cometh; behold, his reward is with him.” Donald W. Parry reads “salvation” here as a person: Jesus Christ, coming with His reward. Parry says Jesus will reward the righteous and make up to them for their losses, hurts, and the unfair things done to them.",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 62",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-62"
-        },
-        "find": "Jesus Christ will reward the righteous and compensate them for losses, sufferings, and injustices",
-        "approved": "0a62bb08",
-        "margin": {
-          "glance": "Parry reads “salvation” here as Jesus Christ, who comes to reward the righteous and make up for their losses.",
-          "short": "Jesus will come with a reward for good people. He will make up for the hurts and unfair things they went through.",
-          "place": "note",
-          "approved": "66407f01"
-        }
-      },
-      {
-        "id": "isa63-alone",
-        "ref": "Isaiah 63:3",
-        "title": "Alone, so you won’t be",
-        "text": "“I have trodden the winepress alone; and of the people there was none with me” (Isaiah 63:3). Elder Jeffrey R. Holland applied these words to Jesus on His way to the cross: the circle around Him grew smaller and smaller, until no one could help Him. He went through it alone so that we never have to. We “will never be left alone nor unaided,” Elder Holland promised.",
-        "source": {
-          "by": "General Conference",
-          "who": "Elder Jeffrey R. Holland",
-          "title": "None Were with Him",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2009/04/none-were-with-him?lang=eng"
-        },
-        "find": "because Jesus walked such a long, lonely path utterly alone, we do not have to do so",
-        "approved": "75244a1c",
-        "margin": {
-          "glance": "Jesus trod “the winepress alone” so that we will “never be left alone nor unaided,” Elder Holland promised.",
-          "short": "At the end, no one could help Jesus. He went through it alone so you never have to be alone.",
-          "place": "note",
-          "approved": "8c69147f"
-        }
-      },
-      {
-        "id": "isa65-seek",
-        "ref": "Isaiah 65:1",
-        "title": "Seek and you’ll find",
-        "text": "In the King James Version, Isaiah 65:1 says, “I am found of them that sought me not.” That can sound puzzling. On followHIM, Dr. Ross Baron shares how Joseph Smith’s inspired translation reads instead: “I am found of them who seek after me.” It adds that the Lord gives to all who ask. Keep seeking Him, and you will find Him.",
-        "source": {
-          "by": "followHIM",
-          "who": "Dr. Ross Baron",
-          "title": "Old Testament: EPISODE 41 – Isaiah 58-66 – Part 2",
-          "url": "https://followhim.co/show-note/3-9/"
-        },
-        "find": "I am found of them who seek after me. I give unto all them that ask of me",
-        "approved": "1b9939ef",
-        "deep": {
-          "paras": [
-            "In the King James Version, Isaiah 65:1 says, “I am found of them that sought me not.” On followHIM, Dr. Ross Baron admits, “I’ve struggled with that verse.” Read on its own, it can sound as if seeking the Lord makes no difference.",
-            "Joseph Smith’s inspired translation of the Bible turns it around. Dr. Baron reads it: “I am found of them who seek after me. I give unto all them that ask of me.” It goes on to say the Lord is not found by those who don’t seek or inquire after Him. “That clears that up perfectly,” Hank Smith says.",
-            "Dr. Baron explains what the Joseph Smith Translation is from Doctrine and Covenants 35:20, where the Lord tells Sidney Rigdon to write for Joseph as the scriptures are given, just as the Lord holds them, for the salvation of His people in the last days. He urges listeners to look this verse up for themselves. Its promise is plain: the Lord is found by those who seek Him."
-          ],
-          "find": [
-            "I think that’s one of the best definitions of what the Joseph Smith Translation is.",
-            "I am found of them who seek after me. I give unto all them that ask of me.",
-            "I am not found of them that sought me not, or that inquireth not after me.",
-            "The Joseph Smith translation does have that verse changed. I think it’s super critical"
-          ],
-          "listen": {
-            "youtube": "aXKv2fDjZGM",
-            "start": 2705,
-            "end": 2856,
-            "title": "followHIM: Isaiah 58–66, part 2, with Dr. Ross Baron",
-            "channel": "followHIM Podcast",
-            "previewed": true
-          },
-          "approved": "eebdd105"
-        }
-      },
-      {
-        "id": "isa65-cluster",
-        "ref": "Isaiah 65:8",
-        "title": "A blessing in the bunch",
-        "text": "Isaiah 65:8 compares the Lord’s people to a cluster of grapes with new wine in it. Someone says, “Destroy it not; for a blessing is in it.” Donald W. Parry explains that the cluster stands for righteous people. They are kept safe because they bless others, in Israel and all over the world. So the Lord promises not to destroy them all.",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 65",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-65"
-        },
-        "find": "do not destroy the righteous, because they are a blessing to Israel and to the world",
-        "approved": "8d705a5a",
-        "margin": {
-          "glance": "The grape cluster stands for righteous people, kept safe because they bless others in Israel and the world.",
-          "short": "A bunch of grapes is saved because there’s new wine in it. Good people are kept safe because they bless others.",
-          "place": "note",
-          "approved": "2b208954"
-        }
-      },
-      {
-        "id": "isa65-newearth",
-        "ref": "Isaiah 65:17",
-        "title": "The earth made new",
-        "text": "“For, behold, I create new heavens and a new earth” (Isaiah 65:17). President Russell M. Nelson taught that when the Savior comes again, the earth itself will be renewed and brought back to a paradise-like state. He also said that helping get the world ready for that day is both our duty and our privilege.",
-        "source": {
-          "by": "Liahona",
-          "who": "President Russell M. Nelson",
-          "title": "The Future of the Church: Preparing the World for the Savior’s Second Coming",
-          "url": "https://www.churchofjesuschrist.org/study/liahona/2020/04/the-future-of-the-church-preparing-the-world-for-the-saviors-second-coming?lang=eng"
-        },
-        "find": "The earth will be returned to its paradisiacal state and be made new",
-        "approved": "3e75a355",
-        "margin": {
-          "glance": "When the Savior comes again, President Nelson taught, the earth itself will be renewed like a paradise.",
-          "short": "When Jesus comes again, the earth will be made new, like a paradise. Helping the world get ready is our job and a privilege.",
-          "place": "note",
-          "approved": "35169d16"
-        }
-      },
-      {
-        "id": "isa66-priests",
-        "ref": "Isaiah 66:19–21",
-        "title": "Priests from far away",
-        "text": "Isaiah 66:19 names faraway places like Tarshish, Pul, and “the isles afar off” that had never heard of the Lord’s glory. Then the Lord says He will take some of those people “for priests and for Levites” (verse 21). The Old Testament Student Manual reads this to mean that many from the nations will join the Church and receive the priesthood.",
-        "source": {
-          "by": "Old Testament Student Manual",
-          "title": "The Last Days and the Millennium (Isaiah 55–66)",
-          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-18?lang=eng"
-        },
-        "find": "Evidently many will then join the Church, for the Lord said He will take of the Gentiles",
-        "approved": "6845aa9e",
-        "margin": {
-          "glance": "People from faraway nations become “priests” and “Levites”: the manual reads it as many joining the Church and receiving the priesthood.",
-          "short": "The Church’s manual says many people from faraway places will join the Church and receive the priesthood.",
-          "place": "note",
-          "approved": "f858965a"
-        }
-      },
-      {
-        "id": "isa66-offering",
-        "ref": "Isaiah 66:20",
-        "title": "The offering is people",
-        "text": "In Isaiah 66:20, people come on horses, in chariots, and on mules, and “they shall bring all your brethren for an offering unto the LORD out of all nations.” On followHIM, Dr. Ross Baron points out what the offering is: people! In the last days, he says, we bring our families, ourselves, and others on both sides of the veil to the Lord.",
-        "source": {
-          "by": "followHIM",
-          "who": "Dr. Ross Baron",
-          "title": "Old Testament: EPISODE 41 – Isaiah 58-66 – Part 2",
-          "url": "https://followhim.co/show-note/3-9/"
-        },
-        "find": "We bring our family. We bring ourselves, and we bring everyone else on both sides of the veil",
-        "approved": "b246829a",
-        "deep": {
-          "paras": [
-            "Dr. Ross Baron reads the end of Isaiah 66 as a pattern for the last days. In verse 19 the Lord sets a sign among the nations, which he identifies with the Book of Mormon, the sign the Lord promises in 3 Nephi 21. Those who accept it are sent to far lands and islands, to people who have never heard of the Lord’s glory.",
-            "Then comes verse 20. “What is the offering you and I make in the Latter-days really?” he asks. Isaiah’s answer is people: “they shall bring all your brethren for an offering unto the LORD out of all nations.” Dr. Baron adds that the gathering reaches both sides of the veil: “People from both sides of the veil. From where? From everywhere.”",
-            "The verse ends with the offering brought “in a clean vessel into the house of the LORD.” Dr. Baron sees the holy mountain of Jerusalem standing for our temples and our stakes of Zion today. So the offering of the last days is our children, our families, ourselves, and everyone we can help on both sides of the veil, gathered from every nation to the Lord’s house."
-          ],
-          "find": [
-            "I will set a sign among them: the Latter-day token, the Latter-day sign, the Book of Mormon.",
-            "What’s the offering? People from both sides of the veil. From where? From everywhere.",
-            "I think Jerusalem becomes a proxy holy city for all of our holy temples, a proxy holy city for all of our stakes of Zion",
-            "We bring our family. We bring ourselves, and we bring everyone else on both sides of the veil as a holy offering."
-          ],
-          "listen": {
-            "youtube": "aXKv2fDjZGM",
-            "start": 3068,
-            "end": 3214,
-            "title": "followHIM: Isaiah 58–66, part 2, with Dr. Ross Baron",
-            "channel": "followHIM Podcast",
-            "previewed": true
-          },
-          "approved": "fd41556b"
-        },
-        "margin": {
-          "glance": "The offering of the last days is people: our families, ourselves, and others on both sides of the veil.",
-          "short": "The gift we bring to the Lord is people: your family, yourself, and others, on both sides of the veil.",
-          "place": "both",
-          "approved": "71d3843f"
-        }
-      },
-      {
-        "id": "isa66-name",
-        "ref": "Isaiah 66:22",
-        "title": "Your family will last",
-        "text": "Isaiah 66:22 gives a promise: as long as the new heavens and new earth remain, “so shall your seed and your name remain.” Your seed means your descendants. Donald W. Parry calls this a promise of eternal families. He adds that your “name” may even mean the name of Christ, which is important in sacred ordinances (Mosiah 5:10–11).",
-        "source": {
-          "by": "Scripture Central",
-          "who": "Donald W. Parry",
-          "title": "Isaiah 66",
-          "url": "https://scripturecentral.org/archive/books/book-chapter/isaiah-66"
-        },
-        "find": "posterity, eternal families, and eternal increase",
-        "approved": "d4dc27a3",
-        "margin": {
-          "glance": "“Your seed and your name” will last: Parry calls it a promise of eternal families.",
-          "short": "Your “seed” means the family that comes after you. Parry says this promises families that last forever.",
-          "place": "note",
-          "approved": "fe0d5981"
-        }
-      },
-      {
-        "id": "isa58-q-oaks",
-        "kind": "quote",
-        "ref": "Isaiah 58:11",
-        "quote": "As we keep the Lord’s commandments, we see his light ever brighter on our path and we realize the fulfillment of Isaiah’s promise, “And the Lord shall guide thee continually”",
-        "text": "Isaiah 58:11 promises that the Lord will guide you continually. President Oaks says that light grows brighter on your path each time you keep a commandment.",
-        "source": {
-          "by": "General Conference",
-          "who": "President Dallin H. Oaks",
-          "title": "The Light and Life of the World",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/1987/10/the-light-and-life-of-the-world?lang=eng"
-        },
-        "approved": "c2c6b131",
-        "margin": {
-          "glance": "President Oaks: as we keep the commandments, the Lord’s light grows ever brighter on our path.",
-          "short": "Each time you keep a commandment, the Lord’s light on your path gets brighter, and He guides you.",
-          "place": "both",
-          "approved": "6670503b"
-        }
-      },
-      {
-        "id": "isa58-q-nelson",
-        "kind": "quote",
-        "ref": "Isaiah 58:13",
-        "quote": "I simply asked myself, “What sign do I want to give to God?” That question made my choices about the Sabbath day crystal clear.",
-        "text": "Isaiah 58:13 calls the Sabbath a delight. President Nelson learned the Sabbath is a sign between him and God, so he stopped needing lists of dos and don’ts.",
-        "source": {
-          "by": "General Conference",
-          "who": "President Russell M. Nelson",
-          "title": "The Sabbath Is a Delight",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/04/the-sabbath-is-a-delight?lang=eng"
-        },
-        "approved": "7bd1e16a",
-        "margin": {
-          "glance": "President Nelson made his Sabbath choices by asking, “What sign do I want to give to God?”",
-          "short": "President Nelson asked himself what sign he wanted to give God. That made his Sabbath choices clear.",
-          "place": "both",
-          "approved": "f309f1c8"
-        }
-      },
-      {
-        "id": "isa60-q-aburto",
-        "kind": "quote",
-        "ref": "Isaiah 60:20",
-        "quote": "For all who will “come unto Christ, and be perfected in him,” … for the Lord shall be [our] everlasting light, and the days of [our] mourning shall be ended.",
-        "text": "Isaiah 60:20 promises the Lord will be your everlasting light and your mourning will end. Sister Aburto says that promise is for everyone who comes to Christ.",
-        "source": {
-          "by": "General Conference",
-          "who": "Sister Reyna I. Aburto",
-          "title": "Thru Cloud and Sunshine, Lord, Abide with Me!",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2019/10/31aburto?lang=eng"
-        },
-        "approved": "ad275461",
-        "margin": {
-          "glance": "Sister Aburto: for all who come to Christ, the Lord will be their light and their mourning will end.",
-          "short": "If you come to Christ, the Lord will be your light forever, and your sad days will end.",
-          "place": "both",
-          "approved": "d3f9938f"
-        }
-      },
-      {
-        "id": "isa61-q-schmutz",
-        "kind": "quote",
-        "ref": "Isaiah 61:1",
-        "quote": "Truly, Jesus Christ can and will “bind up the brokenhearted.”",
-        "text": "Isaiah 61:1 says the Lord was sent to bind up the brokenhearted, like bandaging a wound. Elder Schmutz says this to anyone whose heart is hurting.",
-        "source": {
-          "by": "General Conference",
-          "who": "Elder Evan A. Schmutz",
-          "title": "God Shall Wipe Away All Tears",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2016/10/god-shall-wipe-away-all-tears?lang=eng"
-        },
-        "approved": "fa464687",
-        "margin": {
-          "glance": "Elder Schmutz: Jesus Christ can and will “bind up the brokenhearted.”",
-          "short": "When your heart hurts, Jesus can heal it, like bandaging a wound. Elder Schmutz says He will.",
-          "place": "both",
-          "approved": "d8c399bc"
-        }
-      },
-      {
-        "id": "isa62-q-coleman",
-        "kind": "quote",
-        "ref": "Isaiah 62:6",
-        "quote": "Just as a “watchman upon the tower” was able to protect his people because of the perspective his position afforded, so do the prophets and apostles protect us.",
-        "text": "Isaiah 62:6 says the Lord set watchmen on Jerusalem’s walls. Elder Coleman once spent a summer in a forest fire lookout tower. Prophets, he says, watch over us like that.",
-        "source": {
-          "by": "Ensign",
-          "who": "Elder Gary J. Coleman",
-          "title": "Lessons from the Old Testament: Watchmen of the Lord",
-          "url": "https://www.churchofjesuschrist.org/study/ensign/2006/09/lessons-from-the-old-testament-watchmen-of-the-lord?lang=eng"
-        },
-        "approved": "2ed2bb80",
-        "margin": {
-          "glance": "Elder Coleman: like a “watchman upon the tower,” prophets and apostles see far and protect us.",
-          "short": "Elder Coleman once watched for forest fires from a tower. Prophets watch over us like that and keep us safe.",
-          "place": "both",
-          "approved": "764ae361"
-        }
-      },
-      {
-        "id": "isa63-q-maxwell",
-        "kind": "quote",
-        "ref": "Isaiah 63:1–2",
-        "quote": "No wonder, when Christ comes in power and glory, that He will come in reminding red attire … to bring to our remembrance how He suffered for each of us in Gethsemane and on Calvary!",
-        "text": "Isaiah 63:1–2 pictures the Lord in red clothing, like someone who has been treading grapes. Elder Maxwell says the red will remind us what He suffered for us.",
-        "source": {
-          "by": "General Conference",
-          "who": "Elder Neal A. Maxwell",
-          "title": "Overcome … Even As I Also Overcame",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/1987/04/overcome-even-as-i-also-overcame?lang=eng"
-        },
-        "approved": "f8f04f72",
-        "margin": {
-          "glance": "Elder Maxwell: His red clothing will remind us how He suffered for each of us.",
-          "short": "When Jesus comes again, He will wear red. It will remind you how much He suffered for you.",
-          "place": "both",
-          "approved": "a19d8876"
-        }
-      },
-      {
-        "id": "isa64-q-ballard",
-        "kind": "quote",
-        "ref": "Isaiah 64:4",
-        "quote": "Waiting upon the Lord does not imply biding one’s time. You should never feel like you are in a waiting room. Waiting upon the Lord implies action.",
-        "text": "Isaiah 64:4 says God has prepared things for “him that waiteth for him.” President Ballard says waiting on the Lord means keeping busy doing good, not sitting around.",
-        "source": {
-          "by": "General Conference",
-          "who": "President M. Russell Ballard",
-          "title": "Hope in Christ",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/2021/04/28ballard?lang=eng"
-        },
-        "approved": "5b35475d",
-        "margin": {
-          "glance": "President Ballard: waiting on the Lord isn’t sitting in a waiting room; it means action.",
-          "short": "Waiting on the Lord doesn’t mean sitting around. It means staying busy doing good while you wait.",
-          "place": "both",
-          "approved": "66519518"
-        }
-      },
-      {
-        "id": "isa66-q-benson",
-        "kind": "quote",
-        "ref": "Isaiah 66:2",
-        "quote": "The antidote for pride is humility—meekness, submissiveness. … It is the broken heart and contrite spirit.",
-        "text": "Isaiah 66:2 says the Lord looks to the person with a contrite spirit: humble and sorry for sin. An antidote is a cure. Pride’s cure is humility.",
-        "source": {
-          "by": "General Conference",
-          "who": "President Ezra Taft Benson",
-          "title": "Beware of Pride",
-          "url": "https://www.churchofjesuschrist.org/study/general-conference/1989/04/beware-of-pride?lang=eng"
-        },
-        "approved": "7494b9eb",
-        "margin": {
-          "glance": "President Benson: the cure for pride is humility, “the broken heart and contrite spirit.”",
-          "short": "Being humble is the cure for pride. The Lord looks to people who are humble and sorry for their sins.",
-          "place": "both",
-          "approved": "7f817223"
-        }
-      },
-      {
-        "id": "isa58-v-central",
-        "kind": "video",
-        "ref": "Isaiah 58",
-        "title": "Four missions the Savior gives us",
-        "text": "Casey Griffiths of Scripture Central walks through Isaiah 58–66 and pulls out four simple missions the Savior gives us in these chapters. Watch for all four, and notice which chapter each one comes from. About five minutes.",
-        "video": {
-          "youtube": "aChMaEVHn6I",
-          "start": 0,
-          "end": 295,
-          "title": "4 Simple Missions the Savior Gives Us (Come, Follow Me: Isaiah 58-66)",
-          "channel": "Scripture Central",
-          "previewed": true
-        },
-        "approved": "e6005bbb"
-      },
-      {
-        "id": "isa62-jsp-names",
-        "ref": "Isaiah 62:4",
-        "title": "Joseph’s Bible: names in English",
-        "text": "Isaiah promises Zion new names, “Hephzi-bah,” and for her land, “Beulah.” They are Hebrew words, and the verse tells what they mean: “the LORD delighteth in thee, and thy land shall be married.” In Joseph Smith’s Bible manuscript the names are written in English instead: Delightful, and Union. The Lord delights in His people and is joined to them by covenant.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Old Testament Revision 2, page 110",
-          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
-        },
-        "find": "Isaiah, Chapter 62 LXII verse 4 Delightful",
-        "note": "Joseph Smith’s Bible revision puts these names in English: Hephzi-bah becomes Delightful, and Beulah, the land, becomes Union.",
-        "approved": "1dda1c8b",
-        "margin": {
-          "glance": "Joseph Smith’s Bible puts the names in English: Hephzi-bah is Delightful, and Beulah is Union.",
-          "short": "Isaiah gives Zion new names. Joseph Smith wrote them in English, Delightful and Union, and the Lord delights in His people.",
-          "place": "note",
-          "approved": "bcb53455"
-        }
-      },
-      {
-        "id": "isa63-jsp-suffered",
-        "ref": "Isaiah 63:17",
-        "title": "Joseph’s Bible: God doesn’t make us sin",
-        "text": "The people ask the Lord why He has “made us to err from thy ways.” Does God make people do wrong? Joseph Smith’s Bible manuscript has one word for this verse: “suffered,” which means allowed. God lets us choose, even when we choose wrong, but He never makes us sin. The verse now says He allowed their hearts to harden.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Old Testament Revision 2, page 110",
-          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
-        },
-        "find": "Isaiah, Chapter 63 LXIII verse 17— suffered",
-        "note": "In Joseph Smith’s Old Testament manuscript, the change for this verse is the word “suffered”: the Lord allowed them to err and to harden their hearts. He didn’t make them.",
-        "approved": "9daf60b7",
-        "margin": {
-          "glance": "Joseph Smith’s Bible gives this verse the word “suffered”: God allowed them to err, but didn’t make them.",
-          "short": "God lets us choose, even when we choose wrong. But He never makes us sin.",
-          "place": "note",
-          "approved": "5e3796cc"
-        }
-      },
-      {
-        "id": "isa64-jsp-continuance",
-        "ref": "Isaiah 64:5",
-        "title": "Joseph’s Bible: such shall be saved",
-        "text": "Isaiah 64:5 is hard to follow in the King James Version: “thou art wroth; for we have sinned: in those is continuance.” Joseph Smith’s Bible manuscript makes it clear. The Lord meets those who do right and brings joy to those who remember Him, and in righteousness there is continuance: they shall be saved. Then the people admit their sins and plead for mercy.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Old Testament Revision 2, page 110",
-          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/117"
-        },
-        "find": "Thou meetest him that worketh righteousness, and rejoiceth him that",
-        "note": "Joseph Smith’s Bible revision drops “behold, thou art wroth” and reads that in righteousness there is continuance, and such shall be saved (his manuscript, pages 110–111).",
-        "approved": "0a33a359",
-        "margin": {
-          "glance": "Joseph Smith’s Bible makes this hard verse clear: in righteousness there is continuance, and such shall be saved.",
-          "short": "This verse is hard to read in the King James Bible. Joseph Smith’s version says people who do right will be saved.",
-          "place": "note",
-          "approved": "d678a4d1"
-        }
-      },
-      {
-        "id": "isa65-jsp-seek",
-        "ref": "Isaiah 65:1",
-        "title": "Joseph’s Bible: found by those who seek",
-        "text": "In the King James Version the Lord says, “I am found of them that sought me not.” On page 111 of Joseph Smith’s Old Testament manuscript, written in the early 1830s, the verse is turned around: “I am found of them who seek after me.” The Lord is found by those who look for Him, and He gives to all who ask.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Old Testament Revision 2, page 111",
-          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/118"
-        },
-        "find": "I am found of them who seek after me; I give unto all them that ask of me",
-        "note": "Joseph Smith’s Bible revision turns this verse around: “I am found of them who seek after me,” and the Lord gives to all who ask of Him.",
-        "approved": "a6d28de6",
-        "margin": {
-          "glance": "Joseph Smith’s manuscript turns the verse around: “I am found of them who seek after me.”",
-          "short": "In Joseph Smith’s Bible, the Lord is found by people who look for Him, and He gives to all who ask.",
-          "place": "note",
-          "approved": "b622cdca"
-        }
-      },
-      {
-        "id": "isa65-jsp-hundred",
-        "ref": "Isaiah 65:20",
-        "title": "Joseph’s Bible: no child will die",
-        "text": "Isaiah describes new heavens and a new earth. The King James Version says “the child shall die an hundred years old,” which is confusing. Joseph Smith’s Bible manuscript reads, “the child shall not die, but shall live to be a hundred years old.” In those days, children won’t die young.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Old Testament Revision 2, page 111",
-          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/118"
-        },
-        "find": "for the child shall not die, but shall live to be a hundred years old",
-        "note": "Joseph Smith’s Bible revision: “the child shall not die, but shall live to be a hundred years old,” in those days of the new heavens and new earth.",
-        "approved": "55b321ab",
-        "margin": {
-          "glance": "In Joseph Smith’s Bible, “the child shall not die” but will live to be a hundred years old.",
-          "short": "In those days, children won’t die young. Joseph Smith’s Bible says they will live to be a hundred.",
-          "place": "note",
-          "approved": "81ab67c1"
-        }
-      },
-      {
-        "id": "isa60-jsp-arise",
-        "ref": "Isaiah 60:1",
-        "title": "Arise and shine, in a revelation",
-        "text": "In April 1838 the Lord gave Joseph Smith the revelation that named the Church, now Doctrine and Covenants 115. In it He gives Isaiah’s call to the Latter-day Saints: arise and shine, “that thy light may be a standard for the nations.” Gathering to Zion and her stakes would be a defense and a refuge.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Revelation, 26 April 1838 [D&C 115]",
-          "url": "https://www.josephsmithpapers.org/paper-summary/revelation-26-april-1838-dc-115/2"
-        },
-        "find": "Verrily I say unto you all; arise and shine",
-        "note": "In the 1838 revelation that named the Church (D&C 115:5), the Lord gave this verse to the Saints: arise and shine, “that thy light may be a standard for the nations.”",
-        "approved": "11ad43f3",
-        "margin": {
-          "glance": "In the 1838 revelation that named the Church, the Lord told the Saints to arise and shine, as in this verse.",
-          "short": "The Lord told the Church to arise and shine, “that thy light may be a standard for the nations.”",
-          "place": "note",
-          "approved": "8c4b3b01"
-        }
-      },
-      {
-        "id": "isa60-jsp-emma",
-        "ref": "Isaiah 60:2",
-        "title": "Joseph’s letter to Emma",
-        "text": "In October 1832, on a trip to New York City, Joseph Smith wrote to his wife Emma in his own handwriting. Troubled by the wickedness he saw, he prayed in the words of this verse: “how long Oh Lord Shall this order of things exist and darkness cover the Earth.” Then he went back to his room to calm his mind.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Letter to Emma Smith, 13 October 1832",
-          "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-emma-smith-13-october-1832/1"
-        },
-        "find": "Oh how long Oh Lord Shall this order of things exist and darkness cover the Earth and gross darkness cover the people",
-        "note": "In a letter to Emma in his own hand (New York City, 1832), Joseph Smith prayed in this verse’s words: how long shall “darkness cover the Earth”?",
-        "approved": "4d1926a3",
-        "margin": {
-          "glance": "In an 1832 letter to Emma, Joseph Smith prayed in this verse’s words about darkness covering the earth.",
-          "short": "Joseph Smith saw a lot of wickedness on a trip to New York City. He wrote to Emma, praying with this verse.",
-          "place": "note",
-          "approved": "a70589b5"
-        }
-      },
-      {
-        "id": "isa63-jsp-winepress",
-        "ref": "Isaiah 63:3",
-        "title": "The Lord in red, in a revelation",
-        "text": "In November 1831 Joseph Smith received a revelation about the Second Coming, now Doctrine and Covenants 133. It takes up Isaiah 63: the Lord comes in red clothing, and He says, “I have trodden the wine press alone.” Then His people remember His loving kindness, and that in all their afflictions He was afflicted.",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Revelation, 3 November 1831 [D&C 133]",
-          "url": "https://www.josephsmithpapers.org/paper-summary/revelation-3-november-1831-dc-133/4"
-        },
-        "find": "I have trodden the wine press alone & have brought Judgement upon all people & none was with me",
-        "note": "Joseph Smith’s November 1831 revelation on the Second Coming (D&C 133:46–53) takes up this chapter: “I have trodden the wine press alone.”",
-        "approved": "4f992f78",
-        "margin": {
-          "glance": "Joseph Smith’s 1831 revelation on the Second Coming takes up this chapter: “I have trodden the wine press alone.”",
-          "short": "In a revelation about Jesus coming again, the Lord says He trod the winepress alone, and His people remember His kindness.",
-          "place": "note",
-          "approved": "5add18a4"
-        }
-      },
-      {
-        "id": "isa65-jsp-tree",
-        "ref": "Isaiah 65:22",
-        "title": "Joseph: as the age of a tree",
-        "text": "In March 1841 Joseph Smith taught in Nauvoo that not everyone will be destroyed when Christ comes again; some will live on into the Millennium. A listener wrote down his evidence: “Isaiah says the Days of an infant shall be as the age of a tree.” It joins verse 20, about long lives, with verse 22: “as the days of a tree are the days of my people.”",
-        "source": {
-          "by": "Joseph Smith Papers",
-          "who": "Joseph Smith",
-          "title": "Discourse, circa 16 March 1841",
-          "url": "https://www.josephsmithpapers.org/paper-summary/discourse-circa-16march-1841/1"
-        },
-        "find": "Isaiah says the Days of an infant shall be as the age of a tree",
-        "note": "In an 1841 sermon, as a listener recorded it, Joseph Smith cited this: “Isaiah says the Days of an infant shall be as the age of a tree.”",
-        "approved": "82f20af7",
-        "margin": {
-          "glance": "In 1841 Joseph Smith cited this verse to show that some will live on into the Millennium.",
-          "short": "Joseph Smith taught that not everyone will be destroyed when Jesus comes again. Some will live on, with lives as long as a tree’s.",
-          "place": "note",
-          "approved": "52dd7d4c"
-        }
-      }
-    ],
-    "treasure": [
-      {
-        "id": "isa58-tsom",
-        "ref": "Isaiah 58:6",
-        "word": "צוֹם",
-        "form": "צוֹם",
-        "strong": "H6685",
-        "gloss": "the fast",
-        "say": "TSOHM",
-        "kjv": "fast",
-        "means": "A fast: going without food and drink for a while to draw closer to God.",
-        "more": "The fast the Lord chooses sets people free and feeds the hungry (verses 6–7). That’s why we give fast offerings on fast Sunday.",
-        "approved": "7628bdc3"
-      },
-      {
-        "id": "isa59-goel",
-        "ref": "Isaiah 59:20",
-        "word": "גָּאַל",
-        "form": "גּוֹאֵל",
-        "strong": "H1350A",
-        "gloss": "a redeemer",
-        "say": "ga-AL",
-        "kjv": "Redeemer",
-        "means": "To redeem: to buy back a relative who had been sold, or his land. The one who did it was the go’el, the redeemer.",
-        "more": "A redeemer had to be close family. Jesus Christ is our Redeemer: He paid the price to buy us back and bring us home.",
-        "approved": "0b43986e"
-      },
-      {
-        "id": "isa60-qadosh",
-        "ref": "Isaiah 60:14",
-        "word": "קָדוֹשׁ",
-        "form": "קְדוֹשׁ",
-        "strong": "H6918G",
-        "gloss": "of the holy one of",
-        "say": "ka-DOHSH",
-        "kjv": "Holy One",
-        "means": "Holy: set apart, pure, and belonging to God. Isaiah calls the Lord “the Holy One of Israel” again and again.",
-        "more": "The Holy One of Israel is Jehovah, who is Jesus Christ. One day even Zion’s enemies will bow and call it the city of the Holy One.",
-        "short": "holy",
-        "approved": "af37574d"
-      },
-      {
-        "id": "isa61-mashach",
-        "ref": "Isaiah 61:1",
-        "word": "מָשַׁח",
-        "form": "מָשַׁח",
-        "strong": "H4886",
-        "gloss": "he has anointed",
-        "say": "ma-SHAKH",
-        "kjv": "anointed",
-        "means": "To anoint: to pour or smear oil on someone to set them apart for a holy calling, like a king or priest.",
-        "more": "Messiah means “Anointed One.” In Nazareth, Jesus read this verse aloud and said, “This day is this scripture fulfilled in your ears” (Luke 4:21).",
-        "approved": "dcc4c304"
-      },
-      {
-        "id": "isa63-purah",
-        "ref": "Isaiah 63:3",
-        "word": "פּוּרָה",
-        "form": "פּוּרָה",
-        "strong": "H6333",
-        "gloss": "the winepress",
-        "say": "poo-RAH",
-        "kjv": "winepress",
-        "means": "A winepress: a big trough where people stomped grapes with their bare feet until red juice ran out.",
-        "more": "“I have trodden the winepress alone.” Doctrine and Covenants 133:46–50 shows these are Jesus Christ’s words. He did what no one else could, all by Himself.",
-        "approved": "cdef08c5"
-      },
-      {
-        "id": "isa65-bara",
-        "ref": "Isaiah 65:17",
-        "word": "בָּרָא",
-        "form": "בוֹרֵא",
-        "strong": "H1254A",
-        "gloss": "am about to create",
-        "say": "ba-RAH",
-        "kjv": "create",
-        "means": "To create. In this form the Bible always uses it for God; people never “create” this way.",
-        "more": "It’s the word in Genesis 1:1. Here the Lord promises new heavens and a new earth, when the earth will be renewed and made glorious.",
-        "approved": "aa4bd63e"
-      }
-    ],
-    "guide": [
-      {
-        "h": "Fasting builds spiritual power and blesses people in need.",
-        "id": "title3",
-        "ref": "Isaiah 58:3–12",
-        "kids": false,
-        "lines": [
-          "Why would anyone skip meals with food right there in the kitchen? Isaiah 58 gives the Lord’s reasons for fasting. Think about yours, too.",
-          "Fasting can start to feel like a burden (Isaiah 58:3–5). The Lord’s kind of fast is meant “to loose the bands of wickedness” (Isaiah 58:6).",
-          "It reaches others too, like feeding the hungry and helping the poor (Isaiah 58:7). Then He promises light, healing and guidance (Isaiah 58:8–12).",
-          "President Henry B. Eyring has told of several people blessed by fasting and fast offerings."
-        ],
-        "ask": "When has fasting, or a fast offering, blessed you or someone you know?",
-        "approved": "1b6c7aca"
-      },
-      {
-        "h": "Honoring the Lord on the Sabbath brings joy.",
-        "id": "title4",
-        "ref": "Isaiah 58:13–14",
-        "kids": false,
-        "lines": [
-          "The Lord asks His people to “call the sabbath a delight, the holy of the LORD, honourable” (Isaiah 58:13). Is it a delight for you?",
-          "Think about what it means to set your own plans aside on His day, and to find your joy in Him instead.",
-          "President Russell M. Nelson taught about making the Sabbath a delight. What could help your family enjoy it more?"
-        ],
-        "ask": "What’s one change that would make next Sunday more of a delight for our family?",
-        "approved": "5bfd65d7"
-      },
-      {
-        "h": "Jesus Christ is my Savior and Redeemer.",
-        "id": "title5",
-        "ref": "Isaiah 59:9–21; 61:1–3; 63:7–9",
-        "kids": false,
-        "lines": [
-          "These chapters keep pointing to the Savior. Watch for His titles and how He’s described, like “the Redeemer shall come to Zion” (Isaiah 59:20).",
-          "No one could rescue the people from the darkness of Isaiah 59:9–15. In Isaiah 59:16–21, the Lord steps in Himself as their intercessor.",
-          "In Nazareth, Jesus read Isaiah 61:1–2 and said it was about Him (Luke 4:16–21). Where has He given you “beauty for ashes” (Isaiah 61:3)?",
-          "In Isaiah 63:7–9, Isaiah remembers how the Lord has cared for His people. What would you add from your own life?"
-        ],
-        "ask": "Which blessing in Isaiah 61:1–3 have you seen the Savior give to you or someone you love?",
-        "approved": "a8ec4d8c"
-      },
-      {
-        "h": "“The Lord shall be unto thee an everlasting light.”",
-        "id": "title6",
-        "ref": "Isaiah 60; 62",
-        "kids": false,
-        "lines": [
-          "Isaiah 60 and Isaiah 62 are full of light and darkness, eyes and seeing. They show the Savior’s gospel blessing the whole world in the latter days.",
-          "Look for those ideas in Isaiah 60:1–5, 19–20 and Isaiah 62:1–2, like “darkness shall cover the earth… but the LORD shall arise upon thee” (Isaiah 60:2).",
-          "The Lord is bringing His children out of darkness into His light. What can you do to help?"
-        ],
-        "ask": "Who could our family help come a little closer to the Lord’s light this week?",
-        "approved": "b1918543"
-      },
-      {
-        "h": "Christ will reign on earth during the Millennium.",
-        "id": "title7",
-        "ref": "Isaiah 64:1–5; 65:17–25; 66",
-        "kids": false,
-        "lines": [
-          "Isaiah saw a day when “the former troubles are forgotten” (Isaiah 65:16). This promise comes true more than once, but most fully when Jesus Christ comes again.",
-          "Read Isaiah 64:1–5, Isaiah 65:17–25 and Isaiah 66, and count words like rejoice and joy as you go.",
-          "The Lord says, “be ye glad and rejoice for ever in that which I create” (Isaiah 65:18)."
-        ],
-        "ask": "Why will the day Jesus comes again be a joyful day for you, and how can you get ready for it?",
-        "approved": "2702d2fe"
-      },
-      {
-        "h": "Fasting blesses me and others in need.",
-        "id": "title9",
-        "ref": "Isaiah 58:6–11",
-        "kids": true,
-        "lines": [
-          "Knowing the Lord’s reasons may be the best help in getting ready to fast. Read Isaiah 58:6–11 together to find why we fast, and how.",
-          "The Guide to the Scriptures has an entry on fasting that can help, too.",
-          "Parents, if fasting has ever meant a lot to you, tell the story."
-        ],
-        "ask": "If a friend asked you why we fast, what would you say?",
-        "approved": "13dbb869"
-      },
-      {
-        "h": "The Sabbath can be a delight to me.",
-        "id": "title10",
-        "ref": "Isaiah 58:13–14",
-        "kids": true,
-        "lines": [
-          "After reading Isaiah 58:13–14, say the days of the week together on a calendar. When you reach Sunday, call it “a delight” (Isaiah 58:13).",
-          "Parents, tell why Sunday is a delight to you.",
-          "Share ways to “delight thyself in the LORD” (Isaiah 58:14) on Sunday. Draw your ideas and save them for a Sunday when you need something to do."
-        ],
-        "ask": "What’s something you love doing on Sunday that helps you feel close to the Lord?",
-        "approved": "53705829"
-      },
-      {
-        "h": "The Savior is like a light for me.",
-        "id": "title11",
-        "ref": "Isaiah 60:1–3",
-        "kids": true,
-        "lines": [
-          "Close your eyes while someone reads Isaiah 60:1–3. Open them at the word light, and shut them again at darkness.",
-          "Jesus Christ and His gospel work like a light, showing us the way home to Heavenly Father."
-        ],
-        "ask": "When has following Jesus helped you see what to do, like a light in a dark room?",
-        "approved": "8627a8fb"
-      },
-      {
-        "h": "When Jesus comes again, He will bring peace and joy.",
-        "id": "title12",
-        "ref": "Isaiah 65:17–25",
-        "kids": true,
-        "lines": [
-          "Isaiah 65:17–25 pictures life after the Savior returns. Read it together and look for what will be different on the “new earth” (Isaiah 65:17).",
-          "No more crying (Isaiah 65:19), and even animals at peace (Isaiah 65:25). Why is it a time to “rejoice for ever” (Isaiah 65:18)?",
-          "Sing ‘When the Savior Comes Again’ (number 1002 in Hymns for Home and Church) together."
-        ],
-        "ask": "What are you most excited about for when Jesus comes again, and how can we prepare?",
-        "approved": "edf4f7c4"
-      }
-    ],
-    "family": {
-      "title": "His light now, His joy to come",
-      "minutes": 20,
-      "from": [
-        "title11",
-        "title12"
-      ],
-      "steps": [
-        {
-          "k": "open",
-          "text": "Sing ‘When the Savior Comes Again’ (number 1002 in Hymns for Home and Church), then have someone pray."
-        },
-        {
-          "k": "learn",
-          "ref": "Isaiah 60:1–3",
-          "text": "Dim the lights and close your eyes while a parent reads slowly. Open your eyes every time you hear “light,” and squeeze them shut at “darkness.” Then do it again with someone else reading."
-        },
-        {
-          "k": "talk",
-          "text": "How is Jesus Christ like a light? Talk about how He and His gospel help us find the way back to Heavenly Father, and a time He helped you see what to do."
-        },
-        {
-          "k": "learn",
-          "ref": "Isaiah 65:17–25",
-          "text": "Take turns reading these verses about the earth after the Savior comes again. Then each person acts out one change they found, like the wolf and the lamb eating together (verse 25), while everyone else guesses which verse it is."
-        },
-        {
-          "k": "talk",
-          "text": "What are you most looking forward to when He comes? What could each of us do this week to get ready?"
-        },
-        {
-          "k": "close",
-          "text": "A parent shares why they love the Savior and look forward to His coming. Invite everyone to let His light show in one kind act this week."
-        }
-      ],
-      "approved": "ef983a66"
-    }
-  },
-  {
     "dates": "October 19–25, 2026",
     "title": "Before I Formed Thee in the Belly I Knew Thee",
     "reference": "Jeremiah 1–3; 7; 16–18; 20",
@@ -11784,6 +9414,2473 @@ window.TU_WEEKS = [
         }
       ],
       "approved": "a8af8886"
+    }
+  },
+  {
+    "dates": "November 16–22, 2026",
+    "title": "I Will Love Them Freely",
+    "reference": "Hosea 1–6; 10–14; Joel",
+    "lesson": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/47?lang=eng",
+    "sections": [
+      "The Lord always invites me to return to Him",
+      "Devotion to God must be felt inwardly, not just expressed outwardly",
+      "“I will pour out my spirit upon all flesh.”"
+    ],
+    "sayings": [
+      {
+        "id": "say-joined-to-idols",
+        "text": "Ephraim is joined to idols: let him alone.",
+        "ref": "Hosea 4:17",
+        "speaker": "The Lord, about Ephraim",
+        "wrong": [
+          "Jacob, about his grandson",
+          "Moses, about Pharaoh"
+        ],
+        "why": "Ephraim, the northern kingdom of Israel, had chosen idols over the Lord. For a time He would leave them to the choice they had made.",
+        "approved": "fee0bc12"
+      },
+      {
+        "id": "say-let-us-return",
+        "text": "Come, and let us return unto the LORD: for he hath torn, and he will heal us",
+        "ref": "Hosea 6:1",
+        "speaker": "Hosea, calling Israel home",
+        "wrong": [
+          "Jonah, inside the great fish",
+          "Elijah, on Mount Carmel"
+        ],
+        "why": "Hosea calls the people back: “he hath smitten, and he will bind us up.” The Lord who corrects them is the same One who heals them.",
+        "approved": "aaf6b960"
+      },
+      {
+        "id": "say-become-rich",
+        "text": "Yet I am become rich, I have found me out substance",
+        "ref": "Hosea 12:8",
+        "speaker": "Ephraim, proud of his riches",
+        "wrong": [
+          "Solomon, at his new temple",
+          "Job, before his trials"
+        ],
+        "why": "Ephraim got rich with “the balances of deceit” (verse 7), cheating people, and then claimed he had done nothing wrong.",
+        "approved": "be31370f"
+      },
+      {
+        "id": "say-destroyed-thyself",
+        "text": "O Israel, thou hast destroyed thyself; but in me is thine help.",
+        "ref": "Hosea 13:9",
+        "speaker": "The Lord, to Israel",
+        "wrong": [
+          "Samuel, to King Saul",
+          "Nathan, to King David"
+        ],
+        "why": "Israel’s troubles came from its own choices. Even so, the Lord didn’t walk away. Help was still in Him.",
+        "approved": "aa21a82e"
+      },
+      {
+        "id": "say-thou-art-my-god",
+        "text": "Thou art my God.",
+        "ref": "Hosea 2:23",
+        "speaker": "Israel, back with the Lord",
+        "wrong": [
+          "Ruth, to Naomi",
+          "Thomas, to the risen Jesus"
+        ],
+        "why": "In the last days the Lord will say to Israel, “Thou art my people,” and they will answer Him with these words. The covenant is whole again.",
+        "approved": "7753f1a7"
+      },
+      {
+        "id": "say-no-more-idols",
+        "text": "What have I to do any more with idols?",
+        "ref": "Hosea 14:8",
+        "speaker": "Ephraim, turning back to God",
+        "wrong": [
+          "Gideon, tearing down an altar",
+          "Abraham, leaving his father"
+        ],
+        "why": "Hosea’s book ends with Ephraim repenting: “Ephraim shall say” this, finished with idols for good.",
+        "approved": "7010f5ba"
+      },
+      {
+        "id": "say-tell-your-children",
+        "text": "Tell ye your children of it, and let your children tell their children, and their children another generation.",
+        "ref": "Joel 1:3",
+        "speaker": "Joel, about the locusts",
+        "wrong": [
+          "Moses, about the Passover",
+          "Joshua, about twelve stones"
+        ],
+        "why": "The locusts that stripped the land were so terrible that Joel wanted the lesson remembered for generations.",
+        "approved": "e17b756d"
+      },
+      {
+        "id": "say-spare-thy-people",
+        "text": "Spare thy people, O LORD, and give not thine heritage to reproach",
+        "ref": "Joel 2:17",
+        "speaker": "The priests, weeping at the altar",
+        "wrong": [
+          "Moses, on Mount Sinai",
+          "Daniel, praying in Babylon"
+        ],
+        "why": "Joel told the priests to “weep between the porch and the altar” and plead with the Lord for His people.",
+        "approved": "810fa1ba"
+      }
+    ],
+    "words": [
+      {
+        "word": "BETROTH",
+        "clue": "I will ____ thee unto me for ever",
+        "ref": "Hosea 2:19",
+        "mean": "The Lord promises His people a covenant that will never end, like a faithful marriage."
+      },
+      {
+        "word": "MERCY",
+        "clue": "For I desired ____, and not sacrifice",
+        "ref": "Hosea 6:6",
+        "mean": "The Lord cares more about a loving, faithful heart than about outward offerings."
+      },
+      {
+        "word": "CORDS",
+        "clue": "I drew them with ____ of a man, with bands of love",
+        "ref": "Hosea 11:4",
+        "mean": "The Lord leads His people with love, the way a parent gently guides a child."
+      },
+      {
+        "word": "RANSOM",
+        "clue": "I will ____ them from the power of the grave",
+        "ref": "Hosea 13:14",
+        "mean": "Jesus Christ frees us from death. Because of Him, everyone will live again."
+      },
+      {
+        "word": "LILY",
+        "clue": "he shall grow as the ____",
+        "ref": "Hosea 14:5",
+        "mean": "When people come back to the Lord, He helps them grow and bloom, like a flower watered by dew."
+      },
+      {
+        "word": "HEART",
+        "clue": "rend your ____, and not your garments",
+        "ref": "Joel 2:13",
+        "mean": "God wants us to be truly sorry inside, not just to look sorry on the outside."
+      },
+      {
+        "word": "SPIRIT",
+        "clue": "I will pour out my ____ upon all flesh",
+        "ref": "Joel 2:28",
+        "mean": "In our day the Lord pours out His Spirit on everyone who will receive it, young and old."
+      }
+    ],
+    "deep": [
+      {
+        "id": "deep47-door-of-hope",
+        "section": 0,
+        "read": "Hosea 2:14–23",
+        "intro": "The lesson asks what these verses teach about the Lord’s love and mercy. Israel has left Him, yet He speaks of winning her back.",
+        "q": "In Hosea 2:15, what does the Lord say He will make the valley of Achor?",
+        "right": "A door of hope",
+        "wrong": [
+          "A field of tears",
+          "A wall of stone"
+        ],
+        "why": "Verse 15: “the valley of Achor for a door of hope.” Even after Israel left Him, the Lord opens a way back.",
+        "source": "Hosea 2:15",
+        "find": "the valley of Achor for a door of hope",
+        "hunt": "In Hosea 2, what does the Lord say He will make the valley of Achor?",
+        "approved": "1b06359c"
+      },
+      {
+        "id": "deep47-physician",
+        "section": 1,
+        "read": "Matthew 9:10–13",
+        "intro": "The lesson invites you to see how the Savior used Hosea 6:6. Here some Pharisees complain that Jesus eats with publicans and sinners.",
+        "q": "In Matthew 9:12, who does Jesus say needs a physician?",
+        "right": "Those who are sick",
+        "wrong": [
+          "Those who are old",
+          "Those who are rich"
+        ],
+        "why": "Verse 12: “They that be whole need not a physician, but they that are sick.” Like a doctor who comes for the sick, Jesus came for sinners.",
+        "source": "Matthew 9:12",
+        "find": "They that be whole need not a physician, but they that are sick",
+        "hunt": "In Matthew 9, who does Jesus say needs a physician?",
+        "approved": "be7169be"
+      },
+      {
+        "id": "deep47-third-hour",
+        "section": 2,
+        "read": "Acts 2:12–18",
+        "intro": "On the day of Pentecost the Holy Ghost filled Jesus’s disciples, and a crowd gathered. Peter stood up and quoted Joel 2.",
+        "q": "In Acts 2:15, some people mocked that the disciples were drunk. What does Peter point out?",
+        "right": "It was only the third hour of the day",
+        "wrong": [
+          "They had fasted for three days",
+          "They had been praying in the temple"
+        ],
+        "why": "Verse 15: “these are not drunken, as ye suppose, seeing it is but the third hour of the day.” That’s about nine in the morning.",
+        "source": "Acts 2:15",
+        "find": "seeing it is but the third hour of the day",
+        "hunt": "In Acts 2, some people mocked that the disciples were drunk. What does Peter point out?",
+        "approved": "30d3f42d"
+      },
+      {
+        "id": "deep47-kids",
+        "day": "friday",
+        "title": "From the children’s part of the lesson",
+        "read": "lesson",
+        "intro": "The children’s part of this week’s lesson has an idea for Joel 2:28–29 that you can try at the kitchen table.",
+        "q": "To show what it means for the Spirit to be poured out, the lesson suggests pouring a liquid and comparing it with what?",
+        "right": "A drip or a trickle",
+        "wrong": [
+          "A frozen ice cube",
+          "A sealed water bottle"
+        ],
+        "why": "It suggests letting children pour a liquid and then contrasting it with a drip or a trickle. The Lord promised to pour out His Spirit, not just let a little through.",
+        "source": "lesson",
+        "find": "contrasting it with a drip or a trickle",
+        "approved": "2609cbf3"
+      },
+      {
+        "id": "deep47-ftsoy",
+        "day": "friday",
+        "title": "From For the Strength of Youth",
+        "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/03-7-ways-to-increase-the-flow-of-revelation?lang=eng",
+        "intro": "The lesson asks what you can do if you feel the Spirit isn’t being poured out on you. This article answers with seven teachings from the scriptures and apostles.",
+        "q": "What is the first of the article’s seven ways to increase the flow of revelation?",
+        "right": "Quiet your environment and your mind",
+        "wrong": [
+          "Write your questions in a journal",
+          "Ask your parents for a blessing"
+        ],
+        "why": "Number one is to quiet your surroundings and your mind: find a quiet, holy place, then be still before God.",
+        "source": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/03-7-ways-to-increase-the-flow-of-revelation?lang=eng",
+        "find": "Quiet Your Environment and Your Mind",
+        "approved": "b37537e7"
+      }
+    ],
+    "reels": [
+      {
+        "id": "hos2-first-husband",
+        "section": 0,
+        "hook": "She ran after others. Then she wanted to come home.",
+        "body": "Hosea’s wife, Gomer, broke her marriage promises and left him. The Lord used this sad story as a picture: Hosea stood for the Lord, and Gomer for Israel, who had left Him to worship false gods. In chapter 2, Israel chases her “lovers” but can’t catch them. At last she says, “I will go and return to my first husband.” Life with the Lord was better all along.",
+        "verse": {
+          "text": "And she shall follow after her lovers, but she shall not overtake them; and she shall seek them, but shall not find them: then shall she say, I will go and return to my first husband; for then was it better with me than now.",
+          "ref": "Hosea 2:7"
+        },
+        "question": {
+          "q": "Why did Israel decide to go back to her first husband, the Lord?",
+          "right": "Life was better with Him than without",
+          "wrong": [
+            "Her new lovers sent her back home",
+            "A prophet ordered her to go back"
+          ],
+          "why": "“For then was it better with me than now.” The false gods gave her nothing. Coming back to the Lord was coming home."
+        },
+        "bonus": {
+          "q": "What does the name Hosea mean, say this week’s Scripture Helps?",
+          "right": "Salvation, or Jehovah saves",
+          "wrong": [
+            "Gift of God, or God gives",
+            "Prophet, or he who speaks"
+          ],
+          "why": "They say Hosea’s name means salvation, or Jehovah saves. His whole book is about the Lord saving people who wandered away.",
+          "source": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng",
+          "find": "Hosea’s name means “salvation” or “Jehovah saves”"
+        },
+        "gradient": "linear-gradient(150deg,#3b0764 0%,#9d174d 50%,#fbcfe8 115%)",
+        "blobA": "rgba(251,207,232,.4)",
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "fa63f846",
+        "media": {
+          "image": {
+            "src": "media/hosea-tissot.jpg",
+            "alt": "Painting of the prophet Hosea in a white robe and red headcloth, raising one hand as he speaks, with a white town behind him",
+            "credit": "Hosea, by James Tissot, about 1900. Public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Hosea_by_James_Tissot.jpg"
+          }
+        }
+      },
+      {
+        "id": "hos2-ishi",
+        "section": 0,
+        "hook": "No more calling Him by an idol’s name.",
+        "body": "Baal was a false god many Israelites worshipped. In Hebrew, Ishi and Baali can both mean my husband, but Baali sounds like the name Baal. So the Lord promised a day when Israel would call Him Ishi, never Baali. He didn’t want His name mixed up with an idol’s. He wants a faithful, loving covenant with His people, like a true marriage.",
+        "verse": {
+          "text": "And it shall be at that day, saith the LORD, that thou shalt call me Ishi; and shalt call me no more Baali.",
+          "ref": "Hosea 2:16"
+        },
+        "question": {
+          "q": "Why did the Lord want Israel to stop calling Him Baali?",
+          "right": "It sounded like the false god Baal",
+          "wrong": [
+            "It was a name for a foreign king",
+            "It was too hard for children to say"
+          ],
+          "why": "Baali echoes the name Baal. Calling Him Ishi would show Israel had left false gods behind and was faithful to Him."
+        },
+        "bonus": {
+          "q": "In Hosea 2:17, what will the Lord take out of Israel’s mouth?",
+          "hunt": "In Hosea 2, what will the Lord take out of Israel’s mouth?",
+          "right": "The names of the false gods",
+          "wrong": [
+            "The taste of bitter water",
+            "The words of lying priests"
+          ],
+          "why": "Verse 17: “I will take away the names of Baalim out of her mouth.” Israel won’t even remember the false gods’ names.",
+          "source": "Hosea 2:17",
+          "find": "I will take away the names of Baalim out of her mouth"
+        },
+        "media": {
+          "image": {
+            "src": "media/baal-figure-ugarit.jpg",
+            "alt": "A small ancient metal idol of Baal with one arm raised, found at Ugarit in Syria",
+            "credit": "Figure of Baal from Ugarit, 1300s–1100s BC, Louvre. Photo: Jastrow, public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Baal_Ugarit_Louvre_AO17329.jpg"
+          }
+        },
+        "gradient": "linear-gradient(150deg,#431407 0%,#9a3412 50%,#fdba74 115%)",
+        "blobA": "rgba(253,186,116,.4)",
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "da363d68"
+      },
+      {
+        "id": "hos11-drew-them",
+        "section": 0,
+        "hook": "He didn’t drag them. He pulled them close with love.",
+        "body": "The Lord remembers when Israel was young: “I taught Ephraim also to go, taking them by their arms” (Hosea 11:3), like a parent helping a toddler take first steps. He led them with “bands of love,” not chains. He lifted the heavy yoke so they could eat. Even when they turned away, He asked, “How shall I give thee up, Ephraim?” (Hosea 11:8).",
+        "verse": {
+          "text": "I drew them with cords of a man, with bands of love: and I was to them as they that take off the yoke on their jaws, and I laid meat unto them.",
+          "ref": "Hosea 11:4"
+        },
+        "question": {
+          "q": "In Hosea 11:4, what did the Lord use to lead Israel?",
+          "right": "Cords and bands of love",
+          "wrong": [
+            "Chains and iron yokes",
+            "Fire and loud thunder"
+          ],
+          "why": "“I drew them with cords of a man, with bands of love.” The Lord leads by love, not by force."
+        },
+        "bonus": {
+          "q": "In Hosea 11:9, why won’t the Lord destroy Ephraim in His anger?",
+          "hunt": "In Hosea 11, why won’t the Lord destroy Ephraim in His anger?",
+          "right": "He is God, and not a man",
+          "wrong": [
+            "Ephraim paid Him a ransom",
+            "Judah begged Him to stop"
+          ],
+          "why": "Verse 9: “I will not return to destroy Ephraim: for I am God, and not man.” His mercy is bigger than any person’s.",
+          "source": "Hosea 11:9",
+          "find": "for I am God, and not man"
+        },
+        "gradient": "linear-gradient(155deg,#1e3a8a 0%,#2563eb 50%,#bfdbfe 115%)",
+        "blobA": "rgba(191,219,254,.4)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "20005e8f",
+        "media": {
+          "image": {
+            "src": "media/first-steps-van-gogh.jpg",
+            "alt": "Painting of a mother holding up her toddler by the arms as the father kneels in the garden with open arms, waiting for the child’s first steps",
+            "credit": "First Steps, after Millet, by Vincent van Gogh, 1890. Public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:First_Steps,_after_Millet_MET_DP124808.jpg"
+          }
+        }
+      },
+      {
+        "id": "hos13-ransom",
+        "section": 0,
+        "hook": "Even death has to give way to Him.",
+        "seek": "He promises to rescue His people from dying forever",
+        "body": "The Lord says, “there is no saviour beside me” (Hosea 13:4). Then He promises something only a Savior can do: “I will redeem them from death.” Redeem means to buy back or set free. Because Jesus Christ died and rose again, everyone will be resurrected. Paul later echoed this verse’s challenge to death: “O death, where is thy sting?” (1 Corinthians 15:55).",
+        "verse": {
+          "text": "I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction…",
+          "ref": "Hosea 13:14"
+        },
+        "question": {
+          "q": "What does the Lord promise in Hosea 13:14?",
+          "right": "To redeem His people from death",
+          "wrong": [
+            "To keep everyone from getting sick",
+            "To build a wall around the grave"
+          ],
+          "why": "“I will ransom them from the power of the grave; I will redeem them from death.” Through Jesus Christ, everyone will live again."
+        },
+        "bonus": {
+          "q": "The Friend’s Come, Follow Me page for this week pairs Hosea’s promise about the grave with a Primary song. Which one?",
+          "right": "Did Jesus Really Live Again?",
+          "wrong": [
+            "Can a Little Child Like Me?",
+            "Jesus Once Was a Little Child"
+          ],
+          "why": "The Friend says Hosea taught that Jesus Christ would die and be resurrected, so we can live again, and suggests singing Did Jesus Really Live Again?",
+          "source": "https://www.churchofjesuschrist.org/study/friend/2022/11/come-follow-me/come-follow-me-activities?lang=eng",
+          "find": "Did Jesus Really Live Again?"
+        },
+        "media": {
+          "image": {
+            "src": "media/christ-at-the-tomb-kilbourn.jpg",
+            "alt": "Painting of the resurrected Jesus Christ speaking with Mary Magdalene outside the empty tomb",
+            "credit": "Christ at the Tomb, by Dale Kilbourn",
+            "link": "https://www.churchofjesuschrist.org/media/image/mary-tomb-art-lds-48c519f?lang=eng"
+          }
+        },
+        "gradient": "linear-gradient(150deg,#134e4a 0%,#0f766e 45%,#fbbf24 115%)",
+        "blobA": "rgba(253,224,71,.45)",
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "d327c5c2"
+      },
+      {
+        "id": "hos14-love-freely",
+        "section": 0,
+        "hook": "No matter how far you wandered, He still loves you.",
+        "body": "Hosea ends with an invitation: “O Israel, return unto the LORD thy God” (Hosea 14:1). The Lord promises to heal their backsliding, which means sliding back into old sins. And He will “love them freely,” as a gift He chooses to give. Then He describes people who come back: they grow and bloom like plants watered by morning dew (Hosea 14:5).",
+        "verse": {
+          "text": "I will heal their backsliding, I will love them freely: for mine anger is turned away from him.",
+          "ref": "Hosea 14:4"
+        },
+        "question": {
+          "q": "What does the Lord promise people who return to Him in Hosea 14:4?",
+          "right": "He will heal them and love them freely",
+          "wrong": [
+            "He will test them for many more years",
+            "He will let them come back only once"
+          ],
+          "why": "“I will heal their backsliding, I will love them freely.” His love isn’t something we have to earn back."
+        },
+        "bonus": {
+          "q": "In Hosea 14:9, the last verse of the book, what does Hosea say about the ways of the Lord?",
+          "hunt": "In Hosea 14, the last verse of the book, what does Hosea say about the ways of the Lord?",
+          "right": "They are right, and the just walk in them",
+          "wrong": [
+            "They are hidden, so no one finds them",
+            "They are hard, so few will try them"
+          ],
+          "why": "Verse 9: “for the ways of the LORD are right, and the just shall walk in them.” Coming back means walking His way.",
+          "source": "Hosea 14:9",
+          "find": "the ways of the LORD are right"
+        },
+        "media": {
+          "image": {
+            "src": "media/desert-wildflowers.jpg",
+            "alt": "Yellow and purple wildflowers blooming across a dry, sandy desert wash",
+            "credit": "Wildflowers in a desert wash, Joshua Tree National Park. Photo: NPS / Carmen Aurrecoechea, public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Wildflowers_in_a_desert_wash_(52830431529).jpg"
+          }
+        },
+        "gradient": "linear-gradient(150deg,#78350f 0%,#be185d 55%,#fb7185 100%)",
+        "blobA": "rgba(253,164,175,.45)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "ffc02466"
+      },
+      {
+        "id": "hos6-morning-cloud",
+        "section": 1,
+        "hook": "Here at sunrise, gone by breakfast.",
+        "body": "Early in the morning, a cloud or dew can cover the ground. By the time the sun is up, it’s gone. The Lord said Israel’s goodness was like that: it showed up for a moment, then vanished. They still offered sacrifices, but their hearts weren’t really His. The lesson asks what our righteousness should be like. Isaiah’s answer: “as the waves of the sea” (Isaiah 48:18). It keeps coming.",
+        "verse": {
+          "text": "O Ephraim, what shall I do unto thee? O Judah, what shall I do unto thee? for your goodness is as a morning cloud, and as the early dew it goeth away.",
+          "ref": "Hosea 6:4"
+        },
+        "question": {
+          "q": "Why did the Lord compare Israel’s goodness to the early dew?",
+          "right": "It disappeared as fast as it came",
+          "wrong": [
+            "It made the fields grow very green",
+            "It only came on the Sabbath day"
+          ],
+          "why": "“As the early dew it goeth away.” Their goodness didn’t last. The Lord wants faithfulness that stays."
+        },
+        "bonus": {
+          "q": "Hosea 6 mentions the latter and former rain. What did the first rains do for a farmer, says the Old Testament Student Manual?",
+          "right": "Softened the ground for plowing",
+          "wrong": [
+            "Washed the dust off the grapes",
+            "Filled the wells for the summer"
+          ],
+          "why": "The manual says the first rains softened the earth so the farmer could plow and plant, and the later rains made the crop grow.",
+          "source": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng",
+          "find": "softened the earth so that he could plow it and plant the seed"
+        },
+        "gradient": "linear-gradient(165deg,#312e81 0%,#7c3aed 50%,#fde68a 115%)",
+        "blobA": "rgba(253,230,138,.4)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "e2655600",
+        "media": {
+          "image": {
+            "src": "media/morning-fog-yellowstone.jpg",
+            "alt": "Morning fog lying low across a valley, below sunlit golden hills dotted with pine trees",
+            "credit": "Foggy morning near Tower Junction, Yellowstone National Park. Photo: NPS / Jacob W. Frank, public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Foggy_morning_near_Tower_Junction_(50513732883).jpg"
+          }
+        }
+      },
+      {
+        "id": "hos6-mercy",
+        "section": 1,
+        "hook": "Jesus quoted this verse to people who judged others.",
+        "body": "The people of Israel kept offering animal sacrifices, but they had broken their covenant with the Lord (Hosea 6:7). He said He wanted mercy more. Centuries later, some Pharisees complained that Jesus ate with sinners. He told them, “go ye and learn what that meaneth, I will have mercy, and not sacrifice” (Matthew 9:13). Going to church matters. So does how we treat people.",
+        "verse": {
+          "text": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.",
+          "ref": "Hosea 6:6"
+        },
+        "question": {
+          "q": "What did the Lord want more than burnt offerings?",
+          "right": "Mercy and knowing Him",
+          "wrong": [
+            "Bigger and better altars",
+            "More priests in the temple"
+          ],
+          "why": "“I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.” Offerings mean little without a loving heart."
+        },
+        "bonus": {
+          "q": "How many times did Jesus quote this line from Hosea during His ministry, say this week’s Scripture Helps?",
+          "right": "Twice",
+          "wrong": [
+            "Once",
+            "Seven times"
+          ],
+          "why": "They say He quoted it twice, both times correcting Pharisees who cared more about religious rules than about repenting and loving others.",
+          "source": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng",
+          "find": "Twice during His mortal ministry, Jesus Christ quoted this statement from the book of Hosea"
+        },
+        "gradient": "linear-gradient(150deg,#14532d 0%,#16a34a 50%,#bbf7d0 115%)",
+        "blobA": "rgba(187,247,208,.4)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "c14907e2",
+        "media": {
+          "image": {
+            "src": "media/jesus-eats-with-sinners-bida.jpg",
+            "alt": "Engraving of Jesus Christ sitting at a low table, sharing a meal with a group of men while a servant brings a dish",
+            "credit": "Jesus Eats with Sinners and Tax Collectors, by Alexandre Bida, 1875. Public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Jesus_eats_with_sinners_and_tax_collectors.png"
+          }
+        }
+      },
+      {
+        "id": "hos10-seek",
+        "section": 1,
+        "hook": "Plant good seeds now. You’ll harvest them later.",
+        "body": "Before planting, farmers break up hard ground that has sat unused. The Lord told Israel to do that with their hearts: “break up your fallow ground.” Plant righteousness, and you’ll harvest mercy. The children’s part of this week’s lesson suggests drawing a clock and writing ways to seek the Lord at different times of day. Morning, school, dinner, bedtime: it’s always a good time to seek Him.",
+        "verse": {
+          "text": "Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you.",
+          "ref": "Hosea 10:12"
+        },
+        "question": {
+          "q": "What does Hosea 10:12 say it is time to do?",
+          "right": "Seek the Lord",
+          "wrong": [
+            "Rest from work",
+            "Build new barns"
+          ],
+          "why": "“For it is time to seek the LORD, till he come and rain righteousness upon you.” Seeking Him is like planting: the harvest comes."
+        },
+        "bonus": {
+          "q": "Which song does this week’s lesson suggest, to teach that it’s always a good time to seek the Lord?",
+          "right": "Anytime, Anywhere",
+          "wrong": [
+            "Seek the Lord Early",
+            "Search, Ponder, and Pray"
+          ],
+          "why": "It suggests Anytime, Anywhere, from Hymns for Home and Church. You can seek Him at any hour, wherever you are.",
+          "source": "lesson",
+          "find": "Anytime, Anywhere"
+        },
+        "media": {
+          "image": {
+            "src": "media/boy-praying.jpg",
+            "alt": "A young boy with his arms folded and his eyes closed, praying",
+            "credit": "Prayer, from the Church Media Library",
+            "link": "https://www.churchofjesuschrist.org/media/image/boy-prayer-f7345ef?lang=eng"
+          }
+        },
+        "gradient": "linear-gradient(150deg,#2e1065 0%,#6d28d9 50%,#ddd6fe 115%)",
+        "blobA": "rgba(221,214,254,.4)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "ba54906f"
+      },
+      {
+        "id": "joel2-rend-heart",
+        "section": 1,
+        "hook": "Torn clothes are easy. A changed heart is harder.",
+        "body": "In Joel’s day, people tore their clothes to show they were sad or sorry. Anyone could rip a robe on the outside. Joel asked for something deeper: “rend your heart, and not your garments.” Rend means tear. The Lord wanted real sorrow and real change inside. And He promised a warm welcome, because He is “gracious and merciful, slow to anger, and of great kindness.”",
+        "verse": {
+          "text": "And rend your heart, and not your garments, and turn unto the LORD your God: for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.",
+          "ref": "Joel 2:13"
+        },
+        "question": {
+          "q": "Why did Joel say to rend your heart instead of your garments?",
+          "right": "God wanted real change inside",
+          "wrong": [
+            "New clothes cost too much money",
+            "Tearing robes was against the law"
+          ],
+          "why": "Torn clothes only show on the outside. “Rend your heart” means being truly sorry and turning to the Lord."
+        },
+        "bonus": {
+          "q": "In Joel 2:12, besides all your heart, what three things does the Lord say to turn to Him with?",
+          "hunt": "In Joel 2, besides all your heart, what three things does the Lord say to turn to Him with?",
+          "right": "Fasting, weeping and mourning",
+          "wrong": [
+            "Singing, dancing and feasting",
+            "Gifts, offerings and incense"
+          ],
+          "why": "Verse 12: “turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning.” They showed they meant it.",
+          "source": "Joel 2:12",
+          "find": "with fasting, and with weeping, and with mourning"
+        },
+        "gradient": "linear-gradient(150deg,#450a0a 0%,#b91c1c 50%,#fecaca 115%)",
+        "blobA": "rgba(254,202,202,.4)",
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "657235df",
+        "media": {
+          "image": {
+            "src": "media/joel-hoffbauer.jpg",
+            "alt": "Painting of the prophet Joel in a long dark robe, standing in a garden with both hands pressed over his heart",
+            "credit": "Joel, by Charles Hoffbauer after James Tissot, 1904. Photo: Phillip Medhurst, CC BY-SA 4.0",
+            "link": "https://commons.wikimedia.org/wiki/File:Jo%C3%ABl_(Joel_1_1)_%E2%80%A2_invenit_James_Tissot_%E2%80%A2_pinxit_Charles_Hoffbauer_%E2%80%A2_excudit_Maurice_de_Brunoff_apud_Philip_de_Vere_%E2%80%A2_praesentat_Phillip_Medhurst.jpg"
+          }
+        }
+      },
+      {
+        "id": "joel2-pour-out",
+        "section": 2,
+        "hook": "Kids, grandparents, everyone: God’s Spirit for all.",
+        "body": "Joel saw a day when the Lord would “pour out my spirit upon all flesh.” Not just on prophets: “your sons and your daughters shall prophesy.” Old men would dream dreams, and young men see visions. When the angel Moroni first visited young Joseph Smith, he quoted these verses and said they would soon come true (Joseph Smith—History 1:41). That’s our day. The Holy Ghost can guide you too.",
+        "verse": {
+          "text": "And it shall come to pass afterward, that I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy, your old men shall dream dreams, your young men shall see visions:",
+          "ref": "Joel 2:28"
+        },
+        "question": {
+          "q": "In Joel 2:28, who will receive the Lord’s Spirit?",
+          "right": "All people, young and old",
+          "wrong": [
+            "Only prophets and priests",
+            "Only the kings of Israel"
+          ],
+          "why": "“I will pour out my spirit upon all flesh.” Sons, daughters, old men and young men: that includes you."
+        },
+        "bonus": {
+          "q": "In Joel 2:29, who else will the Lord pour His Spirit upon?",
+          "hunt": "In Joel 2, besides sons, daughters, old men and young men, who else will the Lord pour His Spirit upon?",
+          "right": "Servants and handmaids",
+          "wrong": [
+            "Soldiers and captains",
+            "Kings and queens"
+          ],
+          "why": "Verse 29: “And also upon the servants and upon the handmaids in those days will I pour out my spirit.” No one is left out.",
+          "source": "Joel 2:29",
+          "find": "upon the servants and upon the handmaids"
+        },
+        "gradient": "linear-gradient(160deg,#0c4a6e 0%,#0284c7 50%,#e0f2fe 115%)",
+        "blobA": "rgba(224,242,254,.45)",
+        "blobB": "rgba(0,0,0,.4)",
+        "approved": "ceb8e48f",
+        "media": {
+          "image": {
+            "src": "media/moroni-joseph-smith-lovell.jpg",
+            "alt": "Painting of the angel Moroni in a white robe standing in the air beside young Joseph Smith, who sits up in bed in his log-cabin room",
+            "credit": "Moroni Appears to Joseph Smith in His Room, by Tom Lovell",
+            "link": "https://www.churchofjesuschrist.org/media/image/angel-moroni-appears-to-joseph-5f68ab3?lang=eng"
+          }
+        }
+      },
+      {
+        "id": "joel2-restore-years",
+        "section": 2,
+        "hook": "What the bugs ate, God promises to give back.",
+        "body": "Joel’s people had watched swarms of locusts, a kind of grasshopper, strip their fields bare (Joel 1:4). Some years there was nothing left to harvest. But the Lord made a promise: “I will restore to you the years that the locust hath eaten.” Rain would come again, and the floors would be “full of wheat” (verse 24). The Lord can make up for what we lose, too.",
+        "verse": {
+          "text": "And I will restore to you the years that the locust hath eaten, the cankerworm, and the caterpiller, and the palmerworm, my great army which I sent among you.",
+          "ref": "Joel 2:25"
+        },
+        "question": {
+          "q": "What does the Lord promise in Joel 2:25?",
+          "right": "To give back the years the locusts ate",
+          "wrong": [
+            "To send even more locusts next year",
+            "To move His people to a new land"
+          ],
+          "why": "“I will restore to you the years that the locust hath eaten.” He can heal and replace what was lost."
+        },
+        "bonus": {
+          "q": "In Joel 1, the palmerworm is the Hebrew word gazam. What does it mean, says the Old Testament Student Manual?",
+          "right": "Gnawer",
+          "wrong": [
+            "Flier",
+            "Jumper"
+          ],
+          "why": "The manual says gazam means gnawer. Joel’s four names for the insects describe stages of a locust’s life, each eating what the last one left.",
+          "source": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-7?lang=eng",
+          "find": "The palmerworm is the Hebrew gazam, which means “gnawer.”"
+        },
+        "media": {
+          "image": {
+            "src": "media/fireweed-after-fire.jpg",
+            "alt": "Pink fireweed flowers and green plants growing up through black ash among burned trees after a forest fire",
+            "credit": "Fireweed grows in a burned area, Kenai National Wildlife Refuge, Alaska. Photo: U.S. Fish and Wildlife Service, public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:R7-ak-knr-fireweed_grows_in_burned_area_-_DPLA_-_5411e39258a66aff3cf25f28101bb03e.jpg"
+          }
+        },
+        "gradient": "linear-gradient(150deg,#1f2937 0%,#9d174d 55%,#f9a8d4 115%)",
+        "blobA": "rgba(249,168,212,.4)",
+        "blobB": "rgba(0,0,0,.45)",
+        "approved": "e89a11f3"
+      },
+      {
+        "id": "joel3-valley",
+        "section": 2,
+        "hook": "Crowds and crowds, and a choice to make.",
+        "body": "Joel saw huge crowds of nations gathering before the Second Coming, in a place he called “the valley of decision.” The battle won’t go their way: the Lord is stronger than every army. In a way, each of us stands in a valley of decision now: will we choose the Lord? Joel ends with a promise for those who do: “the LORD dwelleth in Zion” (Joel 3:21).",
+        "verse": {
+          "text": "Multitudes, multitudes in the valley of decision: for the day of the LORD is near in the valley of decision.",
+          "ref": "Joel 3:14"
+        },
+        "question": {
+          "q": "What did Joel call the place where the multitudes gather?",
+          "right": "The valley of decision",
+          "wrong": [
+            "The valley of shadows",
+            "The valley of giants"
+          ],
+          "why": "“Multitudes, multitudes in the valley of decision.” The day of the Lord is coming, and everyone must choose."
+        },
+        "bonus": {
+          "q": "In Joel 3:16, when the heavens and the earth shake, what will the Lord be to His people?",
+          "hunt": "In Joel 3, when the heavens and the earth shake, what will the Lord be to His people?",
+          "right": "Their hope and strength",
+          "wrong": [
+            "Their judge and jailer",
+            "Their king and general"
+          ],
+          "why": "Verse 16: “the LORD will be the hope of his people, and the strength of the children of Israel.” His people don’t need to fear.",
+          "source": "Joel 3:16",
+          "find": "the LORD will be the hope of his people"
+        },
+        "gradient": "linear-gradient(155deg,#0f172a 0%,#334155 50%,#fcd34d 115%)",
+        "blobA": "rgba(252,211,77,.4)",
+        "blobB": "rgba(0,0,0,.5)",
+        "approved": "2b4cce78",
+        "media": {
+          "image": {
+            "src": "media/valley-of-jehoshaphat-seddon.jpg",
+            "alt": "Painting of a deep, rocky valley below the walls of Jerusalem, with a village on the far hillside and sheep grazing in front",
+            "credit": "Jerusalem and the Valley of Jehoshaphat from the Hill of Evil Counsel, by Thomas Seddon, about 1854. Public domain",
+            "link": "https://commons.wikimedia.org/wiki/File:Thomas_Seddon_-_Jerusalem_and_the_Valley_of_Jehoshaphat_from_the_Hill_of_Evil_Counsel_-_Google_Art_Project.jpg"
+          }
+        }
+      }
+    ],
+    "tldr": [
+      {
+        "ch": "Hosea 1",
+        "lines": [
+          "The Lord tells Hosea to marry. Hosea marries Gomer, and his family becomes a sign to Israel, which has been unfaithful to the Lord. (verses 1–3)",
+          "Their three children get names that warn Israel: Jezreel, Lo-ruhamah (no more mercy), and Lo-ammi (not my people). (verses 4–9)",
+          "Yet in the day of gathering, Israel will be as many as the sand of the sea and be called sons of the living God. (verses 10–11)"
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "The KJV’s “wife of whoredoms” is told gently, as the lesson does: Gomer’s unfaithfulness is a sign of Israel’s, and line 1 says no more than that."
+          },
+          {
+            "v": 6,
+            "about": "“No more mercy” follows the verse’s own words for Lo-ruhamah; the Scripture Helps give “not pitied” or “not having obtained mercy.”"
+          }
+        ],
+        "approved": "ae1ef139"
+      },
+      {
+        "ch": "Hosea 2",
+        "lines": [
+          "Israel is like a wife who left her husband for other lovers: false gods she thinks gave her food and clothes. (verses 1–5)",
+          "When she can’t find them, she wants to go back. The Lord, who gave her everything, will take it away because she served Baal. (verses 6–13)",
+          "Then He will win her back and speak tenderly to her, and she will call Him Ishi, my husband. (verses 14–17)",
+          "In the last days He will bring peace and marry Israel forever. They will be His people, and He their God. (verses 18–23)"
+        ],
+        "review": [
+          {
+            "v": 16,
+            "about": "“Ishi, my husband” follows the Old Testament Student Manual’s gloss; the line leaves out verse 17 (the names of Baalim), a bonus answer."
+          },
+          {
+            "v": 19,
+            "about": "“Marry Israel forever” is verse 19’s “betroth thee unto me for ever,” and the heading’s “reconciled to God.”"
+          }
+        ],
+        "approved": "a1931015"
+      },
+      {
+        "ch": "Hosea 3",
+        "lines": [
+          "The Lord tells Hosea to love his wife again, as the Lord loves Israel. Hosea pays to bring her back home. (verses 1–3)",
+          "Israel will live many days without a king or sacrifices. In the latter days they will return and seek the Lord and His goodness. (verses 4–5)"
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "The woman in verse 1 is taken to be Gomer, as the lesson and Scripture Helps tell it (Hosea’s efforts to bring her back)."
+          }
+        ],
+        "approved": "83b27abe"
+      },
+      {
+        "ch": "Hosea 4",
+        "lines": [
+          "The Lord has a case against Israel: there is no truth, mercy, or knowledge of God. Lying, stealing and killing fill the land. (verses 1–3)",
+          "His people are destroyed because they reject knowledge, and the priests are as bad as the people. (verses 4–10)",
+          "They ask wooden idols for advice and worship on the hills. Israel is like a stubborn young cow, and Ephraim is joined to idols. (verses 11–19)"
+        ],
+        "review": [
+          {
+            "v": 12,
+            "about": "“Wooden idols” for the KJV’s “stocks” follows the Old Testament Student Manual."
+          }
+        ],
+        "approved": "9d00482d"
+      },
+      {
+        "ch": "Hosea 5",
+        "lines": [
+          "Israel’s priests and leaders have trapped the people like a hunter’s net. Their pride shows, and both Israel and Judah will fall. (verses 1–7)",
+          "Ephraim and Judah are sick and wounded. Ephraim runs to Assyria for help, but Assyria can’t heal them. (verses 8–14)",
+          "The Lord will go away until they admit their sins and seek Him. (verse 15)"
+        ],
+        "approved": "11b0761f"
+      },
+      {
+        "ch": "Hosea 6",
+        "lines": [
+          "Hosea calls Israel to return to the Lord, who will heal them. He will come to them as surely as morning and rain. (verses 1–3)",
+          "But their goodness disappears like a morning cloud. The Lord wants mercy and knowing Him more than sacrifices. (verses 4–6)",
+          "They have broken the covenant. Even the priests do murder, and Israel is unclean. (verses 7–11)"
+        ],
+        "approved": "1485cb81"
+      },
+      {
+        "ch": "Hosea 10",
+        "lines": [
+          "Israel is an empty vine. The richer they got, the more altars and idols they built, so those will be torn down. (verses 1–8)",
+          "Israel has sinned since the days of Gibeah, and the Lord will correct them. (verses 9–11)",
+          "Hosea calls them to plant righteousness and seek the Lord. They have plowed wickedness, so their forts will fall. (verses 12–15)"
+        ],
+        "approved": "88601cbf"
+      },
+      {
+        "ch": "Hosea 11",
+        "lines": [
+          "The Lord loved Israel as a child and called him out of Egypt, like Jesus, who came out of Egypt as a child. (verse 1)",
+          "He taught Ephraim to walk and led them with love, but they turned to idols, and Assyria will rule them. (verses 2–7)",
+          "The Lord can’t give Ephraim up. He will bring His people home, though Ephraim still lies to Him. (verses 8–12)"
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "The comparison to Jesus comes from the chapter heading (“in similitude of our Lord”) and Matthew 2:15."
+          },
+          {
+            "v": 9,
+            "about": "The line leaves out verse 9’s reason (“I am God, and not man”), a bonus answer."
+          }
+        ],
+        "approved": "f0b80f61"
+      },
+      {
+        "ch": "Hosea 12",
+        "lines": [
+          "Ephraim chases the wind and makes deals with Assyria and Egypt, and the Lord will judge Jacob’s family. (verses 1–2)",
+          "Jacob wrestled with the angel and met God at Bethel. So turn to God, keep mercy and justice, and wait on Him. (verses 3–6)",
+          "Ephraim cheats to get rich, then says he has done nothing wrong. (verses 7–9)",
+          "The Lord guided His people by prophets, visions and similitudes, or symbols, yet Ephraim angered Him bitterly. (verses 10–14)"
+        ],
+        "approved": "adffea62"
+      },
+      {
+        "ch": "Hosea 13",
+        "lines": [
+          "Ephraim keeps sinning and making idols, so they will vanish like morning mist and smoke. (verses 1–3)",
+          "The Lord brought them out of Egypt. There is no Savior but Him, yet they forgot Him. (verses 4–8)",
+          "Israel ruined itself, but its help is in the Lord. He will ransom them from the grave and redeem them from death. (verses 9–14)",
+          "An east wind will dry up Ephraim, and Samaria will fall for rebelling against God. (verses 15–16)"
+        ],
+        "approved": "fbf03321"
+      },
+      {
+        "ch": "Hosea 14",
+        "lines": [
+          "Hosea pleads with Israel to return to the Lord with words of repentance, instead of trusting Assyria or idols. (verses 1–3)",
+          "The Lord will heal them and love them freely. He will be like dew, and Israel will grow like a lily and an olive tree. (verses 4–7)",
+          "Ephraim will be done with idols, and Hosea ends by asking who is wise enough to understand. (verses 8–9)"
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "The heading says this happens “in the last days”; the line keeps to what the verses say, an invitation to return."
+          },
+          {
+            "v": 9,
+            "about": "Verse 9’s “the ways of the LORD are right” is a bonus answer, so the line only names its question."
+          }
+        ],
+        "approved": "6e66227b"
+      },
+      {
+        "ch": "Joel 1",
+        "lines": [
+          "Joel tells the people to tell their children about a terrible plague of locusts that ate everything. (verses 1–4)",
+          "An invader like a lion has stripped the vines and fig trees, and the offerings at the temple have stopped. (verses 5–12)",
+          "The priests must fast, call a solemn assembly, and gather everyone to the house of the Lord, for the day of the Lord is near. (verses 13–15)",
+          "The food is gone, the animals groan, and fire has burned the fields. Joel cries to the Lord. (verses 16–20)"
+        ],
+        "approved": "da70ded3"
+      },
+      {
+        "ch": "Joel 2",
+        "lines": [
+          "Before the Second Coming, a great army will bring war and ruin, and the sun and moon will go dark. (verses 1–11)",
+          "The Lord says to turn to Him with all your heart, for He is gracious and merciful. The priests must gather everyone to plead with Him. (verses 12–17)",
+          "He will pity His people, drive the army away, and give back the years the locusts ate. (verses 18–27)",
+          "He will pour out His Spirit on all flesh, with dreams and visions. Whoever calls on the Lord will be saved. (verses 28–32)"
+        ],
+        "review": [
+          {
+            "v": 12,
+            "about": "Verse 12’s fasting, weeping and mourning is a bonus answer, so the line keeps to “with all your heart.”"
+          },
+          {
+            "v": 32,
+            "about": "“Saved” for the KJV’s “delivered.”"
+          }
+        ],
+        "approved": "75e02cbe"
+      },
+      {
+        "ch": "Joel 3",
+        "lines": [
+          "The Lord will gather all nations to the valley of Jehoshaphat and judge them for scattering and selling His people. (verses 1–8)",
+          "The nations get ready for war. Multitudes stand in the valley of decision, and the sun and moon go dark. (verses 9–15)",
+          "The Lord will roar from Zion and protect His people. He will dwell in Zion, and Judah will last forever. (verses 16–21)"
+        ],
+        "review": [
+          {
+            "v": 16,
+            "about": "Verse 16’s “hope of his people” is a bonus answer, so the line says “protect.”"
+          }
+        ],
+        "approved": "56577d92"
+      }
+    ],
+    "insights": [
+      {
+        "id": "hos1-names",
+        "ref": "Hosea 1:4–9",
+        "title": "Names with a message",
+        "text": "Hosea’s three children had names that carried warnings, say this week’s Scripture Helps. Jezreel means God sows, a sign Israel would be scattered like seed. Lo-ruhamah means not pitied, and Lo-ammi means not my people. But in chapter 2 the Lord gives two of them new names, Ruhamah and Ammi: pitied, and my people. The warning wasn’t the end.",
+        "source": {
+          "by": "Scripture Helps: Old Testament",
+          "title": "Hosea 1–6; 10–14; Joel",
+          "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng"
+        },
+        "find": "The names of the three children born to Hosea and Gomer represent consequences that Israel would suffer",
+        "approved": "cd5572cb"
+      },
+      {
+        "id": "hos1-sand",
+        "ref": "Hosea 1:10",
+        "title": "As many as the sand",
+        "text": "Right after the sad names, Hosea promises that Israel “shall be as the sand of the sea, which cannot be measured nor numbered.” Dr. Aaron Schade explains that these words point back to the Lord’s covenant with Abraham, whose family would be as many as the sand. The covenant would go on, and scattered Israel would be called “the sons of the living God.”",
+        "source": {
+          "by": "BYU Religious Studies Center",
+          "who": "Aaron P. Schade",
+          "title": "The Imagery of Hosea’s Family and the Restoration of Israel",
+          "url": "https://rsc.byu.edu/approaching-holiness/imagery-hoseas-family-restoration-israel"
+        },
+        "find": "is a reference back to the covenant between the Lord and Abraham",
+        "approved": "3c26d1bf"
+      },
+      {
+        "id": "hos2-provided",
+        "ref": "Hosea 2:5–8",
+        "title": "She already had it",
+        "text": "Israel said her “lovers” gave her bread, water, wool, flax, oil and drink (verse 5). But “she did not know that I gave her corn, and wine, and oil” (verse 8). The seminary manual points out that she left her covenants to find things her husband was already giving her. The Lord had been providing for her all along.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Hosea: The Love and Mercy of the Lord",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/46-hosea-joel/461-hosea?lang=eng"
+        },
+        "find": "help students see that Hosea was already providing Gomer",
+        "approved": "27df6c45"
+      },
+      {
+        "id": "hos2-return",
+        "ref": "Hosea 2:7",
+        "title": "Repent means go back",
+        "text": "When Israel can’t find the false gods she chased, she says, “I will go and return to my first husband” (verse 7). On followHIM, Dr. Aaron Schade explains that the Hebrew word for return, shuv, means to go back. That’s what repenting is: going back to God, whose love never stopped.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 1",
+          "url": "https://followhim.co/show-note/2-223/"
+        },
+        "find": "In Hebrew, shuv, it means to go back.",
+        "deep": {
+          "paras": [
+            "In Hosea 2, Israel, pictured as an unfaithful wife, runs after her “lovers,” the false gods she thinks give her bread, water, wool and oil. Then she can’t find them. Dr. Aaron Schade calls what comes next the epiphany of the chapter: “I will go and return to my first husband; for then was it better with me than now.” She finally sees that life was better with God in it.",
+            "John Bytheway noticed that in the scriptures, repenting and returning often mean the same thing. Dr. Schade agreed: “In Hebrew, shuv, it means to go back.” Repentance is going back to God and letting Him show the love we were looking for in the wrong places, a love Dr. Schade says He has never withdrawn.",
+            "He then read from Elder Henry B. Eyring, who once taught these chapters to seminary students. Even the youngest knew the husband stood for Jehovah, Jesus Christ, and the wife for His covenant people. The Lord was teaching that however unfaithful they had been, He would not divorce them “if they would only turn back to Him with full purpose of heart.”"
+          ],
+          "find": [
+            "I will go and return to my first husband, for there was it better for me than now.",
+            "And I love that repenting and returning are often kind of synonymous.",
+            "In Hebrew, shuv, it means to go back.",
+            "He would not divorce them if they would only turn back to Him with full purpose of heart."
+          ],
+          "listen": {
+            "youtube": "GqIV3hX5Fyo",
+            "start": 1726,
+            "end": 1901,
+            "title": "followHIM: Hosea and Joel, part 1, with Dr. Aaron Schade",
+            "channel": "followHIM Podcast",
+            "previewed": false
+          },
+          "approved": "003a81b7"
+        },
+        "approved": "99977cdb"
+      },
+      {
+        "id": "hos2-betroth",
+        "ref": "Hosea 2:19–20",
+        "title": "More than an engagement",
+        "text": "“I will betroth thee unto me for ever.” In ancient Israel, Scripture Helps explains, a betrothal wasn’t just a plan to marry someday. It was a binding promise, the last step before the wedding. So the Lord was promising a covenant that would never end, made “in lovingkindness, and in mercies.”",
+        "source": {
+          "by": "Scripture Helps: Old Testament",
+          "title": "Hosea 1–6; 10–14; Joel",
+          "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/45-hosea-1-6-10-14-joel?lang=eng"
+        },
+        "find": "betrothal was a legally binding commitment—the final step before the full union of marriage",
+        "approved": "45727f6e"
+      },
+      {
+        "id": "hos2-q-nelson",
+        "kind": "quote",
+        "ref": "Hosea 2:19",
+        "quote": "Hesed is a special kind of love and mercy that God feels for and extends to those who have made a covenant with Him.",
+        "text": "Verse 19: “I will betroth thee unto me … in lovingkindness.” The Hebrew word there is hesed. President Nelson explains what kind of love it is.",
+        "source": {
+          "by": "Liahona",
+          "who": "President Russell M. Nelson",
+          "title": "The Everlasting Covenant",
+          "url": "https://www.churchofjesuschrist.org/study/liahona/2022/10/04-the-everlasting-covenant?lang=eng"
+        },
+        "approved": "f10e4a06"
+      },
+      {
+        "id": "hos2-q-eyring",
+        "kind": "quote",
+        "ref": "Hosea 2:14–23",
+        "quote": "This was a love story. This was a story of a marriage covenant bound by love, by steadfast love.",
+        "text": "Elder Eyring felt this while teaching Hosea 1–2 to early-morning seminary students. Notice how the Lord’s words change at verse 14, from punishment to winning His people back.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "who": "Elder Henry B. Eyring",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "approved": "002db497"
+      },
+      {
+        "id": "hos3-price",
+        "ref": "Hosea 3:1–3",
+        "title": "Bought back",
+        "text": "The Lord told Hosea to love his wife again, and Hosea paid silver and barley to bring her home (verse 2). The Old Testament Student Manual explains that this was about the price of a slave. Hosea buying her back is like Heavenly Father seeking His children to redeem them through the blood of His Son, Jesus Christ.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "Hosea desired to purchase his wife from slavery just as Heavenly Father seeks after His children to redeem them",
+        "approved": "c94178e7"
+      },
+      {
+        "id": "hos4-hesed",
+        "ref": "Hosea 4:1",
+        "title": "Three things missing",
+        "text": "The Lord brought charges against Israel: “there is no truth, nor mercy, nor knowledge of God in the land.” Kent P. Jackson explains that the Hebrew word for mercy, hesed, means loving-kindness, unfailing love that shows up in action, and no English word quite captures it. Truth means honesty and faithfulness. These are what hold a marriage, or a covenant, together.",
+        "source": {
+          "by": "BYU Religious Studies Center",
+          "who": "Kent P. Jackson",
+          "title": "The Marriage of Hosea and Jehovah’s Covenant with Israel",
+          "url": "https://rsc.byu.edu/isaiah-prophets/marriage-hosea-jehovahs-covenant-israel"
+        },
+        "find": "there is no English word that conveys the meaning of hesed accurately",
+        "approved": "72a98cfa"
+      },
+      {
+        "id": "hos4-heifer",
+        "ref": "Hosea 4:16",
+        "title": "A stubborn young cow",
+        "text": "“Israel slideth back as a backsliding heifer.” A heifer is a young cow. The Old Testament Student Manual pictures a stubborn one that won’t follow when she’s led. She plants her feet and slides through the dirt instead of pulling with the ox yoked beside her. That’s what backsliding looks like: digging in your heels against the Lord.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "A backsliding heifer is one who refuses to follow when led and sets her feet and slides in the dirt",
+        "approved": "48c1953e"
+      },
+      {
+        "id": "hos5-landmark",
+        "ref": "Hosea 5:10",
+        "title": "Moving the boundary stones",
+        "text": "Judah’s princes were “like them that remove the bound.” In ancient Israel, stones marked where one family’s land ended and the next began. The Old Testament Student Manual explains that moving a marker was the same as stealing land. Judah’s leaders were tearing down far more important boundaries: the ones that guarded the worship of the Lord.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "To move such a mark was a serious offense, for it was the same as stealing land",
+        "approved": "c7858481"
+      },
+      {
+        "id": "hos6-third-day",
+        "ref": "Hosea 6:1–3",
+        "title": "Raised up completely",
+        "text": "“After two days will he revive us: in the third day he will raise us up.” Dr. Aaron Schade explains that going from two to three is a literary pattern pointing to completeness, because three can stand for wholeness and perfection. So the promise isn’t a little help. It’s a full recovery: the Lord who “hath torn” will heal them all the way.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 1",
+          "url": "https://followhim.co/show-note/2-223/"
+        },
+        "find": "He will thoroughly revive us.",
+        "approved": "cf5247bd"
+      },
+      {
+        "id": "hos10-seeds",
+        "ref": "Hosea 10:12–13",
+        "title": "Plant celestial seeds",
+        "text": "“Ye have plowed wickedness, ye have reaped iniquity” (verse 13). The Old Testament Student Manual calls this the law of the harvest: what you plant is what you get. It quotes Elder Bernard P. Brockbank: “If you want a celestial life, you will have to plant celestial seeds.” Hosea’s better way is in verse 12: sow righteousness.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "If you want a celestial life, you will have to plant celestial seeds",
+        "approved": "fc64ca96"
+      },
+      {
+        "id": "hos11-egypt",
+        "ref": "Hosea 11:1",
+        "title": "Out of Egypt, twice",
+        "text": "“When Israel was a child, then I loved him, and called my son out of Egypt.” Matthew saw this verse come true a second way. When Jesus was a little child, His family fled to Egypt and later came back (Matthew 2:15). The Old Testament Student Manual explains that Israel leaving Egypt was a type, or pattern, of Jesus coming out of Egypt.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "Matthew saw the emergence of Israel from Egypt as a type or pattern of Jesus’ coming out of Egypt",
+        "approved": "5f30f1d4"
+      },
+      {
+        "id": "hos11-walk",
+        "ref": "Hosea 11:3–8",
+        "title": "Taught to walk",
+        "text": "“I taught Ephraim also to go, taking them by their arms.” Dr. Aaron Schade says the Hebrew verb here can mean to walk. Picture a parent holding a toddler’s arms through those first wobbly steps. Later the Lord asks, “How shall I give thee up, Ephraim?” (verse 8). The answer, Dr. Schade says, is that He won’t.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 1",
+          "url": "https://followhim.co/show-note/2-223/"
+        },
+        "find": "So I taught them to walk, taking them by their arms.",
+        "deep": {
+          "paras": [
+            "Hosea 11 shows how personal the Lord’s love is. In verse 3 He says, “I taught Ephraim also to go, taking them by their arms.” Dr. Aaron Schade explains that the Hebrew verb, halak, means to go, and can mean to go on foot: “So I taught them to walk.” He pictures a loving parent steadying a little child and leading them to safety.",
+            "Hank Smith admits the frustration of a family where some things never change: Israel keeps choosing other gods. But Dr. Schade finds verse 8 encouraging. The Lord asks, “How shall I give thee up, Ephraim? how shall I deliver thee, Israel?” These questions have their answer built in: “I won’t and I can’t.”",
+            "Dr. Schade compares the Lord to a parent, a father and a spouse, and notes that the New Testament picks up the image of the bridegroom. Hank points to Joseph Smith’s revision of verse 8, where the Lord’s heart is turned toward Ephraim and His mercies are extended to gather them. Even the scattering, they suggest, was meant to end in a gathering."
+          ],
+          "find": [
+            "Another word for halak is to walk. So I taught them to walk, taking them by their arms.",
+            "you have God who just says, “How shall I give thee up, Ephraim?",
+            "I won’t and I can’t.",
+            "My heart is turned toward you. My mercies are extended to gather thee."
+          ],
+          "listen": {
+            "youtube": "GqIV3hX5Fyo",
+            "start": 1938,
+            "end": 2138,
+            "title": "followHIM: Hosea and Joel, part 1, with Dr. Aaron Schade",
+            "channel": "followHIM Podcast",
+            "previewed": false
+          },
+          "approved": "18cea1cf"
+        },
+        "approved": "bb4807ad"
+      },
+      {
+        "id": "hos11-jsp",
+        "ref": "Hosea 11:8",
+        "title": "Joseph’s Bible: mercies to gather",
+        "text": "In the King James Version the Lord says, “mine heart is turned within me, my repentings are kindled together.” Joseph Smith’s Bible manuscript gives this verse differently: “my heart is turned toward thee, and my mercies are extended to gather thee.” Even while warning Ephraim, the Lord was already planning to bring His people home.",
+        "source": {
+          "by": "Joseph Smith Papers",
+          "who": "Joseph Smith",
+          "title": "Old Testament Revision 2, page 116",
+          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/123"
+        },
+        "find": "my heart is turned toward thee, and my mercies are extended to gather thee",
+        "approved": "ab024f9f"
+      },
+      {
+        "id": "hos13-east-wind",
+        "ref": "Hosea 13:15",
+        "title": "The east wind",
+        "text": "Hosea warns that “an east wind shall come, the wind of the LORD.” Scripture Central explains that in Israel the east wind blows in from the Arabian Desert, hot and dry and often full of sand. It could turn green crops into dry brown husks in a single day. The prophet Abinadi used the same warning in the Book of Mormon (Mosiah 12:6).",
+        "source": {
+          "by": "Scripture Central",
+          "title": "Why Did Abinadi Warn the People of an East Wind?",
+          "url": "https://scripturecentral.org/knowhy/why-did-abinadi-warn-the-people-of-an-east-wind"
+        },
+        "find": "capable of reducing green crops to dry, brown husks in a single day",
+        "approved": "01d222f5"
+      },
+      {
+        "id": "hos13-q-living-christ",
+        "kind": "quote",
+        "ref": "Hosea 13:4",
+        "quote": "He was the Great Jehovah of the Old Testament, the Messiah of the New.",
+        "text": "Verse 4: “there is no saviour beside me.” The Lord who speaks through Hosea is Jehovah, and living apostles testify who He is.",
+        "source": {
+          "by": "The Living Christ",
+          "who": "The First Presidency and Quorum of the Twelve Apostles",
+          "title": "The Living Christ: The Testimony of the Apostles",
+          "url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng"
+        },
+        "approved": "357d79d9"
+      },
+      {
+        "id": "hos14-q-renlund",
+        "kind": "quote",
+        "ref": "Hosea 14:1",
+        "quote": "No matter how long we have been off the path or how far away we have wandered, the moment we decide to change, God helps us return.",
+        "text": "Verse 1: “O Israel, return unto the LORD thy God.” Elder Renlund explains how far that invitation reaches.",
+        "source": {
+          "by": "General Conference",
+          "who": "Elder Dale G. Renlund",
+          "title": "Choose You This Day",
+          "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/10/choose-you-this-day?lang=eng"
+        },
+        "approved": "c20042e9"
+      },
+      {
+        "id": "hos14-kearon",
+        "ref": "Hosea 14:1–4",
+        "title": "No roadblocks on the way home",
+        "text": "Elder Patrick Kearon once watched a policeman at a roadblock who seemed to enjoy turning cars away. Heavenly Father’s plan, he taught, is the exact opposite: it’s designed to bring us home, not to keep us out. “God is in relentless pursuit of you.” That’s Hosea’s last message too: “O Israel, return unto the LORD thy God.”",
+        "source": {
+          "by": "General Conference",
+          "who": "Elder Patrick Kearon",
+          "title": "God’s Intent Is to Bring You Home",
+          "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/45kearon?lang=eng"
+        },
+        "find": "God is in relentless pursuit of you",
+        "approved": "20a5d6e3"
+      },
+      {
+        "id": "hos14-calves",
+        "ref": "Hosea 14:2",
+        "title": "The calves of our lips",
+        "text": "Israel is invited to come back and offer the Lord “the calves of our lips.” Young bulls were among the best offerings under the law of Moses. The Old Testament Student Manual explains that sincere prayers from our lips, with our resolve to do better, are just as precious to the Lord as the finest animal offering.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Ministry of Hosea: A Call to Faithfulness (Hosea)",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-10?lang=eng"
+        },
+        "find": "To present the sincere prayers of one’s lips as an offering to the Lord was as precious as the best offerings",
+        "approved": "6b2cb972"
+      },
+      {
+        "id": "hos14-love",
+        "ref": "Hosea 14:4",
+        "title": "Hosea’s big idea",
+        "text": "The Bible Dictionary sums up Hosea in one idea: the love of God for His people. In love He brought them out of Egypt. Even His hardest warnings came from love. And when Israel comes back, it will be because of His love: “I will heal their backsliding, I will love them freely.”",
+        "source": {
+          "by": "Bible Dictionary",
+          "title": "Hosea, or Hoshea",
+          "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/hosea?lang=eng"
+        },
+        "find": "Hosea’s fundamental idea is the love of God for His people",
+        "approved": "79d6767b"
+      },
+      {
+        "id": "joel1-locusts",
+        "ref": "Joel 1:4",
+        "title": "Twenty words for locust",
+        "text": "Joel names four kinds of locust in a single verse. Dr. Aaron Schade says it’s hard to tell exactly what Joel meant by each one, and that Akkadian, a language of ancient Mesopotamia, had more than twenty words for locust. Ancient writers also compared invading armies to locusts: like a swarm, an army could strip a land bare.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
+          "url": "https://followhim.co/show-note/2-222/"
+        },
+        "find": "There’s over 20 different words for locust.",
+        "approved": "dcc1026f"
+      },
+      {
+        "id": "joel2-rend",
+        "ref": "Joel 2:12–13",
+        "title": "Rend your heart",
+        "text": "Joel told the people, “rend your heart, and not your garments.” On followHIM, Dr. Aaron Schade says these images point to a broken heart and a contrite spirit: being completely teachable. Anyone can tear cloth. God wants a genuine change inside, in who we become, not just an outward show. Hank Smith calls it the challenge to become.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
+          "url": "https://followhim.co/show-note/2-222/"
+        },
+        "find": "I can have it genuine change of who I am, not just in an outward appearance",
+        "deep": {
+          "paras": [
+            "Joel tells the people to turn to the Lord “with all your heart,” and to “rend your heart, and not your garments.” Asked what that means, Dr. Aaron Schade says these images point to the broken heart and the contrite spirit: being totally teachable and willing to listen to God.",
+            "A garment had a practical use, he notes, and could carry a covenant meaning too; the heart is the seat of our thoughts, feelings and desires. The question is how we submit those to God, so the change is genuine: not only in how we look on the outside, but in who we become. Hank Smith sums it up: “Not necessarily the challenge to just behave, but the challenge to become.”",
+            "Dr. Schade notes that some see in verse 18, where the Lord pities His people, an echo of Ruhamah in Hosea: mercy is there for those who rend their hearts and stay teachable. John Bytheway recalls President Dallin H. Oaks’s talk “The Challenge to Become,” and wishes the Primary song could say, teach me all that I must be."
+          ],
+          "find": [
+            "These are images that are trying to get us to understand the broken heart, the contrite spirit",
+            "I’m totally teachable. I’m totally amenable to God.",
+            "Not necessarily the challenge to just behave, but the challenge to become.",
+            "I can have it genuine change of who I am, not just in an outward appearance"
+          ],
+          "listen": {
+            "youtube": "M15Hz93hpnA",
+            "start": 1416,
+            "end": 1553,
+            "title": "followHIM: Hosea and Joel, part 2, with Dr. Aaron Schade",
+            "channel": "followHIM Podcast",
+            "previewed": false
+          },
+          "approved": "638c5503"
+        },
+        "approved": "0fed3f36"
+      },
+      {
+        "id": "joel2-jsp",
+        "ref": "Joel 2:13–14",
+        "title": "Joseph’s Bible: the people repent",
+        "text": "In the King James Version, Joel says the Lord “repenteth him of the evil” (verse 13). Joseph Smith’s Bible manuscript puts the repenting on the people instead: rend your heart, and repent, and turn to the Lord, and He “will turn away the evil from you.” Verse 14 in the manuscript begins, Therefore repent.",
+        "source": {
+          "by": "Joseph Smith Papers",
+          "who": "Joseph Smith",
+          "title": "Old Testament Revision 2, page 116",
+          "url": "https://www.josephsmithpapers.org/paper-summary/old-testament-revision-2/123"
+        },
+        "find": "and rend your heart, and not your garments, and repent, and turn",
+        "approved": "2c3d30ae"
+      },
+      {
+        "id": "joel2-q-oaks",
+        "kind": "quote",
+        "ref": "Joel 2:13",
+        "quote": "It is not enough for anyone just to go through the motions. The commandments, ordinances, and covenants of the gospel are not a list of deposits required to be made in some heavenly account.",
+        "text": "Verse 13: “rend your heart, and not your garments.” Elder Oaks explains why outward actions alone aren’t enough.",
+        "source": {
+          "by": "General Conference",
+          "who": "Elder Dallin H. Oaks",
+          "title": "The Challenge to Become",
+          "url": "https://www.churchofjesuschrist.org/study/general-conference/2000/10/the-challenge-to-become?lang=eng"
+        },
+        "approved": "e39ef71b"
+      },
+      {
+        "id": "joel2-fear-not",
+        "ref": "Joel 2:21",
+        "title": "Put your name in it",
+        "text": "“Fear not, O land; be glad and rejoice: for the LORD will do great things.” The seminary manual suggests memorizing this verse and putting your own name where it says “O land.” It also links the verse to Doctrine and Covenants 6:36, where the Lord tells His people to look to Him and not be afraid.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Joel: “I Will Pour Out My Spirit”",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/46-hosea-joel/462-joel?lang=eng"
+        },
+        "find": "They could replace “O land” with their own name to increase the relevancy of the passage",
+        "approved": "2cb1a49f"
+      },
+      {
+        "id": "joel2-q-wirthlin",
+        "kind": "quote",
+        "ref": "Joel 2:25",
+        "quote": "The Lord compensates the faithful for every loss. That which is taken away from those who love the Lord will be added unto them in His own way.",
+        "text": "Verse 25: “I will restore to you the years that the locust hath eaten.” Elder Wirthlin teaches that the Lord still makes up what we lose.",
+        "source": {
+          "by": "General Conference",
+          "who": "Elder Joseph B. Wirthlin",
+          "title": "Come What May, and Love It",
+          "url": "https://www.churchofjesuschrist.org/study/general-conference/2008/10/come-what-may-and-love-it?lang=eng"
+        },
+        "approved": "d52bb199"
+      },
+      {
+        "id": "joel2-moroni",
+        "ref": "Joel 2:28–32",
+        "title": "Moroni quoted Joel",
+        "text": "When the angel Moroni first visited young Joseph Smith, he quoted many scriptures. The earliest manuscript of Joseph’s history that tells the story says Moroni quoted Joel 2 from verse 28 to the end of the chapter, and said it was “not yet fulfilled but was soon to be.” That account is now Joseph Smith—History 1:41.",
+        "source": {
+          "by": "Joseph Smith Papers",
+          "who": "Joseph Smith",
+          "title": "History, circa June 1839–circa 1841 [Draft 2]",
+          "url": "https://www.josephsmithpapers.org/paper-summary/history-circa-june-1839-circa-1841-draft-2/6"
+        },
+        "find": "He also quoted the second chapter of Joel from the twenty eighth to the last verse.",
+        "approved": "d65d34ea"
+      },
+      {
+        "id": "joel2-knowhy",
+        "ref": "Joel 2:28–29",
+        "title": "The quiet outpouring",
+        "text": "Scripture Central’s KnoWhy on Joel 2 points to fulfillments of this promise among the early Saints, especially the visions and spiritual gifts after the Kirtland Temple was dedicated. But the Spirit isn’t only for big miracles. It says the most powerful way the Spirit is poured out today is quieter: a testimony, given freely to sons and daughters, young and old.",
+        "source": {
+          "by": "Scripture Central",
+          "title": "Why Did Moroni Quote from the Book of Joel?",
+          "url": "https://scripturecentral.org/knowhy/why-did-moroni-quote-from-the-book-of-joel"
+        },
+        "find": "The most powerful manifestation of the Spirit today is the personal revelation that we call a testimony",
+        "approved": "780ca8ec"
+      },
+      {
+        "id": "joel2-all-flesh",
+        "ref": "Joel 2:28–29",
+        "title": "Not just prophets",
+        "text": "In the Old Testament, who prophesied? Prophets. That’s why Dr. Aaron Schade calls Joel 2:28 a drastic turn of events. Joel promised the Spirit to sons and daughters, old men and young men: everyone. It doesn’t replace the prophet, he says, but no one is shut out of the gifts of the Spirit.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
+          "url": "https://followhim.co/show-note/2-222/"
+        },
+        "find": "this is a drastic turn of events from the Old Testament prophecy because who prophesies? A prophet.",
+        "deep": {
+          "paras": [
+            "Moroni quoted Joel 2:28–32 to Joseph Smith, and Dr. Aaron Schade points out how surprising its language is. In the Old Testament, who prophesies? A prophet. Yet Joel promises that “your sons and your daughters shall prophesy.” Dr. Schade calls it all-inclusive: men, women, children, the old and the young.",
+            "He hears in it Moses’s wish that all the Lord’s people were prophets (Numbers 11:29), and sees one fulfillment on the day of Pentecost in Acts 2. It doesn’t remove the need for a prophet, he says, but no one is excluded from enjoying the gifts of the Spirit.",
+            "John Bytheway says he had never marked the word all in verse 28 before. There is still a prophet, he notes, with keys to lead the Church, but every one of us can learn to hear the Lord through His Spirit."
+          ],
+          "find": [
+            "this is a drastic turn of events from the Old Testament prophecy because who prophesies? A prophet.",
+            "It’s men, it’s women, it’s children, it’s boys, it’s girls, it’s old men. It’s all inclusive.",
+            "So it’s not eliminating the need of a prophet",
+            "I marked the word that I had never marked before in verse 28."
+          ],
+          "listen": {
+            "youtube": "M15Hz93hpnA",
+            "start": 2090,
+            "end": 2383,
+            "title": "followHIM: Hosea and Joel, part 2, with Dr. Aaron Schade",
+            "channel": "followHIM Podcast",
+            "previewed": false
+          },
+          "approved": "326364fc"
+        },
+        "approved": "ebd0c846"
+      },
+      {
+        "id": "joel2-q-nelson",
+        "kind": "quote",
+        "ref": "Joel 2:28",
+        "quote": "In coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost.",
+        "text": "Verse 28 promises the Spirit poured out on all flesh. President Nelson, quoted in this week’s lesson, explains why we’ll need it.",
+        "source": {
+          "by": "General Conference",
+          "who": "President Russell M. Nelson",
+          "title": "Revelation for the Church, Revelation for Our Lives",
+          "url": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/revelation-for-the-church-revelation-for-our-lives?lang=eng"
+        },
+        "approved": "c8926055"
+      },
+      {
+        "id": "joel2-saxton",
+        "ref": "Joel 2:32",
+        "title": "A letter to a newspaper",
+        "text": "In January 1833 Joseph Smith wrote to Noah C. Saxton, a newspaper editor in Rochester, New York, about the gathering of Israel in the last days. The tribe of Judah would return to Jerusalem, he wrote, and he pointed to this verse: “in mount Zion and in Jerusalem shall be deliverance.”",
+        "source": {
+          "by": "Joseph Smith Papers",
+          "who": "Joseph Smith",
+          "title": "Letter to Noah C. Saxton, 4 January 1833",
+          "url": "https://www.josephsmithpapers.org/paper-summary/letter-to-noah-c-saxton-4-january-1833/4"
+        },
+        "find": "shall obtain deliverence at Jerusalem see Joel 2. 32",
+        "note": "In a January 1833 letter to a Rochester newspaper editor, Joseph Smith cited this verse for Judah’s deliverance at Jerusalem in the last days.",
+        "approved": "d6ebb089"
+      },
+      {
+        "id": "joel3-jehoshaphat",
+        "ref": "Joel 3:2",
+        "title": "Where is the valley?",
+        "text": "Joel says the Lord will gather all nations “into the valley of Jehoshaphat” to judge them. Where is it? The Old Testament Student Manual says it isn’t entirely clear, but most likely it’s the Kidron Valley, the narrow valley between Jerusalem and the Mount of Olives.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Joel: God Will Not Be Mocked",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-7?lang=eng"
+        },
+        "find": "Most likely it is the Kidron, a narrow valley between Jerusalem and the Mount of Olives",
+        "approved": "924e216d"
+      },
+      {
+        "id": "joel3-plowshares",
+        "ref": "Joel 3:9–10",
+        "title": "Plowshares into swords",
+        "text": "Isaiah and Micah promised a day when people would beat their swords into plowshares, farm tools. Joel 3 turns it around: farm tools become weapons as the nations gather to fight. Dr. Aaron Schade explains that Joel expects readers to know those hopeful prophecies, and the reversal shows that going to battle against God is useless.",
+        "source": {
+          "by": "followHIM",
+          "who": "Aaron Schade",
+          "title": "Old Testament: EPISODE 46 – Hosea; Joel – Part 2",
+          "url": "https://followhim.co/show-note/2-222/"
+        },
+        "find": "This is a reversal of Isaiah and Micah.",
+        "approved": "42fa02d2"
+      }
+    ],
+    "plain": [
+      {
+        "ch": "Hosea 1",
+        "verses": [
+          "This is the word of the Lord that came to Hosea, the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and in the days of Jeroboam, the son of Joash, king of Israel.",
+          "This is how the Lord began to speak through Hosea. The Lord said to Hosea, “Go, marry an unfaithful wife and have children of unfaithfulness, because the land has been very unfaithful, turning away from the Lord.”",
+          "So he went and married Gomer, the daughter of Diblaim. She became pregnant and gave him a son.",
+          "Then the Lord said to him, “Name him Jezreel, for in a little while I will punish the house of Jehu for the blood shed at Jezreel, and I will put an end to the kingdom of the house of Israel.”",
+          "“On that day I will break Israel’s bow in the valley of Jezreel.”",
+          "She became pregnant again and had a daughter. And God said to him, “Name her Lo-ruhamah, which means Not Shown Mercy, for I will no longer have mercy on the house of Israel, but I will take them completely away.”",
+          "“But I will have mercy on the house of Judah, and I will save them by the Lord their God. I will not save them by bow or sword or battle, or by horses or horsemen.”",
+          "After she had weaned Lo-ruhamah, she became pregnant and had a son.",
+          "Then God said, “Name him Lo-ammi, which means Not My People, for you are not my people, and I will not be your God.”",
+          "Yet the number of the children of Israel will be like the sand of the sea, which cannot be measured or counted. And in the very place where it was said to them, “You are not my people,” it will be said to them, “You are the children of the living God.”",
+          "Then the children of Judah and the children of Israel will be gathered together. They will choose one leader for themselves and come up out of the land, for the day of Jezreel will be great."
+        ],
+        "notes": [
+          {
+            "v": 6,
+            "text": "The Hebrew verb means to lift or carry. The KJV reads it as “I will utterly take them away”; the BSB reads it as forgiving: ‘that I should ever forgive them.’"
+          },
+          {
+            "v": 10,
+            "text": "Paul quotes this verse about the Gentiles God called to be His people: “there shall they be called the children of the living God” (Romans 9:26)."
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "Modest words, as asked: Hosea’s “whoredoms” (a Hebrew word from the word for a prostitute; the BSB says ‘prostitute’) is “unfaithful” and “unfaithfulness” all through Hosea. “An unfaithful wife” doesn’t say whether Gomer was unfaithful before or after she married Hosea; neither does the KJV. “The beginning of the word of the LORD by Hosea” is “This is how the Lord began to speak through Hosea.”"
+          },
+          {
+            "v": 4,
+            "about": "“Avenge the blood of Jezreel upon the house of Jehu” is “punish the house of Jehu for the blood shed at Jezreel” (Jehu killed Ahab’s family there, 2 Kings 10:11). No note."
+          },
+          {
+            "v": 6,
+            "about": "The names’ meanings are added in a few words, as the Church’s footnotes give them (verses 6 and 9). The last line follows the KJV (“take them completely away”); the Hebrew verb can also mean forgive, as the BSB reads it, so there is a note."
+          }
+        ],
+        "approved": "f17174f6"
+      },
+      {
+        "ch": "Hosea 2",
+        "verses": [
+          "Say to your brothers, “Ammi” (My People), and to your sisters, “Ruhamah” (Shown Mercy).",
+          "Argue with your mother—argue with her! For she is not my wife, and I am not her husband. Let her put away the unfaithfulness from her face and the unfaithful ways from between her breasts.",
+          "Otherwise I will strip her bare and leave her as she was on the day she was born. I will make her like a wilderness, turn her into a dry land, and let her die of thirst.",
+          "I will not have mercy on her children, because they are children of unfaithfulness.",
+          "For their mother has been unfaithful. She who gave birth to them has acted shamefully. For she said, “I will go after my lovers, who give me my bread and my water, my wool and my linen, my olive oil and my drink.”",
+          "So look, I will block your road with thorns and build a wall around her, so she can’t find her paths.",
+          "She will chase after her lovers but won’t catch them. She will look for them but won’t find them. Then she will say, “I will go back to my first husband, for I was better off then than now.”",
+          "She did not know that I was the one who gave her the grain, the new wine, and the olive oil, and gave her more and more silver and gold—which they used for Baal.",
+          "So I will take back my grain at harvest time and my new wine in its season. I will take away my wool and my linen, which were given to clothe her.",
+          "Now I will uncover her shame in front of her lovers, and no one will rescue her from my hand.",
+          "I will put an end to all her joy—her feasts, her new moons, her Sabbaths, and all her appointed festivals.",
+          "I will destroy her vines and her fig trees, about which she said, “This is the pay my lovers gave me.” I will turn them into a forest, and the wild animals will eat them.",
+          "I will punish her for the days of the Baalim (the false gods called Baal), when she burned incense to them, put on her earrings and her jewelry, went after her lovers, and forgot me, says the Lord.",
+          "So look, I will win her back. I will lead her into the wilderness and speak tenderly to her.",
+          "There I will give her back her vineyards, and make the valley of Achor (which means Trouble) a door of hope. There she will sing as she did when she was young, as on the day she came up out of the land of Egypt.",
+          "On that day, says the Lord, you will call me Ishi (My Husband), and you will no longer call me Baali (My Master).",
+          "For I will take the names of the Baalim out of her mouth, and they will no longer be remembered by name.",
+          "On that day I will make a covenant for them with the wild animals, the birds of the sky, and the creatures that creep on the ground. I will break the bow and the sword and put an end to war in the land, and I will let them lie down in safety.",
+          "I will make you my bride forever. Yes, I will make you my bride in righteousness and justice, in loving-kindness and mercy.",
+          "I will make you my bride in faithfulness, and you will know the Lord.",
+          "On that day I will answer, says the Lord. I will answer the heavens, and they will answer the earth.",
+          "The earth will answer the grain, the new wine, and the olive oil, and they will answer Jezreel (which means God Plants).",
+          "I will plant her for myself in the land. I will have mercy on her who had not been shown mercy, and I will say to those who were not my people, “You are my people,” and they will say, “You are my God.”"
+        ],
+        "notes": [
+          {
+            "v": 23,
+            "text": "Paul quotes this about the Gentiles who were called: “I will call them my people, which were not my people” (Romans 9:25). Peter says it of believers in Christ, who “had not obtained mercy, but now have obtained mercy” (1 Peter 2:10)."
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "“Whoredoms” and “adulteries” are “unfaithfulness” and “unfaithful ways,” as asked. “From between her breasts” is kept as the KJV has it, no plainer than scripture; “from her heart” or “from her body” would be softer but less exact. Your call. “Plead” (argue a case, as in court) is “argue with.”"
+          },
+          {
+            "v": 5,
+            "about": "“Played the harlot” is “been unfaithful” here; “lewdness” (verse 10) is “shame”; and the KJV’s “rewards” (verse 12), a word for a harlot’s pay, is just “pay.” The “lovers” are the false gods she thanks for her food (verse 8)."
+          },
+          {
+            "v": 6,
+            "about": "The Hebrew and the KJV switch from “thy way” to “she”; the plain words keep the switch (“your road … around her”), where the BSB smooths it to ‘her path.’"
+          },
+          {
+            "v": 16,
+            "about": "Ishi, Baali, Ammi, Ruhamah, Achor and Jezreel get their meanings in a few words (the Church’s footnotes give the first five). Jezreel means ‘God plants’ (verse 22), which is why verse 23 says “I will plant her.”"
+          },
+          {
+            "v": 19,
+            "about": "“Betroth” (promise to marry) is “make you my bride,” to keep it plain. The KJV’s “hear” in verses 21–22 is “answer,” the Hebrew word’s usual meaning (BSB ‘respond’)."
+          }
+        ],
+        "approved": "ae901210"
+      },
+      {
+        "ch": "Hosea 3",
+        "verses": [
+          "Then the Lord said to me, “Go again and love a woman who is loved by another man and is unfaithful, just as the Lord loves the children of Israel, even though they turn to other gods and love raisin cakes (used in worshipping idols).”",
+          "So I bought her for myself for fifteen pieces of silver and a homer and a half of barley.",
+          "Then I said to her, “You must stay with me for many days. You must not be unfaithful or belong to another man, and I will be yours too.”",
+          "For the children of Israel will live for many days without a king or a prince, without sacrifice or sacred pillar, and without an ephod (a priest’s apron) or teraphim (household idols).",
+          "Afterward the children of Israel will come back and seek the Lord their God and David their king. They will come trembling to the Lord and to His goodness in the latter days."
+        ],
+        "notes": [
+          {
+            "v": 1,
+            "text": "The KJV says “flagons of wine.” The Hebrew means cakes of raisins, which were used in worshipping false gods; the BSB has ‘love to offer raisin cakes to idols.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "“An adulteress” is “unfaithful,” as asked. “Beloved of her friend” is “loved by another man” (BSB ‘loved by another’); the Hebrew word means a companion. “(used in worshipping idols)” follows the Church’s footnote on “flagons of wine,” which gives raisin cakes used in false worship."
+          },
+          {
+            "v": 3,
+            "about": "“Thou shalt not play the harlot” is “You must not be unfaithful.” “So will I also be for thee” is “I will be yours too.”"
+          },
+          {
+            "v": 2,
+            "about": "“An homer … and an half homer” is “a homer and a half”; the Hebrew’s second measure is a lethech (BSB), which the KJV gives as half a homer."
+          }
+        ],
+        "approved": "cc902483"
+      },
+      {
+        "ch": "Hosea 4",
+        "verses": [
+          "Hear the word of the Lord, you children of Israel, for the Lord has a case against the people who live in the land, because there is no truth, no mercy, and no knowledge of God in the land.",
+          "There is swearing, lying, murder, stealing, and adultery. They break all limits, and one killing follows another.",
+          "So the land will mourn, and everyone who lives in it will waste away, along with the wild animals and the birds of the sky. Even the fish of the sea will be taken away.",
+          "But let no one argue or blame anyone else, for your people are like those who argue with a priest.",
+          "So you will fall in the daytime, and the prophet will fall with you at night, and I will destroy your mother.",
+          "My people are destroyed for lack of knowledge. Because you have rejected knowledge, I will also reject you from being my priest. Since you have forgotten the law of your God, I will also forget your children.",
+          "The more they grew, the more they sinned against me. So I will change their glory into shame.",
+          "They feed on the sin of my people and set their hearts on their wickedness.",
+          "It will be the same for the people and the priest: I will punish them for their ways and pay them back for what they have done.",
+          "They will eat but not have enough. They will be unfaithful but will not grow in number, because they have stopped paying attention to the Lord.",
+          "Unfaithfulness, wine, and new wine take away understanding.",
+          "My people ask advice from a piece of wood, and their stick gives them answers. For a spirit of unfaithfulness has led them astray, and they have been unfaithful, leaving their God.",
+          "They offer sacrifices on the mountaintops and burn incense on the hills, under oaks, poplars, and terebinths, because their shade is pleasant. So your daughters are unfaithful, and your daughters-in-law are unfaithful to their husbands.",
+          "I will not punish your daughters when they are unfaithful, or your daughters-in-law when they are unfaithful to their husbands, because the men themselves go off with harlots and offer sacrifices with the women of the idol shrines. A people without understanding will fall.",
+          "Though you, Israel, are unfaithful, don’t let Judah become guilty too. Don’t go to Gilgal, don’t go up to Beth-aven (house of wickedness), and don’t swear, “As the Lord lives.”",
+          "For Israel is stubborn, like a stubborn young cow. Now the Lord will feed them like a lamb in a wide-open place.",
+          "Ephraim is joined to idols. Leave him alone.",
+          "Their drink has gone sour. They are unfaithful again and again. Her rulers dearly love shame.",
+          "A wind has wrapped her up in its wings, and they will be ashamed because of their sacrifices."
+        ],
+        "notes": [
+          {
+            "v": 18,
+            "text": "The KJV ends, “her rulers with shame do love, Give ye.” The Church’s footnote gives another reading, ‘deeply love dishonor,’ and the BSB has ‘their rulers dearly love disgrace.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "“Adultery” is kept here, the commandment’s word in a list of crimes, as in Jeremiah 7:9. Elsewhere in Hosea “whoredom” is “unfaithful.” “They break out, and blood toucheth blood” follows the Church’s footnotes (‘break all bounds’; ‘bloodshed leads to bloodshed’)."
+          },
+          {
+            "v": 13,
+            "about": "Verses 13–14 are about real sin at idol shrines. “Commit whoredom” is “are unfaithful,” “commit adultery” is “are unfaithful to their husbands,” “whores” is “harlots” (the KJV’s word, kept in Isaiah 1:21), and the KJV’s “harlots” (women who served at the shrines) are “the women of the idol shrines.” Check these are right for a child. “Spouses” is “daughters-in-law” (BSB); the Hebrew word means brides."
+          },
+          {
+            "v": 16,
+            "about": "The plain words keep the KJV’s statement. The BSB reads the second half as a question: ‘Can the LORD now shepherd them like lambs in an open meadow?’ No note."
+          },
+          {
+            "v": 18,
+            "about": "Hard Hebrew. The plain words follow the Church’s footnote for the last line and leave out the KJV’s “Give ye,” which reads one Hebrew word another way; there is a note."
+          }
+        ],
+        "approved": "25ed8d99"
+      },
+      {
+        "ch": "Hosea 5",
+        "verses": [
+          "Hear this, you priests! Pay attention, house of Israel! Listen, house of the king! This judgment is for you, because you have been a trap at Mizpah and a net spread out on Tabor.",
+          "The rebels have gone deep into killing, though I have corrected them all.",
+          "I know Ephraim, and Israel is not hidden from me. For now, Ephraim, you have been unfaithful, and Israel is unclean.",
+          "Their deeds won’t let them turn back to their God, because a spirit of unfaithfulness is inside them, and they do not know the Lord.",
+          "Israel’s pride testifies against him. So Israel and Ephraim will fall in their sin, and Judah will fall with them too.",
+          "They will go with their flocks and herds to seek the Lord, but they won’t find Him. He has pulled away from them.",
+          "They have betrayed the Lord, for they have had children who are strangers to Him. Now, within a month, they and everything they own will be eaten up.",
+          "Blow the ram’s horn in Gibeah and the trumpet in Ramah. Sound the alarm at Beth-aven: “Behind you, Benjamin!”",
+          "Ephraim will become a ruin on the day of punishment. Among the tribes of Israel I have made known what will surely happen.",
+          "The leaders of Judah are like those who move a boundary marker to steal land. I will pour out my anger on them like water.",
+          "Ephraim is oppressed and crushed in judgment, because he was determined to follow the command.",
+          "So I will be like a moth to Ephraim, and like rot to the house of Judah.",
+          "When Ephraim saw his sickness and Judah saw his wound, Ephraim went to the Assyrian and sent to King Jareb. But he cannot heal you or cure your wound.",
+          "For I will be like a lion to Ephraim and like a young lion to the house of Judah. I, yes I, will tear them to pieces and go away. I will carry them off, and no one will rescue them.",
+          "Then I will go back to my place until they admit their guilt and seek my face. In their trouble they will search hard for me."
+        ],
+        "notes": [
+          {
+            "v": 11,
+            "text": "The KJV says “walked after the commandment.” The Hebrew word is rare. The Church’s footnote gives another reading, ‘after filth,’ and the BSB has ‘follow worthless idols.’"
+          },
+          {
+            "v": 13,
+            "text": "The KJV takes Jareb as a king’s name. The Hebrew can also mean ‘the great king,’ as the BSB has it, here and in Hosea 10:6."
+          }
+        ],
+        "review": [
+          {
+            "v": 4,
+            "about": "“They will not frame their doings to turn unto their God” follows the Church’s footnote: ‘Their behavior does not permit them to return.’"
+          },
+          {
+            "v": 7,
+            "about": "“Dealt treacherously” is “betrayed.” “Strange children” is “children who are strangers to Him” (BSB ‘illegitimate children’), the modest way to say it. “Now shall a month devour them with their portions” follows the Church’s footnote: ‘Within a month they and their property shall be destroyed.’"
+          },
+          {
+            "v": 10,
+            "about": "“Remove the bound” (a boundary marker, the Church’s footnote) adds three words, “to steal land,” to say why it was wrong (Deuteronomy 19:14)."
+          },
+          {
+            "v": 11,
+            "about": "Unsure Hebrew; the plain words follow the KJV (“the command”), with a note giving the footnote’s and the BSB’s readings."
+          }
+        ],
+        "approved": "924a83a5"
+      },
+      {
+        "ch": "Hosea 6",
+        "verses": [
+          "Come, let us go back to the Lord. He has torn us to pieces, but He will heal us. He has struck us down, but He will bandage our wounds.",
+          "After two days He will bring us back to life. On the third day He will raise us up, and we will live in His presence.",
+          "Let us know the Lord—let us keep pressing on to know Him. He will come out as surely as the dawn. He will come to us like the rain, like the spring rain and the winter rain on the earth.",
+          "Ephraim, what can I do with you? Judah, what can I do with you? Your goodness is like a morning cloud, like the early dew that goes away.",
+          "That is why I have cut them down by the prophets; I have killed them with the words of my mouth. And your judgments go out like the light.",
+          "For I want mercy, not sacrifice, and the knowledge of God more than burnt offerings.",
+          "But like men, they have broken the covenant. There they have betrayed me.",
+          "Gilead is a city of people who do evil, and it is marked with bloody footprints.",
+          "Like gangs of robbers lying in wait for someone, so a band of priests murder on the road to Shechem. They have done shameful, wicked things.",
+          "I have seen a horrible thing in the house of Israel: Ephraim’s unfaithfulness is there, and Israel is unclean.",
+          "Also, Judah, a harvest has been set for you, when I bring my people back from captivity."
+        ],
+        "notes": [
+          {
+            "v": 6,
+            "text": "Jesus quoted this verse when He ate with sinners, and again when His disciples picked grain on the Sabbath (Matthew 12:7): “I will have mercy, and not sacrifice” (Matthew 9:13)."
+          },
+          {
+            "v": 7,
+            "text": "The KJV says “like men.” The Hebrew word adam means man, and it is also the name Adam; the Church’s footnote gives ‘Adam,’ and the BSB reads ‘like Adam.’"
+          },
+          {
+            "v": 9,
+            "text": "The KJV says “in the way by consent.” The Church’s footnote gives the Hebrew as ‘on the road to Shechem,’ as the BSB has it."
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "“Revive us” is “bring us back to life,” as the Church’s footnote has it (‘restore us to life; i.e., resurrect us’). “The latter and former rain” (verse 3) is the spring and winter rain, as the footnote there says."
+          },
+          {
+            "v": 3,
+            "about": "The KJV reads “Then shall we know, if we follow on to know the LORD”; the Hebrew is “let us know, let us press on to know” (BSB), and the plain words follow the Hebrew."
+          },
+          {
+            "v": 5,
+            "about": "The KJV and the Hebrew have “thy judgments are as the light”; the BSB reads ‘My judgments go forth like lightning,’ dividing the letters another way. The plain words follow the KJV; no note."
+          },
+          {
+            "v": 9,
+            "about": "The plain words follow the Hebrew and the Church’s footnote (“on the road to Shechem”) over the KJV’s “by consent,” with a note. “Commit lewdness” is “done shameful, wicked things.” In verse 8, “polluted with blood” is the Hebrew picture, “marked with bloody footprints.”"
+          }
+        ],
+        "approved": "d5b9fae9"
+      },
+      {
+        "ch": "Hosea 10",
+        "verses": [
+          "Israel is an empty vine; he produces fruit for himself. The more fruit he had, the more altars he built. The better his land did, the finer he made his sacred pillars.",
+          "Their heart is divided; now they will be found guilty. It is He who will break down their altars and destroy their sacred pillars.",
+          "Now they will say, “We have no king, because we did not fear the Lord. And what could a king do for us?”",
+          "They speak empty words and swear false oaths when they make a covenant. So judgment springs up like poisonous weeds in the furrows of a field.",
+          "The people of Samaria will be afraid for the calf idols of Beth-aven. Its people will mourn over it, and so will its idol priests who rejoiced over it and its glory, because its glory has been carried away from it.",
+          "It will also be carried to Assyria as a gift for King Jareb. Ephraim will be put to shame, and Israel will be ashamed of its own plans.",
+          "As for Samaria, her king will be cut off like foam on the water.",
+          "The high places of Aven, the sin of Israel, will be destroyed. Thorns and thistles will grow up over their altars. And they will say to the mountains, “Cover us!” and to the hills, “Fall on us!”",
+          "Israel, you have sinned ever since the days of Gibeah. There they stood. The battle against the wicked in Gibeah did not catch up with them.",
+          "When I choose, I will punish them. Nations will gather against them when they are bound for their two sins.",
+          "Ephraim is a trained young cow that loves to thresh grain, but I have come to put a yoke on her fine neck. I will harness Ephraim; Judah will plow, and Jacob will break up the clods.",
+          "Sow righteousness for yourselves, and reap mercy. Break up your unplowed ground, for it is time to seek the Lord, until He comes and rains righteousness on you.",
+          "You have plowed wickedness and harvested sin; you have eaten the fruit of lies, because you trusted in your own way and in your many mighty men.",
+          "So the roar of battle will rise among your people, and all your fortresses will be destroyed, the way Shalman destroyed Beth-arbel on the day of battle, when mothers were dashed to pieces with their children.",
+          "This is what Beth-el will bring on you, because of your great wickedness. At dawn the king of Israel will be completely cut off."
+        ],
+        "notes": [
+          {
+            "v": 1,
+            "text": "The KJV says “an empty vine.” The Hebrew word usually means emptied, but here the BSB reads it as ‘a luxuriant vine,’ one spreading and full of fruit."
+          },
+          {
+            "v": 8,
+            "text": "On His way to the cross, Jesus told the women weeping for Him that people would say “to the mountains, Fall on us; and to the hills, Cover us” (Luke 23:30)."
+          },
+          {
+            "v": 10,
+            "text": "The KJV says “in their two furrows.” The Hebrew, as it is read aloud, says ‘their two iniquities,’ and the BSB has ‘for their double transgression.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "“Goodly images” are the Hebrew’s sacred pillars, standing stones set up for false worship (verse 2 too). “Empty vine” follows the KJV, with a note for the BSB’s ‘luxuriant vine.’"
+          },
+          {
+            "v": 2,
+            "about": "“It is He who” is the Hebrew’s strong “he,” capitalized for God; the BSB makes it ‘The LORD.’ “Found faulty” is “found guilty,” as the Church’s footnote has it (‘HEB guilty’)."
+          },
+          {
+            "v": 9,
+            "about": "Hard Hebrew. The plain words keep the KJV’s statement; the BSB reads the last line as a question, ‘Did not the battle in Gibeah overtake the sons of iniquity?’ Gibeah was where Israel once fought the tribe of Benjamin over a terrible crime (Judges 19–20); no note."
+          },
+          {
+            "v": 10,
+            "about": "The plain words follow the Hebrew as it is read (“their two sins”) over the KJV’s “two furrows,” with a note."
+          },
+          {
+            "v": 11,
+            "about": "“I passed over upon her fair neck” means putting a yoke on it (BSB ‘I will place a yoke on her fair neck’); the plain words add “to put a yoke on.” “Make Ephraim to ride” is “harness Ephraim.”"
+          },
+          {
+            "v": 14,
+            "about": "The last line, mothers dashed to pieces with their children, is kept no plainer than the KJV."
+          }
+        ],
+        "approved": "0853be9f"
+      },
+      {
+        "ch": "Hosea 11",
+        "verses": [
+          "When Israel was a child, I loved him, and I called my son out of Egypt.",
+          "The more they were called, the farther they went from those who called them. They sacrificed to the Baalim (the false gods called Baal) and burned incense to carved idols.",
+          "I was the one who taught Ephraim to walk, taking them by their arms, but they didn’t know that I healed them.",
+          "I led them with cords of kindness, with ropes of love. To them I was like someone who lifts the yoke off their jaws, and I bent down and fed them.",
+          "He will not go back to the land of Egypt, but the Assyrian will be his king, because they refused to turn back.",
+          "The sword will fall on his cities and destroy his branches and eat them up, because of their own plans.",
+          "My people are set on turning away from me. Even though they are called to the Most High, not one of them honors Him.",
+          "How can I give you up, Ephraim? How can I hand you over, Israel? How can I make you like Admah, or treat you like Zeboim (cities destroyed with Sodom)? My heart is turned inside me; all my compassion is stirred up.",
+          "I will not carry out my fierce anger. I will not destroy Ephraim again, for I am God and not a man—the Holy One among you—and I will not enter the city.",
+          "They will follow the Lord. He will roar like a lion. When He roars, the children will come trembling from the west.",
+          "They will come trembling like birds out of Egypt and like doves out of the land of Assyria, and I will settle them in their homes, says the Lord.",
+          "Ephraim surrounds me with lies, and the house of Israel with deceit. But Judah still walks with God and is faithful with the saints."
+        ],
+        "notes": [
+          {
+            "v": 1,
+            "text": "Matthew says this was fulfilled in Jesus, whose family stayed in Egypt until King Herod died: “Out of Egypt have I called my son” (Matthew 2:15)."
+          },
+          {
+            "v": 8,
+            "text": "The Joseph Smith Translation says the Lord’s heart is turned ‘toward thee, and my mercies are extended to gather thee,’ in place of “within me, my repentings are kindled together.”"
+          },
+          {
+            "v": 9,
+            "text": "The KJV says “I will not enter into the city.” The Church’s footnote gives another reading, ‘come in anger,’ and the BSB has ‘I will not come in wrath.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "“As they called them, so they went from them” is “The more they were called, the farther they went from those who called them.” The BSB reads ‘the more I called Israel.’"
+          },
+          {
+            "v": 4,
+            "about": "“Cords of a man” (ropes for people, not for animals) is “cords of kindness,” as the BSB has it. Check you’re happy with that."
+          },
+          {
+            "v": 8,
+            "about": "“My repentings” is “my compassion,” what the Hebrew word means (BSB ‘My compassion is stirred’). The note gives the Joseph Smith Translation, from the Church’s footnote. Admah and Zeboim are explained in four words (Deuteronomy 29:23)."
+          },
+          {
+            "v": 12,
+            "about": "“Judah yet ruleth with God” is “walks with God,” the reading in the Church’s footnote (‘OR walks’) and the BSB. “The saints” is kept from the KJV; the BSB reads ‘the Holy One.’ No note."
+          }
+        ],
+        "approved": "4ec34493"
+      },
+      {
+        "ch": "Hosea 12",
+        "verses": [
+          "Ephraim feeds on the wind and chases the east wind. All day long he piles up lies and ruin. They make a covenant with the Assyrians, and olive oil is carried to Egypt.",
+          "The Lord also has a case against Judah. He will punish Jacob for his ways and pay him back for what he has done.",
+          "In the womb he took his brother by the heel, and by his strength he struggled with God.",
+          "Yes, he struggled with the angel and won. He wept and begged him for favor. At Beth-el he found Him, and there He spoke with us—",
+          "the Lord God of Hosts; the Lord is the name He is remembered by.",
+          "So turn back to your God. Hold on to mercy and justice, and always wait for your God.",
+          "He is a merchant with dishonest scales in his hand; he loves to cheat.",
+          "Ephraim says, “I have become rich; I have found wealth for myself. In all my work no one will find any wrong in me that is sin.”",
+          "But I am the Lord your God from the time you were in the land of Egypt. I will make you live in tents again, as in the days of the appointed feast.",
+          "I have spoken through the prophets. I gave many visions and taught with parables through the prophets.",
+          "Is there wickedness in Gilead? Surely they are worthless. They sacrifice bulls in Gilgal, and their altars are like piles of stones in the furrows of the fields.",
+          "Jacob ran away to the country of Syria. Israel worked to earn a wife, and to pay for a wife he kept sheep.",
+          "The Lord brought Israel out of Egypt by a prophet, and by a prophet Israel was kept safe.",
+          "Ephraim has made Him bitterly angry. So his Lord will leave his blood guilt on him and pay him back for his contempt."
+        ],
+        "notes": [
+          {
+            "v": 4,
+            "text": "The KJV says “there he spake with us.” The Church’s footnote gives another reading, ‘him,’ and the BSB has ‘spoke with Him there.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 3,
+            "about": "Verses 3–4 retell Jacob’s life: taking Esau’s heel at birth and wrestling the angel (Genesis 25:26; 32:24–30). The plain words don’t name Esau or add the story; no note."
+          },
+          {
+            "v": 4,
+            "about": "Lowercase “he” is Jacob; capital “Him” and “He” are God, who spoke at Beth-el (verse 5 names Him). “Made supplication unto him” is “begged him for favor.” Check the capitals read right."
+          },
+          {
+            "v": 9,
+            "about": "“Tabernacles” is “tents,” as the Church’s footnote has it; the appointed feast is the Feast of Tabernacles (Leviticus 23:34). No note."
+          },
+          {
+            "v": 14,
+            "about": "“His blood” is “his blood guilt,” as the Church’s footnote has it (‘IE guilt’). “His reproach” is “his contempt.” “His Lord” is capitalized, as in the KJV."
+          }
+        ],
+        "approved": "5e0888fe"
+      },
+      {
+        "ch": "Hosea 13",
+        "verses": [
+          "When Ephraim spoke, there was trembling, and he was lifted up in Israel. But he became guilty by worshipping Baal, and he died.",
+          "And now they sin more and more. They have made metal idols out of their silver, idols shaped by their own skill, all of it the work of craftsmen. They say of them, “Let the men who sacrifice kiss the calves!”",
+          "So they will be like the morning cloud, like the early dew that goes away, like chaff blown by a storm from the threshing floor, and like smoke out of a chimney.",
+          "Yet I am the Lord your God from the land of Egypt. You must know no god but me, for there is no Savior besides me.",
+          "I knew you in the wilderness, in the land of great drought.",
+          "When they had pasture, they were filled. They were filled, and their hearts became proud, so they forgot me.",
+          "So I will be like a lion to them; like a leopard I will watch for them by the road.",
+          "I will meet them like a bear robbed of her cubs, and I will tear open their chests. There I will eat them up like a lion; the wild animals will tear them apart.",
+          "Israel, you have destroyed yourself, but your help is in me.",
+          "I will be your king. Where is anyone else who can save you in all your cities? And where are your judges, the ones you asked for when you said, “Give me a king and leaders”?",
+          "In my anger I gave you a king, and in my fury I took him away.",
+          "Ephraim’s wickedness is tied up in a bundle; his sin is stored away.",
+          "Pains like a woman giving birth will come on him. He is an unwise son, for when the time comes, he does not come out of the womb.",
+          "I will ransom them from the power of the grave. I will redeem them from death. Death, I will be your plagues! Grave, I will be your destruction! I will not change my mind.",
+          "Even though he does well among his brothers, an east wind will come, the wind of the Lord rising up from the wilderness. His spring will dry up, and his fountain will run dry. He will rob his storehouse of every precious thing.",
+          "Samaria will bear her guilt, because she has rebelled against her God. They will fall by the sword. Their little children will be dashed to pieces, and their women who are expecting babies will be ripped open."
+        ],
+        "notes": [
+          {
+            "v": 2,
+            "text": "The KJV has “Let the men that sacrifice kiss the calves.” The Hebrew can also be read ‘those who sacrifice people,’ and the BSB has ‘They offer human sacrifice and kiss the calves!’"
+          },
+          {
+            "v": 4,
+            "text": "Speaking of the God who brought Israel out of Egypt, Nephi taught that “there is none other name given under heaven save it be this Jesus Christ … whereby man can be saved” (2 Nephi 25:20)."
+          },
+          {
+            "v": 10,
+            "text": "The KJV reads “I will be thy king.” The Hebrew word can also mean ‘where,’ and the BSB reads ‘Where is your king now to save you in all your cities?’"
+          },
+          {
+            "v": 14,
+            "text": "Paul uses these words about the Resurrection: “O death, where is thy sting? O grave, where is thy victory?” (1 Corinthians 15:55). Where the KJV has “I will be,” the BSB also reads ‘Where.’"
+          },
+          {
+            "v": 16,
+            "text": "The KJV says “Samaria shall become desolate.” The Hebrew word means to be held guilty, and the BSB has ‘Samaria will bear her guilt.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 1,
+            "about": "The KJV reads “When Ephraim spake trembling, he exalted himself”; the BSB, ‘When Ephraim spoke, there was trembling; he was exalted.’ The plain words follow the Hebrew’s order, like the BSB. No note."
+          },
+          {
+            "v": 9,
+            "about": "The plain words keep the KJV, “in me is thine help.” The BSB reads the hard Hebrew another way: ‘You are destroyed, O Israel, because you are against Me—against your helper.’ No note; add one if you like."
+          },
+          {
+            "v": 14,
+            "about": "The KJV’s promise is kept (“I will be your plagues”), with a note for Paul’s and the BSB’s ‘where.’ “Repentance shall be hid from mine eyes” is “I will not change my mind”; the Church’s footnote gives ‘compassion’ for the Hebrew word, and the BSB reads ‘Compassion is hidden from My eyes,’ a warning. Your call."
+          },
+          {
+            "v": 16,
+            "about": "The last line, children and women killed in war, is kept no plainer than the KJV. “Become desolate” follows the Hebrew (“bear her guilt”), with a note."
+          },
+          {
+            "v": 8,
+            "about": "“The caul of their heart” (the Church’s footnote: ‘chamber’) is “their chests.” Kept no plainer than the KJV."
+          }
+        ],
+        "approved": "116362fd"
+      },
+      {
+        "ch": "Hosea 14",
+        "verses": [
+          "Israel, come back to the Lord your God, for you have fallen because of your sin.",
+          "Take words with you and come back to the Lord. Say to Him, “Take away all sin, and receive us kindly, and we will offer our lips as calves for sacrifice.”",
+          "Asshur (Assyria) will not save us. We will not ride on horses. We will never again say to the things our hands have made, “You are our gods,” for in you the fatherless find mercy.",
+          "I will heal them of turning away. I will love them freely, for my anger has turned away from him.",
+          "I will be like the dew to Israel. He will bloom like the lily and send down his roots like the cedars of Lebanon.",
+          "His branches will spread out. His beauty will be like the olive tree, and his fragrance like the cedars of Lebanon.",
+          "Those who live in his shade will come back. They will come back to life like grain and blossom like the vine. His fragrance will be like the wine of Lebanon.",
+          "Ephraim will say, “What more do I have to do with idols?” I have answered him, and I will watch over him. I am like a green fir tree; your fruit comes from me.",
+          "Who is wise? Let him understand these things. Who has understanding? Let him know them. For the ways of the Lord are right, and the righteous walk in them, but sinners fall in them."
+        ],
+        "notes": [
+          {
+            "v": 2,
+            "text": "The KJV’s “calves of our lips” is praise offered like a sacrifice. The BSB reads ‘the fruit of our lips,’ as in Hebrews: “the sacrifice of praise to God continually, that is, the fruit of our lips” (Hebrews 13:15)."
+          }
+        ],
+        "review": [
+          {
+            "v": 2,
+            "about": "“Render the calves of our lips” is “offer our lips as calves for sacrifice”: the Hebrew has bulls (calves), and the note says what it means. “Take away all iniquity” has no “our” in the Hebrew, so none is added."
+          },
+          {
+            "v": 5,
+            "about": "“Like the cedars of Lebanon” adds “the cedars of” (verses 5 and 6), as the BSB does, so he knows what Lebanon’s roots and fragrance are. Take it out if you’d rather not add."
+          },
+          {
+            "v": 8,
+            "about": "The KJV adds “Ephraim shall say” (in italics: not in the Hebrew); the plain words keep it. The BSB has the Lord saying ‘O Ephraim, what have I to do anymore with idols?’ No note."
+          },
+          {
+            "v": 7,
+            "about": "“The scent thereof” follows the KJV (“His fragrance”); the Hebrew word is usually ‘remembrance’ or ‘fame’ (BSB ‘His renown’). “Revive as the corn” is “come back to life like grain.”"
+          }
+        ],
+        "approved": "491463db"
+      },
+      {
+        "ch": "Joel 1",
+        "verses": [
+          "This is the word of the Lord that came to Joel, the son of Pethuel.",
+          "Hear this, you elders! Listen, everyone who lives in the land! Has anything like this happened in your days, or even in the days of your fathers?",
+          "Tell your children about it. Let your children tell their children, and their children tell the next generation.",
+          "What the devouring locust left, the swarming locust ate. What the swarming locust left, the young locust ate. And what the young locust left, the destroying locust ate.",
+          "Wake up and weep, you drunkards! Wail, all you who drink wine, because the new wine has been cut off from your mouths.",
+          "For a nation has come up against my land, strong and too many to count. Its teeth are a lion’s teeth, and it has the fangs of a lioness.",
+          "It has ruined my vine and splintered my fig tree. It has stripped off all its bark and thrown it away, and its branches are left white.",
+          "Mourn like a young bride dressed in sackcloth (rough cloth worn in mourning), grieving for her young husband.",
+          "The grain offering and the drink offering are cut off from the house of the Lord. The priests, who serve the Lord, are mourning.",
+          "The fields are ruined, and the land mourns, because the grain is ruined, the new wine is dried up, and the olive oil fails.",
+          "Be ashamed, you farmers! Wail, you who tend the vineyards, for the wheat and for the barley, because the harvest of the field is lost.",
+          "The vine is dried up, and the fig tree is withering. The pomegranate tree, the palm tree, and the apple tree—all the trees of the field are dried up. Truly, joy has dried up and left the people.",
+          "Put on sackcloth and mourn, you priests! Wail, you who serve at the altar! Come, spend the night in sackcloth, you who serve my God, because the grain offering and the drink offering are kept back from the house of your God.",
+          "Set apart a holy fast. Call a solemn assembly. Gather the elders and everyone who lives in the land into the house of the Lord your God, and cry out to the Lord.",
+          "How terrible that day will be! For the day of the Lord is near, and it will come like destruction from the Almighty.",
+          "Hasn’t the food been cut off right in front of our eyes—and joy and gladness from the house of our God?",
+          "The seeds have shriveled under the clods. The storehouses are ruined, and the barns are torn down, because the grain has dried up.",
+          "How the animals groan! The herds of cattle wander in confusion because they have no pasture. Even the flocks of sheep are suffering.",
+          "Lord, I cry out to you, because fire has burned up the pastures in the wilderness, and flames have burned all the trees of the field.",
+          "Even the wild animals cry out to you, because the streams of water have dried up, and fire has burned up the pastures in the wilderness."
+        ],
+        "notes": [
+          {
+            "v": 4,
+            "text": "The KJV’s palmerworm, locust, cankerworm and caterpiller are four Hebrew words for locusts, perhaps kinds or stages of growth. The Church’s footnote says they picture invading armies. The BSB calls them devouring, swarming, young and destroying locusts."
+          }
+        ],
+        "review": [
+          {
+            "v": 4,
+            "about": "The four locust names follow the BSB (devouring, swarming, young, destroying), with a note giving the KJV’s names. The same four are in Joel 2:25, in another order."
+          },
+          {
+            "v": 8,
+            "about": "“A virgin … for the husband of her youth” is “a young bride … grieving for her young husband,” to keep it plain; the Hebrew pictures a young woman promised in marriage, mourning the man she was to marry. Sackcloth is explained, as in the Isaiah chapters."
+          },
+          {
+            "v": 6,
+            "about": "“The cheek teeth of a great lion” is “the fangs of a lioness,” the Hebrew word’s meaning (BSB too)."
+          },
+          {
+            "v": 9,
+            "about": "“Meat offering” is “grain offering” (verses 9 and 13); in the KJV, meat means food. “Old men” (verse 2) is “elders,” as the Church’s footnote has it."
+          }
+        ],
+        "approved": "40f7ca0c"
+      },
+      {
+        "ch": "Joel 2",
+        "verses": [
+          "Blow the trumpet in Zion! Sound the alarm on my holy mountain! Let everyone who lives in the land tremble, for the day of the Lord is coming; it is near—",
+          "a day of darkness and gloom, a day of clouds and thick darkness. Like the dawn spreading over the mountains comes a great and strong people. There has never been anything like it, and there will never be again, through the years of many generations.",
+          "In front of them a fire burns everything up, and behind them a flame blazes. The land in front of them is like the garden of Eden, but behind them it is a ruined wilderness. Nothing escapes them.",
+          "They look like horses, and they run like horsemen.",
+          "They leap over the mountaintops with a noise like chariots, like the crackle of fire burning up straw, like a strong army lined up for battle.",
+          "At the sight of them people will be in great pain; every face will turn dark.",
+          "They run like mighty men; they climb the wall like soldiers. Each one marches straight ahead, and they do not break their ranks.",
+          "They don’t push one another; each one walks in his own path. When they rush into the weapons, they are not wounded.",
+          "They rush through the city. They run along the wall. They climb up into the houses and go in through the windows like a thief.",
+          "The earth shakes in front of them, and the heavens tremble. The sun and the moon grow dark, and the stars stop shining.",
+          "The Lord raises His voice in front of His army, for His camp is very large, and the one who carries out His word is mighty. For the day of the Lord is great and very dreadful. Who can live through it?",
+          "Yet even now, says the Lord, turn to me with all your heart, with fasting, weeping, and mourning.",
+          "Tear your heart, and not your clothes, and turn to the Lord your God. For He is gracious and merciful, slow to anger, and full of kindness, and He turns away from sending disaster.",
+          "Who knows? He may turn and hold it back, and leave a blessing behind Him—a grain offering and a drink offering for the Lord your God.",
+          "Blow the trumpet in Zion. Set apart a holy fast. Call a solemn assembly.",
+          "Gather the people. Make the congregation holy. Bring together the elders, and gather the children, even the babies still nursing. Let the bridegroom come out of his room and the bride out of her chamber.",
+          "Let the priests, who serve the Lord, weep between the porch and the altar. Let them say, “Spare your people, Lord. Don’t let your inheritance be put to shame, with the nations ruling over them. Why should they say among the peoples, ‘Where is their God?’”",
+          "Then the Lord will be zealous for His land and have pity on His people.",
+          "Yes, the Lord will answer His people: Look, I will send you grain, new wine, and olive oil, and you will be satisfied with them. I will never again make you a disgrace among the nations.",
+          "I will drive the northern army far away from you and push him into a dry, deserted land, with his front toward the east sea (the Dead Sea) and his back toward the western sea (the Mediterranean). His stink will rise, and his foul smell will go up, because he has done great things.",
+          "Don’t be afraid, land! Be glad and rejoice, for the Lord will do great things.",
+          "Don’t be afraid, you wild animals, for the pastures in the wilderness are turning green. The trees are bearing their fruit, and the fig tree and the vine are giving their full harvest.",
+          "Be glad, then, you children of Zion, and rejoice in the Lord your God, for He has given you the early rain in the right amount. He will send down rain for you—the early rain and the latter rain—in the first month.",
+          "The threshing floors will be full of wheat, and the vats will overflow with new wine and olive oil.",
+          "I will restore to you the years eaten by the swarming locust, the young locust, the destroying locust, and the devouring locust, my great army that I sent among you.",
+          "You will eat plenty and be satisfied, and you will praise the name of the Lord your God, who has done wonders for you. And my people will never be put to shame.",
+          "Then you will know that I am among Israel, and that I am the Lord your God, and there is no other. And my people will never be put to shame.",
+          "And afterward I will pour out my Spirit on all people. Your sons and your daughters will prophesy, your old men will dream dreams, and your young men will see visions.",
+          "Even on the servants, men and women, I will pour out my Spirit in those days.",
+          "I will show wonders in the heavens and on the earth: blood, fire, and columns of smoke.",
+          "The sun will be turned into darkness and the moon into blood before the great and terrible day of the Lord comes.",
+          "And whoever calls on the name of the Lord will be delivered. For on mount Zion and in Jerusalem there will be deliverance, as the Lord has said, and among the remnant whom the Lord calls."
+        ],
+        "notes": [
+          {
+            "v": 13,
+            "text": "Where the KJV says the Lord “repenteth him of the evil,” the Joseph Smith Translation says ‘he will turn away the evil from you.’ It also has the people repent, here and in verse 14."
+          },
+          {
+            "v": 23,
+            "text": "The KJV says “the former rain moderately.” The Hebrew says the early rain is given ‘for righteousness,’ and the BSB reads ‘for your vindication.’ The Hebrew word for the early rain also means a teacher."
+          },
+          {
+            "v": 28,
+            "text": "When the angel Moroni came to Joseph Smith in 1823, he quoted verses 28–32 and “said that this was not yet fulfilled, but was soon to be” (Joseph Smith—History 1:41)."
+          },
+          {
+            "v": 28,
+            "text": "On the day of Pentecost, when the disciples were filled with the Holy Ghost, Peter said, “this is that which was spoken by the prophet Joel” (Acts 2:16), and quoted verses 28–32 (Acts 2:17–21)."
+          },
+          {
+            "v": 32,
+            "text": "Paul quotes this verse to teach that the Lord is the same for Jew and Gentile: “whosoever shall call upon the name of the Lord shall be saved” (Romans 10:13)."
+          }
+        ],
+        "review": [
+          {
+            "v": 13,
+            "about": "“Repenteth him of the evil” is “turns away from sending disaster,” close to the Joseph Smith Translation (note) and to how the approved Jeremiah 18:8 says it. Verse 14’s “return and repent” is “turn and hold it back.” Check you’re happy with both."
+          },
+          {
+            "v": 6,
+            "about": "“All faces shall gather blackness” is kept (“every face will turn dark”); the Hebrew word is unsure, and the BSB has the opposite picture, ‘every face turns pale.’ No note."
+          },
+          {
+            "v": 8,
+            "about": "“When they fall upon the sword, they shall not be wounded” is kept; the Hebrew verb is unsure, and the BSB reads ‘They burst through the defenses, never breaking ranks.’ No note."
+          },
+          {
+            "v": 18,
+            "about": "“Jealous” is “zealous,” as the Church’s footnote has it (‘HEB zealous’), since “jealous” may mislead a child. The KJV’s future tense is kept in verses 18–19; the BSB reads them as past (‘Then the LORD became jealous’)."
+          },
+          {
+            "v": 20,
+            "about": "The east sea and the “utmost” (western) sea are named in a few words. “Because he hath done great things” keeps the KJV’s “he,” the northern army; the BSB makes it ‘He,’ the Lord. Your call."
+          },
+          {
+            "v": 28,
+            "about": "Two notes on verse 28 (Moroni and Peter), and Paul under verse 32. “All flesh” is “all people”; “handmaids” (verse 29) is “servants, men and women.” “My Spirit” is capitalized, as in the plain words for Isaiah 44:3."
+          }
+        ],
+        "approved": "174bfcff"
+      },
+      {
+        "ch": "Joel 3",
+        "verses": [
+          "For look, in those days and at that time, when I bring back the captives of Judah and Jerusalem,",
+          "I will gather all nations and bring them down into the valley of Jehoshaphat (which means the Lord judges). There I will put them on trial for my people, my inheritance Israel, whom they scattered among the nations, and for dividing up my land.",
+          "They cast lots for my people. They traded a boy for a harlot and sold a girl for wine to drink.",
+          "Now what do you want with me, Tyre and Zidon and all the regions of Palestine (the land of the Philistines)? Are you paying me back for something? If you pay me back, I will quickly turn your payback on your own heads.",
+          "For you took my silver and my gold and carried my finest treasures into your temples.",
+          "You sold the people of Judah and Jerusalem to the Grecians (the Greeks), to send them far from their own land.",
+          "Look, I will stir them up to come out of the places where you sold them, and I will turn your payback on your own heads.",
+          "I will sell your sons and your daughters into the hands of the people of Judah, and they will sell them to the Sabeans, a nation far away. The Lord has spoken.",
+          "Announce this among the Gentiles: Get ready for war! Wake up the mighty men! Let all the soldiers come near and march up!",
+          "Beat your plowshares into swords and your pruning hooks into spears. Let the weak say, “I am strong.”",
+          "Hurry and come, all you nations around, and gather together. Lord, bring your mighty ones down there!",
+          "Let the nations wake up and come up to the valley of Jehoshaphat, for there I will sit to judge all the nations around.",
+          "Swing the sickle, for the harvest is ripe. Come, go down and tread the grapes, for the winepress is full and the vats overflow, because their wickedness is great.",
+          "Multitudes, multitudes in the valley of decision! For the day of the Lord is near in the valley of decision.",
+          "The sun and the moon will grow dark, and the stars will stop shining.",
+          "The Lord will roar from Zion and raise His voice from Jerusalem, and the heavens and the earth will shake. But the Lord will be a shelter for His people and a stronghold for the children of Israel.",
+          "Then you will know that I am the Lord your God, who lives in Zion, my holy mountain. Jerusalem will be holy, and strangers will never pass through her again.",
+          "On that day the mountains will drip with new wine, the hills will flow with milk, and all the streams of Judah will run with water. A spring will flow out from the house of the Lord and water the valley of Shittim (acacia trees).",
+          "Egypt will become a ruin, and Edom a desert wasteland, because of the violence done to the people of Judah, because they shed innocent blood in their land.",
+          "But people will live in Judah forever, and in Jerusalem from generation to generation.",
+          "For I will cleanse their blood that I have not cleansed, for the Lord lives in Zion."
+        ],
+        "notes": [
+          {
+            "v": 21,
+            "text": "The KJV says “I will cleanse their blood.” The Hebrew word means to declare innocent or to leave unpunished, and the BSB reads ‘I will avenge their blood, which I have not yet avenged.’"
+          }
+        ],
+        "review": [
+          {
+            "v": 3,
+            "about": "“Given a boy for an harlot” keeps the KJV’s “harlot,” as you decided for Isaiah 1:21; it is the plainest modest word here. Check it suits a child."
+          },
+          {
+            "v": 2,
+            "about": "A few words are added for Jehoshaphat (‘the Lord judges’), Palestine (verse 4), the Grecians (verse 6) and Shittim (verse 18). “Plead with them” (argue a case, as in court) is “put them on trial.”"
+          },
+          {
+            "v": 16,
+            "about": "“The hope of his people, and the strength of the children of Israel” follows the Hebrew, “a shelter … and a stronghold” (BSB ‘a refuge … a stronghold’)."
+          },
+          {
+            "v": 21,
+            "about": "Hard Hebrew. The plain words keep the KJV’s “cleanse,” with a note for the BSB’s ‘avenge.’"
+          },
+          {
+            "v": 10,
+            "about": "This turns around Isaiah 2:4 and Micah 4:3 (“beat their swords into plowshares”); no note, since the README’s note kinds don’t include it."
+          }
+        ],
+        "approved": "41c9aff8"
+      }
+    ],
+    "approved": "f0f80669",
+    "wordsApproved": "aabe288d",
+    "treasure": [
+      {
+        "id": "hos2-aras",
+        "ref": "Hosea 2:19",
+        "word": "אָרַשׂ",
+        "form": "וְאֵרַשְׂתִּיךְ",
+        "strong": "H781",
+        "gloss": "and I will betroth you",
+        "say": "a-RAS",
+        "kjv": "betroth",
+        "means": "To get engaged: to promise to marry someone. Here the Lord promises to make Israel His bride forever.",
+        "more": "Even after Israel was unfaithful, the Lord promised a new engagement “in righteousness, and in judgment, and in lovingkindness, and in mercies.” His covenant love is that faithful.",
+        "approved": "cbac2b0a"
+      },
+      {
+        "id": "hos6-shuv",
+        "ref": "Hosea 6:1",
+        "word": "שׁוּב",
+        "form": "וְנָשׁוּבָה",
+        "strong": "H7725G",
+        "gloss": "so let us return",
+        "say": "SHOOV",
+        "kjv": "return",
+        "means": "To turn around and come back. It’s the Old Testament’s main word for repenting: turning away from sin and back to God.",
+        "more": "Hosea says the Lord who has “torn” will also “heal us” and “bind us up.” Repenting means coming home to the Savior, who heals.",
+        "approved": "587c369e"
+      },
+      {
+        "id": "hos13-padah",
+        "ref": "Hosea 13:14",
+        "word": "פָּדָה",
+        "form": "אֶפְדֵּם",
+        "strong": "H6299",
+        "gloss": "will I ransom? them",
+        "say": "pa-DAH",
+        "kjv": "ransom",
+        "means": "To ransom: to pay the price so that someone who is held captive can go free.",
+        "more": "Paul echoes this verse when he teaches about the Resurrection (1 Corinthians 15:55). Jesus Christ paid the price to free us from death and the grave.",
+        "approved": "256b306c"
+      },
+      {
+        "id": "hos14-nedavah",
+        "ref": "Hosea 14:4",
+        "word": "נְדָבָה",
+        "form": "נְדָבָה",
+        "strong": "H5071",
+        "gloss": "voluntariness",
+        "say": "ne-da-VAH",
+        "kjv": "freely",
+        "means": "Something given freely, because you want to and not because you have to. It’s also the word for a freewill offering.",
+        "more": "The Lord says, “I will love them freely.” His love isn’t a payment Israel earned. It’s a gift He chooses to give.",
+        "short": "freely",
+        "approved": "8df9ca2a"
+      },
+      {
+        "id": "joel2-shofar",
+        "ref": "Joel 2:1",
+        "word": "שֹׁפָר",
+        "form": "שׁוֹפָר",
+        "strong": "H7782",
+        "gloss": "a ram's horn",
+        "say": "sho-FAR",
+        "kjv": "trumpet",
+        "means": "A trumpet made from a ram’s horn. It was blown to sound a warning or to call all the people together.",
+        "more": "Joel’s shofar warns that “the day of the LORD cometh.” In verse 15 it sounds again, calling everyone to fast, gather, and turn back to God.",
+        "approved": "a8f3064d"
+      },
+      {
+        "id": "joel2-shafakh",
+        "ref": "Joel 2:28",
+        "word": "שָׁפַךְ",
+        "form": "אֶשְׁפּוֹךְ",
+        "strong": "H8210G",
+        "gloss": "I will pour out",
+        "say": "sha-FAKH",
+        "kjv": "pour out",
+        "means": "To pour out, like water poured from a jar. God promises to pour His Spirit on sons and daughters, young and old.",
+        "more": "The angel Moroni quoted this prophecy to Joseph Smith and said it was soon to be fulfilled (Joseph Smith—History 1:41).",
+        "approved": "4fa02a97"
+      }
+    ],
+    "guide": [
+      {
+        "h": "The Lord always invites me to return to Him.",
+        "id": "title3",
+        "ref": "Hosea 1–3; 14",
+        "kids": false,
+        "lines": [
+          "Hosea’s wife, Gomer, broke her promises to him. The Lord used their sad story to show Israel how He felt when they broke their covenants (Hosea 2:5–7).",
+          "A covenant with the Lord is a bit like a marriage. Even after Israel wandered off, He promised to win her back with love and mercy (Hosea 2:14–23).",
+          "Hosea 14 is full of promises for people who come back to Him: “I will love them freely” (Hosea 14:4). They grow like watered plants (Hosea 14:5–8).",
+          "The lesson suggests singing a hymn about the Savior’s mercy, like ‘Come unto Jesus’ (Hymns, no. 117)."
+        ],
+        "ask": "How is keeping a covenant with the Lord like staying faithful in a marriage? How can we show Him our love?",
+        "approved": "a72c6b30"
+      },
+      {
+        "h": "Devotion to God must be felt inwardly, not just expressed outwardly.",
+        "id": "title4",
+        "ref": "Hosea 6:4–7; Joel 2:12–13",
+        "kids": false,
+        "lines": [
+          "Israel kept offering animal sacrifices while breaking bigger commandments. The Lord said, “I desired mercy, and not sacrifice” (Hosea 6:6).",
+          "Their goodness vanished like morning dew (Hosea 6:4). Ours can keep coming, “as the waves of the sea” (Isaiah 48:18).",
+          "Jesus quoted Hosea 6:6 when Pharisees complained that He ate with sinners (Matthew 9:10–13) and when His disciples picked grain on the Sabbath (Matthew 12:1–8).",
+          "Tearing your clothes was a way to show sorrow. Joel asks for something deeper: “rend your heart, and not your garments” (Joel 2:13)."
+        ],
+        "ask": "What is the difference between tearing your clothes and tearing your heart? How can our worship come from the inside?",
+        "approved": "a45b4bc0"
+      },
+      {
+        "h": "“I will pour out my spirit upon all flesh.”",
+        "id": "title5",
+        "ref": "Joel 2",
+        "kids": false,
+        "lines": [
+          "Look for ways the day Joel saw coming is like our day (Joel 2:1–2, 11). Then notice the blessings the Lord promises in Joel 2:18–32.",
+          "The angel Moroni quoted Joel 2:28–32 to Joseph Smith in 1823 and said it would soon come true (Joseph Smith—History 1:41). Peter quoted it too (Acts 2:16–21).",
+          "President Russell M. Nelson taught that in the days ahead, no one will stay spiritually alive without the Holy Ghost’s steady help.",
+          "Feel like the Spirit isn’t pouring? See what people did in Mosiah 4:1–3 and Helaman 6:34–36. Elder David A. Bednar said the Spirit usually comes quietly, bit by bit."
+        ],
+        "ask": "When have you felt the Holy Ghost quietly help you? What can our family do to receive more of the Spirit?",
+        "approved": "cefa5d2a"
+      },
+      {
+        "h": "I can faithfully keep my covenants.",
+        "id": "title7",
+        "ref": "Hosea 2:19–20",
+        "kids": true,
+        "lines": [
+          "Hosea pictures the Lord’s covenant with His people as a marriage. Look at a wedding picture together, maybe one from your own family.",
+          "Talk about the way Heavenly Father hopes a husband and wife will treat one another.",
+          "Read Hosea 2:19–20 for words that show how the Lord feels about us: “I will betroth thee unto me for ever” (Hosea 2:19). Betroth means to promise to marry."
+        ],
+        "ask": "What are some ways our family can show the Lord we love Him and want to stay true to Him?",
+        "approved": "6e1531ae"
+      },
+      {
+        "h": "“It is time to seek the Lord.”",
+        "id": "title8",
+        "ref": "Hosea 10:12",
+        "kids": true,
+        "lines": [
+          "Hosea 10:12 is full of farm words: sow, reap, fallow ground, rain. Its message: “it is time to seek the LORD” (Hosea 10:12).",
+          "Act it out together: sow pretend seeds, gather pretend vegetables, stand in pretend rain. Doing right and receiving blessings works like planting and harvesting.",
+          "Or draw a clock and write a way to seek the Lord at each part of your day. The lesson suggests the song ‘Anytime, Anywhere’ (Hymns for Home and Church)."
+        ],
+        "ask": "What blessings has the Lord rained on our family when we’ve looked for Him? When could you seek Him tomorrow?",
+        "approved": "50ef5dab"
+      },
+      {
+        "h": "Jesus Christ is my Savior and Redeemer.",
+        "id": "title9",
+        "ref": "Hosea 13:4, 14",
+        "kids": true,
+        "lines": [
+          "The Lord says, “there is no saviour beside me” (Hosea 13:4). Only Jesus Christ can save us from sin and death.",
+          "Spread out pictures of a few people, Jesus among them. Take turns pointing to the One who can rescue us.",
+          "Look in Hosea 13:4, 14 for words about Jesus Christ, like “I will redeem them from death” (Hosea 13:14). The Guide to the Scriptures can help you find more.",
+          "Parents, tell what you know about Jesus Christ and His Atonement. Then everyone shares how they feel about Him."
+        ],
+        "ask": "Which words in Hosea 13:4, 14 tell you who Jesus Christ is? What can He save us from?",
+        "approved": "db3d3efc"
+      },
+      {
+        "h": "The Holy Ghost can guide me.",
+        "id": "title10",
+        "ref": "Joel 2:28–29",
+        "kids": true,
+        "lines": [
+          "Pour water from a pitcher, then let out just a few drops. The Lord promised more than drops: “I will pour out my spirit upon all flesh” (Joel 2:28).",
+          "Read Joel 2:28–29 aloud, putting each other’s names where it says sons and daughters. The promise is for you too.",
+          "Search John 14:16, Moroni 10:5 and Doctrine and Covenants 42:17 to learn how the Holy Ghost can help you."
+        ],
+        "ask": "What’s the difference between a few drops and the Spirit poured out? When has the Holy Ghost guided you?",
+        "approved": "e756cd58"
+      }
+    ],
+    "family": {
+      "title": "Always Time to Seek the Lord",
+      "minutes": 20,
+      "from": [
+        "title8",
+        "title10",
+        "title3"
+      ],
+      "steps": [
+        {
+          "k": "open",
+          "text": "Sing ‘Come unto Jesus’ (Hymns, no. 117), a hymn about the Savior’s mercy that this week’s lesson suggests. Then someone says the opening prayer."
+        },
+        {
+          "k": "learn",
+          "ref": "Hosea 10:12",
+          "text": "Read Hosea 10:12 together. Act out each farm word as you hear it: sow seeds, reap a harvest, break up hard ground, feel the rain. Planting good seeds is like choosing the right; the harvest is the Lord’s blessings."
+        },
+        {
+          "k": "do",
+          "text": "Draw a big clock on a sheet of paper. Around it, everyone writes or draws ways to seek the Lord through the day: a morning prayer, scriptures at breakfast, kindness at school, a bedtime thank-you. Hang it on the fridge."
+        },
+        {
+          "k": "learn",
+          "ref": "Joel 2:28–29",
+          "text": "Pour water from a pitcher into a bowl, then let a few drops fall from a spoon. Read Joel 2:28–29 with each person’s name where it says sons and daughters. The Lord promises His Spirit to all, poured out, not a drop at a time."
+        },
+        {
+          "k": "talk",
+          "text": "When has the Lord blessed us like rain because we looked for Him? When has the Holy Ghost helped or guided you? Parents, share one of your own first."
+        },
+        {
+          "k": "close",
+          "text": "Testify that any hour of the day is a fine time to turn to the Lord. Each person picks one spot on the clock to seek Him this week. End with a family prayer."
+        }
+      ],
+      "approved": "96a99487"
     }
   }
 ];
