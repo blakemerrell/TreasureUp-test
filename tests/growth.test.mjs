@@ -29,7 +29,9 @@ export default async function growth({ port }) {
   check(await p.locator('#appSheet [data-coach-rm-custom="Fishing"]').count() === 1, 'custom interest appears as a removable chip with its area tag');
   await p.click('#appSheet [data-coach-goto="3"]'); await wait(300);
   check(await p.locator('#appSheet [data-coach-val].on').count() === 3, 'Core Values Triad defaults to 3 pillars (Faith, Adventure, Integrity)');
+  check(await p.locator('#appSheet #coachPeakMoment').count() === 0 && await p.locator('#appSheet [data-coach-strength]').count() === 0, 'Stage 3 is de-duplicated (no repeated Crucible mirrors or CliftonStrengths)');
   await p.click('#appSheet [data-coach-subval="Honest Stewardship"]'); await wait(200);
+  await p.click('#appSheet [data-coach-goto="4"]'); await wait(200);
   await p.click('#appSheet [data-coach-sp="Loyal Friend"]'); await wait(200);
   await p.click('#appSheet [data-coach-finish]'); await wait(600);
   const prof = (await state(p)).profile || {};
@@ -127,7 +129,9 @@ export default async function growth({ port }) {
     el.remove();
   });
   await triggerEvening(); await wait(300);
+  check(await p.evaluate(() => !document.activeElement || document.activeElement.id !== 'evMercies'), 'Opening Evening Return & Report does not auto-focus #evMercies');
   await p.fill('#evMercies', '');
+  await p.click('#appSheet [data-ev-more] summary'); await wait(100);
   await p.fill('#evWins', '');
   await p.fill('#evSurrender', 'Placing the project timeline into the Lord’s hands');
   await p.click('#appSheet [data-ev-save]'); await wait(350);
@@ -142,7 +146,7 @@ export default async function growth({ port }) {
   // Slice 5: Youth streamlined Morning Council (no adult jargon by default) & Together Family Bridge card on Today.
   await p.evaluate(() => localStorage.setItem('fakeNow', '2026-10-20T12:00:00')); await p.reload(); await wait(1200);
   await p.click('#tabs [data-tab="today"]'); await wait(400);
-  await p.click('#home [data-open-blueprint]'); await wait(300);
+  await p.click('#home [data-open-blueprint] >> nth=0'); await wait(300);
   const youthBpHtml = await txt(p, '#appBody');
   check(!/Wilderness 40|makrothumei/i.test(youthBpHtml) && await p.locator('#appBody [data-w40-card]').count() === 0, 'Youth Morning Council hides adult Wilderness 40 and Greek/Hebrew jargon');
   await p.click('#appClose'); await wait(250);
@@ -185,15 +189,20 @@ export default async function growth({ port }) {
   check(((await state(p)).togetherDone || {})['2026-10-20'] === 0, 'Un-toggling Together check persists sync-safe 0 in S.togetherDone');
 
   // Slice 2 & 3: Adult Morning Council Top 3 -> S.pro.tops[day] (private) + Pace-Driven Wilderness 40.
-  await p.click('#home [data-open-blueprint]'); await wait(350);
-  check(await p.locator('#appBody [data-w40-card]').count() === 1 && /Day 1 of 40/i.test(await txt(p, '#appBody [data-w40-card]')), 'Adult Morning Council renders Wilderness 40 Day 1 card');
+  await p.click('#home [data-open-blueprint] >> nth=0'); await wait(350);
+  check(await p.evaluate(() => !document.activeElement || document.activeElement.id !== 'bpOneThing'), 'Opening Morning Council does not auto-focus #bpOneThing');
+  check(await p.locator('#appBody [data-w40-card]').count() === 1 && /Day 1/i.test(await txt(p, '#appBody [data-w40-card]')), 'Adult Morning Council renders Wilderness 40 Day 1 card');
   await p.click('#appBody [data-w40-complete]'); await wait(300);
-  check(/Day 2 of 40/i.test(await txt(p, '#appBody [data-w40-card]')), 'Wilderness 40 advances to Day 2 on explicit completion');
+  check(/Day 2/i.test(await txt(p, '#appBody [data-w40-card]')), 'Wilderness 40 advances to Day 2 on explicit completion');
   await p.fill('#bpOneThing', 'Ship quarterly architecture');
+  await p.click('#appBody [data-bp-more-prios] summary'); await wait(100);
   await p.fill('#bpPrio2', 'Review shop floor metrics');
   await p.fill('#bpPrio3', 'Prepare family council');
   await p.fill('#bpUplift', 'Send encouragement note to a teammate');
   await p.click('#appBody [data-bp-save]'); await wait(400);
+  await p.click('#home [data-open-blueprint] >> nth=0'); await wait(250);
+  check(await p.evaluate(() => Boolean(document.querySelector('#appBody [data-bp-more-prios]') && document.querySelector('#appBody [data-bp-more-prios]').open)), 'Reopening Morning Council auto-opens Priorities #2 & #3 expander when populated');
+  await p.click('#appClose'); await wait(200);
   const stAdultBp = await state(p);
   const adultTops = ((((stAdultBp.pro || {}).tops) || {})['2026-10-20'] || {}).items || [];
   const adultBpImp = Object.values(stAdultBp.impressions || {}).find(x => x && x.kind === 'blueprint' && x.day === '2026-10-20') || {};
@@ -286,19 +295,28 @@ export default async function growth({ port }) {
   check((await cp.locator('.compass-banner').count()) === 1 && !cpErrs.length, 'Standalone flow.html renders Unified Daily Walk preview with 0 errors');
   await cp.close();
 
-  // Verify in-app Today Compass Banner & 6-Stage Coaching Workshop directly in index.html
+  // Verify in-app Today 1-line Compass Bar, 412x780 Pixel 9 Pro above-the-fold layout, Deep Coaching & Tools sheet, & 6-Stage Coaching Workshop
+  await p.setViewportSize({ width: 412, height: 780 });
   await p.click('#tabs [data-tab="today"]'); await wait(200);
-  check((await p.locator('#home [data-today-compass]').count()) === 1, 'Today tab renders Unified Daily Walk Compass Banner');
-  check((await p.locator('#home [data-today-compass] [data-compass-w40-day]').count()) === 7, 'Today Compass Banner renders all 7 Wilderness 40 Movement start day pills (D1, D6, D12, D19, D27, D34, D40)');
-  await p.click('#home [data-compass-w40-day="27"]'); await wait(150);
-  const compassD27Txt = await p.textContent('#home [data-today-compass]');
-  check(/Day 27 of 40/i.test(compassD27Txt) && /D&C 121:46/i.test(compassD27Txt), 'Today Compass Banner quick day jumper switches Wilderness 40 to Day 27');
-  await p.click('#home [data-compass-mode="youth"]'); await wait(150);
-  await p.click('#home [data-compass-youth-theme="rpg"]'); await wait(150);
-  check((await p.locator('#home .today-compass.youth-mode.youth-rpg').count()) === 1, 'Today Compass Banner switches to Youth Flow and applies 16-Bit RPG theme');
-  await p.click('#home [data-compass-mode="adult"]'); await wait(150);
+  await p.evaluate(() => { document.getElementById('home').scrollTop = 0; window.scrollTo(0, 0); });
+  await wait(100);
+  check((await p.locator('#home [data-today-compass]').count()) === 1, 'Today tab renders compact 1-line Compass Bar');
+  const compassBox = await p.locator('#home [data-today-compass]').boundingBox();
+  const nextActBox = await p.locator('#home .fl-next').first().boundingBox();
+  check(compassBox && compassBox.height <= 60 && nextActBox && nextActBox.y < 760, `On 412x780 Pixel 9 Pro viewport, Compass Bar is compact (${Math.round(compassBox ? compassBox.height : 0)}px) and first daily action is above the fold (y=${Math.round(nextActBox ? nextActBox.y : 999)})`);
 
-  await p.click('#home [data-today-compass] [data-hub-profile="me"]'); await wait(200);
+  await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(200);
+  check((await p.locator('#appSheet [data-compass-w40-day]').count()) === 7 && (await p.locator('#appSheet [data-compass-luke]').count()) === 4, 'Deep Coaching & Tools drawer renders all 7 Wilderness 40 Movement start day pills and 4 Luke 2:52 cards');
+  await p.click('#appSheet [data-compass-w40-day="27"]'); await wait(150);
+  const sheetD27Txt = await p.textContent('#appSheet');
+  const compassD27Txt = await p.textContent('#home [data-today-compass]');
+  check(/Day 27 of 40/i.test(sheetD27Txt) && /D&C 121:46/i.test(sheetD27Txt) && /Day 27/i.test(compassD27Txt), 'Deep Coaching & Tools quick day jumper switches Wilderness 40 to Day 27');
+  await p.click('#appSheet [data-compass-mode="youth"]'); await wait(150);
+  await p.click('#appSheet [data-compass-youth-theme="rpg"]'); await wait(150);
+  check((await p.locator('#home .today-compass.youth-mode.youth-rpg').count()) === 1, 'Deep Coaching & Tools mode switch sets Youth Flow and applies 16-Bit RPG theme on Today Compass Bar');
+  await p.click('#appSheet [data-compass-mode="adult"]'); await wait(150);
+
+  await p.click('#appSheet [data-compass-coach="1"]'); await wait(200);
   check((await p.locator('#appSheet .coach-stage-tab').count()) === 6, 'In-app Growth Coach sheet renders all 6 stage tabs');
   await p.click('#appSheet [data-coach-goto="2"]'); await wait(150);
   await p.fill('#coachPeakMoment', 'Standing with courage and bold conviction when the team felt afraid');

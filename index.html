@@ -1859,17 +1859,22 @@
   .bp-goal-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 8px; font: inherit; font-size: 12px; font-weight: 700; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: #fff; cursor: pointer; }
   .bp-goal-chip:hover { background: rgba(255,255,255,.18); border-color: #fbbf24; }
   .bp-goal-chip.on { background: rgba(251,191,36,.22); border-color: #fbbf24; color: #fde68a; }
-  .today-compass { background: linear-gradient(145deg, rgba(18,24,43,.94), rgba(15,23,42,.9)); border: 1.5px solid rgba(251,191,36,.32); border-radius: 18px; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.22); }
+  .today-compass { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; max-height: 52px; background: linear-gradient(145deg, rgba(18,24,43,.94), rgba(15,23,42,.9)); border: 1.5px solid rgba(251,191,36,.32); border-radius: 14px; padding: 6px 10px; margin: 4px 0 8px; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
   .today-compass.youth-mode { border-color: rgba(56,189,248,.42); background: linear-gradient(145deg, rgba(15,23,42,.95), rgba(18,34,56,.92)); }
   .today-compass.youth-rpg { border-color: rgba(167,139,250,.48); background: linear-gradient(145deg, rgba(24,18,43,.95), rgba(30,27,75,.92)); }
   .today-compass.youth-booklet { border-color: rgba(52,211,153,.42); background: linear-gradient(145deg, rgba(14,32,28,.95), rgba(15,38,34,.92)); }
+  .tc-bar-main { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; background: none; border: 0; padding: 4px 2px; color: #f8fafc; font: inherit; font-size: 12.5px; text-align: left; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tc-bar-main span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tc-bar-main b { color: #fde68a; font-weight: 800; }
+  .today-compass.youth-mode .tc-bar-main b { color: #7dd3fc; }
+  .tc-bar-chev { color: var(--gold); font-weight: 900; font-size: 14px; flex-shrink: 0; }
   .tc-top-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 10px; }
   .tc-mode-pills { display: inline-flex; background: rgba(0,0,0,.32); padding: 3px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); gap: 3px; }
   .tc-mode-btn { border: 0; background: none; color: rgba(255,255,255,.72); font: inherit; font-size: 11.5px; font-weight: 800; padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
   .tc-mode-btn.on { background: linear-gradient(135deg, #f59e0b, #d97706); color: #1c1406; box-shadow: 0 2px 6px rgba(245,158,11,.35); }
   .today-compass.youth-mode .tc-mode-btn.on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
   .tc-act-pills { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-  .tc-act-pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.08); color: #fde68a; border: 1px solid rgba(251,191,36,.3); cursor: pointer; text-decoration: none; }
+  .tc-act-pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.08); color: #fde68a; border: 1px solid rgba(251,191,36,.3); cursor: pointer; text-decoration: none; flex-shrink: 0; }
   .tc-act-pill:hover { background: rgba(251,191,36,.16); }
   .tc-luke-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 8px; }
   .tc-luke-cell { padding: 8px 10px; border-radius: 11px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); text-align: left; color: #fff; font: inherit; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
@@ -2457,19 +2462,19 @@
 
   /* Core Daily Walk Banner & Swipeable Story Decks (2026-10-16) */
   .core-walk-banner {
-    margin: 10px 0 8px; padding: 12px 15px; border-radius: 16px;
+    margin: 6px 0 6px; padding: 8px 12px; border-radius: 12px;
     background: linear-gradient(135deg, rgba(16,185,129,.16), rgba(6,78,59,.35));
     border: 1.5px solid rgba(52,211,153,.42);
-    display: flex; flex-direction: column; gap: 6px;
+    display: flex; flex-direction: column; gap: 5px;
   }
   .core-walk-banner.done {
     background: linear-gradient(135deg, rgba(16,185,129,.26), rgba(5,46,22,.65));
     border-color: rgba(52,211,153,.7);
-    box-shadow: 0 8px 24px rgba(16,185,129,.18);
+    box-shadow: 0 6px 18px rgba(16,185,129,.16);
   }
-  .core-walk-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 900; color: #6ee7b7; }
-  .core-walk-sub { font-size: 12.5px; color: rgba(255,255,255,.78); line-height: 1.4; }
-  .core-walk-bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; }
+  .core-walk-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12.5px; font-weight: 900; color: #6ee7b7; }
+  .core-walk-sub { font-size: 12px; color: rgba(255,255,255,.78); line-height: 1.35; }
+  .core-walk-bar { height: 5px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; }
   .core-walk-bar > div { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #10b981, #34d399); transition: width .25s ease; }
 
   .ins-deck { display: flex; flex-direction: column; gap: 10px; }
@@ -3446,7 +3451,6 @@ const TreasureUp = (function () {
           ${stripHtml()}
         </div>
         <div class="tt-main">
-          ${isFamilyStudy() ? '' : todayCompassBannerHtml()}
           ${dayCardHtml(selDay || dayKey())}
           ${weekRowHtml()}
         </div>
@@ -3673,6 +3677,7 @@ const TreasureUp = (function () {
     const shown = rows.filter(r => !(button.hide.includes(r.card) && !r.done));
     return `<div class="flow">
       ${isToday ? greetingHtml() : ''}
+      ${isToday && !isFamilyStudy() ? todayCompassBannerHtml() : ''}
       <div class="fl-date"><b>${DAY_NAMES[(new Date(k + 'T12:00:00').getDay() + 6) % 7]} · ${esc(shortDay(k))}</b><small>${counted.length ? n + ' of ' + counted.length + ' done' : ''}${tag ? (counted.length ? ' · ' : '') + tag : ''}</small></div>
       ${isToday ? studyModeToggleHtml() : ''}
       ${isToday ? verseHeroHtml() : ''}
@@ -3869,16 +3874,12 @@ const TreasureUp = (function () {
     const study = extra.map(html => ({ html, done: null })).concat(of('part', 'reels', 'cfm', 'bom', 'fsy'), mini ? [mini] : []);
     const kid = seasonWho() !== 'adult', name = whoName();
     const walkPct = rows.length ? Math.round((n / rows.length) * 100) : 0;
-    const walk = isToday ? `<div class="walk-line">🚶 ${kid && name ? esc(name) + '’s Daily Walk' : 'The Daily Walk'} · Micah 6:8</div>
-      <div class="core-walk-banner${!next && rows.length ? ' done' : ''}">
+    const walk = isToday ? `<div class="core-walk-banner${!next && rows.length ? ' done' : ''}">
         <div class="core-walk-top">
-          <span>${!next && rows.length ? '🎉 Today’s Core Walk Complete!' : '✨ Core Daily Walk'}</span>
-          <span>${n}/${rows.length} steps · ${walkPct}%</span>
+          <span>${!next && rows.length ? '🎉 Daily Walk Complete!' : '🚶 ' + (kid && name ? esc(name) + '’s Daily Walk' : 'Daily Walk') + ' · Micah 6:8'}</span>
+          <span>${n}/${rows.length} · ${walkPct}%</span>
         </div>
         <div class="core-walk-bar"><div style="width:${walkPct}%"></div></div>
-        <div class="core-walk-sub">${!next && rows.length
-          ? (kid ? 'Daily streak locked in! Everything in Go Further below is bonus explorer credit whenever you have extra time.' : 'Daily streak locked in! Everything in Go Further below is ready whenever you want deeper study.')
-          : (kid ? 'Finish these core steps to lock in today’s streak. Go Further below is always optional bonus XP.' : 'Finish these core steps to lock in today’s streak. Go Further below is always optional deep study.')}</div>
       </div>` : '';
     const secs = isToday ? [
       tsecHtml('morning', 'Morning', of('still', 'blueprint')),
@@ -3890,7 +3891,8 @@ const TreasureUp = (function () {
 
     return `<div class="flow">
       ${isToday ? greetingHtml() : ''}
-      <div class="fl-date"><b>${DAY_NAMES[d]} · ${esc(shortDay(k))}</b><small>${rows.length ? n + ' of ' + rows.length + ' done' : ''}${tag ? (rows.length ? ' · ' : '') + tag : ''}</small></div>
+      ${isToday && !isFamilyStudy() ? todayCompassBannerHtml() : ''}
+      <div class="fl-date"><b>${DAY_NAMES[d]} · ${esc(shortDay(k))}</b><small>${!isToday && rows.length ? n + ' of ' + rows.length + ' done' : ''}${tag ? ((!isToday && rows.length) ? ' · ' : '') + tag : ''}</small></div>
       ${isToday ? studyModeToggleHtml() : ''}
       ${isToday ? verseHeroHtml() : ''}
       ${button}
@@ -5045,6 +5047,20 @@ const TreasureUp = (function () {
   let cclmCoachState = { tab: 'situation', who: 'child', sit: 'resist', drift: 'fixer' };
 
   function todayCompassBannerHtml() {
+    const isAdult = seasonWho() === 'adult';
+    const w40 = w40Current();
+    const yTheme = S.youthTheme || 'nintendo';
+    return `<div class="today-compass${!isAdult ? ' youth-mode youth-' + esc(yTheme) : ''}" data-today-compass>
+      <button type="button" class="tc-bar-main" data-open-blueprint>
+        ${isAdult
+          ? `<span>🌿 <b>Day ${w40.d[0]} · ${esc(w40.d[2])}</b></span><span class="tc-bar-chev" aria-hidden="true">›</span>`
+          : `<span>🌱 <b>Luke 2:52 Quest</b> · Discover → Plan → Act → Reflect</span><span class="tc-bar-chev" aria-hidden="true">›</span>`}
+      </button>
+      <button type="button" class="tc-act-pill" data-open-deep-tools>🧭 Coach</button>
+    </div>`;
+  }
+
+  function deepToolsSheetHtml() {
     const prof = profileOf(), isAdult = seasonWho() === 'adult';
     const triad = valuesTriadOf(prof), strs = (prof.strengths || []).slice(0, 3);
     const driftKey = prof.cclmDrift || 'fixer';
@@ -5061,22 +5077,16 @@ const TreasureUp = (function () {
     ];
     const quickDays = [1, 6, 12, 19, 27, 34, 40];
 
-    return `<div class="today-compass${!isAdult ? ' youth-mode youth-' + esc(yTheme) : ''}" data-today-compass>
-      <div class="tc-top-bar">
-        <div class="tc-mode-pills" role="group" aria-label="Daily Walk Mode">
-          <button type="button" class="tc-mode-btn${isAdult ? ' on' : ''}" data-compass-mode="adult" aria-pressed="${isAdult}">👔 Adult Flow (Zero-XP)</button>
-          <button type="button" class="tc-mode-btn${!isAdult ? ' on' : ''}" data-compass-mode="youth" aria-pressed="${!isAdult}">🎮 Youth Flow (Luke 2:52)</button>
-        </div>
-        <div class="tc-act-pills">
-          <button type="button" class="tc-act-pill" data-hub-profile="me" data-compass-coach="1">🧭 6-Stage Growth Coach</button>
-          <button type="button" class="tc-act-pill" data-open-cclm-coach data-compass-coach="5">🏛️ Situation Leader Coach</button>
-          <a class="tc-act-pill" href="./flow.html" style="color:#93c5fd;border-color:rgba(147,197,253,.3)">🗺️ Full Flow</a>
-          <a class="tc-act-pill" href="./coaching.html" style="color:#c4b5fd;border-color:rgba(196,181,253,.3)">🧪 Workshop</a>
-        </div>
+    return `<div class="sh-title">🧭 Deep Coaching &amp; Tools</div>
+      <p class="sh-small">Calibrate your Core Values Triad, navigate the 40-Day Wilderness Consecration, or generate a live Christ-Centered Leadership Playbook.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px">
+        <button type="button" class="btn" style="padding:10px;font-size:12.5px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#1c1406;font-weight:900" data-hub-profile="me" data-compass-coach="1">🧭 6-Stage Growth Coach</button>
+        <button type="button" class="btn ghost" style="padding:10px;font-size:12.5px;border-color:rgba(251,191,36,.4);color:#fde68a" data-open-cclm-coach="situation" data-compass-coach="5">🏛️ Live Situation Playbook</button>
       </div>
 
       ${isAdult ? `
-        <div style="padding:10px 12px;border-radius:12px;background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.28);margin-bottom:8px">
+        <div style="padding:10px 12px;border-radius:12px;background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.28);margin-bottom:10px" data-deep-w40>
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px">
             <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fcd34d">🌿 Wilderness 40 · Day ${w40.d[0]} of 40 · Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
             <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
@@ -5085,43 +5095,60 @@ const TreasureUp = (function () {
               <button type="button" class="bp-edit-btn" data-compass-w40-step="1" ${w40.d[0] >= 40 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">Next ›</button>
             </div>
           </div>
-          <div style="font-size:13.5px;font-weight:900;color:#fff">${esc(w40.d[2])}${w40.d[5] ? ` <span style="font-size:11px;color:#fde68a;font-weight:700">(${esc(w40.d[5])})</span>` : ''} · <span style="font-size:11.5px;font-weight:600;color:#fef3c7;font-style:italic">“${esc(w40.d[3])}” (${esc(w40.d[4])})</span></div>
+          <div style="font-size:13px;font-weight:900;color:#fff">${esc(w40.d[2])}${w40.d[5] ? ` <span style="font-size:11px;color:#fde68a;font-weight:700">(${esc(w40.d[5])})</span>` : ''} · <span style="font-size:11.5px;font-weight:600;color:#fef3c7;font-style:italic">“${esc(w40.d[3])}” (${esc(w40.d[4])})</span></div>
           <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">🎯 <b>Today’s Practice:</b> ${esc(w40.d[9])}</div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;font-size:11.5px;color:#e2e8f0;padding:4px 2px">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;font-size:11.5px;color:#e2e8f0;padding:2px 2px 10px">
           <span>🏛️ <b>Triad:</b> <b style="color:#fde68a">${esc(triad.join(' · '))}</b>${strs.length ? ` · 🧬 <b>Strengths:</b> ${esc(strs.join(', '))}` : ''}</span>
           <span style="color:#6ee7b7;font-weight:800">${esc(drift.antidoteLabel)} · Focus: ${esc(domObj.short)}</span>
         </div>
       ` : `
-        <div style="padding:10px 12px;border-radius:12px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);margin-bottom:8px">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
-            <div>
-              <div style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#7dd3fc">🌟 Children & Youth · Luke 2:52 Quest Compass</div>
-              <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''} · 🏛️ ${esc(triad.join(' · '))}</div>
-            </div>
-            <div style="display:flex;gap:4px;flex-wrap:wrap" role="group" aria-label="Youth Theme Style">
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" aria-pressed="${yTheme === 'nintendo'}" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" aria-pressed="${yTheme === 'rpg'}" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
-              <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" aria-pressed="${yTheme === 'booklet'}" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
-            </div>
-          </div>
+        <div style="padding:10px 12px;border-radius:12px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);margin-bottom:10px">
+          <div style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#7dd3fc">🌟 Children &amp; Youth · Luke 2:52 Quest Compass</div>
+          <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''} · 🏛️ ${esc(triad.join(' · '))}</div>
         </div>
       `}
 
-      <div class="tc-luke-grid">
-        ${areaMap.map(a => {
-          const g = goals.find(x => x.area === a.id);
-          const stepTxt = g ? ((g.steps && g.steps[0] && g.steps[0].text) || g.text) : a.fallback;
-          return `<button type="button" class="tc-luke-cell" data-tab="season" title="Open ${esc(a.label)} in Season tab">
-            <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:900;color:#fde68a">
-              <span>${a.icon} ${esc(a.label)}</span>
-              <span style="font-size:10px;color:#94a3b8">${esc(a.cclm)}</span>
-            </div>
-            <div style="font-size:11.5px;color:#e2e8f0;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g ? '🎯 ' : '✨ '}${esc(stepTxt)}</div>
-          </button>`;
-        }).join('')}
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-bottom:6px">🌱 Luke 2:52 4-Area Whole-Soul Compass</div>
+        <div class="tc-luke-grid" style="margin-top:0">
+          ${areaMap.map(a => {
+            const g = goals.find(x => x.area === a.id);
+            const stepTxt = g ? ((g.steps && g.steps[0] && g.steps[0].text) || g.text) : a.fallback;
+            return `<button type="button" class="tc-luke-cell" data-compass-luke="${a.id}" data-tab="season" title="Open ${esc(a.label)} in Season tab">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:900;color:#fde68a">
+                <span>${a.icon} ${esc(a.label)}</span>
+                <span style="font-size:10px;color:#94a3b8">${esc(a.cclm)}</span>
+              </div>
+              <div style="font-size:11.5px;color:#e2e8f0;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g ? '🎯 ' : '✨ '}${esc(stepTxt)}</div>
+            </button>`;
+          }).join('')}
+        </div>
       </div>
-    </div>`;
+
+      <div style="padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:12px">
+        <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-bottom:6px">⚙️ Experience Mode &amp; Theme</div>
+        <div class="tc-mode-pills" role="group" aria-label="Daily Walk Mode" style="margin-bottom:${!isAdult ? '8px' : '0'}">
+          <button type="button" class="tc-mode-btn${isAdult ? ' on' : ''}" data-compass-mode="adult" aria-pressed="${isAdult}">👔 Adult Flow (Zero-XP)</button>
+          <button type="button" class="tc-mode-btn${!isAdult ? ' on' : ''}" data-compass-mode="youth" aria-pressed="${!isAdult}">🎮 Youth Flow (Luke 2:52)</button>
+        </div>
+        ${!isAdult ? `
+          <div style="display:flex;gap:4px;flex-wrap:wrap" role="group" aria-label="Youth Theme Style">
+            <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" aria-pressed="${yTheme === 'nintendo'}" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
+            <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" aria-pressed="${yTheme === 'rpg'}" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
+            <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" aria-pressed="${yTheme === 'booklet'}" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
+          </div>
+        ` : ''}
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <a class="tc-act-pill" href="./flow.html" style="color:#93c5fd;border-color:rgba(147,197,253,.3)">🗺️ Full Flow</a>
+        <a class="tc-act-pill" href="./coaching.html" style="color:#c4b5fd;border-color:rgba(196,181,253,.3)">🧪 Workshop</a>
+      </div>`;
+  }
+
+  function openDeepToolsSheet() {
+    openSheet(deepToolsSheetHtml());
   }
 
   function syncCoachInputs() {
@@ -5445,9 +5472,12 @@ const TreasureUp = (function () {
       const domObj = CCLM_DOMAINS.find(x => x.id === domKey) || CCLM_DOMAINS[2];
       const myStrengths = new Set(d.strengths || []);
       const primaryStr = (d.strengths || [])[0] || '';
+      const superpowers = isKid
+        ? ['Creative Builder', 'Fast Learner', 'Loyal Friend', 'Joyful Energy', 'Peacekeeper', 'Hard Worker']
+        : ['Strategic Clarity', 'Disciple Leader', 'Family Anchor', 'Visionary Builder', 'Resilient Coach'];
       return `<div class="sh-title">🏛️ Christ-Centered Leader Engine</div>
         ${coachStageNavHtml(4)}
-        <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>) + CliftonStrengths Blind-Spot Radar: Center in <b>Jesus Christ</b>, balance <b>Express Love · Honor Agency · Invite Accountability</b>, and diagnose your stress drift.</p>
+        <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>) + CliftonStrengths &amp; Spiritual Gifts: Center in <b>Jesus Christ</b>, balance <b>Express Love · Honor Agency · Invite Accountability</b>, and diagnose your stress drift.</p>
 
         ${!isKid ? `
           <div class="sheet-group">
@@ -5470,6 +5500,13 @@ const TreasureUp = (function () {
             ` : ''}
           </div>
         ` : ''}
+
+        <div class="sheet-group">
+          <label>⚡ Spiritual Gift &amp; Primary Superpower</label>
+          <div class="coach-chip-group">
+            ${superpowers.map(sp => `<button type="button" class="coach-chip${d.superpower === sp ? ' on' : ''}" data-coach-sp="${esc(sp)}" aria-pressed="${d.superpower === sp}">⚡ ${esc(sp)}</button>`).join('')}
+          </div>
+        </div>
 
         <div class="sheet-group">
           <label>⚖️ 2. Leadership Tension Diagnostic: Under stress, which ditch are you most tempted to drift into?</label>
@@ -5496,6 +5533,11 @@ const TreasureUp = (function () {
             ${CCLM_DOMAINS.map(dom => `<button type="button" class="coach-chip${domKey === dom.id ? ' on' : ''}" data-coach-cclm-dom="${dom.id}" aria-pressed="${domKey === dom.id}">${dom.icon} ${esc(dom.label)}</button>`).join('')}
           </div>
           <p class="sh-small" style="margin-top:6px;color:#fde68a"><b>Diagnostic Question (${esc(domObj.short)}):</b> “${esc(domObj.auditQ)}”</p>
+        </div>
+
+        <div class="sheet-group">
+          <label for="coachMilestone">🎯 Current Season Milestone / North Star</label>
+          <input class="field sheet-in" id="coachMilestone" maxlength="80" value="${esc(d.milestone || '')}" placeholder="${isKid ? 'e.g. Preparing for Deacons Quorum at 12' : 'e.g. Live Faith, Adventure & Integrity with my family'}">
         </div>
 
         <div class="sheet-group">
@@ -5616,30 +5658,19 @@ const TreasureUp = (function () {
         </div>`;
     }
 
-    // Step 3: 16 -> 5 -> 3 Core Values Winnowing Funnel + Crucible Reflection + Superpowers / CliftonStrengths + Milestone
-    const superpowers = isKid
-      ? ['Creative Builder', 'Fast Learner', 'Loyal Friend', 'Joyful Energy', 'Peacekeeper', 'Hard Worker']
-      : ['Strategic Clarity', 'Disciple Leader', 'Family Anchor', 'Visionary Builder', 'Resilient Coach'];
+    // Step 3: 16 -> 5 -> 3 Core Values Winnowing Funnel + supporting sub-values ONLY
     const cVals = new Set(valuesTriadOf(d));
     const funnelSet = new Set(Array.isArray(d.funnelValues) && d.funnelValues.length ? d.funnelValues : [...cVals, 'HESED / LOVE', 'WISDOM']);
     cVals.forEach(v => funnelSet.add(v));
     crucibleMatches.forEach(v => funnelSet.add(v));
     const sVals = new Set(d.subValues || ['Trust in God', 'Growth Mindset', 'Wholeheartedness']);
-    const myStrengths = new Set(d.strengths || []);
-    const primaryStr = (d.strengths || [])[0] || '';
 
     return `<div class="sh-title">🧭 Your Superpower & Focus · Core Values</div>
       ${coachStageNavHtml(3)}
       <p class="sh-small">Winnow your values from the 16-card deck down to your Candidate Pile (${funnelSet.size} in pile) and crown your Top 3 Core Values Triad.</p>
+      ${crucibleMatches.length ? `<div style="font-size:11.5px;color:#6ee7b7;margin-bottom:8px">🔥 <b>Crucible-Highlighted Pillars:</b> ${esc(crucibleMatches.join(' · '))}</div>` : ''}
 
       ${!isKid ? `
-        <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)">
-          <label for="coachPeakMoment">🔥 The Crucible Mirror (100% Blank Slate · Auto-Highlights Values Below)</label>
-          <input class="field sheet-in" id="coachPeakMoment" maxlength="200" value="${esc(d.peakMoment || '')}" placeholder="🏔️ Peak Alive Moment: When did you feel most energized and proud recently?" style="margin-bottom:6px">
-          <input class="field sheet-in" id="coachPinchMirror" aria-label="Frustration Shadow" maxlength="200" value="${esc(d.pinchMirror || '')}" placeholder="⚡ Frustration Shadow: What drains or frustrates you fastest when violated?">
-          <div id="coachCruciblePreview" style="font-size:11px;color:#6ee7b7;margin-top:5px">${crucibleMatches.length ? `✨ <b>Crucible-Suggested Pillars:</b> ${esc(crucibleMatches.join(' · '))}` : ''}</div>
-        </div>
-
         <div class="sheet-group">
           <label>🗂️ Step A: 16 → 5 Candidate Winnowing Pile (${funnelSet.size} candidates · Tap to add/remove)</label>
           <div class="coach-chip-group">
@@ -5662,43 +5693,9 @@ const TreasureUp = (function () {
         </div>
       </div>
 
-      <div class="sheet-group">
-        <label>⚡ Primary Superpower</label>
-        <div class="coach-chip-group">
-          ${superpowers.map(sp => `<button type="button" class="coach-chip${d.superpower === sp ? ' on' : ''}" data-coach-sp="${esc(sp)}" aria-pressed="${d.superpower === sp}">⚡ ${esc(sp)}</button>`).join('')}
-        </div>
-      </div>
-
-      ${!isKid ? `
-        <div class="sheet-group">
-          <label>🧬 Signature CliftonStrengths (Tap Scenarios or Pick up to 5)</label>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px">
-            ${STRENGTH_SCENARIOS.map(sc => `<div style="padding:7px 9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)">
-              <div style="font-size:11px;font-weight:800;color:#cbd5e1;margin-bottom:4px">${esc(sc.q)}</div>
-              <div class="coach-chip-group">
-                ${sc.opts.map(o => `<button type="button" class="bp-quick-pill${myStrengths.has(o.code) ? ' on' : ''}" style="font-size:11px;${myStrengths.has(o.code) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(o.code)}" aria-pressed="${myStrengths.has(o.code)}">${esc(o.label)}</button>`).join('')}
-              </div>
-            </div>`).join('')}
-          </div>
-          <div class="coach-chip-group">
-            ${GALLUP_STRENGTHS.map(st => `<button type="button" class="bp-quick-pill${myStrengths.has(st) ? ' on' : ''}" style="${myStrengths.has(st) ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-coach-strength="${esc(st)}" aria-pressed="${myStrengths.has(st)}">${esc(st)}</button>`).join('')}
-          </div>
-          ${primaryStr && STRENGTH_BLIND_SPOTS[primaryStr] ? `
-            <div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);font-size:11.5px;color:#fecdd3">
-              <b>⚠️ ${esc(primaryStr)} Blind Spot to Watch:</b> ${esc(STRENGTH_BLIND_SPOTS[primaryStr])}
-            </div>
-          ` : ''}
-        </div>
-      ` : ''}
-
-      <div class="sheet-group">
-        <label for="coachMilestone">🎯 Current Season Milestone / North Star</label>
-        <input class="field sheet-in" id="coachMilestone" maxlength="80" value="${esc(d.milestone || '')}" placeholder="${isKid ? 'e.g. Preparing for Deacons Quorum at 12' : 'e.g. Live Faith, Adventure & Integrity with my family'}">
-      </div>
-
       <div class="board-actions" style="margin-top:20px">
         <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-coach-finish>${isKid ? '🚀 Lock In My Profile (+25 XP)' : '🚀 Lock In My Profile'}</button>
-        <button type="button" class="btn ghost" data-coach-goto="4">🏛️ Step 4: Christ-Centered Leader Engine ›</button>
+        <button type="button" class="btn ghost" data-coach-goto="4">🏛️ Step 4: Strengths &amp; Stress Drift ›</button>
         <button type="button" class="btn ghost" data-coach-goto="2">‹ Back</button>
       </div>`;
   }
@@ -5728,52 +5725,51 @@ const TreasureUp = (function () {
     const top3Text = !kid && tops[2] ? proItemText(tops[2]) : '';
     const gratefulHad = gratefulOf(k), grItems = gratefulHad ? (gratefulHad[1].items || []) : (bp.gratitude || []);
     const grText = grItems.slice(0, 3).join('\n');
-    const prof = profileOf(), triad = valuesTriadOf(prof), subs = (prof.subValues || []).slice(0, 3);
+    const prof = profileOf(), triad = valuesTriadOf(prof);
     const dayIdx = Math.abs(Math.round(Date.parse(k + 'T12:00:00Z') / 864e5)) % Math.max(1, triad.length);
     const activeValObj = CORE_VALUES_DECK.find(x => x.id === triad[dayIdx]) || CORE_VALUES_DECK[0];
     const moveKey = overrideMove || bp.cclmMove || bpCclmMove || (CCLM_DRIFTS[prof.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
     const moveObj = CCLM_PRINCIPLES[moveKey] || CCLM_PRINCIPLES.love;
     const w40 = !kid ? w40Current() : null;
+    const hasMorePrios = !!(top2Text || top3Text || (bpDraft && (bpDraft.prio2 || bpDraft.prio3)));
 
     return `<div class="sh-title">${kid ? '🌟 Morning Council · Walk with Him' : '🌅 Morning Council · Best Self'}</div>
       <p class="sh-small">${kid ? 'Alma 37:37 & Luke 2:52 · Counsel with Heavenly Father' : 'Alma 37:37 · Counsel with the Lord in all thy doings'}</p>
 
-      <div class="values-triad-banner">
-        <div class="vt-row">
-          <span style="font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fde68a">🏛️ My Core Values Triad</span>
-          <div style="display:flex;gap:6px">
-            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:11px">🏛️ Leader Coach</button>` : ''}
-            <button type="button" class="bp-edit-btn" data-hub-profile="me" style="font-size:11px">Calibrate Coach ✎</button>
+      <div class="values-triad-banner" style="padding:8px 10px;margin-bottom:8px">
+        <div class="vt-row" style="margin-bottom:2px">
+          <span style="font-size:11.5px;font-weight:800;color:#fde68a">🏛️ ${esc(triad.join(' · '))}</span>
+          <div style="display:flex;gap:5px">
+            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:10.5px;padding:2px 7px">🏛️ Leader Coach</button>` : ''}
+            <button type="button" class="bp-edit-btn" data-hub-profile="me" style="font-size:10.5px;padding:2px 7px">Calibrate ✎</button>
           </div>
         </div>
-        <div class="vt-pillars">
-          ${triad.map(v => {
-            const found = CORE_VALUES_DECK.find(x => x.id === v);
-            return `<span class="vt-pill">${found ? found.icon + ' ' : '✨ '}${esc(v)}</span>`;
-          }).join('')}
-        </div>
-        ${subs.length ? `<small style="font-size:11.5px;color:rgba(255,255,255,.78)">Living today with: <b>${esc(subs.join(' · '))}</b></small>` : ''}
-        ${activeValObj && activeValObj.q ? `<small style="font-size:11.5px;color:#fde68a;margin-top:2px">💡 <b>Today’s ${esc(activeValObj.label)} Touchstone:</b> “${esc(activeValObj.q)}”</small>` : ''}
+        ${activeValObj && activeValObj.q ? `<div style="font-size:11px;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">💡 <b>${esc(activeValObj.label)}:</b> “${esc(activeValObj.q)}”</div>` : ''}
       </div>
 
       ${!kid && w40 ? `
-        <div class="bp-sec" data-w40-card style="margin-bottom:12px;padding:12px;border-radius:14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3)">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px">
-            <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#fcd34d">🌿 Wilderness 40 · Day ${w40.d[0]} of 40 · Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
-            <div style="display:flex;gap:5px;align-items:center">
-              <button type="button" class="bp-edit-btn" data-w40-step="-1" ${w40.d[0] <= 1 ? 'disabled' : ''} style="font-size:10.5px">‹ Prev</button>
-              <button type="button" class="bp-edit-btn" data-w40-step="1" ${w40.d[0] >= 40 ? 'disabled' : ''} style="font-size:10.5px">Next Day ›</button>
-              <button type="button" class="bp-edit-btn" data-w40-complete style="font-size:10.5px;background:rgba(16,185,129,.18);border-color:rgba(16,185,129,.45);color:#6ee7b7">✓ Complete Day ${w40.d[0]} ›</button>
-            </div>
+        <div class="bp-sec" data-w40-card style="margin-bottom:8px;padding:8px 10px;border-radius:12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.28)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <details class="w40-details" style="flex:1;min-width:0">
+              <summary style="cursor:pointer;font-size:12px;color:#fef3c7;list-style:none;display:flex;align-items:center;gap:5px">
+                <span>🌿 <b>Day ${w40.d[0]} of 40 · ${esc(w40.d[2])}</b> — ${esc(w40.d[9])}</span>
+                <span style="font-size:10px;color:#fcd34d;margin-left:auto">▾</span>
+              </summary>
+              <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(245,158,11,.2);font-size:11.5px;color:#e2e8f0">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <span style="color:#fcd34d;font-weight:800">Movement ${w40.m.n}: ${esc(w40.m.name)}</span>
+                  <div style="display:flex;gap:4px">
+                    <button type="button" class="bp-edit-btn" data-w40-step="-1" ${w40.d[0] <= 1 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">‹</button>
+                    <button type="button" class="bp-edit-btn" data-w40-step="1" ${w40.d[0] >= 40 ? 'disabled' : ''} style="font-size:10px;padding:2px 7px">›</button>
+                  </div>
+                </div>
+                <div style="font-style:italic;color:#fef3c7;margin-bottom:4px">“${esc(w40.d[3])}” — <b>${esc(w40.d[4])}</b></div>
+                <p style="margin:0 0 4px;line-height:1.4;color:rgba(255,255,255,.82)">${esc(w40.d[6])}</p>
+                <div style="color:#cbd5e1">🙏 <b>Prayer:</b> ${esc(w40.d[7])}</div>
+              </div>
+            </details>
+            <button type="button" id="bpW40Done" class="bp-edit-btn" data-w40-complete aria-label="Complete Wilderness Day ${w40.d[0]}" style="flex-shrink:0;font-size:11px;padding:4px 8px;background:${w40.done ? 'rgba(16,185,129,.28)' : 'rgba(16,185,129,.14)'};border-color:rgba(16,185,129,.45);color:#6ee7b7">✓ Done</button>
           </div>
-          <div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:3px">${esc(w40.d[2])}${w40.d[5] ? ` <span style="font-size:11.5px;font-weight:700;color:#fde68a;margin-left:6px">(${esc(w40.d[5])})</span>` : ''}</div>
-          <div style="font-size:12px;font-style:italic;color:#fef3c7;margin-bottom:6px">“${esc(w40.d[3])}” — <b>${esc(w40.d[4])}</b></div>
-          <p style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.82);margin:0 0 8px">${esc(w40.d[6])}</p>
-          <div style="font-size:11.5px;color:#cbd5e1;margin-bottom:8px">🙏 <b>Morning Prayer:</b> ${esc(w40.d[7])}</div>
-          <button type="button" class="bp-check-item${w40.done ? ' done' : ''}" data-bp-check="w40" role="checkbox" aria-checked="${w40.done}" style="width:100%;text-align:left;display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer">
-            <span class="bp-check-box" style="width:20px;height:20px;border-radius:6px;border:2px solid #fbbf24;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#fbbf24">${w40.done ? '✓' : ''}</span>
-            <span style="flex:1;font-size:12px"><b>Today’s One Practice:</b> ${esc(w40.d[9])}</span>
-          </button>
         </div>
       ` : ''}
 
@@ -5781,14 +5777,16 @@ const TreasureUp = (function () {
         <!-- 1. The One Thing / Top 3 Priorities -->
         <div class="bp-sec bp-sec-priority">
           <div class="bp-sec-head">
-            <span class="bp-sec-title">🎯 ${kid ? 'My #1 Quest Today (Luke 2:52 Step)' : 'Today’s Top 3 Priorities (#1 = Lead Domino)'}</span>
+            <span class="bp-sec-title">🎯 ${kid ? 'My #1 Quest Today (Luke 2:52 Step)' : '#1 Priority (The ONE Thing)'}</span>
           </div>
-          <p class="sh-small" style="margin:0 0 6px;font-size:12px;color:rgba(255,255,255,.72)">${kid ? 'Pick 1 Luke 2:52 goal step or write what you want to practice today:' : '“What’s the ONE Thing I can do today such that by doing it everything else will be easier or unnecessary?”'}</p>
           ${activeGoalChipsHtml()}
-          <textarea class="field bp-textarea" id="bpOneThing" maxlength="200" rows="2" data-min-height="54" placeholder="${kid ? 'What goal or skill will I practice today?' : '#1 Lead Domino (The ONE Thing today)…'}">${esc(top1Text)}</textarea>
+          <textarea class="field bp-textarea" id="bpOneThing" maxlength="200" rows="2" data-min-height="48" placeholder="${kid ? 'What goal or skill will I practice today?' : '#1 Lead Domino (The ONE Thing today)…'}">${esc(top1Text)}</textarea>
           ${!kid ? `
-            <input class="field sheet-in" id="bpPrio2" maxlength="200" style="margin-top:6px" value="${esc(top2Text)}" placeholder="#2 Priority (optional)…">
-            <input class="field sheet-in" id="bpPrio3" maxlength="200" style="margin-top:6px" value="${esc(top3Text)}" placeholder="#3 Priority (optional)…">
+            <details class="bp-more-prios" data-bp-more-prios ${hasMorePrios ? 'open' : ''} style="margin-top:6px">
+              <summary style="cursor:pointer;font-size:11.5px;font-weight:800;color:#93c5fd;padding:2px 0">+ Add Priorities #2 &amp; #3</summary>
+              <input class="field sheet-in" id="bpPrio2" maxlength="200" style="margin-top:6px" value="${esc(top2Text)}" placeholder="#2 Priority (optional)…">
+              <input class="field sheet-in" id="bpPrio3" maxlength="200" style="margin-top:6px" value="${esc(top3Text)}" placeholder="#3 Priority (optional)…">
+            </details>
           ` : ''}
           <input type="hidden" id="bpGoalSid" value="${esc(bp.goalSid || '')}">
           <input type="hidden" id="bpGoalStepId" value="${esc(bp.goalStepId || '')}">
@@ -5797,15 +5795,14 @@ const TreasureUp = (function () {
         <!-- 2. Someone to Uplift & Lead -->
         <div class="bp-sec bp-sec-uplift">
           <div class="bp-sec-head" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
-            <span class="bp-sec-title">${kid && !showCclm ? '🤝 1 Person to Be Kind To Today' : '🤝 Someone to Uplift · Christ-Centered Leader'}</span>
+            <span class="bp-sec-title">${kid && !showCclm ? '🤝 1 Person to Be Kind To Today' : '🤝 Someone to Uplift'}</span>
             ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:10.5px">💬 Situation Coach ›</button>` : ''}
           </div>
-          <p class="sh-small" style="margin:0 0 6px;font-size:12px;color:rgba(255,255,255,.72)">${kid && !showCclm ? 'Who can you help, encourage, or show Christlike kindness to today?' : 'Who are you called to lift or lead today, and which Christ-centered principle do they need most from you?'}</p>
           ${showCclm ? `
-            <div class="bp-quick-pills" style="margin-bottom:6px">
+            <div class="bp-quick-pills" style="margin-bottom:5px">
               ${Object.values(CCLM_PRINCIPLES).map(pr => `<button type="button" class="bp-quick-pill${moveKey === pr.id ? ' on' : ''}" style="${moveKey === pr.id ? `background:${pr.bg};border-color:${pr.border};color:${pr.color}` : ''}" data-bp-cclm-move="${pr.id}">${pr.icon} ${esc(pr.label)}</button>`).join('')}
             </div>
-            <div id="bpCclmHint" style="font-size:11.5px;color:${moveObj.color};background:${moveObj.bg};border:1px solid ${moveObj.border};padding:6px 9px;border-radius:8px;margin-bottom:7px">
+            <div id="bpCclmHint" style="font-size:11px;color:${moveObj.color};background:${moveObj.bg};border:1px solid ${moveObj.border};padding:5px 8px;border-radius:8px;margin-bottom:6px">
               ${esc(moveObj.prompt)}
             </div>
           ` : ''}
@@ -5814,25 +5811,25 @@ const TreasureUp = (function () {
                   : ['My spouse', 'One of my kids (1-on-1)', 'A team member', 'A neighbor']
             ).map(p => `<button type="button" class="bp-quick-pill" data-bp-pick-uplift="${esc(p)}">+ ${esc(p)}</button>`).join('')}
           </div>
-          <textarea class="field bp-textarea sm" id="bpUplift" maxlength="200" rows="1" data-min-height="42" placeholder="${kid ? 'Who can I be kind to or help today?' : 'Who can I serve, encourage, honor agency with, or invite to accountability?'}">${esc(bp.uplift || '')}</textarea>
+          <textarea class="field bp-textarea sm" id="bpUplift" maxlength="200" rows="1" data-min-height="40" placeholder="${kid ? 'Who can I be kind to or help today?' : 'Who can I serve, encourage, honor agency with, or invite to accountability?'}">${esc(bp.uplift || '')}</textarea>
           <input type="hidden" id="bpCclmMove" value="${esc(moveKey)}">
         </div>
 
         <!-- 3. Morning Gratitude & Creative Visualization -->
         <div class="bp-sec bp-sec-gratitude">
           <div class="bp-sec-head">
-            <span class="bp-sec-title">🙏 Morning Gratitude & Stillness</span>
+            <span class="bp-sec-title">🙏 Morning Gratitude</span>
           </div>
-          <textarea class="field bp-textarea" id="bpGratitude" maxlength="600" rows="2" data-min-height="54" placeholder="1–3 blessings or creative sparks you’re grateful for (one per line)…">${esc(grText)}</textarea>
+          <textarea class="field bp-textarea" id="bpGratitude" maxlength="600" rows="2" data-min-height="46" placeholder="1–3 blessings you’re grateful for (one per line)…">${esc(grText)}</textarea>
         </div>
       </div>
 
-      <div class="sea-imp-bar" style="margin-top:16px">
+      <div class="sea-imp-bar" style="margin-top:12px">
         ${kid ? `<button type="button" class="sh-pill${bpShare ? ' on' : ''}" data-bp-share>${bpShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Private journal · Just yours</span>'}
         <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-bp-save>${kid ? 'Save Morning Council (+15 XP)' : 'Save Morning Council'}</button>
       </div>
 
-      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px">
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:10px">
         <button type="button" class="bp-power-link" data-still>🕊️ Open Be Still Timer ›</button>
         ${!kid ? `<button type="button" class="bp-power-link" data-go-season-power>📓 Open Season Notebook (Power Mode) ›</button>` : ''}
       </div>`;
@@ -5858,8 +5855,6 @@ const TreasureUp = (function () {
     if (seed && seed.uplift && $('bpUplift')) $('bpUplift').value = seed.uplift;
     if (seed && seed.cclmMove && $('bpCclmMove')) $('bpCclmMove').value = seed.cclmMove;
     document.querySelectorAll('#appBody .bp-textarea').forEach(fitTextarea);
-    const first = document.querySelector('#appBody #bpOneThing');
-    if (first && !had && !(seed && seed.uplift)) first.focus();
   }
 
   function saveBlueprint() {
@@ -5938,42 +5933,44 @@ const TreasureUp = (function () {
     const tops = !kid ? proTop(k) : [];
     const bpHad = blueprintOf(k), bp = bpHad ? bpHad[1] : null;
     const topDoneCnt = tops.filter(proItemDone).length;
-    return `<div class="sh-title">🌙 Return & Report</div>
-      <p class="sh-small">“At the end of our day, we kneel again and report back to our Father. We review the events of the day and express heartfelt thanks for the blessings and the help we received.” (Elder David A. Bednar, “Pray Always,” October 2008)</p>
+    const hasExtraEv = !!(ev.wins || ev.improve);
+    return `<div class="sh-title">🌙 Return &amp; Report</div>
+      <p class="sh-small">“Kneel again and report back to our Father… express heartfelt thanks for the blessings and help received.” — Elder Bednar</p>
 
       ${!kid && (tops.length || (bp && bp.uplift) || w40) ? `
-        <div class="sheet-group" style="padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)">
-          <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#fde68a;margin-bottom:4px">📊 Today’s Action Plan Scorecard</div>
-          <div style="font-size:12px;color:#e2e8f0;display:flex;gap:12px;flex-wrap:wrap">
-            <span>🎯 Top Priorities: <b>${topDoneCnt}/${tops.length || 0}</b></span>
-            ${bp && bp.uplift ? `<span>🤝 Uplift: <b>${bp.done && bp.done.uplift ? '✓ Done' : '○ Pending'}</b></span>` : ''}
-            ${w40 ? `<span>🌿 Wilderness Day ${w40.d[0]}: <b>${w40.done ? '✓ Lived' : '○ Pending'}</b></span>` : ''}
+        <div class="sheet-group" style="padding:7px 10px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)">
+          <div style="font-size:11.5px;color:#e2e8f0;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <span>📊 Top Priorities: <b style="color:#fde68a">${topDoneCnt}/${tops.length || 0}</b></span>
+            ${bp && bp.uplift ? `<span>🤝 Uplift: <b>${bp.done && bp.done.uplift ? '✓' : '○'}</b></span>` : ''}
+            ${w40 ? `<span>🌿 Wilderness Day ${w40.d[0]}: <b>${w40.done ? '✓' : '○'}</b></span>` : ''}
           </div>
         </div>
       ` : ''}
 
       <div class="sheet-group">
-        <label>✨ Noticing His Mercies (Alma 34:38)${w40 ? ` · 🌿 Wilderness Day ${w40.d[0]}: ${esc(w40.d[2])}` : ''}</label>
+        <label>✨ Noticing His Mercies (Alma 34:38)${w40 ? ` · 🌿 Day ${w40.d[0]}: ${esc(w40.d[2])}` : ''}</label>
         <textarea class="field sheet-in" id="evMercies" rows="2" maxlength="500" placeholder="${w40 ? esc(w40.d[10]) : 'Where did you see Heavenly Father’s hand or tender mercies today?'}">${esc(ev.mercies || '')}</textarea>
         <small>${w40 ? `🌿 <b>His Hand Today (Day ${w40.d[0]}):</b> “${esc(w40.d[10])}”` : '“Live in thanksgiving daily, for the many mercies and blessings…”'}</small>
       </div>
 
-      <div class="sheet-group">
-        <label>🏆 Today’s Wins & Victories</label>
-        <input class="field sheet-in" id="evWins" maxlength="200" value="${esc(ev.wins || '')}" placeholder="1–2 wins: personal, spiritual, or family victory">
-      </div>
-
-      <div class="sheet-group">
-        <label>🌱 What did today teach you for tomorrow?</label>
-        <input class="field sheet-in" id="evImprove" maxlength="200" value="${esc(ev.improve || '')}" placeholder="A lesson learned or something to do better tomorrow">
-      </div>
-
-      <div class="sheet-group" style="padding:10px;border-radius:12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.28)">
-        <label style="color:#6ee7b7">🕊️ The Jeremiah Check · Faithfulness Over Control (Christ-Centered Leader)</label>
+      <div class="sheet-group" style="padding:9px 10px;border-radius:12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.28)">
+        <label style="color:#6ee7b7">🕊️ The Jeremiah Check · Faithfulness Over Control</label>
         <input class="field sheet-in" id="evSurrender" maxlength="200" value="${esc(ev.surrender || '')}" placeholder="Did I express love, honor agency & invite accountability? What outcome will I hand to Christ tonight?">
       </div>
 
-      <div class="sea-imp-bar" style="margin-top:16px">
+      <details class="ev-more-details" data-ev-more ${hasExtraEv ? 'open' : ''} style="margin-top:8px">
+        <summary style="cursor:pointer;font-size:11.5px;font-weight:800;color:#93c5fd;padding:4px 0">+ Add today’s wins &amp; tomorrow’s note</summary>
+        <div class="sheet-group" style="margin-top:6px">
+          <label>🏆 Today’s Wins &amp; Victories</label>
+          <input class="field sheet-in" id="evWins" maxlength="200" value="${esc(ev.wins || '')}" placeholder="1–2 wins: personal, spiritual, or family victory">
+        </div>
+        <div class="sheet-group">
+          <label>🌱 What did today teach you for tomorrow?</label>
+          <input class="field sheet-in" id="evImprove" maxlength="200" value="${esc(ev.improve || '')}" placeholder="A lesson learned or something to do better tomorrow">
+        </div>
+      </details>
+
+      <div class="sea-imp-bar" style="margin-top:14px">
         ${kid ? `<button type="button" class="sh-pill${evShare ? ' on' : ''}" data-ev-share>${evShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : '<span class="sh-small">🔒 Just yours</span>'}
         <button type="button" class="btn" style="background:linear-gradient(135deg,#a78bfa,#818cf8);color:#1e1b4b;font-weight:900" data-ev-save>${kid ? 'Close Day in Prayer · Return & Report (+20 XP)' : 'Close Day in Prayer · Return & Report'}</button>
       </div>`;
@@ -5983,8 +5980,6 @@ const TreasureUp = (function () {
     const had = eveningOf(dayKey());
     evShare = !!(had && had[1].share);
     openSheet(eveningSheetHtml());
-    const first = document.querySelector('#appBody #evMercies');
-    if (first && !had) first.focus();
   }
 
   function saveEvening() {
@@ -22350,6 +22345,7 @@ const TreasureUp = (function () {
       if (e.target.closest('[data-open-blueprint]')) { openBlueprint(); return; }
       if (e.target.closest('[data-open-evening]')) { openEvening(); return; }
       if (e.target.closest('[data-open-deep-log]')) { openDeepLogSheet(); return; }
+      if (e.target.closest('[data-open-deep-tools]')) { openDeepToolsSheet(); return; }
       const wv = e.target.closest('[data-watch-video]');
       if (wv) { toggleWatchedVideo(wv.dataset.watchVideo); return; }
       if (e.target.closest('[data-filter-unwatched]')) { videoFilterUnwatched = !videoFilterUnwatched; refreshHome(); return; }
@@ -22952,6 +22948,33 @@ const TreasureUp = (function () {
       }
       const hubProf = e.target.closest('[data-hub-profile]');
       if (hubProf) { stashBlueprintDraft(); openCoachProfile(); return; }
+      if (e.target.closest('[data-open-deep-tools]')) { openDeepToolsSheet(); return; }
+      const cmode = e.target.closest('[data-compass-mode]');
+      if (cmode) {
+        const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
+        S.seasonWho = nextWho;
+        S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
+        if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
+        save();
+        refreshHome();
+        openDeepToolsSheet();
+        return;
+      }
+      const cwstep = e.target.closest('[data-compass-w40-step]');
+      if (cwstep) { w40Step(+cwstep.dataset.compassW40Step || 0); refreshHome(); openDeepToolsSheet(); return; }
+      const cwday = e.target.closest('[data-compass-w40-day]');
+      if (cwday) { w40SetDay(+cwday.dataset.compassW40Day || 1); refreshHome(); openDeepToolsSheet(); return; }
+      const cytheme = e.target.closest('[data-compass-youth-theme]');
+      if (cytheme) { S.youthTheme = cytheme.dataset.compassYouthTheme || 'nintendo'; saveLocal(); refreshHome(); openDeepToolsSheet(); return; }
+      const cluke = e.target.closest('[data-compass-luke]');
+      if (cluke) {
+        if (cluke.dataset.compassLuke) seasonArea = cluke.dataset.compassLuke;
+        closeSheet();
+        homeTab = 'season';
+        renderHome();
+        $('home').scrollTop = 0;
+        return;
+      }
       const w40s = e.target.closest('[data-w40-step]');
       if (w40s) {
         stashBlueprintDraft();
