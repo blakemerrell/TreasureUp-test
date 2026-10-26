@@ -9491,7 +9491,8 @@ window.TU_WEEKS = [
             }
           ]
         }
-      ]
+      ],
+      "approved": "a1967f12"
     },
     "sayings": [
       {
