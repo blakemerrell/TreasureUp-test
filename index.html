@@ -3727,7 +3727,11 @@ const TreasureUp = (function () {
 
   function familyVideoHeroHtml() {
     const vids = weekVideos(WEEK);
-    const best = vids.find(v => v.channel === 'Latter Day Kids' || /Thumb Follow Me/i.test(v.title)) || vids[0];
+    let best = vids.find(v => v.channel === 'Latter Day Kids' || /Thumb Follow Me/i.test(v.title)) || vids[0];
+    if (!best) {
+      const fb = Object.values(CFM_MEDIA).find(m => m && m.video && m.video.youtube && m.video.channel === 'Latter Day Kids') || Object.values(CFM_MEDIA).find(m => m && m.video && m.video.youtube);
+      if (fb) best = { id: 'cfm-fallback', title: fb.video.title, text: '', video: fb.video, channel: fb.video.channel || 'Latter Day Kids' };
+    }
     if (!best || !best.video || !best.video.youtube) return '';
     const yt = best.video.youtube;
     const thumb = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`;
