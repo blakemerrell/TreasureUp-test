@@ -20,5 +20,4 @@ content/e1830/
 content/jsp-bom.js
 # The Firebase emulators (tests/README.md)
 *-debug.log
-.firebase/
 /assets/

@@ -6,7 +6,15 @@ import { check, device, state, txt, wait } from './lib.mjs';
 
 export default async function growth({ port }) {
   const url = `http://127.0.0.1:${port}/index.html`;
-  const dev = await device('growth', { url, day: '2026-10-12T16:30:00' });
+  const dev = await device('growth', {
+    url,
+    day: '2026-10-12T16:30:00',
+    files: {
+      'content/lib/1-nephi-1.js': '(window.TU_LIB = window.TU_LIB || {})["1 Nephi 1"] = ' + JSON.stringify({
+        v: ['I, Nephi, having been born of goodly parents, therefore I was taught somewhat in all the learning of my father.']
+      }) + ';\n'
+    }
+  });
   const p = dev.page;
   const sheet = () => txt(p, '#appBody');
   await p.click('#setBtn'); await wait(300);
@@ -18,6 +26,7 @@ export default async function growth({ port }) {
   const s1 = await sheet();
   check(/Age 11 · Primary until January 2027, then Youth/.test(s1), 'born April 2015, in October 2026: ' + (/Age[^|]*/.exec(s1) || [''])[0]);
   check(await p.locator('#appSheet .coach-chip.on[data-coach-who="child"]').count() === 1, 'so the profile is for a child (Primary)');
+  check(await p.locator('#appSheet [data-coach-who="adult"]').count() === 0, 'Adult option is hidden when a child/youth birthday is set');
   check(/Turning 12 this year/i.test(s1), 'with the turning-12 note');
   check(await p.inputValue('#coachName') === 'Sam', 'and the name typed before the birthday is kept');
 
@@ -28,16 +37,20 @@ export default async function growth({ port }) {
   await p.fill('#coachCustomInt', 'Fishing'); await p.click('#appSheet [data-coach-add-custom]'); await wait(200);
   check(await p.locator('#appSheet [data-coach-rm-custom="Fishing"]').count() === 1, 'custom interest appears as a removable chip with its area tag');
   await p.click('#appSheet [data-coach-goto="3"]'); await wait(300);
-  check(await p.locator('#appSheet [data-coach-val].on').count() === 3, 'Core Values Triad defaults to 3 pillars (Faith, Adventure, Integrity)');
+  check(await p.locator('#appSheet [data-coach-val].on').count() === 0, 'Core Values Triad starts 100% blank-slate with 0 pillars selected');
   check(await p.locator('#appSheet #coachPeakMoment').count() === 0 && await p.locator('#appSheet [data-coach-strength]').count() === 0, 'Stage 3 is de-duplicated (no repeated Crucible mirrors or CliftonStrengths)');
+  await p.click('#appSheet [data-coach-val="FAITH"]'); await wait(150);
+  await p.click('#appSheet [data-coach-val="ADVENTURE"]'); await wait(150);
+  await p.click('#appSheet [data-coach-val="INTEGRITY"]'); await wait(150);
+  check(await p.locator('#appSheet [data-coach-val].on').count() === 3, 'Core Values Triad allows picking 3 pillars');
   await p.click('#appSheet [data-coach-subval="Honest Stewardship"]'); await wait(200);
   await p.click('#appSheet [data-coach-goto="4"]'); await wait(200);
   await p.click('#appSheet [data-coach-sp="Loyal Friend"]'); await wait(200);
   await p.click('#appSheet [data-coach-finish]'); await wait(600);
-  const prof = (await state(p)).profile || {};
-  check(prof.born === '2015-04' && prof.who === 'child' && JSON.stringify(prof.interests) === '["Basketball","Fishing"]' && prof.superpower === 'Loyal Friend'
+  const st1 = await state(p), prof = st1.profile || {}, coach1 = (st1.pro && st1.pro.coach) || {};
+  check(prof.born === '2015-04' && prof.who === 'child' && JSON.stringify(prof.interests) === '["Basketball","Fishing"]' && coach1.superpower === 'Loyal Friend' && prof.superpower === undefined
     && Array.isArray(prof.coreValues) && prof.coreValues.length === 3 && (prof.subValues || []).includes('Honest Stewardship'),
-    `saved: born ${prof.born}, ${prof.who}, ${JSON.stringify(prof.interests)}, ${prof.superpower}, values ${JSON.stringify(prof.coreValues)}`);
+    `saved: born ${prof.born}, ${prof.who}, ${JSON.stringify(prof.interests)}, private superpower ${coach1.superpower}, values ${JSON.stringify(prof.coreValues)}`);
 
   // The Social Feed tab in Family Study renders cards (including Hebrew/Greek word cards without undefined) and allows liking.
   await p.click('#tabs [data-tab="study"]'); await wait(400);
@@ -79,31 +92,35 @@ export default async function growth({ port }) {
   await p.click('#appSheet [data-coach-cclm-drift="harmony"]'); await wait(200);
   await p.click('#appSheet [data-coach-cclm-dom="god"]'); await wait(200);
   await p.click('#appSheet [data-coach-finish]'); await wait(500);
-  const profCclm = (await state(p)).profile || {};
-  check(profCclm.cclmDrift === 'harmony' && profCclm.cclmDomain === 'god' && (profCclm.coreValues || []).includes('WISDOM'),
-    `Step 4 saves CCLM calibration: drift=${profCclm.cclmDrift}, domain=${profCclm.cclmDomain}, values=${JSON.stringify(profCclm.coreValues)}`);
+  const stCclm = await state(p), profCclm = stCclm.profile || {}, coachCclm = (stCclm.pro && stCclm.pro.coach) || {};
+  check(coachCclm.cclmDrift === 'harmony' && coachCclm.cclmDomain === 'god' && profCclm.cclmDrift === undefined && (profCclm.coreValues || []).includes('WISDOM'),
+    `Step 4 saves CCLM calibration privately in S.pro.coach: drift=${coachCclm.cclmDrift}, domain=${coachCclm.cclmDomain}, values=${JSON.stringify(profCclm.coreValues)}`);
 
-  // Open standalone Christ-Centered Leader Coach from Settings, generate playbook, audit domains, and seed Morning Council.
+  // Open Christ-Centered Leader Coach from Settings (delegates to unified 6-stage coach), generate playbook in Stage 5, audit domains in Stage 6, and seed Morning Council.
   await p.click('#setBtn'); await wait(300);
   await p.click('#appSheet [data-set-go="cclm"]'); await wait(350);
-  await p.click('#appSheet [data-cclm-who="spouse"]'); await wait(200);
-  await p.click('#appSheet [data-cclm-sit="discouraged"]'); await wait(200);
+  check((await p.locator('#appSheet .coach-stage-tab').count()) === 6, 'Settings CCLM Coach opens the unified 6-stage coach');
+  await p.click('#appSheet [data-coach-cclm-drift="fixer"]'); await wait(200);
+  await p.click('#appSheet [data-coach-goto="5"]'); await wait(250);
+  await p.click('#appSheet [data-coach-sit-who="spouse"]'); await wait(200);
+  await p.click('#appSheet [data-coach-sit-what="discouraged"]'); await wait(200);
   const pbTxt = await sheet();
-  check(/Your 5-Step Christ-Centered Playbook/i.test(pbTxt) && /Express Love/i.test(pbTxt) && /Honor Agency/i.test(pbTxt), 'Live Situational Coach generates 5-step Christ-Centered Playbook');
-  await p.click('#appSheet [data-cclm-tab="model"]'); await wait(250);
-  await p.fill('#cclmAuditNote', 'Lead with unhurried presence before problem-solving');
-  await p.click('#appSheet [data-cclm-drift="fixer"]'); await wait(200);
-  check((await p.inputValue('#cclmAuditNote')) === 'Lead with unhurried presence before problem-solving', 'Clicking a drift button in 4-Domain tab preserves unsaved #cclmAuditNote input');
-  await p.click('#appSheet [data-cclm-rate="self:5"]'); await wait(200);
-  await p.click('#appSheet [data-cclm-save-audit]'); await wait(300);
-  const profAudit = (await state(p)).profile || {};
-  check(profAudit.cclmRatings && profAudit.cclmRatings.self === 5 && profAudit.cclmDrift === 'fixer' && /unhurried presence/.test(profAudit.cclmNote || ''), '4-Domain Stewardship self-audit saves ratings, drift, and reflection note');
+  check(/Stage 5: Situational Leadership Playbook/i.test(pbTxt) && /Express Love/i.test(pbTxt) && /Honor Agency/i.test(pbTxt), 'Stage 5 Situational Coach generates 5-step Christ-Centered Playbook');
+  await p.click('#appSheet [data-coach-goto="6"]'); await wait(250);
+  await p.fill('#coachCclmNote', 'Lead with unhurried presence before problem-solving');
+  await p.click('#appSheet [data-coach-cclm-rate="self:5"]'); await wait(200);
+  check((await p.inputValue('#coachCclmNote')) === 'Lead with unhurried presence before problem-solving', 'Clicking a rating button in Stage 6 preserves unsaved #coachCclmNote input');
+  await p.click('#appSheet [data-coach-finish]'); await wait(300);
+  const stAudit = await state(p), profAudit = stAudit.profile || {}, coachAudit = (stAudit.pro && stAudit.pro.coach) || {};
+  check(coachAudit.cclmRatings && coachAudit.cclmRatings.self === 5 && coachAudit.cclmDrift === 'fixer' && /unhurried presence/.test(coachAudit.cclmNote || '') && profAudit.cclmNote === undefined && profAudit.cclmRatings === undefined, 'Stage 6 4-Domain Stewardship self-audit saves ratings, drift, and reflection note privately in S.pro.coach');
 
   // Verify relationship-specific playbook scripts (team vs self) and Morning Council round-trip preservation + seeded move pill.
-  await p.click('#appSheet [data-cclm-tab="situation"]'); await wait(250);
-  await p.click('#appSheet [data-cclm-who="team"]'); await wait(200);
+  await p.click('#setBtn'); await wait(250);
+  await p.click('#appSheet [data-set-go="cclm"]'); await wait(250);
+  await p.click('#appSheet [data-coach-goto="5"]'); await wait(200);
+  await p.click('#appSheet [data-coach-sit-who="team"]'); await wait(200);
   const teamPbTxt = await sheet();
-  await p.click('#appSheet [data-cclm-who="self"]'); await wait(200);
+  await p.click('#appSheet [data-coach-sit-who="self"]'); await wait(200);
   const selfPbTxt = await sheet();
   check(teamPbTxt !== selfPbTxt && /weary today|one faithful step/i.test(selfPbTxt), 'Situational Coach adapts scripts to selected relationship (team vs self)');
   await p.click('#appSheet [data-cclm-seed-bp]'); await wait(350);
@@ -205,15 +222,19 @@ export default async function growth({ port }) {
   await p.click('#appBody [data-bp-more-prios] summary'); await wait(100);
   await p.fill('#bpPrio2', 'Review shop floor metrics');
   await p.fill('#bpPrio3', 'Prepare family council');
-  await p.fill('#bpUplift', 'Send encouragement note to a teammate');
-  await p.click('#appBody [data-bp-save]'); await wait(400);
+  await p.fill('#bpUplift', '');
+  await p.click('#appBody [data-bp-save]'); await wait(350);
+  const stNoUplift = await state(p);
+  const noUpliftBpImp = Object.values(stNoUplift.impressions || {}).find(x => x && !x.gone && x.kind === 'blueprint' && x.day === '2026-10-20');
+  check(!noUpliftBpImp, 'Adult Morning Council with priorities only (no uplift) does not create an empty blueprint impression');
   await p.click('#home [data-open-blueprint] >> nth=0'); await wait(250);
   check(await p.evaluate(() => Boolean(document.querySelector('#appBody [data-bp-more-prios]') && document.querySelector('#appBody [data-bp-more-prios]').open)), 'Reopening Morning Council auto-opens Priorities #2 & #3 expander when populated');
-  await p.click('#appClose'); await wait(200);
+  await p.fill('#bpUplift', 'Send encouragement note to a teammate');
+  await p.click('#appBody [data-bp-save]'); await wait(400);
   const stAdultBp = await state(p);
   const adultTops = ((((stAdultBp.pro || {}).tops) || {})['2026-10-20'] || {}).items || [];
-  const adultBpImp = Object.values(stAdultBp.impressions || {}).find(x => x && x.kind === 'blueprint' && x.day === '2026-10-20') || {};
-  check(adultTops.length === 3 && adultTops[0].text === 'Ship quarterly architecture' && adultBpImp.oneThing === '' && adultBpImp.share === false, 'Adult Morning Council stores Top 3 privately in S.pro.tops and keeps S.impressions oneThing empty');
+  const adultBpImp = Object.values(stAdultBp.impressions || {}).find(x => x && !x.gone && x.kind === 'blueprint' && x.day === '2026-10-20') || {};
+  check(adultTops.length === 3 && adultTops[0].text === 'Ship quarterly architecture' && adultBpImp.oneThing === '' && adultBpImp.uplift === 'Send encouragement note to a teammate' && adultBpImp.share === false, 'Adult Morning Council stores Top 3 privately in S.pro.tops and keeps S.impressions oneThing empty when uplift is saved');
   check(await p.locator('#home .tsec[data-sec="goals"] [data-bp-check="top:0"]').count() === 1 && await p.locator('#home .tsec[data-sec="goals"] [data-bp-check="w40"]').count() === 1, 'Adult Today Action Plan renders interactive Top 3 and Wilderness 40 checkboxes');
   await p.click('#home .tsec[data-sec="goals"] [data-bp-check="top:0"]'); await wait(300);
   check(((((((await state(p)).pro || {}).tops || {})['2026-10-20'] || {}).items || [])[0] || {}).done === true, 'Ticking Priority #1 on Today updates S.pro.tops[day].items[0].done');
@@ -273,35 +294,6 @@ export default async function growth({ port }) {
     await p.click('#appClose'); await wait(250);
   }
 
-  // Verify standalone 6-stage Self-Discovery & Christ-Centered Leader Coach page (coaching_discovery_exercise_mockup.html & coaching.html & flow.html).
-  const cp = await dev.ctx.newPage();
-  const cpErrs = [];
-  cp.on('pageerror', e => cpErrs.push(e.message));
-  await cp.goto(`http://127.0.0.1:${port}/coaching.html`, { waitUntil: 'domcontentloaded' });
-  await wait(250);
-  const badHrefs = await cp.$$eval('a[href]', as => as.map(a => a.getAttribute('href')).filter(h => h.includes('.//') || h.includes('localhost:8090')));
-  check(badHrefs.length === 0, 'Standalone coaching.html has zero broken .// or localhost:8090 links');
-  check(await cp.locator('.ce-step-tab').count() === 6, 'Standalone Coaching Discovery Exercise renders all 6 stages');
-  check((await cp.inputValue('#mirrorPeak')) === '' && (await cp.inputValue('#mirrorPinch')) === '', 'Standalone Coaching Crucible mirrors start 100% blank-slate');
-  await cp.click('[data-stage="2"]'); await wait(150);
-  await cp.click('#stage2Grid .vcard >> nth=3'); await wait(150); // crown HESED / LOVE
-  await cp.click('[data-stage="4"]'); await wait(150);
-  await cp.click('.drift-card >> nth=1'); await wait(150);
-  await cp.click('[data-stage="5"]'); await wait(150);
-  await cp.click('#sitWhoRow .sel-chip >> nth=2'); await wait(150); // Team
-  const cpTeamPlaybook = await cp.textContent('#playbookOutput');
-  await cp.click('#sitWhoRow .sel-chip >> nth=4'); await wait(150); // Myself
-  const cpSelfPlaybook = await cp.textContent('#playbookOutput');
-  check(/Generated Christ-Centered Playbook/i.test(cpSelfPlaybook) && cpTeamPlaybook !== cpSelfPlaybook, 'Standalone Situational Coach generates 5-step playbook and adapts to Who selection');
-  await cp.click('[data-stage="6"]'); await wait(150);
-  await cp.click('#syncBtn'); await wait(200);
-  const syncedProf = ((await state(cp)).profile) || {};
-  check(syncedProf.cclmDrift === 'harmony' && Array.isArray(syncedProf.coreValues) && syncedProf.coreValues.includes('HESED / LOVE') && (syncedProf.subValues || []).includes('Loyal Covenant Love') && Array.isArray(syncedProf.funnelValues) && syncedProf.upd > 0 && syncedProf.who && !cpErrs.length, 'Standalone Coach syncs canonical HESED / LOVE ID, subValues, funnelValues, upd timestamp, and who directly to localStorage with 0 errors');
-  await cp.goto(`http://127.0.0.1:${port}/flow.html`, { waitUntil: 'domcontentloaded' });
-  await wait(200);
-  check((await cp.locator('.compass-banner').count()) === 1 && !cpErrs.length, 'Standalone flow.html renders Unified Daily Walk preview with 0 errors');
-  await cp.close();
-
   // Verify in-app Today 1-line Compass Bar, 412x780 Pixel 9 Pro above-the-fold layout, Deep Coaching & Tools sheet, & 6-Stage Coaching Workshop
   await p.setViewportSize({ width: 412, height: 780 });
   await p.click('#tabs [data-tab="today"]'); await wait(200);
@@ -313,23 +305,20 @@ export default async function growth({ port }) {
   check(compassBox && compassBox.height <= 60 && nextActBox && nextActBox.y < 760, `On 412x780 Pixel 9 Pro viewport, Compass Bar is compact (${Math.round(compassBox ? compassBox.height : 0)}px) and first daily action is above the fold (y=${Math.round(nextActBox ? nextActBox.y : 999)})`);
 
   await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(200);
+  check((await p.locator('#appSheet [data-compass-mode]').count()) === 0 && (await p.locator('#appSheet a[href*="flow.html"], #appSheet a[href*="coaching.html"]').count()) === 0, 'Deep Coaching & Tools drawer has no Adult/Youth mode toggle or standalone mockup links');
   check((await p.locator('#appSheet [data-compass-w40-day]').count()) === 7 && (await p.locator('#appSheet [data-compass-luke]').count()) === 4, 'Deep Coaching & Tools drawer renders all 7 Wilderness 40 Movement start day pills and 4 Luke 2:52 cards');
   await p.click('#appSheet [data-compass-w40-day="27"]'); await wait(150);
   const sheetD27Txt = await p.textContent('#appSheet');
   const compassD27Txt = await p.textContent('#home [data-today-compass]');
   check(/Day 27 of 40/i.test(sheetD27Txt) && /D&C 121:46/i.test(sheetD27Txt) && /Day 27/i.test(compassD27Txt), 'Deep Coaching & Tools quick day jumper switches Wilderness 40 to Day 27');
-  await p.click('#appSheet [data-compass-mode="youth"]'); await wait(150);
-  await p.click('#appSheet [data-compass-youth-theme="rpg"]'); await wait(150);
-  check((await p.locator('#home .today-compass.youth-mode.youth-rpg').count()) === 1, 'Deep Coaching & Tools mode switch sets Youth Flow and applies 16-Bit RPG theme on Today Compass Bar');
-  await p.click('#appSheet [data-compass-mode="adult"]'); await wait(150);
 
-  // Verify Live Situation Playbook button in Deep Coaching & Tools opens situation tab even after model tab was viewed
+  // Verify Live Situation Playbook button in Deep Coaching & Tools opens Stage 5 even after Stage 6 was viewed
   await p.click('#appSheet [data-open-cclm-coach="situation"]'); await wait(150);
-  await p.click('#appSheet [data-cclm-tab="model"]'); await wait(150);
+  await p.click('#appSheet [data-coach-goto="6"]'); await wait(150);
   await p.click('#appClose'); await wait(150);
   await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(150);
   await p.click('#appSheet [data-open-cclm-coach="situation"]'); await wait(150);
-  check((await p.locator('#appSheet #cclmPlaybookOut').count()) === 1, 'Tapping Live Situation Playbook in Deep Coaching & Tools explicitly opens situation tab even after model tab was active');
+  check((await p.locator('#appSheet #cclmPlaybookOut').count()) === 1, 'Tapping Live Situation Playbook in Deep Coaching & Tools explicitly opens Stage 5 Playbook even after Stage 6 was active');
   await p.click('#appClose'); await wait(150);
   await p.click('#home [data-today-compass] [data-open-deep-tools]'); await wait(150);
 
@@ -359,8 +348,8 @@ export default async function growth({ port }) {
   await p.click('#appSheet [data-cclm-seed-bp]'); await wait(250);
   const bpOneThingBox = await p.locator('#bpOneThing').boundingBox();
   check(bpOneThingBox && bpOneThingBox.y > 0 && bpOneThingBox.y < 700, `On 412x780 viewport, Morning Council #1 Priority (#bpOneThing) is visible above the fold (y=${Math.round(bpOneThingBox ? bpOneThingBox.y : 999)})`);
-  const profAfterSeedFromCoach = ((await state(p)).profile) || {};
-  check(profAfterSeedFromCoach.cclmRatings && profAfterSeedFromCoach.cclmRatings.stewardships === 5 && (profAfterSeedFromCoach.coreValues || []).includes('COURAGE'), 'Seeding Morning Council directly from Stage 5 persists in-progress coachDraft edits to S.profile');
+  const stAfterSeed = await state(p), profAfterSeedFromCoach = stAfterSeed.profile || {}, coachAfterSeed = (stAfterSeed.pro && stAfterSeed.pro.coach) || {};
+  check(coachAfterSeed.cclmRatings && coachAfterSeed.cclmRatings.stewardships === 5 && profAfterSeedFromCoach.cclmRatings === undefined && (profAfterSeedFromCoach.coreValues || []).includes('COURAGE'), 'Seeding Morning Council directly from Stage 5 persists in-progress coachDraft edits to S.pro.coach and S.profile');
   await p.click('#appClose'); await wait(200);
 
   check(!p.errors.length, 'no page errors' + (p.errors.length ? ': ' + p.errors.join(' | ') : ''));

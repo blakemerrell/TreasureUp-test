@@ -1872,7 +1872,7 @@
   .tc-mode-pills { display: inline-flex; background: rgba(0,0,0,.32); padding: 3px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); gap: 3px; }
   .tc-mode-btn { border: 0; background: none; color: rgba(255,255,255,.72); font: inherit; font-size: 11.5px; font-weight: 800; padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: all .15s ease; }
   .tc-mode-btn.on { background: linear-gradient(135deg, #f59e0b, #d97706); color: #1c1406; box-shadow: 0 2px 6px rgba(245,158,11,.35); }
-  .today-compass.youth-mode .tc-mode-btn.on, .tc-mode-btn[data-compass-mode="youth"].on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
+  .today-compass.youth-mode .tc-mode-btn.on { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; box-shadow: 0 2px 6px rgba(2,132,199,.35); }
   .tc-act-pills { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
   .tc-act-pill { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 999px; font: inherit; font-size: 11px; font-weight: 800; background: rgba(255,255,255,.08); color: #fde68a; border: 1px solid rgba(251,191,36,.3); cursor: pointer; text-decoration: none; flex-shrink: 0; }
   .tc-act-pill:hover { background: rgba(251,191,36,.16); }
@@ -3727,11 +3727,7 @@ const TreasureUp = (function () {
 
   function familyVideoHeroHtml() {
     const vids = weekVideos(WEEK);
-    let best = vids.find(v => v.channel === 'Latter Day Kids' || /Thumb Follow Me/i.test(v.title)) || vids[0];
-    if (!best) {
-      const fb = Object.values(CFM_MEDIA).find(m => m && m.video && m.video.youtube && m.video.channel === 'Latter Day Kids') || Object.values(CFM_MEDIA).find(m => m && m.video && m.video.youtube);
-      if (fb) best = { id: 'cfm-fallback', title: fb.video.title, text: '', video: fb.video, channel: fb.video.channel || 'Latter Day Kids' };
-    }
+    const best = vids.find(v => v.channel === 'Latter Day Kids' || /Thumb Follow Me/i.test(v.title)) || vids[0];
     if (!best || !best.video || !best.video.youtube) return '';
     const yt = best.video.youtube;
     const thumb = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`;
@@ -4483,8 +4479,13 @@ const TreasureUp = (function () {
     if (field === 'w40') {
       const { st, d } = w40Current();
       const nextState = !st.practiceDone[d[0]];
-      st.practiceDone[d[0]] = nextState;
-      if (nextState) st.completedDays[d[0]] = k;
+      if (nextState) {
+        st.practiceDone[d[0]] = true;
+        st.completedDays[d[0]] = k;
+      } else {
+        delete st.practiceDone[d[0]];
+        delete st.completedDays[d[0]];
+      }
       st.upd = Date.now();
       save();
       if (el && el.closest('#appSheet')) {
@@ -4853,7 +4854,7 @@ const TreasureUp = (function () {
     const seedText = (morningSeeds[who] && morningSeeds[who][sit]) || morningSeeds.child.resist;
 
     return {
-      center: `Anchor in your Core Values Triad (${triad.join(' · ')}). ${isSelf ? 'Before rushing into your checklist' : 'Before speaking to ' + whoTarget}, take one slow breath and remember your stress drift (${drift.icon} ${drift.title}). ${blindSpot}`,
+      center: `Anchor in your Core Values Triad (${triad.length ? triad.join(' · ') : 'Christlike Love & Integrity'}). ${isSelf ? 'Before rushing into your checklist' : 'Before speaking to ' + whoTarget}, take one slow breath and remember your stress drift (${drift.icon} ${drift.title}). ${blindSpot}`,
       love: loveScripts[sit] || loveScripts.resist,
       agency: agencyScripts[sit] || agencyScripts.resist,
       accountability: accountScripts[sit] || accountScripts.resist,
@@ -4862,6 +4863,11 @@ const TreasureUp = (function () {
       seedText
     };
   }
+
+  const COACH_PRIVATE_KEYS = [
+    'peakMoment', 'pinchMirror', 'cclmNote', 'cclmRatings', 'cclmDrift', 'cclmDrifts',
+    'cclmDomain', 'cclmPlaybook', 'cclmFocusWho', 'cclmSituation', 'superpower', 'milestone', 'funnelValues'
+  ];
 
   // A birthday month ("2015-04") gives the age and the Children and Youth stage:
   // Primary until January of the year a child turns 12, then youth through the
@@ -4884,16 +4890,17 @@ const TreasureUp = (function () {
   // The year before his twelfth: getting ready for the priesthood or the temple, and for the youth program.
   const turning12 = p => !!(p && p.born && stageFrom(p.born) === 'child' && Number(dayKey().slice(0, 4)) === Number(p.born.slice(0, 4)) + 11);
   function profileOf() {
+    const coach = (S.pro && S.pro.coach) || {};
     if (S.profile) {
       // His stage today, from the birthday (or a stage picked in the Season this year): a copy, so
       // reading it never looks like an edit to the family's merge.
       const who = S.profile.who === 'adult' || !S.profile.born ? S.profile.who : S.stagePin && S.stagePin.y === dayKey().slice(0, 4) ? S.stagePin.who : stageFrom(S.profile.born);
-      return who === S.profile.who ? S.profile : Object.assign({}, S.profile, { who });
+      return Object.assign({}, S.profile, coach, { who });
     }
     const who = seasonWho();
     const isKid = who !== 'adult';
     const name = (F && F.name) || S.ownerName || '';
-    return {
+    return Object.assign({
       name,
       role: isKid ? 'kid' : 'parent',
       age: null,   // asked in the profile, never written into the (public) code
@@ -4901,8 +4908,8 @@ const TreasureUp = (function () {
       milestone: '',
       interests: [],   // he picks them (2026-10-11): all twelve picked for him made every suggestion show
       customAreas: {},
-      coreValues: ['FAITH', 'ADVENTURE', 'INTEGRITY'],
-      subValues: ['Trust in God', 'Growth Mindset', 'Wholeheartedness'],
+      coreValues: [],
+      subValues: [],
       strengths: [],
       superpower: '',
       peakMoment: '',
@@ -4912,25 +4919,39 @@ const TreasureUp = (function () {
       cclmNote: '',
       cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 },
       who
-    };
+    }, coach);
   }
 
   function valuesTriadOf(p = profileOf()) {
-    const vals = (p && Array.isArray(p.coreValues) && p.coreValues.length)
-      ? p.coreValues.map(v => String(v).toUpperCase())
-      : ['FAITH', 'ADVENTURE', 'INTEGRITY'];
-    return vals.slice(0, 3);
+    return (p && Array.isArray(p.coreValues) && p.coreValues.length)
+      ? p.coreValues.map(v => String(v).toUpperCase()).slice(0, 3)
+      : [];
   }
 
   function saveProfile(data) {
-    const was = profileOf();
-    const p = Object.assign(was, data, { upd: Date.now() });
+    const was = profileOf(), now = Date.now();
+    const p = Object.assign({}, was, data, { upd: now });
+    const mustBeKid = (F && F.role === 'kid') || !!(p.born && stageFrom(p.born) !== 'adult');
+    if (mustBeKid && p.who === 'adult') {
+      p.who = p.born ? stageFrom(p.born) : (was.who && was.who !== 'adult' ? was.who : 'youth');
+    }
+    if (p.born && p.who !== 'adult') {
+      p.who = stageFrom(p.born);
+    }
+    if (p.who) { S.seasonWho = p.who; S.stagePin = null; }
+    const coachObj = Object.assign({}, (proData().coach) || {});
+    for (const k of COACH_PRIVATE_KEYS) {
+      if (p[k] !== undefined) coachObj[k] = p[k];
+      delete p[k];
+    }
+    coachObj.upd = now;
+    proData().coach = coachObj;
     S.profile = p;
-    if (data.who) { S.seasonWho = data.who; S.stagePin = null; }
     if (!S.profileXp) {
       S.profileXp = true;
       const rec = {}; payXp(rec, PROFILE_XP, 'Growth Profile Setup');
     }
+    journalSaveLocal();
     save();
     refreshHome();
     toast('🌱 Growth Profile Saved', `${p.name ? p.name + '’s' : 'Your'} coach is calibrated!`);
@@ -4939,7 +4960,7 @@ const TreasureUp = (function () {
   function profileSummaryHtml() {
     const p = profileOf();
     const triad = valuesTriadOf(p).join(' · ');
-    return p.who === 'adult' ? `${esc(p.name || 'My profile')} · ${esc(triad)}` : `${esc(p.name || 'My profile')}${profileAge(p) ? ' · Age ' + profileAge(p) : ''} (${(p.interests || []).length} interests)`;
+    return p.who === 'adult' ? `${esc(p.name || 'My profile')}${triad ? ' · ' + esc(triad) : ''}` : `${esc(p.name || 'My profile')}${profileAge(p) ? ' · Age ' + profileAge(p) : ''} (${(p.interests || []).length} interests)`;
   }
 
   function cclmSummaryHtml() {
@@ -5103,13 +5124,13 @@ const TreasureUp = (function () {
           <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">🎯 <b>Today’s Practice:</b> ${esc(w40.d[9])}</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;font-size:11.5px;color:#e2e8f0;padding:2px 2px 10px">
-          <span>🏛️ <b>Triad:</b> <b style="color:#fde68a">${esc(triad.join(' · '))}</b>${strs.length ? ` · 🧬 <b>Strengths:</b> ${esc(strs.join(', '))}` : ''}</span>
+          <span>🏛️ <b>Triad:</b> <b style="color:#fde68a">${triad.length ? esc(triad.join(' · ')) : 'Pick in Coach'}</b>${strs.length ? ` · 🧬 <b>Strengths:</b> ${esc(strs.join(', '))}` : ''}</span>
           <span style="color:#6ee7b7;font-weight:800">${esc(drift.antidoteLabel)} · Focus: ${esc(domObj.short)}</span>
         </div>
       ` : `
         <div style="padding:10px 12px;border-radius:12px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);margin-bottom:10px">
           <div style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#7dd3fc">🌟 Children &amp; Youth · Luke 2:52 Quest Compass</div>
-          <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''} · 🏛️ ${esc(triad.join(' · '))}</div>
+          <div style="font-size:13px;font-weight:800;color:#fff;margin-top:2px">${esc(prof.name || 'Disciple Hero')}${prof.superpower ? ` · ⚡ ${esc(prof.superpower)}` : ''}${triad.length ? ` · 🏛️ ${esc(triad.join(' · '))}` : ''}</div>
         </div>
       `}
 
@@ -5130,25 +5151,16 @@ const TreasureUp = (function () {
         </div>
       </div>
 
-      <div style="padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:12px">
-        <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-bottom:6px">⚙️ Experience Mode &amp; Theme</div>
-        <div class="tc-mode-pills" role="group" aria-label="Daily Walk Mode" style="margin-bottom:${!isAdult ? '8px' : '0'}">
-          <button type="button" class="tc-mode-btn${isAdult ? ' on' : ''}" data-compass-mode="adult" aria-pressed="${isAdult}">👔 Adult Flow (Zero-XP)</button>
-          <button type="button" class="tc-mode-btn${!isAdult ? ' on' : ''}" data-compass-mode="youth" aria-pressed="${!isAdult}">🎮 Youth Flow (Luke 2:52)</button>
-        </div>
-        ${!isAdult ? `
+      ${!isAdult ? `
+        <div style="padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:12px">
+          <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-bottom:6px">⚙️ Theme Style</div>
           <div style="display:flex;gap:4px;flex-wrap:wrap" role="group" aria-label="Youth Theme Style">
             <button type="button" class="bp-edit-btn" data-compass-youth-theme="nintendo" aria-pressed="${yTheme === 'nintendo'}" style="font-size:10.5px;${yTheme === 'nintendo' ? 'background:#0284c7;color:#fff;border-color:#38bdf8' : ''}">🎮 Nintendo</button>
             <button type="button" class="bp-edit-btn" data-compass-youth-theme="rpg" aria-pressed="${yTheme === 'rpg'}" style="font-size:10.5px;${yTheme === 'rpg' ? 'background:#7c3aed;color:#fff;border-color:#a78bfa' : ''}">👾 16-Bit RPG</button>
             <button type="button" class="bp-edit-btn" data-compass-youth-theme="booklet" aria-pressed="${yTheme === 'booklet'}" style="font-size:10.5px;${yTheme === 'booklet' ? 'background:#059669;color:#fff;border-color:#34d399' : ''}">📘 Guidebook</button>
           </div>
-        ` : ''}
-      </div>
-
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-        <a class="tc-act-pill" href="./flow.html" style="color:#93c5fd;border-color:rgba(147,197,253,.3)">🗺️ Full Flow</a>
-        <a class="tc-act-pill" href="./coaching.html" style="color:#c4b5fd;border-color:rgba(196,181,253,.3)">🧪 Workshop</a>
-      </div>`;
+        </div>
+      ` : ''}`;
   }
 
   function openDeepToolsSheet() {
@@ -5164,14 +5176,14 @@ const TreasureUp = (function () {
     if ($('coachCclmNote')) coachDraft.cclmNote = $('coachCclmNote').value.trim();
   }
 
-  function openCoachProfile(startStep = 1) {
-    coachStep = startStep || 1;
+  function openCoachWalkthrough(startStep = 1) {
+    coachStep = Number(startStep) || 1;
     coachDraft = JSON.parse(JSON.stringify(profileOf()));
     coachDraft.coreValues = valuesTriadOf(coachDraft);
-    if (!Array.isArray(coachDraft.funnelValues) || !coachDraft.funnelValues.length) {
-      coachDraft.funnelValues = [...new Set([...coachDraft.coreValues, 'HESED / LOVE', 'WISDOM', 'CRAFT & BUILDING'])];
+    if (!Array.isArray(coachDraft.funnelValues)) {
+      coachDraft.funnelValues = [...coachDraft.coreValues];
     }
-    if (!Array.isArray(coachDraft.subValues)) coachDraft.subValues = ['Trust in God', 'Growth Mindset', 'Wholeheartedness'];
+    if (!Array.isArray(coachDraft.subValues)) coachDraft.subValues = [];
     if (!Array.isArray(coachDraft.strengths)) coachDraft.strengths = [];
     if (!coachDraft.customAreas || typeof coachDraft.customAreas !== 'object') coachDraft.customAreas = {};
     if (!coachDraft.cclmDrift) coachDraft.cclmDrift = 'fixer';
@@ -5179,156 +5191,16 @@ const TreasureUp = (function () {
     if (!coachDraft.cclmRatings || typeof coachDraft.cclmRatings !== 'object') coachDraft.cclmRatings = { god: 4, self: 3, children: 4, stewardships: 3 };
     openSheet(coachWalkthroughSheetHtml());
   }
+  const openCoachProfile = openCoachWalkthrough;
 
-  function openCclmCoach(initialTab) {
-    const p = profileOf();
-    if (initialTab) cclmCoachState.tab = initialTab;
-    cclmCoachState.drift = p.cclmDrift || 'fixer';
-    openSheet(cclmCoachSheetHtml());
+  function saveCoachWalkthrough() {
+    syncCoachInputs();
+    saveProfile(coachDraft);
+    closeSheet();
   }
 
-  function cclmCoachSheetHtml() {
-    const p = profileOf(), triad = valuesTriadOf(p), strs = p.strengths || [];
-    const tab = cclmCoachState.tab || 'situation';
-    const who = cclmCoachState.who || 'child';
-    const sit = cclmCoachState.sit || 'resist';
-    const driftKey = cclmCoachState.drift || p.cclmDrift || 'fixer';
-    const drift = CCLM_DRIFTS[driftKey] || CCLM_DRIFTS.fixer;
-    const curDomain = p.cclmDomain || 'children';
-    const ratings = p.cclmRatings || { god: 4, self: 3, children: 4, stewardships: 3 };
-    const pb = generateCclmPlaybook({ who, sit, drift: driftKey });
-
-    const whoOpts = [
-      { id: 'child', label: '👦 Child / Youth' },
-      { id: 'spouse', label: '💑 Spouse' },
-      { id: 'team', label: '🚀 Team / Work' },
-      { id: 'calling', label: '⛪ Calling / Friend' },
-      { id: 'self', label: '🪞 Myself' }
-    ];
-    const sitOpts = [
-      { id: 'resist', label: '🧱 Pushing Back / Resisting' },
-      { id: 'missed', label: '📉 Missed a Commitment' },
-      { id: 'discouraged', label: '🌧️ Discouraged / Weary' },
-      { id: 'conflict', label: '⚡ In Tension / Conflict' },
-      { id: 'burnout', label: '🏋️ Carrying Outcome Alone' }
-    ];
-
-    return `<div class="sh-title">🏛️ Christ-Centered Leader Coach</div>
-      <p class="sh-small">BYU Sorensen Center Model (Dr. Jeff Thompson · <i>followHIM</i>): Lead with <b>Express Love</b>, <b>Honor Agency</b>, and <b>Invite Accountability</b> across all 4 stewardship domains.</p>
-
-      <div class="coach-chip-group" style="margin:10px 0 14px">
-        <button type="button" class="coach-chip${tab === 'situation' ? ' on' : ''}" data-cclm-tab="situation">💬 Live Situation Coach</button>
-        <button type="button" class="coach-chip${tab === 'model' ? ' on' : ''}" data-cclm-tab="model">🏛️ 4 Domains & Tension Audit</button>
-      </div>
-
-      ${tab === 'situation' ? `
-        <div class="sheet-group">
-          <label>1. Who are you leading or walking with right now?</label>
-          <div class="coach-chip-group">
-            ${whoOpts.map(o => `<button type="button" class="bp-quick-pill${who === o.id ? ' on' : ''}" style="${who === o.id ? 'background:rgba(251,191,36,.22);border-color:var(--gold);color:#fde68a' : ''}" data-cclm-who="${o.id}">${o.label}</button>`).join('')}
-          </div>
-        </div>
-
-        <div class="sheet-group">
-          <label>2. What is happening in this moment?</label>
-          <div class="coach-chip-group">
-            ${sitOpts.map(o => `<button type="button" class="bp-quick-pill${sit === o.id ? ' on' : ''}" style="${sit === o.id ? 'background:rgba(56,189,248,.22);border-color:#38bdf8;color:#bae6fd' : ''}" data-cclm-sit="${o.id}">${o.label}</button>`).join('')}
-          </div>
-        </div>
-
-        <div class="sheet-group">
-          <label>3. Which stress ditch are you tempted to drift into?</label>
-          <div class="coach-chip-group">
-            ${Object.values(CCLM_DRIFTS).map(d => `<button type="button" class="bp-quick-pill${driftKey === d.id ? ' on' : ''}" style="${driftKey === d.id ? 'background:rgba(167,139,250,.22);border-color:#a78bfa;color:#ddd6fe' : ''}" data-cclm-drift="${d.id}">${d.icon} ${esc(d.title)}</button>`).join('')}
-          </div>
-        </div>
-
-        <div id="cclmPlaybookOut" style="padding:13px;border-radius:16px;background:linear-gradient(145deg,rgba(18,21,38,.96),rgba(15,23,42,.92));border:1.5px solid rgba(251,191,36,.4);margin-top:10px;display:flex;flex-direction:column;gap:9px">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
-            <span style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--gold)">✨ Your 5-Step Christ-Centered Playbook</span>
-            <span style="font-size:11px;font-weight:800;color:#6ee7b7">${esc(drift.antidoteLabel)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(251,191,36,.1);border-left:3px solid var(--gold);font-size:12px;color:#fde68a">
-            <b>✝️ 0. Center in Christ & Your Triad (${esc(triad.join(' · '))}):</b><br>
-            <span style="color:#f8fafc">${esc(pb.center)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(244,63,94,.1);border-left:3px solid #f43f5e;font-size:12px">
-            <b style="color:#fda4af">❤️ 1. Express Love (Connection First):</b><br>
-            <span style="color:#f8fafc">${esc(pb.love)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(56,189,248,.1);border-left:3px solid #38bdf8;font-size:12px">
-            <b style="color:#7dd3fc">🕊️ 2. Honor Agency (Curiosity Over Control):</b><br>
-            <span style="color:#f8fafc">${esc(pb.agency)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(16,185,129,.1);border-left:3px solid #10b981;font-size:12px">
-            <b style="color:#6ee7b7">🎯 3. Invite Accountability (Shared Standard):</b><br>
-            <span style="color:#f8fafc">${esc(pb.accountability)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(167,139,250,.1);border-left:3px solid #a78bfa;font-size:12px">
-            <b style="color:#ddd6fe">🌙 4. The Jeremiah Release (Faithfulness Over Control):</b><br>
-            <span style="color:#f8fafc">${esc(pb.release)}</span>
-          </div>
-
-          <div style="padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.05);font-size:12px;color:#fde68a">
-            <b>🌅 Ready for Today’s Morning Council:</b> “${esc(pb.seedText)}”
-          </div>
-        </div>
-
-        <div class="board-actions" style="margin-top:14px">
-          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-cclm-seed-bp="${esc(pb.seedText)}" data-cclm-seed-move="${esc(pb.recommendedMove)}">🌅 Send Move to Today’s Morning Council</button>
-          <button type="button" class="btn ghost" data-hub-profile="me">🧭 Full Growth Profile ›</button>
-        </div>
-      ` : `
-        <div style="padding:12px;border-radius:14px;background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.3);margin-bottom:12px">
-          <div style="font-size:11px;font-weight:900;text-transform:uppercase;color:#a5b4fc;margin-bottom:6px">Concentric Rings · Center: ✝️ Jesus Christ</div>
-          <div style="font-size:12px;color:#e2e8f0;margin-bottom:8px">Inner Ring: <b>❤️ Express Love · 🕊️ Honor Agency · 🎯 Invite Accountability</b><br>Outer Ring: <b>4 Domains of Relationship & Stewardship</b> (Tap your #1 focus domain below):</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            ${CCLM_DOMAINS.map(dom => {
-              const on = curDomain === dom.id;
-              const r = ratings[dom.id] || 4;
-              return `<div style="padding:8px;border-radius:10px;background:${on ? 'rgba(251,191,36,.15)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'}">
-                <button type="button" style="background:none;border:none;color:#fff;font-weight:800;font-size:12px;text-align:left;cursor:pointer;width:100%;padding:0" data-cclm-pick-dom="${dom.id}">${dom.icon} ${esc(dom.short)} ${on ? '★' : ''}</button>
-                <div style="font-size:10.5px;color:#cbd5e1;margin:3px 0 6px">${esc(dom.desc)}</div>
-                <div style="display:flex;gap:3px;align-items:center">
-                  <small style="font-size:10px;color:#94a3b8;margin-right:3px">Align:</small>
-                  ${[1, 2, 3, 4, 5].map(n => `<button type="button" class="bp-quick-pill" style="padding:2px 6px;font-size:10px;${r === n ? 'background:var(--gold);color:#1c1406;border-color:var(--gold)' : ''}" data-cclm-rate="${dom.id}:${n}">${n}</button>`).join('')}
-                </div>
-              </div>`;
-            }).join('')}
-          </div>
-        </div>
-
-        <div class="sheet-group">
-          <label>⚖️ Your Default Stress Drift & Antidote</label>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            ${Object.values(CCLM_DRIFTS).map(d => {
-              const on = driftKey === d.id;
-              return `<button type="button" style="text-align:left;padding:9px 11px;border-radius:11px;background:${on ? 'rgba(251,191,36,.14)' : 'rgba(255,255,255,.04)'};border:1px solid ${on ? 'var(--gold)' : 'rgba(255,255,255,.12)'};color:#fff;cursor:pointer" data-cclm-drift="${d.id}">
-                <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:800">
-                  <span>${d.icon} ${esc(d.title)} <small style="color:#94a3b8;font-weight:600">(${esc(d.formula)})</small></span>
-                  <span style="color:#fde68a;font-size:11px">${esc(d.antidoteLabel)}</span>
-                </div>
-                <div style="font-size:11.5px;color:#cbd5e1;margin-top:3px">${esc(d.desc)}</div>
-              </button>`;
-            }).join('')}
-          </div>
-        </div>
-
-        <div class="sheet-group">
-          <label>🕊️ Blank-Slate Stewardship Reflection (Private to your device)</label>
-          <textarea class="field sheet-in" id="cclmAuditNote" rows="2" maxlength="300" placeholder="Which relationship or stewardship are you handing to the Savior while practicing ${esc(drift.antidoteLabel)}?">${esc(p.cclmNote || '')}</textarea>
-        </div>
-
-        <div class="board-actions" style="margin-top:14px">
-          <button type="button" class="btn" style="background:var(--gold);color:#1c1406;font-weight:900" data-cclm-save-audit>💾 Save Leadership Calibration</button>
-          <button type="button" class="btn ghost" data-cclm-tab="situation">💬 Back to Situation Coach</button>
-        </div>
-      `}`;
+  function openCclmCoach(tab) {
+    openCoachWalkthrough(tab === 'audit' || tab === 'model' ? '6' : tab === 'situation' ? '5' : '4');
   }
 
   function coachStageNavHtml(step) {
@@ -5351,6 +5223,7 @@ const TreasureUp = (function () {
   function coachWalkthroughSheetHtml() {
     const d = coachDraft || (coachDraft = JSON.parse(JSON.stringify(profileOf())));
     const isKid = d.who !== 'adult';
+    const lockYouthOrChild = (F && F.role === 'kid') || Boolean(d.born && stageFrom(d.born) !== 'adult');
     const allKidInts = [
       { id: 'Basketball', icon: '🏀' }, { id: 'Soccer', icon: '⚽' }, { id: 'Pickleball', icon: '🏓' },
       { id: 'Trumpet', icon: '🎺' }, { id: 'Building things / LEGO', icon: '🧱' }, { id: 'Video Games / VR', icon: '🎮' },
@@ -5387,7 +5260,7 @@ const TreasureUp = (function () {
           <div class="coach-chip-group">
             <button type="button" class="coach-chip${d.who === 'child' ? ' on' : ''}" data-coach-who="child" aria-pressed="${d.who === 'child'}">👦 Child (Primary)</button>
             <button type="button" class="coach-chip${d.who === 'youth' ? ' on' : ''}" data-coach-who="youth" aria-pressed="${d.who === 'youth'}">⚡ Youth (Young Men / Women)</button>
-            <button type="button" class="coach-chip${d.who === 'adult' ? ' on' : ''}" data-coach-who="adult" aria-pressed="${d.who === 'adult'}">👔 Adult (Best Self PRO)</button>
+            ${!lockYouthOrChild ? `<button type="button" class="coach-chip${d.who === 'adult' ? ' on' : ''}" data-coach-who="adult" aria-pressed="${d.who === 'adult'}">👔 Adult (Best Self PRO)</button>` : ''}
           </div>
         </div>
 
@@ -5541,7 +5414,7 @@ const TreasureUp = (function () {
 
         <div class="sheet-group">
           <label for="coachMilestone">🎯 Current Season Milestone / North Star</label>
-          <input class="field sheet-in" id="coachMilestone" maxlength="80" value="${esc(d.milestone || '')}" placeholder="${isKid ? 'e.g. Preparing for Deacons Quorum at 12' : 'e.g. Live Faith, Adventure & Integrity with my family'}">
+          <input class="field sheet-in" id="coachMilestone" maxlength="80" value="${esc(d.milestone || '')}" placeholder="${isKid ? 'e.g. Preparing for Deacons Quorum at 12' : 'e.g. Live my Core Values with my family'}">
         </div>
 
         <div class="sheet-group">
@@ -5579,7 +5452,7 @@ const TreasureUp = (function () {
       ];
       return `<div class="sh-title">💬 Stage 5: Situational Leadership Playbook</div>
         ${coachStageNavHtml(5)}
-        <p class="sh-small">Generate a tailored 5-step Christ-Centered response combining your Core Values Triad (<b>${esc(triad.join(' · '))}</b>) and Stress-Drift Antidote (<b>${esc(drift.antidoteLabel)}</b>).</p>
+        <p class="sh-small">Generate a tailored 5-step Christ-Centered response combining your Core Values Triad (<b>${triad.length ? esc(triad.join(' · ')) : 'Calibrate in Stage 3'}</b>) and Stress-Drift Antidote (<b>${esc(drift.antidoteLabel)}</b>).</p>
 
         <div class="sheet-group">
           <label>1. Who are you leading or walking with right now?</label>
@@ -5595,7 +5468,14 @@ const TreasureUp = (function () {
           </div>
         </div>
 
-        <div style="padding:12px;border-radius:14px;background:rgba(15,23,42,.92);border:1.5px solid rgba(251,191,36,.38);margin-top:10px;display:flex;flex-direction:column;gap:8px">
+        <div class="sheet-group">
+          <label>3. Which stress ditch are you tempted to drift into?</label>
+          <div class="coach-chip-group">
+            ${Object.values(CCLM_DRIFTS).map(dr => `<button type="button" class="bp-quick-pill${driftKey === dr.id ? ' on' : ''}" style="${driftKey === dr.id ? 'background:rgba(167,139,250,.22);border-color:#a78bfa;color:#ddd6fe' : ''}" data-coach-cclm-drift="${dr.id}" aria-pressed="${driftKey === dr.id}">${dr.icon} ${esc(dr.title)}</button>`).join('')}
+          </div>
+        </div>
+
+        <div id="cclmPlaybookOut" style="padding:12px;border-radius:14px;background:rgba(15,23,42,.92);border:1.5px solid rgba(251,191,36,.38);margin-top:10px;display:flex;flex-direction:column;gap:8px">
           <div style="font-size:11.5px;color:#fde68a"><b>✝️ 0. Center in Christ & Triad:</b> ${esc(pb.center)}</div>
           <div style="font-size:11.5px;color:#fda4af"><b>❤️ 1. Express Love:</b> <span style="color:#f8fafc">${esc(pb.love)}</span></div>
           <div style="font-size:11.5px;color:#7dd3fc"><b>🕊️ 2. Honor Agency:</b> <span style="color:#f8fafc">${esc(pb.agency)}</span></div>
@@ -5639,7 +5519,7 @@ const TreasureUp = (function () {
 
         <div style="padding:12px;border-radius:14px;background:linear-gradient(145deg,rgba(251,191,36,.12),rgba(15,23,42,.95));border:1.5px solid rgba(251,191,36,.45);margin-bottom:12px">
           <div style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px">🏛️ ${esc(d.name || 'My')} Personal Identity & Leadership Charter</div>
-          <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Core Values Triad:</b> <span style="color:#fde68a">${esc(triad.join(' · '))}</span>${subs.length ? ` <small style="color:#cbd5e1">(${esc(subs.join(' · '))})</small>` : ''}</div>
+          <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Core Values Triad:</b> <span style="color:#fde68a">${triad.length ? esc(triad.join(' · ')) : 'Not yet selected'}</span>${subs.length ? ` <small style="color:#cbd5e1">(${esc(subs.join(' · '))})</small>` : ''}</div>
           ${strs.length ? `<div style="font-size:12px;color:#fff;margin-bottom:4px"><b>CliftonStrengths:</b> <span style="color:#bae6fd">${esc(strs.join(' · '))}</span></div>` : ''}
           <div style="font-size:12px;color:#fff;margin-bottom:4px"><b>Stress Drift & Antidote:</b> ${drift.icon} ${esc(drift.title)} → <span style="color:#6ee7b7">${esc(drift.antidoteLabel)}</span></div>
           <div style="font-size:12px;color:#fff;margin-bottom:8px"><b>Primary Stewardship Focus:</b> ${domObj.icon} ${esc(domObj.label)}</div>
@@ -5664,10 +5544,10 @@ const TreasureUp = (function () {
 
     // Step 3: 16 -> 5 -> 3 Core Values Winnowing Funnel + supporting sub-values ONLY
     const cVals = new Set(valuesTriadOf(d));
-    const funnelSet = new Set(Array.isArray(d.funnelValues) && d.funnelValues.length ? d.funnelValues : [...cVals, 'HESED / LOVE', 'WISDOM']);
+    const funnelSet = new Set(Array.isArray(d.funnelValues) && d.funnelValues.length ? d.funnelValues : [...cVals]);
     cVals.forEach(v => funnelSet.add(v));
     crucibleMatches.forEach(v => funnelSet.add(v));
-    const sVals = new Set(d.subValues || ['Trust in God', 'Growth Mindset', 'Wholeheartedness']);
+    const sVals = new Set(d.subValues || []);
 
     return `<div class="sh-title">🧭 Your Superpower & Focus · Core Values</div>
       ${coachStageNavHtml(3)}
@@ -5688,7 +5568,7 @@ const TreasureUp = (function () {
       ` : ''}
 
       <div class="sheet-group">
-        <label>🏛️ ${!isKid ? 'Step B: Crown Your Top 3 ' : ''}Core Values Triad (Pick up to 3 · Default: FAITH · ADVENTURE · INTEGRITY)</label>
+        <label>🏛️ ${!isKid ? 'Step B: Crown Your Top 3 ' : ''}Core Values Triad (Pick up to 3)</label>
         <div class="coach-chip-group">
           ${CORE_VALUES_DECK.map(v => `<button type="button" class="coach-chip${cVals.has(v.id) ? ' on' : ''}" data-coach-val="${esc(v.id)}" aria-pressed="${cVals.has(v.id)}">${v.icon} ${esc(v.label)}</button>`).join('')}
         </div>
@@ -5737,8 +5617,8 @@ const TreasureUp = (function () {
     const gratefulHad = gratefulOf(k), grItems = gratefulHad ? (gratefulHad[1].items || []) : (bp.gratitude || []);
     const grText = grItems.slice(0, 3).join('\n');
     const prof = profileOf(), triad = valuesTriadOf(prof);
-    const dayIdx = Math.abs(Math.round(Date.parse(k + 'T12:00:00Z') / 864e5)) % Math.max(1, triad.length);
-    const activeValObj = CORE_VALUES_DECK.find(x => x.id === triad[dayIdx]) || CORE_VALUES_DECK[0];
+    const dayIdx = triad.length ? Math.abs(Math.round(Date.parse(k + 'T12:00:00Z') / 864e5)) % triad.length : 0;
+    const activeValObj = triad.length ? CORE_VALUES_DECK.find(x => x.id === triad[dayIdx]) : null;
     const moveKey = overrideMove || bp.cclmMove || bpCclmMove || (CCLM_DRIFTS[prof.cclmDrift || 'fixer'] || CCLM_DRIFTS.fixer).antidote || 'love';
     const moveObj = CCLM_PRINCIPLES[moveKey] || CCLM_PRINCIPLES.love;
     const w40 = !kid ? w40Current() : null;
@@ -5750,9 +5630,9 @@ const TreasureUp = (function () {
 
       <div class="values-triad-banner" style="padding:8px 10px;margin-bottom:8px">
         <div class="vt-row" style="margin-bottom:2px">
-          <span style="font-size:11.5px;font-weight:800;color:#fde68a">🏛️ ${esc(triad.join(' · '))}</span>
+          <span style="font-size:11.5px;font-weight:800;color:#fde68a">🏛️ ${triad.length ? esc(triad.join(' · ')) : 'Calibrate Your Core Values Triad'}</span>
           <div style="display:flex;gap:5px">
-            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:10.5px;padding:2px 7px">🏛️ Leader Coach</button>` : ''}
+            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach="situation" style="font-size:10.5px;padding:2px 7px">🏛️ Leader Coach</button>` : ''}
             <button type="button" class="bp-edit-btn" data-hub-profile="me" style="font-size:10.5px;padding:2px 7px">Calibrate ✎</button>
           </div>
         </div>
@@ -5808,7 +5688,7 @@ const TreasureUp = (function () {
         <div class="bp-sec bp-sec-uplift">
           <div class="bp-sec-head" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
             <span class="bp-sec-title">${kid && !showCclm ? '🤝 1 Person to Be Kind To Today' : '🤝 Someone to Uplift'}</span>
-            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach style="font-size:10.5px">💬 Situation Coach ›</button>` : ''}
+            ${showCclm ? `<button type="button" class="bp-edit-btn" data-open-cclm-coach="situation" style="font-size:10.5px">💬 Situation Coach ›</button>` : ''}
           </div>
           ${showCclm ? `
             <div class="bp-quick-pills" style="margin-bottom:5px">
@@ -5896,16 +5776,26 @@ const TreasureUp = (function () {
       });
       if (nextTop.length || prevTop.length) setTop(k, nextTop);
     }
-    storeBlueprint({
-      oneThing: isAdult ? '' : oneThing,
-      goalSid,
-      goalStepId,
-      uplift,
-      cclmMove,
-      gratitude: grList,
-      youthArea: bpYouthArea,
-      share: isAdult ? false : bpShare
-    });
+    if (!isAdult || Boolean(uplift)) {
+      storeBlueprint({
+        oneThing: isAdult ? '' : oneThing,
+        goalSid,
+        goalStepId,
+        uplift,
+        cclmMove,
+        gratitude: grList,
+        youthArea: bpYouthArea,
+        share: isAdult ? false : bpShare
+      });
+    } else {
+      if (grList.length) storeGrateful(grList, false);
+      const had = blueprintOf(k);
+      if (had && S.impressions && S.impressions[had[0]]) {
+        S.impressions[had[0]].gone = true;
+        S.impressions[had[0]].upd = Date.now();
+      }
+      save();
+    }
     closeSheet();
     refreshHome();
     toast('🌅 Morning Council Set', oneThing ? '“' + oneThing.slice(0, 35) + '…”' : 'Walk with Him today');
@@ -6537,7 +6427,7 @@ const TreasureUp = (function () {
   }
   // An impression's words, wherever they're listed: a day's gratitude as its lines.
   const impWords = x => x.kind === 'grateful' ? '🙏 ' + (x.items || []).join(' · ')
-    : x.kind === 'blueprint' ? '🌅 Blueprint: ' + x.oneThing + (x.uplift ? ' · Uplift: ' + x.uplift : '')
+    : x.kind === 'blueprint' ? '🌅 Blueprint: ' + [x.oneThing, x.uplift ? 'Uplift: ' + x.uplift : ''].filter(Boolean).join(' · ')
     : x.kind === 'evening' ? '🌙 Evening: ' + [x.mercies, x.wins ? 'Wins: ' + x.wins : '', x.surrender ? 'Surrender: ' + x.surrender : ''].filter(Boolean).join(' · ')
     : x.text;
 
@@ -12331,7 +12221,7 @@ const TreasureUp = (function () {
   const isProTab = t => PRO_TABS.some(([k]) => k === t);
   const ROLE_IDEAS = ['Disciple of Christ', 'Husband', 'Wife', 'Father', 'Mother', 'Son', 'Daughter', 'Brother', 'Sister', 'Friend', 'Student', 'Business owner', 'Employee', 'Myself'];
   const PRO_KEEP = 120;   // days of tops and rocks kept (a month's review keeps its own count)
-  const proData = () => S.pro || (S.pro = { mission: { text: '', upd: 0 }, roles: {}, goals: {}, rocks: {}, tops: {}, months: {} });
+  const proData = () => S.pro || (S.pro = { mission: { text: '', upd: 0 }, coach: {}, roles: {}, goals: {}, rocks: {}, tops: {}, months: {} });
   // A kind's records still there, oldest first, each with its id.
   const proList = kind => Object.entries(proData()[kind] || {}).filter(([, x]) => x && !x.gone).map(([id, x]) => Object.assign({ id }, x)).sort((a, b) => (a.at || 0) - (b.at || 0));
   const proRoles = () => proList('roles');
@@ -12358,6 +12248,15 @@ const TreasureUp = (function () {
     const r = R || {}, l = L || {}, out = {};
     for (const k of ['roles', 'goals', 'rocks', 'tops', 'months']) out[k] = newerById(r[k], l[k]);
     out.mission = ((l.mission || {}).upd || 0) > ((r.mission || {}).upd || 0) ? l.mission : r.mission || l.mission || { text: '', upd: 0 };
+    if ((l.coach && Object.keys(l.coach).length) || (r.coach && Object.keys(r.coach).length)) {
+      const lc = l.coach || {}, rc = r.coach || {};
+      const lNewer = (lc.upd || 0) >= (rc.upd || 0);
+      out.coach = Object.assign({}, lNewer ? rc : lc, lNewer ? lc : rc);
+      if (lc.cclmRatings || rc.cclmRatings) {
+        out.coach.cclmRatings = Object.assign({}, lNewer ? rc.cclmRatings : lc.cclmRatings, lNewer ? lc.cclmRatings : rc.cclmRatings);
+      }
+      if (lc.upd || rc.upd) out.coach.upd = Math.max(lc.upd || 0, rc.upd || 0);
+    }
     return out;
   }
 
@@ -12376,11 +12275,23 @@ const TreasureUp = (function () {
   const J_KEY = uid => NS + 'journal.' + uid, J_SYNCED = uid => NS + 'journal.synced.' + uid, J_PULLED = uid => NS + 'journal.pulled.' + uid;
   const J_COLLS = ['plan', 'weeks', 'days', 'months'], J_ERASED = 'plan/erased';
   let jTimer = null, jChain = Promise.resolve(), jPulledAt = 0;
-  // S as the family keeps it: without a grown-up's journal.
-  const famCopy = st => (journalUid() && st && st.pro ? Object.assign({}, st, { pro: undefined }) : st);
+  // S as the family keeps it: without a grown-up's journal, and without private coaching fields in profile.
+  const famCopy = st => {
+    if (!st) return st;
+    let out = st;
+    if (journalUid() && out.pro) out = Object.assign({}, out, { pro: undefined });
+    if (out.profile && COACH_PRIVATE_KEYS.some(k => out.profile[k] !== undefined)) {
+      const cleanProf = Object.assign({}, out.profile);
+      for (const k of COACH_PRIVATE_KEYS) delete cleanProf[k];
+      out = Object.assign({}, out, { profile: cleanProf });
+    }
+    return out;
+  };
   // S.pro in its documents: path -> the part of S.pro it holds.
   function jSplit(pro) {
-    const out = { 'plan/main': { mission: pro.mission || { text: '', upd: 0 }, roles: pro.roles || {}, goals: pro.goals || {} } };
+    const planDoc = { mission: pro.mission || { text: '', upd: 0 }, roles: pro.roles || {}, goals: pro.goals || {} };
+    if (pro.coach && pro.coach.upd) planDoc.coach = pro.coach;
+    const out = { 'plan/main': planDoc };
     for (const [d, t] of Object.entries(pro.tops || {})) out['days/' + d] = { tops: { [d]: t } };
     for (const [id, r] of Object.entries(pro.rocks || {})) { const p = 'weeks/' + ((r && r.wk) || 'none'); (out[p] = out[p] || { rocks: {} }).rocks[id] = r; }
     for (const [m, x] of Object.entries(pro.months || {})) out['months/' + m] = { months: { [m]: x } };
@@ -12388,12 +12299,13 @@ const TreasureUp = (function () {
   }
   const jSynced = uid => { try { return JSON.parse(stored(J_SYNCED(uid)) || '{}'); } catch (e) { return {}; } };
   // Nothing written yet (the Mission page makes an empty one just to show): not kept, not sent.
-  const jBlank = pro => !pro || (!(pro.mission && pro.mission.text) && ['roles', 'goals', 'rocks', 'tops', 'months'].every(k => !Object.keys(pro[k] || {}).length));
+  const jBlank = pro => !pro || (!(pro.mission && pro.mission.text) && !(pro.coach && pro.coach.upd) && ['roles', 'goals', 'rocks', 'tops', 'months'].every(k => !Object.keys(pro[k] || {}).length));
   // After an Erase (on any of their devices) only what was written later is kept.
   function jAfter(pro, at) {
     if (!pro) return pro;
     const keep = o => Object.fromEntries(Object.entries(o || {}).filter(([, r]) => r && (r.upd || r.at || 0) > at));
     const out = { mission: ((pro.mission || {}).upd || 0) > at ? pro.mission : { text: '', upd: 0 } };
+    if (((pro.coach || {}).upd || 0) > at) out.coach = pro.coach;
     for (const k of ['roles', 'goals', 'rocks', 'tops', 'months']) out[k] = keep(pro[k]);
     return jBlank(out) ? undefined : out;
   }
@@ -14067,7 +13979,7 @@ const TreasureUp = (function () {
       rows.push(`<button class="game-row" data-treasure="${esc(x.id)}"><span class="gi">💎</span><span><span class="gt block">Word of the day</span><span class="gd block">${twWordHtml(x, 'tw-inline')} · ${esc(x.say)} · “${esc(x.kjv)}”</span><span class="gs block">${seen ? '✓ Seen today' : 'A Hebrew or Greek word from this week'}</span></span></button>`);
     }
     if (WEEK.puzzle) {
-      rows.push(gameRow('puzzle', '🧩', 'Weekly puzzle', "Sort 16 ideas into this week's 4 lesson sections.", puzzleStatus(), reelsLeft() > 0));
+      rows.push(gameRow('puzzle', '🧩', 'Weekly puzzle', `Sort ${WEEK.puzzle.groups.length * 4} ideas into this week's ${WEEK.puzzle.groups.length} lesson sections.`, puzzleStatus(), reelsLeft() > 0));
     }
     if (WEEK.sayings && WEEK.sayings.length) {
       const got = WEEK.sayings.filter(x => S.sayings[x.id] && S.sayings[x.id].right).length;
@@ -14230,7 +14142,7 @@ const TreasureUp = (function () {
   const GAME_START = {
     puzzle: { alt: 'A grandfather, a boy and his little sister sort clay tablets and scroll pieces into four baskets tied with yellow, green, blue and purple ribbons.',
       hook: 'Isaiah taught the Lord’s word “line upon line, line upon line; here a little, and there a little” (Isaiah 28:10). Sort this week’s ideas into the lesson’s sections.',
-      how: ['<b>16 ideas</b> from this week, and <b>4 sections</b> of the lesson. Put each idea where it belongs.', '<b>Easy</b>: one idea at a time, with its verse and a few “place one for me” helps. <b>Hard</b>: find a whole group of four at once, with 4 mistakes a day.', 'Solve it for XP and a <b>❄️ streak freeze</b>.'] },
+      get how() { const n = ((WEEK && WEEK.puzzle && WEEK.puzzle.groups) || []).length || 4; return [`<b>${n * 4} ideas</b> from this week, and <b>${n} sections</b> of the lesson. Put each idea where it belongs.`, '<b>Easy</b>: one idea at a time, with its verse and a few “place one for me” helps. <b>Hard</b>: find a whole group of four at once, with 4 mistakes a day.', 'Solve it for XP and a <b>❄️ streak freeze</b>.']; } },
     sayings: { alt: 'Isaiah speaks on the steps of a gate of Jerusalem to a king, a shepherd, a mother and child, a merchant and a boy who listens closely.',
       hook: '“Hear, O heavens, and give ear, O earth: for the LORD hath spoken” (Isaiah 1:2). Who said each line in this week’s reading: the Lord, a prophet, or a king?',
       how: ['Read a <b>line</b> from this week, and pick <b>who said it</b>.', 'Each right answer is <b>XP</b>, the first time.', 'One line comes back in each day’s warm-up.'] },
@@ -14273,6 +14185,7 @@ const TreasureUp = (function () {
   }
 
   /* ----- weekly puzzle: four groups of four, one per lesson section ----- */
+  // A week with only three sections has three groups of four (2026-10-17: "3 groups of 4").
 
   // Two ways to play (2026-10-04: "The daily puzzle is to hard. I
   // can't figure it out"). Easy, the first: tap an idea, then the section it
@@ -14284,6 +14197,7 @@ const TreasureUp = (function () {
   const PZ_GIVES = 3;
   let pzSel = [], pzOrder = null, pzMsg = '', pzVerses = false;
   const pzMode = () => S.pzMode === 'hard' ? 'hard' : 'easy';
+  const pzHowMany = () => ['', 'one', 'two', 'three', 'four'][WEEK.puzzle.groups.length] || String(WEEK.puzzle.groups.length);
   const pzGroupOf = t => WEEK.puzzle.groups.findIndex(g => g.tiles.some(x => x.text === t));
   const pzTile = t => WEEK.puzzle.groups.flatMap(g => g.tiles).find(x => x.text === t);
   // Where an idea has been put (Easy), or its group, once found (Hard); null if not yet.
@@ -14380,7 +14294,7 @@ const TreasureUp = (function () {
         <div class="pz-wrap">
           ${modes}
           <p class="clue-q">Out of tries for today</p>
-          <p class="board-help">Hard comes back tomorrow with 4 more tries, or try it the easy way now. The four sections to sort into:</p>
+          <p class="board-help">Hard comes back tomorrow with 4 more tries, or try it the easy way now. The ${pzHowMany()} sections to sort into:</p>
           <ul class="pz-targets">${groups.map((g, gi) => `<li class="${solved.includes(gi) ? 'done' : ''}">${solved.includes(gi) ? '✓ ' : ''}${esc(WEEK.sections[g.section])}</li>`).join('')}</ul>
           <div style="margin-top:14px">${solved.map(gi => solvedBox(gi, false)).join('')}</div>
           <div class="board-actions"><button class="btn" data-pz="easy">Try it the easy way</button><button class="btn ghost" data-pz="exit">Back</button></div>
@@ -14394,7 +14308,7 @@ const TreasureUp = (function () {
     body.innerHTML = `
       <div class="pz-wrap">
         ${modes}
-        <p class="board-help">Find four groups of four. Each group is one of this week's lesson sections:</p>
+        <p class="board-help">Find ${pzHowMany()} groups of four. Each group is one of this week's lesson sections:</p>
         <ul class="pz-targets">${groups.map((g, gi) => `<li class="${solved.includes(gi) ? 'done' : ''}">${solved.includes(gi) ? '✓ ' : ''}${esc(WEEK.sections[g.section])}</li>`).join('')}</ul>
         <div style="margin-top:12px">${solved.map(gi => solvedBox(gi, false)).join('')}</div>
         <div class="pz-grid">${pzOrder.map(t =>
@@ -19467,7 +19381,30 @@ const TreasureUp = (function () {
     M.weekBonus = [L.weekBonus, R.weekBonus].find(b => b && b.week === WEEK.title) || R.weekBonus || L.weekBonus || null;
     M.seasons = mergeSeasons(R.seasons, L.seasons);
     const pro = mergePro(R.pro, L.pro);
-    if (pro) M.pro = pro;
+    if (pro) {
+      const lc = (L.pro && L.pro.coach) || null, rc = (R.pro && R.pro.coach) || null, bc = (B.pro && B.pro.coach) || {};
+      if (lc && rc && pro.coach) {
+        const lNewer = (lc.upd || 0) !== (rc.upd || 0) ? (lc.upd || 0) > (rc.upd || 0)
+          : (JSON.stringify(lc) !== JSON.stringify(bc)) ? true : !rc.upd;
+        const newer = lNewer ? lc : rc, older = lNewer ? rc : lc;
+        const mc = Object.assign({}, bc, older, newer);
+        for (const k of Object.keys(older)) {
+          if (k === 'upd') continue;
+          if (JSON.stringify(older[k]) !== JSON.stringify(bc[k]) && JSON.stringify(newer[k]) === JSON.stringify(bc[k])) {
+            mc[k] = older[k];
+          } else if (k === 'cclmRatings' && older[k] && newer[k] && typeof older[k] === 'object' && typeof newer[k] === 'object') {
+            const subB = bc.cclmRatings || {}, subM = Object.assign({}, subB, older[k], newer[k]);
+            for (const sk of Object.keys(older[k])) {
+              if (older[k][sk] !== subB[sk] && newer[k][sk] === subB[sk]) subM[sk] = older[k][sk];
+            }
+            mc[k] = subM;
+          }
+        }
+        if (lc.upd || rc.upd) mc.upd = Math.max(lc.upd || 0, rc.upd || 0);
+        pro.coach = mc;
+      }
+      M.pro = pro;
+    }
     // Be still: each device's minutes since they last met, added (the larger alone lost the other's).
     M.still = Object.assign({}, R.still || {});
     for (const d in L.still || {}) {
@@ -19515,17 +19452,30 @@ const TreasureUp = (function () {
         if (has(B[key], k) && L[key][k] === B[key][k] && has(R[key], k)) M[key][k] = R[key][k];
       }
     }
+    const mergeMap3 = (rMap, lMap, bMap) => {
+      const r = rMap || {}, l = lMap || {}, b = bMap || {}, out = {};
+      for (const k of new Set([...Object.keys(r), ...Object.keys(l), ...Object.keys(b)])) {
+        const inR = has(r, k) && Boolean(r[k]), inL = has(l, k) && Boolean(l[k]), inB = has(b, k) && Boolean(b[k]);
+        if (inB) {
+          if (inR && inL) out[k] = Math.max(Number(r[k]) || 1, Number(l[k]) || 1);
+        } else if (inR || inL) {
+          out[k] = Math.max(Number(r[k]) || 0, Number(l[k]) || 0) || 1;
+        }
+      }
+      return out;
+    };
     if (L.w40 || R.w40) {
-      const lw = L.w40 || {}, rw = R.w40 || {};
+      const lw = L.w40 || {}, rw = R.w40 || {}, bw = B.w40 || {};
       M.w40 = Object.assign({}, rw, lw, {
-        day: ((lw.upd || 0) >= (rw.upd || 0) ? lw.day : rw.day) || lw.day || rw.day || 1,
-        completedDays: Object.assign({}, rw.completedDays || {}, lw.completedDays || {}),
-        practiceDone: Object.assign({}, rw.practiceDone || {}, lw.practiceDone || {}),
+        day: (JSON.stringify(lw.day) !== JSON.stringify(bw.day) && lw.day !== undefined) ? lw.day
+          : (JSON.stringify(rw.day) !== JSON.stringify(bw.day) && rw.day !== undefined) ? rw.day
+          : (((lw.upd || 0) >= (rw.upd || 0) ? lw.day : rw.day) || lw.day || rw.day || 1),
+        completedDays: mergeMap3(rw.completedDays, lw.completedDays, bw.completedDays),
+        practiceDone: mergeMap3(rw.practiceDone, lw.practiceDone, bw.practiceDone),
         upd: Math.max(lw.upd || 0, rw.upd || 0)
       });
     }
-    M.feedLikes = Object.assign({}, R.feedLikes || {});
-    for (const k in L.feedLikes || {}) M.feedLikes[k] = Math.max(M.feedLikes[k] || 0, L.feedLikes[k] || 0);
+    M.feedLikes = mergeMap3(R.feedLikes, L.feedLikes, B.feedLikes);
     // The reading clock: a chapter finished on either device keeps its record.
     M.readLog = Object.assign({}, L.readLog || {}, R.readLog || {});
     M.partRead = {};
@@ -21154,7 +21104,7 @@ const TreasureUp = (function () {
       const left = reelsLeft();
       html += `<div class="ls-prompt">The weekly puzzle</div>
         <p class="reel-body">${left ? `It opens once the week's reels are answered: ${left === 1 ? '1 is' : left + ' are'} left.`
-          : `Sixteen ideas from this week. Put each one in its lesson section${isAdult ? ', to earn a streak freeze' : `, for ${PUZZLE_XP} XP and a streak freeze`}.`}</p>`;
+          : `${WEEK.puzzle.groups.length === 3 ? 'Twelve' : 'Sixteen'} ideas from this week. Put each one in its lesson section${isAdult ? ', to earn a streak freeze' : `, for ${PUZZLE_XP} XP and a streak freeze`}.`}</p>`;
     }
     body.innerHTML = html;
     body.scrollTop = 0;
@@ -22510,17 +22460,6 @@ const TreasureUp = (function () {
       if (hprof && !hprof.hasAttribute('data-open-cclm-coach')) { openCoachProfile(Number(hprof.dataset.compassCoach) || 1); return; }
       const occHome = e.target.closest('[data-open-cclm-coach]');
       if (occHome) { openCclmCoach(occHome.dataset.openCclmCoach || undefined); return; }
-      const cmode = e.target.closest('[data-compass-mode]');
-      if (cmode) {
-        const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
-        bpDraft = null;
-        S.seasonWho = nextWho;
-        S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
-        if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
-        save();
-        refreshHome();
-        return;
-      }
       const cwstep = e.target.closest('[data-compass-w40-step]');
       if (cwstep) { w40Step(+cwstep.dataset.compassW40Step || 0); refreshHome(); return; }
       const cwday = e.target.closest('[data-compass-w40-day]');
@@ -22677,7 +22616,7 @@ const TreasureUp = (function () {
         syncCoachInputs();
         coachDraft.peakMoment = 'Leading a deep family council at the kitchen table where we listened with patience and solved a hard problem together in peace.';
         coachDraft.pinchMirror = 'When someone rushes a commitment, cuts corners on integrity, or speaks harshly under pressure instead of honoring the relationship.';
-        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft)]);
         detectCrucibleValues(coachDraft.peakMoment, coachDraft.pinchMirror).forEach(id => {
           if (!arr.includes(id)) arr.push(id);
         });
@@ -22694,7 +22633,10 @@ const TreasureUp = (function () {
       const cw = e.target.closest('[data-coach-who]');
       if (cw) {
         syncCoachInputs();
-        coachDraft.who = cw.dataset.coachWho;
+        const lockYouthOrChild = (F && F.role === 'kid') || Boolean(coachDraft && coachDraft.born && stageFrom(coachDraft.born) !== 'adult');
+        const nextWho = cw.dataset.coachWho;
+        if (lockYouthOrChild && nextWho === 'adult') return;
+        coachDraft.who = nextWho;
         // Switching to or from adult clears the other list's picks; nothing is picked for anyone (2026-10-11).
         const list = (coachDraft.who === 'adult' ? DEFAULT_ADULT_INTERESTS : DEFAULT_KID_INTERESTS);
         coachDraft.interests = (coachDraft.interests || []).filter(x => list.includes(x) || ![...DEFAULT_KID_INTERESTS, ...DEFAULT_ADULT_INTERESTS].includes(x));
@@ -22732,7 +22674,7 @@ const TreasureUp = (function () {
       if (cfun) {
         syncCoachInputs();
         const id = cfun.dataset.coachFunnel;
-        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft)]);
         const idx = arr.indexOf(id);
         if (idx >= 0) { if (!valuesTriadOf(coachDraft).includes(id)) arr.splice(idx, 1); }
         else arr.push(id);
@@ -22745,7 +22687,7 @@ const TreasureUp = (function () {
         const id = cval.dataset.coachVal;
         const arr = coachDraft.coreValues = [...valuesTriadOf(coachDraft)];
         const idx = arr.indexOf(id);
-        if (idx >= 0) { if (arr.length > 1) arr.splice(idx, 1); }
+        if (idx >= 0) arr.splice(idx, 1);
         else if (arr.length < 3) arr.push(id);
         else { arr.shift(); arr.push(id); }
         const allowedSub = new Set();
@@ -22820,12 +22762,6 @@ const TreasureUp = (function () {
         openSheet(coachWalkthroughSheetHtml());
         return;
       }
-      const syncCclmSheetProfile = () => {
-        if (!S.profile) S.profile = profileOf();
-        if ($('cclmAuditNote')) S.profile.cclmNote = $('cclmAuditNote').value.trim();
-        S.profile.upd = Date.now();
-        return S.profile;
-      };
       const occ = e.target.closest('[data-open-cclm-coach]');
       if (occ) {
         syncCoachInputs();
@@ -22834,63 +22770,6 @@ const TreasureUp = (function () {
           saveProfile(coachDraft);
         }
         openCclmCoach(occ.dataset.openCclmCoach || undefined);
-        return;
-      }
-      const ctab = e.target.closest('[data-cclm-tab]');
-      if (ctab) {
-        syncCclmSheetProfile();
-        cclmCoachState.tab = ctab.dataset.cclmTab;
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      const cwho = e.target.closest('[data-cclm-who]');
-      if (cwho) {
-        cclmCoachState.who = cwho.dataset.cclmWho;
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      const csit = e.target.closest('[data-cclm-sit]');
-      if (csit) {
-        cclmCoachState.sit = csit.dataset.cclmSit;
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      const cdrf = e.target.closest('[data-cclm-drift]');
-      if (cdrf) {
-        const p = syncCclmSheetProfile();
-        const dId = cdrf.dataset.cclmDrift;
-        cclmCoachState.drift = dId;
-        if (cclmCoachState.tab === 'model') {
-          p.cclmDrift = dId;
-          save();
-        }
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      const cpdom = e.target.closest('[data-cclm-pick-dom]');
-      if (cpdom) {
-        const p = syncCclmSheetProfile();
-        p.cclmDomain = cpdom.dataset.cclmPickDom;
-        save();
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      const crate = e.target.closest('[data-cclm-rate]');
-      if (crate) {
-        const p = syncCclmSheetProfile();
-        const [domId, score] = crate.dataset.cclmRate.split(':');
-        if (!p.cclmRatings || typeof p.cclmRatings !== 'object') p.cclmRatings = { god: 4, self: 3, children: 4, stewardships: 4 };
-        p.cclmRatings[domId] = Number(score) || 3;
-        save();
-        openSheet(cclmCoachSheetHtml());
-        return;
-      }
-      if (e.target.closest('[data-cclm-save-audit]')) {
-        const p = syncCclmSheetProfile();
-        if (cclmCoachState.drift) p.cclmDrift = cclmCoachState.drift;
-        saveProfile(p);
-        toast('🏛️ Leader Calibration Saved!', 'Your 4-Domain Stewardship & Principle focus is active.');
-        openSheet(cclmCoachSheetHtml());
         return;
       }
       const cseed = e.target.closest('[data-cclm-seed-bp]');
@@ -22927,9 +22806,7 @@ const TreasureUp = (function () {
       const sfsh = e.target.closest('[data-feed-share]');
       if (sfsh) { shareToFamilyChat(sfsh.dataset.feedShare); return; }
       if (e.target.closest('[data-coach-finish]')) {
-        syncCoachInputs();
-        saveProfile(coachDraft);
-        closeSheet();
+        saveCoachWalkthrough();
         return;
       }
       const bpg = e.target.closest('[data-bp-pick-goal]');
@@ -22965,18 +22842,6 @@ const TreasureUp = (function () {
       const hubProf = e.target.closest('[data-hub-profile], [data-compass-coach]');
       if (hubProf) { stashBlueprintDraft(); openCoachProfile(Number(hubProf.dataset.compassCoach) || 1); return; }
       if (e.target.closest('[data-open-deep-tools]')) { openDeepToolsSheet(); return; }
-      const cmode = e.target.closest('[data-compass-mode]');
-      if (cmode) {
-        const nextWho = cmode.dataset.compassMode === 'adult' ? 'adult' : 'youth';
-        bpDraft = null;
-        S.seasonWho = nextWho;
-        S.stagePin = nextWho === 'adult' ? null : { who: nextWho, y: dayKey().slice(0, 4) };
-        if (S.profile) { S.profile.who = nextWho; S.profile.upd = Date.now(); }
-        save();
-        refreshHome();
-        openDeepToolsSheet();
-        return;
-      }
       const cwstep = e.target.closest('[data-compass-w40-step]');
       if (cwstep) { w40Step(+cwstep.dataset.compassW40Step || 0); refreshHome(); openDeepToolsSheet(); return; }
       const cwday = e.target.closest('[data-compass-w40-day]');
@@ -23283,7 +23148,7 @@ const TreasureUp = (function () {
       if (coachDraft && e.target && (e.target.id === 'coachPeakMoment' || e.target.id === 'coachPinchMirror')) {
         syncCoachInputs();
         const matches = detectCrucibleValues(coachDraft.peakMoment, coachDraft.pinchMirror);
-        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft), 'HESED / LOVE', 'WISDOM']);
+        const arr = coachDraft.funnelValues || (coachDraft.funnelValues = [...valuesTriadOf(coachDraft)]);
         matches.forEach(id => { if (!arr.includes(id)) arr.push(id); });
         const prev = $('coachCruciblePreview');
         if (prev) {
@@ -23301,7 +23166,7 @@ const TreasureUp = (function () {
       if ($('coachName')) coachDraft.name = $('coachName').value.trim() || coachDraft.name;
       coachDraft.born = `${y}-${String(m).padStart(2, '0')}`;
       coachDraft.age = ageFrom(coachDraft.born);
-      if (coachDraft.who !== 'adult') coachDraft.who = stageFrom(coachDraft.born);
+      coachDraft.who = stageFrom(coachDraft.born);
       if (turning12(coachDraft) && !coachDraft.milestone) coachDraft.milestone = 'Getting ready for 12: the priesthood or Young Women, and the temple';
       openSheet(coachWalkthroughSheetHtml());
     });

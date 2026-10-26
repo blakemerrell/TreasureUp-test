@@ -8,6 +8,73 @@
     "Symbols can help me remember Jesus Christ",
     "“His name shall be called Wonderful.”"
   ],
+  "puzzle": {
+    "groups": [
+      {
+        "section": 0,
+        "tiles": [
+          {
+            "text": "Swallow up death",
+            "ref": "Isaiah 25:8"
+          },
+          {
+            "text": "Blotted out as a cloud",
+            "ref": "Isaiah 44:22"
+          },
+          {
+            "text": "Everlasting joy",
+            "ref": "Isaiah 51:11"
+          },
+          {
+            "text": "Joy over thee",
+            "ref": "Zephaniah 3:17"
+          }
+        ]
+      },
+      {
+        "section": 1,
+        "tiles": [
+          {
+            "text": "A Star out of Jacob",
+            "ref": "Numbers 24:17"
+          },
+          {
+            "text": "God will provide a lamb",
+            "ref": "Genesis 22:8"
+          },
+          {
+            "text": "Water from the rock",
+            "ref": "Exodus 17:6"
+          },
+          {
+            "text": "A Branch from his roots",
+            "ref": "Isaiah 11:1"
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "tiles": [
+          {
+            "text": "Immanuel",
+            "ref": "Isaiah 7:14"
+          },
+          {
+            "text": "Prince of Peace",
+            "ref": "Isaiah 9:6"
+          },
+          {
+            "text": "The LORD JEHOVAH",
+            "ref": "Isaiah 12:2"
+          },
+          {
+            "text": "The God of hosts",
+            "ref": "Amos 4:13"
+          }
+        ]
+      }
+    ]
+  },
   "sayings": [
     {
       "id": "say-provide-lamb",

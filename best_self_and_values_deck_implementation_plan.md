@@ -3,7 +3,7 @@
 This plan captures all six design decisions from our `/grill-me` session and maps out the surgical implementation in [index.html](file:///Users/blakemerrell/Documents/TreasureUp/index.html) and [tests/](file:///Users/blakemerrell/Documents/TreasureUp/tests) on a dedicated feature branch (`gemini/best-self-discovery`).
 
 > [!TIP]
-> **Playable Mockup Ready Now**: You can test the interactive 3-Round Values Card Deck sort, the 2-Path StrengthsFinder discovery quiz, the plain-English Morning/Evening flow, and Sam's Luke 2:52 Quest Board right now in [new_user_best_self_onboarding_mockup.html](file:///Users/blakemerrell/.gemini/antigravity/brain/a8262abc-7fc3-43a4-90b7-92a8ca492de0/new_user_best_self_onboarding_mockup.html).
+> **Playable Mockup Ready Now**: You can test the interactive 3-Round Values Card Deck sort, the 2-Path StrengthsFinder discovery quiz, the plain-English Morning/Evening flow, and Javan's Luke 2:52 Quest Board right now in [new_user_best_self_onboarding_mockup.html](file:///Users/blakemerrell/.gemini/antigravity/brain/a8262abc-7fc3-43a4-90b7-92a8ca492de0/new_user_best_self_onboarding_mockup.html).
 
 ---
 

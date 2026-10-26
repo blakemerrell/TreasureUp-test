@@ -17,195 +17,228 @@ window.TU_SUNDAY = {
           "intro": "There’s no class on conference Sunday, but October’s topic starts here: chapter 10 of the For the Strength of Youth guide, “Your Body Is Sacred.” Read it, then try these cards on its three truths and their promises.",
           "cards": [
             {
-              "id": "fsy10-chapter-image",
-              "hook": "Made in the image of God",
-              "body": "Chapter 10 starts with a big truth: your body is made in the image of God. The scriptures compare it to a holy temple, a place where the Spirit can live. It isn’t perfect yet, but what you learn with it now helps prepare you for a perfect, resurrected body someday.",
-              "find": "Your body is in the image of God",
-              "q": "What do the scriptures compare your body to?",
-              "right": "A holy temple",
+              "id": "fsy10-chapter-temple",
+              "hook": "A temple you carry everywhere",
+              "body": "Would anyone scribble graffiti on a temple wall? Paul asked the Saints in Corinth a question that changes how you see yourself: don’t you know your body is the temple of the Holy Ghost? He reminded them they were bought with a price, so their bodies and spirits belong to God (1 Corinthians 6:19–20).",
+              "find": "The scriptures compare our bodies to a holy temple, a place where the Spirit can dwell",
+              "q": "In 1 Corinthians 6:20, what does Paul say to do because you were bought with a price?",
+              "right": "Glorify God in your body and your spirit",
               "wrong": [
-                "A rented car",
-                "A prison for your spirit",
-                "A costume you’ll take off"
+                "Rest your body one day out of every seven",
+                "Keep your body strong so you can serve",
+                "Thank God for your body every morning"
               ],
-              "why": "The guide says the scriptures compare our bodies to a holy temple, a place where the Spirit can dwell (1 Corinthians 6:19)."
+              "why": "Verse 20: “ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God’s.” Your body is a gift that belongs to Him.",
+              "kind": "verse"
+            },
+            {
+              "id": "fsy10-chapter-mirror",
+              "hook": "A question for the mirror",
+              "body": "Before you choose clothes, a haircut or a look, there’s one question worth asking: “Am I honoring my body as a sacred gift from God?” Heavenly Father sees you as much more than a body. You’re His child with a divine destiny, so pick styles that point to who you really are.",
+              "find": "Am I honoring my body as a sacred gift from God?",
+              "q": "A friend wants you both to buy matching shirts with a crude joke printed on them. Which question from chapter 10 fits best?",
+              "right": "Am I honoring my body as a sacred gift from God?",
+              "wrong": [
+                "Would I wear this to sacrament meeting?",
+                "Will my parents be upset if they see it?",
+                "Does the joke hurt anyone’s feelings?"
+              ],
+              "why": "Chapter 10 gives this exact question for choices about clothing and appearance. It gets to the real reason: your body is a sacred gift, and you’re a child of God.",
+              "kind": "scenario"
             },
             {
               "id": "fsy10-chapter-soul",
-              "hook": "Body and spirit work together",
-              "body": "Your soul is your body and your spirit together (Doctrine and Covenants 88:15). That’s why the guide says your physical health and your spiritual health are connected. Sleep, food and what you put in your body all affect how well you feel the Spirit. The Word of Wisdom is the Lord’s guide for caring for both.",
-              "find": "physical health and spiritual health are closely connected",
-              "q": "Why does caring for your body matter spiritually?",
-              "right": "Your body and spirit together are your soul",
+              "hook": "Body and spirit, one team",
+              "body": "Your soul is your body and your spirit together (Doctrine and Covenants 88:15). So what you do to one, you do to the other. Treat your body well and it’s easier to think clearly and hear the Spirit. Wear it down and your spirit feels it too. That’s why the Word of Wisdom promises blessings for both.",
+              "find": "Your soul is made up of your body and your spirit. For this reason, physical health and spiritual health are closely connected.",
+              "q": "Friends plan an all-night video game marathon the night before church. Which truth from chapter 10 matters most here?",
+              "right": "Physical and spiritual health are closely connected",
               "wrong": [
-                "It doesn’t; only your spirit matters",
-                "Looking good earns blessings",
-                "Sports are a commandment"
+                "Your spirit matters more than your body does",
+                "Only harmful substances can hurt you spiritually",
+                "What you do Saturday doesn’t affect Sunday"
               ],
-              "why": "Doctrine and Covenants 88:15 says the spirit and the body are the soul, so what helps one helps the other."
-            },
-            {
-              "id": "fsy10-chapter-sacred",
-              "hook": "Sacred, not shameful",
-              "body": "The guide says sexual feelings are part of God’s plan for happy marriages and eternal families. They aren’t sinful; they’re sacred. Because they’re so powerful, God gave the law of chastity to help you use them the way He intends: only between a man and a woman who are married.",
-              "find": "These feelings are not sinful—they are sacred",
-              "q": "What does the guide say about sexual feelings?",
-              "right": "They’re sacred, part of God’s plan for families",
-              "wrong": [
-                "They’re sinful and shameful",
-                "They don’t matter to God",
-                "They’re something to joke about"
-              ],
-              "why": "God gave the law of chastity because these feelings are so sacred and so powerful, not because they’re bad."
+              "why": "Your body and spirit together are your soul, so wearing out your body affects your spirit too. A healthy body helps you think clearly and receive personal revelation.",
+              "kind": "scenario"
             },
             {
               "id": "fsy10-chapter-promises",
-              "hook": "Promises that come with it",
-              "body": "Each truth comes with promises. Keeping the Word of Wisdom brings “great treasures of knowledge” and a clearer mind for personal revelation. Living the law of chastity brings God’s approval, personal spiritual power and protection for your future family. Pick one invitation from the chapter to work on this month.",
+              "hook": "Promises worth keeping",
+              "body": "Every standard in this chapter comes with a promise. Keep the Word of Wisdom, and the Lord promises great treasures of knowledge and a clearer mind. Live the law of chastity, and you gain God’s approval and personal spiritual power. That law also protects you and the family you’ll have someday.",
               "find": "Living the law of chastity brings God’s approval and personal spiritual power",
-              "q": "What does the guide promise those who live the law of chastity?",
+              "q": "Which blessing does chapter 10 promise to those who live the law of chastity?",
               "right": "God’s approval and personal spiritual power",
               "wrong": [
-                "Popularity at school",
-                "A life with no hard days",
-                "Better grades"
+                "Freedom from ever feeling tempted again",
+                "Quick answers to every prayer you say",
+                "A calling to lead others in the Church"
               ],
-              "why": "The chapter’s promised blessings: God’s approval and personal spiritual power, and protection for you and your future family."
+              "why": "The chapter promises God’s approval and personal spiritual power, protection for you and your future family, and later more love, trust and unity in marriage.",
+              "kind": "recall"
             }
           ],
-          "approved": "6046e017"
+          "approved": "a5562152",
+          "try": "Before you get dressed each morning this week, ask yourself the chapter’s question: “Am I honoring my body as a sacred gift from God?”",
+          "reflect": "How would you treat your body differently if you really saw it as a temple?"
         },
         {
           "id": "fsy10-word-of-wisdom",
           "sunday": "2026-10-11",
           "title": "The Word of Wisdom: a principle with promise",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/fsy-lessons/02-second-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about the Word of Wisdom, Doctrine and Covenants 89. Read the section, then Daniel 1, where Daniel and his friends keep the Lord’s law of health in the king’s palace.",
+          "intro": "Why would the Lord care what you eat and drink? Doctrine and Covenants 89 calls the Word of Wisdom “a principle with promise.” Read the section, then Daniel 1, where Daniel and his friends keep the Lord’s law of health inside a king’s palace.",
           "cards": [
-            {
-              "id": "fsy10-wow-guide",
-              "hook": "A revelation from 1833",
-              "body": "The Lord gave the Word of Wisdom to Joseph Smith in 1833, and it’s Doctrine and Covenants 89. The lesson calls it the Lord’s guide for taking care of your body and mind: what’s good for you and what to avoid, so you can feel your best and stay close to the Spirit.",
-              "find": "the Lord’s guide to help you take care of your body and mind",
-              "q": "Where is the Word of Wisdom recorded?",
-              "right": "Doctrine and Covenants 89",
-              "wrong": [
-                "Daniel 1",
-                "Alma 39",
-                "The thirteenth article of faith"
-              ],
-              "why": "The Lord gave it to the Prophet Joseph Smith in 1833; it’s section 89 of the Doctrine and Covenants."
-            },
             {
               "id": "fsy10-wow-promise",
               "hook": "A principle with promise",
-              "body": "In verse 3 the Lord calls it “a principle with promise.” Read the whole section and list what it asks and what it promises. The lesson points to walking in obedience (verse 18) and avoiding excess (verse 12), using even good things wisely.",
+              "body": "Doctrine and Covenants 89 is more than a list of don’ts. Verse 3 calls it “a principle with promise,” and the promises come at the end. Those who remember these sayings and walk in obedience receive health, wisdom and great treasures of knowledge, even hidden ones (verses 18–21). Read them and count how many you find.",
               "find": "The Lord called the Word of Wisdom “a principle with promise”",
-              "q": "What does the Lord call the Word of Wisdom in verse 3?",
-              "right": "A principle with promise",
+              "q": "In Doctrine and Covenants 89:20, what does the Lord promise those who keep the Word of Wisdom?",
+              "right": "They’ll run and not be weary, and walk and not faint",
               "wrong": [
-                "A suggestion for athletes",
-                "A rule just for adults",
-                "A secret for a few"
+                "They’ll never get sick or hurt again",
+                "They’ll live longer than everyone around them",
+                "They’ll be stronger than people who don’t keep it"
               ],
-              "why": "Doctrine and Covenants 89:3: it’s a principle with promise. Keep it, and the Lord promises blessings for body and mind (verses 18–21)."
+              "why": "Verse 20 promises they “shall run and not be weary, and shall walk and not faint.” Verses 18–21 also promise health, wisdom and hidden treasures of knowledge.",
+              "kind": "verse"
             },
             {
               "id": "fsy10-wow-daniel",
-              "hook": "Daniel’s ten-day test",
-              "body": "Daniel and his friends kept the law of health the Lord gave for their time, even at the king’s table (Daniel 1). After ten days they looked healthier than the others, and God gave them knowledge and wisdom: blessings for body and mind, the same kind Doctrine and Covenants 89 promises.",
+              "hook": "Ten days in Babylon",
+              "body": "Imagine being a captive in a king’s palace, offered the king’s own food and wine. Daniel decided in his heart not to defile himself. He asked for a ten-day test: just pulse and water. At the end, he and his friends looked healthier than all the others, and God blessed their minds too (Daniel 1:8–20).",
               "find": "Daniel and his friends obeyed the law of health the Lord had given for their time",
-              "q": "What did God give Daniel and his friends after they kept His law of health?",
-              "right": "Health, knowledge and wisdom",
+              "q": "Daniel 1:17 says God gave the four young men something besides good health. What was it?",
+              "right": "Knowledge and skill in learning and wisdom",
               "wrong": [
-                "Gold from the king’s treasury",
-                "A way home from Babylon",
-                "Nothing, until years later"
+                "Rich food and fine clothes from the king",
+                "Permission to go home to Jerusalem",
+                "High ranks in the king’s army"
               ],
-              "why": "Daniel 1:15–20: after ten days they looked healthier, and God gave them knowledge and wisdom, ten times better than the king’s other wise men."
+              "why": "Verse 17: God gave them knowledge and skill in all learning and wisdom. Verse 20 says the king found them ten times better than all his magicians and astrologers.",
+              "kind": "verse"
             },
             {
               "id": "fsy10-wow-daily",
-              "hook": "Every day, not just once",
-              "body": "The Word of Wisdom isn’t only about what you avoid. The lesson says it helps you stay healthy, make good choices and keep your mind clear so you can feel the Spirit more easily. Think of one everyday choice this week, like getting enough sleep, that helps your body and your mind.",
+              "hook": "More than a list of don’ts",
+              "body": "Some people think the Word of Wisdom is only a list of things to avoid. It’s also a daily guide. It helps you stay healthy, make good choices and keep your mind clear, so you can feel the Spirit more easily. Sleep, food and how you treat your body all play a part.",
               "find": "keep your mind clear so you can feel the Spirit more easily",
-              "q": "How does living the Word of Wisdom help you spiritually?",
-              "right": "It keeps your mind clear to feel the Spirit",
+              "q": "A friend says the Word of Wisdom is just about not drinking coffee. What could you add from this lesson?",
+              "right": "It keeps your mind clear so you can feel the Spirit",
               "wrong": [
-                "It guarantees you’ll never get sick",
-                "It makes you better than other people",
-                "It doesn’t; it’s only about health"
+                "It’s mostly about eating more vegetables",
+                "It’s a health rule for adults, not youth",
+                "It’s a list of foods you can never eat"
               ],
-              "why": "The lesson says it helps you stay healthy, make good choices and keep your mind clear so you can feel the Spirit more easily."
+              "why": "The Word of Wisdom protects your body and keeps your mind clear so you can feel the Spirit more easily. That makes it matter every day, not only when someone offers you something.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy10-wow-excess",
+              "hook": "Too much of a good thing",
+              "body": "Doctrine and Covenants 89 also names good things God made for you, like herbs, fruits and grains. Herbs and fruits are to be used with prudence and thanksgiving (verse 11), and meat sparingly (verse 12). Avoiding excess is one of the principles to look for. Wisdom isn’t only about what you skip; it’s also about how much.",
+              "find": "and list the principles and promises you find. For example, some of the principles could include “walking in obedience”",
+              "q": "It’s the night after Halloween and you’re about to eat a whole bag of candy. Which principle from this lesson fits?",
+              "right": "Avoid excess, even with good things",
+              "wrong": [
+                "Sweets break the Word of Wisdom",
+                "Only forbidden things need limits",
+                "It’s fine if you share some later"
+              ],
+              "why": "The lesson lists avoiding excess (verse 12) as a Word of Wisdom principle. Even good things God made are to be used with prudence and thanksgiving (verse 11).",
+              "kind": "scenario"
             }
           ],
-          "approved": "e62285cd"
+          "approved": "e8b5d295",
+          "try": "Read Doctrine and Covenants 89:18–21 and write each promise on a card. Pick one everyday choice, like your bedtime, that helps you keep it.",
+          "reflect": "Which promise in Doctrine and Covenants 89 would help you most right now, and why?"
         },
         {
           "id": "fsy10-chastity",
           "sunday": "2026-10-18",
           "title": "The law of chastity",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/fsy-lessons/03-third-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about the law of chastity: what it’s about, how to keep your thoughts and actions clean, and the hope Jesus Christ offers. Read Genesis 39:7–12 and Alma 39 before class.",
+          "intro": "What does it mean to be chaste in your thoughts, words and actions? This week is about the law of chastity, how to guard your mind, and the hope Jesus Christ offers everyone. Read Genesis 39:7–12 and Alma 39 before class.",
           "cards": [
             {
-              "id": "fsy10-chastity-about",
-              "hook": "What the law is about",
-              "body": "God approves of sexual relations only between a man and a woman who are married. The lesson says the law of chastity is about trust, loyalty, creation and covenant family. It covers more than actions: it means being clean in your thoughts, words and media choices too, including avoiding pornography.",
-              "find": "The law of chastity is about trust, loyalty, creation, and covenant family",
-              "q": "What does the lesson say the law of chastity is about?",
-              "right": "Trust, loyalty, creation and covenant family",
+              "id": "fsy10-chastity-law",
+              "hook": "The law, said plainly",
+              "body": "What is the law of chastity? God’s standard is clear: sexual relations belong only between a man and a woman who are legally married to each other. That isn’t because these feelings are bad. They’re a sacred gift, and God’s law protects that gift, you, and the family you may have someday.",
+              "find": "God approves of sexual relations only between a man and a woman who are married.",
+              "q": "What is the law of chastity?",
+              "right": "Sexual relations only between a man and a woman who are married",
               "wrong": [
-                "Keeping people from having fun",
-                "Rules just for adults",
-                "Only what you do, not what you watch"
+                "Sexual relations only with someone you truly love",
+                "Not dating or holding hands until you’re an adult",
+                "Avoiding only what you’d be embarrassed for others to see"
               ],
-              "why": "It’s about trust, loyalty, creation and covenant family, and it covers thoughts, words, actions and media."
+              "why": "God approves of sexual relations only between a man and a woman who are married. The law guards something sacred, not something shameful, and it covers thoughts, words and media too.",
+              "kind": "recall"
             },
             {
-              "id": "fsy10-chastity-thoughts",
+              "id": "fsy10-chastity-pause",
               "hook": "Purpose, plan, pause",
-              "body": "The thirteenth article of faith says we seek what’s “virtuous and lovely.” What you watch and listen to shapes your thoughts. The lesson gives three guides for technology: use it with a purpose, plan ahead, and know it’s OK to pause and take a break. Write three ways to protect your thoughts this week.",
+              "body": "Technology is a tool, and you get to be the one in charge. Three guides help: use it with a purpose so it doesn’t control you, plan ahead so you make better choices, and remember that it’s OK to stop and take a break. Each one has a verse behind it.",
               "find": "It’s OK for me to pause and take a break",
-              "q": "What are the lesson’s three guides for taking charge of technology?",
-              "right": "Purpose, plan, pause",
+              "q": "It’s late, and the videos in your feed keep getting less clean, but you keep scrolling. Which of the three guides fits right now?",
+              "right": "Pause: it’s OK to stop and take a break",
               "wrong": [
-                "Post, share, repeat",
-                "Hide, delete, forget",
-                "Scroll, like, sleep"
+                "Purpose: keep scrolling to find a cleaner video",
+                "Plan: watch one more, then decide what to do",
+                "Plan: skip past the bad parts as they come"
               ],
-              "why": "Use technology with a purpose so it doesn’t control you, plan ahead to make better choices, and pause for a break (Doctrine and Covenants 112:6; Alma 34:32; Doctrine and Covenants 101:16)."
+              "why": "In the moment, the guide that helps is pause: “It’s OK for me to pause and take a break” (Doctrine and Covenants 101:16). Planning ahead helps next time.",
+              "kind": "scenario"
             },
             {
               "id": "fsy10-chastity-joseph",
-              "hook": "Joseph ran",
-              "body": "When Potiphar’s wife tempted Joseph of Egypt, he refused, and when she grabbed his garment he left it behind and ran (Genesis 39:7–12). The lesson says living this law makes you someone who can be trusted, has self-control and respects boundaries. Sometimes the strongest choice is to get out fast.",
+              "hook": "Joseph got out",
+              "body": "Joseph was a servant far from home, and his master’s wife tempted him day after day. He refused every time. When she grabbed his garment, he left it in her hand and fled (Genesis 39:7–12). Sometimes the bravest thing isn’t arguing with temptation. It’s getting out.",
               "find": "you become a person who can be trusted, who has self-control, who respects boundaries",
-              "q": "What did Joseph do when Potiphar’s wife tempted him?",
-              "right": "He refused and ran, leaving his garment behind",
+              "q": "In Genesis 39:9, what reason did Joseph give for refusing?",
+              "right": "He wouldn’t do this great wickedness and sin against God",
               "wrong": [
-                "He stayed to explain why it was wrong",
-                "He gave in just once",
-                "He asked his brothers what to do"
+                "He was afraid his master would find out and punish him",
+                "He wanted to stay pure for the wife he’d marry someday",
+                "His father Jacob had warned him about temptation"
               ],
-              "why": "Genesis 39:12: she caught him by his garment, and he left it in her hand and fled. He chose loyalty to God over the moment."
+              "why": "Genesis 39:9: Joseph asked, “how then can I do this great wickedness, and sin against God?” He saw it as breaking faith with God, not only a rule.",
+              "kind": "verse"
             },
             {
-              "id": "fsy10-chastity-hope",
-              "hook": "There’s always a way back",
-              "body": "Satan wants people who’ve broken the law of chastity to think God can’t love or forgive them. That isn’t true. Alma still had hope for his son Corianton (Alma 39; 42). The lesson says “Christ’s love and atoning sacrifice are bigger than any mistake.”",
-              "find": "There is always a way back",
-              "q": "What does the lesson say about someone who has broken the law of chastity?",
-              "right": "They can repent and be forgiven through Christ",
+              "id": "fsy10-chastity-words",
+              "hook": "Thoughts, words and actions",
+              "body": "Chastity covers more than what you do. It means being pure in your thoughts, words, actions and media choices. The law of chastity is about trust, loyalty, creation and covenant family. Treating sexual feelings as a sacred gift from God changes how you talk about them: they aren’t something to joke about.",
+              "find": "It means being sexually pure in thoughts, words, actions, and media choices.",
+              "q": "Someone in a group chat starts posting crude jokes about sex. What does being chaste in your words look like?",
+              "right": "Not joining in, and keeping sacred things sacred",
               "wrong": [
-                "They can never be worthy again",
-                "It doesn’t matter anymore",
-                "Only their friends can forgive them"
+                "Laughing along but not posting any yourself",
+                "Reading them quietly without reacting",
+                "Sending a laughing emoji so you don’t seem rude"
               ],
-              "why": "Through the Atonement of Jesus Christ there’s always a way back; His love and sacrifice are bigger than any mistake (Alma 42:29–31)."
+              "why": "Chastity includes words and media, not just actions. Treating sexual feelings as a sacred gift from God means not turning them into a joke, even quietly.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy10-chastity-corianton",
+              "hook": "There is always a way back",
+              "body": "Alma’s son Corianton made serious mistakes. Alma didn’t pretend they were small, but he didn’t give up on him either. He taught him about Christ, urged him to repent, then sent him back to preach (Alma 39; 42:31). Later, Corianton is named among those teaching the word of God (Alma 49:30).",
+              "find": "There is always a way back. Through the Atonement of Jesus Christ, we can repent and be forgiven.",
+              "q": "In Alma 42:31, after correcting his son Corianton, what did Alma send him to do?",
+              "right": "Go and preach the word to the people",
+              "wrong": [
+                "Stay home until he had proved himself",
+                "Leave the land and start over somewhere new",
+                "Pay back the people he had hurt"
+              ],
+              "why": "Alma 42:31: Alma told Corianton he was called of God to preach the word. Christ’s love and atoning sacrifice are bigger than any mistake.",
+              "kind": "verse"
             }
           ],
-          "approved": "b5fbecc5"
+          "approved": "5ac89a81",
+          "try": "Write three ways you’ll protect your thoughts this week, like limiting screen time or choosing uplifting music, and put the list by your bed.",
+          "reflect": "What helps you feel clean and close to the Spirit, and how could you have more of it?"
         },
         {
           "id": "fsy10-covenant-son",
@@ -215,63 +248,69 @@ window.TU_SUNDAY = {
           "intro": "On the last Sunday, Aaronic Priesthood quorums study the stripling warriors and what it means to be “true at all times.” Read Alma 53:14–22 and Alma 56:44–57 before class.",
           "cards": [
             {
-              "id": "fsy10-son-beloved",
-              "hook": "A beloved son with a work to do",
-              "body": "The lesson starts with “I am a beloved son of God,” and He has a work for you to do. It adds that humility and virtue will help you live with respect and reverence for yourself, for others and for God.",
-              "find": "Humility and virtue will empower me to live with respect and reverence for myself, others, and God",
-              "q": "What does the lesson say will help you live with respect and reverence?",
-              "right": "Humility and virtue",
-              "wrong": [
-                "Strength and popularity",
-                "Money and talent",
-                "Good grades"
-              ],
-              "why": "Humility and virtue will empower you to live with respect and reverence for yourself, others and God."
-            },
-            {
               "id": "fsy10-son-true",
-              "hook": "True at all times",
-              "body": "The stripling warriors were young, brave and strong, but Alma 53:20 says that wasn’t all: they were “true at all times in whatsoever thing they were entrusted.” Being trustworthy when no one is checking is the kind of strength that makes a good priesthood servant.",
+              "hook": "More than brave",
+              "body": "Two thousand young men took up weapons to defend their country. Alma 53:20 says they were valiant, strong and active, “but behold, this was not all.” They were true at all times in whatever they were trusted to do. Strength gets you into the fight. Being trustworthy when no one is checking is what makes you worth following.",
               "find": "they were men who were true at all times in whatsoever thing they were entrusted",
-              "q": "Besides brave and strong, what does Alma 53:20 say the stripling warriors were?",
-              "right": "True at all times",
+              "q": "Alma 53:20 praises the young men’s courage and strength, then says that wasn’t all. What else were they?",
+              "right": "True at all times in whatever they were trusted with",
               "wrong": [
-                "Older than the other soldiers",
-                "Famous across the land",
-                "Never afraid of anything"
+                "Trained in battle by Captain Moroni",
+                "Chosen because they were the strongest",
+                "Sons of the Nephite chief judges"
               ],
-              "why": "Alma 53:20 says they were valiant and strong, but that wasn’t all: they were true at all times in whatever they were trusted with."
+              "why": "Verse 20 says they were true at all times. Verse 21 adds that they were men of truth and soberness, taught to keep God’s commandments and walk uprightly.",
+              "kind": "verse"
             },
             {
               "id": "fsy10-son-mothers",
-              "hook": "Where their courage came from",
-              "body": "Why were they so steady? In Alma 56:47–48 they said their mothers had taught them that if they did not doubt, God would deliver them. Their faith started at home and grew through choices they kept making. The lesson asks you to think about how their example connects to keeping your body sacred.",
-              "find": "What connection do you see between their example and keeping your body sacred",
-              "q": "Who taught the stripling warriors not to doubt?",
-              "right": "Their mothers",
+              "hook": "Faith learned at home",
+              "body": "These young men had never fought a battle. Yet when Helaman asked if they would go, they answered that God was with them and would not let them fall. Where did that confidence come from? They told Helaman what their mothers had taught them, and said they did not doubt their mothers knew it (Alma 56:44–48).",
+              "find": "What helped the stripling warriors become “true at all times”?",
+              "q": "Alma 56:47 says the young men had never fought, yet they did not fear death. Why not?",
+              "right": "Their mothers taught them God would deliver them if they didn’t doubt",
               "wrong": [
-                "Captain Moroni",
-                "The Lamanite king",
-                "Their enemies"
+                "Helaman had promised them none of them would be killed",
+                "An angel had appeared to them before the battle",
+                "They had trained for years in Moroni’s army"
               ],
-              "why": "In Alma 56:47–48 they said their mothers had taught them that if they did not doubt, God would deliver them."
+              "why": "Alma 56:47: they had been taught by their mothers that if they did not doubt, God would deliver them. Verse 56 says not one of them fell.",
+              "kind": "verse"
             },
             {
-              "id": "fsy10-son-month",
-              "hook": "Your month, put together",
-              "body": "This month you studied your body as a sacred gift, the Word of Wisdom and the law of chastity. The lesson ends by asking what you’ve learned about how the Savior helps you keep your body sacred, and how that helps you do His work.",
-              "find": "what have you learned about how the Savior helps you keep your body sacred",
-              "q": "Which three topics did October’s lessons cover?",
-              "right": "Your body as a gift, the Word of Wisdom and the law of chastity",
+              "id": "fsy10-son-unseen",
+              "hook": "When no one is checking",
+              "body": "The stripling warriors kept their covenants far from home, where no parent could see. Keeping your body sacred works the same way: it’s about being trustworthy when parents, leaders and friends can’t see you. Humility and virtue help you live with respect for yourself, for others and for God, wherever you are.",
+              "find": "Humility and virtue will empower me to live with respect and reverence for myself, others, and God",
+              "q": "Your parents trust you home alone for an evening. Friends want to come over and watch something you know isn’t clean. What fits being true at all times?",
+              "right": "Keep their trust, even though they’d never find out",
               "wrong": [
-                "Tithing, fasting and prayer",
-                "Baptism, the sacrament and the temple",
-                "Missions, seminary and service"
+                "Let friends watch it while you leave the room",
+                "Watch it once, then tell your parents later",
+                "Ask an older sibling whether it’s okay"
               ],
-              "why": "Chapter 10, “Your Body Is Sacred,” covers all three, and the stripling warriors show what being true at all times looks like."
+              "why": "Being true at all times means keeping a trust whether anyone sees or not. That’s the link between the stripling warriors and keeping your body sacred.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy10-son-assignment",
+              "hook": "Trusted with an assignment",
+              "body": "Alma 53:20 describes the kind of young men who make good priesthood servants: valiant, strong, and true in whatever they’re entrusted with. A priesthood assignment is a trust. Doing it faithfully, even the small parts nobody praises, is how you become someone the Lord and your quorum can count on.",
+              "find": "what attributes did the stripling warriors have that would have made them good priesthood servants",
+              "q": "You’re assigned to pass the sacrament Sunday, but friends invite you on a weekend trip. What fits being true at all times?",
+              "right": "Keep the assignment, or arrange for someone to cover it",
+              "wrong": [
+                "Go anyway; someone will probably notice and fill in",
+                "Go, and apologize to your leader next week",
+                "Stay, but only if your leader asks you to"
+              ],
+              "why": "The stripling warriors were true in whatever they were entrusted with. A priesthood assignment is a trust, so you keep it or make sure it’s covered.",
+              "kind": "scenario"
             }
           ],
-          "approved": "a0c57f4d"
+          "approved": "45f45444",
+          "try": "Choose one thing you’re trusted with this week, like a chore or a priesthood assignment, and do it fully without being reminded.",
+          "reflect": "How has the Savior helped you keep your body sacred this month? What helps you stay true when no one is watching?"
         }
       ]
     },
@@ -289,195 +328,213 @@ window.TU_SUNDAY = {
           "intro": "November’s topic is chapter 11 of the For the Strength of Youth guide, “Truth Will Make You Free” (John 8:32). On fast Sunday your quorum studies the chapter itself. Read it, then try these cards on truth, learning and the promises that come with them.",
           "cards": [
             {
-              "id": "fsy11-chapter-truth",
-              "hook": "A God of truth",
-              "body": "Chapter 11 starts with who Heavenly Father is: a God of truth who knows all things. All truth comes from Him and leads back to Him. The guide says you show you value truth by seeking learning, living with integrity and standing for what’s right, even if you have to stand alone.",
+              "id": "fsy11-chapter-free",
+              "hook": "Truth that sets you free",
+              "body": "The chapter title comes from Jesus: the truth shall make you free (John 8:32). Read the verse before it, though. He was speaking to people who believed Him, and the promise starts with continuing in His word. All truth comes from Heavenly Father and leads back to Him, so following it frees you instead of boxing you in.",
               "find": "All truth comes from Him and leads to Him",
-              "q": "Where does all truth come from, according to the guide?",
-              "right": "Heavenly Father",
+              "q": "In John 8:31–32, what did Jesus say comes before knowing the truth that makes you free?",
+              "right": "Continuing in His word as His disciples",
               "wrong": [
-                "Whatever most people agree on",
-                "The internet",
-                "Your own opinions"
+                "Being baptized by someone with authority",
+                "Studying the law of Moses carefully",
+                "Seeing a miracle with your own eyes"
               ],
-              "why": "Heavenly Father is a God of truth who knows all things. All truth comes from Him, and all of it leads back to Him."
+              "why": "John 8:31: “If ye continue in my word, then are ye my disciples indeed.” Verse 32 follows: then you will know the truth, and it will make you free.",
+              "kind": "verse"
             },
             {
               "id": "fsy11-chapter-learning",
-              "hook": "Always be learning",
-              "body": "Heavenly Father wants His sons and daughters to always be learning. The guide says education isn’t just about earning money; it’s part of your eternal goal to become more like Him. Look for chances to grow your mind and skills, at school and from sources you trust, and ask the Lord to guide you.",
-              "find": "It is part of your eternal goal to become more like Heavenly Father",
-              "q": "Besides earning money, why does education matter?",
-              "right": "It’s part of becoming more like Heavenly Father",
+              "hook": "Why learn algebra?",
+              "body": "Is school just a ticket to a paycheck? Heavenly Father wants His sons and daughters to keep learning all their lives: at school, in job training, and from sources you trust. Growing your mind is part of your eternal goal to become more like Him, and He will guide you if you invite Him into your studies.",
+              "find": "Education is not just about earning money. It is part of your eternal goal to become more like Heavenly Father.",
+              "q": "A friend says school only matters if it helps you get a good job someday. What does chapter 11 add?",
+              "right": "Learning is part of becoming more like Heavenly Father",
               "wrong": [
-                "It doesn’t matter for a deacon",
-                "So you can win arguments",
-                "So people think you’re smart"
+                "Learning only matters until you finish school",
+                "School matters most for winning scholarships",
+                "Only spiritual learning really lasts forever"
               ],
-              "why": "The guide says education is part of your eternal goal to become more like Heavenly Father, and it helps you serve and bless others."
+              "why": "Chapter 11 calls learning part of your eternal goal to become like Heavenly Father. Doctrine and Covenants 130:18 adds that the intelligence you gain will rise with you in the resurrection.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy11-chapter-enough",
+              "hook": "You know enough",
+              "body": "Worried you’ll get stumped? You don’t need every answer to talk about what you believe. Loving the person in front of you, sharing a true principle you understand, and inviting them to learn more are all within reach right now. The gospel holds answers to life’s big questions, and you already have something precious to give.",
+              "find": "You may not know everything, but you know enough to love your neighbor, share true principles with them, and invite them to learn more.",
+              "q": "A classmate asks what your church believes about God, and you’re afraid you’ll get something wrong. What does chapter 11 suggest?",
+              "right": "Share what you know; you know enough to invite",
+              "wrong": [
+                "Wait until you’ve read all the scriptures first",
+                "Tell them it’s too complicated to explain",
+                "Avoid the topic so you don’t confuse them"
+              ],
+              "why": "You may not know everything, but you know enough to love your neighbor, share true principles and invite them to learn more. Be ready to share your hope (1 Peter 3:15).",
+              "kind": "scenario"
             },
             {
               "id": "fsy11-chapter-savior",
               "hook": "Learn about the Creator too",
-              "body": "As you learn about the world, the guide says, learn also about the Savior, who created it. Study His life and teachings. Personal gospel study now, and seminary in a few years, can prepare you to serve a mission and share the gospel your whole life.",
-              "find": "learn also about the Savior, who created the world",
-              "q": "As you learn about the world, who does the guide say to learn about too?",
+              "body": "Science class teaches how the world works. Don’t stop there: learn about the One who made it. Study the Savior’s life and teachings, and make seminary and personal gospel study part of learning your whole life. That kind of study prepares you to serve a mission and share the gospel for years to come.",
+              "find": "As you learn about the world around you, learn also about the Savior, who created the world.",
+              "q": "As you learn about the world, who does chapter 11 say to learn about too?",
               "right": "The Savior, who created the world",
               "wrong": [
-                "Famous inventors",
-                "Your favorite athletes",
-                "Nobody; school is enough"
+                "The prophets who restored the gospel",
+                "Your ancestors, through family history",
+                "The scientists who explained how it works"
               ],
-              "why": "Jesus Christ created the world. Studying His life and teachings, at home and later in seminary, prepares you to serve a mission and share the gospel."
-            },
-            {
-              "id": "fsy11-chapter-promises",
-              "hook": "Promises that come with it",
-              "body": "The chapter promises that what you learn helps you serve the Lord, on a mission and all your life, and bless other people, especially your family. “The more you learn, the more you can help build God’s kingdom.” Pick one invitation from the chapter to work on this month.",
-              "find": "Education increases your ability to serve the Lord, including as a missionary",
-              "q": "What does the guide promise about education?",
-              "right": "It increases your ability to serve the Lord",
-              "wrong": [
-                "It guarantees you’ll be rich",
-                "It makes you better than others",
-                "It means you’ll never need help"
-              ],
-              "why": "Education increases your ability to serve the Lord, including as a missionary, and to bless others. The more you learn, the more you can help build God’s kingdom."
+              "why": "Chapter 11 invites you to learn spiritual truths by studying the life and teachings of the Savior, who created the world. It prepares you to serve a mission and share the gospel.",
+              "kind": "recall"
             }
           ],
-          "approved": "6e4ea227"
+          "approved": "1c14bc2b",
+          "try": "Pick one subject that’s hard for you and ask Heavenly Father to help you learn it this week. Notice what changes.",
+          "reflect": "What is one true thing you’ve learned that has made your life freer or happier?"
         },
         {
           "id": "fsy11-scriptures",
           "sunday": "2026-11-08",
           "title": "Holding fast to the scriptures",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/02-second-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about studying the scriptures: why God gave them and how they bless you. Read 1 Nephi 6:4–6 and 1 Nephi 8:19–25, 30–34, where people hold to the rod of iron, before class.",
+          "intro": "Why did God give us the scriptures, and how do they help on a dark day? Read 1 Nephi 6:4–6 and 1 Nephi 8:19–25, 30–34, where some people grab hold of the rod of iron and never let go.",
           "cards": [
             {
-              "id": "fsy11-scriptures-power",
-              "hook": "Books with spiritual power",
-              "body": "The lesson says the scriptures have spiritual power: they testify of Jesus Christ, give you hope and show the way back to Heavenly Father. They hold God’s word, given through His prophets. Nephi explained why he wrote: to persuade people to come to God and be saved (1 Nephi 6:4).",
+              "id": "fsy11-scriptures-why",
+              "hook": "Why Nephi wrote",
+              "body": "Nephi chose carefully what went on his plates. He left out things that please the world and kept what pleases God (1 Nephi 6:4–6). Like all scripture, his words have spiritual power: they testify of Jesus Christ, give hope and show the way to Heavenly Father.",
               "find": "They testify of Jesus Christ, give us hope, and show the way to our Heavenly Father",
-              "q": "According to the lesson, what do the scriptures do?",
-              "right": "Testify of Christ, give hope and show the way to God",
+              "q": "In 1 Nephi 6:4, what did Nephi say was the whole purpose of his writing?",
+              "right": "To persuade people to come to God and be saved",
               "wrong": [
-                "Only tell old history",
-                "Give rules with no reasons",
-                "Take the place of prayer"
+                "To record his family’s history for future kings",
+                "To prove his father’s visions were true",
+                "To warn his brothers about their wickedness"
               ],
-              "why": "The scriptures testify of Jesus Christ, give us hope and show the way to Heavenly Father. Nephi wrote so people would come to God and be saved (1 Nephi 6:4)."
-            },
-            {
-              "id": "fsy11-scriptures-friends",
-              "hook": "Friends you can call on",
-              "body": "The lesson says the scriptures can become trusted friends, always there when you need them. Learning, pondering and memorizing verses is like filling your life with friends and truths you can call on anywhere. They can bring peace, hope and confidence. Which verse has helped you come closer to Jesus Christ?",
-              "find": "The scriptures can become trusted friends. They are always available when needed",
-              "q": "What does the lesson say the scriptures can become?",
-              "right": "Trusted friends",
-              "wrong": [
-                "A chore to finish",
-                "A book for adults only",
-                "Something to read once"
-              ],
-              "why": "Like a good friend, the scriptures are always there. Verses you learn and memorize can bring peace, hope and confidence anytime, anywhere."
+              "why": "Verse 4: “the fulness of mine intent is that I may persuade men to come unto the God of Abraham … and be saved.”",
+              "kind": "verse"
             },
             {
               "id": "fsy11-scriptures-rod",
-              "hook": "Hold to the rod",
-              "body": "In Lehi’s dream, a rod of iron led to the tree of life. Nephi learned that the rod was the word of God (1 Nephi 11:25). In the mist of darkness some people lost their way, but others held tight to the rod until they reached the tree (1 Nephi 8:30). Holding fast to the scriptures keeps you on the path.",
-              "find": "a rod of iron represented the word of God",
-              "q": "In Lehi’s dream, what did the rod of iron stand for?",
-              "right": "The word of God",
+              "hook": "Holding on, not just grabbing",
+              "body": "In Lehi’s dream, a mist of darkness made people lose the path. Some caught the rod of iron and reached the tree, then felt ashamed when people mocked them and wandered off (1 Nephi 8:24–28). Others held on continually until they fell down and ate the fruit (verse 30). Nephi later learned the rod is the word of God.",
+              "find": "Lehi and Nephi saw a vision in which a rod of iron represented the word of God.",
+              "q": "Some people in 1 Nephi 8 caught the rod and still fell away. What does verse 30 say the next group did?",
+              "right": "They kept holding fast to the rod continually",
               "wrong": [
-                "The king’s army",
-                "A bridge over the river",
-                "Lehi’s walking stick"
+                "They reached the tree before the mist came",
+                "They followed other people through the mist",
+                "They walked the path without needing the rod"
               ],
-              "why": "Nephi learned that the rod of iron was the word of God, which led to the tree of life (1 Nephi 11:25). Those who held fast reached the tree."
+              "why": "Verse 30 says they pressed forward “continually holding fast to the rod of iron.” The group in verse 24 caught hold too, but later fell away when mocked.",
+              "kind": "verse"
             },
             {
-              "id": "fsy11-scriptures-lamp",
-              "hook": "A lamp for your feet",
-              "body": "The lesson lists verses on how to read the scriptures and how you’re blessed when you do. The psalmist called God’s word a lamp for his feet and a light for his path (Psalm 119:105). Nephi said to feast on the words of Christ, because they’ll tell you what to do (2 Nephi 32:3).",
-              "find": "look for words and phrases that describe how we should read scriptures—and how we are blessed when we do",
-              "q": "What does Psalm 119:105 call God’s word?",
-              "right": "A lamp for your feet and a light for your path",
+              "id": "fsy11-scriptures-friends",
+              "hook": "Friends in your pocket",
+              "body": "Some friends are only around when it’s convenient. Scriptures you’ve learned and memorized go everywhere with you, ready anytime, anywhere in the world. When you’re anxious, lonely or unsure, a verse you know by heart can bring back peace, hope and confidence.",
+              "find": "The scriptures can become trusted friends. They are always available when needed.",
+              "q": "Right before a big tryout, you’re nervous and your phone is in your locker. What from this lesson could help most?",
+              "right": "A verse you’ve memorized and can recall right then",
               "wrong": [
-                "A heavy load to carry",
-                "A wall to keep people out",
-                "A map only prophets can read"
+                "A text to a friend asking for advice",
+                "Opening a scripture app to a random page",
+                "Waiting to pray until the tryout is over"
               ],
-              "why": "Psalm 119:105 calls God’s word a lamp and a light. Like a flashlight on a dark trail, the scriptures show you the next step to take."
+              "why": "Memorized scriptures are like friends that are always available, anytime and anywhere. They can bring peace, hope and restored confidence right when you need them.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy11-scriptures-feast",
+              "hook": "Snack or feast?",
+              "body": "Skimming a verse to check a box is like grabbing a cracker on your way out the door. Nephi invites something bigger: feast on the words of Christ, because they will tell you all things you should do (2 Nephi 32:3). Joshua was told to meditate on God’s law day and night (Joshua 1:8).",
+              "find": "look for words and phrases that describe how we should read scriptures—and how we are blessed when we do",
+              "q": "You’ve been skimming one verse a night just to check it off. What word does 2 Nephi 32:3 use for a better way to take in Christ’s words?",
+              "right": "Feast",
+              "wrong": [
+                "Search",
+                "Ponder",
+                "Memorize"
+              ],
+              "why": "2 Nephi 32:3: “feast upon the words of Christ; for behold, the words of Christ will tell you all things what ye should do.”",
+              "kind": "verse"
             }
           ],
-          "approved": "69ee21cf"
+          "approved": "33bac00d",
+          "try": "Memorize Psalm 119:105 this week. Say it each night when you switch off the light.",
+          "reflect": "Which verse has felt most like a trusted friend to you, and when did you need it?"
         },
         {
           "id": "fsy11-search",
           "sunday": "2026-11-15",
           "title": "Searching for truth",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/10/03-third-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about the search for truth: where it comes from, what to do with questions, and why you keep learning. Read Joseph Smith—History 1:5–6, 10–13 before class.",
+          "intro": "Where does truth come from, and what should you do with a question you can’t answer yet? Read Joseph Smith—History 1:5–6, 10–13, where young Joseph Smith, confused by arguing churches, finds a verse that changes everything.",
           "cards": [
             {
-              "id": "fsy11-search-source",
-              "hook": "Truth comes from God",
-              "body": "The lesson says the source of eternal truth is God Himself, and you can always trust Him. He gives truth through the scriptures and through prophets today. One truth He has revealed is that His work and glory is to bring you immortality and eternal life (Moses 1:39).",
-              "find": "The source of eternal truth is God Himself",
-              "q": "What is the source of eternal truth, according to the lesson?",
-              "right": "God Himself",
+              "id": "fsy11-search-joseph",
+              "hook": "A verse that hit hard",
+              "body": "Ministers argued, neighbors split into rival churches, and young Joseph Smith kept asking himself which one was right (Joseph Smith—History 1:5–10). Then he read James 1:5. No verse had ever come with more power to his heart. He knew he needed wisdom from God, and he decided to ask (verses 11–13).",
+              "find": "As a young man, Joseph Smith felt confused as he sought answers to his spiritual questions.",
+              "q": "In Joseph Smith—History 1:13, what two choices did Joseph see in front of him?",
+              "right": "Stay in darkness and confusion, or ask of God",
               "wrong": [
-                "Whatever is trending",
-                "Your friends’ opinions",
-                "The newest ideas"
+                "Join the Methodists or join the Presbyterians",
+                "Ask his parents or ask a minister",
+                "Read the Bible again or stop looking"
               ],
-              "why": "The lesson says the source of eternal truth is God Himself. He gives it through the scriptures and latter-day prophets, and you can always trust Him."
+              "why": "Verse 13: he concluded he must either remain in darkness and confusion or do as James directs and ask of God. His question led him to pray.",
+              "kind": "verse"
             },
             {
               "id": "fsy11-search-sources",
               "hook": "Sorting truth from noise",
-              "body": "You hear a lot of claims, online and off. The lesson says that by seeking reliable sources and relying on the Spirit, you can tell what’s true, what’s important and what will lead you back to God. Before you believe or share something, ask where it came from.",
+              "body": "Online, anyone can sound sure of themselves, and a claim with millions of views isn’t true just because it’s popular. God is the source of eternal truth, and He has given it through scriptures and latter-day prophets. Checking reliable sources and listening to the Spirit together help you tell what’s true, what matters and what leads you to God.",
               "find": "By seeking reliable sources and relying on the Spirit, you can discern what is true",
-              "q": "What two things does the lesson say help you tell what’s true?",
-              "right": "Reliable sources and the Spirit",
+              "q": "A viral video makes a shocking claim about the Church, and it has millions of views. What does this lesson say helps you discern what’s true?",
+              "right": "Seeking reliable sources and relying on the Spirit",
               "wrong": [
-                "How many likes it has",
-                "Whoever is loudest",
-                "Whatever is newest"
+                "Checking how many people agree in the comments",
+                "Watching other videos on the same topic",
+                "Trusting your very first reaction to it"
               ],
-              "why": "The lesson says seeking reliable sources and relying on the Spirit help you discern what is true, what is important and what leads back to God."
-            },
-            {
-              "id": "fsy11-search-questions",
-              "hook": "Questions can lead to answers",
-              "body": "As a teenager, Joseph Smith felt confused about which church was right. He read James 1:5 and decided to ask God (Joseph Smith—History 1:11–13). The lesson says questions can lead to inspired answers, especially when you look in reliable sources and exercise faith in Jesus Christ.",
-              "find": "questions can lead to inspired answers—especially if we seek answers in reliable sources and exercise faith in Jesus Christ",
-              "q": "What did Joseph Smith do with his question?",
-              "right": "He read James 1:5 and asked God",
-              "wrong": [
-                "He kept it to himself",
-                "He gave up looking",
-                "He let others decide for him"
-              ],
-              "why": "James 1:5 promises that God gives wisdom to those who ask. Joseph trusted that promise and asked, and his question led to the First Vision."
+              "why": "Seeking reliable sources and relying on the Spirit help you discern what is true, what is important and what leads back to God. Popularity isn’t a test of truth.",
+              "kind": "scenario"
             },
             {
               "id": "fsy11-search-line",
               "hook": "Line upon line",
-              "body": "Why keep learning? The Lord teaches “line upon line,” and He warns that people who say they have enough will lose even what they have (2 Nephi 28:30). Even the Savior didn’t receive a fulness at first; He grew from grace to grace (Doctrine and Covenants 93:12–13). Your testimony grows the same way.",
-              "find": "Consider what these verses teach about learning and receiving divine truth",
-              "q": "How does the Lord give truth to His children?",
-              "right": "Line upon line, a little at a time",
+              "body": "Draw a picture of the Savior one line at a time and it slowly takes shape. Truth comes the same way. The Lord gives it line upon line, a little here and a little there, and gives more to those who receive it (2 Nephi 28:30). Even Jesus grew from grace to grace until He received a fulness (Doctrine and Covenants 93:12–13).",
+              "find": "Share with each other how your testimony has grown “grace to grace” and “line upon line.”",
+              "q": "In 2 Nephi 28:29–30, what happens to people who say, “We have enough”?",
+              "right": "Even what they have will be taken away",
               "wrong": [
-                "All at once when you turn eighteen",
-                "Only to people with no questions",
-                "Only once, and then it’s done"
+                "They’ll be given more when they’re ready",
+                "They’ll keep what they have but stop growing",
+                "They’ll have to start learning from the beginning"
               ],
-              "why": "The Lord gives truth line upon line, here a little and there a little, and gives more to those who receive it (2 Nephi 28:30)."
+              "why": "Verse 30: “unto him that receiveth I will give more; and from them that shall say, We have enough, from them shall be taken away even that which they have.”",
+              "kind": "verse"
+            },
+            {
+              "id": "fsy11-search-questions",
+              "hook": "A question isn’t a failure",
+              "body": "Ever worried that having a question means your faith is weak? Joseph Smith’s question led to the Restoration. Questions can lead to inspired answers, especially when you look in reliable places and exercise faith in Jesus Christ. While you wait for an answer, keep living by the truths you already know.",
+              "find": "questions can lead to inspired answers—especially if we seek answers in reliable sources and exercise faith in Jesus Christ",
+              "q": "Something you heard at school makes you wonder about the Church, and you feel guilty for even asking. What fits this lesson?",
+              "right": "Questions can lead to inspired answers when you seek with faith",
+              "wrong": [
+                "Having questions shows your testimony is weak",
+                "Keep it to yourself so the doubt goes away",
+                "Search online until someone settles it for you"
+              ],
+              "why": "Questions can lead to inspired answers, especially when you seek in reliable sources and exercise faith in Jesus Christ. Joseph Smith’s question is how the Restoration began.",
+              "kind": "scenario"
             }
           ],
-          "approved": "97fcdab8"
+          "approved": "973a5343",
+          "try": "Write down one gospel question you have. This week, look for an answer in the scriptures or a prophet’s words, and pray about it.",
+          "reflect": "What is one truth you know now that you didn’t know a year ago? How did you learn it?"
         },
         {
           "id": "fsy11-integrity",
@@ -487,63 +544,69 @@ window.TU_SUNDAY = {
           "intro": "November has five Sundays, and the magazine has lesson pages for four. For this one, go back to chapter 11 of the guide for a closer look at living with integrity and standing up for what’s right. Read Doctrine and Covenants 124:15 too.",
           "cards": [
             {
-              "id": "fsy11-integrity-means",
-              "hook": "What integrity means",
-              "body": "The guide says living with integrity means loving what is right in God’s sight more than your comfort, being popular or what’s convenient. It means doing right simply because it’s right. The Lord loved Hyrum Smith for the integrity of his heart (Doctrine and Covenants 124:15).",
-              "find": "It means doing what is right simply because it is right",
-              "q": "What does the guide say integrity means?",
-              "right": "Doing what’s right simply because it’s right",
+              "id": "fsy11-integrity-hyrum",
+              "hook": "What the Lord loved in Hyrum",
+              "body": "What does God notice about a person? In Doctrine and Covenants 124:15, He said He loved Hyrum Smith for the integrity of his heart, and because Hyrum loved what was right in the Lord’s eyes. Integrity means choosing what’s right even when it costs you comfort, your friends’ approval or an easier path.",
+              "find": "It means doing what is right simply because it is right.",
+              "q": "In Doctrine and Covenants 124:15, why did the Lord say He loved Hyrum Smith?",
+              "right": "For the integrity of his heart and loving what is right",
               "wrong": [
-                "Doing right only when someone’s watching",
-                "Never making any mistakes",
-                "Doing whatever keeps you popular"
+                "For being the Prophet Joseph’s loyal older brother",
+                "For giving his money to help build the temple",
+                "For never once making a mistake in his life"
               ],
-              "why": "Integrity means loving what is right more than comfort, popularity or convenience. The Lord loved Hyrum Smith because he loved what is right (Doctrine and Covenants 124:15)."
+              "why": "The Lord said He loved Hyrum “because of the integrity of his heart, and because he loveth that which is right before me.”",
+              "kind": "verse"
             },
             {
-              "id": "fsy11-integrity-everywhere",
+              "id": "fsy11-integrity-private",
               "hook": "Same in public and private",
-              "body": "The guide’s invitation is plain: don’t steal, lie, cheat or deceive in any way, at school, at work, online, everywhere. Be the same follower of Jesus Christ when friends are watching and when nobody is. Think of one place where being honest is hardest for you, and plan for it.",
-              "find": "Be the same faithful follower of Jesus Christ in public and in private",
-              "q": "Where does the guide say to be honest?",
-              "right": "Everywhere, including online",
+              "body": "Integrity doesn’t switch off when the teacher leaves the room or the screen goes private. Chapter 11 asks you not to steal, lie, cheat or deceive in any way: at school, at work, online, everywhere. The goal is to be the same follower of Jesus Christ whether anyone is watching or not.",
+              "find": "Be the same faithful follower of Jesus Christ in public and in private.",
+              "q": "During an online quiz, a friend messages you the answers. Nobody would ever know. What does chapter 11 ask of you?",
+              "right": "Don’t use them; be the same in private as in public",
               "wrong": [
-                "Only at church",
-                "Only with family",
-                "Only when it’s easy"
+                "Use them only to check answers you already have",
+                "Use them, since this quiz doesn’t count much",
+                "Copy a few, then change them so it’s fair"
               ],
-              "why": "The guide says not to steal, lie, cheat or deceive in any way: at school, at work, online, everywhere, the same in public and in private."
-            },
-            {
-              "id": "fsy11-integrity-peace",
-              "hook": "Honesty brings peace",
-              "body": "The chapter promises that honesty brings peace and self-respect. When your words and actions match the truth, you show that people can trust you, and that the Lord can too. A lie might look easier for a minute, but it can’t give you that kind of peace.",
-              "find": "Honesty brings peace and self-respect",
-              "q": "What does the guide promise honesty brings?",
-              "right": "Peace and self-respect",
-              "wrong": [
-                "Fame and money",
-                "A life with no problems",
-                "Getting your own way"
-              ],
-              "why": "Honesty brings peace and self-respect. When your words and actions line up with truth, other people and the Lord can trust you."
+              "why": "Integrity means no stealing, lying, cheating or deceiving anywhere, including online. Being the same in private as in public makes you someone the Lord and others can trust.",
+              "kind": "scenario"
             },
             {
               "id": "fsy11-integrity-stand",
-              "hook": "Stand up, with love",
-              "body": "Sometimes standing for what’s right means standing alone. The guide promises, “When you stand up for the teachings of Jesus Christ, He stands with you.” Do it with love, not arguing: be clear, meek and kind, even with people who believe differently. Your example matters.",
-              "find": "Sharing the gospel should not be done in a spirit of contention but rather with clarity, meekness, and kindness",
-              "q": "How does the guide say to stand up for what’s right?",
-              "right": "With love: clearly, meekly and kindly",
+              "hook": "Stand up, without a fight",
+              "body": "Standing for truth doesn’t mean winning an argument. Start with love for God and the people you’re talking to. Be clear about what you believe, and be meek and kind as you say it. You can disagree with someone’s views and still love them. When you stand up for Christ’s teachings, He stands with you.",
+              "find": "Sharing the gospel should not be done in a spirit of contention but rather with clarity, meekness, and kindness.",
+              "q": "In a class discussion, someone mocks what Latter-day Saints believe. How does chapter 11 say to respond?",
+              "right": "Explain clearly and kindly, without arguing",
               "wrong": [
-                "By winning every argument",
-                "By making fun of other beliefs",
-                "By staying quiet forever"
+                "Prove them wrong with the best facts you have",
+                "Stay quiet so you don’t cause a scene",
+                "Point out what’s wrong with their beliefs"
               ],
-              "why": "Let love for God and His children guide your words: no contention, just clarity, meekness and kindness. When you stand up for Christ’s teachings, He stands with you."
+              "why": "Chapter 11 says to share the gospel with clarity, meekness and kindness, not contention. Your courage and sincerity will be noticed, and your own faith grows either way.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy11-integrity-peace",
+              "hook": "What honesty gives back",
+              "body": "A lie can feel like a shortcut, but it leaves you looking over your shoulder. Honesty works the other way. When your words and actions line up with the truth, you gain peace and self-respect, and you show that people, and the Lord, can trust you.",
+              "find": "Honesty brings peace and self-respect.",
+              "q": "According to chapter 11, what does honesty bring you?",
+              "right": "Peace and self-respect",
+              "wrong": [
+                "Popularity and praise",
+                "Freedom from temptation",
+                "Good grades and rewards"
+              ],
+              "why": "Honesty brings peace and self-respect. When your words and actions match the truth, you show that other people and the Lord can trust you.",
+              "kind": "recall"
             }
           ],
-          "approved": "e37ab977"
+          "approved": "df85c683",
+          "try": "For one week, catch yourself before any small lie or exaggeration, even as a joke, and say what’s true instead.",
+          "reflect": "Where is it hardest for you to be the same person in private as in public? Why?"
         },
         {
           "id": "fsy11-covenant-son",
@@ -553,63 +616,69 @@ window.TU_SUNDAY = {
           "intro": "On the last Sunday, Aaronic Priesthood quorums study Captain Moroni, who raised a standard of liberty for his people. Read Alma 46:11–20, Alma 48:7–17 and Alma 62:4 before class.",
           "cards": [
             {
-              "id": "fsy11-son-truth",
-              "hook": "I pursue truth",
-              "body": "The lesson begins with who you are: a beloved son of God with a work to do. Then it says what a covenant son does with truth. He pursues it, studies the words of ancient and modern prophets, and learns by the Holy Ghost. And one more thing: “I courageously share what I learn.”",
-              "find": "I pursue truth, study the words of ancient and modern prophets, and learn by the power of the Holy Ghost",
-              "q": "What does the lesson say a covenant son does with what he learns?",
-              "right": "Courageously shares it",
+              "id": "fsy11-son-title",
+              "hook": "A coat turned into a flag",
+              "body": "When Captain Moroni heard that Amalickiah was dividing the people, he didn’t just complain. He tore his coat, wrote on it, tied it to a pole and called it the title of liberty. Then he prayed mightily for his people and went out waving it so everyone could see (Alma 46:11–19).",
+              "find": "Captain Moroni saw problems in the world around him, and he decided to do something about it.",
+              "q": "In Alma 46:12, what did Captain Moroni write on the piece of his coat?",
+              "right": "Their God, religion, freedom, peace and families",
               "wrong": [
-                "Keeps it a secret",
-                "Forgets it after class",
-                "Saves it for when he’s older"
+                "A list of the Nephite cities he would defend",
+                "The names of the soldiers who would follow him",
+                "A warning for Amalickiah and his followers"
               ],
-              "why": "The lesson’s statement: I pursue truth, study the words of prophets, learn by the power of the Holy Ghost, and courageously share what I learn."
+              "why": "Verse 12: “In memory of our God, our religion, and freedom, and our peace, our wives, and our children.” He wanted people to remember what was worth defending.",
+              "kind": "verse"
+            },
+            {
+              "id": "fsy11-son-heart",
+              "hook": "What kind of man Moroni was",
+              "body": "Moroni led armies, but Alma 48 describes his heart more than his battles. He did not delight in bloodshed. His heart swelled with thanks to God, he worked hard for his people’s safety, and he was firm in the faith of Christ (verses 11–13). Verse 17 says if everyone were like him, the powers of hell would be shaken forever.",
+              "find": "What Christlike attributes do you see in Moroni?",
+              "q": "Alma 48:16 says Moroni’s heart gloried in something. What was it?",
+              "right": "Doing good and preserving his people",
+              "wrong": [
+                "Winning battles against the Lamanites",
+                "The strength of his armies and forts",
+                "Being chief commander of the armies"
+              ],
+              "why": "Verse 16: his heart gloried “not in the shedding of blood but in doing good, in preserving his people,” in keeping God’s commandments and resisting iniquity.",
+              "kind": "verse"
             },
             {
               "id": "fsy11-son-better",
-              "hook": "Lay aside, seek better",
-              "body": "The Lord told Emma Smith to “lay aside the things of this world, and seek for the things of a better” (Doctrine and Covenants 25:10). The lesson suggests making two lists: things of this world, and things of a better world. What could you set down this week to make room for the second list?",
-              "find": "make a list of some of the things of this world and another list of the things of a better",
-              "q": "What did the Lord tell Emma Smith to seek in Doctrine and Covenants 25:10?",
-              "right": "The things of a better world",
+              "hook": "Set it down, reach higher",
+              "body": "The Lord told Emma Smith to lay aside the things of this world and seek for the things of a better (Doctrine and Covenants 25:10). Laying something aside doesn’t always mean throwing it away. Sometimes it means putting it down long enough to reach for what matters more. Make two lists and see what could move.",
+              "find": "make a list of some of “the things of this world” and another list of “the things of a better.”",
+              "q": "Your Saturdays fill up with games and videos, and you keep putting off scripture study and helping at home. What does Doctrine and Covenants 25:10 counsel?",
+              "right": "Lay aside things of this world and seek better things",
               "wrong": [
-                "The things of this world",
-                "Riches and fame",
-                "Whatever is easiest"
+                "Give up every game and screen for good",
+                "Ask your parents to plan your Saturdays",
+                "Save spiritual things for Sundays"
               ],
-              "why": "The Lord counseled Emma Smith to lay aside the things of this world and seek for the things of a better (Doctrine and Covenants 25:10)."
+              "why": "Doctrine and Covenants 25:10 asks you to lay aside the things of this world and seek for the things of a better. It’s about what comes first.",
+              "kind": "scenario"
             },
             {
-              "id": "fsy11-son-moroni",
-              "hook": "Moroni raised a standard",
-              "body": "Captain Moroni saw trouble around him and acted. He tore his coat, wrote on it a reminder of their God, religion, freedom, peace and families, and raised it as the title of liberty (Alma 46:12–13). Alma 48:17 says that if everyone were like Moroni, the powers of hell would be shaken forever.",
-              "find": "Captain Moroni saw problems in the world around him, and he decided to do something about it",
-              "q": "What did Captain Moroni call the banner he made from his coat?",
-              "right": "The title of liberty",
+              "id": "fsy11-son-standard",
+              "hook": "Raise a standard",
+              "body": "Moroni didn’t wait for someone else to fix things. He took a stand everyone could see and invited others to join him. Wherever he went, he raised the standard of liberty, and thousands gathered to it (Alma 62:4–5). A covenant son pursues truth and has the courage to share what he learns.",
+              "find": "I pursue truth, study the words of ancient and modern prophets, and learn by the power of the Holy Ghost. I courageously share what I learn.",
+              "q": "Kids in your class keep picking on a new student, and most people just watch. What would be most like what Moroni did?",
+              "right": "Take a clear stand and invite others to join you",
               "wrong": [
-                "The rod of iron",
-                "The Liahona",
-                "The sword of Laban"
+                "Wait for a teacher to notice and handle it",
+                "Be nice to the student later, in private",
+                "Post about it online so people know"
               ],
-              "why": "Moroni called his torn coat the title of liberty and prayed for liberty to bless his people (Alma 46:13). He raised that standard wherever he went (Alma 62:4)."
-            },
-            {
-              "id": "fsy11-son-month",
-              "hook": "Your month, put together",
-              "body": "This month you studied truth and learning, the scriptures, the search for truth and living with integrity. The lesson ends by asking what you’ve learned about the Savior and how His “truth will make you free,” and how that helps you do His work.",
-              "find": "what have you learned about the Savior and how His truth will make you free",
-              "q": "Which topics did November’s lessons cover?",
-              "right": "Learning, the scriptures, seeking truth and integrity",
-              "wrong": [
-                "Tithing, fasting and prayer",
-                "The Word of Wisdom and chastity",
-                "Missions, temples and family history"
-              ],
-              "why": "Chapter 11, “Truth Will Make You Free,” covers learning, integrity and sharing truth, and Captain Moroni shows what standing for truth looks like."
+              "why": "Moroni saw a problem and acted openly, inviting others to stand with him (Alma 46:19–20; 62:4). You can take a visible, kind stand and invite others to join.",
+              "kind": "scenario"
             }
           ],
-          "approved": "eb9e874e"
+          "approved": "b2eb47c0",
+          "try": "Make two lists: things of this world and things of a better. Choose one thing to set down this week and one to reach for.",
+          "reflect": "What would you write on your own title of liberty, and why does it matter to you?"
         }
       ]
     },
@@ -627,195 +696,213 @@ window.TU_SUNDAY = {
           "intro": "December’s topic is chapter 12 of the For the Strength of Youth guide, “Jesus Christ Brings Joy” (Doctrine and Covenants 101:36). On fast Sunday your quorum studies the chapter itself. Read it, then try these cards on its truths about joy and their promises.",
           "cards": [
             {
-              "id": "fsy12-chapter-good-news",
-              "hook": "Good news",
-              "body": "Heavenly Father is joyful, and He wants you to have as much joy as possible. That’s why He made the plan of happiness and sent Jesus Christ. The guide says the word gospel means “good news”: because of Jesus Christ, you can have happiness now and a fulness of joy forever.",
-              "find": "He wants you, His child, to have as much joy as possible",
-              "q": "What does the word gospel mean?",
-              "right": "Good news",
+              "id": "fsy12-chapter-full",
+              "hook": "Where joy is full",
+              "body": "The chapter’s title verse holds a surprise. The Lord tells His Saints not to fear, even death. In this world, He says, your joy is not full, but in Him your joy is full (Doctrine and Covenants 101:36). Joy doesn’t wait for a perfect world. It comes from Him.",
+              "find": "Joy doesn’t come from your circumstances; it comes from following Jesus Christ.",
+              "q": "Doctrine and Covenants 101:36 says your joy isn’t full in this world. Where does the Lord say it is full?",
+              "right": "In Him, Jesus Christ",
               "wrong": [
-                "Hard rules",
-                "Old stories",
-                "Secret knowledge"
+                "In answered prayers",
+                "In a peaceful home",
+                "In a life without fear"
               ],
-              "why": "Gospel means good news, and the good news is that because of Jesus Christ you can have happiness in this life and a fulness of joy for eternity."
+              "why": "Doctrine and Covenants 101:36: “in this world your joy is not full, but in me your joy is full.” Joy comes from following Christ, not from circumstances.",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-chapter-presence",
-              "hook": "Joy isn’t the absence of sorrow",
-              "body": "You’ll still have bad days, maybe even a bad year. The guide says joy doesn’t come from your circumstances but from following Jesus Christ. Joy isn’t having no sadness at all; “it’s the presence of Christ in your life.” He can help you get through hard times and find joy.",
-              "find": "Joy doesn’t come from your circumstances; it comes from following Jesus Christ",
-              "q": "Where does the guide say joy comes from?",
-              "right": "Following Jesus Christ",
+              "id": "fsy12-chapter-sad",
+              "hook": "Sad isn’t the same as failing",
+              "body": "You can follow Jesus Christ and still have a bad day, a bad week, even a bad year. Sadness doesn’t mean you’re doing the gospel wrong; everyone faces trials. Joy isn’t the absence of sorrow, “it’s the presence of Christ in your life.” He can comfort you and help you find joy again.",
+              "find": "Feeling sad is not a sign that you aren’t living the gospel.",
+              "q": "After a hard week, a friend says, “If you were really living the gospel, you wouldn’t feel sad.” What does chapter 12 say?",
+              "right": "Sadness isn’t a sign you aren’t living the gospel",
               "wrong": [
-                "Having no problems",
-                "Getting what you want",
-                "Being popular"
+                "Faithful people should look happy all the time",
+                "Sadness is a warning that you need to repent",
+                "Joy will come back once your trials are over"
               ],
-              "why": "Joy doesn’t come from your circumstances; it comes from following Jesus Christ. Joy is not the absence of sorrow but the presence of Christ in your life."
+              "why": "Everyone faces adversity and sorrow. Following Christ doesn’t remove it, but it connects you with a Savior who comforts you. Joy is the presence of Christ in your life.",
+              "kind": "scenario"
             },
             {
-              "id": "fsy12-chapter-share",
-              "hook": "Choose joy, share joy",
-              "body": "The chapter invites you to choose joy: notice reasons to rejoice every day, maybe even write them down. Then bring joy to others, the way Jesus found joy in bringing us joy. Give a sincere compliment or encourage someone who’s struggling. Need more joy? Try giving some away.",
-              "find": "If you ever feel like you need more joy in your life, try bringing joy to someone else",
-              "q": "What does the guide suggest if you feel you need more joy?",
-              "right": "Try bringing joy to someone else",
+              "id": "fsy12-chapter-give",
+              "hook": "Need joy? Give some",
+              "body": "Jesus Christ found a fulness of joy in bringing joy to us. You can follow Him in small ways: help someone feel loved, give a sincere compliment, or encourage someone who is struggling. Here’s the twist: when your own joy runs low, giving some away is one of the best ways to get it back.",
+              "find": "If you ever feel like you need more joy in your life, try bringing joy to someone else.",
+              "q": "It’s been a gloomy December and you feel low on joy. What does chapter 12 suggest trying?",
+              "right": "Bringing joy to someone else",
               "wrong": [
-                "Buy something new",
-                "Stay home by yourself",
-                "Wait for it to show up"
+                "Treating yourself to something you’ve wanted",
+                "Taking a break from people for a while",
+                "Waiting for Christmas to lift your mood"
               ],
-              "why": "Jesus Christ found a fulness of joy in bringing us joy. Following Him, you can find joy by helping someone feel loved or encouraging someone who’s struggling."
+              "why": "Chapter 12 says that if you need more joy, try bringing joy to someone else. That follows the Savior, who found a fulness of joy in bringing us joy.",
+              "kind": "scenario"
             },
             {
-              "id": "fsy12-chapter-promises",
-              "hook": "Joy, even when life is hard",
-              "body": "The chapter promises that you can feel joy even when life is hard, through faith in Jesus Christ and His healing power. And a fulness of joy waits for you in the celestial kingdom. If sadness ever won’t lift, the guide says to get help from a parent, leader or trusted professional.",
-              "find": "You can feel joy even when life is hard",
-              "q": "What does the guide promise about joy and hard times?",
-              "right": "You can feel joy even when life is hard",
+              "id": "fsy12-chapter-lasting",
+              "hook": "Fun versus joy",
+              "body": "Satan offers fun and satisfaction in selfish ways or through worldly pleasures. They can feel good for a moment, but anything against Jesus Christ and His commandments can’t give lasting joy. Heavenly Father has also filled the world with beautiful, wholesome things. Seek them out and notice reasons to rejoice every day.",
+              "find": "Anything that is contrary to Jesus Christ and His commandments cannot bring you true, lasting joy and happiness.",
+              "q": "What does chapter 12 say can never bring you true, lasting joy?",
+              "right": "Anything contrary to Jesus Christ and His commandments",
               "wrong": [
-                "Hard times will never come",
-                "Joy only comes after life gets easy",
-                "Only adults can feel real joy"
+                "Fun activities that have nothing to do with church",
+                "Things you enjoy alone instead of with others",
+                "Anything that costs money or takes a lot of time"
               ],
-              "why": "Faith in Jesus Christ, His healing power and His promises can give you joy even in hard times, and a fulness of joy awaits in the celestial kingdom."
+              "why": "Things of this earth are temporary. The gospel offers joy that is deep, holy and everlasting, but anything contrary to Christ and His commandments can’t bring lasting joy.",
+              "kind": "recall"
             }
           ],
-          "approved": "948511fa"
+          "approved": "433bdc19",
+          "try": "Each night this week, write down one reason to rejoice from that day. On Sunday, read your whole list.",
+          "reflect": "When have you felt joy during a hard time? What do you think brought it?"
         },
         {
           "id": "fsy12-trust",
           "sunday": "2026-12-13",
           "title": "Trusting Jesus Christ",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/12/fsy-lessons/02-second-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about trusting Jesus Christ: what faith is, how it opens the way for miracles, and what to do when a miracle doesn’t come. Read Matthew 14:25–33 and Mark 5:21–42 before class.",
+          "intro": "What does it really mean to trust Jesus Christ, and what if the miracle you pray for doesn’t come? Read Matthew 14:25–33, where Peter walks on the water, and Mark 5:21–42 before class.",
           "cards": [
             {
-              "id": "fsy12-trust-faith",
-              "hook": "More than believing",
-              "body": "Faith in Jesus Christ is the first principle of the gospel. The lesson says it’s more than believing He exists: it’s learning to trust Him completely. With faith, you can feel hope and confidence in what He says, even when you can’t see it yet or don’t fully understand.",
-              "find": "Faith is more than believing He exists. It means learning to trust Him completely",
-              "q": "Faith is more than believing Jesus exists. What else is it, according to the lesson?",
-              "right": "Learning to trust Him completely",
-              "wrong": [
-                "Knowing everything for sure",
-                "Getting whatever you pray for",
-                "Never having questions"
-              ],
-              "why": "Faith is the first principle of the gospel. It means learning to trust Jesus Christ completely, with hope and confidence in what He says."
-            },
-            {
               "id": "fsy12-trust-peter",
-              "hook": "Peter on the water",
-              "body": "When Jesus walked on the sea, Peter asked to come to Him, and he walked on the water too. When he saw the wind, he got scared, began to sink and cried out to the Lord. Jesus reached out and caught him right away (Matthew 14:28–31). What makes Jesus worthy of your trust?",
-              "find": "Talk about things you know about Jesus Christ that make Him worthy of your trust",
-              "q": "What did Jesus do when Peter began to sink?",
-              "right": "He reached out and caught him",
+              "hook": "Eyes on the wind",
+              "body": "In the middle of a stormy night, Peter asked to walk to Jesus on the water, and he did. Then he noticed the wind, got scared and started to sink. He cried out for the Lord to save him, and Jesus immediately reached out and caught him (Matthew 14:28–31).",
+              "find": "Talk about things you know about Jesus Christ that make Him worthy of your trust.",
+              "q": "In Matthew 14:30, what made Peter begin to sink?",
+              "right": "He saw the strong wind and was afraid",
               "wrong": [
-                "He let Peter swim back",
-                "He told Peter to try again tomorrow",
-                "He calmed the wind and waited"
+                "He looked back toward the other disciples",
+                "He tried to walk without Jesus’ help",
+                "The waves grew too big to stand on"
               ],
-              "why": "Matthew 14:31: right away Jesus stretched out His hand and caught Peter. Even when your faith wobbles, He is close enough to reach you."
+              "why": "Verse 30: when Peter saw the wind boisterous, he was afraid and began to sink. Even then, Jesus immediately stretched out His hand and caught him (verse 31).",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-trust-miracles",
-              "hook": "Faith and miracles",
-              "body": "In Mark 5, a woman sick for twelve years touched the Savior’s clothes and was healed, and He said her faith had made her whole. Then Jairus heard his daughter had died. Jesus told him not to be afraid, only to believe, and He raised her (Mark 5:21–42). Faith opens the way for miracles.",
-              "find": "Faith opens the way for miracles, according to God’s will",
-              "q": "What did Jesus tell Jairus after word came that his daughter had died?",
+              "id": "fsy12-trust-jairus",
+              "hook": "Only believe",
+              "body": "Jairus begged Jesus to heal his dying daughter. On the way, a woman who had been sick for twelve years touched His clothes and was healed. Then messengers came: too late, the girl had died. Jesus spoke to Jairus right away, then raised the twelve-year-old girl (Mark 5:21–42). Faith opens the way for miracles, according to God’s will.",
+              "find": "Faith opens the way for miracles, according to God’s will.",
+              "q": "In Mark 5:35–36, messengers told Jairus his daughter had died. What did Jesus tell him?",
               "right": "Don’t be afraid; only believe",
               "wrong": [
-                "It’s too late now",
-                "Go find another healer",
-                "Come back tomorrow"
+                "Your faith has made her whole",
+                "Go home and comfort your family",
+                "Wait here while I go to her"
               ],
-              "why": "Mark 5:36: Jesus told Jairus not to be afraid, only believe. Then He raised his twelve-year-old daughter (Mark 5:41–42)."
+              "why": "Mark 5:36: Jesus said, “Be not afraid, only believe.” He said “thy faith hath made thee whole” to the woman who touched His clothes (verse 34).",
+              "kind": "verse"
             },
             {
               "id": "fsy12-trust-thorn",
-              "hook": "When the miracle doesn’t come",
-              "body": "Paul prayed three times for the Lord to take away a trial he called a thorn in the flesh. The Lord didn’t take it away, but told him His grace was enough, and Paul found strength in weakness (2 Corinthians 12:7–10). The lesson says faith isn’t in a certain outcome. “Faith is in Him.”",
-              "find": "Faith isn’t in a specific outcome we may want in this life",
-              "q": "What did the Lord tell Paul when He didn’t take the trial away?",
-              "right": "His grace was enough",
+              "hook": "When the answer is no",
+              "body": "Paul pleaded with the Lord three times to take away a painful trial. It stayed. The Lord told him His grace was enough, and His strength is made perfect in weakness (2 Corinthians 12:7–10). Faith isn’t trust in a certain result you want. It’s trust in Christ, who stays with you either way.",
+              "find": "Faith isn’t in a specific outcome we may want in this life. Faith is in Him.",
+              "q": "You’ve prayed for weeks for a friend’s mom to get better, and she hasn’t. What does this lesson say your faith is in?",
+              "right": "Jesus Christ Himself, not a certain outcome",
               "wrong": [
-                "Paul hadn’t prayed hard enough",
-                "He would never hear Paul again",
-                "Paul should stop asking for help"
+                "Praying hard enough to change the outcome",
+                "The doctors finding the right treatment",
+                "Getting the blessing if you’re worthy enough"
               ],
-              "why": "2 Corinthians 12:9: the Lord said His grace was sufficient, and His strength is made perfect in weakness. Trusting Him matters more than getting the answer you wanted."
+              "why": "Faith isn’t in a specific outcome; it’s in Him. Paul’s trial stayed, but he learned Christ’s power could rest on him, and said, “when I am weak, then am I strong.”",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy12-trust-faith",
+              "hook": "More than believing",
+              "body": "Lots of people believe Jesus Christ lived. Faith goes further: it means learning to trust Him completely. That trust brings hope and confidence in what He says, even when you can’t see the result yet or don’t fully understand it. Faith in Him is the first principle of the gospel.",
+              "find": "Faith is more than believing He exists. It means learning to trust Him completely",
+              "q": "Faith is more than believing Jesus exists. What else does this lesson say it means?",
+              "right": "Learning to trust Him completely",
+              "wrong": [
+                "Having no doubts about anything",
+                "Knowing for sure what He’ll do",
+                "Believing whatever you’re told"
+              ],
+              "why": "Faith in Jesus Christ is the first principle of the gospel. It means learning to trust Him completely, with hope and confidence in what He says.",
+              "kind": "recall"
             }
           ],
-          "approved": "55b2b217"
+          "approved": "2509b0b9",
+          "try": "Write down one thing you’re trusting Jesus Christ with right now. Each morning this week, pray about it and tell Him you trust Him.",
+          "reflect": "What do you know about Jesus Christ that makes Him worthy of your trust?"
         },
         {
           "id": "fsy12-hope",
           "sunday": "2026-12-20",
           "title": "Hope in Jesus Christ",
           "read": "https://www.churchofjesuschrist.org/study/ftsoy/2026/12/fsy-lessons/03-third-sunday?lang=eng",
-          "intro": "This Sunday your quorum learns more about hope: what it is, how Adam and Eve found it, and how the scriptures make it brighter. Read Ether 12:4 and Moses 5:6–11 before class.",
+          "intro": "Is hope just wishing things will work out? Read Ether 12:4 and Moses 5:6–11, where Adam and Eve, outside the Garden of Eden, find reasons to rejoice. Look for what makes hope stronger than a wish.",
           "cards": [
             {
-              "id": "fsy12-hope-what",
-              "hook": "Confidence in good things to come",
-              "body": "The lesson defines hope as confidence in good things to come (Ether 12:4). You can have hope even when life is hard, because you have faith in Jesus Christ and His promises. Because of Him, “every wound can be healed, every tear can be dried,” and what’s unfair can be made right.",
+              "id": "fsy12-hope-anchor",
+              "hook": "An anchor in a storm",
+              "body": "A ship without an anchor drifts wherever the wind pushes it. Ether 12:4 says hope that comes from faith works like an anchor for your soul, making you sure and steadfast. To have hope is to have confidence in good things to come, because Jesus Christ keeps His promises.",
               "find": "To have hope is to have confidence in good things to come",
-              "q": "How does the lesson define hope?",
-              "right": "Confidence in good things to come",
+              "q": "Ether 12:4 compares hope to something that keeps you steady. What is it?",
+              "right": "An anchor to the soul",
               "wrong": [
-                "Wishing without any reason",
-                "Knowing exactly what will happen",
-                "Pretending everything is fine"
+                "A light in the darkness",
+                "A shield against the adversary",
+                "A seed that grows into faith"
               ],
-              "why": "To have hope is to have confidence in good things to come. Ether 12:4 says hope comes of faith and is an anchor for the soul."
+              "why": "Ether 12:4: hope “cometh of faith, maketh an anchor to the souls of men, which would make them sure and steadfast.”",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-hope-faith",
-              "hook": "Faith and hope work together",
-              "body": "Are faith and hope the same thing? Alma taught that faith isn’t a perfect knowledge; if you have faith, you hope for things you can’t see that are true (Alma 32:21). Ether 12:4 says hope comes from faith. Try writing your own definitions of each.",
-              "find": "See if you can write your own definitions of hope and faith, based on your discussion",
-              "q": "What does Alma 32:21 say faith is not?",
-              "right": "A perfect knowledge of things",
+              "id": "fsy12-hope-eden",
+              "hook": "Hope outside the garden",
+              "body": "Leaving the Garden of Eden was surely hard for Adam and Eve. Then an angel taught Adam that his sacrifices pointed to the Savior, and the Holy Ghost bore witness that he could be redeemed. Adam praised God and said that in this life he would have joy (Moses 5:6–10). Christ changed how their future looked.",
+              "find": "Why were Adam and Eve hopeful for the future?",
+              "q": "In Moses 5:11, why was Eve glad after leaving the garden?",
+              "right": "She saw the joy of their family and redemption",
               "wrong": [
-                "Something only for children",
-                "Worth having",
-                "Connected to hope"
+                "They could return to the garden someday",
+                "Their hard work was finally over",
+                "An angel promised them a long life"
               ],
-              "why": "Alma 32:21: faith is not a perfect knowledge. If you have faith, you hope for things that aren’t seen but are true."
+              "why": "Moses 5:11: Eve said that without their transgression they would never have had children, known good and evil, or known “the joy of our redemption.”",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-hope-adam",
-              "hook": "Adam and Eve’s hope",
-              "body": "Leaving the Garden of Eden must have been hard. But Adam and Eve learned about the Savior, and Adam said that in this life he would have joy (Moses 5:10). Eve was glad for the joy of their redemption (Moses 5:11). Christ gave them hope for the future, and He gives it to you too.",
-              "find": "Why were Adam and Eve hopeful for the future",
-              "q": "After leaving Eden, what did Adam say he would have in this life?",
-              "right": "Joy",
+              "id": "fsy12-hope-wish",
+              "hook": "Not just wishful thinking",
+              "body": "Wishing is crossing your fingers. Hope is different: it rests on faith in Jesus Christ and His promises. Because of Him, every wound can be healed, every tear dried, and every unfair thing made right. The Lord also promises that your afflictions can work together for your good (Doctrine and Covenants 98:3).",
+              "find": "Because of Him, every wound can be healed, every tear can be dried, and everything that is unfair can be made right.",
+              "q": "Your family is going through a hard time, and a friend says hope is just wishing. What could you say from this lesson?",
+              "right": "Hope is confidence based on Christ and His promises",
               "wrong": [
-                "Only sorrow",
-                "Great riches",
-                "A perfect garden"
+                "Hope is thinking positively until things improve",
+                "Hope means knowing exactly how it will end",
+                "Hope is acting fine so others don’t worry"
               ],
-              "why": "Moses 5:10: Adam blessed God and said that because his eyes were opened, in this life he would have joy."
+              "why": "We can have hope even when life is hard because we have faith in Jesus Christ and His promises. That makes hope an assurance, not a guess.",
+              "kind": "scenario"
             },
             {
-              "id": "fsy12-hope-scriptures",
-              "hook": "Feast and hope",
-              "body": "The scriptures were written so that we could have hope (Romans 15:4). Nephi said to press forward with a perfect brightness of hope, “feasting upon the word of Christ” (2 Nephi 31:20). Share a verse that gives you hope, and make a plan to find more.",
-              "find": "Make a plan for how you will find more hope in the scriptures",
-              "q": "What does Romans 15:4 say the scriptures help us have?",
-              "right": "Hope",
+              "id": "fsy12-hope-written",
+              "hook": "Written so you could hope",
+              "body": "Why read stories thousands of years old? Paul said they were written for our learning, so that through patience and the comfort of the scriptures we might have hope (Romans 15:4). Jacob said searching the prophets gave his people hope and unshaken faith (Jacob 4:6). Feasting on Christ’s words makes hope brighter (2 Nephi 31:20).",
+              "find": "Make a plan for how you will find more hope in the scriptures.",
+              "q": "Romans 15:4 says the scriptures were written in the past for a reason. What reason does it give?",
+              "right": "So that through them we might have hope",
               "wrong": [
-                "Perfect knowledge of the future",
-                "A reason to argue",
-                "Nothing for today"
+                "So we would have rules to follow",
+                "So the prophets would be remembered",
+                "So we would know what comes next"
               ],
-              "why": "Romans 15:4: things were written in the past for our learning, so that through the comfort of the scriptures we might have hope."
+              "why": "Romans 15:4: things were “written for our learning, that we through patience and comfort of the scriptures might have hope.”",
+              "kind": "verse"
             }
           ],
-          "approved": "a757b612"
+          "approved": "3be20d29",
+          "try": "Find one verse that gives you hope, write it on a card, and put it where you’ll see it every morning.",
+          "reflect": "What good things are you hoping for because of Jesus Christ?"
         },
         {
           "id": "fsy12-covenant-son",
@@ -825,63 +912,69 @@ window.TU_SUNDAY = {
           "intro": "On the last Sunday, Aaronic Priesthood quorums study 3 Nephi 1, where the Lord tells Nephi to be of good cheer, and Joseph, a just man chosen to help raise the Son of God. Read 3 Nephi 1:6–14 and Matthew 1:18–25; 2:13–15 before class.",
           "cards": [
             {
-              "id": "fsy12-son-joy",
-              "hook": "Live in joy",
-              "body": "Each month’s last lesson starts the same way: you’re a beloved son of God with a work to do. This month adds that you live in joy, find strength and purpose in Christ, and rejoice in your noble birthright as a covenant son of God. Which gospel blessings bring you joy?",
-              "find": "I live in joy, find strength and purpose in Christ, and rejoice in my noble birthright as a covenant son of God",
-              "q": "What does this month’s lesson say a covenant son finds in Christ?",
-              "right": "Strength and purpose",
-              "wrong": [
-                "Fame and fortune",
-                "An easy life",
-                "A way out of hard work"
-              ],
-              "why": "The lesson’s statement: I live in joy, find strength and purpose in Christ, and rejoice in my noble birthright as a covenant son of God."
-            },
-            {
               "id": "fsy12-son-cheer",
               "hook": "Lift up your head",
-              "body": "In 3 Nephi 1, unbelievers set a day to kill the believers if the sign of Christ’s birth didn’t come. Nephi prayed all day, and the Lord answered: “Lift up your head and be of good cheer.” That night the sign came. The Lord kept His promise (3 Nephi 1:9–15).",
-              "find": "What reasons did the Lord give them to be of good cheer",
-              "q": "What did the Lord tell Nephi on the day the believers were threatened?",
-              "right": "Lift up your head and be of good cheer",
+              "body": "Believers watched for the sign Samuel the prophet had promised. Unbelievers mocked them and set a day to put them to death if it didn’t come. Nephi cried to the Lord all day. The answer came: “Lift up your head and be of good cheer.” That night, the sun went down and there was no darkness (3 Nephi 1:6–15).",
+              "find": "What reasons did the Lord give them to be of good cheer?",
+              "q": "In 3 Nephi 1:13, what reasons did the Lord give Nephi to be of good cheer?",
+              "right": "The sign would come that night, and He would come the next day",
               "wrong": [
-                "Run and hide in the hills",
-                "The sign would never come",
-                "Wait another year"
+                "The unbelievers would soon be destroyed by fire",
+                "Nephi’s people would escape to the wilderness",
+                "Samuel would return to defend the believers"
               ],
-              "why": "3 Nephi 1:13: the Lord told Nephi to lift up his head and be of good cheer: the sign would be given that night, and He would come into the world the next day."
+              "why": "3 Nephi 1:13: “on this night shall the sign be given, and on the morrow come I into the world.” The Lord kept His word that very night.",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-son-joseph",
-              "hook": "Joseph, a just man",
-              "body": "Matthew calls Joseph “a just man.” When an angel told him in a dream to take Mary as his wife, he did it. When another dream warned him that Herod wanted to kill the young Jesus, he took his family to Egypt that same night (Matthew 1:18–25; 2:13–15). What traits do you see?",
-              "find": "list some of Joseph’s Christlike character traits",
-              "q": "What did Joseph do when an angel warned him about Herod?",
-              "right": "He took Mary and Jesus to Egypt by night",
+              "id": "fsy12-son-just",
+              "hook": "A just man, and a kind one",
+              "body": "Joseph learned that Mary, the woman he was promised to marry, was expecting a child. Matthew calls him a just man. He wasn’t willing to shame her in public. Then an angel told him in a dream not to fear and to take Mary as his wife. When he woke up, he did exactly that (Matthew 1:18–24).",
+              "find": "and list some of Joseph’s Christlike character traits.",
+              "q": "In Matthew 1:19, before the angel came, what was Joseph planning to do?",
+              "right": "Quietly end the engagement without shaming Mary",
               "wrong": [
-                "He stayed to fight Herod",
-                "He waited to see what would happen",
-                "He sent Mary and Jesus away alone"
+                "Take Mary to Bethlehem as soon as possible",
+                "Ask the priests what the law required",
+                "Marry Mary sooner than they had planned"
               ],
-              "why": "Matthew 2:13–14: the angel said to flee into Egypt, and Joseph arose and took the young child and His mother by night. He obeyed quickly."
+              "why": "Verse 19: Joseph, “being a just man, and not willing to make her a publick example, was minded to put her away privily”: to end it quietly and protect her.",
+              "kind": "verse"
             },
             {
-              "id": "fsy12-son-month",
-              "hook": "Your month, put together",
-              "body": "This month you studied joy in Jesus Christ, trusting Him, and hope. The lesson ends by asking what you’ve learned about finding joy in Jesus Christ, and how that helps you do His work. Think of a time serving with the Savior brought joy to you and to others.",
-              "find": "what have you learned about finding joy in Jesus Christ",
-              "q": "Which topics did December’s lessons cover?",
-              "right": "Joy in Christ, trusting Him and hope",
+              "id": "fsy12-son-prompt",
+              "hook": "He got up that night",
+              "body": "Another dream, another warning: Herod wanted to destroy the young child. Joseph didn’t wait for morning. He got up and took Jesus and Mary to Egypt by night (Matthew 2:13–14). The man chosen to raise the Son of God was faithful, protective and quick to obey. Those traits help with the work God gives you too.",
+              "find": "Why do you think these traits would be important for someone who was chosen to raise the Son of God?",
+              "q": "Your dad asks you to help a neighbor shovel snow now, but you planned to finish your game first. Which trait of Joseph’s fits?",
+              "right": "Acting right away, like Joseph leaving that same night",
               "wrong": [
-                "Learning, scriptures and integrity",
-                "The Word of Wisdom and chastity",
-                "Tithing, fasting and prayer"
+                "Waiting until you understand every reason first",
+                "Choosing a better time that works for everyone",
+                "Asking whether someone else could go instead"
               ],
-              "why": "Chapter 12, “Jesus Christ Brings Joy,” teaches that joy comes from following Him, and Joseph and Nephi show what trusting Him looks like."
+              "why": "When the angel warned him, Joseph arose and took the young child and His mother by night (Matthew 2:14). His quick obedience protected Jesus.",
+              "kind": "scenario"
+            },
+            {
+              "id": "fsy12-son-joy",
+              "hook": "Joy in His work",
+              "body": "A covenant son lives in joy and finds strength and purpose in Christ. Some of that joy comes from working beside the Savior: passing the sacrament, ministering to a family, or helping someone through a hard week. Think of a time serving with Him brought joy to you and to someone else.",
+              "find": "I live in joy, find strength and purpose in Christ, and rejoice in my noble birthright as a covenant son of God.",
+              "q": "Your quorum is asked to sing carols for a lonely ward member on a cold night. What does this lesson connect that service to?",
+              "right": "Joy for you and for others, working with the Savior",
+              "wrong": [
+                "It counts most if the bishop hears about it",
+                "It earns blessings you can save for later",
+                "It’s a duty, so how you feel doesn’t matter"
+              ],
+              "why": "The lesson invites you to share times when taking part in the Savior’s work brought joy, to you and to others. A covenant son lives in joy.",
+              "kind": "scenario"
             }
           ],
-          "approved": "bdf9e5cf"
+          "approved": "314642eb",
+          "try": "This week, do one quiet act of service for someone at home without being asked, the way Joseph quietly protected his family.",
+          "reflect": "What work do you think God has given you to do, and which Christlike trait would help you most?"
         }
       ]
     }
@@ -901,7 +994,7 @@ window.TU_SUNDAY = {
           "quotes": [
             "In a world of commotion, contention, and cares, the Lord invites us to a place of spiritual safety, harmony, and holiness—the house of the Lord.",
             "Please do not deliberately delay the spiritual peace and joyful freedom Jesus Christ wants you to have now.",
-            "Ordinances are not big or small. Covenants are not big or small. Please let us never speak of a temple as big or small, elaborate or plain.",
+            "ordinances are not big or small. Covenants are not big or small. Please let us never speak of a temple as big or small, elaborate or plain.",
             "Whatever generation you are in the Church, in the chain of your eternal family, please be a strong link."
           ],
           "scriptures": [
@@ -912,26 +1005,25 @@ window.TU_SUNDAY = {
             "Doctrine and Covenants 132:7",
             "Doctrine and Covenants 128:9"
           ],
-          "quick": "Elder Gong invites us to come to the Lord’s house to worship and rejoice. He lays out three doctrinal foundations—God’s work to bring families home, moral agency, and the sealing confirmation of the Holy Spirit of Promise—then five parts of a personal temple culture. He promises that the temple and its ordinances can protect and inspire us, bring forgiveness, healing and peace, and unite our loved ones on both sides of the veil.",
+          "quick": "Why did the temple workers cross the road? To help those on the other side. The Lord is bringing His house, a place of safety in a noisy world, closer to our homes, and solid doctrine and a personal temple culture deepen our love for Him. The promise: protection and inspiration, softened hearts and families joined across the veil.",
           "points": [
-            "Heavenly Father’s work is to bring us home as eternal families. Temple marriage is a covenant meant to last, kept strong by prayer, scripture, church and service.",
-            "Agency means God will never force anyone into an eternal relationship they do not choose. Through Christ’s Atonement, temple work for hard family relationships can soften hearts and bring forgiveness.",
-            "Ordinances and covenants become binding forever when the Holy Spirit of Promise confirms them, and that happens as we honor them.",
-            "A dedication is a beginning. With temples closer, we can sacrifice in new ways: attending more often, bringing family names, and serving as patrons and workers.",
-            "Every temple testifies of Christ. Come with gratitude, not entitlement, never call a temple big or small, and consider owning your own temple clothes."
+            "A temple marriage is held together by covenant, sacrifice and consecration, not by how convenient or attractive things feel at the moment.",
+            "Agency reaches into eternity: no one will ever be sealed into a relationship they did not choose.",
+            "Doing the ordinances for a relative we once clashed with can soften our hearts, free us to forgive and bring peace.",
+            "Ordinances bind forever when the Holy Spirit of Promise confirms them, and He seals the covenants we actually honor.",
+            "Closer temples change what sacrifice looks like: going more often, bringing family names, and serving as patron or worker as life allows."
           ],
           "discuss": [
-            "When has temple service or family history softened your heart toward someone, or where might it help you now?",
-            "With temples closer than ever, what new kind of sacrifice could you make to come to the Lord’s house?",
-            "What could help our children see how much we treasure the Lord and the covenants we make in the temple?"
+            "Whose temple work might soften something in your heart, and what would it take to do it soon?",
+            "With a temple nearer than ever, what rhythm of attending or serving fits our family in this season?",
+            "What do our children learn from the way we talk about the temple and care for sacred things?"
           ],
           "deep": {
             "paras": [
-              "Elder Gong opens with a riddle about why temple workers cross the road. The answer: to help people on the other side. He calls the temple a refuge where the Lord teaches His plan, endows us and prepares us to come home. His first doctrinal foundation is that Heavenly Father’s work and glory is our return to Him as families (Moses 1:39). Temple marriage is held together by covenant, sacrifice and consecration, not by passing convenience or attraction.",
-              "The second foundation is agency. We chose the Father’s plan when the morning stars sang for joy (Job 38:7). As Joseph Smith saw, nearly everyone will be saved in a kingdom of glory (Doctrine and Covenants 76:39–43), and no one will be made to be sealed in a relationship they do not choose. Elder Gong teaches that doing temple work for family members we once struggled with can bring healing, forgiveness and peace. Citing Alma 34:33, he pleads with us not to put off repentance.",
-              "The third foundation is the Holy Spirit of Promise. When the Holy Ghost confirms that ordinances were done properly and covenants kept, they bind in time and eternity (Doctrine and Covenants 132:7). Covenants we ignore or mock would not bind us.",
-              "He then names five parts of a personal temple culture. A dedication is a beginning, and the spiritual blessings matter more than the building. Some members once reached a temple just once or twice in their lives; now we can come more often, bring names and serve. Every temple testifies of Jesus Christ. We should come with gratitude, and Elder Gong said, “Ordinances are not big or small. Covenants are not big or small.” Finally, he invites us to buy our own temple clothes where possible, telling of a widowed mother whose children bought hers. She wore them for years and was buried in them.",
-              "To new converts who feel alone, he says they belong to Heavenly Father’s family. His own parents were the only members in their families. He asks each of us to be a strong link in our eternal family."
+              "The talk is built in two layers: three doctrines underneath, and five habits of temple culture on top. The first doctrine is the Father’s purpose of bringing us home as families (Moses 1:39). A temple marriage rests on covenant commitment and keeps growing through prayer, scripture study, church attendance and service.",
+              "The second doctrine is agency. We chose the Father’s plan before this life, when the morning stars sang (Job 38:7), and nearly everyone will receive a kingdom of glory (Doctrine and Covenants 76:39–43). God will never force anyone into an eternal relationship. Through Christ’s Atonement, temple work for family members we struggled with can bring forgiveness and healing, so Elder Gong pleads with us not to put off repentance (Alma 34:33).",
+              "The third doctrine is the Holy Spirit of Promise. He confirms that ordinances were done properly and that covenants were kept, and then they bind in time and eternity (Doctrine and Covenants 132:7). Covenants we ignore or mock would not bind us.",
+              "Five habits follow. A dedication is a starting point, and the spiritual blessings matter more than the building. Nearer temples let us sacrifice by coming often, bringing names and serving. Every temple testifies of Jesus Christ. We come with gratitude rather than entitlement: “ordinances are not big or small. Covenants are not big or small.” And where we can, we buy our own temple clothes. To converts who feel alone, he says they belong to Heavenly Father’s family, and he asks each of us to be a strong link in our family chain."
             ],
             "find": [
               "Heavenly Father’s work and glory is for us to return to Him, united as families, happy and forever.",
@@ -942,7 +1034,22 @@ window.TU_SUNDAY = {
               "please consider saving for and buying your own ceremonial temple clothes"
             ]
           },
-          "approved": "4ee652f5"
+          "approved": "ad997da9",
+          "story": {
+            "title": "Temple clothes for a widowed mother",
+            "text": "A family without much money had a widowed mother who asked for temple clothes of her own. Her children saved until they could buy them for her. For many years she wore them gladly as she went to the temple, and when she died, the family honored her wish and buried her in them. Elder Gong shares it to show that caring for our own temple clothes lets children and grandchildren see how much we love the Lord and our covenants."
+          },
+          "invite": [
+            {
+              "ask": "Dear brothers and sisters, come worship and rejoice with the Lord in the house of the Lord, in temple doctrine and in your own personal temple culture.",
+              "promise": "So God and temple ordinances can protect, bless, and inspire; bring forgiveness, healing, and peace; and unite loved ones here and away."
+            },
+            {
+              "ask": "please consider saving for and buying your own ceremonial temple clothes—cap or veil, robe, sash, and apron.",
+              "promise": "As we reverently care for and use our own temple clothes, our children and grandchildren can see we love the Lord and our temple covenants."
+            }
+          ],
+          "try": "Pick one family member whose ordinances you can do, perhaps someone you found hard to love, and put a temple date for that name on the calendar."
         },
         {
           "id": "oct26-runia-sculpting-souls",
@@ -963,25 +1070,25 @@ window.TU_SUNDAY = {
             "1 Nephi 11:16–17",
             "1 John 3:2"
           ],
-          "quick": "Sister Runia teaches that hard experiences are not a sign God has left us. Because He loves us, He uses them to shape us into who we can become. The gospel does not keep the storms away; it is the rock we stand on. She invites us to trust Him even when we do not understand, and to ask the Savior to work on us. She promises that one day we will see His hand and thank Him for all of it.",
+          "quick": "Grief and unanswered prayers don’t pull us off course; in God’s hands they become the chisel. Because He loves us, He lets experience carve us into someone only He can picture. We can trust Him without knowing why, and when we invite the Savior in, He mends what feels broken and makes room for joy.",
           "points": [
-            "Some things we cannot fix. As the Lord told Joseph Smith in a jail cell, our trials give us experience and can be for our good.",
-            "The gospel is not an umbrella that keeps the rain off. It is the sure foundation that holds us up in the storm.",
-            "God lets us pass through refining experiences because He loves us and wants us to become like Him. We can move from asking “why” to asking what is meant to happen here.",
-            "We may not understand, yet we can still believe. Each of our stories is personal and has purpose, and Christ can heal what feels broken.",
-            "Like a master sculptor, the Savior waits for our invitation, then shapes us in ways we could never manage alone."
+            "The gospel doesn’t keep the rain off us. It is the rock we stand on while the storm hits.",
+            "Love changes the question from why this happened to what God may be building in us through it.",
+            "Each life story is personal and has a purpose, so measuring ours against someone else’s misses the point.",
+            "A godlike life is shaped by the hard things that happened and by the good hopes that haven’t come true.",
+            "The Savior waits to be asked. His carving can feel sudden and deep before we can see what His hand has made."
           ],
           "discuss": [
-            "When has the gospel felt more like solid rock under your feet than an umbrella over your head?",
-            "What helps you keep believing in God’s love during a season you do not understand?",
-            "What would it look like for you to invite the Savior to shape your soul right now?"
+            "What painful experience in your life looks different now than it did while you were living through it?",
+            "How can we help our children expect storms without concluding that the gospel has let them down?",
+            "Where might pride be keeping us from asking the Savior for help with something we want to do ourselves?"
           ],
           "deep": {
             "paras": [
-              "Sister Runia loves fixing things, from knotted shoelaces to stains. But thirteen years ago her oldest son, Ryan, a husband and father of four, kissed his family goodbye one Monday and, a few hours later, collapsed and died of an undetected heart condition. The next day was his little daughter Piper’s second birthday. As the family sang to her, Piper looked for her dad, and Sister Runia knew this was something she could not fix.",
-              "She turns to the Lord’s answer to Joseph Smith as he pleaded for relief in a jail cell (Doctrine and Covenants 122:7): our trials give us experience and can be for our good. There is no way around experience; we have to go through it. She once saw the gospel as an umbrella against hardship. Now she sees it as the rock beneath us in the storm (Helaman 5:12). Like Nephi, she admits she does not know the meaning of all things, yet she knows God loves His children (1 Nephi 11:17).",
-              "At Ryan’s funeral she told his family, “Not understanding is not the same as not believing.” Our stories are personal, so we need not compare, and they have purpose. Ryan’s seven-year-old son, Jaac, shared a Primary talk about following Lego instructions, and said you can trust the designer even without the picture on the box. The day before he died, Ryan had told a struggling neighbor that he could blame God or turn to Him and be healed. Sister Runia invites us all to make that choice and choose Christ.",
-              "She closes with her brother Kent’s college sculpting class. He struggled alone to make the eyes of his clay self-portrait look real, then finally asked for help. The instructor carved deep and fast, and the eyes came to life. Kent said, “A master’s hand had shaped what mine could not.” The Savior, she teaches, waits for our invitation. His work may feel abrupt, but one day we will see ourselves as He shaped us, thank Him for it all, and be like Him (1 John 3:2)."
+              "Sister Runia loves untangling knots and lifting stains. Then her oldest son died suddenly of an undetected heart condition, leaving a wife and four young children. The next day his two-year-old daughter looked for her father during her own birthday song, and Sister Runia knew this could not be fixed. She found a new lens in the Lord’s answer to Joseph Smith, pleading in a jail cell: “All these things shall give thee experience, and shall be for thy good” (Doctrine and Covenants 122:7). There is no way around experience, only through it.",
+              "She grew up hearing true promises: keep the commandments, pay tithing, live the Word of Wisdom, and blessings follow. So she pictured the gospel as an umbrella. Experience taught her that everyone gets rained on. The gospel is the sure foundation under our feet in the storm (Helaman 5:12). Like Nephi, who knew God loves His children but did not grasp the meaning of everything (1 Nephi 11:16–17), she has moved from asking why toward asking what God is doing in her.",
+              "At her son’s funeral she said, “Not understanding is not the same as not believing.” Our stories are personal and purposeful, and suffering gives meaning to the path rather than steering us off it. Her seven-year-old grandson gave a Primary talk about following Lego instructions; asked whether he would still follow them without the picture on the box, he said yes, because you can trust the designer. The day before he died, her son had told a neighbor whose family had left him that he could blame God or turn to Him and be healed.",
+              "The sculpting story shows how the Savior works: He waits for our invitation, then carves in ways that can startle us. One day, when the pain is over, we will look at our own souls, marvel at what He has made, and thank Him for every bit of the shaping. Then, as John promised, “we shall be like him” (1 John 3:2)."
             ],
             "find": [
               "All these things shall give thee experience, and shall be for thy good.",
@@ -991,7 +1098,18 @@ window.TU_SUNDAY = {
               "He waits for an invitation before He can really go to work."
             ]
           },
-          "approved": "c5bdea73"
+          "approved": "c8bb4aea",
+          "story": {
+            "title": "A master’s hand on the clay",
+            "text": "In a college sculpting class, Sister Runia’s brother had to model a clay bust of himself. He expected it to be easy, but the eyes never looked alive. He saw the instructor helping others, yet he wanted the piece to be all his own, so he struggled alone until he finally asked. The teacher cut in so deep and fast it startled him, and within minutes the eyes came alive. The bust was still unmistakably him, shaped by a skill he lacked. The Savior works on our souls like that, once we invite Him."
+          },
+          "invite": [
+            {
+              "ask": "Let’s choose Christ, who can heal the wounds of this world while carving out room for joy!",
+              "promise": "Christ’s work in your life and His love for you are bigger than your present story. And He can fix what feels badly broken."
+            }
+          ],
+          "try": "Name one hard thing you’ve been trying to fix alone. In prayer this week, ask the Savior to take His tools to it, and say so out loud."
         },
         {
           "id": "oct26-causse-gift-testimony",
@@ -1013,25 +1131,25 @@ window.TU_SUNDAY = {
             "Doctrine and Covenants 100:8",
             "Alma 36:17"
           ],
-          "quick": "Elder Caussé teaches that every disciple, not only apostles, is asked to bear witness of Jesus Christ. A testimony is a personal gift from God, meant to be shared with love. It does not need to be long or polished, because the Spirit carries the truth. He invites us to look each day for chances to share a short, sincere witness, and promises that our own testimony will grow and that our words can change lives.",
+          "quick": "A testimony isn’t a trophy to keep on a shelf; it’s a gift meant to be given away. Every covenant disciple is called to witness of Christ, and a short, sincere “I know” can be the spark that turns someone back to Him. Sharing it also makes our own faith stronger and draws us nearer the Lord.",
           "points": [
-            "Elder Caussé’s first duty as a new Seventy, and again as a new Apostle, was simply to bear record of Jesus Christ.",
-            "Apostles are special witnesses of Christ, but every covenant disciple is called to stand as a witness of God.",
-            "A testimony is personal and may look different from anyone else’s. Rather than ask “Why me?” we can ask what the Lord wants us to do with it.",
-            "Testimony and love strengthen each other. Saying “I know” is a way to love, and saying “I love you” sincerely is a way to testify.",
-            "A simple witness carries power because the Holy Ghost confirms it. Sharing it blesses others and strengthens our own faith."
+            "Witnessing of Christ belongs to every member who has taken His name, not only to apostles and prophets.",
+            "Each testimony is shaped by our own life and needs, so it can look different from a spouse’s or a friend’s and still be real.",
+            "Saying “I know” and saying “I love you” are close cousins: each one points people to the Savior.",
+            "It is the Spirit, not polished words, that carries a testimony into another heart.",
+            "Instead of wondering why we were blessed with a testimony, a better question is how the Lord wants us to use it."
           ],
           "discuss": [
-            "Whose simple testimony has made a lasting difference in your life, and why did it reach you?",
-            "Where in an ordinary week could you share a one- or two-minute witness of the Savior?",
-            "How have you seen “I know” and “I love you” strengthen each other in our home?"
+            "Whose simple testimony once made a difference to you, and what did they say?",
+            "Where in an ordinary week could we naturally say what we believe about Jesus Christ?",
+            "How can we make our home a place where both “I know” and “I love you” are said often?"
           ],
           "deep": {
             "paras": [
-              "Eighteen years ago, President Thomas S. Monson called Elder Caussé to be a General Authority Seventy. The next morning, praying for help, he felt prompted to open a Liahona on the kitchen table and found the Lord’s promise in Doctrine and Covenants 68:6: be of good cheer, do not fear, and bear record of Jesus Christ. Eleven months ago, newly called as an Apostle, he was invited by President Dallin H. Oaks to bear testimony to the First Presidency and the Twelve, and the same promise returned to him.",
-              "The risen Savior told His Apostles they would be His witnesses (Acts 1:8), and Apostles today are special witnesses of Christ. But Elder Caussé teaches that the call to witness reaches every disciple. Those who take Christ’s name covenant to witness of God in every time and place (Mosiah 18:9). Our testimony is personal and grows through faith, seeking, living the gospel and the Holy Ghost. Like the servants in the parable of the talents (Matthew 25:14–30), we are not to hide it.",
-              "He links testimony with love. Sharing what we know is a way to love our neighbor. Elder Caussé said, “Whenever we express Christlike love to those around us, we bear witness of Him.” He tells of a niece who, at Young Women camp, could only say that God loved her and had a plan for her. She felt discouraged until her mother asked if she believed it and told her that was all that mattered. The Spirit, not our eloquence, carries a witness (Doctrine and Covenants 100:8).",
-              "Young Alma, in deep anguish, remembered his father’s witness of Christ, and it led him to repent (Alma 36:17). Elder Caussé asks how many people near us are waiting for such a witness. He invites us to look each day, as the Spirit prompts, for brief chances to testify at home, at church, in ministering, online and in everyday talk. He promises our testimony will grow and we will become instruments in the Lord’s hands."
+              "When President Thomas S. Monson called Elder Caussé as a General Authority Seventy, he prayed the next morning and felt prompted to open the Liahona on the kitchen table. His eyes fell on the Lord’s promise: “Be of good cheer, and do not fear, … and ye shall bear record of me, even Jesus Christ” (Doctrine and Covenants 68:6). His main job, he realized, was simply to be a witness. Eleven months before this conference, newly called as an Apostle and asked by President Dallin H. Oaks to bear testimony to the First Presidency and the Twelve, he felt that same promise return.",
+              "Before ascending, the risen Lord told His Apostles, “Ye shall be witnesses unto me” (Acts 1:8). Apostles today hold keys as special witnesses, and the testimony of apostles and prophets about Jesus Christ is central to the Church’s doctrine. But all who have covenanted to take Christ’s name promise to “stand as witnesses of God at all times and in all things, and in all places” (Mosiah 18:9). A testimony is personal, grown through faith, seeking, obedience and the Holy Ghost, and, unlike the talent buried in the Savior’s parable (Matthew 25:14–30), it is meant to be shared.",
+              "Testimony and love strengthen each other. We share what we know because we love people, and genuine love itself bears witness of Christ. The Holy Ghost carries the truth of what we say (Doctrine and Covenants 100:8), which is why the simple words of humble servants, from Enoch and Moses down to Joseph Smith and today’s more than 90,000 missionaries, carry divine power.",
+              "Young Alma, in his anguish, remembered his father’s witness of Jesus Christ, and that memory led him to repent (Alma 36:17). Elder Caussé asks how many people around us are waiting for a witness like that. Even a beginning testimony is ours to share, at home, in meetings, while ministering, online or in everyday conversation."
             ],
             "find": [
               "my primary responsibility was simply to bear witness of the Savior",
@@ -1042,7 +1160,22 @@ window.TU_SUNDAY = {
               "look each day for opportunities, as prompted by the Holy Ghost, to bear witness of Jesus Christ"
             ]
           },
-          "approved": "8f6124b4"
+          "approved": "9d2bf963",
+          "story": {
+            "title": "Two sentences at girls camp",
+            "text": "Elder Caussé’s niece, just beginning to gain a testimony, stood to bear it at Young Women camp. Nervous, she managed only two lines: that God loves her and that He has a plan for her. For days afterward she felt discouraged that she could not speak like the other girls. When she told her mother, her mother asked whether she believed what she had said. She did. Then, her mother told her, that was all that mattered. A testimony needs to be true, not long or polished."
+          },
+          "invite": [
+            {
+              "ask": "I invite you to look each day for opportunities, as prompted by the Holy Ghost, to bear witness of Jesus Christ and His restored gospel—even if only for a minute or two.",
+              "promise": "As you share it freely, your own testimony will grow stronger. You will draw closer to the Lord and feel more deeply the power of His redemption."
+            },
+            {
+              "ask": "I hope you will fill your lives, and the lives of others, with many heartfelt I knows",
+              "promise": "As these expressions of faith and love come together, they will help create an environment where the Spirit of the Lord can dwell and bring joy to your hearts."
+            }
+          ],
+          "try": "Each day this week, tell one person a single sentence of what you believe about the Savior, at dinner, in a text or during a visit."
         },
         {
           "id": "oct26-sikahema-prophets-seers",
@@ -1064,25 +1197,25 @@ window.TU_SUNDAY = {
             "Doctrine and Covenants 90:5",
             "Doctrine and Covenants 1:38"
           ],
-          "quick": "Elder Sikahema tells how his Tongan grandparents sailed through a storm and buried their baby son, then kept going just to hear an Apostle. After centuries without prophets, the Lord restored them through Joseph Smith, and they hold the keys that bind families forever. He invites us not to treat the words of living prophets as a light thing, now that we can hear them so easily, and testifies that their voice is the Lord’s voice.",
+          "quick": "For centuries people searched for a prophet’s voice and found silence. Now living apostles and prophets speak to us on the phone in our pocket, which makes it easy to take them for granted. When we treat their words as precious, we hear the Lord Himself, because His voice and His servants’ voices are the same.",
           "points": [
-            "In 1947 his grandparents, serving a mission in Tonga, sailed through a storm and lost their infant son, yet kept going to be taught by an Apostle.",
-            "They valued Apostles because they hold the priesthood keys and authority that would seal their family forever.",
-            "After the ancient apostles died, there was a long famine of hearing the Lord’s word, as Amos foretold, until God called Joseph Smith.",
-            "When the Father and Son appeared to Joseph, the Restoration of truths, priesthood authority, ordinances and scripture began.",
-            "The Lord warns us not to take His servants’ words lightly. What He speaks through them is the same as His own voice."
+            "After the ancient apostles died, heaven’s voice to prophets went quiet for centuries, a famine of the word that Amos foresaw.",
+            "The First Vision opened the heavens again and began restoring priesthood keys, ordinances, scripture and the plan of salvation.",
+            "Apostles hold the keys for the ordinances that bind families together forever.",
+            "Easy access can breed carelessness. Seeing prophets on a screen should make us more grateful, not less attentive.",
+            "Some early Church leaders were embarrassed by Joseph Smith’s writing, but the Lord stands behind what He reveals through imperfect servants."
           ],
           "discuss": [
-            "What sacrifice, large or small, could help you truly hear the prophets this conference season?",
-            "In what ways might we take living prophets for granted, and what would help us value their words more?",
-            "What faith from past generations in our family do we want to pass on to our children?"
+            "What would we be willing to give up to hear a prophet if we had to travel for days to do it?",
+            "How do we treat the prophets’ words in our home, and what would show our children we value them more?",
+            "Which ancestor’s sacrifice for the gospel would you like our family to know and remember?"
           ],
           "deep": {
             "paras": [
-              "In 1947, Elder Sikahema’s mother’s parents, Sione Tufui and Salote Tongi Wolfgramm, were poor farmers serving a full-time mission on the small Tongan island of Niuatoputapu with their three young children. When the Apostle Matthew Cowley came to Tonga, they set out to see him. A storm turned a 16-hour voyage to Vava‘u into two and a half days, and their nine-month-old son, Vilimanulea, died. They buried him, got back on the boat, and sailed on to hear an Apostle.",
-              "Why such sacrifice? Elder Sikahema explains that they understood Apostles hold the keys and authority for the ordinances that would seal them as an eternal family, and that an Apostle could teach them how to bless others on their island.",
-              "He then traces the need for prophets. After the ancient apostles died, there was a famine of hearing the word of the Lord (Amos 8:11–12), though God reveals His secrets to His prophets (Amos 3:7). The Savior and Paul warned of false prophets and wolves among the flock (Acts 20:29). That famine ended when the Father and the Son appeared to Joseph Smith (Joseph Smith—History 1:17), and truths, authority, ordinances and scripture were restored.",
-              "The Lord told Joseph to beware of treating His oracles as “a light thing” (Doctrine and Covenants 90:5). Elder Sikahema notes how easily we can now see and hear prophets on our phones, and how easily we might take them for granted. Some early leaders were embarrassed by Joseph’s writing, yet the Lord declared that whether He speaks Himself or through His servants, His word is one and the same (Doctrine and Covenants 1:38). He asks us to treasure living prophets as his grandparents did."
+              "Elder Sikahema’s grandparents were serving as a young missionary couple in Niuatoputapu, Tonga, when word came in 1947 that Elder Matthew Cowley would visit. Apostles had come to Tonga only twice before, in 1921 and 1938. Their storm-tossed voyage cost them their baby son, whom they buried in Vava‘u before sailing on. Like the pioneers who buried children on the trail, they kept going because the restored Church had prophets, seers and revelators holding the keys that could make them an eternal family.",
+              "That hunger makes sense against history. Amos foresaw “not a famine of bread, nor a thirst for water, but of hearing the words of the Lord” (Amos 8:11–12), and he also taught that the Lord reveals His secrets to His prophets (Amos 3:7). The Savior warned of false prophets (Matthew 7:15–23), and Paul of wolves who would not spare the flock (Acts 20:29). Centuries later, medieval reformers longed for a prophet’s voice and found none.",
+              "The famine ended in a grove near Palmyra, New York, when the Father introduced His Son to young Joseph Smith (Joseph Smith—History 1:17). Truths, priesthood authority, ordinances and scripture followed. Elder Sikahema suspects the Lord knew that even with prophets a tap away on our phones, many would take them lightly, which is why He warned against treating His oracles as “a light thing” (Doctrine and Covenants 90:5).",
+              "Some early leaders, embarrassed by Joseph’s writing, opposed publishing his revelations; Elder Sikahema suggests that may be why the Lord declared that His word would be fulfilled “whether by mine own voice or by the voice of my servants, it is the same” (Doctrine and Covenants 1:38). Elder Sikahema closes grateful for ancestors who left a legacy of courage and faith."
             ],
             "find": [
               "They sailed to sit at the feet of an Apostle",
@@ -1092,7 +1225,18 @@ window.TU_SUNDAY = {
               "whether by mine own voice or by the voice of my servants, it is the same"
             ]
           },
-          "approved": "d076a914"
+          "approved": "32a26cd5",
+          "story": {
+            "title": "Sailing through grief to hear an Apostle",
+            "text": "In 1947 Elder Sikahema’s grandparents, poor Tongan farmers serving a mission on a remote island, set out with their three small children to hear Elder Matthew Cowley, only the third Apostle ever to visit Tonga. A storm stretched a 16-hour crossing into two and a half days. Their baby son became badly dehydrated and died. They buried him within two days, then got back on the boat. They kept sailing because an Apostle held the keys to seal their family and could teach them how to bless others."
+          },
+          "invite": [
+            {
+              "ask": "As we begin this opening session of the 196th Semiannual General Conference of the Church, let us not be guilty of holding “the oracles of God … as a light thing”",
+              "promise": null
+            }
+          ],
+          "try": "Before conference ends, choose one apostle’s talk, listen all the way through without your phone in hand, and write down one thing you will do."
         },
         {
           "id": "oct26-hathaway-great-deliverer",
@@ -1114,25 +1258,25 @@ window.TU_SUNDAY = {
             "Mark 5:36",
             "Ezekiel 34:16"
           ],
-          "quick": "Elder Hathaway teaches that Jesus Christ, who suffered every kind of pain, will surely deliver the righteous from every mortal affliction. The only questions are how and when. He shows a pattern: trials bring hard questions, we seek God, He sends assurance as we keep our covenants, His grace helps us endure, and deliverance comes in His time. He invites us not to fear but to believe, and promises that Christ will deliver us.",
+          "quick": "Whether it’s loneliness, illness, loss or a burden nobody sees, the real question isn’t whether Jesus Christ will rescue the faithful, only how and when. He knows our pain from the inside. As we keep our covenants with humility and patience, He comes to us in our trials, gives us strength to endure, and delivers us in His time.",
           "points": [
-            "Because Christ took on all our pains and afflictions, He understands us and can deliver the righteous. The question is not whether, but how and when.",
-            "Opposition comes to everyone. Hard questions and strong feelings are not sin; they give us a moment to choose to turn to Christ.",
-            "As we seek God through prayer, fasting and scripture and keep our covenants, the Savior visits us with assurance and peace.",
-            "His grace does not take away the pain, but it strengthens us to do what we can and then wait on the Lord.",
-            "Deliverance comes in His time and way. No situation is too late or too final for Him."
+            "Deliverance tends to follow a pattern: hard questions, sincere seeking, grace to endure and grow, then rescue on the Lord’s timetable.",
+            "Raw questions in a trial are not sin or weakness. They are a moment to choose to turn toward Christ.",
+            "Grace doesn’t erase the pain. It lends us strength beyond our own to keep going and hold on to His promises.",
+            "The Lord is never late or distracted; growth that comes while we wait may convert us more deeply than an early rescue would.",
+            "Some miracles come at once, some after long waiting, and some will only come in the Resurrection."
           ],
           "discuss": [
-            "When has the Lord given you peace in a trial before He took the trial away?",
-            "Which part of the pattern—questions, seeking, assurance, enduring, deliverance—feels closest to where you are now?",
-            "What growth have you seen come from waiting on the Lord that a quick rescue might not have brought?"
+            "When has peace come before the problem was solved, and how did that change the way you waited?",
+            "What helps you keep trusting when an answer is taking much longer than you hoped?",
+            "How can we support each other through a trial without rushing to fix it?"
           ],
           "deep": {
             "paras": [
-              "Elder Hathaway begins with the hard things many of us carry: feeling left out or not enough, loss, illness, family trouble. Because Jesus Christ suffered pains and afflictions of every kind (Alma 7:11–12), He knows how to help us, and His deliverance is sure. As his family drove to begin serving as mission leaders, two tires came off a semitruck and wrecked both their cars. Stranded and confused, they felt the Spirit promise that all would be well, and they began their mission on time without serious injury.",
-              "From this he draws a pattern. First, opposition stirs hard questions, like Joseph Smith’s cry, “O God, where art thou?” (Doctrine and Covenants 121:1). Such feelings are not weakness; they are a moment to choose Christ. Second, we seek Him, as Alma’s people cried mightily to God (Mosiah 24:10) and King Darius fasted for Daniel. Third, as we keep our covenants, the Savior sends assurance.",
-              "Sister Kenzie Brinkerhoff learned this near the end of her mission. Her father, Kelly, called one morning to say he loved her; that night he died in a car accident. Weeks later she told Elder Hathaway, “I have never clung so tightly to my covenants.” Fourth, Christ’s grace helps us do all we can and then stand still to see God’s salvation (Doctrine and Covenants 123:17). It does not erase the pain, but it gives strength beyond our own.",
-              "Fifth, deliverance comes in the Lord’s time. When Jairus heard his daughter had died, Jesus told him, “Be not afraid, only believe” (Mark 5:36), and raised her. Elder Hathaway shares Elder Patrick Kearon’s witness that Jesus makes the impossible possible. He promises that Christ will seek the lost and bind up the broken (Ezekiel 34:16)."
+              "Elder Hathaway’s family was driving in two cars to begin serving as mission leaders when two loose semitruck tires slammed into both vehicles in a construction zone. The cars were destroyed, and they stood by the road wondering why this would happen after leaving everything to serve. The Spirit whispered that all would be well. They were not rescued instantly, but they arrived on time without serious injury. Because Christ suffered every sort of pain, trial and temptation (Alma 7:11–12), He knows how to help.",
+              "From that day he draws a pattern. Opposition comes to everyone and raises hard questions, like Joseph Smith’s “O God, where art thou?” (Doctrine and Covenants 121:1). Sincere seeking follows, as when Alma’s people cried to God in bondage or King Darius fasted all night for Daniel. As we keep covenants humbly and patiently, the Savior visits us and gives assurances, as He did for the grieving sister missionary.",
+              "His grace then strengthens us to do gladly whatever we can, and then to wait with full confidence for God to show His power (Doctrine and Covenants 123:17). That grace does not remove the hurt; it lets us bear what we could not bear alone. Deliverance arrives in His time. The Lord is not delayed, does not delight in our pain and has not forgotten us.",
+              "When it seems too late, remember Jairus, told his daughter was dead, who heard Jesus say, “Be not afraid, only believe” (Mark 5:36). Elder Hathaway quotes Elder Patrick Kearon: “Jesus specializes in the seemingly impossible.” The Lord promised through Ezekiel to seek the lost and bind up the broken (Ezekiel 34:16)."
             ],
             "find": [
               "Jesus Christ delivers the righteous from these and every other affliction of mortality",
@@ -1142,7 +1286,18 @@ window.TU_SUNDAY = {
               "no mortal timeline can place us beyond Christ’s power to deliver"
             ]
           },
-          "approved": "b4973241"
+          "approved": "5b65d4d0",
+          "story": {
+            "title": "One week from hugging her dad",
+            "text": "On her last preparation day, a sister missionary in Elder Hathaway’s mission got an early call from her father, who told her how much he loved her, how proud he felt and how soon he wanted to hug her. That night he died in a car accident on his way home from work. Through tears she asked how this could happen a week before she would see him. Weeks later she said it had been the most awful and most sacred time of her life; she had never held so tightly to her covenants, and she knew Jesus would heal her."
+          },
+          "invite": [
+            {
+              "ask": "To all who continue to face the pain, fear, and loneliness of life, I echo the Savior’s words: “Be not afraid, only believe.”",
+              "promise": "In His time and way, Jesus Christ will deliver you."
+            }
+          ],
+          "try": "Write down one burden you’re carrying. Next to it, list one way you’ll seek Him this week through prayer, fasting or scripture, and one covenant you’ll hold tighter."
         },
         {
           "id": "oct26-soares-holier-fast",
@@ -1163,25 +1318,25 @@ window.TU_SUNDAY = {
             "Helaman 3:35",
             "Alma 7:11–12"
           ],
-          "quick": "Elder Soares teaches that fasting is more than going without food. Joined with sincere prayer and generous fast offerings, it is an act of worship that draws us close to God and turns our hearts to His children. He invites us to ponder Isaiah 58 and lift our fasting to a higher and holier level. He promises miracles, nearness to the Savior, strength over weakness, and greater care for others.",
+          "quick": "A fast can be far more than an empty stomach. Paired with focused prayer and a generous offering, and kept with a glad heart, it becomes worship that lines our will up with God’s and turns us toward people in need. Isaiah’s promise still holds: light after darkness, healing, and a Lord who answers when we call.",
           "points": [
-            "In Isaiah 58 the Lord lifts fasting beyond outward form and promises light, healing, and His answer, “Here I am,” when we call.",
-            "Fasting paired with earnest prayer humbles us, softens our hearts, and prepares us for personal revelation.",
-            "The Savior fasted and prayed for 40 days before His ministry. Fasting may not lift every burden, but it brings heaven’s power to endure.",
-            "Fasting is not a test of willpower or a bargain for blessings; it helps us trust the Lord and accept His will.",
-            "Generous fast offerings turn our fast outward to bless those in need and consecrate our means and time to the Lord."
+            "Isaiah 58 lifts fasting from an outward ritual to an act of worship that refines a disciple.",
+            "Fasting without real prayer misses the point. Together they humble us, soften our hearts and open us to revelation.",
+            "Before His ministry, the Savior spent 40 days fasting and praying to align with His Father, and that strength carried Him through temptation.",
+            "Fasting may not lift every burden, but it brings heaven close and gives power to overcome or endure.",
+            "A generous fast offering, however small, turns a private fast into Christlike care for those in need."
           ],
           "discuss": [
-            "What would make your next fast feel more like joyful worship and less like simply going without food?",
-            "How has fasting and prayer helped you accept the Lord’s will when the answer was not what you expected?",
-            "How might our family make fast offerings a more meaningful part of how we serve others?"
+            "What usually makes a fast feel like a chore for you, and what could make it feel more like worship?",
+            "How might we help our children see fast offerings as a way of caring for real people?",
+            "When has fasting changed what you wanted instead of changing your circumstances?"
           ],
           "deep": {
             "paras": [
-              "Elder Soares testifies that fasting with a higher and holier purpose brings strength, guidance, peace and divine help. He roots this in Isaiah 58, where the Lord looks past outward fasting to its true purpose. The promises are tender: our light will break forth as the morning, our health will spring forth, and when we call, the Lord will answer, “Here I am” (Isaiah 58:8–9). President Joseph F. Smith taught that fasting helps the spirit rule the body and brings us nearer to God.",
-              "A true fast goes with earnest prayer. Together they deepen our faith and love, make us humble and aware of our need for the Lord, soften our hearts, and prepare us for revelation (Helaman 3:35). The Savior showed the way. Before His ministry, He spent 40 days in the wilderness fasting and communing with His Father, then overcame the adversary’s temptations. Elder Soares notes that fasting is not a test of restraint or a way to request blessings; it brings our desires in line with God’s.",
-              "The fast also turns us toward others. Isaiah taught that an acceptable fast frees the oppressed and breaks every yoke (Isaiah 58:6). The Prophet Joseph Smith said that a person filled with God’s love longs to bless the whole human race. Today, Elder Soares explains, we do this through generous fast offerings. Like the Savior, who suffered so He would know how to succor us (Alma 7:11–12), we help those in need.",
-              "Elder Soares said, “Personally, I have felt an increase of inspiration and revelation as I have sought to live this law with greater sincerity.” He invites us to ponder Isaiah’s words and fast with more intention. He promises miracles, nearness to the Savior, strength to overcome weakness, and hearts more alert to others."
+              "Elder Soares testifies of the sanctifying power that comes when we live the law of the fast “in a higher and holier way.” In Isaiah 58 the Lord pushed His people past outward observance and showed fasting as worship. The promises are tender: “Then shall thy light break forth as the morning, and thine health shall spring forth speedily” (Isaiah 58:8–9). President Joseph F. Smith taught that fasting puts the body under the spirit and brings us nearer to God.",
+              "Prayer is the partner of fasting. Together they help us tell the Lord what we truly want, learn His will, grow humble and become ready for personal revelation. Jesus Christ modeled this before His ministry, spending 40 days in the wilderness with His Father. Fasting is not just restraint or a request for a particular blessing; it brings our desires and expectations in line with His wisdom, even when answers come differently than we hoped.",
+              "Isaiah also tied fasting to others: the fast the Lord accepts helps free those who are held down and lifts the burdens that bind them (Isaiah 58:6). Joseph Smith taught that a person filled with God’s love wants to bless the whole human race. Today that love takes shape in fast offerings, following the Savior, who suffered so He would know how to succor His people (Alma 7:11–12).",
+              "Small offerings become consecrated acts of compassion, and the Lord makes givers into instruments in His hands. Elder Soares has seen fasting quietly soften hearts and change lives, and he has felt more inspiration as he has lived it more sincerely."
             ],
             "find": [
               "beyond the outward observance of this law",
@@ -1192,7 +1347,14 @@ window.TU_SUNDAY = {
               "I invite you to prayerfully ponder Isaiah’s teachings"
             ]
           },
-          "approved": "8caeca9f"
+          "approved": "b855404b",
+          "invite": [
+            {
+              "ask": "I invite you to prayerfully ponder Isaiah’s teachings and more intentionally embrace the divine purpose of the law of the fast in a higher and holier way as part of our worship.",
+              "promise": "I promise, in the name of our Savior, Jesus Christ, that miracles will come into your life. You will draw nearer to the Savior, receive strength to overcome your weaknesses, and become more sensitive to the needs of others."
+            }
+          ],
+          "try": "Before your next fast, read Isaiah 58:6–9 together, name one person you’re fasting for, and decide on a fast offering that feels generous to you."
         },
         {
           "id": "oct26-douglas-hour-mission",
@@ -1212,25 +1374,25 @@ window.TU_SUNDAY = {
             "Matthew 28:19–20",
             "2 Corinthians 3:2–3"
           ],
-          "quick": "Bishop Douglas thanks missionaries of every age and asks the rising generation, young converts included, to make full-time missionary service a top priority. A mission asks a great deal, but he testifies it is worth it and that these young people were prepared for this work before they were born. Using the Lord’s words to Thomas B. Marsh, he promises that the Lord will open hearts and care for the families of those who go.",
+          "quick": "More missionaries are serving, and more people are being baptized, than at any other time in this dispensation, and there is still a place waiting for each young person. A mission asks a lot: school, dating, careers and even Saturday sleep-ins wait. But it shapes a lifetime of discipleship, and the Lord promises to open hearts to those He sends.",
           "points": [
-            "Missionaries are set apart and sent by the Savior. They live the message they teach, and their work matters more than anything else they could be doing.",
-            "Like the sons of Mosiah, missionaries want every soul to be saved. For a season, school, dating, careers and even Saturday sleep-ins come second.",
-            "The rising generation was prepared before birth to invite others to Christ, so they should guard against distractions and make a mission a priority.",
-            "Elder Merlin Sanchez came back to church at 25, served in Peru, and now serves as a stake president. He and his wife cannot picture life without his mission.",
-            "Prophets ask every worthy, able young man to serve, and invite young women to pray about this powerful, optional opportunity. There is room for everyone."
+            "Missionaries are living examples of what they teach; their message shows in who they are.",
+            "Young people were prepared before birth for this work, so it is worth guarding against distractions.",
+            "For worthy, able young men a mission is a priesthood duty; for young sisters it is a powerful option to pray about.",
+            "A mission is one step on a lifelong path of discipleship, not the end of it.",
+            "Young converts may not have pictured a mission, but it belongs on their list now too."
           ],
           "discuss": [
-            "How has a mission, yours or someone you love, shaped the years that followed, as it did for Merlin and Gali?",
-            "What lesser things can crowd out the Lord’s work in our lives, at any age, and how do we keep them in their place?",
-            "If you put your own name into the Lord’s words to Thomas B. Marsh, which promise speaks to you most?"
+            "What did a mission, yours or someone else’s, change in the people you love?",
+            "How can we help the young people in our family make a mission a real priority without pressure or guilt?",
+            "Which friend or family member might need someone to help them take the next step toward serving?"
           ],
           "deep": {
             "paras": [
-              "Bishop Douglas, Second Counselor in the Presiding Bishopric, speaks from his service on the Church’s Missionary Executive Council. He shares President Dallin H. Oaks’s teaching that missionaries help bring God’s children to Christ through repentance, baptism and confirmation, opening the way to the celestial kingdom, a work no one else can do. He notes that more missionaries are serving, in more missions, with more baptisms than ever before in this dispensation. To missionaries of all ages he says, “You are what you preach.”",
-              "He tells of two great-nephews, brothers, who spoke in sacrament meeting before leaving for missions at opposite ends of the earth. Their eagerness reminded him of the sons of Mosiah, who could not stand the thought of any soul being lost (Mosiah 28:3). That desire puts everything else second for a while. He admits the Lord expects a lot, but says it is worth it, and shares President Russell M. Nelson’s words that nothing else compares in magnitude, importance or majesty. God held this generation in reserve and prepared them before birth.",
-              "He and Sister Douglas led a mission in Lima, Peru. Merlin Sanchez was baptized near age 24 and later drifted away for a while. A loyal friend helped him start his mission papers before he had even decided to go. At 25, helped by friends and leaders, he came back, and the desire to serve grew. The Lord cleared obstacles one at a time. Merlin said he simply wanted to be close to Jesus Christ and follow Him. He later married Gali, was called as a bishop on their wedding day, and now serves as a stake president.",
-              "Bishop Douglas warns against being like Amulek, who was called many times and would not hear (Alma 10:6). He repeats the prophets’ teaching that serving is a priesthood duty for worthy, able young men and a powerful, optional opportunity for young women to pray about. He closes with the Lord’s words to Thomas B. Marsh in Doctrine and Covenants 31 and asks each listener to put their own name there. The talk asks us to prepare, to encourage, and to answer when the call comes."
+              "Bishop Douglas serves on the Church’s Missionary Executive Council and loves missionaries of every age. He calls them an army of righteousness and reminds them that what they do matters more than anything else they could be doing. Quoting President Dallin H. Oaks, he notes that inviting God’s children to repent and be baptized is a work no one else can do.",
+              "Two of his great-nephews, heading to missions at opposite ends of the earth, reminded him of the sons of Mosiah, who “could not bear that any human soul should perish” (Mosiah 28:3). Their desire to serve outranked every other ambition. President Russell M. Nelson said nothing else compares to this work in importance or majesty.",
+              "The elder from Lima shows how the Lord helps. A friend’s quiet preparation, leaders who reached out and a heart that finally said yes led to a mission that consecrated every trial and companion for his good, including the same companion twice. He and his wife now have three children, and they cannot imagine their life without his mission.",
+              "To young converts and the whole rising generation, Bishop Douglas says a mission belongs on the list. He warns against being like Amulek, who was “called many times” and “would not hear” (Alma 10:6). Prophets have reaffirmed that young men who are worthy and able should prepare and serve, and that young women may pray about serving. He closes with the Lord’s words to Thomas B. Marsh in 1830 (Doctrine and Covenants 31), inviting each listener to hear them personally."
             ],
             "find": [
               "You are an army of righteousness with the doctrine of Christ as your purpose.",
@@ -1240,7 +1402,22 @@ window.TU_SUNDAY = {
               "I invite each of you to substitute your name for Thomas’s"
             ]
           },
-          "approved": "39f69a19"
+          "approved": "21009930",
+          "story": {
+            "title": "Mission papers a friend started",
+            "text": "In Lima, Peru, where Bishop Douglas and his wife led a mission, one elder had joined the Church at nearly 24 and then drifted away. A faithful friend helped him start his mission papers and book a physical before he had even decided to go. When he came back to church at 25, a desire to serve rose in him, and the Lord cleared obstacle after obstacle. He served to be close to Jesus Christ. Soon after, he married, was called as a bishop on his wedding day, and now serves as a stake president."
+          },
+          "invite": [
+            {
+              "ask": "To all the rising generation of the Church, I invite you to place serving a full-time mission high on your list. Don’t be distracted by alternatives of far less worth.",
+              "promise": null
+            },
+            {
+              "ask": "I invite each of you to substitute your name for Thomas’s",
+              "promise": "I will open the hearts of the people, and they will receive you. And I will establish a church by your hand."
+            }
+          ],
+          "try": "Read the Lord’s words to Thomas B. Marsh in Doctrine and Covenants 31 aloud, putting a child’s or grandchild’s name, or your own, where the Lord says “Thomas.”"
         },
         {
           "id": "oct26-christofferson-o-be-wise",
@@ -1252,7 +1429,7 @@ window.TU_SUNDAY = {
             "Simply put, the industry’s entire business model is built on its customers losing money.",
             "Gambling is built on the desire to obtain something for nothing. Its structure requires that any gain comes at others’ expense.",
             "It is being and doing better without others doing worse.",
-            "My plea again is not only to refrain from gambling but to use the time and resources saved thereby for doing good."
+            "my plea again is not only to refrain from gambling but to use the time and resources saved thereby for doing good."
           ],
           "scriptures": [
             "Jacob 2:7–9",
@@ -1262,26 +1439,26 @@ window.TU_SUNDAY = {
             "3 Nephi 12:6",
             "Jacob 6:12"
           ],
-          "quick": "President Christofferson speaks plainly about gambling. Phones have made it constant and private, and young people are hit hardest. Beyond what it costs in money, time and family peace, gambling is morally wrong, because one person’s gain is always someone else’s loss. He pleads with us to stay away from it, even as casual fun, and to spend the time and money saved on doing good. Those who hunger and thirst after righteousness will be filled with the Holy Ghost.",
+          "quick": "With a casino now in every pocket, betting has never been easier, and President Gordon B. Hinckley’s answer still stands: we are against it. Gambling is built on getting something for nothing at someone else’s expense, and it quietly costs time, money, relationships and example. Put that time and money into doing good instead, and hunger for righteousness that fills us with the Holy Ghost.",
           "points": [
-            "Like Jacob, he takes up an unpleasant subject out of duty. Echoing President Gordon B. Hinckley, the Church’s answer is short: we are against gambling.",
-            "Smartphones put gambling within reach at all hours. Online sports betting, casino-style games and prediction markets drive its growth, and youth and young adults are especially vulnerable.",
-            "The deeper danger is habit: steady access can crowd out saving, add debt and hurt families. President Dallin H. Oaks teaches us to weigh opportunity cost and ask where a choice leads.",
-            "Even if we feel safe, our example can lead weaker people astray, as Paul warned about eating food offered to idols.",
-            "Gambling seeks something for nothing at a neighbor’s expense. Instead, we can be anxiously engaged in good causes and use what we save to bless others."
+            "Phones turned gambling from a trip to a casino into something private and constant, and the whole industry profits only when customers lose.",
+            "Teens and young adults are hit hardest; by age 17, nearly half of boys in the United States report gambling in the past year.",
+            "Every bet has an opportunity cost: the money, time, relationships and good pursuits it pushes out. Ask where it leads.",
+            "Even if a small bet never hooks you, someone watching you, including your children, may take your example further.",
+            "Gambling takes from others without giving value back, which pulls us from Christ’s giving path toward the adversary’s taking one."
           ],
           "discuss": [
-            "How can we talk openly and kindly with our children and friends about the betting they see on phones and in sports?",
-            "Thinking of President Oaks’s question about where a choice will lead, what habit of ours deserves an honest look at its opportunity cost?",
-            "Who might be watching our example, and how does that change the way we choose our entertainment?"
+            "Where do we see gambling marketed to young people around us, and how can we talk about it openly at home?",
+            "What good cause could the time or money we might otherwise waste go toward this month?",
+            "How does our example on small things shape what our children feel free to do?"
           ],
           "deep": {
             "paras": [
-              "President Christofferson, Second Counselor in the First Presidency, says he feels like Jacob, who out of duty spoke boldly about hard subjects (Jacob 2:7–9). He retells President Gordon B. Hinckley’s story of Calvin Coolidge, who summed up a sermon on sin by saying the preacher was against it. President Hinckley answered the gambling question just as briefly: “We are against it.”",
-              "Smartphones have turned gambling from an occasional outing into something always at hand. He cites surveys showing that about 46 percent of adults worldwide gambled in the past year, and an industry that took in an estimated $758 billion in 2025, money that is the gamblers’ loss. Online sports betting, online casino games and prediction markets drive the growth. Youth and young adults are most at risk. Among American boys aged 11 to 17, 36 percent said they gambled last year, and by age 17 it was nearly half.",
-              "The larger danger is that easy access turns fun into a pattern that eats into savings, adds debt and harms families. A journalist who wrote in The Atlantic about months of sports betting warned that even a small share of compulsive gamblers is a huge number when casinos fit in a pocket. President Christofferson recalls President Dallin H. Oaks’s counsel to weigh opportunity cost and ask where our choices lead.",
-              "Even if we feel strong, our example matters. Paul taught that believers who could eat food offered to idols without harm should still abstain so their freedom would not trip up the weak (1 Corinthians 8:9–11). Above all, gambling is morally wrong. It seeks gain without giving value, which is hard to square with loving our neighbor (Matthew 22:39). President Oaks taught that it pulls us from Christ’s giving path toward the adversary’s taking path.",
-              "President Christofferson asks us to live on a higher plane: to work, contribute and help others thrive. He points to the Lord’s counsel to be anxiously engaged in good causes (Doctrine and Covenants 58:27) and promises that those who hunger and thirst after righteousness will be filled with the Holy Ghost (3 Nephi 12:6). He closes with Jacob’s words: “O be wise; what can I say more?”"
+              "President Christofferson likens himself to Jacob, who had to speak boldly about unpleasant subjects instead of sharing God’s comforting word (Jacob 2:7–9). His subject is gambling. Survey data he cites show about 46 percent of adults, around 2.3 billion people, gambled in the past year, and the industry took in an estimated $758 billion in 2025. Its revenue is simply its customers’ losses.",
+              "Three online markets drive the growth: sports betting, casino-style games, and prediction markets that let people bet on almost anything, even the timing of the Second Coming. Young people are especially vulnerable. Gamblers know the house wins; they just assume it won’t win against them. The bigger danger is that constant access turns occasional fun into habit that drains savings, adds debt and harms families. A journalist in The Atlantic warned that a small compulsive percentage becomes a huge number when tens of millions carry casinos in their pockets.",
+              "“Where will this lead?” is the question President Dallin H. Oaks urges us to ask, while weighing the opportunity cost of each choice. And even someone sure of their own strength should consider those watching. Paul warned that a liberty harmless to one believer could become “a stumblingblock to them that are weak” (1 Corinthians 8:9–11).",
+              "Above all, gambling is morally wrong. Any gain must come from someone else’s loss, which is hard to square with loving our neighbor (Matthew 22:39). Our resources are stewardships, and the real question is whether a purchase builds anything. A good life contributes to others and rewards honest work.",
+              "So the plea is to put the saved time and money to work in a good cause (Doctrine and Covenants 58:27), hungering for righteousness (3 Nephi 12:6). He ends with Jacob’s words: “O be wise; what can I say more?” (Jacob 6:12)."
             ],
             "find": [
               "Unfortunately, in recent years, gambling has become incredibly pervasive.",
@@ -1292,7 +1469,18 @@ window.TU_SUNDAY = {
               "Today, I am pleading with all of us to live life on a higher plane."
             ]
           },
-          "approved": "a855db58"
+          "approved": "53dd8e76",
+          "story": {
+            "title": "A sermon in three words",
+            "text": "Calvin Coolidge, the famously quiet U.S. president, came home from church one Sunday, and his wife asked what the sermon had been about. Sin, he said. And what had the preacher said about it? He was against it. President Gordon B. Hinckley once retold the exchange and said the Church’s view of gambling could be summed up just as briefly. President Christofferson borrows the story to open a talk on a subject he would rather not have to raise, but feels he must."
+          },
+          "invite": [
+            {
+              "ask": "my plea again is not only to refrain from gambling but to use the time and resources saved thereby for doing good.",
+              "promise": "blessed are all they who do hunger and thirst after righteousness, for they shall be filled with the Holy Ghost."
+            }
+          ],
+          "try": "Check every phone in the house for betting apps, fantasy-sports wagers or prediction markets, and talk as a family about why we’ll leave them alone."
         },
         {
           "id": "oct26-renlund-how-long-believe",
@@ -1303,7 +1491,7 @@ window.TU_SUNDAY = {
           "quotes": [
             "Jesus overcame the world; we do not have to do so ourselves.",
             "Faith in Jesus Christ frees us from uncertainty because our hope rests on His faithfulness and righteousness, not on our own.",
-            "There is no asterisk excluding you from God’s richest blessings. If you think there is, take out a big eraser and obliterate that asterisk."
+            "there is no asterisk excluding you from God’s richest blessings. If you think there is, take out a big eraser and obliterate that asterisk."
           ],
           "scriptures": [
             "Numbers 14:11",
@@ -1313,25 +1501,25 @@ window.TU_SUNDAY = {
             "Moroni 10:3",
             "Mormon 8:22"
           ],
-          "quick": "Elder Renlund tells of a heart patient who, days after a miraculous second transplant, could only see that his oatmeal was cold. We do the same when daily troubles crowd out what God has done and promised. He invites us to remember the Lord’s mercies, center our faith on Jesus Christ, and believe His promises are meant for us too. Through Christ and our covenants with Him, we can have peace and joy right now.",
+          "quick": "It’s easy to stare at today’s lukewarm breakfast and forget the miracle that kept us alive to eat it. Remembering what the Lord has already done helps us see the bigger picture and trust what He has promised. There is no fine print leaving anyone out; with faith centered on Christ, we can have peace and joy right now.",
           "points": [
-            "A patient saved by a second, marginal donor heart soon complained about cold oatmeal. Like him, we let small daily problems hide past miracles and future promises.",
-            "Israel was freed and fed by miracles yet kept complaining and feared the promised land. The Lord asked how long it would be before they believed Him.",
-            "Jesus Christ has overcome the world. When our faith rests on Him, He gives peace and joy in our present circumstances.",
-            "Our hope rests on Christ’s righteousness, not our own, as Lehi taught Jacob. Remembering the Lord’s mercy, as Moroni urges, helps us trust Him.",
-            "Elder Renlund’s sister Linda learned that God’s promises include her. Christ’s Atonement reaches every circumstance, so no one is the exception."
+            "Ancient Israel was rescued, fed and guided by miracles, yet kept fixating on what was wrong in the moment, and their trust wore away.",
+            "The Lord’s question, how long until they believe Me, is one we don’t want Him asking about us.",
+            "Our hope rests on Christ’s righteousness, not our own; that is what frees us from uncertainty.",
+            "His provision is ample: no circumstance, living or dead, sits outside the reach of His redeeming power.",
+            "Remembering God’s past mercy is how we gain the confidence to lean on His future promises."
           ],
           "discuss": [
-            "What “cold oatmeal” tends to fill your view, and what blessings does it hide from you?",
-            "Have you ever felt God’s promises were for everyone but you? What has helped, or might help, you erase that asterisk?",
-            "How could we, as a couple or a family, remember and record the great things the Lord has done for us?"
+            "What is your “cold oatmeal” right now, and what bigger miracle might it be hiding?",
+            "Which of God’s promises do you secretly think applies to everyone but you, and why?",
+            "How can we help each other remember the Lord’s goodness when daily life feels heavy?"
           ],
           "deep": {
             "paras": [
-              "Elder Renlund, a member of the Twelve, recalls a heart patient his team cared for in the late 1980s, whom he calls Mr. Martin. As his organs failed, Mr. Martin received a transplant, but the new heart did poorly, and the team prepared to withdraw life support. Then a marginal donor heart became available that no other recipient in the country would have received. With Mrs. Martin’s consent, they tried again, and it worked beautifully. Ten days later, the day before he went home, Mr. Martin sat irritated because his oatmeal was not hot and his milk was not cold.",
-              "We fall into the same trap, Elder Renlund says, when daily worries hide where we have been and what God has promised. Israel did too. The Lord freed them from Egypt, saved them at the Red Sea, and gave them food and water, yet they complained. At the edge of the promised land they wished they had died in Egypt. The Lord asked Moses, “how long will it be ere they believe me” (Numbers 14:11). He had promised never to break His covenant (Judges 2:1).",
-              "The Savior told His disciples to be of good cheer because He has overcome the world (John 16:33). We do not have to do that ourselves. With faith centered on Him, we can have peace in any situation and joy now. Lehi told his son Jacob that he was redeemed through his Redeemer’s righteousness (2 Nephi 2:3), and the same holds for us. Moroni asks us to remember the Lord’s mercy and ponder it (Moroni 10:3), which helps us see the bigger picture.",
-              "His sister Linda once read the scriptures’ promises and pictured an asterisk leaving her out. In time she saw she was no exception. Joseph Smith taught that Christ has made ample provision for the living and the dead, so no need is beyond His reach. Elder Renlund asks us to remember the times the Lord has heard us, and he testifies with Moroni that the Lord’s purposes will roll on until every promise is kept (Mormon 8:22)."
+              "Elder Renlund recalls a patient of his transplant team who survived two transplants and multiple organ failure, then complained about cold oatmeal the day before discharge. He jokes that anyone through that much has spent all their coping coupons, but the point is serious: fixed on the small irritation, the man missed both how far he had come and the future he now had.",
+              "Israel did the same. Freed from Egypt, saved at the Red Sea and fed in the wilderness, they still complained, and at the edge of the promised land wished they had died in Egypt. The Lord asked Moses, “how long will it be ere they believe me” (Numbers 14:11). Yet He also declared, “I will never break my covenant with you” (Judges 2:1).",
+              "Jesus told His disciples to be of good cheer because He had overcome the world (John 16:33); we do not have to overcome it ourselves. Lehi told his son Jacob he was redeemed because of the righteousness of his Redeemer (2 Nephi 2:3). Moroni asks us to remember how merciful the Lord has been and ponder it (Moroni 10:3).",
+              "His younger sister once read the scriptures’ promises with an imagined asterisk excluding her, until she realized she was not extraordinary enough to be an exception. Joseph Smith taught that Christ has fully prepared for the redemption of the living and the dead, and Elder Renlund testifies there is enough to cover every need. “The eternal purposes of the Lord shall roll on, until all his promises shall be fulfilled” (Mormon 8:22)."
             ],
             "find": [
               "He lost sight of the bigger picture, both where he had been and the promise the future now held.",
@@ -1342,7 +1530,22 @@ window.TU_SUNDAY = {
               "all human circumstances are within the Savior’s redemptive reach"
             ]
           },
-          "approved": "b5a28a66"
+          "approved": "9d3a14da",
+          "story": {
+            "title": "The oatmeal isn’t hot",
+            "text": "In the late 1980s, Elder Renlund’s medical team took on a patient dying of heart failure. A first transplant failed, his organs were shutting down, and the team was preparing to withdraw life support when a marginal donor heart, unwanted for anyone else, became available. It worked beautifully. Ten days later, the day before going home, the man sat gripping his breakfast tray, irritated that his oatmeal wasn’t hot and his milk wasn’t cold. After three weeks near death, he had lost sight of his miracle."
+          },
+          "invite": [
+            {
+              "ask": "Strive to remember all the times He has inclined His ear to you, especially when confronted with cold oatmeal.",
+              "promise": "As we reflect on the great things the Lord has already done and remember His goodness and mercy, we are better positioned to grasp the bigger picture and to rely on His promises to us."
+            },
+            {
+              "ask": "If you think there is, take out a big eraser and obliterate that asterisk.",
+              "promise": "there is no asterisk excluding you from God’s richest blessings"
+            }
+          ],
+          "try": "Each night this week, write one time the Lord has helped you or our family. On Sunday, read the list together."
         },
         {
           "id": "oct26-farnes-divine-appointments",
@@ -1364,26 +1567,25 @@ window.TU_SUNDAY = {
             "Matthew 25:34–40",
             "Mosiah 2:17"
           ],
-          "quick": "President Farnes teaches that people who have covenanted to follow Jesus Christ reach out with compassion to whoever God puts in their way. At the sacrament we promise to take Christ’s name, and we keep that promise by noticing people as He would. He calls these moments “divine appointments.” He invites us to pray each day for eyes to see them and then to act, with the promise that the Lord’s Spirit will help us minister as He would.",
+          "quick": "The person who seems to interrupt your day may be exactly who God sent. Every Sunday we promise to take Christ’s name, and we keep that promise by noticing the people He puts in our path and acting with compassion. Pray for eyes to see them, and His Spirit will help us minister the way He would.",
           "points": [
-            "Discouraged after a meeting years ago, he met Elder Dallin H. Oaks in the temple, who asked how he really was and lifted him. Later Elder Oaks did not remember, and said it is simply what we do.",
-            "At the sacrament we show we are willing to take Christ’s name. People who meet us should feel His kindness and love, and His Spirit helps us serve.",
-            "We make the covenant on Sunday and keep it every day, often by noticing someone God has placed in our path.",
-            "The good Samaritan saw, felt compassion, and acted. Jesus treated people not as interruptions but as the heart of His mission.",
-            "A prompting at an airport led him and his wife to help a frightened new missionary. He asks us to pray daily for eyes to see, and then to act."
+            "Taking Christ’s name means people who meet us should feel something of His kindness, patience and hope.",
+            "We make the sacrament covenant once a week and keep it by ministering every day.",
+            "The good Samaritan’s pattern: seeing stirs compassion, and compassion moves us to act.",
+            "For Jesus, the people who stopped Him along the way were the point of His work, not a distraction from it.",
+            "Small acts of noticing rarely cost much, and the person helped may remember them for life."
           ],
           "discuss": [
-            "When has someone noticed you at just the right moment, the way Elder Oaks noticed President Farnes?",
-            "What keeps us from seeing the people God places near us, and what could help us look up?",
-            "How might praying each morning for eyes to see change an ordinary day at work, school or home?"
+            "Who once noticed you at just the right moment, and what did they do?",
+            "What habits, like earbuds or a phone, keep us from seeing people around us, and what could we change?",
+            "Where in our normal week are we most likely to meet a “divine appointment”?"
           ],
           "deep": {
             "paras": [
-              "President Farnes, the Young Men General President, recalls a Saturday almost 20 years ago. Newly called to a stake presidency while still a bishop, with five young children and a business, he felt his question at a leadership meeting was brushed aside. Discouraged, he suggested to his wife, Linsey, that they skip the ward temple night. She told him he needed to go. In the temple, Elder Dallin H. Oaks, then of the Quorum of the Twelve, waited for him, asked how he was really doing, listened, answered his question, and hugged him. Five years later Elder Oaks did not remember it, but said, “But it’s what we do. Isn’t it?”",
-              "Each Sunday at the sacrament we tell Heavenly Father we are willing to take on the name of His Son (Moroni 4:3 and Doctrine and Covenants 20:77). That means seeing, feeling and acting as Jesus would, so that others sense His love in us. The Lord in turn promises His Spirit, which lets us serve with His power. We make the covenant on Sunday and live it all week, often when God puts someone in front of us. President Farnes calls these “divine appointments.”",
-              "When a lawyer asked how to inherit eternal life, Jesus told of a wounded traveler on the road to Jericho (Luke 10:25, 30–35). Others saw an inconvenience, but one man saw a chance to serve. Seeing led to compassion, and compassion led to action. The Savior did this again and again, turning everyday meetings into moments of healing.",
-              "Waiting for a flight, President Farnes noticed a young missionary crying and rocking, holding a boarding pass and an alarm clock. He went back to his book until the Spirit prompted him to look again. The elder, far from home, was flying alone for the first time. The Farneses walked him to the gate. He boarded last and took the only empty seat, which was next to President Farnes. After they landed, the couple walked him to his mission leaders, but he hugged them first.",
-              "President Farnes asks us to pray every day for eyes to see, to look with compassion instead of judgment, and then to act. It is what Jesus did, and it is what we do."
+              "Almost 20 years ago, newly called to a stake presidency while still a bishop, with five young children and a business, President Farnes left a leadership meeting feeling his question had been brushed aside. He wanted to skip ward temple night, but his wife urged him to go. In the dressing room a stranger asked how he was; it was Elder Dallin H. Oaks. He answered that all was great, but Elder Oaks waited for him and said, “Brother, tell me how you are really doing.” He listened, encouraged, answered the question and gave a hug.",
+              "Five years later, Elder Oaks did not remember it at all. Seeing the disappointment, he said, “But it’s what we do. Isn’t it?” That became the theme: covenant followers of Christ minister with compassion to whomever God puts in their path.",
+              "At the sacrament we witness our willingness to take Christ’s name, choosing to see, feel and act as He would, and the Lord promises His Spirit in return (Moroni 4:3 and Doctrine and Covenants 20:77). We keep that covenant through daily ministering, often in what President Farnes calls “divine appointments.”",
+              "Asked how to inherit eternal life (Luke 10:25), Jesus told of a traveler on the Jericho road and the man who truly saw him (Luke 10:30–35). The Savior turned ordinary encounters into healing. We can learn to see that way too. The frightened missionary at the airport needed little from the Farneses, yet that small act of noticing became a moment they will always treasure."
             ],
             "find": [
               "Brother, tell me how you are really doing.",
@@ -1393,7 +1595,18 @@ window.TU_SUNDAY = {
               "let us pray every day for eyes to see the divine appointments God places before us"
             ]
           },
-          "approved": "a7f52f7a"
+          "approved": "bfd0b02f",
+          "story": {
+            "title": "The missionary with an alarm clock",
+            "text": "Waiting at an airport with earbuds in, President Farnes glanced up at a young elder rocking back and forth in tears, clutching a boarding pass and an alarm clock. He went back to his book until the Spirit nudged him to look again. The elder, far from his home country, was flying alone for the first time. The Farneses walked him to the gate. He boarded last, and the only empty seat was beside President Farnes. At baggage claim the elder hugged them before greeting his mission leaders."
+          },
+          "invite": [
+            {
+              "ask": "Brothers and sisters, let us pray every day for eyes to see the divine appointments God places before us! Let us put compassion into action and minister to the person in front of us.",
+              "promise": "God has given us eyes to see. When we use them, we begin to recognize divine appointments all around us."
+            }
+          ],
+          "try": "Each morning this week, pray for eyes to see one person God puts in your path. That night, tell each other who it was and what you did."
         },
         {
           "id": "oct26-chigbundu-spiritual-immunity",
@@ -1415,25 +1628,25 @@ window.TU_SUNDAY = {
             "Mosiah 24:14–15",
             "Doctrine and Covenants 20:77"
           ],
-          "quick": "Elder Chigbundu compares spiritual strength to the body’s immunity, a word he heard again and again in COVID-19 health sessions at work. In troubled times we build that strength through small and simple things: scripture study, prayer, the sacrament, and keeping covenants, including temple worship. He invites us to always remember these four, and promises they will give us strength and courage for life’s challenges and protect us like armor against the devil.",
+          "quick": "Just as the body builds immunity to fight off disease, the soul can build defenses against fear, temptation and trouble. The way in is through four small, steady habits: scripture study, prayer, the sacrament and keeping covenants. They may look simple, but practiced daily they become armor that lets us stand firm and face hard times without fear.",
           "points": [
-            "In hard times we need not fear. As President Henry B. Eyring taught, trials show the Lord loves us enough to refine us, and small and simple things bring great results.",
-            "Scripture study helps us know the Lord, not just facts. A homesick new missionary found joy and purpose through daily Book of Mormon study.",
-            "Prayer draws us close to God. A sister battling cancer felt the Savior’s love through daily prayer. Burdens may stay, but He strengthens us to carry them.",
-            "At the sacrament we renew our promises to Christ. Asking what He would have us do turns complaining into learning and change.",
-            "Covenants bind us to God, and temple worship keeps us on the covenant path and brings personal direction from the Lord."
+            "Hard seasons don’t mean the Lord has left us; they can be His way of refining and strengthening us.",
+            "Scripture study gives more than knowledge. It helps us know the Lord, and His words start to shape how we react to trouble.",
+            "Prayer may not remove a burden, but it strengthens our backs to carry it.",
+            "The sacrament can shift our questions from complaint to growth: what is this teaching me, and what should I change?",
+            "Temple worship keeps us on the covenant path and brings personal direction when trials come."
           ],
           "discuss": [
-            "When worries keep you awake at night, which small and simple thing helps you most, and why?",
-            "How might asking “What would He have me do?” during the sacrament change your week?",
-            "When has the Lord helped you carry a burden He did not take away?"
+            "What keeps you awake at night right now, and which small habit could help you face it?",
+            "Which of the four habits is strongest in our home, and which needs the most help?",
+            "What question could we ask ourselves during the sacrament to make it more than routine?"
           ],
           "deep": {
             "paras": [
-              "Elder Chigbundu, of the Seventy, recalls that during the 2020 pandemic, health experts invited to his workplace kept returning to one word: immunity, the body’s natural defense. He began to think about spiritual immunity. Our times bring wars, family trials and economic worry, yet we need not fear. President Henry B. Eyring taught that hard moments show the Lord loves us enough to refine and strengthen us. Elder Chigbundu asks what keeps us awake at night, and points to small and simple things as a compass (Alma 37:6).",
-              "First is scripture study. King Benjamin urged his sons to search the records diligently (Mosiah 1:6–7). As a mission leader, Elder Chigbundu met a new missionary who wept, asked to go home, and admitted he had no testimony of the Book of Mormon. After Elder Chigbundu bore his own testimony, the young man and his trainer made a study plan. Later the missionary wrote that he was happy and no longer wanted to leave. We too are invited to search the scriptures diligently (Alma 17:2).",
-              "Second is prayer. The Lord promises to draw near when we draw near to Him (Doctrine and Covenants 88:63). Enos, Nephi, Joseph Smith and the Savior show its power. As an Area Seventy in Côte d’Ivoire, Elder Chigbundu visited a sister with cancer, who said daily prayer helped her know the Savior loved her and that all was well. Our burdens may not leave, but, as with Alma’s people, our backs can be made strong enough to bear them (Mosiah 24:14–15).",
-              "Third is the sacrament, where we promise to take Christ’s name, remember Him and keep His commandments (Doctrine and Covenants 20:77). Fourth is covenants, with temple worship at their center. President Dallin H. Oaks taught that kept covenants bring blessings that lift us to celestial heights. Elder Chigbundu calls these four things “the armor of God” and asks us to always remember them."
+              "During the 2020 pandemic, health experts at Elder Chigbundu’s workplace kept stressing one word: immunity, the body’s built-in defense against disease. It set him thinking about spiritual immunity. In a world of war, family strain and economic worry, we need not fear. President Henry B. Eyring has taught that proving moments show the Lord loves us enough to refine us. The tools for building it are small, and Alma told Helaman why that is enough: “By small and simple things are great things brought to pass” (Alma 37:6).",
+              "Scripture study is first. King Benjamin urged his sons to search the records diligently and profit from them (Mosiah 1:6–7). The missionary who had asked to go home found his purpose through a daily plan to study the Book of Mormon. Prayer is second. The Lord promises, “Draw near unto me and I will draw near unto you” (Doctrine and Covenants 88:63). In Côte d’Ivoire, a sister battling cancer told Elder Chigbundu that daily prayer helped her feel the Savior’s love and see His hands telling her all was well. Like Alma’s people, we may keep our burdens but gain strength to bear them (Mosiah 24:14–15).",
+              "The sacrament is third. We promise to take Christ’s name, always remember Him and keep His commandments (Doctrine and Covenants 20:77), and we can ask what He would have us do. Week by week, remembering Him slowly remakes us.",
+              "Covenants are fourth. They bind us to God, and temple worship is essential for staying on that path. President Dallin H. Oaks taught that honoring covenants lets the promised blessings lift us “to celestial heights.” Together these four habits are the armor of God."
             ],
             "find": [
               "Throughout these health sessions, there was one recurring word: immunity.",
@@ -1444,7 +1657,22 @@ window.TU_SUNDAY = {
               "Worshipping in the Lord’s house, the temple, is vital to staying on the covenant path."
             ]
           },
-          "approved": "e6886224"
+          "approved": "70fb5072",
+          "story": {
+            "title": "A new missionary who wanted to go home",
+            "text": "In his welcome interview as a mission leader, Elder Chigbundu met a new missionary who broke into tears and asked to go home but could not say why. When asked, he admitted he had no testimony of the Book of Mormon. Elder Chigbundu bore his own witness and urged him to study the scriptures. The elder and his trainer made a daily study plan. Later he wrote that the scriptures had helped him understand his purpose, and he was happy and no longer wanted to leave."
+          },
+          "invite": [
+            {
+              "ask": "My beloved brothers and sisters, I invite you to always remember scriptures, prayers, the sacrament, and covenants.",
+              "promise": "While they may seem small and simple, they are truly the armor of God that will help us stand against the tactics of the devil!"
+            },
+            {
+              "ask": "I invite you to search the scriptures diligently, that you might know the word of God",
+              "promise": "As we do this, little by little we learn how to become lifelong disciples of Jesus Christ."
+            }
+          ],
+          "try": "Pick the weakest of the four habits in your life right now and give it five extra minutes every day this week."
         },
         {
           "id": "oct26-giuffra-tithes-offerings",
@@ -1462,25 +1690,25 @@ window.TU_SUNDAY = {
             "Malachi 3:8",
             "Malachi 3:10"
           ],
-          "quick": "Elder Giuffra teaches that tithing is a law of faith that shows our trust in the Lord. He tells of a poor older woman in Chile who felt she could never pay it, until she asked Heavenly Father for help and then paid faithfully. He invites us to keep this law out of love for God. He promises that the Lord keeps His promises, opens the windows of heaven, and works miracles, even though trials still come.",
+          "quick": "Paying tithing when money is tight makes no sense on paper, and that is exactly why it is a law of faith. Each payment says we trust the Lord more than our budget. He doesn’t promise to spare us every hardship, but He keeps His word in His own time, opening heaven’s windows in ways we often don’t expect.",
           "points": [
-            "As a young missionary in Chile, he taught a woman of about 70 who could barely pay for rent, firewood and food, and who felt she could never pay tithing.",
-            "His mission president read the story of the widow’s mite and said there are no exceptions. After the missionaries fasted and prayed, she asked God for help and then paid tithing and fast offerings faithfully.",
-            "His family has seen many blessings. His wife teaches that we obey because we love God, not just for rewards. Trials still come, but the Lord keeps His promises in His own time.",
-            "President Russell M. Nelson said paying tithing can end poverty passed down through generations, and Elder Giuffra has seen families in Central America grow in both temporal and spiritual ways.",
-            "President Dallin H. Oaks taught that tithing shows we accept the law of sacrifice and prepares us for higher laws. Malachi records the Lord’s promise to open heaven’s windows."
+            "There are no exceptions to tithing, even for the very poor, because no one should be denied its blessings.",
+            "We obey because we love God, not just to collect rewards; commandments draw us to Christ and protect us.",
+            "Faithful tithe payers still face illness, loss and money trouble, but the Lord knows their situation and honors their obedience.",
+            "Tithing can break poverty that has passed from one generation to the next.",
+            "Paying tithing shows we accept the law of sacrifice and prepares us for consecration and temple covenants."
           ],
           "discuss": [
-            "Have you ever felt, like the sister in Chile, that a commandment was beyond your means? What helped you move forward?",
-            "How does obeying out of love for God, rather than for blessings, change the way we pay tithes and offerings?",
-            "What blessings, temporal or spiritual, have come to you from tithes and offerings, perhaps in ways you did not expect?"
+            "When has the Lord blessed our family in a way we didn’t expect after we obeyed?",
+            "How can we teach our children to pay tithing out of love rather than as a trade for blessings?",
+            "What makes tithing hardest to trust the Lord with in our current season?"
           ],
           "deep": {
             "paras": [
-              "Elder Giuffra, of the Seventy, paid tithing after his baptism from summer jobs, but he did not yet grasp its promises. That came on his mission in Chile. In Puerto Montt, he and Elder Ruben Alvarez taught a woman of about 70 who could not read and needed each lesson twice. She cleaned houses and washed clothes, earning just enough for rent, a little firewood and some food. With sadness she told them she could never live the law of tithing.",
-              "Wondering whether the Lord made exceptions for people like her, Elder Giuffra called his mission president, President Fernando Caballero. He read the account of the widow’s mite (Mark 12:41–44) and said, “There are no exceptions to this commandment.” The missionaries fasted and prayed. When they came back, she told them she had knelt the night before and asked Heavenly Father to help her live this law. Peace filled them. She was baptized that Saturday, and her bishop later said she brought her tithing every week and her fast offering every month.",
-              "Elder Giuffra says his family has received many blessings, some temporal and some spiritual. His wife teaches that we keep commandments because we love God, not mainly for the rewards. Commandments bring us closer to the Savior and protect us. Hard times, illness and loss still come, but the Lord knows our situation and keeps His promises in His own way.",
-              "He shares President Russell M. Nelson’s teaching that tithing can end poverty passed from one generation to the next. In Central America he has seen people who once worried about food or shoes gain stability, jobs, education, stronger marriages and peace. President Dallin H. Oaks taught that paying tithing shows we accept the law of sacrifice and prepares us for consecration. Through Malachi the Lord promises to open the windows of heaven (Malachi 3:10). The talk asks us to pay, and to trust Him."
+              "Tithing’s promises became real to Elder Giuffra, who had paid it since his baptism, only when he had to teach the law as a missionary in Chile. The woman he and his companion taught could not read and needed every lesson twice. By worldly logic she was right that she could not afford tithing. His mission president answered his hope for an exception with the widow’s two mites (Mark 12:41–44). Her prayer that God would help her live the law was answered, and she paid faithfully from then on.",
+              "His family has seen both temporal and spiritual blessings from tithes and offerings. His wife teaches that we keep commandments because we love God, and that commandments keep us close to the Savior and free from many of the world’s traps. Trials still come, yet the Lord keeps His word on His own schedule.",
+              "Poverty that runs through generations can end with tithing, President Russell M. Nelson taught. Serving in Central America, Elder Giuffra has seen families once anxious about where food would come from become stable, and people who could not afford shoes build successful businesses, along with new jobs, education, stronger marriages and peace. President Dallin H. Oaks taught that tithing brings unique spiritual blessings and readies us for consecration and the higher laws of the celestial kingdom, which we live by keeping temple covenants.",
+              "Malachi records the Lord’s charge that withholding tithes and offerings robs God (Malachi 3:8), and His promise to open heaven’s windows to those who prove Him (Malachi 3:10). Elder Giuffra testifies that tithing is a law of faith that shows our trust and lets the Lord work miracles."
             ],
             "find": [
               "I don’t think I will ever be able to live the law of tithing",
@@ -1491,7 +1719,18 @@ window.TU_SUNDAY = {
               "Tithe paying is evidence that we accept the law of sacrifice."
             ]
           },
-          "approved": "548408c6"
+          "approved": "cc791269",
+          "story": {
+            "title": "No exceptions, even for the poor",
+            "text": "As a missionary in Puerto Montt, Chile, Elder Giuffra taught a woman of about 70 who cleaned houses and washed clothes and could barely cover rent, firewood and food. She was sure she could never pay tithing. Hoping for an exception, he called his mission president, who read him the widow’s mite and said he had no right to deny her the blessings. The missionaries fasted and prayed. When they returned, she told them she had asked Heavenly Father to help her live the law. After baptism, she brought tithing every week and fast offerings monthly."
+          },
+          "invite": [
+            {
+              "ask": "Bring ye all the tithes into the storehouse, that there may be meat in mine house, and prove me now herewith, saith the Lord of hosts",
+              "promise": "if I will not open you the windows of heaven, and pour you out a blessing, that there shall not be room enough to receive it."
+            }
+          ],
+          "try": "This week, pay tithing and a fast offering as the first thing you do with your next income, and pray beforehand for help to trust Him with the rest."
         },
         {
           "id": "oct26-morgan-infinite-power",
@@ -1513,26 +1752,26 @@ window.TU_SUNDAY = {
             "Doctrine and Covenants 121:1",
             "Doctrine and Covenants 123:17"
           ],
-          "quick": "Elder Morgan teaches that the covenants we make with God carry a power that reaches across generations and never runs out. His mother’s daily Book of Mormon reading and the temple covenants of his Nauvoo ancestors helped lead him to the Church. He invites us to keep our covenants, keep reading the Book of Mormon, and never give up on those we love, promising that no one has wandered beyond the reach of God’s love.",
+          "quick": "Covenants don’t expire. Like gravity holding the universe together, the promises God makes with faithful people keep reaching across generations, pulling wandering children and grandchildren back toward Him. No one has strayed beyond that reach. Keep your own covenants, do what you can, and trust that God hears and will answer in His time; the family story isn’t finished.",
           "points": [
-            "Reading the Book of Mormon is never wasted effort, even when a listener seems to take in little, as his mother’s daily reading showed.",
-            "Raised in another church that honors the Book of Mormon, he sincerely sought truth as a teenager and gained a testimony of the Lord’s Church.",
-            "His wife, Rebecca, helped him see that the temple covenants of his ancestors had reached out and drawn him in.",
-            "Covenants bless whole generations and have no time limit, as the Lord’s promise to Enos, fulfilled after more than 2,000 years, shows.",
-            "No one is beyond God’s love. Keep your covenants, do what you can, and trust God to finish your family’s story."
+            "Reading the Book of Mormon with our children is never wasted, even when they seem not to be listening.",
+            "Faithful parents’ covenants don’t override a child’s agency, but they have a real effect on every generation after them.",
+            "God’s covenants have no time limit; His promise to Enos took more than 2,000 years to fulfill.",
+            "We are all beneficiaries of covenants made by people who came before us.",
+            "Christ’s Atonement fulfills God’s greatest promise, and its reach is infinite."
           ],
           "discuss": [
-            "Whose faith or covenants in your family line may have blessed you, even if you never knew them?",
-            "What small, steady effort, like his mother’s daily reading, could you keep up for someone you love?",
-            "When you worry about a loved one who has wandered, how can trust in covenant power shape the way you pray and wait?"
+            "Whose covenants, made long before us, might be blessing our family today?",
+            "How can we keep reading scriptures with our children when it feels like nobody is listening?",
+            "What does it change for you to believe our family’s story isn’t finished yet?"
           ],
           "deep": {
             "paras": [
-              "Elder Morgan begins with his mother. As a single mother, she read the Book of Mormon aloud to him each day as he got ready for school, until they had finished it. He remembers only two phrases from it, yet he knew the book mattered to her and that she believed it. Elder Morgan said, “No time or effort is ever wasted in reading the Book of Mormon.” He ties her effort to the Lord’s command to remember the new covenant, the Book of Mormon (Doctrine and Covenants 84:57).",
-              "He was raised in a different church that also accepts the Book of Mormon and Joseph Smith. His ancestors Francis and Mary Ann Case were baptized in 1831 and helped build Nauvoo and its temple. At 14 he began to question, and for two months he secretly attended a Latter-day Saint congregation as well as his family’s. He came to know this is the Lord’s Church, and like Joseph Smith, he knew it and could not deny it (Joseph Smith—History 1:25).",
-              "Later, wondering why a young boy would care so much about religion, he heard his wife, Rebecca, answer that it was covenants. His ancestors had made temple covenants in Nauvoo. She read a teaching from Orson F. Whitney that, through the sealings of faithful parents, wandering children will feel Divine Providence drawing them back. Elder Morgan notes that these covenants do not override a child’s agency, yet they make a real difference for posterity. President Oaks has taught that covenants are always at work.",
-              "Covenants have no expiration date. The Lord promised Enos that a remnant would one day receive the gospel, a promise that took more than 2,000 years to keep (Enos 1:15–18). Elder Morgan compares covenants to gravity, which holds the universe together. They bless not just the one who makes them but whole families across time. The greatest of all promises is the Atonement of Jesus Christ, whose reach is infinite.",
-              "To parents crying out over a struggling child (Doctrine and Covenants 121:1), he gives clear counsel. Keep your covenants, stay faithful, cheerfully do what you can, then stand still and trust God’s timing (Doctrine and Covenants 123:17). With President Holland, he affirms that no one is beyond divine love. Elder Morgan said, “Your story, your family’s story, is not all written.” He calls himself living proof of covenant power."
+              "Elder Morgan’s third-great-grandparents received baptism from Oliver Cowdery in 1831, helped settle Nauvoo and build the temple, but did not go west with the Saints. He was raised in a church that honors Joseph Smith; his mother even gave him Joseph as a middle name. Her daily reading, which heeded the Lord’s charge to remember the Book of Mormon (Doctrine and Covenants 84:57), taught him a lasting lesson: no time spent reading it is ever wasted.",
+              "At 14 he came to know this was the Lord’s Church. Joining took time and brought questions and disappointment from family, but like Joseph Smith, he knew it and could not deny it (Joseph Smith—History 1:25). Wondering aloud why a young boy would care so much about religion, he heard his wife answer, “It was covenants.” His ancestors had made temple covenants in Nauvoo, and prophets have taught that, through the sealings of faithful parents, wandering sheep will sooner or later feel Divine Providence drawing them back.",
+              "Covenants never take a day off, President Dallin H. Oaks has said, and Elder Patrick Kearon taught that God will use every means He can to bring us home. The Lord promised to plant in the children’s hearts the promises made to the fathers (Doctrine and Covenants 2:2), and His covenant with Enos, that his words would one day reach a remnant, took more than two millennia to fulfill (Enos 1:15–18).",
+              "Covenants are generational. They bless not only the person who makes them but children, grandchildren and those not yet born.",
+              "So no one has gone too far. President Jeffrey R. Holland said, “You have not traveled beyond the reach of divine love.” To parents crying “where art Thou?” over a struggling child (Doctrine and Covenants 121:1), Elder Morgan says: keep covenants, do what you can, and wait with confidence for God’s arm to be revealed (Doctrine and Covenants 123:17). God is the author of each family’s story, and Elder Morgan calls himself living proof of His love."
             ],
             "find": [
               "No time or effort is ever wasted in reading the Book of Mormon.",
@@ -1541,7 +1780,18 @@ window.TU_SUNDAY = {
               "Take comfort; God hears you and will answer your prayers in His own time and in His own way."
             ]
           },
-          "approved": "76026cb8"
+          "approved": "c7654509",
+          "story": {
+            "title": "A mother reading aloud every morning",
+            "text": "Elder Morgan grew up in another church that also accepts the Book of Mormon. As a young teen, while he got ready for school, his single mother read it aloud to him every day until they finished, whether he listened or not. He remembers only two phrases, but he knew the book mattered to her and that she knew it was true. At 14 he began searching, and for two months he slipped into a Latter-day Saint congregation, hiding in the overflow, until he knew this was the Lord’s Church."
+          },
+          "invite": [
+            {
+              "ask": "Keep your covenants, strive to be faithful, and “cheerfully do all things that lie in [your] power; and then may [you] stand still, with the utmost assurance, to see the salvation of God, and for his arm to be revealed.”",
+              "promise": "Take comfort; God hears you and will answer your prayers in His own time and in His own way."
+            }
+          ],
+          "try": "Name one family member who has wandered and pray for them by name each day this week, then read a chapter of the Book of Mormon aloud together."
         },
         {
           "id": "oct26-fale-child-of-god",
@@ -1551,9 +1801,9 @@ window.TU_SUNDAY = {
           "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/26fale?lang=eng",
           "quotes": [
             "Understanding our Father’s love and our true identity as His children is essential for our daily and eternal happiness.",
-            "You did nothing to earn our love. … You did not earn it; you cannot lose it. It is yours forever.",
+            "You did nothing to earn our love. By that same token, there is nothing you can ever do that will unearn or remove that love from you. You did not earn it; you cannot lose it. It is yours forever.",
             "We become quick to repent, slow to judge, and ever hopeful that the best is yet before us.",
-            "Our Father’s message, through His Son, has always been that there is still yet time if we turn to Christ today."
+            "our Father’s message, through His Son, has always been that there is still yet time if we turn to Christ today."
           ],
           "scriptures": [
             "John 3:16",
@@ -1562,26 +1812,25 @@ window.TU_SUNDAY = {
             "2 Nephi 28",
             "1 Nephi 13:26–29"
           ],
-          "quick": "Elder Fale testifies that each of us is a child of God who loves us. Knowing this brings happiness, guards us against deception, and gives life purpose. He warns that God’s love does not mean salvation without repentance and covenants. He invites us to receive Christ through ordinances and covenants and to see everyone as beloved, promising courage, freedom from false labels, and hope that it is never too late to turn to Christ.",
+          "quick": "You did nothing to earn your Heavenly Father’s love, so nothing can make you lose it. Knowing we are His children, loved before birth and forever, guards us against deception, gives life purpose and helps us see everyone as divine. It also tells us it’s never too late to come home, as long as we turn to Christ today.",
           "points": [
-            "Knowing we are children of heavenly parents, loved by God, brings happiness, protects us from deception, and gives this life purpose.",
-            "Families, even imperfect ones, are a divine pattern that teaches God’s love, and the scriptures themselves open with families.",
-            "Using baby pictures, he taught his children that they never earned their parents’ love and cannot lose it, and that God’s love is far greater.",
-            "The adversary twists this truth to claim love saves us despite sin. Only receiving Christ through ordinances and keeping covenants leads to exaltation.",
-            "Understanding God’s love helps us know Christ, see past the world’s labels, and believe it is never too late to turn to Him."
+            "God teaches us about Himself through families, imperfect as they are; the scriptures themselves open with families.",
+            "God’s love does not mean we will be saved no matter what. Receiving Christ through ordinances and keeping covenants is the only way to exaltation.",
+            "Grasping the Father’s love helps us understand why the Savior works so hard to save every one of His Father’s children.",
+            "Seeing all people as beloved children of God makes us slow to judge, quick to repent, and deaf to the world’s divisive labels.",
+            "For those without a loving family on earth, the Father’s love brings power and peace, and covenant blessings of eternal family await."
           ],
           "discuss": [
-            "How might your choices today change if you truly believed you can neither earn nor lose your Father’s love?",
-            "What labels, about yourself or others, could you set aside to see people the way God sees them?",
-            "Who in your life needs to hear that it is not too late to come home, and how could you help?"
+            "What helps you believe Heavenly Father’s love doesn’t depend on how well you are doing?",
+            "How can we make sure our children know they can always come home, whatever happens?",
+            "Which labels, about ourselves or others, does knowing we’re God’s children help us let go of?"
           ],
           "deep": {
             "paras": [
-              "Elder Fale begins with a simple truth: he is a child of God, and so is everyone. Drawing on the family proclamation, he teaches that we are spirit children of heavenly parents, with a divine nature and destiny. Knowing God’s love and who we really are brings happiness now and forever, shields us from deception, and gives mortal life its purpose. God often teaches His love through families. The scriptures follow this pattern: the New Testament opens with a birth in Bethlehem, the Book of Mormon with a family’s journey, and the Creation story with a family.",
-              "He shares a family experience. Prompted during a Church meeting, he asked his wife to find baby pictures of their children, then asked the three at home what they had done to earn their parents’ love by that day. They answered, nothing. Elder Fale told them, “You did not earn it; you cannot lose it. It is yours forever.” Their parents’ love, he said, was only a small part of what Heavenly Father feels, and they could always come home. For those without a loving family, he points to the comfort of God’s love and the promised blessings of eternal families for all who keep covenants.",
-              "He also gives a warning. The adversary twists God’s love to suggest we can be saved despite pride, rebellion, sin, or rejecting Christ and His servants (2 Nephi 28). Elder Fale teaches that coming to Christ through priesthood ordinances, then faithfully keeping the covenants we make, is the only way to fully understand God’s love and the only path to exaltation.",
-              "He names three reasons this love matters. It helps us understand Jesus Christ and join Him eagerly in His Father’s work. It frees us from the world’s divisive labels, so we see everyone as beloved, repent quickly, judge slowly, and make sure no one is left alone. And it defeats the lie that change comes too late. The prodigal son and the lost sheep show that if we turn to Christ now, there is still time.",
-              "Christ is the evidence of the Father’s love. In mortality He taught us to address God as our Father in prayer (Matthew 6:9–13), a Father who gives better gifts than any earthly parent (Matthew 7:9–11). Today Christ reveals that love through the priesthood keys that living prophets and apostles hold. Elder Fale first felt this witness as a boy riding from Nuku‘alofa to his village of Mu‘a, reading John 3:16 in a pocket New Testament. He prays that this truth will stay with us and change us forever."
+              "Elder Fale opens with a simple statement that is true for everyone: “I am a child of God and He loves me.” Prophets have declared that each of us is a beloved spirit child of heavenly parents with a divine nature and destiny. Families are God’s chosen way to teach this. The New Testament begins with a baby in Bethlehem, the Book of Mormon with a family’s journey, and the Creation was not finished until God organized a family.",
+              "Not everyone has a loving family now. Some feel love for a sibling, spouse or a grandparent they never met; some only long for family. Even then, knowing the Father loves us brings comfort, and faithful covenant keepers are promised eternal family. But Elder Fale warns of a twisted version of this truth: that because God loves us, pride, rebellion and sin don’t matter. Exaltation comes only by receiving Christ through priesthood ordinances and staying true to covenants.",
+              "He gives three reasons the Father’s love matters. It helps us understand Jesus Christ and join His work. It frees us from the divisive labels of a fallen world, so we see others as divine and make sure no one is alone. And it exposes the lie that it’s too late to change, as the prodigal son and the lost sheep show.",
+              "Jesus taught us to pray to “our Father” (Matthew 6:9–13), a Father who gives better gifts than any earthly parent (Matthew 7:9–11). Today living prophets and apostles hold the priesthood keys through which Christ shows that love. As a boy traveling from Nuku‘alofa to his village of Mu‘a, Elder Fale read John 3:16 in several languages and knew it was true."
             ],
             "find": [
               "Understanding our Father’s love and our true identity as His children is essential for our daily and eternal happiness.",
@@ -1592,7 +1841,18 @@ window.TU_SUNDAY = {
               "Today Christ shows us our Father’s love through priesthood keys held by living prophets and apostles."
             ]
           },
-          "approved": "2c1915b4"
+          "approved": "0e65ad24",
+          "story": {
+            "title": "Baby pictures and unearned love",
+            "text": "Prompted during a Church meeting, Elder Fale texted his wife asking her to dig out baby photos of each of their children. At home he showed them the photos, described the love they felt at each birth, and asked what they had done by that day to earn it. Eyes down, they answered that they had done nothing. Exactly, he told them: love they never earned can never be lost. Then he said their parents’ love is only a small part of what Heavenly Father feels, and that they could always come home. The Spirit filled the room."
+          },
+          "invite": [
+            {
+              "ask": "May this truth never leave our minds or our hearts, and may it change us forever.",
+              "promise": "Understanding our Father’s love and our true identity as His children is essential for our daily and eternal happiness. It prevents deception and gives purpose to this mortal life."
+            }
+          ],
+          "try": "Find a baby picture of yourself or a child this week and, looking at it, write one sentence about what Heavenly Father feels for that person."
         },
         {
           "id": "oct26-kearon-lives-to-lift",
@@ -1614,26 +1874,25 @@ window.TU_SUNDAY = {
             "3 Nephi 27:22",
             "3 Nephi 27:14–15"
           ],
-          "quick": "Drawing on his teenage years learning to fly gliders, Elder Kearon teaches that Jesus Christ loves to lift us. A glider pilot feels for rising air and turns away from sinking air. In the same way, we can learn to feel the Spirit’s lift and turn firmly from spiritual sink. He invites us to keep turning toward the Savior and to help others rise, promising that with Him our climb has no limit.",
+          "quick": "A glider has no engine; it climbs only by finding invisible columns of rising air. Our spiritual life works the same way: Jesus Christ is the lift, and if we aren’t rising with Him, we are slowly drifting down. Learn to feel the Spirit’s pull, turn hard away from what drags you down, and with Him there’s no ceiling on how far up you can go.",
           "points": [
-            "As a teen he learned to fly gliders, finding unseen rising air, called lift, partly by watching clouds but mostly by feeling it.",
-            "The Savior loves to lift, as when He raised Peter from the waves, Jairus’s daughter from death, and a boy troubled by an unclean spirit.",
-            "We feel spiritual lift through the Holy Spirit, and we must also notice spiritual sink and turn from it decisively.",
-            "A glider that is not climbing is slowly descending. Neglecting communion with God lets us drift lower without noticing.",
-            "Living in lift means finding faithful guides, climbing with others, watching for sink, and showing others how to rise."
+            "The Savior loves to lift: Peter from the waves, Jairus’s daughter from death, a tormented boy by the hand.",
+            "Spiritual lift can’t be seen, but as we learn the Spirit’s quiet impressions, we can feel it.",
+            "Decline is usually gradual. We seldom mean to sink; we just stop doing what lifted us.",
+            "Climbing is easier together. Join others who are rising, and help others find the upward pull.",
+            "When we have sunk, the Savior is there to raise us as we turn to Him."
           ],
           "discuss": [
-            "When have you felt spiritual lift, and what were you choosing or doing at the time?",
-            "What quiet habits might be letting you drift lower without noticing, and what would help you turn back?",
-            "Who could you help find the lift of Jesus Christ this week, and how?"
+            "Where and when do you most often feel spiritual lift, and how does it feel?",
+            "What small habit, if we let it slide, would start our family’s slow descent?",
+            "Who around us could use someone to show them where to find lift?"
           ],
           "deep": {
             "paras": [
-              "Elder Kearon opens lightly: President Uchtdorf had teased him about leaving aviation out of his talks. As a boy at boarding school in England, he watched planes and longed to fly home to his parents in Arabia. In his mid-teens he spent parts of two summers in Oxfordshire learning to fly gliders with the air force. A glider has no engine, so the key skill is finding rising air, called lift. Cumulus clouds can hint at it, but a pilot learns most by feeling one wing tip upward and turning into it.",
-              "Pilots also meet descending air, which they call sink. You cannot see it either, but you can feel it. It shortens a flight and can threaten a safe landing, so he learned to turn from it firmly. Years later, early in his journey of faith, he saw the spiritual parallel: avoid sink and find lift. The Savior loves to lift. He raised Peter from the waves (Matthew 14:28–31), Jairus’s daughter from death (Mark 5:35–42), and a boy with an unclean spirit, whom He took by the hand (Mark 9:17–27).",
-              "Through Christ’s grace we can feel spiritual lift as we learn to recognize and act on the Spirit’s quiet impressions. Elder Kearon gave a sobering reminder: “In gliding, if you are not actively climbing in lift, you are descending.” Spiritually, we seldom mean to sink. Yet neglecting our communion with the Father, the Savior, and the Holy Spirit lets us slip from heights we worked hard to reach.",
-              "Ammon shows how wondrous lift can feel. Rejoicing that his brethren were freed from the chains of hell and brought into everlasting light, he said he could not express even the smallest part of his feelings (Alma 26:14–16). Elder Kearon notes that the Spirit does not speak mainly in words, yet lift and sink are real. We should notice the sweet, peaceful feelings that draw us upward and the dim, dampening ones that pull us away from Christ.",
-              "Living in lift is simple: find a faithful guide, tune in to the Spirit, join those who are climbing, watch for sink and turn away, and show others how to rise. In a note he adds that turning to Christ may mean getting help from others, such as medical or therapeutic care. The Savior promises that those who do these things will be lifted up at the last day (3 Nephi 27:22), and He was lifted up on the cross to draw us all to Him (3 Nephi 27:14–15). Elder Kearon testified, “Jesus Christ lives to lift.”"
+              "Elder Kearon starts with a laugh: President Dieter F. Uchtdorf had asked where the aviation was in his talks. As a teen he learned the basics of gliding in order: flying straight and level, turning, taking off behind a tow plane and landing. Only then could he learn to stay up and soar. Soaring upward in silence, with nothing but wind and the odd creak of the frame, he says, is almost beyond words.",
+              "Rising air is called lift; sinking air is called sink. Neither can be seen, but both can be felt, and a good pilot turns decisively away from sink. Not far into his journey of faith, he saw the parallel. The Savior constantly sought out people sinking into darkness and raised them up (Matthew 14:28–31; Mark 5:35–42; Mark 9:17–27). We feel spiritual lift through the Holy Spirit, and we can recall times we felt both lift and sink.",
+              "In a glider, if you are not climbing, you are coming down, often so gently you don’t notice. Spiritually, neglecting our communion with heaven lets us drift down from heights we worked hard to reach. The first experience of real lift can be overwhelming. Ammon, rejoicing that his brothers had been brought from darkness into light, said he could not express “the smallest part which I feel” (Alma 26:14–16).",
+              "Living in lift is not complicated: find a faithful guide, tune in to the Spirit, climb with those who are climbing, watch for signs of sink and help others rise. The Father sent His Son to be lifted up on the cross so He could draw all of us to Him (3 Nephi 27:14–15), and He promises that those who do these things “shall be lifted up at the last day” (3 Nephi 27:22). As children of the covenant, we share the privilege of helping the Lord keep His promises to all His children."
             ],
             "find": [
               "The crucial skill in gliding is finding rising air.",
@@ -1644,7 +1903,22 @@ window.TU_SUNDAY = {
               "Your Saviour is your lift. He is your ever-rising air."
             ]
           },
-          "approved": "90bb4a9b"
+          "approved": "c15cfa88",
+          "story": {
+            "title": "Learning to feel the rising air",
+            "text": "As a boy at boarding school in England, Elder Kearon dreamed of flying home to his parents in Arabia. In his mid-teens he spent parts of two summers learning to fly gliders with the Royal Air Force. A glider has no engine, so the key skill is finding rising air. He learned to head for cumulus clouds, to feel a wing tip upward and turn into it, to circle up alongside other pilots, and to turn sharply away from sinking air. Years later he saw the gospel in those lessons."
+          },
+          "invite": [
+            {
+              "ask": "Find a faithful guide and learn from them where lift is found. Actively tune in to the sweet feelings of the Holy Spirit and the things in your life that lead you there.",
+              "promise": "If ye do these things blessed are ye, for ye shall be lifted up at the last day."
+            },
+            {
+              "ask": "Watch closely for the subtle signs of sink in your own life, and turn away decisively. And when you find lift yourself, show someone else where and how to rise!",
+              "promise": "Helping others turn from sink and into the lift of Jesus Christ is our glorious opportunity and brings joy beyond compare."
+            }
+          ],
+          "try": "Each evening this week, name one moment that lifted you and one that pulled you down. Plan to do more of the first and turn from the second."
         },
         {
           "id": "oct26-dunn-ninety-and-ten",
@@ -1656,7 +1930,7 @@ window.TU_SUNDAY = {
             "The Redeemer rescues not by shortening our course but by helping us lengthen our stride.",
             "Anytime we turn to Christ, we turn a corner.",
             "And even when the outcome or the timing is not what you plead for, take solace knowing that feeling broken does not mean you’ve been abandoned by God.",
-            "Sometimes the God who makes the impossible possible can part seas and move mountains. Other times He simply sends us a Ted."
+            "sometimes the God who makes the impossible possible can part seas and move mountains. Other times He simply sends us a Ted."
           ],
           "scriptures": [
             "Isaiah 53:4",
@@ -1666,26 +1940,26 @@ window.TU_SUNDAY = {
             "2 Nephi 31:19",
             "Hebrews 12:1"
           ],
-          "quick": "Elder Dunn tells of running a 100-mile race with his friend Ted, who quietly carried his water and pack for the last 10 miles. He teaches that Jesus Christ carries our burdens, often unseen, and helps us go farther rather than making the road shorter. He invites the weary to turn to Christ and ask for help, promising His helping hand, peace even when outcomes differ from our hopes, and assurance that feeling broken is not being abandoned.",
+          "quick": "Christ promised to carry our burdens, but that rarely means a shorter, easier trail. More often He quietly takes the heaviest weight, sends help we didn’t see coming and strengthens our legs for the miles left. When we’re spent and ready to quit, turning to Him is turning the corner, and peace can come even when the outcome we wanted doesn’t.",
           "points": [
-            "In 1998 his running partner Ted, who had finished the race many times, talked him into a 100-mile ultramarathon and promised to run the second half with him.",
-            "At mile 90 he collapsed and wanted to quit. Ted knelt, expressed faith in him, and helped him finish, then let him cross the line alone.",
-            "A photo later showed that Ted had silently carried his water bottles and pack for those last 10 miles.",
-            "Christ bears our griefs, often unseen. He strengthens us to go farther rather than shortening the path, and He sends helpers and angels.",
-            "Even when answers or timing differ from our pleas, feeling broken does not mean God has left us, and peace will come."
+            "The Savior often lightens our load so quietly that we only notice it when we look back.",
+            "His grace lifts us and multiplies our small efforts, building our strength for the distance rather than cutting the distance.",
+            "God knows what we need before we ask, so help may arrive at the very moment we pray.",
+            "He often answers through people, friends on earth and sometimes angels, who run beside us.",
+            "We can trust Him completely because He has walked every part of the road and knows what we can do."
           ],
           "discuss": [
-            "Who has been a Ted for you, quietly carrying something you didn’t know they carried?",
-            "Where are you at your own mile 90, and what might asking Christ for help look like there?",
-            "When have you seen the Lord’s hand in a hard time only by looking back on it?"
+            "Looking back, when did the Lord carry something for you that you didn’t notice at the time?",
+            "Who has been a running partner for you in hard times, and how could you be one for someone else?",
+            "How do we keep going when the answer or timing we prayed for doesn’t come?"
           ],
           "deep": {
             "paras": [
-              "Elder Dunn asks what the Savior’s promise to carry our burdens looks like in real life. His answer comes from 1998, when his running partner Ted talked him into a 100-mile ultramarathon. He had run a few marathons, but this was like four in a row. What made it seem possible was that Ted, who had finished the race many times, believed in him and promised to run the second half with him, when fatigue, blisters, and self-doubt would be hardest.",
-              "Ted joined him as daylight faded with more than half the race left. With Ted’s patience and his own silent prayers, they reached mile 90 by dawn. There Elder Dunn collapsed under a tree and said he gave up. Ted knelt, reminded him of his training, and said, “I know you can do this, Mike, and I’m going to get you there.” They covered the last 10 miles together. About a hundred yards from the finish, Ted stepped aside, telling him this race was his to finish.",
-              "A photo arrived later and revealed what Ted had done. He had been carrying Elder Dunn’s two water bottles and pack for those final 10 miles, without a word. Elder Dunn connects this to the Savior, who, as Isaiah wrote, took our griefs and sorrows upon Himself (Isaiah 53:4). He once thought that meant the trail would get easier. Instead, Christ lifts us, often unseen, and magnifies our small efforts. Elder Dunn said, “The Redeemer rescues not by shortening our course but by helping us lengthen our stride.”",
-              "Turning to Christ changes our direction. God knows our needs before we ask (3 Nephi 13:8), and His grace gives divine help and strength. He also sends helpers, the Teds of this world and beyond, and angels to bear us up (Doctrine and Covenants 84:88). We can trust Him because He has walked every part of our road and knows what we can become.",
-              "To anyone at their own mile 90, Elder Dunn promises that asking, even with our last strength, will bring the Lord’s help. When outcomes or timing differ from our prayers, feeling broken does not mean God has abandoned us. Quoting President Uchtdorf, he notes that we often see God’s hand only when looking back. Sometimes God parts seas, sometimes He sends a Ted, but most often He strengthens us to set aside every weight and run with patience (Hebrews 12:1)."
+              "What does it mean, practically, that the Savior carries our burdens? Elder Dunn found an answer on a 100-mile trail run he felt unready for. His partner knew every twist of the course and believed in him. Through the heat of the afternoon he kept moving step by step, and when daylight and hope were fading, his friend arrived as promised.",
+              "At mile 90 he quit, until his friend’s gentle reminder of their training and his promise to get him there got him back on his feet. A hundred yards from the finish, the friend stepped aside, saying this was Elder Dunn’s race to finish. Only a photograph later showed the hydration pack strapped to his friend’s waist.",
+              "Isaiah testified that the Savior has “borne our griefs, and carried our sorrows” (Isaiah 53:4). Elder Dunn once assumed that meant easier trails. Instead he learned that “the Redeemer rescues not by shortening our course but by helping us lengthen our stride.” We can cast our burdens on the Lord (Psalm 55:22), and our Father knows what we need before we ask (3 Nephi 13:8). Grace is divine help and strength, and the Lord promises angels round about us to bear us up (Doctrine and Covenants 84:88).",
+              "Christ “marked the path and led the way,” as the hymn says, so no part of life is unknown to Him. President Dieter F. Uchtdorf taught that we often see the Lord’s hand only by looking back. Feeling broken is not proof that God has left us.",
+              "Sometimes God parts seas. Sometimes He sends a friend. Most often He strengthens us to set down what weighs us down and keep going, patiently, in the race in front of us (Hebrews 12:1)."
             ],
             "find": [
               "He knew every twist of the trail and promised that if I would put in the training, he would be there to run with me",
@@ -1695,7 +1969,22 @@ window.TU_SUNDAY = {
               "Peace will come even when hoped-for outcomes do not."
             ]
           },
-          "approved": "d6a318e4"
+          "approved": "0304cecd",
+          "story": {
+            "title": "Who was carrying the water?",
+            "text": "In 1998 Elder Dunn’s running partner, a veteran of the race, talked him into a 100-mile ultramarathon and promised to run the second half beside him. At mile 90, completely drained, Elder Dunn sat under a tree and said he was giving up. His friend knelt, looked him in the eye and said he knew he could do it and would get him there. They finished the last 10 miles together. Later a race photo revealed something he had missed: his friend had been carrying Elder Dunn’s water bottles and pack for the last 10 miles."
+          },
+          "invite": [
+            {
+              "ask": "don’t confuse the perceived invisibility of the Lord’s hand with the inveterate nature of the Lord’s heart.",
+              "promise": "Peace will come even when hoped-for outcomes do not."
+            },
+            {
+              "ask": "take solace knowing that feeling broken does not mean you’ve been abandoned by God.",
+              "promise": "I promise that as you expend even your last drops of energy to ask, His helping hand will ultimately give you that much-needed leg up."
+            }
+          ],
+          "try": "Think of someone near their own “mile 90.” This week, quietly take one specific burden off them without being asked."
         },
         {
           "id": "oct26-eyring-comfort-holy-ghost",
@@ -1717,26 +2006,25 @@ window.TU_SUNDAY = {
             "Philippians 4:7",
             "John 14:18"
           ],
-          "quick": "Elder Eyring teaches that everyone eventually faces burdens they cannot fix alone, and that the Savior’s peace reaches us through the Holy Ghost, the Comforter. Christ knows our pain and has already rescued us from the lasting tragedies of death and sin. He invites us to turn to the Lord and live worthy of the Spirit’s constant companionship, promising comfort, answers in the Lord’s time, and peace beyond understanding.",
+          "quick": "Sooner or later every capable, self-reliant person meets something they can’t fix. That is where the Holy Ghost comes in: the Savior sends Him as a Comforter, and through Him Christ’s peace reaches us. As the world grows rougher and real comfort grows scarce, living worthy of the Spirit’s constant company should be among our highest priorities.",
           "points": [
-            "Like a friend who lost his son, all of us eventually face burdens we cannot fix or carry on our own.",
-            "Having lost a twin before birth themselves, he and his wife were able to comfort a young couple facing the same loss.",
-            "Christ knows our pain. As we draw near to Him, He comforts us and answers in His own time, often through the Spirit and other people.",
-            "In a turbulent world we need the Holy Ghost to keep hope alive, and Christ has rescued us from death and sin.",
-            "A grieving father was promised peace in a priesthood blessing. Living worthy of the Spirit should be among our top priorities."
+            "Trials differ from person to person, but none of them should be allowed to weaken our faith.",
+            "Answers come on the Lord’s schedule, often through tools, resources and other people the Spirit guides.",
+            "Heaven’s comfort keeps hope alive, and hope is what keeps faith from quitting.",
+            "Christ rescues us from the only two permanent tragedies: losing our bodies and being cut off from God by sin.",
+            "Because the Resurrection is real, every weakness and loss of mortality is only temporary."
           ],
           "discuss": [
-            "When have you faced something you could not fix, and how did comfort come to you?",
-            "How has your own suffering helped you comfort someone else?",
-            "What could you change to make more room for the Holy Ghost’s constant companionship?"
+            "What is something you’ve tried to fix alone that you could hand to the Lord?",
+            "How has a past loss helped you comfort someone else?",
+            "What helps us keep the Holy Ghost with us in a busy, noisy week?"
           ],
           "deep": {
             "paras": [
-              "Elder Eyring begins with a friend whose young married son died unexpectedly. The friend’s first thought was that he could not fix this. We are trained to solve problems and rely on ourselves, yet sooner or later each of us meets burdens too heavy to carry alone. He and his wife once lost one of their twins before birth. So when they had dinner with a young couple who had suffered the same loss in their first pregnancy, they could mourn with them and comfort them (Mosiah 18:9).",
-              "Life is meant to try our faith, and trials differ: worry about daily food, poor health, loved ones who leave the gospel path, hurt we receive or cause, loneliness, habits we can’t seem to break. Elder Eyring urges us not to let trials weaken our faith. Christ suffered for us and knows how we feel. If we draw near to Him, He will draw near to us (Doctrine and Covenants 88:63), giving comfort and answers on His timetable, sometimes through tools, resources, and other people. He promised another Comforter, the Spirit of truth (John 14:16–17).",
-              "Prophets have warned that in the days ahead we cannot endure spiritually without the Holy Ghost’s steady influence. As turmoil grows, true comfort becomes scarce, and without it we may lose hope and then faith. Elder Eyring said, “There is hope in Jesus Christ.” President Oaks taught that belief in a literal, universal resurrection changes how we see mortal trials and even early deaths.",
-              "The Lord spares us from two things that could make us miserable forever: losing our bodies to death and being cut off from God by sin. Jacob rejoiced that God prepared an escape from death and hell (2 Nephi 9:10). One day we will see how generous the Lord has been, and that the suffering that drew us to Christ prepared us for greater blessings (1 Corinthians 2:9).",
-              "After that dinner, Elder Eyring gave the grieving father a priesthood blessing, since only the mother had received one in the hospital. The father was promised peace that passes understanding (Philippians 4:7), and the couple left with shining faces. Elder Eyring teaches that the Savior’s peace comes through the Holy Ghost, so living worthy of His companionship should rank among our highest priorities. Christ promised He would not leave us comfortless (John 14:18)."
+              "When a friend of Elder Eyring learned his young married son had died suddenly, one thought came: he couldn’t fix this. We are raised to solve problems and rely on ourselves, yet everyone eventually meets burdens too heavy to carry alone. Having lost a twin themselves, Elder Eyring and his wife could mourn with a young couple facing the same grief and comfort them (Mosiah 18:9).",
+              "Our struggles vary: hunger, health, loved ones who stray, hurt given or received, loneliness, a habit we can’t seem to break. Christ suffered for us and knows how each one feels. If we draw near, He draws near (Doctrine and Covenants 88:63), and He sends the Holy Ghost as a Comforter, the Spirit of truth (John 14:16–17).",
+              "Prophets have warned that our spiritual survival will depend on the steady influence of the Holy Ghost, partly because real comfort will be harder to find. President Dallin H. Oaks taught that belief in a literal resurrection changes how we see mortal limits and gives us courage to face death, even early death. Jacob rejoiced in God’s goodness in preparing escape from “that monster, death and hell” (2 Nephi 9:10).",
+              "One day we will see how generous the Lord has been, and that suffering that drew us to Him was preparing us for greater blessings. The grieving father received peace “which passeth all understanding” (Philippians 4:7). The Savior’s promise stands: “I will not leave you comfortless: I will come to you” (John 14:18)."
             ],
             "find": [
               "All of us, regardless of experience, talent, or willpower, will sooner or later encounter burdens we cannot possibly carry ourselves.",
@@ -1746,7 +2034,22 @@ window.TU_SUNDAY = {
               "The Savior’s peace is made manifest through the comforting power of the Holy Ghost."
             ]
           },
-          "approved": "aa2b9a53"
+          "approved": "b73c7987",
+          "story": {
+            "title": "A blessing for a grieving father",
+            "text": "Elder Eyring and his wife once lost one of their twins before birth. Years later they shared a meal with a young couple grieving a twin lost in their first pregnancy, and they spoke together of parenthood, loss and healing. In the hospital the mother had received a priesthood blessing, but the father had not. After dinner Elder Eyring gave him one, and the Spirit promised him peace beyond understanding, then and for the rest of his life. As the couple left, their faces shone."
+          },
+          "invite": [
+            {
+              "ask": "As you humbly turn to the Lord and cast your burdens on Him, you have His promise: “Draw near unto me and I will draw near unto you.”",
+              "promise": "He will provide comfort; He will provide answers on His timetable as you turn to Him."
+            },
+            {
+              "ask": "Living worthy of the constant companionship of the Holy Ghost should be one of our highest priorities.",
+              "promise": "That comfort will help us when we go through the inevitable hardships of life and times when we can’t fix things on our own."
+            }
+          ],
+          "try": "This week, ask for or give a priesthood blessing of comfort to someone carrying something they can’t fix, or simply sit and mourn with them."
         },
         {
           "id": "oct26-rasband-love-like-jesus",
@@ -1768,26 +2071,26 @@ window.TU_SUNDAY = {
             "Matthew 11:28–29",
             "Helaman 5:12"
           ],
-          "quick": "Elder Rasband speaks to all who grieve for loved ones who have turned from the Lord. Because everyone must choose Christ for themselves, he asks us to give our despair to the Savior, who can change hearts and has already paid for their sins. He invites us to love as Jesus loves, pray in faith, let go of guilt, and never give up, promising that Christ is the answer and that, built on Him, we will not be dragged down.",
+          "quick": "When someone we love walks away from the Lord, lectures and pressure usually widen the gap. Hand the worry to Jesus Christ: we can’t change their heart, but He can, and His Atonement always leaves a way back. Our part is to love the way He does, pray without quitting, and trust that He has this in hand.",
           "points": [
-            "Many ache for loved ones who have strayed. Pressure, lectures, and arguments often widen the gap, because each person must choose Christ for themselves.",
-            "The battle belongs to God. Turn your despair over to Christ, who loves our loved ones and has already paid for their sins.",
-            "Love is neither stepping back nor approving wrong choices. It shows interest, open arms, cheer, patience, and kindness, guided by the Holy Ghost.",
-            "Love shows in prayer, as Alma’s faithful prayers for his rebellious son were answered, and it drew the prodigal son home to his father.",
-            "Let go of guilt, put people ahead of problems, and seek Christ, the answer, through scripture, prophets, and mighty prayer."
+            "Everyone must choose Christ for themselves; that is by divine design, not a sign we failed.",
+            "Our loved ones belong first to our Heavenly Father, whose love for them runs deeper than ours.",
+            "Loving someone doesn’t mean approving their choices. It means showing interest, open arms and a cheerful face.",
+            "Prayer is a form of love; Alma’s father kept praying, and heaven answered.",
+            "Keep the person at the center, not the problem they have become in our minds."
           ],
           "discuss": [
-            "Which of our usual efforts to reach a struggling loved one might push them away, and what might love look like instead?",
-            "What would it mean for you to turn your worry about someone over to the Savior?",
-            "How can you keep praying for someone, as Alma did, without losing hope?"
+            "Which of our efforts to bring someone back have pushed them further away, and what might work better?",
+            "What does loving without approving look like with someone we care about right now?",
+            "How do you let go of guilt over a loved one’s choices while still hoping and praying?"
           ],
           "deep": {
             "paras": [
-              "Elder Rasband speaks to anyone grieving over family or friends who have left the Lord and broken covenants. He and Sister Rasband know this grief. We replay what we might have done, and our preaching, arguing, and lecturing, even sending conference links, can widen the rift. By divine design, each person must choose to follow Christ. In Lehi’s dream, many pressed toward the tree, the love of Christ, but some wandered off in the mist toward the great and spacious buildings (1 Nephi 8).",
-              "The answer comes from the Old Testament: the battle is God’s, not ours (2 Chronicles 20:15). Elder Rasband asks us to hand our despair to Jesus Christ. Only He, not we, can change their hearts. Our loved ones are first God’s children, and He loves them even more than we do. Through His Atonement, from Gethsemane to Golgotha, Christ paid for their sins and bore the sorrows that weigh on them and on us. There is always a way back, and in everyday words Christ assures all who grieve that He has this in hand.",
-              "Love is at the heart of Christ’s gospel and can influence those who have strayed. The two great commandments are to love God and to love our neighbor. Love does not mean stepping back or approving wrong choices. It means taking interest in their lives, welcoming them with open arms and a cheerful face, and relying on the Holy Ghost. Proverbs counsels us to trust the Lord rather than our own understanding (Proverbs 3:5–6). Quoting President Oaks, he urges us to avoid harshness and seek holiness by being patient, forgiving, and kind.",
-              "Love also shows in prayer. Alma the Younger rebelled until an angel told him the Lord had heard his father’s faithful prayers. After three days of torment, he remembered his father’s teaching about Jesus Christ, cried for mercy, and was filled with joy (Alma 36). The prodigal son, too, came home in a wretched state, and his father ran to meet him (Luke 15:20). What brought him back was love. Christ invites the weary to come to Him for rest (Matthew 11:28–29).",
-              "Elder Rasband closes with three suggestions. Let go of guilt; we fail only if we quit, so never give up, as Alma never did. Heed President Thomas S. Monson, who said, “Never let a problem to be solved become more important than a person to be loved.” And remember that Jesus Christ is the answer. Seek Him in the scriptures and the words of His servants, and pray mightily. As an Apostle, Elder Rasband promises that the devil’s storms cannot drag us down if we build on Christ, our rock (Helaman 5:12)."
+              "Elder Rasband speaks to everyone whose heart aches for someone who has left the Lord, and he says he and Sister Rasband have felt it too. Parents replay what they did wrong, then preach, argue, lecture or send conference links, often making the rift worse. In Lehi’s dream, a mist of darkness led some away from the tree of life to the great and spacious building (1 Nephi 8). The adversary offers no peace, now or ever.",
+              "The answer comes from the Old Testament: “the battle is not yours, but God’s” (2 Chronicles 20:15). We cannot change hearts; Christ can. Through His Atonement in Gethsemane and on Golgotha He paid for their sins and carried their disappointments and ours. Elder Rasband puts it plainly: Jesus is telling us He’s got this.",
+              "Love is the center of His gospel, and love can reach those who have strayed. It relies on the Holy Ghost and trusts the Lord rather than our own understanding. President Dallin H. Oaks urged us to avoid what is harsh and hateful and to seek holiness through patience, peacemaking and kindness. Love also prays, as Alma did for his son (Alma 36).",
+              "The Savior paid for the choices of the very people we grieve over and gave His life to bring them all the way home. The prodigal son came back because he knew where to find love, and his father ran to meet him (Luke 15:20). Christ invites the weary to come to Him for rest (Matthew 11:28–29).",
+              "Three suggestions close the talk: let go of guilt and never give up, follow President Thomas S. Monson’s counsel to put people before problems, and remember that Jesus Christ is the answer, seeking Him in scripture, prophetic words and mighty prayer. Built on Him, the storms cannot drag us down (Helaman 5:12)."
             ],
             "find": [
               "By divine design, brothers and sisters, everyone must choose for themselves to follow Jesus Christ.",
@@ -1798,7 +2101,22 @@ window.TU_SUNDAY = {
               "Third, remember Jesus Christ is the answer."
             ]
           },
-          "approved": "86a57d2a"
+          "approved": "d3e874db",
+          "story": {
+            "title": "A father’s prayers for a rebel son",
+            "text": "Alma the Younger was gifted, persuasive and openly fighting against God. His father, Alma, prayed for him in faith, perhaps for years. Then an angel stopped the son with a voice like thunder, announcing that the Lord had heard his father’s prayers. For three days and nights the young man was tormented by his sins, until he remembered his father’s teaching that Jesus Christ would come to atone. He cried out to Jesus for mercy, was filled with joy, and became one of the great prophets of the Book of Mormon."
+          },
+          "invite": [
+            {
+              "ask": "I ask you to turn over to Jesus Christ your despair for those wayward souls.",
+              "promise": "We cannot change their hearts, but He can; He is a God of miracles."
+            },
+            {
+              "ask": "remember Jesus Christ is the answer. He is, always has been, and always will be.",
+              "promise": "his mighty storm … shall have no power … to drag you down to the gulf of misery and endless wo, because of the rock upon which ye are built."
+            }
+          ],
+          "try": "Pick one loved one who has stepped away. This week, pray for them by name daily and reach out once with no agenda except love."
         },
         {
           "id": "oct26-eyring-fear-not",
@@ -1818,25 +2136,25 @@ window.TU_SUNDAY = {
             "Alma 7:11–12",
             "Mosiah 18:8–9"
           ],
-          "quick": "President Eyring teaches that the Lord’s promise from Isaiah 41, sung in “How Firm a Foundation,” is true: He will be with us and help us stand. The promise does not take away our trials, which test whether we will obey Him. The Lord often keeps His promise through His disciples. He thanks those who already help and invites all of us to pray, follow promptings, and comfort those in need.",
+          "quick": "God never promised to take our trials away; He promised to stand with us in them. He keeps that promise through the Holy Ghost and through ordinary disciples who notice, pray and reach out. Life is meant to be a test, and each of us can be part of the Lord’s answer to someone else’s prayers.",
           "points": [
-            "The promises in the hymn “How Firm a Foundation,” drawn from Isaiah 41, are true and grow more precious as trials come.",
-            "God does not promise to remove hard things. Life is a test that helps us grow so we can live with Him again.",
-            "The Savior has carried our griefs and knows each of us perfectly. Trials differ, but the test is the same: will we obey Him?",
-            "The Lord usually meets our needs through other people. Disciples who reach out help Him keep His promise to comfort.",
-            "We can pray to know whom to help, encourage missionaries, sustain Church leaders, and comfort those who mourn."
+            "Trials are hard on purpose: we have to become spiritually clean and grow tall enough in spirit to live with God.",
+            "Every person’s trials differ, but the test is the same: will we do whatever the Lord commands?",
+            "The Savior has carried our griefs and knows each of our hearts perfectly.",
+            "God usually meets our needs through another person, which makes each of us part of His promise.",
+            "A smile for a weary missionary or a word of confidence to a struggling leader can be the Lord’s answer to their prayers."
           ],
           "discuss": [
-            "When has the Lord kept His promise to be with you through another person’s kindness?",
-            "Whose name or face has come to your mind lately, and how could you reach out to them this week?",
-            "How does knowing trials are a test, not a punishment, change how you face a hard season?"
+            "Who has been the Lord’s way of being with you in a hard time?",
+            "Which missionaries or leaders in our circle could use a word of encouragement from us this week?",
+            "How can we teach our children that life being hard doesn’t mean God has left them?"
           ],
           "deep": {
             "paras": [
-              "President Eyring begins with the hymn the choir sang, “How Firm a Foundation,” whose words come from Isaiah 41:10. Its promise is simple: the Lord is with us, will strengthen us, and will hold us up. He says this promise has guided and comforted him, and it can do the same for us in our own trials.",
-              "He is clear that the promise does not remove hard things. As a boy he asked his mother why life was so hard. She told him it was supposed to be, because life is a test. He later saw that she was facing lifelong health trials of her own, and that the Lord kept His promise to her. God allows hard tests so we can grow enough to live in His presence. He gave us a Savior who has borne our griefs (Isaiah 53:4; Alma 7:11–12) and knows our hearts.",
-              "In her last days, his mother kept one picture on her wall, of the Savior. His father slept on a cot by her hospital bed to help her at night, and after she died he thanked every nurse who had cared for her. President Eyring shares this as evidence that the Lord sends faithful people to help keep His promise. He quotes President Spencer W. Kimball, who taught that God usually meets our needs through another person.",
-              "Most of the talk thanks those who already serve this way and invites the rest of us to join. We can pray to know whom to help and then reach out. We can lift a weary missionary with a kind word or a smile. We can pray for and sustain those who serve in callings. We can keep the covenant Alma described in Mosiah 18:8–9, to bear one another’s burdens and comfort those who need comfort. He testifies that the Lord keeps His promises through the Holy Ghost and through His faithful disciples."
+              "The choir had just sung a hymn whose words come from Isaiah 41: in every condition, at home or abroad, help will come as our days require, and the Lord says, “Fear not, I am with thee” (Isaiah 41:10). President Eyring testifies those promises are true and will grow more precious in the time ahead. But the promise is not that trials will vanish. His mother taught him that life is a test, and her own lifelong illness showed it.",
+              "Why would a loving, all-powerful God allow such hard tests? Because we must grow spiritually to live in His presence. He gave us a Savior who has “borne [your] griefs, and carried [your] sorrows” (Isaiah 53:4; Alma 7:11–12), and the freedom to choose to obey, repent and come to Him. Trials vary endlessly, but the question being tested never changes.",
+              "His father’s care at the hospital shows how the Lord sends faithful people to help keep His promise of succor. President Spencer W. Kimball taught that God notices us but usually meets our needs through someone else.",
+              "So President Eyring thanks those already serving: people who pray to know whom to help and then reach out, who lift discouraged missionaries, and who pray for and express confidence in Church leaders, every one of whom is praying for strength. He invites us to let the Holy Ghost show us whom to comfort, as Alma described in the baptismal covenant (Mosiah 18:8–9). The Lord keeps His promises through the Spirit and through His faithful disciples."
             ],
             "find": [
               "It is important to realize that the promise is not for the removal of challenges.",
@@ -1845,7 +2163,22 @@ window.TU_SUNDAY = {
               "You have prayed in faith consistently for your family members or friends to know who the Lord would have you help for Him."
             ]
           },
-          "approved": "94c3fa20"
+          "approved": "360d704b",
+          "story": {
+            "title": "Of course it’s hard",
+            "text": "As a little boy, President Eyring asked his mother why life was so hard. She smiled and told him firmly that of course it was hard; it was meant to be, because life is a test. Only later did he realize she was enduring a lifetime of serious illness that began in her girlhood. In her final, bedridden days, the one picture on her wall was of the Savior. His father slept on a cot beside her, and after she died, he thanked and shook hands with every nurse on the ward."
+          },
+          "invite": [
+            {
+              "ask": "I wish to thank those who have helped Him and encourage others to join Him in keeping His promise today and in the hard days ahead.",
+              "promise": "We know that the Lord will comfort all of those who try to follow Him."
+            },
+            {
+              "ask": "Another great opportunity can come when you invite the Holy Ghost to help you find ways to help the Lord comfort those who are pleading for it.",
+              "promise": "That you felt prompted to reach out to them was evidence to them that the Lord knew and loved them."
+            }
+          ],
+          "try": "Pray each morning this week to know whom the Lord wants you to help. When a face or name comes to mind, reach out that day."
         },
         {
           "id": "oct26-chibota-child-of-god",
@@ -1865,25 +2198,25 @@ window.TU_SUNDAY = {
             "Luke 10:30–35",
             "Romans 4:17"
           ],
-          "quick": "President Chibota uses the southern African greeting sawubona, “I see you,” to teach that Jesus Christ truly sees each person as a child of God. She asks us to pray to see others as He does and treat them that way, starting with simple things like learning a name. She promises that as we see ourselves and others as God does, our homes and wards will become places where people belong, heal, and feel loved.",
+          "quick": "“Sawubona,” a southern African greeting, means “I see you,” and it says far more than hello: it tells a person they matter. Jesus Christ lived that greeting, seeing beloved children of God where others saw only labels. When we ask to see people, and ourselves, the way He does, our homes and wards can become places where people feel they belong and are healed.",
           "points": [
-            "The greeting sawubona means “I see you.” It honors a person’s worth and tells them they matter.",
-            "Jesus saw people others passed by, like the man at the pool of Bethesda. The good Samaritan also chose to see a child of God in need.",
-            "Seeing others can start small. A janitor was touched that her daughter knew his name and helped him.",
-            "Our eternal identity as God’s children is inherited, not earned. It matters more than any worldly label, and Christ can lift us above every label.",
-            "This week, find out the name of a person who might feel overlooked, pray to see others as God does, and replace labels with eternal truths."
+            "Noticing someone often starts with their name. Using it tells them they count.",
+            "Jesus stopped for people others hurried past, like the man who had waited 38 years at the pool of Bethesda.",
+            "Our worth as God’s children is inherited, not earned, so no role or label, whether student, parent or leader, gets the final word on who we are.",
+            "Heavenly Father’s view of us is fuller and more hopeful than our own, and Christ’s grace can lift us past any label.",
+            "When we ask Heavenly Father to help us notice people, He leads us to someone who feels invisible."
           ],
           "discuss": [
-            "Who in your ward, school, or work might feel unseen, and how could you learn their name this week?",
-            "What label do you sometimes carry about yourself, and how does knowing you are a child of God change it?",
-            "When has someone truly seen you, and how did it help you feel God’s love?"
+            "Which label do you most often put on yourself, and what would change if you thought “child of God” first?",
+            "Who around us might feel invisible right now, and what is one way we could notice them this week?",
+            "When did someone remembering your name or noticing you make a real difference to you?"
           ],
           "deep": {
             "paras": [
-              "President Chibota opens with a greeting from southern Africa, sawubona, which means “I see you.” It is more than hello. It recognizes a person’s worth and says they matter. She shows that the Savior lived this way. He noticed the leper, the blind man, the child, and the woman at the well. He looked on the rich young man and loved him (Mark 10:21). At the pool of Bethesda He saw and healed a man who had suffered for 38 years while others walked by (John 5:2–9). The good Samaritan chose to see too (Luke 10:30–35).",
-              "She says this kind of seeing is within our reach and often begins with learning someone’s name. At a school conference, a janitor thanked her and her husband because their daughter greeted him by name and helped him clean up. She quotes President Dallin H. Oaks, who taught that every mortal is a beloved child of God, and President Spencer W. Kimball, who taught that God usually meets our needs through another person.",
-              "Seeing others this way also changes how we see ourselves. The world pushes labels, but our identity is something we inherit from God, not something we earn. The Savior sees who we can become, calling things that are not yet as though they were (Romans 4:17). When President Oaks extended her calling, he told her, “The Lord knows you,” and that eased her feelings of inadequacy. She testifies that Christ’s grace can lift us above every label and limitation.",
-              "She tells of praying to know how to help a coworker who seemed isolated and finding friendship as she followed simple promptings to include him. Her invitation for this week is to learn the name of a person who might feel overlooked, to pray to see others as God sees them, and to trade worldly labels for eternal ones, such as child of God, child of the covenant, and disciple of Jesus Christ. She promises that as we do, the places where we live, worship, learn, and gather will be filled with belonging, healing, and love."
+              "Sawubona, a greeting from southern Africa, means “I see you.” It goes beyond hello: it recognizes a person’s worth and tells them they are respected and they matter. The Savior lived this way. He noticed the woman at the well, the leper, the blind man and the child, and He looked at the rich young man with love even though the young man went away sad (Mark 10:21–23). At the pool of Bethesda He saw a man others had passed by for 38 years, and healed him (John 5:2–9). The good Samaritan likewise chose to see a child of God in need rather than a stranger (Luke 10:30–35).",
+              "That kind of seeing is within reach, and it often begins with a name. A school janitor once thanked President Chibota and her husband because their daughter knew his name, greeted him and helped him clean up after lunch. As mission leaders, they found that missionaries who truly grasped that every person is a beloved child of God were better at helping people come to Christ. President Spencer W. Kimball observed that God notices us and usually meets our needs through another person.",
+              "How we see others shapes how we see ourselves. The world hands out labels, but none of them captures who we really are; our identity comes to us as God’s children, not through what we accomplish. Christ sees not only who we are but who we can become, speaking of what is not yet as though it already were (Romans 4:17). When President Dallin H. Oaks extended her calling, his reminder that the Lord knew her eased her sense of not measuring up. Whatever label feels heavy, His grace can raise us above it.",
+              "Years ago she prayed to know how to help a coworker who seemed isolated, followed small promptings to include him, and a friendship grew. Her invitation for this week has three parts: learn the name of someone who may feel unseen, pray to see others as Heavenly Father does, and trade worldly labels for eternal ones: child of God, child of the covenant, disciple of Jesus Christ. She closes with a final sawubona. Heavenly Father and Jesus Christ see each of us, and as we learn to see as They do, the places where we live, worship and learn can become places where people belong and heal."
             ],
             "find": [
               "It is an acknowledgment of another person’s worth and humanity.",
@@ -1892,7 +2225,22 @@ window.TU_SUNDAY = {
               "Learn the name of someone who may feel unseen."
             ]
           },
-          "approved": "227b283e"
+          "approved": "361ff8d0",
+          "story": {
+            "title": "A janitor who felt seen",
+            "text": "At their daughter’s last parent-teacher conference, a school janitor came up to President Chibota and her husband with tears in his eyes. He wanted to thank them for their daughter. She greeted him regularly, knew his name and even helped him clean up after lunch. Very few students knew who he was, he said, but she noticed him. A small, steady habit of attention had told a man his worth."
+          },
+          "invite": [
+            {
+              "ask": "I plead with you as disciples of Jesus Christ to pray to see others as He sees them and to treat them accordingly.",
+              "promise": "As we learn to see ourselves and one another as They do, our homes, wards, schools, and communities will become places of belonging, healing, and love."
+            },
+            {
+              "ask": "Replace worldly labels with these eternal truths: Child of God. Child of the covenant. Disciple of Jesus Christ.",
+              "promise": null
+            }
+          ],
+          "try": "Learn the name of one person at church or work who seems overlooked, and greet them by it the next time you see them."
         },
         {
           "id": "oct26-andersen-courage-faith",
@@ -1903,7 +2251,7 @@ window.TU_SUNDAY = {
           "quotes": [
             "Spiritual courage is the triumph over obstacles, doubt, and fear in choosing the right.",
             "Times have changed, but our spirits have not changed. We need stillness to nourish our faith in Christ.",
-            "As we choose faith in Christ, He blesses us with the courage … to choose the right, and as we manifest our courage to choose the right, our faith in Christ strengthens.",
+            "As we choose faith in Christ, He blesses us with the courage, sometimes in very difficult situations, to choose the right, and as we manifest our courage to choose the right, our faith in Christ strengthens.",
             "It is our faith in Jesus Christ that gives us the courage to accept a calling from our priesthood leaders even when we feel inadequate"
           ],
           "scriptures": [
@@ -1914,35 +2262,46 @@ window.TU_SUNDAY = {
             "John 14:23",
             "Acts 4:8–10"
           ],
-          "quick": "Elder Andersen teaches that faith in Jesus Christ and spiritual courage feed each other. When we choose faith in Christ, He gives us courage to do right, and each courageous choice makes our faith stronger. He shows this in prayer, the sacrament, callings, commandments, and trials. He promises that as we believe and follow the Savior, our answers will come, our spiritual power will grow, and our courage will shape who we become forever.",
+          "quick": "Faith in Jesus Christ and courage feed each other: trusting Him gives us the nerve to choose the right, and every brave choice makes that faith stronger. In a noisy world of phones and doubt, that cycle is what keeps disciples steady. Elder Andersen promises answers, more spiritual power and lasting courage to those who believe in Christ and keep His commandments.",
           "points": [
-            "Faith and courage mark true disciples. Following Christ is never casual, and it has always taken courage, as Moroni showed when he stood alone.",
-            "Our noisy, phone-filled world makes stillness rare. We need quiet time to nourish our faith in the Savior.",
-            "Faith gives courage, and courage builds faith. This happens in private prayer, the sacrament, accepting callings, and keeping commandments.",
-            "Members show this courage in hard times, like a family who lost their home to fire and a woman betrayed by her husband.",
-            "Like Peter and John, we can witness boldly that Jesus Christ lives and leads His work."
+            "Spiritual courage means getting past obstacles, doubt and fear in order to choose the right.",
+            "Moroni stood alone after his family was killed, yet refused to deny Christ. Discipleship has always taken that kind of nerve.",
+            "Our spirits still need stillness. Quiet time away from screens is where faith in Christ gets fed.",
+            "Private prayer and the weekly sacrament bring fresh courage to choose the right and keep our covenants.",
+            "Accepting a hard calling, trusting God after a disaster, or getting small children to church on a rough Sunday are all quiet acts of courage."
           ],
           "discuss": [
-            "When has a courageous choice to do right made your faith in Jesus Christ stronger?",
-            "Where can you find some stillness in your day to nourish your faith?",
-            "What calling or commandment takes courage for you right now, and how can faith help?"
+            "Where does choosing the right take real courage for you right now?",
+            "How could we build more stillness into our days, and what would we have to set down to do it?",
+            "When has one brave choice made your faith stronger afterward?"
           ],
           "deep": {
             "paras": [
-              "Elder Andersen begins by welcoming President Rosemary Chibota. At seventeen in Zimbabwe she read a pamphlet about Joseph Smith that missionaries had left at her home, gained a witness that it was true, and was baptized. Her parents joined the Church 19 years later. He then testifies of Jesus Christ, who suffered for our sins and rose the third day so we too will be resurrected.",
-              "He teaches that discipleship is not a casual pursuit. It takes spiritual courage, which he defines as overcoming obstacles, doubt, and fear to choose the right. Moroni, alone after his family was killed, still declared he would not deny the Christ (Moroni 1:3). Our day has its own battles (Ephesians 6:12), and phones bring a flood of information and misinformation. Elder Andersen remembers long, quiet summer days herding cows on his family’s dairy farm and says we still need stillness to nourish faith.",
-              "The heart of the talk is a cycle. Faith in Christ gives us courage, and acting with courage strengthens our faith. We see it when we kneel alone in prayer, when we take the sacrament and promise to remember Him (Doctrine and Covenants 20:77), and when we accept callings. As a busy young lawyer, President Dallin H. Oaks accepted a demanding stake calling, saying, “Gathering all my faith, I accepted the call.”",
-              "Elder Andersen gives more examples. After fires in Spokane, Washington, Cody and Haylee Woodbury said their family was safe, their faith secure, and they could build another house. Youth rise early for seminary. A young mother brings small children to church. A betrayed wife testified she would trust her Savior. With Paul, we can be troubled yet not in despair (2 Corinthians 4:8).",
-              "He promises that as we strengthen our faith by believing in and following Jesus Christ, answers will come, spiritual power will grow, and our courage will define our eternal soul. He closes with Peter and John, who boldly testified that a man was healed by the name of Jesus Christ (Acts 4:8–10), and adds his own witness that Christ lives."
+              "Faith and courage are marks of Christ’s disciples. Elder Andersen begins with President Rosemary K. Chibota, who at 17 found a pamphlet about Joseph Smith that missionaries had left at her home in Zimbabwe, received a witness that it was true, and was baptized. Her parents joined the Church 19 years later. Behind that courage is faith in a Savior who lived perfectly, suffered for our sins so we can repent and be forgiven, was crucified and rose the third day, so that we will rise too.",
+              "Spiritual courage is victory over obstacles, doubt and fear as we choose the right. Moroni, alone after his family was killed in battle, still declared he would not deny the Christ (Moroni 1:3). Our world is different but no easier. Paul’s warning about wrestling against the rulers of darkness (Ephesians 6:12) fits a time when the phone in every hand pours out true, false and now machine-made information all at once.",
+              "As a boy, Elder Andersen spent summer days alone in a high meadow with his family’s cows, with no phone, music or texting, just his thoughts. Times have changed, but our spirits still need that stillness. Private prayer is one such place; President David O. McKay said life’s greatest battle is fought in the silent chambers of the soul. The sacrament is another, where each week we witness that we are willing to take Christ’s name, remember Him and keep His commandments (Doctrine and Covenants 20:77).",
+              "Faith gives courage for ordinary and extraordinary things. As a busy young lawyer, President Dallin H. Oaks accepted a stake mission calling that took three or four evenings a week, and later called it one of his most important decisions. A couple in Spokane who lost their home to fire said their family was safe and their faith secure. Youth rise before dawn for seminary, mothers wrestle small children to church, and a woman betrayed by her husband still testified that she would trust her Savior.",
+              "Elder Andersen promises that as we strengthen our faith by believing, following and obeying Christ, answers will come, spiritual power will grow, and courage in following Him will shape who we are forever. He ends with Peter and John, who had seen and touched the risen Lord and soon afterward boldly told hostile rulers that a lame man stood healed by the name of Jesus Christ of Nazareth (Acts 4:8–10). Like them, he testifies that Christ lives and guides His restored work."
             ],
             "find": [
               "Spiritual courage is the triumph over obstacles, doubt, and fear in choosing the right.",
               "We need stillness to nourish our faith in Christ.",
-              "as we manifest our courage to choose the right, our faith in Christ strengthens",
-              "your answers will come, your spiritual power will increase, and your courage in following Christ will define your eternal soul"
+              "Gathering all my faith, I accepted the call.",
+              "Their faith in Jesus Christ lifted their courage, and their courage has elevated their faith."
             ]
           },
-          "approved": "565f38bf"
+          "approved": "7cb5e42b",
+          "story": {
+            "title": "After the Spokane fires",
+            "text": "A month before conference, Elder Andersen went with President Dieter F. Uchtdorf to Spokane, Washington, where fires had destroyed more than 800 homes. They visited members whose whole neighborhoods were gone. One couple, the Woodburys, told him their family was safe, their faith was secure, and a house could be built again. Their faith in Christ had given them courage in the loss, and that courage was making their faith even stronger."
+          },
+          "invite": [
+            {
+              "ask": "strengthen your faith in Jesus Christ by believing and following Him and keeping His commandments",
+              "promise": "your answers will come, your spiritual power will increase, and your courage in following Christ will define your eternal soul"
+            }
+          ],
+          "try": "Spend one stretch of time this week, such as a walk or a drive, with no phone, music or earbuds, just thinking and praying."
         },
         {
           "id": "oct26-fantone-take-his-name",
@@ -1954,7 +2313,7 @@ window.TU_SUNDAY = {
             "The Savior’s invitation is not merely for us to add His name to our name like a badge of religious affiliation.",
             "Taking upon us His name requires a lifelong determination to serve Him.",
             "Time did not change—the missionaries did. The work did not change—the workers did.",
-            "I testify that … as we lose our lives in His service, we will find Him and we will find ourselves."
+            "I testify that He lives, that this is His restored Church, and that as we lose our lives in His service, we will find Him and we will find ourselves."
           ],
           "scriptures": [
             "Mosiah 3:17",
@@ -1964,35 +2323,46 @@ window.TU_SUNDAY = {
             "Alma 5:14",
             "Mosiah 5:13"
           ],
-          "quick": "Elder Fantone teaches that taking the Savior’s name upon us is more than adding a label to our own name. It means making and keeping covenants and serving Him to the end, mostly by serving the people around us. He invites us to lift, love, and serve others with all our heart. He promises that as we lose ourselves in His service, our hearts change, and we find both the Savior and ourselves.",
+          "quick": "Taking Christ’s name is not like signing it onto a form. It is a lifelong decision to serve Him by serving the people around us, and that service is what changes our hearts. As we lose ourselves in His work, Elder Fantone testifies, we find the Savior and we find who we really are.",
           "points": [
-            "A quick fix on a school form led him to ask what is in a name. Salvation comes only through the name of Christ.",
-            "Christ does not want His name added to ours like a badge. He invites us to take it upon us and become like Him through covenants.",
-            "Moroni taught that taking His name means resolving to serve Him for the rest of our lives. We serve God by serving others.",
-            "His parents opened their small home to a student and to children who needed a safe place, showing service in action.",
-            "Homesick missionaries who kept serving became joyful. Serving others changes our hearts and helps us truly know the Master."
+            "Salvation comes only through the name of Christ, so taking His name is more than a badge of church membership (Mosiah 3:17).",
+            "In Moroni’s day, people took Christ’s name at baptism with a resolve to serve Him to the end. That resolve is the heart of the covenant.",
+            "Serving others is serving God. His parents twice gave up their children’s bedrooms to people who needed a place to live.",
+            "Homesick new missionaries who kept serving anyway became joyful. The days didn’t get shorter; the missionaries changed.",
+            "We come to know the Master by serving Him; no one truly knows a master they have never served (Mosiah 5:13)."
           ],
           "discuss": [
-            "What does it look like in your daily life to take the Savior’s name upon you, not just wear it?",
-            "When has serving someone else changed how you felt, like the missionaries Elder Fantone described?",
-            "Who around you might need you to open your home, time, or heart to them right now?"
+            "What does carrying Christ’s name look like for each of us on an ordinary weekday?",
+            "When has serving someone changed how you felt, the way it changed those missionaries?",
+            "What could we open up to someone who needs it: our time, our home, our table?"
           ],
           "deep": {
             "paras": [
-              "Elder Fantone tells of signing his daughter’s school enrollment form. He was distracted and wrote his own name, James Fantone, where hers belonged. Since her name is Amanda James Fantone, he simply wrote “Amanda” in front of it. Later he pondered the question “What’s in a name?” and remembered King Benjamin’s teaching that salvation comes only through the name of Christ (Mosiah 3:17).",
-              "He saw a contrast. The Savior does not ask us to tack His name onto ours as a sign of which church we attend. He warned of those who honor Him with their lips while their hearts are far away (Joseph Smith—History 1:19). He asks us to take His name upon us (3 Nephi 27:5) and become more like Him by keeping covenants.",
-              "How do we do that each day? Moroni wrote that people were baptized only when they took Christ’s name resolved to serve Him all their lives (Moroni 6:3). King Benjamin taught that serving others is serving God (Mosiah 2:17). Elder Fantone’s parents lived this in a three-bedroom home. They gave the boys’ room to a former student of his mother who could not afford housing near school. Later they gave the girls’ room to children the Relief Society president said needed a safe place. He quotes President Marion G. Romney, who taught that service is the very fiber of an exalted life.",
-              "As a mission president, he saw sad, homesick new missionaries keep serving anyway. A year later they were happy and wished time would slow. Time had not changed; they had. This is the “mighty change” of heart Alma described (Alma 5:14). King Benjamin asked how we can know a master we have not served (Mosiah 5:13).",
-              "Elder Fantone invites us to take Christ’s name by covenant and give Him our whole heart, might, mind, and strength by lifting and loving others. He bears witness that as we lose our lives in the Savior’s service, we will find Him and find ourselves."
+              "After he and his wife finished leading the Philippines Antipolo Mission, Elder Fantone went to enroll their youngest daughter in a home-school program. Asked to write her name and sign, he absent-mindedly wrote his own. Since her middle and last names match his, adding her first name fixed it. Thinking it over later, he recalled King Benjamin’s words that salvation comes only in and through the name of Christ (Mosiah 3:17).",
+              "The Savior is not asking us to add His name to ours as a sign of which church we attend. He warned of people who draw near with their lips while their hearts are far away (Joseph Smith—History 1:19). The risen Lord told the Nephites that we must take His name upon us (3 Nephi 27:5), which means becoming more like Him by keeping covenants. Moroni recorded that people were baptized only when they took Christ’s name with a determination to serve Him to the end (Moroni 6:3).",
+              "King Benjamin supplies the key: serving others is serving God (Mosiah 2:17). Elder Fantone grew up in a small three-bedroom home where service was taught by example. His mother, a schoolteacher, learned that a former student couldn’t afford housing near his vocational school, so the family gave him the boys’ room. In another season, when the Relief Society president described children who needed a safe place, the girls’ room went to them. He believes his parents would have given up their own room if Joseph and Mary had knocked. President Marion G. Romney taught that service is what celestial life is made of, not a toll we pay to get there.",
+              "As a mission president, he often met new missionaries in tears, homesick and unsure they could last three more months. They knelt, put on their name tags and served anyway. A year later the same missionaries glowed and wished time would slow down. Time hadn’t changed; they had. Losing ourselves in serving others brings the mighty change of heart Alma described (Alma 5:14), and King Benjamin asked how anyone can know a master they have never served (Mosiah 5:13).",
+              "Elder Fantone testifies that he has covenanted to take Christ’s name and is determined to serve Him faithfully to the end. The invitation is to lift, love and serve others with all our heart, might, mind and strength, and the promise is that as we spend our lives in His service, we find Him and we find ourselves."
             ],
             "find": [
-              "His invitation is for us to take upon us His name. It is an invitation to become more like Him through covenant keeping.",
               "Taking upon us His name requires a lifelong determination to serve Him.",
               "Time did not change—the missionaries did.",
-              "when we genuinely take upon ourselves the name of Jesus Christ by losing ourselves in the service of others, something miraculous happens"
+              "The work did not change—the workers did.",
+              "Service is the very fiber of which an exalted life in the celestial kingdom is made"
             ]
           },
-          "approved": "4d062ab5"
+          "approved": "030983d6",
+          "story": {
+            "title": "A quick fix on a school form",
+            "text": "Registering his youngest daughter for a home-school program, Elder Fantone was asked to write her name and sign. Distracted, he wrote and signed his own name instead. Because her middle and last names are the same as his, he simply added her first name in front, and the form was fixed. Later he wondered what is really in a name, and saw the contrast: Christ does not want His name tacked onto ours like a label, but taken on through covenant and service."
+          },
+          "invite": [
+            {
+              "ask": "His invitation is for us to take upon us His name by covenant and to serve Him with all our heart, might, mind, and strength—by lifting, loving, and serving our fellow men.",
+              "promise": "as we lose our lives in His service, we will find Him and we will find ourselves"
+            }
+          ],
+          "try": "Choose one person this week who needs help, whether a meal, a ride or a visit, and give it quietly as a way of carrying the Savior’s name."
         },
         {
           "id": "oct26-dube-come-unto-christ",
@@ -2013,34 +2383,44 @@ window.TU_SUNDAY = {
             "John 15:11",
             "Matthew 16:25"
           ],
-          "quick": "Elder Dube teaches that we do not have to be perfect before we come to Christ. We come to Him so He can perfect us. Coming means choosing to move, letting go of what holds us back, and bringing a willing heart. He invites each of us to help one person come unto Christ, and promises that as we lose ourselves in that work, we will find answers to our own problems.",
+          "quick": "Nobody has to clean up before coming to Christ; we come to Him so He can perfect us. The adversary would hang a no-trespassing sign on our hearts, but the Savior’s invitation is open to everyone, just as we are. Elder Dube promises that helping someone else come to Christ also brings answers to our own problems.",
           "points": [
-            "As a new missionary, he saw President Oaks remove a “Trespassers will be prosecuted” sign, because all are invited to come unto Christ.",
-            "Moroni’s invitation has three parts: come, which is an action; deny yourselves, which means letting go; and be perfected in Him.",
-            "A ministering visit led Randall and Laurin Child to set a sealing date. Laurin learned the Lord only asked Randall to do his best.",
-            "Satan tries to hang a no-trespassing sign on our hearts, saying our struggles make us unworthy. Christ’s grace says come anyway.",
-            "Find one person to invite to come unto Christ. Losing ourselves in helping them brings solutions to our own problems."
+            "Coming to Christ is an action: we choose to move from where we are toward a better place.",
+            "Denying ourselves means surrendering whatever holds us back, whether addiction, doubt, pride, grief, guilt or something else.",
+            "We arrive with a willing heart and He gives us a new one. Perfection is pending and comes only through Him.",
+            "Satan’s lie is that our struggles disqualify us from coming to Christ. That is the sign he wants on the gate of our hearts."
           ],
           "discuss": [
-            "What “sign” has the adversary tried to hang on the gate of your heart, and how can you take it down?",
-            "How does knowing the Lord asks for your best, not perfection, change how you approach Him?",
-            "Who is one person you could invite to come unto Christ this month?"
+            "What sign might we have hung on the gate of our own hearts, and what would taking it down look like?",
+            "How does the idea that the Lord asks for our best, not our perfection, change how you see your own weaknesses?",
+            "Who is one person we could invite to come closer to Christ this month, and how would we do it?"
           ],
           "deep": {
             "paras": [
-              "In 1987, Elder Dube was a new missionary who had been a member for just two years. The mission office gate had a sign warning that trespassers would be prosecuted. President Dallin H. Oaks asked that it be taken down so no one would feel shut out. That moment made Elder Dube want to love people the way the Savior loves them. He testifies that Christ suffered for him in Gethsemane (Luke 22:44) and on the cross, because He loves all of God’s children.",
-              "He then turns to Moroni’s invitation to come to the Savior and be made perfect through Him (Moroni 10:32). He draws out three truths. To come is an action, a choice to move to a better place. To deny ourselves is to surrender what holds us back. To be perfected in Him is to come as we are, and He will give us a new heart (Ezekiel 36:26). He quotes President Russell M. Nelson, who taught that perfection is pending and comes only through the Lord.",
-              "Last June, as they drove to the airport, President Brian Pace of the Wilmington North Carolina Stake asked to make one more ministering visit, to Randall Child, a good man trying hard to stop smoking. Elder Dube had never smoked and prayed for words. He asked Randall how much he loved his wife, Laurin, and invited them to choose a date to be sealed. They chose August 5 and were sealed two months later. Laurin later shared that after a night of pleading for Randall, the answer came: “Randall doesn’t need to be perfect. He needs to do the very best he can.”",
-              "Elder Dube says the adversary wants to hang that same warning sign on our hearts, using addiction, doubt, pride, grief, guilt, or anything else to tell us we are unworthy. But Christ’s grace sanctifies those who do not deny His power (Moroni 10:33). To a former missionary whose testimony had faded, and to all who feel that ache, he extends the Savior’s promise of full joy (John 15:11). He invites us each to find one person to bring to Christ, promising that as we lose ourselves in helping them, we will find solutions to our own problems. He cites the Savior’s promise that those who lose their life for His sake will find it (Matthew 16:25)."
+              "In 1987, as a missionary only two years in the Church, Elder Dube watched President Dallin H. Oaks ask that a sign on the mission office gate, warning that trespassers would be prosecuted, be taken down so no one would feel shut out. That moment planted in him a desire to love others as the Savior does. He testifies that Christ suffered for him in Gethsemane and on the cross (Luke 22:44), and that He did it, as President Oaks taught, because He loves all of God’s children.",
+              "Moroni’s invitation to come unto Christ, be perfected in Him and deny ourselves of all ungodliness (Moroni 10:32–33) holds three truths. Coming is a choice to move from where we are to a better place. Denying ourselves means surrendering what holds us back. Being perfected in Him means coming as we are, with willing hearts, so He can give us new ones (Ezekiel 36:26). President Russell M. Nelson called perfection pending: it comes in full only after the Resurrection and only through the Lord.",
+              "On the way to the airport, a stake president in North Carolina asked Elder Dube to visit Brother Child, a good man struggling to quit smoking. After praying for words, Elder Dube asked how much he loved his wife and invited the couple to choose a date to be sealed in the temple. They returned with August 5 and were sealed two months later. Sister Child had pleaded through the night as she watched her husband agonize over being perfect, and the answer came that he needed to give his best, not to be flawless. Hearing her pray that way, he knew she was the Lord’s answer to his own prayers.",
+              "The adversary wants to hang that same sign on the gate of our hearts, telling us that addiction, doubt, pride, pain, grief, guilt or materialism make us unworthy to come. Moroni taught otherwise, the Childs lived otherwise, and so can we. To a former missionary whose testimony has grown uncertain, and to all who feel that ache, Elder Dube extends the Savior’s promise of full joy (John 15:11). He asks each of us to invite one person to Christ or to meet the missionaries, promising that as we lose ourselves in helping them, we will find answers to our own problems (Matthew 16:25)."
             ],
             "find": [
               "We do not need to perfect ourselves to come to Christ. We come to Christ to be perfected.",
-              "Come: It’s an action. We choose to move from our current place to a better place.",
-              "The adversary wants to hang that sign on the gate of our heart.",
-              "Will you find one person and invite him or her to come unto Christ"
+              "Come: It’s an action.",
+              "Deny yourselves: Surrender.",
+              "Perfection is pending."
             ]
           },
-          "approved": "e7859ff0"
+          "approved": "c6bab607",
+          "story": {
+            "title": "One more ministering visit",
+            "text": "On the way to the airport, a stake president in North Carolina asked Elder Dube for one more ministering visit, to a good man trying hard to quit smoking. Never a smoker himself, Elder Dube prayed for words. He asked Brother Child how much he loved his wife, then invited the couple to choose a date to be sealed. They came back with August 5 and were sealed two months later. His wife had prayed all night and received the answer that her husband didn’t need to be perfect, only to give his best."
+          },
+          "invite": [
+            {
+              "ask": "Will you find one person and invite him or her to come unto Christ by exercising faith to follow His teachings, or invite a friend to meet with the missionaries?",
+              "promise": "As you lose yourself in helping him or her come unto Christ, you will find solutions to your current problems."
+            }
+          ],
+          "try": "Think of one friend who could use the Savior right now, and invite them to something this week: church, a lesson with the missionaries, or a scripture you love."
         },
         {
           "id": "oct26-cook-integrity-virtue",
@@ -2062,35 +2442,50 @@ window.TU_SUNDAY = {
             "Philippians 4:8",
             "John 3:16–17"
           ],
-          "quick": "Elder Cook teaches that integrity, virtue, and happiness belong together in Heavenly Father’s plan. Living by what we believe and keeping our thoughts and words clean brings real joy and the companionship of the Holy Ghost. He warns against coarse, cruel language, especially online, and asks us to be peacemakers, study the scriptures daily, and make repentance a daily habit. He promises the Lord’s saving blessings to those who do.",
+          "quick": "Integrity and virtue aren’t old-fashioned restrictions; in Heavenly Father’s plan they are the road to happiness itself. In a coarse, online age, living what we believe and keeping our thoughts clean brings the steady company of the Holy Ghost, and making repentance a daily habit keeps us close to the Lord.",
           "points": [
-            "As a young missionary in Scotland, David O. McKay saw the carved words “What-e’er thou art act well thy part” and resolved always to do his best.",
-            "Integrity means living by our beliefs and being honest with God, ourselves, and others. It is a foundation of good character.",
-            "Virtue and happiness are linked. Joseph Smith was taught to let virtue garnish his thoughts, and President McKay taught that virtue leads to a happy life.",
-            "Coarse and cruel words, including online bullying, violate the Savior’s teachings. We can be peaceable and spend time daily in scripture and spiritual renewal.",
-            "Integrity includes daily repentance. A man Elder Cook taught on his mission felt repentance like returning home, and he longed to share that joy."
+            "Integrity means living by what we believe and promise, and being honest with God, ourselves, our leaders and others.",
+            "A carved motto in Scotland about playing your part well shaped young David O. McKay’s whole life of service.",
+            "Things that aren’t evil in themselves can still crowd out the spiritual things that bless us now and forever.",
+            "Online cruelty, such as bullying, wrecking reputations or crude talk, breaks the Savior’s teachings and can hurt people who don’t yet know Him.",
+            "Setting aside time every day for the scriptures and spiritual renewal brings deep blessings."
           ],
           "discuss": [
-            "Where in your life is it hardest to act well your part, and what would help?",
-            "How can your family keep your words, online and at home, clean and kind?",
-            "What would it look like to make repentance a daily, joyful habit rather than a rare event?"
+            "Where is it hardest for us to live exactly what we say we believe?",
+            "Which harmless habit in our home might be quietly crowding out something better?",
+            "How could we make repentance an everyday thing instead of a once-in-a-while event?"
           ],
           "deep": {
             "paras": [
-              "Elder Cook teaches that the covenant path is clearly marked, and that a virtuous, Christlike life has never been more important or more challenging. While visiting the Scotland/Ireland Mission with his wife, Mary, he saw a replica of a carved stone that had shaped President David O. McKay as a new missionary: “WHAT-E’ER THOU ART ACT WELL THY PART.” Elder McKay decided to do his very best in every duty, and Elder Cook has loved that message since his youth.",
-              "Integrity, he explains, is living by our beliefs and being honest with God, ourselves, our leaders, and others. The Lord said of one servant in Nauvoo that his honest heart made him someone to trust (Doctrine and Covenants 124:20). President Spencer W. Kimball called integrity a foundation stone of good character.",
-              "Elder Cook says integrity, virtue, and happiness are bound together. Virtue includes a firm moral compass, cleanliness, modesty, goodness, holiness, and reverence for sacred things. As the United States marks 250 years since its Declaration of Independence, he points to its phrase “pursuit of Happiness,” which some scholars tie to virtue. He cites the counsel given in Liberty Jail to let virtue garnish our thoughts (Doctrine and Covenants 121:45) and President McKay’s teaching that men are that they might have joy (2 Nephi 2:25).",
-              "He warns that coarse and crude speech, and using the internet to bully or harm reputations, goes against what the Savior taught. We cannot control others, but we can be peaceable, as Presidents Nelson and Oaks have urged. Daily scripture study brings blessings. The Savior came to save, not condemn (John 3:16–17), and He asks us to do His Father’s will, not just call Him Lord (Matthew 7:21). Integrity and virtue are rewarded with the Holy Ghost as a constant companion (Doctrine and Covenants 121:46).",
-              "Integrity also means confessing our faults and repenting each day. As a young missionary in the British Mission, Elder Cook taught a man who had been on a battleship during World War II. He said learning about repentance felt like stepping back onto English soil after the war, when he fell to his knees in gratitude. Before his baptism he prayed to share that joy with others, “Especially my family.”"
+              "The covenant path home to Heavenly Father and Jesus Christ is clearly marked, and disciples reflect the Savior best when they walk it with joyful integrity and virtue. That kind of life has never mattered more, or been harder. On a recent visit to the Scotland/Ireland Mission, Elder and Sister Cook saw a replica of a carved inscription that once caught the eye of a new missionary named David O. McKay. Its message about doing well whatever part is yours stayed with him for life, and he resolved to give his best to every responsibility.",
+              "President McKay used that experience partly to warn that conduct which isn’t evil can still keep us from spiritual things that bless us forever. Integrity, as President Spencer W. Kimball put it, is the willingness and ability to live by our beliefs and commitments, and the Lord trusted one Nauvoo servant because of the integrity of his heart (Doctrine and Covenants 124:20). Virtue reaches further still: a firm moral compass, plus cleanliness, modesty, goodness, holiness and reverence for sacred things.",
+              "In the Father’s plan, integrity, virtue and happiness belong together, yet many people chase happiness while losing interest in virtue. As the United States marks 250 years since the Declaration of Independence, some scholars note that the founders understood the pursuit of happiness as rooted in virtuous living. President McKay taught that virtue, uprightness and obedience lead to a happy life (2 Nephi 2:25), and in Liberty Jail Joseph Smith was told to let virtue fill his thoughts constantly (Doctrine and Covenants 121:45).",
+              "Coarse, crude talk in society and on social media tears down civil discussion and breaks what the Savior taught. Using the internet to bully, ruin a reputation or put someone in a bad light is wrong, and Latter-day Saints who do it can harm people who don’t yet know God. We can’t control how others treat the Church, but we can be a peaceable people. Daily time in the scriptures brings real blessings, and the Holy Ghost, who withdraws when we do evil, stays to guide us when we do right.",
+              "Integrity also means owning our faults before the Lord. As a young missionary, Elder Cook taught a former World War II sailor who compared learning about repentance to stepping off his battleship onto English soil and falling to his knees in gratitude. Before his baptism he prayed to share that joy with others, especially his family. Integrity, virtue and steady repentance, Elder Cook says, are the answer in a world full of coarse language and hard challenges."
             ],
             "find": [
               "In the Father’s plan, integrity, virtue, and happiness are intrinsically linked.",
               "Integrity includes being honest with God, yourself, your leaders, and others.",
-              "The ultimate reward of integrity and virtue is the constant companionship of the Holy Ghost.",
-              "Part of having integrity is acknowledging our faults to the Lord and repenting of transgressions."
+              "Any use of the internet to bully, destroy a reputation, or place a person in a bad light is reprehensible.",
+              "Let virtue garnish thy thoughts unceasingly."
             ]
           },
-          "approved": "c491fc20"
+          "approved": "f86dcbf0",
+          "story": {
+            "title": "Solid ground under his feet",
+            "text": "As a young missionary in Britain, Elder Cook taught a man who had served on a battleship in Europe during World War II, 16 years earlier. When the missionaries taught him about repentance, he was overcome. He said it felt like the day he stepped off the ship back in England and felt the ground of his island home under his feet, a moment so overwhelming he fell to his knees. Before his baptism he prayed to share that same joy with others, above all with his family."
+          },
+          "invite": [
+            {
+              "ask": "We need to live our lives with integrity and follow His example.",
+              "promise": "The ultimate reward of integrity and virtue is the constant companionship of the Holy Ghost."
+            },
+            {
+              "ask": "Part of having integrity is acknowledging our faults to the Lord and repenting of transgressions.",
+              "promise": "When we make repentance a constant, day-to-day part of our lives, we can approach the Lord with integrity and receive His saving blessings."
+            }
+          ],
+          "try": "Before you post or reply online this week, ask whether it is lovely and of good report. If it isn’t, don’t send it."
         },
         {
           "id": "oct26-kyungu-language-peacemakers",
@@ -2111,34 +2506,45 @@ window.TU_SUNDAY = {
             "Alma 24:19",
             "John 14:27"
           ],
-          "quick": "Elder Kyungu takes up President Oaks’s April 2026 invitation to give up contention and speak as peacemakers. Scripture warns that we will answer for our words, and harsh words wound the people we love. He invites us to drop hurtful phrases, choose words that build trust, repent of past harshness, and fill our hearts with Christ’s doctrine. The promise: we will feel the Savior’s peace and help carry it to others.",
+          "quick": "Words can wound or heal, and disciples of Christ are asked to choose the healing kind. Trading put-downs and blame for words of thanks, apology and care is a real spiritual exercise, not just good manners. Because speech flows from the heart, filling our hearts with Christ’s doctrine changes how we talk, and His peace starts with us.",
           "points": [
-            "President Oaks invited us to give up contention and speak as peacemakers; Elder Kyungu calls this a call to discipleship, not a simple suggestion.",
-            "From Proverbs to Jesus to Paul, scripture teaches that the Lord dislikes discord and that we will give account for our words.",
-            "Most of us have been hurt by degrading words. Phrases like “You are useless” or “You never listen” weaken love and respect.",
-            "We can replace them with words that build trust and calm, such as “Thank you,” “I’m sorry,” “I forgive you,” and “Let us start again.”",
-            "Like the converted Lamanites who buried their weapons, we can bury contentious speech by filling our hearts with Christ’s doctrine, repenting, and praying for peaceful talk."
+            "President Oaks’s call to give up contention and speak as peacemakers is a call to discipleship, not a mild suggestion.",
+            "Scripture warns that we will answer for careless words, and asks that our speech build others up and carry grace.",
+            "Almost all of us have been hurt by belittling or blaming words from someone close. Such words erode love and respect.",
+            "What comes out of our mouths shows what fills our hearts, so changing our speech starts in the heart.",
+            "The converted Lamanites buried their weapons for peace. We can bury contentious language the same way."
           ],
           "discuss": [
-            "Which of Elder Kyungu’s peacemaking phrases could you use more often at home this week?",
-            "When have someone’s kind words calmed a tense moment for you, and what made them work?",
-            "What helps you hold back a harsh word before you say it, especially when you disagree?"
+            "Which words or tones slip out of us when we’re tired or frustrated, and what could we say instead?",
+            "What helps you calm down enough to speak as a peacemaker in the middle of a disagreement?",
+            "Who might we owe an apology for something we said, and how could we make it right?"
           ],
           "deep": {
             "paras": [
-              "Elder Kyungu begins with President Dallin H. Oaks. At the April 2026 conference, President Oaks asked us to give up contention, to use the language and methods of peacemakers, and to avoid what is harsh in our families. He also invited everyone to study the conference messages and act on them in faith. Elder Kyungu treats this as more than advice. He calls it a call to discipleship and a spiritual exercise: find the words we should drop, and put words of peace in their place.",
-              "Scripture has taught this from the start. Proverbs names a lying tongue and one who sows discord among the things the Lord hates. Jesus taught that we will give account for every idle word, and that our words can justify or condemn us. Paul told the Ephesians to speak only what builds others up and gives them grace, and told the Colossians to let their speech be gracious.",
-              "Elder Kyungu admits that almost all of us have been hurt by degrading words from family, coworkers, friends, or even fellow Church members. He lists phrases that call people useless, blame them, or push them away, and says such words never build anyone up. In their place he offers simple words of thanks, respect, care, apology, forgiveness, and fresh starts.",
-              "He points to the converted Lamanites, who buried their weapons of war for peace, and says we can bury contentious language too. President Thomas S. Monson taught us to leave harsh things unsaid. Because the mouth speaks from what fills the heart, the cure begins inside, with the doctrine of Christ. Elder Kyungu asks us to repent of harsh words, pray for peaceful communication when opinions differ, and use words that lift and unite. He testified, “This peace is real. It is powerful, and it begins with us.”"
+              "At the April 2026 general conference, President Dallin H. Oaks asked followers of Christ to give up contention, use the language and methods of peacemakers, and avoid what is harsh and hateful in families and relationships. He closed by inviting everyone to study the conference messages and act on them in faith. Elder Kyungu took that seriously. He began identifying the expressions he needed to give up and the words of peace that could take their place.",
+              "Scripture has always condemned divisive speech. Proverbs lists a lying tongue, a false witness and one who sows discord among the things the Lord hates. Jesus taught that we will give account for idle words and that our words can justify or condemn us (Matthew 12:36–37). Paul asked that no corrupt communication come from our mouths, only what builds others up (Ephesians 4:29), and that our speech always carry grace (Colossians 4:6).",
+              "Most of us have been hurt by humiliating or discouraging words from family, coworkers, friends or even fellow Church members. Calling someone useless, blaming them for everything, or telling them to stop talking weakens love and damages relationships. In their place we can choose words that build trust and keep relationships whole: please and thank you, respect for another view, reassurance that we can work things out, apology, forgiveness, and an offer to start again.",
+              "As the converted Lamanites buried their weapons for peace (Alma 24:19), we can bury contentious language. President Thomas S. Monson urged us to leave harsh things unsaid, and a hymn reminds us to speak the loving word before the sun goes down. Because the mouth speaks from what fills the heart (Matthew 12:34), filling our hearts with Christ’s doctrine changes how we talk. Elder Kyungu invites us to repent of harsh words, pray for peaceful communication despite differences, and speak in ways that lift and unite. Christ’s peace is real (John 14:27), and it begins with our words."
             ],
             "find": [
-              "It is a spiritual exercise to identify the language and expressions we need to forgo",
-              "Such words never edify. They weaken love, diminish respect, and damage relationships.",
-              "let us fill our hearts with the true doctrine of Christ",
-              "Let us repent for the harsh language and expressions that have offended our friends"
+              "We must choose language that strengthens confidence and preserves relationships.",
+              "It is not a simple suggestion; it is a call to discipleship as we follow Jesus Christ.",
+              "Such words never edify.",
+              "This peace is real. It is powerful, and it begins with us—with our hearts, our choices, and our words."
             ]
           },
-          "approved": "e0d1762e"
+          "approved": "ff414d3c",
+          "invite": [
+            {
+              "ask": "Let us repent for the harsh language and expressions that have offended our friends, leaders, family members, or colleagues.",
+              "promise": null
+            },
+            {
+              "ask": "Therefore, let us fill our hearts with the true doctrine of Christ, which has the power to change our language and help us speak more as peacemakers today, tomorrow, and always.",
+              "promise": "As we follow Jesus Christ, we will not only feel His peace, but, as Elder Ulisses Soares said, “We can become instruments of His peace in the world.”"
+            }
+          ],
+          "try": "Notice one phrase you tend to use when frustrated, choose a calmer replacement, such as asking to slow down and talk, and use it instead this week."
         },
         {
           "id": "oct26-schmeil-consider-your-ways",
@@ -2160,35 +2566,50 @@ window.TU_SUNDAY = {
             "Haggai 2:19",
             "Mosiah 2:41"
           ],
-          "quick": "Elder Schmeil teaches that God gave us two great helps on the path home: the Savior and our covenants. Through covenants we are yoked to Christ, and our burdens grow lighter. The weekly sacrament keeps us close to Him and prepares us for temple covenants. Like Israel in Haggai’s day, we are invited to consider our ways and put God first. The promise: the Lord will magnify our efforts and bless us from that day forward.",
+          "quick": "The ancient Israelites worked hard and had little to show for it, because they had left the Lord’s house in ruins. Effort without God’s priorities leaks away like wages in a bag with holes. When we rethink our ways and put making and keeping covenants first, the Lord can magnify what we do and start blessing us from that day.",
           "points": [
-            "God’s plan of happiness comes with divine helps for this life. Elder Schmeil highlights two: Jesus Christ and our covenants.",
-            "When we are humble and trust Christ, even without every answer, He can make our weak things strong.",
-            "Christ is at the center of every covenant. Yoked with Him through covenants, we find rest and our burdens lighten.",
-            "The weekly sacrament renews our baptismal promises. We need not be perfect, only willing, and we are promised His Spirit.",
-            "In Haggai, Israel worked hard but gained little until they rebuilt the temple. As we consider our ways and keep covenants, God promises to bless us."
+            "God gave us two great helps for mortality: His Son, Jesus Christ, and our covenants.",
+            "Weakness becomes strength when we humbly trust Christ, even before we have all the answers (Ether 12:27).",
+            "Covenants yoke us to the Savior, and that is what makes our burdens lighter (Matthew 11:28–30).",
+            "The sacrament asks for willingness, not perfection. It renews our baptismal promises and readies us for temple covenants.",
+            "A day will come when we hesitate to go to church. Going anyway, with a broken heart, keeps us firm on Christ."
           ],
           "discuss": [
-            "Where might your effort be leaking away, like wages in a bag with holes, because something sacred is not first?",
-            "How has the sacrament helped you keep going in a week when you felt far from perfect?",
-            "If you consider your ways this week, what one adjustment could put your covenants first?"
+            "Where might we be working hard but harvesting little because our priorities are out of order?",
+            "What helps you come to the sacrament willing, rather than worried about being perfect?",
+            "What one adjustment could we make so that our covenants come first this month?"
           ],
           "deep": {
             "paras": [
-              "Elder Schmeil starts with God’s plan of happiness. Alma taught that this life is the time to prepare to meet God, and God has not left us alone. Drawing on President Dallin H. Oaks’s teaching about divine helps for mortality, Elder Schmeil focuses on two: the Savior and our covenants. In Ether 12:27, the Lord promises to show us our weakness and make weak things strong if we humble ourselves and have faith in Him. Humility means a broken heart, open to God’s will. Faith means trusting Christ even when we lack answers.",
-              "We show that faith by making and keeping covenants. A covenant is a sacred promise: God sets the terms, we agree to keep them, and He promises to bless us. Christ is at the center of each one. In Matthew 11 He invites the weary to take His yoke and find rest. Elder Schmeil teaches that covenants are how we are yoked to Him, and so our loads grow lighter.",
-              "Baptism is our first covenant, and each Sunday the sacrament renews it. The Savior promised His Spirit to those who remember Him. The sacrament prayer shows that we need not be perfect, only willing to take on His name, remember Him, and obey Him. Elder Dale G. Renlund warned that a day will come when we hesitate to go to church, and promised that partaking with a broken heart will keep us firm on Christ.",
-              "The sacrament also prepares us for temple covenants. In Haggai, the Lord told Israel to “consider your ways.” They had sown much and reaped little, like putting wages in a bag with holes, because His house lay in ruins. When they repented and began to rebuild, He said, “From this day will I bless you.” Elder Schmeil says God now asks us to build a relationship with Him and His Son through covenants. He testifies that God keeps His promises and gave him strength when he needed it most, and he closes with King Benjamin’s words about the happy state of the faithful."
+              "Heavenly Father’s plan, which scripture calls the great plan of happiness (Alma 42:8), makes this life the time to prepare to meet Him (Alma 34:32), and He did not leave us to do it alone. President Dallin H. Oaks has spoken of divine helps for mortality, and two stand out: Jesus Christ and our covenants. Christ knows each of us and shows us our weakness so that, as we humble ourselves and trust Him, weak things can become strong (Ether 12:27). Humility here means a broken heart open to God’s will, and faith means trusting Him even without every answer.",
+              "We show that faith by making and keeping covenants, sacred promises in which God sets the terms and blesses us as we keep them. Christ is at the center of every covenant, which is how His yoke becomes easy and our burdens light (Matthew 11:28–30). Baptism is the first covenant; each week the sacrament renews it, and the Savior promised that those who remember Him will have His Spirit (3 Nephi 18:11). The sacrament prayer asks for willingness, not perfection.",
+              "Elder Dale G. Renlund warned that a day will come when each of us hesitates to go to church, and promised that going anyway, with a broken heart and contrite spirit, brings blessings that keep us firm on the foundation of Christ. Preach My Gospel adds that a Sabbath lived as God intends brings joy, peace, spiritual nourishment and physical rest. The sacrament also prepares us to make and keep temple covenants, and the account in Haggai shows why those matter.",
+              "The Israelites had let the Lord’s house lie waste while they built their own. They worked hard and gained little, until the Lord twice told them to consider their ways (Haggai 1:5–7, 9). When they turned and began to build, He promised to bless them from that day (Haggai 2:19). We are not asked to lay stones, but to build a strong relationship with the Father and the Son through covenants. Elder Schmeil testifies that God keeps His promises, that He gave him strength when he needed it most, and that the blessed and happy state King Benjamin described awaits those who keep the commandments (Mosiah 2:41)."
             ],
             "find": [
-              "we need to be humble and have faith in Christ for the weak things to become strong",
-              "We show our faith in Christ by making and keeping covenants with God.",
-              "The sacrament is essential to have the Spirit and the strength to continue on the covenant path.",
-              "the Lord could not magnify their efforts because their actions were not aligned with God’s will",
-              "He will magnify our efforts as we consider our ways and make the proper adjustments"
+              "And God did not leave us alone in this journey.",
+              "Covenants bind us to Jesus Christ because He is central to every covenant we make.",
+              "It is through covenants that we become yoked with the Savior Jesus Christ and our burdens become lighter.",
+              "In the sacrament prayer we have a good reminder that we do not need to be perfect to partake of the sacrament.",
+              "God knows what is best for us and is eager to bless us."
             ]
           },
-          "approved": "623bfe52"
+          "approved": "9761cdc3",
+          "story": {
+            "title": "A temple left in ruins",
+            "text": "Through the prophet Haggai, the Lord told the Israelites to rebuild His temple, but they kept putting their own houses first. They planted much and harvested little, and their wages seemed to fall through a bag with holes. Twice the Lord told them to consider their ways. They repented and began to build, and the Lord promised to bless them from that very day. Elder Schmeil draws the lesson: when our priorities line up with God’s, He can magnify our efforts."
+          },
+          "invite": [
+            {
+              "ask": "Heavenly Father is not asking us to physically build the temple, but He is asking us to build a strong relationship with Him and His Son, Jesus Christ, through our covenants.",
+              "promise": "He will magnify our efforts as we consider our ways and make the proper adjustments to make and keep covenants with Him."
+            },
+            {
+              "ask": "We need to be willing to take upon us His name, remember Him, and keep His commandments",
+              "promise": "in return we have the promise to always have His Spirit with us"
+            }
+          ],
+          "try": "Sit down this week and honestly consider your ways: look at where your time went, then choose one change that puts your covenants first."
         },
         {
           "id": "oct26-oaks-gospel-for-all",
@@ -2210,35 +2631,46 @@ window.TU_SUNDAY = {
             "2 Nephi 29:7",
             "3 Nephi 16:1–3"
           ],
-          "quick": "President Oaks teaches that this is Christ’s Church and that His gospel is for everyone. Whatever our struggles or doubts, the way through is to draw closer to the Savior by daily prayer and scripture study, humility, the sacrament, and the temple. Truth comes by both scientific and spiritual methods, and God knows all truth. The Book of Mormon witnesses that Christ reaches out to all people everywhere. He invites us to act on these truths and share them.",
+          "quick": "Whatever questions or struggles we carry, the way through them runs through Jesus Christ, and His invitation reaches every person in every nation. Faith grows by daily steps of prayer and scripture study, with patience for ourselves and others along the way. The weekly sacrament, steady covenant keeping and the temple will guard us and make us stronger.",
           "points": [
-            "This is Christ’s Church. The Father is the author of the plan, salvation comes through Christ’s Atonement, and everyone is invited to come unto Him.",
-            "Whatever our struggles or doubts, the answer is to draw closer to Jesus Christ through daily, step-by-step effort in prayer and scripture study.",
-            "We are all a work in progress. Be patient with others and with ourselves, hold to the first article of faith, and trust the Lord’s timing.",
-            "Knowledge comes by scientific and spiritual methods, which do not finally conflict because God knows all truth. Humility, the sacrament, and the temple protect us.",
-            "The Book of Mormon testifies that the Savior’s grace is for all people in every nation. President Oaks invites all to believe, act, and share."
+            "Strong faith takes more than wanting it. It is built a step at a time, every day, with prayer and scripture study.",
+            "We are all at different places on the covenant path, so patience with others, and with ourselves, matters.",
+            "Science and revelation are two ways of learning, and they don’t ultimately conflict, because God knows all truth.",
+            "Humility, which President Spencer W. Kimball called teachableness, draws us to Christ and makes us quicker to forgive.",
+            "The Book of Mormon shows a Savior who reaches all people, of every nation and race, and denies none who come."
           ],
           "discuss": [
-            "What small daily step could strengthen your faith in Jesus Christ while you wait on the Lord for answers?",
-            "How can we be more patient with each other, and with ourselves, as works in progress?",
-            "Where have you seen evidence that the Lord reaches out to all people, everywhere?"
+            "What question are you holding right now, and what helps you keep faith while you wait for an answer?",
+            "How can we be more patient with each other as we each grow at our own pace?",
+            "Who do we know who seems hungry for Jesus Christ, and how could we share what we believe with them?"
           ],
           "deep": {
             "paras": [
-              "President Oaks begins by explaining why this is Christ’s Church. The first article of faith states our belief in the Father, the Son, and the Holy Ghost. The Father is the father of our spirits, who authored the plan of salvation. Jesus Christ is the Father’s Only Begotten Son, Jehovah, and the Messiah, and the Book of Mormon declares that salvation comes through His atoning blood. So we invite everyone to come unto Christ. As President of the Church, he prays that each of us will stay active and keep moving along the covenant path. He thanks the members for their prayers and tells them he loves them.",
-              "He acknowledges that we all face struggles, including questions and doubts. The way through is to get closer to the Savior. Faith grows by daily effort, one step at a time, through prayer and scripture study. We are all a work in progress, at different places on the covenant path, so we should be patient with others and even with ourselves. Resolving doubts, including apparent conflicts between science and incomplete religious teachings, can take a long time. He counsels us to hold to the first article of faith and to wait upon the Lord, trusting both His timing and His promises.",
-              "Prophets are concerned for members whose faith is weakening, and President Oaks says the Lord pursues each of us with relentless love. He urges us to keep the commandments and our covenants. We can learn by two methods: the scientific method, whose findings may be inaccurate, and the spiritual method, which begins with faith and relies on scripture, inspired teaching, and personal revelation. In the end the two do not conflict, because God knows all truth. President Spencer W. Kimball defined humility as “teachableness.” The weekly sacrament and, for the endowed, regular temple attendance will protect and strengthen us.",
-              "Finally, President Oaks teaches that the gospel is for all. Christ died for all, though forgiveness depends on meeting His conditions: faith, repentance, and baptism. The Book of Mormon tells of His visit to the Nephites and His promise to visit others, including the lost tribes of Israel. It rejects the idea that grace saves only a chosen few; He invites all and denies none. President Oaks said, “The Book of Mormon is a great witness that the Lord loves all people and reaches out to all, everywhere.” He calls on us to act on these truths and share them."
+              "This is the Church of Jesus Christ because it holds His restored doctrine and authority. The first article of faith names the Godhead: God the Eternal Father, the Father of our spirits and author of the plan of salvation; His Only Begotten Son, Jehovah and the Messiah, through whose atoning blood salvation comes; and the Holy Ghost. Latter-day Saints invite everyone to come unto Christ and share in His redemption (Omni 1:26). President Oaks prays that each of us will stay active on the covenant path, and thanks members for their prayers.",
+              "Everyone faces present or future struggles, including questions and doubts, and the way through is always to draw nearer to Christ. Faith grows through daily effort, one step at a time, with prayer and scripture study. Because we are all works in progress at different points on the path, we need patience with one another and with ourselves. Resolving tensions between changing scientific understanding and incomplete religious teachings can take a long time; meanwhile, hold to the first article of faith and wait on the Lord’s timing and promises.",
+              "Prophet leaders are deeply concerned about members whose faith in Christ is fading, and the Lord pursues each of them relentlessly in love. President Oaks urges us to keep the commandments and our covenants, and not to let secular learning shrink our spiritual horizons. We learn both by the scientific method and by faith, scripture, inspired teaching and revelation, and there is no final conflict, because God knows all truth. Humility, which President Spencer W. Kimball defined as teachableness, helps us forgive and draw closer to Christ. The weekly sacrament, steady covenant keeping and, for the endowed, regular temple attendance protect and strengthen us.",
+              "Christ died for all, and forgiveness comes on His conditions of faith, repentance and baptism (2 Nephi 9:21). The Book of Mormon records His visit to the Nephites and His promise to visit other scattered sheep and the lost tribes (3 Nephi 16:1–3). It teaches that He denies none who come to Him (2 Nephi 26:33) and remembers every nation (2 Nephi 29:7), which refutes the idea that God’s grace saves only a chosen few. President Oaks invites all to believe these promises, notes that many in the world are hungry for Christ, and calls on us to act on these truths and share them."
             ],
             "find": [
-              "the way to overcome them is to get closer to our Savior, Jesus Christ",
-              "We need to be patient with one another and, occasionally, even with ourselves.",
-              "There is no ultimate conflict between knowledge obtained by these different methods",
-              "Protect yourself with the weekly renewing of your covenants by partaking of the sacrament",
-              "His grace is for all."
+              "Strong faith requires more than strong desire.",
+              "We are all a work in progress.",
+              "Never let your secular learning limit your spiritual horizons.",
+              "He is relentless in His loving pursuit of each of you.",
+              "The Book of Mormon is a great witness that the Lord loves all people and reaches out to all, everywhere."
             ]
           },
-          "approved": "de7b02a5"
+          "approved": "51fb8250",
+          "invite": [
+            {
+              "ask": "Protect yourself with the weekly renewing of your covenants by partaking of the sacrament and with consistent efforts to live according to those sacred covenants.",
+              "promise": "These simple practices will protect and strengthen you."
+            },
+            {
+              "ask": "Focus on developing your faith in God and the mission of His Son, Jesus Christ.",
+              "promise": null
+            }
+          ],
+          "try": "When a question or doubt comes up this week, write it down, hold to what you believe about the Godhead, and keep praying and studying."
         },
         {
           "id": "oct26-uchtdorf-christ-centered-unity",
@@ -2260,36 +2692,47 @@ window.TU_SUNDAY = {
             "Moroni 4:3",
             "Matthew 18:20"
           ],
-          "quick": "President Uchtdorf teaches that baptism makes us both covenant individuals and a covenant people. Jesus Christ crossed every worldly divide, while Satan works to isolate and divide us. What unites the Saints is not politics or culture but love of God and neighbor and our covenants with Christ. The closer we draw to Him, the closer we draw to each other. He invites everyone to join this unity and promises God’s presence and blessings as we build bridges.",
+          "quick": "Baptism is something we each choose alone, yet it makes us part of a people. Jesus Christ crossed every dividing line of His day, and He is still gathering God’s family while Satan works to split it apart. Drawing near to Christ draws us near to one another, and that unity brings God’s presence and blessings into our lives.",
           "points": [
-            "Spiritual growth starts small, like an exponential curve, and multiplies as we move along the covenant path through the temple, missions, marriage, and service.",
-            "Baptism is personal, yet it joins us to a worldwide covenant people who carry burdens, mourn, and comfort together.",
-            "Christ broke down walls between divided peoples, touching lepers, praising Gentiles, and honoring a Samaritan. Satan stresses our differences to isolate us.",
-            "Our unity rests on love for God and neighbor and on our covenants. As with the Nephites and Lamanites after Christ came, He is the catalyst.",
-            "Unity must be learned now, one small step at a time. The sacrament, offered to all of us together, reminds us we have the Savior and each other."
+            "Discipleship grows like an exponential curve: slow at first, then temple covenants, missions and service multiply what we can understand and receive.",
+            "At baptism we join a people who bear burdens, mourn and comfort together, rather than living only for ourselves.",
+            "What unites the Saints isn’t politics, culture or hobbies but love for God and neighbor and commitment to Christ’s covenants.",
+            "After Christ visited the Nephites and Lamanites, generations of war gave way to 200 years of peace as children of Christ.",
+            "The sacrament names no one but the Father and the Son. We partake individually, but together, reminded we are not alone."
           ],
           "discuss": [
-            "Where do you see walls between people around you, and what is one bridge you could help build?",
-            "How could small acts of patience or kindness this week bring more unity to our home or ward?",
-            "When have you felt you were not alone while taking the sacrament with others?"
+            "What differences most easily divide the people around us, and how could we build a bridge across one of them?",
+            "How does taking the sacrament alongside others change what it means to you?",
+            "Who might feel left out of our ward or our circle, and how could we draw them in?"
           ],
           "deep": {
             "paras": [
-              "President Uchtdorf opens with joy: he and Sister Uchtdorf recently attended the baptisms of two great-grandchildren. He recalls his own baptism at age eight in an indoor public pool, worried as the water got deeper because he could not swim. Spiritual growth, he says, usually begins quietly, with loving parents, simple prayers, and little steps of faith. Like an exponential curve, it then speeds up. The temple endowment, missionary service, temple marriage, and ongoing service multiply our capacity for understanding and blessings.",
-              "Baptism is the gate to the strait and narrow path, and each of us enters it one by one. Yet it also unites. At baptism we declare a desire to join God’s fold and to be a people who carry one another’s burdens, mourn with the grieving, and comfort those in need. We become both covenant individuals and members of a covenant people who want to walk the path together.",
-              "Jesus was born into a divided world. Jews and Samaritans kept apart, Gentiles were counted unclean, and Pharisees and Sadducees agreed on little. Christ crossed those lines. He touched lepers, praised the faith of Gentiles, made a Samaritan the model of compassion, and called people from different backgrounds to serve together. Paul said He broke down the wall between us. Satan does the opposite. He isolates us and makes our differences feel impassable, and we see the fruit in contention and mistrust.",
-              "In Christ’s Church, what unites us is not politics, culture, or hobbies, but love for God and neighbor and our covenants with Christ. After the Savior visited the Nephites and Lamanites, longtime enemies became one for the next 200 years. Christ and His doctrine were the catalyst. President Uchtdorf taught, “If we are not one, we are not His.” As we focus on Christ, we learn to see hearts rather than appearances, and small efforts to be kinder and more patient leave less room for pride.",
-              "Perfect unity may not come in this life, but the momentum we build now carries on, and every small step matters. The sacrament helps. It is the only ordinance in which no one is addressed by name; it is offered for all who partake. Renewing covenants together reminds us that we have the Savior and each other. He invites all to come and see, help, and belong, and promises that as we build bridges instead of walls, our lives, families, and nations will feel more of God’s presence."
+              "President and Sister Uchtdorf recently watched two great-grandchildren be baptized, following the Savior and the family members and friends who had gone before them. He recalls his own baptism at eight in an indoor public pool, worried that the water was getting deeper and he couldn’t swim. Spiritual growth usually starts quietly, with loving parents, simple prayers and small acts of faith. Then, like an exponential curve, the temple endowment, missionary service, temple marriage and ongoing service multiply our capacity for understanding and joy.",
+              "Baptism is the gate to the strait and narrow path (2 Nephi 31:18), and we each pass through it one by one. But it also joins us to a worldwide community. At baptism we declare that we want to come into God’s fold and live as a people who bear one another’s burdens, mourn with those who mourn and comfort those who need comfort (Mosiah 18:8–9). We want to follow Christ, and we want to walk the path together.",
+              "Much of the Savior’s work brings people together. His world was divided: Jews and Samaritans avoided each other, Gentiles were considered unclean, and Pharisees and Sadducees agreed on little. Christ broke down the wall between people (Ephesians 2:14). He touched lepers, praised Gentiles for their faith, held up a Samaritan as the model of compassion and asked people from different walks of life to serve side by side. Satan works the other way, isolating God’s children and making differences feel impassable; the fruits are contention, mistrust and hatred.",
+              "People unite around causes, heritage, hobbies or even a favorite soccer team. In Christ’s Church the bond is love for God and neighbor and commitment to His covenants. After Jesus Christ visited the Nephites and Lamanites, generations of war gave way to 200 years in which they were one, the children of Christ (4 Nephi 1). He can still change, purify and unite us. As our eyes fix on Him, surface differences fade, and small efforts at patience, kindness and forgiveness leave less room for pride. We may not reach perfect unity here, but every step builds momentum that carries into eternity.",
+              "The sacrament is a weekly source of unity. It is the only ordinance in which no one is addressed by name; it is offered for all who partake (Moroni 4:3), and only the names of the Father and the Son are spoken. Renewing covenants among others making the same promises reminds us we are not alone. President Uchtdorf invites everyone to join this Christ-centered unity, saying it would be incomplete without them, and testifies that building bridges instead of walls brings God’s presence and blessings to individuals, families, communities and nations (Matthew 18:20)."
             ],
             "find": [
-              "However, it is also a unifying one. It joins us to a worldwide community of Saints.",
-              "while Jesus Christ is reaching across worldly boundaries to unite Heavenly Father’s family, Satan is seeking to divide us",
-              "The catalyst for this change was Jesus Christ and His doctrine.",
-              "let us not miss the unifying power of the sacrament",
-              "The sacrament is a weekly reminder, a sacred reminder, that we are not alone."
+              "Spiritual growth is rarely dramatic at the beginning.",
+              "Through baptism, we become not only covenant individuals but also part of a covenant people.",
+              "If we are not one, we are not His.",
+              "The sacrament is a weekly reminder, a sacred reminder, that we are not alone.",
+              "It would be incomplete without you."
             ]
           },
-          "approved": "11f7894d"
+          "approved": "0f8e01c0",
+          "story": {
+            "title": "Baptized in a pool he couldn’t swim in",
+            "text": "President and Sister Uchtdorf recently attended the baptisms of two great-grandchildren, who followed not only the Savior but siblings, cousins, parents and friends into the water. He remembered his own baptism at eight, in a large indoor public swimming pool. Walking in, his main thought was that the water kept getting deeper and he couldn’t swim. Spiritual growth, he notes, usually starts that small and uncertain, then builds like a curve that bends sharply upward."
+          },
+          "invite": [
+            {
+              "ask": "Wherever you are, I invite you to join the Christ-centered unity we are trying to build.",
+              "promise": "the more united in Christ we are and the more we desire to build bridges instead of walls, the more our individual lives, our families, our communities, and our nations will experience God’s presence and supernal blessings"
+            }
+          ],
+          "try": "At sacrament meeting this Sunday, look around the chapel and quietly pray for one person there who is very different from you."
         },
         {
           "id": "oct26-munoz-spannaus-at-your-side",
@@ -2311,37 +2754,52 @@ window.TU_SUNDAY = {
             "Isaiah 41:13",
             "Doctrine and Covenants 112:10"
           ],
-          "quick": "Speaking to young women, Sister Muñoz Spannaus invites us to look at our lives with enthusiasm and write a list of righteous hopes, as the thirteenth article of faith suggests. God knows exactly where we are, loves us fully, and will guide us. She offers seven helps, from the sacrament and daily repentance to sleep, less phone time, and good friends. Her promise: the Father, the Son, and the Holy Ghost are beside us.",
+          "quick": "The Lord always knows our exact location, along with our dreams, gifts, questions and weaknesses, and knowing all of it doesn’t make Him love us any less. Speaking to young women, Sister Muñoz Spannaus invites each one to write down her righteous hopes and trust that Heavenly Father will show the way to reach them.",
           "points": [
-            "Moved by the thirteenth article of faith, she once wrote a list of good things she hoped for. She invites us to make our own and trust God to guide us.",
-            "Like her husband guiding her when her GPS failed, the Lord knows our exact location, gifts, and struggles, and He loves us no less.",
-            "Jesus looked on the young man with love before telling him how to improve. God is patient with us as we grow.",
-            "She offers seven helps: the sacrament, daily repentance, scripture study, ministering angels, enough sleep, less phone use, and faithful friends.",
-            "When Satan attacks our sense of worth, as in her hard days learning English, the Father, the Son, and the Holy Ghost stand beside us."
+            "Jesus looked at the rich young man with love before telling him what to change. With us, too, His love comes first.",
+            "Each young woman has crucial work to do on earth. It differs for each, but loving and trusting God brings the same joy.",
+            "Seven helps: a humble sacrament, daily repentance, scripture study to know God, ministering angels, enough sleep, less phone time and faithful friends.",
+            "Social media can feel like connection while it steals peace, self-worth and the face-to-face time that makes us feel loved.",
+            "The Lord’s power is greater than the enemy’s, and He has promised to lead us by the hand."
           ],
           "discuss": [
-            "What would you put on your own list of virtuous, lovely things you hope to achieve?",
-            "When have you felt that the Lord knew exactly where you were, even when you felt lost?",
-            "Which of her seven helps could you focus on for the next few weeks, and why that one?"
+            "What is on your own list of virtuous, lovely things you still hope to do or become?",
+            "Which of the seven helps, such as sleep, phone limits or friends, would make the biggest difference in our home right now?",
+            "When have you felt that God knew exactly where you were?"
           ],
           "deep": {
             "paras": [
-              "Sister Muñoz Spannaus speaks to the young women, and her counsel fits all of us. As a youth, after a lesson on the thirteenth article of faith, she spent a Sunday afternoon writing a list of good things she hoped for: things that would bring her nearer to God and help her learn, create, and be happy. She invites us to look at our lives with enthusiasm and with certainty that Heavenly Father will guide us toward our righteous desires.",
-              "She tells of driving to the dentist while her phone’s GPS thought she was on a nearby street and kept directing her to turn right where there was no turn. She pulled off the freeway and called her husband. Once he knew her exact location, he guided her there. In the same way, the Lord knows where we are, along with our dreams, gifts, questions, and weaknesses, and He can turn weakness into strength. Knowing all of it, He does not love us less.",
-              "In Mark 10, a young man asks Jesus what he can do to gain eternal life. Before answering, Jesus looked at him and loved him. Only then did He tell him how to improve. Sister Muñoz Spannaus testifies that the Father and the Son love us the same way and patiently give us many chances to grow. She said each young woman has “a crucial and important work to do here on earth.”",
-              "She offers seven helps and asks us to let the Spirit choose one to focus on for the next few weeks: take the sacrament humbly; repent daily; study the scriptures to know God’s character; learn how ministering angels can help; protect your sleep; limit phone use, since social media can rob us of peace and real connection; and, as President Dallin H. Oaks has invited, seek friends who strengthen your faith.",
-              "Finally she shares a hard day soon after moving from Argentina to the United States. Still learning English, she felt her teaching had been a disaster and went to sleep in tears. The next morning her husband gave her a priesthood blessing. It warned that Satan wanted to destroy her self-esteem, and it promised, “But the Father, Jesus Christ, and the Holy Ghost are at your side.” She testifies that the Lord is stronger than the enemy, and invites us to keep our baptismal covenants and make our own list of aspirations."
+              "Speaking to young women, Sister Muñoz Spannaus recalls a youth lesson on the thirteenth article of faith. Afterward she kept thinking about seeking what is virtuous, lovely and praiseworthy, so she spent a Sunday afternoon writing a list of good things she hoped for in her life, things that would bring her closer to God and help her learn, contribute, create and be happy. She invites young women to look at their own lives with that same enthusiasm, confident that Heavenly Father will guide them.",
+              "Driving to the dentist, she trusted her phone’s GPS, which thought she was on a parallel street and kept telling her to turn where there was no turn. She finally pulled off the freeway and called her husband, who could guide her once he knew her exact location. The Lord always knows our exact location. He knows our dreams and gifts, our loneliness and questions, our challenges and how to make weaknesses into strengths, and knowing everything about us does not reduce His love.",
+              "When a young man ran to Jesus, knelt and asked what more he could do for eternal life, Mark records that Jesus looked at him and loved him (Mark 10:17–21) before telling him how to improve. The Father and the Son love each of us that same way, giving us many chances and being patient as we work on our aspirations. Every young woman is a beloved daughter of heavenly parents with a divine nature, an eternal destiny and important work of her own.",
+              "She offers seven helps and invites listeners to let the Spirit pick one: take the sacrament humbly and ask each morning for the Holy Ghost’s company; repent daily; study scripture to know God’s character; learn how ministering angels help us; protect sleep by going to bed early (Doctrine and Covenants 88:124); limit phone use, since social media can rob peace and real connection; and, following President Dallin H. Oaks, seek friends who strengthen faith.",
+              "After moving from Argentina, while still learning English, she felt a lesson she taught had been a disaster and sank into a dark, confused mood that lasted into the next morning. A priesthood blessing from her husband warned that Satan wanted to destroy her self-esteem and assured her that the Father, Jesus Christ and the Holy Ghost were at her side. She testifies that the Lord is stronger than the enemy, that angels can minister to us, and that He will lead us by the hand (Isaiah 41:13; Doctrine and Covenants 112:10)."
             ],
             "find": [
-              "So I decided to make a list of those things",
-              "the Lord knows where you are; He has your exact location and can guide you",
-              "A look that conveys only love: love of the highest quality.",
-              "I would like to share seven ways that will help you in this endeavor.",
-              "Satan wants to destroy your self-esteem, your mind, your thoughts, and your spirit.",
-              "I invite you to study the thirteenth article of faith and to create your own list of aspirations."
+              "the Lord knows where you are; He has your exact location and can guide you.",
+              "And knowing everything about you does not make Him love you less.",
+              "Only after transmitting that love did He tell him what he could do to improve.",
+              "Protect your sleep; go to bed early.",
+              "Limit cell phone use.",
+              "But the Father, Jesus Christ, and the Holy Ghost are at your side."
             ]
           },
-          "approved": "067db8e2"
+          "approved": "48d3a9a0",
+          "story": {
+            "title": "A black cloud and a blessing",
+            "text": "Soon after moving from Argentina to the United States, while still learning English, Sister Muñoz Spannaus taught in her calling and felt it had gone terribly: mispronounced words, grammar mistakes, everything wrong. She felt depressed and confused about why God had called her, and went to sleep in tears. Morning brought no relief. Then her husband gave her a priesthood blessing that named Satan’s aim to tear down her confidence and assured her that the Father, Jesus Christ and the Holy Ghost were at her side."
+          },
+          "invite": [
+            {
+              "ask": "I invite you to study the thirteenth article of faith and to create your own list of aspirations.",
+              "promise": "your Father in Heaven will guide you on that journey and show you the best way to make the righteous desires of your heart come true"
+            },
+            {
+              "ask": "I invite you to listen to the Spirit to choose one to focus on over the next few weeks.",
+              "promise": null
+            }
+          ],
+          "try": "Read the thirteenth article of faith this week and write a short list of good things you hope to learn, create or become."
         },
         {
           "id": "oct26-villanueva-prove-me-now",
@@ -2363,34 +2821,45 @@ window.TU_SUNDAY = {
             "1 Kings 17:9–16",
             "Matthew 6:8"
           ],
-          "quick": "Elder Villanueva teaches that the Lord keeps His promise to open the windows of heaven for those who pay an honest tithe, though often in His own way and timing. The blessings can be significant yet subtle and easy to miss. He invites us to trust the Lord as his mother and the widow of Zarephath did, and to list the blessings we have received. The promise: God, who knows our needs, will pour out His blessings.",
+          "quick": "Tithing’s blessings don’t always arrive as the raise or promotion we hoped for. More often they come quietly: health, steady work, things that last longer than they should, and a growing gift of gratitude. Writing those subtle blessings down helps us see that the Lord has kept His word and still opens the windows of heaven.",
           "points": [
-            "Baptized at 10, his family faced hard times. His mother, separated from his father and supporting eight children, still trusted Malachi’s promise and paid tithing.",
-            "Every blessing comes through obedience to the law it rests on, and the Lord always fulfills what He promises.",
-            "We may expect blessings our own way, like a sister hoping for a promotion. Elder Bednar taught that tithing blessings are often subtle and easy to overlook.",
-            "Listing his blessings showed him steady work, health, protection, education, gratitude, and the Spirit’s guidance. Things that last longer than expected can be tender mercies too.",
-            "Like the widow of Zarephath, who fed Elijah first and was sustained, we can trust God with what we have and receive His blessings."
+            "Every blessing from God comes by obeying the law it rests on (Doctrine and Covenants 130:20–21).",
+            "The Lord keeps His promises, but often in His own way and timing rather than ours.",
+            "Tithing blessings can be temporal or spiritual: health, a preserved home, an education, gratitude, and recognizing the Holy Ghost.",
+            "Sometimes the blessing is that things simply last longer, like Israel’s clothes in the wilderness or one sister’s propane tank.",
+            "The widow of Zarephath gave first, and her meal and oil did not run out. Blessings often follow the trial of faith."
           ],
           "discuss": [
-            "If you made a list of quiet blessings in your life, what would be on it?",
-            "When has a blessing come to you in a different way or time than you expected?",
-            "What helps our family trust the Lord’s promises when money or time feels tight?"
+            "What blessing have we been waiting for that might be arriving in a different form than we expected?",
+            "Which of our things or resources seem to have lasted longer than they should have?",
+            "How could we help each other notice the Lord’s quiet blessings, not just the obvious ones?"
           ],
           "deep": {
             "paras": [
-              "Elder Villanueva was baptized at age 10 with his family. The change that took the most faith was paying a full tithe. His mother had separated from his father and worked hard to support eight children, most of them young. Still, when the missionaries taught tithing, she trusted the Lord’s promise in Malachi to open the windows of heaven. He bears witness of the law in Doctrine and Covenants 130: every blessing comes by obeying the law it rests on, and the Lord fulfills what He promises.",
-              "Yet we sometimes expect blessings on our own terms. After a sacrament meeting, a sister told him her testimony of tithing was weakening. She had always paid, but never received the promotion or raise she hoped for. He shared the counsel of Elder David A. Bednar, who taught that tithing brings blessings that are “significant but subtle” and that “easily can be overlooked.” That counsel had led Elder Villanueva to list his own blessings, and he invited her to make her own list.",
-              "His list included steady work, good health for his family, a home kept safe in hard times, the ability to manage time and money for an education, a grateful heart, and help from the Spirit in big decisions. Another sister shared that her 20-liter propane tank lasted much longer than expected, a tender mercy she linked to tithing. He recalls that Israel’s clothes and shoes did not wear out in forty years in the wilderness, and asks whether our own possessions might last longer too.",
-              "He also thinks of the widow of Zarephath. Down to her last bit of flour and oil, she planned a last meal for herself and her son. Elijah asked her to make him a small cake first and promised her meal and oil would not run out until the rain came. She obeyed, and the promise was kept. Elder Villanueva said, “Elijah understood that blessings will come after the trial of our faith.” He testifies that God knows our needs before we ask and gives commandments so He can bless us."
+              "Elder Villanueva was 10 when his family was baptized, and paying a full tithe took the most faith of all the changes that followed. His mother, separated from his father, worked tirelessly to support eight mostly young children, yet she chose to trust the Lord’s promise in Malachi to open heaven’s windows for those who bring their tithes (Malachi 3:10). Every blessing rests on obeying a law (Doctrine and Covenants 130:20–21), and the Lord does not promise without fulfilling (Doctrine and Covenants 58:31).",
+              "Still, we sometimes expect blessings on our schedule and in our shape. A faithful sister who had always paid tithing told him her testimony was slipping because the promotion and raise never came. He shared Elder David A. Bednar’s counsel that tithing often brings significant but subtle blessings that are easy to miss. That counsel had led him to list his own: years of steady work, good health for his family, a home and possessions preserved through hard times, the means to get an education, gratitude, and recognizing the Holy Ghost in decisions. He invited her to make her own list.",
+              "Another sister testified that the 20-liter (5-gallon) propane tank in her home lasted far longer than she expected, and she saw it as a tender mercy for paying tithing. It recalls the Lord leading Israel 40 years in the wilderness without their clothes or shoes wearing out (Deuteronomy 29:5). Elder Villanueva asks whether the Lord has made our own things last longer, and says he has seen it many times.",
+              "His mother’s faith reminds him of the widow of Zarephath. With only a handful of meal and a little oil, she made Elijah a small cake first, trusting his promise, and her barrel and cruse did not fail until the rain came (1 Kings 17:9–16). Blessings follow the trial of faith. He testifies that God knows our needs before we ask (Matthew 6:8), gives commandments so He can bless us, and opens the windows of heaven to those who live the law of tithing."
             ],
             "find": [
-              "my mother chose to trust the Lord’s promise as recorded by Malachi",
-              "I invited that sister to write her own list of the significant yet subtle blessings",
-              "Have you ever asked yourselves whether the Lord has caused your personal possessions to last longer",
-              "The widow trusted in Elijah’s words and offered up all that she had"
+              "Perhaps the change that required the greatest faith and sacrifice was to honorably pay a full tithe.",
+              "Sometimes we expect the Lord’s blessings to come the way we would wish, rather than in His own way and timing.",
+              "I have enjoyed steady employment for many years.",
+              "Elijah understood that blessings will come after the trial of our faith."
             ]
           },
-          "approved": "704095dd"
+          "approved": "66f5755a",
+          "story": {
+            "title": "A sister who felt unblessed",
+            "text": "After a sacrament meeting, a faithful sister told Elder Villanueva that her testimony of tithing was weakening. She had always paid a full tithe, yet the promotion and raise she hoped for never came. He shared Elder David A. Bednar’s counsel that tithing often brings significant but subtle blessings that are easy to miss, and invited her to list her own. He had made such a list himself: steady work, good health, a preserved home, an education, gratitude and recognizing the Spirit."
+          },
+          "invite": [
+            {
+              "ask": "I invited that sister to write her own list of the significant yet subtle blessings the Lord had given her—blessings that are often easy to overlook.",
+              "promise": "When we live the law of tithing, the Lord indeed opens the windows of heaven and pours out His promised blessings “that there shall not be room enough to receive it”"
+            }
+          ],
+          "try": "Start a written list of quiet blessings you’ve seen since you began paying tithing, such as health, work or things that lasted, and add to it as you notice more."
         },
         {
           "id": "oct26-bednar-holy-spirit-promise",
@@ -2411,35 +2880,46 @@ window.TU_SUNDAY = {
             "Doctrine and Covenants 64:31–32",
             "Mosiah 2:41"
           ],
-          "quick": "Elder Bednar teaches that ordinances and covenants are like a passport for our journey home to God, and they must be kept in good condition through steady faithfulness. Over time, the Holy Ghost, as the Holy Spirit of Promise, confirms them as we repent and keep our promises. He invites us to honor our covenants, and he promises that no faithful person will lose any blessing God has promised because of someone else’s choices.",
+          "quick": "Ordinances and covenants work like a passport home to Heavenly Father: valid, but only if we keep them in good condition. The Holy Spirit of Promise must finally confirm them, and that seal comes over time as we stay faithful. Another person’s sins can never cost a faithful covenant keeper any blessing God has promised.",
           "points": [
-            "As President Packer taught, ordinances and covenants are our credentials for returning to God. Receiving them is a lifelong quest, and keeping them is the test of mortal life.",
-            "Like a passport that must be cared for, covenants need continued faithfulness to stay valid. Trials we did not cause do not weaken God’s promises.",
-            "The Holy Spirit of Promise confirms our covenants as acceptable to God. This usually happens gradually as we repent, keep our promises, and give our hearts to Him.",
-            "A temple sealing has a lateral part, the union of husband and wife, and a vertical part, the couple joined to God’s eternal family. Both matter.",
-            "A spouse’s broken covenants cannot take away a faithful spouse’s blessings. The faithful spouse can still receive the vertical sealing and every promised blessing."
+            "Hardships that come through no fault of our own don’t weaken God’s promises or cancel our covenants.",
+            "A covenant is a lasting promise with God. He sets the terms; we freely accept them through priesthood ordinances.",
+            "The Holy Spirit of Promise confirms our covenants as acceptable to God, and that seal usually comes gradually, not all at once.",
+            "A temple sealing has two parts: the marriage itself, and the couple’s place in God’s eternal family across generations.",
+            "A spouse who breaks covenants and won’t repent loses blessings for himself or herself, not for the faithful spouse."
           ],
           "discuss": [
-            "What helps you keep your covenants in good condition from day to day, like a well-cared-for passport?",
-            "How does it change the way you see repentance to know the Holy Spirit of Promise confirms covenants over time?",
-            "When someone we love breaks their promises, how can Elder Bednar’s assurance help us hold on to our own covenants?"
+            "What does keeping our covenants in good condition look like in our daily life together?",
+            "How might this doctrine comfort someone we know whose marriage didn’t turn out as they prayed it would?",
+            "Why do you think the Holy Spirit of Promise works over time rather than in a single moment?"
           ],
           "deep": {
             "paras": [
-              "Elder Bednar begins with words from President Boyd K. Packer: life is a journey home to God, and ordinances and covenants are our credentials for entering His presence. He then tells of a man who flew to visit relatives in another country. His passport was valid, but it was stained, and a torn page had been taped and glued. The border official would not stamp it, and the man could not enter. A valid passport gave him the chance to enter but did not guarantee it. Elder Bednar notes the limits of the comparison: hardships that come to us without any fault of ours do not cancel God’s promises.",
-              "He describes a covenant as a lasting promise between God and His children. God sets the terms, and we freely choose to accept them. Covenants come through ordinances, holy acts done by priesthood authority. Faithfulness over time keeps these credentials valid. The Holy Ghost, called the Holy Spirit of Promise, confirms our righteous acts as acceptable to God, and the Lord taught that covenants not sealed by that Spirit have no force after the resurrection (Doctrine and Covenants 132:7). This confirming seal usually is not a single moment. It grows as we keep repenting, stay true to our covenants, and give our hearts to God.",
-              "He then speaks of the temple sealing of husband and wife. It has a lateral part, the eternal union of the couple, and a vertical part, the sealing of the couple into God’s family and the linking of generations. Sometimes a spouse’s sin or apostasy leads to contention or divorce, and a faithful spouse may wonder whether another person’s choices can take away what God promised. Elder Bednar answers with an emphatic no. A spouse who breaks covenants and does not repent gives up the seal for both parts. A faithful spouse can still receive the vertical sealing and every other promised blessing.",
-              "He admits he cannot explain exactly how or when such blessings come, but he knows they will. Elder Bednar said, “No faithful disciple will ultimately be deprived of any eternal blessing God has promised because of another individual’s unrighteous exercise of moral agency.” He closes with King Benjamin’s promise that those who keep the commandments are blessed in all things (Mosiah 2:41). The invitation is to walk in the ordinances, keep repenting, and trust God’s timing."
+              "Years ago President Boyd K. Packer taught Elder Bednar that whatever our nationality, gender, work, education or generation, life is a journey home to God, and ordinances and covenants are the credentials that admit us. Receiving them worthily is the quest of a lifetime, and keeping them is the challenge of mortality. Elder Bednar illustrates with a man whose valid but damaged and improperly repaired passport was refused at a border. Having the passport gave him the chance to enter; keeping it intact was what counted. The comparison has limits: afflictions that aren’t our fault never reduce God’s promises.",
+              "A covenant is a solemn, lasting promise between God and His children. God sets the terms, and we use our agency to learn and accept them. Covenants come through ordinances, holy acts done by priesthood authority that also teach us about the promises we make. These credentials can open heaven’s windows to purpose, direction and strength, but they stay valid only through ongoing faithfulness.",
+              "The Holy Ghost, the third member of the Godhead, is also the Holy Spirit of Promise, who confirms righteous acts as acceptable to God. Every covenant must be sealed by Him to have force after the Resurrection (Doctrine and Covenants 132:7). In mortality that seal is conditional and can be lost through unrighteousness, and it usually comes over time as we repent, honor covenants and give our hearts to God. Like the traveler’s entry stamp, it is what confirms the eternal blessings.",
+              "A temple sealing unites a husband and wife and also seals them into God’s eternal family across generations. Sometimes a spouse’s sin, infidelity or apostasy brings divorce. Can another person’s choices rob a faithful spouse of what God promised? Elder Bednar’s answer is an emphatic no. The unrepentant spouse forfeits the seal for himself or herself; the faithful spouse remains worthy to receive it for the vertical part of the sealing and all other individual blessings. He admits he cannot explain exactly how or when, but testifies the blessings will come, quoting King Benjamin’s promise of never-ending happiness for the faithful (Mosiah 2:41)."
             ],
             "find": [
-              "the integrity of a passport must be maintained over time",
-              "Ongoing faithfulness is required for those credentials to be valid",
-              "it comes over time as we repent sincerely and consistently, honor our covenants, and yield our hearts unto God",
-              "The sealing ordinance includes two fundamental and related parts",
-              "unrighteousness by one person cannot hinder or thwart the flow of God’s love, strength, and blessings to another person"
+              "Ordinances and covenants become our credentials for admission into His presence.",
+              "the integrity of a passport must be maintained over time.",
+              "Ongoing faithfulness is required for those credentials to be valid and for promised blessings to be received.",
+              "The answer to this question is an emphatic no!",
+              "But I do know promised blessings will be received."
             ]
           },
-          "approved": "ac14a62a"
+          "approved": "a696a539",
+          "story": {
+            "title": "The parable of the damaged passport",
+            "text": "A man flew to a distant country to visit relatives, carrying a valid passport from his own government. But he had not cared for it: the personal page was stained and damaged, and a torn page had been patched with tape and glue in an unauthorized way. The border official refused the entry stamp, leaving him confused about what to do. Holding a valid passport gave him the chance to enter, but it did not guarantee he would."
+          },
+          "invite": [
+            {
+              "ask": "we repent sincerely and consistently, honor our covenants, and yield our hearts unto God",
+              "promise": "to receive by the Holy Spirit of Promise, “in process of time,” the ratifying seal that guarantees all promised blessings"
+            }
+          ],
+          "try": "Before the sacrament this Sunday, think of one covenant you’ve made and one specific way you’ll care for it this week, as you would guard a passport."
         },
         {
           "id": "oct26-lebethoa-light-life",
@@ -2461,35 +2941,46 @@ window.TU_SUNDAY = {
             "3 Nephi 18:16",
             "Matthew 11:28"
           ],
-          "quick": "Elder Lebethoa teaches that whatever we face, Jesus Christ is the answer, because He is the light and life of the world. We receive more of His light by trusting Him, studying the scriptures consistently, and repenting. He invites us to come to Christ, and he promises that with the Savior each day can be a fresh start and the days ahead can be better.",
+          "quick": "Whatever we’re facing, whether pressure at school or work, fear, grief, or not knowing what to do next, the answer is always Jesus Christ. He is the light that clears our thinking and shows the way. Faith in Him, daily scripture study and daily repentance let in more of that light, so each day can be a fresh start.",
           "points": [
-            "When a disagreement early in his marriage ended in silence, the Savior’s teaching against contention in 3 Nephi 11 showed Elder Lebethoa how to resolve it.",
-            "Jesus Christ is the light and life of the world. His Spirit enlightens our minds, and His life and words show us the way.",
-            "Faith in Christ means trusting that He knows our struggles because He has felt them. Strong faith grows through daily, deliberate effort.",
-            "Steady, sincere scripture study matters more than the method. Like a man who buried his coffee after reading the Book of Mormon, we can act on what the Spirit shows us.",
-            "Repentance is turning our hearts to God, and we do not do it alone. The Savior is ready to help us change."
+            "Contention comes from the adversary. Christ’s doctrine is that anger between people should be done away.",
+            "Christ is the light and life of the world: He enlightens our minds by His Spirit and lights the path by His example.",
+            "Faith in Christ means trusting that He knows our struggles from the inside and how to lift us above them.",
+            "In scripture study, the method and length matter less than being consistent and sincere.",
+            "Repentance is a turning of the heart to God, and we never have to do it alone."
           ],
           "discuss": [
-            "When a conversation at home goes badly, what helps you turn to the Savior instead of staying silent or angry?",
-            "What way of studying the scriptures has helped you feel the Savior’s light most consistently?",
-            "What is one change the Spirit may be prompting you to make, and how could you invite the Savior’s help with it?"
+            "When a conversation between us starts to sour, what could help us stop and choose the Savior’s way?",
+            "What pattern of scripture study actually fits our season of life right now?",
+            "What one change in our time, media or tone would let more of Christ’s light into our home?"
           ],
           "deep": {
             "paras": [
-              "Elder Lebethoa explains that in South Africa names carry meaning. His name, Thabo, means joy, and his wife’s middle name, Gadifele, means eternal or endless, so together their names mean eternal joy. Yet soon after they married, an evening conversation became their first serious argument and ended in silence. As he pondered what to do, he remembered the Savior’s words to the Nephites: contention is of the devil, and His doctrine is to end it (3 Nephi 11:29–30). Those words gave him light to know how to resolve the problem.",
-              "That light comes from Jesus Christ, who called Himself the light and life of the world (3 Nephi 11:11). His Spirit enlightens our minds, and His example and words light our path. Whatever we worry about, whether school, work, fear, doubt, grief, or what to do with our lives, Elder Lebethoa teaches that the answer is always the Savior. He knows where we have been and where we need to go, and He can bring hope where there was none.",
-              "He then names ways to receive more of that light. First is faith: trusting that Christ understands our trials because He has felt them (Alma 7:11–12). He cites President Dieter F. Uchtdorf and President Dallin H. Oaks, who taught that strong faith grows through intentional, daily effort with prayer and scripture study. Second is scripture study. Elder Lebethoa said the method, timing, and length matter less than “the consistency and sincerity of our effort.” He shares a missionary’s story of a man who, after reading the Book of Mormon, dug a hole in his garden and buried a newly bought tin of coffee, acting on what the Spirit taught him.",
-              "Third is repentance, which means changing our minds and turning our hearts to God. He asks us to consider how we use our time, what we watch and listen to, and how we speak to others. We need not change alone, because the Savior is ready to help us in our weaknesses (Alma 7:12). He cites Sister Tamara W. Runia, who taught that the invitation to repent shows God’s love. He closes with the Savior’s promise of rest to all who come to Him (Matthew 11:28)."
+              "South African parents give their children meaningful names. Elder Lebethoa’s name means joy and his wife’s middle name means eternal, so together they make eternal joy. Yet soon after marrying, they had their first serious disagreement and ended up not speaking. Many of us know conversations with a spouse, child, friend or coworker that ended in anger or regret. As he pondered, the Savior’s words to the Nephites came to mind: contention is of the devil, and Christ’s doctrine is that such anger be done away (3 Nephi 11:29–30).",
+              "Those words showed him how to resolve the conflict, and that light came from the Savior, who called Himself the light and life of the world (3 Nephi 11:11). He enlightens our minds through His Spirit (Doctrine and Covenants 6:15), sets an example for us to follow (3 Nephi 18:16), and His word lights our path (Psalm 119:105). Whatever we face, whether self-reliance, school or work, inadequacy, fear, doubt, loss or direction, Christ brings light to darkness and hope where there was none.",
+              "Three practices increase His light. First, grow in faith, trusting that He has felt our pains and knows how to help (Alma 7:11–12). President Dieter F. Uchtdorf noted that doubt grows on its own while faith needs intentional effort, and President Dallin H. Oaks taught that strong faith takes daily steps of prayer and scripture study. Second, study the scriptures daily, especially the Book of Mormon. There is no single right method; consistency and sincerity matter most. One man taught by Elder Lebethoa’s missionaries read the Book of Mormon, then dug a hole in his garden and buried a newly bought tin of coffee.",
+              "Third, repent daily. Repentance is a change of mind and a turning of the heart to God, and it may touch how we spend time, what we watch or hear, and the tone we use with others. We don’t do it alone; the Savior understands our weaknesses and stands ready to help (Alma 7:12). Sister Tamara W. Runia described the invitation to repent as an expression of God’s love, and saying yes to it as an expression of ours. Elder Lebethoa testifies that all who come to Christ can find today a new day and tomorrow a better one (Matthew 11:28)."
             ],
             "find": [
-              "the answer is always Jesus Christ",
-              "Through His Spirit, He enlightens our minds",
-              "Having faith in Jesus Christ means trusting that He understands our daily difficulties",
-              "the method, timing, and length of our scripture study matter less than the consistency and sincerity of our effort",
-              "Repentance means a change of mind and a turning of the heart to God"
+              "Whatever concerns, challenges, and struggles we may have in our lives, the answer is always Jesus Christ.",
+              "Through Him, today can be a new day and tomorrow can be a better day.",
+              "There is no single right way to study the scriptures.",
+              "Repentance means a change of mind and a turning of the heart to God.",
+              "It is important to remember that we do not need to go through this alone."
             ]
           },
-          "approved": "0acc8efe"
+          "approved": "495117f8",
+          "story": {
+            "title": "Eternal joy and a first argument",
+            "text": "In South Africa, names carry meaning. Elder Lebethoa’s name means joy and his wife’s middle name means eternal, so together their names spell eternal joy. Yet soon after they married, an evening conversation turned into their first real argument, and they slipped into the silent treatment. As he pondered what to do, the Savior’s words to the Nephites came to mind: contention comes from the devil, not from Him (3 Nephi 11:29–30). Those words cleared his mind and showed him how to resolve it."
+          },
+          "invite": [
+            {
+              "ask": "Let us ponder about the changes that we need to make in our lives",
+              "promise": "today can be a new day and tomorrow will be a better day for all who come unto Jesus Christ and receive His light in their lives"
+            }
+          ],
+          "try": "Ask yourself honestly this week what you need to change, choose one thing, such as your tone in a tense moment, and work on it each day."
         },
         {
           "id": "oct26-sinclair-quick-help",
@@ -2510,35 +3001,45 @@ window.TU_SUNDAY = {
             "Mosiah 18:8–11",
             "Genesis 16:13–14"
           ],
-          "quick": "Elder Sinclair teaches that true followers of Jesus Christ help first and hold back judgment. A Primary girl who freed a boy stuck in his own jacket taught him this, and the Savior showed it with the woman at the well. He invites us to welcome friends and new members with Christlike help, and he testifies that such help, given one person at a time, prepares the world for the Savior’s return.",
+          "quick": "A true disciple is quick to help and slow to judge. A little girl in a Primary program showed it with one small act, and the Savior showed it at the well, offering living water instead of shame. When we help people one by one instead of sizing them up, we help prepare the world for His Second Coming.",
           "points": [
-            "At a Primary program, a boy named James buttoned his sleeve to his lapel and got stuck. While Elder Sinclair felt irritated, the girl beside James simply popped the button free.",
-            "That small moment humbled him and taught him that true disciples help quickly and judge slowly.",
-            "With the woman at the well, Jesus focused on offering living water, not on her past. He spoke with dignity, listened, taught, and trusted her with truth.",
-            "To help people change, we must see what they can become, not only their history. She came to the well an outcast and left with purpose.",
-            "Missionaries meet people at modern wells every day. We can help friends and new members feel they have come home, and so help prepare the world for Christ’s Second Coming."
+            "Jesus knew everything about the woman at the well, yet He focused on offering her living water, not on her past.",
+            "He spoke to her with dignity, listened to her questions and trusted her with truth.",
+            "To help people change, look beyond their history to who they could become.",
+            "New members and friends may arrive afraid of judgment and in need of help. We can help them feel they’ve come home."
           ],
           "discuss": [
-            "When have you been the one who felt irritated, and when the one who helped? What made the difference?",
-            "Who around you might be at a modern-day well, and how could you offer help rather than judgment?",
-            "How might seeing someone’s possible, not just their past, change the way you minister to them?"
+            "When have we been the irritated adult instead of the little girl, and what would helping have looked like?",
+            "How can we welcome new members so they feel help rather than judgment?",
+            "Whose future might we be overlooking because we know too much about their past?"
           ],
           "deep": {
             "paras": [
-              "Elder Sinclair recalls a Primary program where a boy named James, wearing a new suit, buttoned his right sleeve to the buttonhole on his left lapel and could not get loose. As James grew more stuck, Elder Sinclair grew more irritated and shook his head. Then the little girl next to James saw what he needed, reached up, and popped the button free, just before James was to speak. Elder Sinclair felt relieved and humbled. Recalling Isaiah’s words that a little child shall lead them (Isaiah 11:6), he says the child taught him that true disciples help quickly and judge slowly.",
-              "The Savior taught this from the start of His ministry. In John 4, weary from travel, He asks a Samaritan woman for a drink. Elder Sinclair notes that she may have faced many judging eyes and few helping hands. She seems to have had several broken relationships, but we do not know her full story, and those details are not what matter. Jesus, who knew everything about her, offered her living water (John 4:10). He spoke with dignity, listened to her questions, taught instead of mocking, and trusted her with truth.",
-              "Elder Sinclair said that “to help people transform their lives, we must look not only to their past—we must look to their possible.” She came to the well an outcast and left with a purpose. Missionaries meet such people at modern-day wells every day, and many fear judgment while needing help. President Dallin H. Oaks has asked us to strive for holiness like the Savior’s, and helping without judging is a simple way to do that.",
-              "Elder Sinclair prays that when new friends and members meet us, they will feel they have come home and will see disciples ready to share living water. He testifies that helping people one by one in small ways, rather than judging them, helps prepare the world for the Second Coming. The invitation is to notice those around us and offer help first."
+              "Isaiah’s words that a little child shall lead them (Isaiah 11:6) came alive for Elder Sinclair at a ward Primary program. A boy in a new suit, puzzled by sleeve buttons without holes and a lapel hole without a button, buttoned his arm to his chest and couldn’t get loose just before he was to speak. Elder Sinclair grew more aggravated by the moment. The little girl beside the boy simply reached up and freed him. Humbled, Elder Sinclair felt the Holy Ghost prompt what Elder Patrick Kearon has called a radical reorientation of the soul: a true disciple is quick to help and slow to judge.",
+              "The Savior showed this from the start of His ministry with the Samaritan woman at the well (John 4:4–42). Weary, He asked her for a drink on what was, for her, an ordinary day, perhaps one of many lonely trips to the well under judging eyes. Her life apparently included broken relationships and living with a man who was not her husband, but we don’t know whether she was widowed, divorced or abandoned, and those are not the details we need.",
+              "Christ, who knew everything about her, focused on help: the offer of living water (John 4:10). He gave her dignity instead of shame, answered her questions with teaching rather than ridicule, and didn’t hold her past against her. To help people change, we look beyond who they have been to who they could become. She came to the well an outcast and left with a purpose.",
+              "Missionaries meet people at modern wells every day, people who may fear judgment but need help. We are invited to reorient our souls so we can help friends and new members in more Christlike ways, and President Dallin H. Oaks has urged us to seek to be holy like the Savior. Elder Sinclair prays that newcomers will feel they have come home and will see in us disciples ready to offer living and loving water, and he testifies that helping people one by one, instead of judging, prepares the world for the Second Coming."
             ],
             "find": [
-              "a true disciple of Jesus Christ is quick to help and slow to judge",
-              "In her ordinary days, she may have endured many judging eyes but few helping hands",
-              "He spoke to the woman with dignity, not shame.",
-              "we must look not only to their past—we must look to their possible",
-              "we are invited to reorient our souls so we may help friends and new members in more Christlike ways"
+              "a true disciple of Jesus Christ is quick to help and slow to judge.",
+              "He did not hold her hostage to her history.",
+              "we must look not only to their past—we must look to their possible.",
+              "She walked to the well that day as a pariah. She walked away from the well with a purpose.",
+              "Being quick to help and slow to judge is a simple and deeply encouraging way for each of us to be more holy"
             ]
           },
-          "approved": "5f68c899"
+          "approved": "01912653",
+          "story": {
+            "title": "The parable of the baffling buttons",
+            "text": "During a ward Primary program, a young boy in a new suit buttoned his sleeve button into the buttonhole on his lapel and got stuck in a one-armed straitjacket just before his turn at the pulpit. Elder Sinclair, watching, grew more and more irritated and shook his head. But the little girl beside the boy simply reached up and popped the button free. The boy was rescued, the program went on, and Elder Sinclair felt quietly rebuked and humbled."
+          },
+          "invite": [
+            {
+              "ask": "As disciples of Jesus Christ, we are invited to reorient our souls so we may help friends and new members in more Christlike ways.",
+              "promise": "when we help people, one by one, in our own small and simple ways, rather than judge them, we are preparing the world for the Second Coming of Jesus Christ"
+            }
+          ],
+          "try": "Next time you catch yourself judging someone at church, like a noisy child, a late arrival or a newcomer, look for one small way to help them instead."
         },
         {
           "id": "oct26-stevenson-fruit-happy",
@@ -2559,35 +3060,46 @@ window.TU_SUNDAY = {
             "Alma 42:8",
             "Doctrine and Covenants 130:22"
           ],
-          "quick": "Speaking especially to Primary children, Elder Stevenson compares gospel truths to fruit: we only know how sweet they are when we taste them by living them. He shares three favorite fruits: we are children of a Heavenly Father who loves us, God’s plan of happiness centered on Jesus Christ, and the companionship of the Holy Ghost. He invites us to love, share, and invite, and promises joy for us and greater joy as our loved ones taste it too.",
+          "quick": "You can look at a peach all day, but you only really know it once you taste it. Gospel truths work the same way: they turn sweet as we live them. Elder Stevenson names three of the sweetest, being God’s children, His plan of happiness and the gift of the Holy Ghost, and promises greater joy as we share them.",
           "points": [
-            "Lehi tasted fruit from a tree that stands for God’s love and the Savior’s Atonement. Like real fruit, gospel truths become sweet when we live them.",
-            "We are children of a Heavenly Father who loves us. Knowing this makes us stronger and kinder, as a small boy showed by singing his Primary song at a devotional after an earthquake.",
-            "The plan of happiness, centered on Christ’s Atonement, brings hope. A grieving Buddhist priest in Japan found peace when he learned where his wife’s spirit was.",
-            "The gift of the Holy Ghost is a constant companion who warns, comforts, and testifies.",
-            "Like Lehi, we can invite family and friends to taste the fruit by loving, sharing, and inviting, in both words and actions."
+            "In Lehi’s dream the tree is God’s love, shown most in Christ, and its fruit is the blessings of His Atonement, ending in eternal life.",
+            "Knowing we are God’s children is our most important identity. It makes us stronger and kinder to everyone.",
+            "The plan of happiness, centered on Christ’s Atonement, means mistakes and discouragement are never the end of our story.",
+            "The Holy Ghost, given after baptism, warns, comforts and testifies.",
+            "Children’s testimonies carry real power: one small boy’s singing brought the Spirit to members suffering after an earthquake."
           ],
           "discuss": [
-            "Which gospel truth became sweet to you only after you started living it?",
-            "How does knowing everyone is a child of God change the way you treat people at home or at church?",
-            "Who in your family or circle might you invite to taste the fruit of the gospel, and how could you do it?"
+            "Which gospel truth only became sweet to you after you started living it?",
+            "Who in our family or circle might be ready to taste a gospel fruit we love?",
+            "How can we help the children in our lives feel how much they matter to the Lord’s work?"
           ],
           "deep": {
             "paras": [
-              "Elder Stevenson speaks to everyone but especially to Primary children, whom he meets and loves as he travels. He tells them they have a purpose and are an important part of God’s work. He remembers buying fresh peaches and other fruit from farm stands with his family. Then he turns to Lehi’s vision, where Lehi found fruit sweeter than any he had tasted, and it filled his soul with joy (1 Nephi 8:10–12). The tree stands for God’s love, shown most in the Savior’s birth, life, and atoning sacrifice. The fruit stands for the blessings of His Atonement, including ordinances, covenants, gospel truths, and eternal life.",
-              "We can look at and smell fruit, but only tasting it tells us how good it is. Gospel truths work the same way: we learn them, but they grow sweet as we live them. The first fruit he shares is that we are children of a Heavenly Father who loves us and knows us personally. This makes us stronger and kinder, since everyone is our brother or sister (Romans 8:16). At a devotional in South America with members hurting after a severe earthquake, a very young boy ran to the stand and sang every word of the Primary song about being a child of God, and the Spirit comforted the people.",
-              "The second fruit is the great plan of happiness, made possible through Jesus Christ (Alma 42:8). In Japan, Elder Stevenson befriended a Buddhist temple priest who fell into deep grief when his wife died. When Elder Stevenson asked if he knew where his wife was, the man looked up, startled. They taught him that spirits return home to God and that his wife could find rest and peace in the spirit world (Alma 40:11–12). His face changed. Elder Stevenson said, “We witnessed a miraculous transformation: peace for despair, joy for sadness, hope for ashes.” Because of the Savior’s Atonement, we can repent, receive forgiveness, and keep moving forward even when we feel discouraged.",
-              "The third fruit is the gift of the Holy Ghost, received after baptism by the laying on of hands. He is a personage of spirit who warns, comforts, and testifies (Doctrine and Covenants 130:22). Elder Stevenson closes with Lehi, who wanted his family to taste the fruit too. He invites us to love, share, and invite through words and actions, and he promises joy for ourselves and even greater joy as our loved ones partake."
+              "Elder Stevenson speaks partly to Primary children, whom he meets and admires everywhere he travels, most recently in Australia, New Caledonia, Samoa, Colombia and Peru. He remembers his own mother urging him to listen to just one more talk. Children have a purpose: Heavenly Father and Jesus Christ know and love them, they are an important part of God’s work, and their talents and gifts can make them happy and bless others.",
+              "As a boy he loved fresh fruit from farm stands, especially sweet peaches. Lehi likewise saw a tree whose fruit made him happy and was sweeter than anything he had tasted (1 Nephi 8:10–12). The tree represents God’s love, shown most fully in the birth, life and Atonement of Jesus Christ; the fruit represents the blessings of that Atonement, including ordinances, covenants, restored truths and eternal life. Like fruit, gospel truths can be looked at and handled, but we only know how good they are after we taste them by living them.",
+              "The first fruit: we are children of a loving Heavenly Father, our most important identity, which makes us stronger and kinder (Romans 8:16). In South America, at a devotional for members suffering after a severe earthquake, a very young Primary boy ran up to the stand and, in Elder Stevenson’s arms, sang every word of “I Am a Child of God,” and the Spirit comforted everyone. The second fruit: the great plan of happiness through Jesus Christ (Alma 42:8). In Japan, a grieving Buddhist priest’s face changed when he learned his wife’s spirit had gone to a place of rest and peace (Alma 40:11–12).",
+              "Christ’s Atonement is at the center of that plan, so even when we stumble or wonder if we’ll ever be good enough, we can repent and keep progressing. The third fruit: the gift of the Holy Ghost, a member of the Godhead (Doctrine and Covenants 130:22), received by the laying on of hands after baptism, who warns, comforts and testifies. Like Lehi, who wanted his family to taste the fruit too, Elder Stevenson invites us to love, share and invite in word and action, promising joy for us and even greater joy as loved ones partake."
             ],
             "find": [
+              "Gospel truths are the same.",
               "They become sweet to us as we live them, bringing us happiness and joy.",
-              "This knowledge also makes us kinder to others",
-              "Central to this plan is the Atonement of Jesus Christ.",
-              "His very important roles include to warn, to comfort, and to testify.",
-              "love, share, and invite. Do this with words and actions."
+              "This is your most important identity.",
+              "We witnessed a miraculous transformation: peace for despair, joy for sadness, hope for ashes.",
+              "Finally, a most delicious fruit for Latter-day Saints is the gift of the Holy Ghost, His constant companionship."
             ]
           },
-          "approved": "a288b61d"
+          "approved": "54eb3a86",
+          "story": {
+            "title": "A grieving priest in Japan",
+            "text": "While living in Japan, Elder Stevenson befriended a Buddhist temple priest, a happy man until his wife died and grief left him deeply depressed. One night Elder Stevenson and a friend visited him. He barely spoke until Elder Stevenson asked whether he knew where his wife was. Startled, he asked what he meant. They explained that spirits return to God and that his wife had gone to a place of rest and peace. His face changed: peace replaced despair, and joy replaced sorrow."
+          },
+          "invite": [
+            {
+              "ask": "I invite you to do something that is as simple as gospel fruit is delicious: love, share, and invite.",
+              "promise": "you will not only feel joy and happiness that comes as you partake of fruit of the gospel but even greater joy as loved ones around you partake as well"
+            }
+          ],
+          "try": "Share one gospel truth you love with someone this week, whether a Primary song, a favorite scripture, or what you know about where loved ones go after death."
         },
         {
           "id": "oct26-reid-good-enough-teach",
@@ -2609,35 +3121,50 @@ window.TU_SUNDAY = {
             "3 Nephi 17",
             "1 John 4:19"
           ],
-          "quick": "Brother Reid, who felt inadequate when called to the Sunday School General Presidency, teaches that the Lord pairs His call to teach with a promise to help. Teaching like the Savior begins with loving Him and loving those we teach. He invites every teacher to come to the Master Teacher, and he promises that Christ will walk beside us and gradually shape us into the teachers He knows we can become.",
+          "quick": "Wondering whether you’re good enough to teach the gospel? Yes, not because you know everything, but because you can love the Master Teacher. The Savior pairs every call to teach with a promise of help, and teaching like Him starts with loving like Him. If people leave feeling nearer to Christ, the lesson did its job.",
           "points": [
-            "Feeling unqualified is common. When the Savior called fishermen and the sons of Mosiah to teach, He also promised to make them what He needed.",
-            "Discipleship comes before teaching. The two great commandments become one invitation for teachers: love the Lord, and love the people you teach.",
-            "His parents in American Samoa and Primary teachers under a mango tree taught him most through their love, which helped him feel the Savior’s love.",
-            "The resurrected Savior ministered to people one by one. Christ-centered teaching grows from relationships, and short lessons invite us to focus on helping people reach Him.",
-            "We are good enough to teach, not because we know everything, but because we can love the Master Teacher."
+            "When the Savior calls someone to teach, He usually adds a promise to make them who He needs them to be.",
+            "Before teaching His disciples what to say, Jesus taught them who to become. Discipleship comes first.",
+            "The surest way to love those we teach is to deepen our love for the One we teach about.",
+            "Twenty-five-minute lessons push us to focus on helping people reach the Savior sooner.",
+            "A good teacher never blocks the learner’s view of the Master. People should leave thinking about Him, not us."
           ],
           "discuss": [
-            "When have you felt not good enough for a calling, and how did the Lord help you?",
-            "Think of a teacher who loved you. How did that love help you feel the Savior’s love?",
-            "In a short lesson or a family conversation, what could help people feel closer to the Savior sooner?"
+            "Which teacher helped you feel the Savior’s love, and what did they do?",
+            "How could our family scripture time help everyone connect to Christ sooner?",
+            "Where do you feel not good enough, and how does loving the Master Teacher change that?"
           ],
           "deep": {
             "paras": [
-              "After being sustained in the Sunday School General Presidency, Brother Reid felt inadequate and out of place. He jokes about a news headline that mentioned Church educators and an NFL player, and admits he still sometimes asks the Lord whether He has the right person. He sees a pattern in the Savior’s calls: with the invitation comes a promise. Jesus promised untrained fishermen He would make them fishers of men (Mark 1:17). The Lord promised the once-rebellious sons of Mosiah He would make them instruments in His hands (Alma 17:11). Wherever we teach, He promises to help us.",
-              "Before teaching His disciples what to teach, the Savior taught them who to become, and love is at the heart of it. The two great commandments, to love God and our neighbor (Matthew 22:36–40), become a single invitation for teachers. Brother Reid’s first teachers were his parents in Leone, American Samoa, raising 13 children. His mother had little formal schooling, but both parents had deep faith in Christ, and their love for Him helped their children love Him. Primary teachers who met under a mango tree knew the children by name. Their love helped him feel the Savior’s love and the truth of His gospel.",
-              "Serving in the Australia Sydney Mission with more than 500 missionaries, he and his wife found that loving the Savior more helped them love the missionaries as He does. The resurrected Christ in the Americas first invited people to come to Him one by one, then taught His doctrine, and later healed the sick, blessed the children, and prayed for the people (3 Nephi 11; 3 Nephi 17). Brother Reid said that “Christ-centered teaching is rooted in relationships.” With 25-minute lessons, the better question is how to help people reach the Savior sooner. As President Dallin H. Oaks taught, a teacher should never block the learner’s view of the Master.",
-              "Brother Reid testifies that we are good enough to teach, not because of our knowledge, skill, or confidence, but because we can love the Master Teacher. As our love for Him grows, He will walk beside us and shape us into the teachers He sees in us. His invitation to scholars, athletes, lifelong members, and new or returning disciples is to come to Christ, learn of Him, and love Him, so that our teaching becomes more like His."
+              "After being sustained to the Sunday School General Presidency, Brother Reid felt overwhelmed and out of place, and laughed at a headline noting that the new leaders included Church educators and an NFL player. The feeling remained: did the Lord really have the right person? Many teachers wonder whether they know enough or are good enough. The Savior’s pattern answers that: when He calls people to teach, He also promises help. He told inexperienced fishermen He would make them fishers of men (Mark 1:17), and promised the once-rebellious sons of Mosiah He would make them instruments in His hands (Alma 17:11).",
+              "Before teaching His disciples where to go and what to say, Jesus taught them who to become, and love is at the heart of it. The two great commandments (Matthew 22:36–40) become one invitation for teachers: love the Lord and love those you teach. Brother Reid learned this first in Leone, American Samoa, where his parents raised 13 children in a home of deep faith, and from Primary teachers under a mango tree who knew each child by name. Their love helped him feel the Savior’s love and the truth of the gospel.",
+              "Leading the Australia Sydney Mission, with more than 500 missionaries from over 30 countries, he and his wife found that deepening their love for the Savior helped them see and love the missionaries as He does. When the risen Christ visited the Americas, He first invited people to come to Him one by one (3 Nephi 11:13–15), then taught His doctrine, and when the teaching was over He stayed, healed their sick, blessed their children and prayed for them (3 Nephi 17). Every lesson He gave grew out of love.",
+              "The new Sunday schedule offers weekly chances to build those relationships. Instead of asking how to cover everything in 25 minutes, ask how to help people reach the Savior sooner. President Dallin H. Oaks taught that a gospel teacher never blocks the learner’s view of the Master. If people leave feeling closer to Christ, we have taught enough. Whether we see ourselves as a scholar, an athlete, a lifelong disciple or someone just starting again, the invitation is the same, and loving the Master Teacher, who loved us first (1 John 4:19), is what makes us good enough."
             ],
             "find": [
-              "Often, as He invited someone to teach His gospel, He also gave them a promise.",
-              "Love the Lord and love those you teach.",
+              "We were never meant to do His work alone.",
               "The impact of a gospel teacher is not just the message—it is the love of the messenger.",
-              "Christ-centered teaching is rooted in relationships.",
-              "If class members leave the lesson feeling closer to the Savior than when they came, we have taught enough."
+              "Twenty-five-minute lessons are not a limitation; they are an invitation",
+              "If class members leave the lesson feeling closer to the Savior than when they came, we have taught enough.",
+              "To teach like the Savior, we must love like the Savior!"
             ]
           },
-          "approved": "766726a7"
+          "approved": "2b7c6d96",
+          "story": {
+            "title": "Primary under a mango tree",
+            "text": "Brother Reid grew up in the village of Leone, American Samoa, one of 13 children raised by faithful parents: a father who joined the Church as a young man and a mother with little formal schooling. Many of his first Primary classes met in the shade of a mango tree. His teachers prepared every lesson, but what he remembers most is that they knew each child by name and loved them. That love helped him feel the Savior’s love, and then the truth of His gospel."
+          },
+          "invite": [
+            {
+              "ask": "Come unto the Master Teacher. Learn of Him. Love Him.",
+              "promise": "He will help you love those you teach—and that love will make your teaching more like His."
+            },
+            {
+              "ask": "Love the Lord and love those you teach.",
+              "promise": "as you deepen your love for the One you teach about, He will teach you, walk beside you, and gradually make you into the teacher He knows you can become"
+            }
+          ],
+          "try": "Before your next lesson or family scripture time, pray for each person by name and plan one moment that points straight to the Savior."
         },
         {
           "id": "oct26-gilbert-truth-love",
@@ -2656,36 +3183,47 @@ window.TU_SUNDAY = {
             "John 8:11",
             "Moroni 7:45"
           ],
-          "quick": "Elder Gilbert teaches that Christ’s disciples must stand for truth and show love at the same time. Drawing on five principles President Oaks taught, he urges us to avoid contentious settings, find common ground first, be a light, keep God’s commandments while reaching out, and stay anchored in Jesus Christ. Some of us need more conviction and some more charity, and he promises the Lord will help us as we try.",
+          "quick": "Standing for truth takes courage; standing for truth with love takes more. Disciples are asked to do both at once, never trading away God’s commandments to seem kind, or kindness to seem right. Elder Gilbert offers five principles for doing it and believes this pairing will mark Christ’s followers in the last days.",
           "points": [
-            "Before applying this message to others, look inward for pride or jealousy, as President Nelson cautioned in his talk on peacemaking.",
-            "Avoid overly contentious settings. Sometimes peace means staying quiet, and hostility may hide pain we cannot see. Elder Gilbert regrets answering a bitter friend in anger.",
-            "Find common ground first. Two hours of patient listening in one home led five people with different concerns to accept his invitation to stake conference.",
-            "Be a light. Keeping our own covenants helps others keep theirs, and a believing example opens doors that argument cannot.",
-            "Hold to truth while reaching out, and stay anchored in Christ. Loving God first strengthens our love for others, and charity shapes how we speak."
+            "Before applying a message to others, look in your own heart for pride or jealousy.",
+            "Avoid overly contentious settings. Sometimes the peacemaker stays quiet with dignity, and hostility may hide pain we can’t see.",
+            "Find common ground first. Listening before answering opens the way to teach from love.",
+            "Be a light: keeping our own covenants helps others more than winning arguments does.",
+            "Hold to truth even while reaching out. Christ never withheld His love, and never excused anyone from His commandments."
           ],
           "discuss": [
-            "Do you lean more toward truth or toward love when you disagree with someone, and what would balance look like for you?",
-            "When has listening longer than you wanted to helped you understand someone better?",
-            "How can keeping your own covenants be a light to a family member or friend who is struggling?"
+            "Which way do you tend to lean, toward truth or toward love, and what would better balance look like?",
+            "Who do we know whose sharp words might be hiding pain, and how could we respond to them?",
+            "How can we keep God’s commandments clearly while still showing love to family members who choose differently?"
           ],
           "deep": {
             "paras": [
-              "Elder Gilbert says it takes courage to stand for truth, and more to do so with love. He worries some will hold only to truth and others only to love, or will think of others’ faults instead of their own. He recalls listing people who needed President Russell M. Nelson’s talk on peacemaking, until President Nelson asked listeners to look into their own hearts. Elder Gilbert then shares five principles President Dallin H. Oaks taught when the two of them spoke together at an Ensign College devotional on standing fast with love while proclaiming truth.",
-              "First, stay away from overly heated settings. Elder Neil L. Andersen taught that peacemaking sometimes means staying quiet with dignity. When national academic leaders sharply criticized faith in higher education, Elder Gilbert chose to set the discussion aside for that setting. Hostility may also hide pain we cannot see. He tells of a once-faithful friend who attacked the Church, and Elder Gilbert answered him with an angry retort. He said, “I may have won the debate in the moment, but I lost the Spirit and I failed to help my struggling friend.”",
-              "Second, find common ground first. A stake president arranged one ministering visit, but five people with different concerns were waiting. Elder Gilbert felt prompted to keep listening, for nearly two hours, and then each one accepted his invitation to stake conference. Listening first let him teach from love, as the Savior loved us first (1 John 4:19). Third, be a light. We help others keep their covenants best by keeping ours. Later, a university chancellor asked his counsel on a course about character, which he links in part to his restraint with those academic leaders.",
-              "Fourth, hold to truth even in outreach. President Oaks taught that loving others does not mean giving up our values. President Jeffrey R. Holland taught that Christ forgave sin but never condoned it, and President D. Todd Christofferson taught that loving God first strengthens our love for others. The Savior loved the woman taken in adultery and told her to sin no more (John 8:11). Fifth, stay anchored in Jesus Christ, with the charity described in Moroni 7:45. Elder Gilbert believes teaching truth with love will mark Christ’s disciples in the last days. Some of us need more conviction, and others more charity."
+              "President Dallin H. Oaks has noted that keeping all the commandments can be mistaken for lacking love, and showing love can be mistaken for endorsing what contradicts our covenants. Elder Gilbert worries that some will grab only the truth half or only the love half, or will assume the message is for someone else. He admits mentally listing people who needed President Russell M. Nelson’s talk on peacemaking, until President Nelson asked listeners to search their own hearts for pride and jealousy. Elder Gilbert extends that same invitation to all of us.",
+              "Years ago, assigned to speak with President Oaks at an Ensign College devotional on hard doctrinal topics, Elder Gilbert sheepishly asked to write out his remarks rather than speak without notes. That devotional gave five principles. First, avoid overly contentious settings; Elder Neil L. Andersen taught that a peacemaker sometimes stays quiet with dignity. When national academic leaders attacked faith in higher education, Elder Gilbert chose to set the discussion aside. But when a once-faithful friend attacked the Church, he fired back in anger, won the argument, and lost the Spirit and his chance to help. Hostility can mask hidden pain or regret.",
+              "Second, find common ground. A ministering visit with five people, each carrying a different concern, became nearly two hours of listening, and afterward all five accepted his invitation to stake conference. We love because He first loved us (1 John 4:19). Third, be a light. President Nelson urged us to surprise doubting hearts with believing ones, and keeping our own covenants is the best way to help others keep theirs. After Elder Gilbert held back in that tense academic setting, a university chancellor later asked his counsel on a course about character.",
+              "Fourth, hold to truth even in outreach. Loving others does not mean surrendering our values. President Jeffrey R. Holland noted that Christ forgave sin but never condoned it, never withheld love, and never exempted anyone from His commandments. President D. Todd Christofferson taught that putting the first commandment first strengthens our love for others. Christ showed love to the woman taken in adultery and told her to sin no more (John 8:11). Fifth, stay anchored in Jesus Christ and measure ourselves against Mormon’s description of charity (Moroni 7:45). Truth and love always walk together, and the Lord will help us teach both."
             ],
             "find": [
-              "It takes even more courage to stand for truth with love.",
-              "First, avoid overly contentious settings.",
-              "A second way to stand for truth with love is to first find common ground.",
-              "The third principle is to be a light.",
-              "the fourth principle is to hold to truth even in our outreach",
-              "The fifth principle then is to stay anchored in Jesus Christ."
+              "It takes courage to stand for truth. It takes even more courage to stand for truth with love.",
+              "Sometimes what we perceive as hostility may actually be someone’s hidden pain or regret.",
+              "I may have won the debate in the moment, but I lost the Spirit and I failed to help my struggling friend.",
+              "Being a light opens more doors than any pointed argument ever will.",
+              "When we try to love others by minimizing God’s laws, we separate ourselves from the one person who loves them the very most.",
+              "For disciples of Jesus Christ, truth and love always walk together."
             ]
           },
-          "approved": "0e6c3d34"
+          "approved": "e8bba700",
+          "story": {
+            "title": "Two hours of listening",
+            "text": "A stake president handed Elder Gilbert a long list of ministering visits. Short on time, Elder Gilbert suggested they choose just one home. They did, but five people were waiting there, each with a different concern. He asked where they wanted to begin and listened. He was tempted to jump in, but the Spirit kept prompting him to wait. After nearly two hours, running through their next meeting, he understood their struggles. When he invited all five to stake conference that evening, every one accepted."
+          },
+          "invite": [
+            {
+              "ask": "Ask yourself if you carry these Christlike attributes when you are striving to stand for truth with love",
+              "promise": "I know the Lord will help us as we strive to teach truth with love."
+            }
+          ],
+          "try": "The next time a conversation about the Church or the gospel turns heated, listen all the way through and wait to answer until you can do it with charity."
         },
         {
           "id": "oct26-oaks-closing-remarks",
@@ -2700,20 +3238,20 @@ window.TU_SUNDAY = {
           "scriptures": [
             "2 Nephi 28:30"
           ],
-          "quick": "In his closing remarks, President Oaks invites everyone to study and ponder the conference talks prayerfully and then act in faith on their teachings, with the Lord’s promise that those who receive will be given more. He announces that the Salt Lake Temple will open to the public on April 5, 2027, blesses us with peace, and testifies that truth is found in the Lord’s restored Church.",
+          "quick": "Conference ends, and the real work begins: study the talks prayerfully and act on what they teach, trusting the Lord’s pattern of giving more to those who receive. President Oaks also looks ahead to the Salt Lake Temple opening its doors to the public on April 5, 2027, and blesses our families with peace.",
           "points": [
-            "The conference messages center our worship, learning, and testimonies on Jesus Christ and the Father’s plan. We should study them prayerfully and act on them.",
-            "The Salt Lake Temple will open to the public on April 5, 2027, the first such opening since 1893. A video series called Dedicate begins after this session.",
-            "President Oaks blesses families with peace and contentment and testifies that the restored Church holds truth about the Lord’s teachings and the covenant path."
+            "This conference’s messages centered our worship, learning and testimonies on Jesus Christ and the Father’s plan for our joy.",
+            "On April 5, 2027, the Salt Lake Temple opens to the public, the first such opening since 1893. A video series called Dedicate begins right after conference.",
+            "Truth about the Lord’s teachings and the covenant path that leads to the destiny Heavenly Father wants for us is found in His restored Church."
           ],
           "discuss": [
-            "Which conference talk do you want to study more deeply, and what principle in it will you act on?",
-            "When has receiving and acting on truth led the Lord to give you more?"
+            "Which conference talk is still on your mind, and what would acting on it look like this week?",
+            "How could we use the Salt Lake Temple celebration and the Dedicate series to help our family prepare for the temple?"
           ],
           "deep": {
             "paras": [
-              "President Oaks says the conference messages and the Spirit have helped us center our worship, learning, and testimonies on Jesus Christ and the Father’s plan for our joy. He invites everyone to study and ponder the talks prayerfully and then act in faith on their teachings. He cites the Lord’s promise that to the one who receives, more will be given (2 Nephi 28:30).",
-              "He announces that the Salt Lake Temple will open to the public on April 5, 2027, for the first time since 1893, and invites all to learn more online or in the Temple Square app. A video series called Dedicate begins after this session, and more will follow, including a virtual tour of the temple. He blesses us and our families with peace and contentment and blesses our service in hard times. He testifies that truth about the Lord’s teachings and the covenant path is found in the restored Church."
+              "The great messages of this conference and the Spirit of the Lord have helped us focus our worship, learning and testimonies on Jesus Christ and on the Father’s plan for our eternal growth and joy. President Oaks invites everyone to study and ponder the published talks prayerfully and to act on their principles in faith, pointing to the Lord’s promise that those who receive will be given more (2 Nephi 28:30).",
+              "He looks ahead to the Salt Lake Temple Celebration. On April 5, 2027, the temple will open to the public for the first time since 1893, 134 years earlier; details are at TempleSquare.org and in the Temple Square app. The first episode of a video series called Dedicate premieres worldwide after the session, with more to follow, including a virtual tour of the temple. He blesses us and our families with peace and contentment, blesses our service in challenging times, and testifies that truth about the Lord’s teachings and the covenant path is found in His restored Church."
             ],
             "find": [
               "we invite all to study and ponder them prayerfully and to act in faith on the principles they explain",
@@ -2721,7 +3259,14 @@ window.TU_SUNDAY = {
               "we invoke the blessings of the Lord on you and your families, blessings of peace and contentment"
             ]
           },
-          "approved": "af9d52c3"
+          "approved": "3953a432",
+          "invite": [
+            {
+              "ask": "As the talks of this conference are published, we invite all to study and ponder them prayerfully and to act in faith on the principles they explain.",
+              "promise": "The Lord has promised, “Unto him that receiveth I will give more.”"
+            }
+          ],
+          "try": "Choose one conference talk to reread this week, pray about it, and pick one principle from it to act on before next Sunday."
         }
       ]
     }
