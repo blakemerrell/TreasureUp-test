@@ -10,7 +10,7 @@ export default async function merge({ port }) {
   const d = await device('merge', { url });
   const run = cases => d.page.evaluate(cases => cases.map(([R, L, B]) => TreasureUp.mergeProgress(R, L, B)), cases);
   const day = '2026-10-15', base = { xp: 1000 };
-  const [still, recall, climb, won, back, both, who1, who2, hist, prof, shorts] = await run([
+  const [still, recall, climb, won, back, both, who1, who2, hist, prof, shorts, toggles, profFields, w40AndLikes, proCoachMerge] = await run([
     // Be still: 10 minutes when they last met; 15 on the family's copy, 13 here.
     [{ ...base, still: { [day]: 15 } }, { ...base, still: { [day]: 13 } }, { ...base, still: { [day]: 10 } }],
     // The warm-up's question answered right on both devices the same day: paid on both.
@@ -30,9 +30,29 @@ export default async function merge({ port }) {
     // Two years' week 39: different weeks, both kept.
     [{ ...base, history: [{ num: 39, title: 'Lesson 39 of 2026' }] }, { ...base, history: [{ num: 39, title: 'Lesson 39 of 2027' }] }, { ...base, history: [] }],
     // The growth profile and the study mode changed here; the family's copy changed something else.
-    [{ ...base, xp: 1010, talks: { t1: { xp: 10 } } }, { ...base, profile: { name: 'Sam', upd: 2 }, studyMode: 'family' }, { ...base }],
+    [{ ...base, xp: 1010, talks: { t1: { xp: 10 } }, feedLikes: { 'sf:1': 100 } }, { ...base, profile: { name: 'Sam', coreValues: ['faith', 'adventure', 'integrity'], upd: 2 }, studyMode: 'family', feedLikes: { 'sf:2': 200 } }, { ...base }],
     // A short finished on both devices since they met (10 XP each), another only here.
     [{ ...base, xp: 1010, shortsDone: { s1: { day, xp: 10 } } }, { ...base, xp: 1030, shortsDone: { s1: { day, xp: 10 }, s2: { day, xp: 20 } } }, { ...base }],
+    // Un-toggled watchedVideos / togetherDone on this device stay un-toggled; newer remote profile upd wins when local profile is older.
+    [{ ...base, profile: { name: 'Alex', upd: 50 }, watchedVideos: { v1: day, v2: day }, togetherDone: { [day]: 1 } }, { ...base, profile: { name: 'Old', upd: 10 }, watchedVideos: { v1: '', v2: day }, togetherDone: { [day]: 0 } }, { ...base, watchedVideos: { v1: day, v2: day }, togetherDone: { [day]: 1 } }],
+    // 3-way field-level profile merge: L edits peakMoment & cclmRatings.self (upd: 20), R edits coreValues & cclmRatings.stewardships (upd: 30) from B (upd: 10).
+    [
+      { ...base, profile: { name: 'Alex', peakMoment: '', coreValues: ['WISDOM', 'PEACE', 'COURAGE'], cclmRatings: { god: 4, self: 3, children: 4, stewardships: 5 }, upd: 30 } },
+      { ...base, profile: { name: 'Alex', peakMoment: 'Kitchen table council', coreValues: ['FAITH', 'FAMILY', 'INTEGRITY'], cclmRatings: { god: 4, self: 5, children: 4, stewardships: 3 }, upd: 20 } },
+      { ...base, profile: { name: 'Alex', peakMoment: '', coreValues: ['FAITH', 'FAMILY', 'INTEGRITY'], cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 }, upd: 10 } }
+    ],
+    // 3-way merge for w40 (completedDays date strings & practiceDone booleans un-ticked on L, day 2 added on R) and feedLikes (sf:1 un-liked on L, sf:3 liked on R, sf:4 re-liked on L after R un-liked).
+    [
+      { ...base, w40: { day: 2, completedDays: { 1: '2026-10-14', 2: '2026-10-15' }, practiceDone: { 1: true, 2: true }, upd: 30 }, feedLikes: { 'sf:1': 100, 'sf:2': 150, 'sf:3': 300 } },
+      { ...base, w40: { day: 1, completedDays: {}, practiceDone: {}, upd: 20 }, feedLikes: { 'sf:2': 150, 'sf:4': 250 } },
+      { ...base, w40: { day: 1, completedDays: { 1: '2026-10-14' }, practiceDone: { 1: true }, upd: 10 }, feedLikes: { 'sf:1': 100, 'sf:2': 150, 'sf:4': 100 } }
+    ],
+    // 3-way merge for private S.pro.coach reflections and cclmRatings.
+    [
+      { ...base, pro: { coach: { peakMoment: '', cclmNote: 'Updated note', cclmRatings: { god: 4, self: 3, children: 4, stewardships: 5 }, upd: 30 } } },
+      { ...base, pro: { coach: { peakMoment: 'Kitchen table council', cclmNote: '', cclmRatings: { god: 4, self: 5, children: 4, stewardships: 3 }, upd: 20 } } },
+      { ...base, pro: { coach: { peakMoment: '', cclmNote: '', cclmRatings: { god: 4, self: 3, children: 4, stewardships: 3 }, upd: 10 } } }
+    ],
   ]);
   check(still.still[day] === 18, `Be still: 15 on the family's copy and 13 here, from 10, make 18 (${still.still[day]})`);
   check(recall.xp === 1015, `the warm-up's question answered on both devices pays once (${recall.xp}, want 1015)`);
@@ -41,8 +61,12 @@ export default async function merge({ port }) {
   check(back.freezes === 1 && !(back.frozen || {})['2026-10-13'], `a freeze given back here is given back once (freezes ${back.freezes}, still frozen: ${!!(back.frozen || {})['2026-10-13']})`);
   check(both.freezes === 0, `both devices using a freeze for the same day costs one (left: ${both.freezes}, want 0)`);
   check(who1.seasonWho === 'adult' && who2.seasonWho === 'adult', `a setting changed on either device is kept (${who1.seasonWho}, ${who2.seasonWho})`);
-  check(prof.profile && prof.profile.name === 'Sam' && prof.studyMode === 'family', `the growth profile and study mode changed here aren't lost (${JSON.stringify(prof.profile)}, ${prof.studyMode})`);
+  check(prof.profile && prof.profile.name === 'Sam' && prof.studyMode === 'family' && prof.feedLikes && prof.feedLikes['sf:1'] && prof.feedLikes['sf:2'], `the growth profile, study mode, and feedLikes changed on either device aren't lost (${JSON.stringify(prof.profile)}, ${prof.studyMode})`);
   check(!!(shorts.shortsDone || {}).s1 && !!(shorts.shortsDone || {}).s2 && shorts.xp === 1030, `shorts done on either device are kept, paid once (${Object.keys(shorts.shortsDone || {})}, xp ${shorts.xp}, want 1030)`);
+  check(toggles.profile && toggles.profile.name === 'Alex' && toggles.watchedVideos.v1 === '' && toggles.togetherDone[day] === 0, `newer profile upd wins and local un-toggles in watchedVideos/togetherDone are preserved`);
+  check(profFields.profile && profFields.profile.peakMoment === 'Kitchen table council' && JSON.stringify(profFields.profile.coreValues) === '["WISDOM","PEACE","COURAGE"]' && profFields.profile.cclmRatings.self === 5 && profFields.profile.cclmRatings.stewardships === 5 && profFields.profile.upd === 30, `3-way field-level profile merge preserves non-conflicting field and nested cclmRatings edits from both devices`);
+  check(w40AndLikes.w40 && !w40AndLikes.w40.completedDays[1] && w40AndLikes.w40.completedDays[2] === '2026-10-15' && !w40AndLikes.w40.practiceDone[1] && w40AndLikes.w40.practiceDone[2] === true && !w40AndLikes.feedLikes['sf:1'] && w40AndLikes.feedLikes['sf:2'] === 150 && w40AndLikes.feedLikes['sf:3'] === 300 && w40AndLikes.feedLikes['sf:4'] === 250, `3-way merge preserves un-ticked w40 days (keeping YYYY-MM-DD strings and booleans) and un-liked/re-liked feedLikes`);
+  check(proCoachMerge.pro && proCoachMerge.pro.coach && proCoachMerge.pro.coach.peakMoment === 'Kitchen table council' && proCoachMerge.pro.coach.cclmNote === 'Updated note' && proCoachMerge.pro.coach.cclmRatings.self === 5 && proCoachMerge.pro.coach.cclmRatings.stewardships === 5, `3-way merge for S.pro.coach preserves non-conflicting coaching fields and nested cclmRatings`);
   check(hist.history.length === 2, `2026's and 2027's week 39 are both kept (${hist.history.length})`);
 
   // Start-up: last week filed in history already (a merge brought its title back) isn't filed again;
