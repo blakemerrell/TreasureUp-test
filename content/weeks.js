@@ -3868,6 +3868,253 @@ window.TU_WEEKS = [
           "previewed": false
         },
         "approved": "907919bb"
+      },
+      {
+        "id": "jer31-watchmen-zion",
+        "ref": "Jeremiah 31:6–9",
+        "title": "Watchmen calling scattered Israel home",
+        "text": "On Mount Ephraim, watchmen cry out for God’s people to rise up and go to Zion. The Old Testament Student Manual explains that the Lord Himself will gather scattered Israel from the north country and the ends of the earth, leading them home by rivers of waters in a straight way where they will not stumble.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "The Lord Himself Will Gather Scattered Israel The Lord Himself will gather Israel."
+      },
+      {
+        "id": "jer31-hymn-israel",
+        "ref": "Jeremiah 31:8–10",
+        "title": "Hymn: Israel, Israel, God Is Calling",
+        "text": "Jeremiah prophesied that the Lord who scattered Israel would gather His flock from the ends of the earth and watch over them as a shepherd watches over his sheep. Richard Smyth’s beloved Restoration hymn echoes this prophetic call to leave Babylon behind and return to Zion in the latter days.",
+        "source": {
+          "by": "Hymns",
+          "who": "Richard Smyth",
+          "title": "Israel, Israel, God Is Calling",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/israel-israel-god-is-calling?lang=eng"
+        },
+        "find": "Israel, Israel, God is calling, Calling thee from lands of woe. Babylon the great is falling"
+      },
+      {
+        "id": "jer31-turn-mourning",
+        "ref": "Jeremiah 31:10–14",
+        "title": "Turning Israel’s mourning into joy",
+        "text": "Like a shepherd watching over his flock, the Lord promises to redeem Jacob, turn their mourning into joy, and comfort them after their sorrow. The Old Testament Student Manual notes that these verses picture the great joy and happiness that accompany the return of Israel to Zion.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "These verses picture the great joy and happiness that will accompany the return of Israel."
+      },
+      {
+        "id": "jer31-ephraim-repents",
+        "ref": "Jeremiah 31:18–20",
+        "title": "Ephraim’s return and the Lord’s mercy",
+        "text": "Ephraim admits that he was like an untrained bullock and pleads with the Lord to turn him back. In response, the Lord calls Ephraim His dear son and promises sure mercy. As John Hilton III notes, even though Jeremiah is the longest book in the Bible, its messages of redemption reward careful study.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "Resources for Studying Jeremiah",
+          "url": "https://johnhiltoniii.com/resources-for-studying-jeremiah/"
+        },
+        "find": "even though the Book of Jeremiah is the longest book in the entire Bible"
+      },
+      {
+        "id": "jer31-compass-man",
+        "ref": "Jeremiah 31:22",
+        "title": "A new thing in the earth",
+        "text": "Calling His wandering people back to their cities, the Lord declares that He has created a new thing in the earth: “A woman shall compass a man.” The Old Testament Student Manual notes that Hebrew writing often pictures Israel as a woman or bride who will turn back to seek the Lord in faith.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "Many times in Hebrew writing Israel is described as a woman and sometimes as a bride."
+      },
+      {
+        "id": "jer31-sun-moon-ordinances",
+        "ref": "Jeremiah 31:35–37",
+        "title": "Covenants as sure as the sun and stars",
+        "text": "The Lord points to the sun by day and the moon and stars by night to show how certain His promises to Israel are. The Old Testament Student Manual explains that the Lord has worked long and hard to establish His righteous people through saving priesthood ordinances that will never fail.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "The Lord, who has worked so long and hard to establish His righteous people"
+      },
+      {
+        "id": "jer32-prison-politics",
+        "ref": "Jeremiah 32:1–5",
+        "title": "Why Zedekiah shut Jeremiah in prison",
+        "text": "As Nebuchadnezzar’s army besieged Jerusalem, King Zedekiah shut Jeremiah up in the court of the prison for prophesying that the city would be given into Babylon’s hand. The Old Testament Student Manual explains why Judah’s leaders reacted so strongly against Jeremiah from a political point of view.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Babylonian Captivity",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
+        },
+        "find": "From a strictly political point of view, one can understand why the Jewish leaders reacted so strongly against Jeremiah."
+      },
+      {
+        "id": "jer32-redemption-field",
+        "ref": "Jeremiah 32:6–12",
+        "title": "Why Jeremiah bought his cousin’s field",
+        "text": "While Jerusalem was surrounded by the Babylonian army, Jeremiah’s cousin Hanameel came to the prison and asked him to buy the family field in Anathoth. The Old Testament Student Manual explains that Jeremiah purchased his cousin’s estate because he held the legal right of redemption as next of kin.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Babylonian Captivity",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
+        },
+        "find": "Jeremiah purchased his cousin’s estate because he had the right as next of kin"
+      },
+      {
+        "id": "jer32-nothing-too-hard",
+        "ref": "Jeremiah 32:17–27",
+        "title": "“Is there any thing too hard for me?”",
+        "text": "After weighing out silver and sealing the deed to the field, Jeremiah prayed and declared that the Lord made heaven and earth by His great power, and that nothing is too hard for Him. William J. Adams notes on Scripture Central how Jeremiah’s writings reveal the Lord’s foreknowledge and tender care.",
+        "source": {
+          "by": "Scripture Central",
+          "who": "William J. Adams",
+          "title": "Jeremiah, Prophecies of",
+          "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/jeremiah-prophecies"
+        },
+        "find": "Another doctrinal contribution is Jeremiah's revelation of the Lord's foreknowledge of future events."
+      },
+      {
+        "id": "jer32-one-heart-way",
+        "ref": "Jeremiah 32:36–41",
+        "title": "Restoration and an everlasting covenant",
+        "text": "Even though Jerusalem was about to fall into Babylonian hands by sword, famine, and pestilence, the Lord promised to gather His people out of every country and bring them back to dwell safely. The Old Testament Student Manual notes that Jeremiah signaled a full return and an eternal covenant.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Babylonian Captivity",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
+        },
+        "find": "Jeremiah clearly signaled a full return of all of the Lord’s people and the establishment of an eternal covenant"
+      },
+      {
+        "id": "jer33-health-and-cure",
+        "ref": "Jeremiah 33:3–9",
+        "title": "Healing, pardon, and peace for Jerusalem",
+        "text": "Shut up in the court of the prison a second time, Jeremiah hears the Lord promise to bring health and cure to Jerusalem, reveal abundance of peace and truth, and cleanse the people from all their iniquity. The Old Testament Student Manual explains that the Lord knows all things, including the future.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "Prophecy of the Latter Days The Lord knows all things, including the future."
+      },
+      {
+        "id": "jer33-branch-david",
+        "ref": "Jeremiah 33:17–26",
+        "title": "Becoming sons and daughters of Christ",
+        "text": "In the closing verses of Jeremiah 33, the Lord promises that David’s throne and the Levitical priesthood covenant are as unbreakable as His covenant with day and night. The Old Testament Student Manual explains that the seed of David includes all who repent and accept the ordinances of the gospel.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
+        },
+        "find": "The seed of David are those who repent of their sins, accept the ordinances of the gospel"
+      },
+      {
+        "id": "jer36-baruch-scroll",
+        "ref": "Jeremiah 36:4–8",
+        "title": "Why the Lord had Jeremiah write a scroll",
+        "text": "Because Jeremiah was shut up and could not go into the temple himself, his scribe Baruch wrote the Lord’s words on a scroll and read them aloud to the people on a fast day. The seminary manual points out that the Lord uses scriptures to lovingly correct us so we might turn toward Him and be forgiven.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Jeremiah 36: The Word of God",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/43-jeremiah-lamentations/432-jeremiah-36?lang=eng"
+        },
+        "find": "Lord uses scriptures to lovingly correct us and bring us to Him."
+      },
+      {
+        "id": "jer36-second-scroll",
+        "ref": "Jeremiah 36:27–32",
+        "title": "Writing the burned scroll a second time",
+        "text": "After King Jehoiakim cut Jeremiah’s scroll apart and burned it in the hearth fire, the Lord commanded Jeremiah to take another roll and write all the former words again, plus many similar words. John Hilton III notes how the events described in Jeremiah set the stage for the Book of Mormon.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "Resources for Studying Jeremiah",
+          "url": "https://johnhiltoniii.com/resources-for-studying-jeremiah/"
+        },
+        "find": "Lehi and Nephi lived in the time of Jeremiah, and the events that are described in Jeremiah set the stage for the Book of Mormon."
+      },
+      {
+        "id": "jer37-prophets-reward",
+        "ref": "Jeremiah 37:11–15",
+        "title": "Falsely accused and beaten at the gate",
+        "text": "When the Babylonian army briefly lifted its siege to meet Pharaoh’s forces, Jeremiah started out of Jerusalem toward the land of Benjamin. A captain at the gate falsely accused him of falling away to the Chaldeans, and the princes beat him and put him in prison.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Babylonian Captivity",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
+        },
+        "find": "When King Jehoiachin rebelled against Babylon, he was deposed and his uncle, Zedekiah, was placed on the throne."
+      },
+      {
+        "id": "jer38-lehi-parallel",
+        "ref": "Jeremiah 38:1–6",
+        "title": "How Jeremiah’s and Lehi’s ministries matched",
+        "text": "Jerusalem’s princes complained that Jeremiah weakened the hands of the soldiers by warning that the city would fall, so they lowered him with cords into a muddy dungeon. Scripture Central highlights how both Jeremiah and Lehi were rejected and persecuted for preaching repentance in Jerusalem.",
+        "source": {
+          "by": "Scripture Central",
+          "title": "How Did Jeremiah’s and Lehi’s Ministries Reflect One Another?",
+          "url": "https://scripturecentral.org/knowhy/how-did-jeremiahs-and-lehis-ministries-reflect-one-another"
+        },
+        "find": "Because of the wickedness of the people, both prophets were rejected and suffered intense persecution."
+      },
+      {
+        "id": "jer39-ebed-saved",
+        "ref": "Jeremiah 39:15–18",
+        "title": "Why Ebed-melech was spared when Judah fell",
+        "text": "Even as Jerusalem fell to Babylon because of the rebellion of its leaders, the Lord sent a personal promise to Ebed-melech the Ethiopian, who had rescued Jeremiah from the cistern. John Hilton III notes that righteous people often face trials caused by others’ choices, yet the Lord stands by those who trust Him.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "When There Is No Happy Ending",
+          "url": "https://johnhiltoniii.com/when-there-is-no-happy-ending/"
+        },
+        "find": "Notice how, in each of these cases, the trials did not come from the person’s own choices but resulted from the actions of others."
+      },
+      {
+        "id": "lam1-hilton-sad",
+        "ref": "Lamentations 1:16–18",
+        "title": "Allowing ourselves to mourn with God",
+        "text": "In Lamentations 1, Jerusalem weeps bitterly over her losses and acknowledges that she rebelled against the Lord’s commandment. John Hilton III points out that scripture makes room for honest grief and lament, teaching us that we can allow ourselves to mourn over lost opportunities and turn to God.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "It’s Okay to Feel Sad",
+          "url": "https://johnhiltoniii.com/its-okay-to-feel-sad/"
+        },
+        "find": "We can allow ourselves to take the time to mourn over our lost opportunities."
+      },
+      {
+        "id": "lam3-quietly-wait",
+        "ref": "Lamentations 3:25–33",
+        "title": "Finding hope in the Lord during affliction",
+        "text": "After declaring that the Lord’s mercies are new every morning, Lamentations 3 teaches that the Lord is good to those who wait for Him and seek Him. The Old Testament Student Manual notes that even in deep distress, the writer turns from sorrow to hope in the Lord’s great compassion.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "The Babylonian Captivity",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
+        },
+        "find": "Lamentations 3:1–66 contains the writer’s individual lament over his and his people’s"
+      },
+      {
+        "id": "lam3-hymn-redeemer",
+        "ref": "Lamentations 3:55–58",
+        "title": "Hymn: I Know That My Redeemer Lives",
+        "text": "From the bottom of the low dungeon, the poet called upon the Lord’s name, and the Lord drew near, said “Fear not,” and redeemed his life. Samuel Medley’s beloved testimony hymn celebrates that same living Redeemer who hears our soul’s complaint and silences all our fears.",
+        "source": {
+          "by": "Hymns",
+          "who": "Samuel Medley",
+          "title": "I Know That My Redeemer Lives",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/i-know-that-my-redeemer-lives?lang=eng"
+        },
+        "find": "He lives to comfort me when faint. He lives to hear my soul’s complaint. He lives to silence all my fears."
       }
     ],
     "plain": [
@@ -6281,6 +6528,255 @@ window.TU_WEEKS = [
           "previewed": false
         },
         "approved": "b9e82828"
+      },
+      {
+        "id": "ezk1-four-creatures",
+        "ref": "Ezekiel 1:4–14",
+        "title": "Unity and harmony in Ezekiel’s vision",
+        "text": "Out of a great cloud and flashing fire, Ezekiel saw four living creatures whose wings touched one another and who moved straight forward wherever the spirit went. The Old Testament Student Manual notes that the creatures of Ezekiel’s vision acted in complete harmony and unity around God’s throne.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 1–24",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
+        },
+        "find": "Their Wings Were Joined Together The creatures of Ezekiel’s vision were in complete harmony and unity."
+      },
+      {
+        "id": "ezk1-kent-brown-wheels",
+        "ref": "Ezekiel 1:15–21",
+        "title": "A wheel in the middle of a wheel",
+        "text": "Beside each living creature stood a gleaming wheel built like a wheel inside a wheel, moving in any of the four directions without turning. BYU professor S. Kent Brown suggests that this interlocking design stabilized the Lord’s chariot throne and showed that God’s glory could reach His exiled people.",
+        "source": {
+          "by": "Scripture Central",
+          "who": "S. Kent Brown",
+          "title": "Ezekiel’s Wheels",
+          "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-116-ezekiels-wheels"
+        },
+        "find": "The notion of “a wheel in the middle a wheel” may well point to a gyroscope that stabilized the apparatus of God’s chariot throne."
+      },
+      {
+        "id": "ezk1-hymn-spirit-of-god",
+        "ref": "Ezekiel 1:26–28",
+        "title": "Hymn: The Spirit of God",
+        "text": "Above the crystal expanse Ezekiel saw a sapphire throne, bright fire, and a rainbow-like radiance surrounding the likeness of the glory of the Lord. William W. Phelps’s Kirtland Temple dedication hymn connects this heavenly glory with the Restoration, singing of Ephraim crowned with blessings in Zion.",
+        "source": {
+          "by": "Hymns",
+          "who": "William W. Phelps",
+          "title": "The Spirit of God",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/the-spirit-of-god?lang=eng"
+        },
+        "find": "And Ephraim be crowned with his blessing in Zion, As Jesus descends with his chariot of fire!"
+      },
+      {
+        "id": "ezk2-briers-scorpions",
+        "ref": "Ezekiel 2:3–7",
+        "title": "Called to speak God’s word in captivity",
+        "text": "Sending Ezekiel to a rebellious house, the Lord compared the opposition he would face to briers, thorns, and scorpions, yet commanded him to speak God’s words without fear. The seminary manual points out that while in Babylonian captivity, Ezekiel was visited by the Lord and called to be a prophet.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Ezekiel 1–3; 33: “I Have Made Thee a Watchman”",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/441-ezekiel-1-3-33?lang=eng"
+        },
+        "find": "While in captivity, he was visited by the Lord and called to be a prophet"
+      },
+      {
+        "id": "ezk2-scroll-both-sides",
+        "ref": "Ezekiel 2:9–10",
+        "title": "A scroll written inside and out",
+        "text": "A hand stretched out to Ezekiel holding a scroll with writing on both the front and the back, filled with lamentations, mourning, and woe. Noe Correa notes on Scripture Central that this verse flows directly into the next chapter, where Ezekiel is commanded to internalize the message.",
+        "source": {
+          "by": "Scripture Central",
+          "who": "Noe Correa",
+          "title": "Ezekiel 1–3; 33–34; 36–37; 47",
+          "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-13-3334-3637-47"
+        },
+        "find": "In this pericope, Ezekiel was given a scroll (“roll of a book”) that communicated a sorrowful message."
+      },
+      {
+        "id": "ezk3-sweet-scroll",
+        "ref": "Ezekiel 3:1–3",
+        "title": "Why the scroll tasted sweet as honey",
+        "text": "Even though the scroll contained solemn warnings of judgment and sorrow, when Ezekiel obeyed the Lord and ate it, it tasted as sweet as honey in his mouth. The Old Testament Student Manual notes that the Apostle John was likewise commanded to eat a book as a symbol of internalizing God’s word.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 1–24",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
+        },
+        "find": "In a similar experience, the Apostle John, too, was commanded to eat a book."
+      },
+      {
+        "id": "ezk3-bound-mute",
+        "ref": "Ezekiel 3:24–27",
+        "title": "Speaking only when the Lord opened his mouth",
+        "text": "At the start of his ministry, the Lord told Ezekiel that he would be shut inside his house and his tongue would cleave to the roof of his mouth until the Lord gave him a message to declare. The Old Testament Student Manual notes that Ezekiel was called to prophesy to a very obstinate people.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 1–24",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-26?lang=eng"
+        },
+        "find": "Ezekiel was called to prophesy to a very obstinate people"
+      },
+      {
+        "id": "ezk33-trumpet-warning",
+        "ref": "Ezekiel 33:1–9",
+        "title": "Why the Lord calls watchmen to warn us",
+        "text": "In ancient cities, a watchman stood high on the wall to spot approaching danger and blow the trumpet so everyone could prepare. Noe Correa explains on Scripture Central that if the watchman faithfully performs his duty to warn the people, he is not at fault if they refuse to listen.",
+        "source": {
+          "by": "Scripture Central",
+          "who": "Noe Correa",
+          "title": "Ezekiel 1–3; 33–34; 36–37; 47",
+          "url": "https://scripturecentral.org/archive/books/book-chapter/ezekiel-13-3334-3637-47"
+        },
+        "find": "If the watchman performs his duty, he will not be at fault for the people’s disobedience."
+      },
+      {
+        "id": "ezk33-turn-and-live",
+        "ref": "Ezekiel 33:12–19",
+        "title": "Turning from sin to live",
+        "text": "Weighed down by their sins in captivity, the exiles wondered how they could ever live. The Old Testament Student Manual explains that past righteous deeds do not excuse new iniquity, nor do past sins prevent a repentant person from turning back to the Lord and living.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 25–48",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
+        },
+        "find": "one’s righteous deeds will not cancel out one’s works of iniquity."
+      },
+      {
+        "id": "ezk33-news-city-smitten",
+        "ref": "Ezekiel 33:21–22",
+        "title": "When news of Jerusalem’s fall reached Babylon",
+        "text": "When a refugee escaped from Jerusalem and arrived in Babylon with word that the city had fallen, every warning Ezekiel had given for years was proven true. As the Old Testament Student Manual notes, the news did not take Ezekiel by surprise, for the Lord had already revealed it to him.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 25–48",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
+        },
+        "find": "Ezekiel Heard of the Destruction of Jerusalem “The news did not take Ezekiel by surprise."
+      },
+      {
+        "id": "ezk34-unfaithful-shepherds",
+        "ref": "Ezekiel 34:1–10",
+        "title": "Why the Lord rebuked Israel’s leaders",
+        "text": "Before promising to gather His flock Himself, the Lord rebuked the shepherds of Israel who fed themselves while neglecting the weak, sick, and scattered sheep. The Old Testament Student Manual explains that in a tone similar to Jeremiah’s, Ezekiel condemned the unfaithful religious leaders of his day.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 25–48",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
+        },
+        "find": "Ezekiel condemned the pastors, or shepherds, of the Lord’s spiritual flock, the religious leaders of Ezekiel’s day."
+      },
+      {
+        "id": "ezk34-hilton-seeking",
+        "ref": "Ezekiel 34:11–16",
+        "title": "How the Savior seeks His lost sheep",
+        "text": "In Ezekiel 34 the Lord promises that He Himself will search for His sheep, rescue them from dark and cloudy places, bind up the broken, and strengthen the sick. Sharing a personal story of being visited when he felt distant, John Hilton III testifies how that rescuing effort changed his life.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "Ezekiel and Seeking the Sheep",
+          "url": "https://johnhiltoniii.com/ezekiel-and-seeking-the-sheep/"
+        },
+        "find": "That rescuing effort on his part made a tremendous difference in my life."
+      },
+      {
+        "id": "ezk34-hymn-dear-shepherd",
+        "ref": "Ezekiel 34:12–16",
+        "title": "Hymn: Dear to the Heart of the Shepherd",
+        "text": "Just as Ezekiel pictured the Lord searching out His scattered flock from the mountains and bringing them home to good pasture, Mary B. Wingate’s hymn celebrates how precious each wandering lamb is to the Good Shepherd and invites us to help Him bring them in with rejoicing.",
+        "source": {
+          "by": "Hymns",
+          "who": "Mary B. Wingate",
+          "title": "Dear to the Heart of the Shepherd",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/dear-to-the-heart-of-the-shepherd?lang=eng"
+        },
+        "find": "See, the Good Shepherd is seeking, Seeking the lambs that are lost, Bringing them in with rejoicing"
+      },
+      {
+        "id": "ezk34-hymn-my-shepherd",
+        "ref": "Ezekiel 34:14–15",
+        "title": "Hymn: The Lord Is My Shepherd",
+        "text": "In Ezekiel 34:14–15, the Lord promises to feed His flock in a good pasture on the high mountains of Israel and cause them to lie down in safety. James Montgomery’s hymn draws on this same shepherd imagery, praising the Lord who leads our souls where still waters flow and restores us when wandering.",
+        "source": {
+          "by": "Hymns",
+          "who": "James Montgomery",
+          "title": "The Lord Is My Shepherd",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/the-lord-is-my-shepherd?lang=eng"
+        },
+        "find": "He leadeth my soul where the still waters flow, Restores me when wand’ring, redeems when oppressed"
+      },
+      {
+        "id": "ezk34-covenant-peace",
+        "ref": "Ezekiel 34:23–31",
+        "title": "One Shepherd and a covenant of peace",
+        "text": "Looking ahead to the latter days, the Lord promises to set one shepherd over His flock and make a covenant of peace with them so they can dwell safely without fear. The seminary manual points out that Ezekiel likens how a good shepherd cares for his flock to how Jesus Christ cares for us.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Ezekiel 34: “He Shall Be Their Shepherd”",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/442-ezekiel-34?lang=eng"
+        },
+        "find": "Ezekiel likens how a good shepherd cares for his flock to how Jesus Christ cares for Heavenly Father’s children."
+      },
+      {
+        "id": "ezk36-mountains-israel",
+        "ref": "Ezekiel 36:8–15",
+        "title": "Israel gathered to their own lands",
+        "text": "Speaking directly to the desolate mountains of Israel, the Lord promised that trees would shoot forth their branches, the land would be tilled and sown, and waste cities would be rebuilt. The Old Testament Student Manual notes that nearly all of Ezekiel 36 deals with this latter-day gathering of Israel.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 25–48",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
+        },
+        "find": "The House of Israel Will Be Gathered to Their Own Lands The only verses in Ezekiel 36 that do not deal with the last days"
+      },
+      {
+        "id": "ezk37-hilton-sticks",
+        "ref": "Ezekiel 37:15–20",
+        "title": "Why we need both the Bible and Book of Mormon",
+        "text": "The Lord commanded Ezekiel to join the stick of Judah and the stick of Ephraim so they would become one in his hand. John Hilton III explains that the Book of Mormon never replaces or competes with the Bible; instead, the two records work together to testify of Jesus Christ.",
+        "source": {
+          "by": "John Hilton III",
+          "who": "John Hilton III",
+          "title": "The Bible and the Book of Mormon",
+          "url": "https://johnhiltoniii.com/the-bible-and-the-book-of-mormon/"
+        },
+        "find": "Some people think that the Book of Mormon replaces the Bible or is in competition with the Bible. That’s not true."
+      },
+      {
+        "id": "ezk37-sanctuary-forever",
+        "ref": "Ezekiel 37:21–28",
+        "title": "God’s sanctuary in the midst of His people",
+        "text": "At the end of Ezekiel 37, the Lord promises to gather Israel into one nation under one King, make an everlasting covenant of peace with them, and set His sanctuary in their midst forevermore. The Old Testament Student Manual notes that this holy sanctuary or temple is part of Israel’s great reunification.",
+        "source": {
+          "by": "Old Testament Student Manual",
+          "title": "Ezekiel 25–48",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-27?lang=eng"
+        },
+        "find": "Ezekiel prophesied in 37:26–28 about a holy sanctuary or temple that would be part of the great reunification of Israel."
+      },
+      {
+        "id": "ezk47-trees-healing",
+        "ref": "Ezekiel 47:6–12",
+        "title": "Living waters issuing from the temple",
+        "text": "Along both banks of the river flowing from the temple, Ezekiel saw trees whose leaves never fade and whose fruit never fails, because their waters issue out of the sanctuary. The seminary manual explains that Ezekiel’s vision symbolizes the blessings the Lord gives us as we worship Him in His temple.",
+        "source": {
+          "by": "Seminary manual",
+          "title": "Ezekiel 47: Blessings of the Temple",
+          "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/44-ezekiel/444-ezekiel-47?lang=eng"
+        },
+        "find": "The vision symbolizes the blessings the Lord gives us as we worship Him in His temple."
+      },
+      {
+        "id": "ezk47-hymn-fountains",
+        "ref": "Ezekiel 47:1–9",
+        "title": "Hymn: “Guide Us, O Thou Great Jehovah”",
+        "text": "Ezekiel watched water trickle from under the temple threshold and swell into a healing river that brought desert places to life. William Williams’s beloved hymn prays for the Savior to open Zion’s fountains and pour out rich blessings as He guides His covenant people safely home.",
+        "source": {
+          "by": "Hymns",
+          "who": "William Williams",
+          "title": "Guide Us, O Thou Great Jehovah",
+          "url": "https://www.churchofjesuschrist.org/study/manual/hymns/guide-us-o-thou-great-jehovah?lang=eng"
+        },
+        "find": "Open, Jesus, Zion’s fountains; Let her richest blessings come."
       }
     ],
     "plain": [

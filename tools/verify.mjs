@@ -69,7 +69,8 @@ const MEDIA = {
     'Latter Day Kids',
     'LDS Come Follow Me',
     'Line Upon Line — for Come Follow Me (Overviews for All Ages)',
-    'Thumb Follow Me'          // kids' Bible stories; name confirmed with YouTube 2026-09-24
+    'Thumb Follow Me',         // kids' Bible stories; name confirmed with YouTube 2026-09-24
+    'John Hilton III'
   ]
 };
 
@@ -85,7 +86,9 @@ const INSIGHT_SITES = {
   'followhim.co': { by: 'followHIM' },
   // 2026-10-04: "can you add notes to the scripture reading from Joseph
   // Smith papers??? having a directly source to that would be amazing".
-  'www.josephsmithpapers.org': { by: 'Joseph Smith Papers' }
+  'www.josephsmithpapers.org': { by: 'Joseph Smith Papers' },
+  'johnhiltoniii.com': { by: 'John Hilton III' },
+  'www.johnhiltoniii.com': { by: 'John Hilton III' }
 };
 
 const args = new Set(process.argv.slice(2));
