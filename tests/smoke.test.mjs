@@ -46,6 +46,11 @@ export default async function smoke({ port }) {
   const readerAfter = await p.$eval('[data-pass-turn]', e => e.closest('div').querySelector('b').textContent.trim());
   check(readerBefore && readerAfter && readerBefore !== readerAfter, `Family turn rotation advances reader (${readerBefore} → ${readerAfter})`);
   check(await p.locator('.flow [data-familynight], .flow [data-short-deck="family"]').count() > 0, 'Family Night card/hero renders in Family Study');
+  check(await p.locator('.flow [data-fam-video-stream]').count() > 0, 'Family Study includes 1-tap Video & Story Stream access');
+  await p.locator('.flow [data-fam-video-stream]').first().click();
+  await wait(350);
+  check(await p.locator('#home [data-feed-filter="media"].on').count() === 1, 'Tapping Video & Story Stream opens the Study feed filtered to videos & stories');
+  await p.click('#tabs [data-tab="today"]'); await wait(350);
   await p.click('[data-study-mode="personal"]'); await wait(400);
   check(/(Personal|My) Study/i.test(await txt(p, '[data-study-mode="personal"]')), 'Personal Study switches back');
   check(await p.locator('.flow [data-familynight]').count() === 0, 'No Family Night card in Personal Study');
