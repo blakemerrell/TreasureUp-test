@@ -7295,6 +7295,18 @@ const TreasureUp = (function () {
       },
       videoCardIdx: 0
     },
+    'October 19–25, 2026:title4': {
+      ref: 'Jeremiah 17:7–8; 18:1–6',
+      video: {
+        title: 'Fire in the Bones | Jeremiah 1–20 | Come Follow Me 2026 | John Hilton III',
+        channel: 'Scripture Central',
+        youtube: 'MzxgjQLWUtY',
+        start: 0,
+        end: 580,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
     'October 19–25, 2026:title5': {
       ref: 'Jeremiah 3:22',
       video: {
@@ -7315,6 +7327,18 @@ const TreasureUp = (function () {
         youtube: 'L206lZBoxOo',
         start: 2121,
         end: 2253,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
+    'October 19–25, 2026:title7': {
+      ref: 'Jeremiah 20:9',
+      video: {
+        title: 'Come Follow Me Old Testament: Jeremiah 1–3; 7; 16–18; 20 — Don’t Miss This',
+        channel: "Don't Miss This",
+        youtube: 'Najv16EdiQ4',
+        start: 0,
+        end: 540,
         previewed: true
       },
       videoCardIdx: 0
@@ -7391,6 +7415,42 @@ const TreasureUp = (function () {
       },
       videoCardIdx: 0
     },
+    'October 26–November 1, 2026:title10': {
+      ref: 'Jeremiah 31:3',
+      video: {
+        title: 'Jeremiah 30–31 | Taylor and Tyler | Come Follow Me Insights',
+        channel: 'Scripture Central',
+        youtube: 'Ztd9_Buxg3w',
+        start: 0,
+        end: 540,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
+    'October 26–November 1, 2026:title11': {
+      ref: 'Jeremiah 31:31–34; 32:38–41',
+      video: {
+        title: 'Jeremiah 30–36, Lamentations | Taylor and Tyler | Come Follow Me Insights',
+        channel: 'Scripture Central',
+        youtube: 'SeTJuxLocyk',
+        start: 0,
+        end: 540,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
+    'October 26–November 1, 2026:title12': {
+      ref: 'Jeremiah 36:1–4',
+      video: {
+        title: 'Come Follow Me Old Testament: Jeremiah & Lamentations — Don’t Miss This',
+        channel: "Don't Miss This",
+        youtube: 'mfs4uv5t714',
+        start: 0,
+        end: 540,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
     'October 26–November 1, 2026:title14': {
       ref: 'Lamentations 3:21–24',
       video: {
@@ -7459,6 +7519,18 @@ const TreasureUp = (function () {
         youtube: 'bxo3ndWiCXI',
         start: 0,
         end: 403,
+        previewed: true
+      },
+      videoCardIdx: 0
+    },
+    'November 2–8, 2026:title10': {
+      ref: 'Ezekiel 34:11–16',
+      video: {
+        title: 'Seeking Jesus: The Savior’s Parables & Seeking the Lost Sheep (with Dr. John Hilton III)',
+        channel: 'Scripture Central',
+        youtube: '9tbHdLWfvA4',
+        start: 0,
+        end: 540,
         previewed: true
       },
       videoCardIdx: 0
@@ -8034,10 +8106,90 @@ const TreasureUp = (function () {
       </div>`;
   }
 
+  // In-app content curation (Optimistic Live + 1-tap Hide / Flag to Fix):
+  // Verified scholarly notes, quotes, hymns, Plain English, summaries, and lesson
+  // guides go straight live once tools/verify.mjs passes; any note or card can be
+  // hidden or flagged right where it's read, and restored or exported in Keep → Notes.
+  const CURATION_KEY = NS + 'curation';
+  function getCuration() {
+    try {
+      const d = JSON.parse(localStorage.getItem(CURATION_KEY) || '{}');
+      return { hidden: (d && typeof d.hidden === 'object' && d.hidden) || {}, flagged: (d && typeof d.flagged === 'object' && d.flagged) || {} };
+    } catch (e) { return { hidden: {}, flagged: {} }; }
+  }
+  function saveCuration(cur) {
+    try { localStorage.setItem(CURATION_KEY, JSON.stringify(cur)); } catch (e) {}
+  }
+  const isCuratedHidden = id => !!(id && getCuration().hidden[id]);
+  const isCuratedFlagged = id => !!(id && getCuration().flagged[id]);
+  const getCuratedFlag = id => (id && getCuration().flagged[id]) || null;
+  function curateHide(id, meta = {}) {
+    if (!id) return;
+    const cur = getCuration();
+    cur.hidden[id] = { id, title: meta.title || id, ref: meta.ref || '', at: Date.now() };
+    saveCuration(cur);
+  }
+  function curateUnhide(id) {
+    if (!id) return;
+    const cur = getCuration();
+    delete cur.hidden[id];
+    saveCuration(cur);
+  }
+  function curateFlag(id, reason, meta = {}) {
+    if (!id) return;
+    const cur = getCuration();
+    cur.flagged[id] = { id, title: meta.title || id, ref: meta.ref || '', note: String(reason || 'Needs review').trim().slice(0, 280), at: Date.now() };
+    saveCuration(cur);
+  }
+  function curateUnflag(id) {
+    if (!id) return;
+    const cur = getCuration();
+    delete cur.flagged[id];
+    saveCuration(cur);
+  }
+  function curationControlsHtml(id, title, ref) {
+    if (!id) return '';
+    const fl = getCuratedFlag(id);
+    return `<div class="curate-bar" data-curate-wrap="${esc(id)}" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+        <span style="font-size:11px;opacity:.68">${fl ? `🚩 Flagged: “${esc(fl.note)}”` : 'Spot something to tweak or remove?'}</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button type="button" class="sf-btn" style="font-size:11px;padding:4px 9px" data-curate-flag-toggle="${esc(id)}">${fl ? '🚩 Edit Flag' : '🚩 Flag to Fix'}</button>
+          ${fl ? `<button type="button" class="sf-btn" style="font-size:11px;padding:4px 9px" data-curate-unflag="${esc(id)}">✕ Clear Flag</button>` : ''}
+          <button type="button" class="sf-btn" style="font-size:11px;padding:4px 9px" data-curate-hide="${esc(id)}" data-curate-title="${esc(title || id)}" data-curate-ref="${esc(ref || '')}">🙈 Hide Note</button>
+        </div>
+      </div>
+      <div class="curate-flag-box" data-curate-box="${esc(id)}" hidden style="display:none;gap:6px;align-items:center;flex-wrap:wrap">
+        <input type="text" class="curate-flag-in" data-curate-input="${esc(id)}" maxlength="240" value="${esc(fl ? fl.note : '')}" placeholder="What should change? (e.g., wording, verse ref, source)" style="flex:1 1 180px;padding:6px 10px;border-radius:8px;border:1px solid rgba(251,191,36,.4);background:rgba(0,0,0,.35);color:#fff;font-size:12px">
+        <button type="button" class="ins-save-btn" style="font-size:11px;padding:6px 11px" data-curate-flag-save="${esc(id)}" data-curate-title="${esc(title || id)}" data-curate-ref="${esc(ref || '')}">Save Flag</button>
+      </div>
+    </div>`;
+  }
+  function curationNotebookHtml() {
+    const cur = getCuration();
+    const hid = Object.values(cur.hidden || {}).sort((a, b) => (b.at || 0) - (a.at || 0));
+    const flg = Object.values(cur.flagged || {}).sort((a, b) => (b.at || 0) - (a.at || 0));
+    if (!hid.length && !flg.length) return '';
+    return `<div class="nb-curation" data-curation-panel style="margin:12px 0;padding:12px 14px;border-radius:12px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.28)">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+        <b style="font-size:13px">🛠️ Flagged &amp; Hidden Content (${flg.length} flagged · ${hid.length} hidden)</b>
+        ${flg.length ? `<button type="button" class="nb-link" data-curate-copy>📋 Copy Flagged List for Chat</button>` : ''}
+      </div>
+      ${flg.map(f => `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;border-top:1px dashed rgba(255,255,255,.12);font-size:12.5px">
+        <span>🚩 <b>${esc(f.title || f.id)}</b>${f.ref ? ` (${esc(f.ref)})` : ''} — “${esc(f.note || 'Needs review')}”</span>
+        <button type="button" class="nb-link" data-curate-unflag="${esc(f.id)}">Clear</button>
+      </div>`).join('')}
+      ${hid.map(h => `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;border-top:1px dashed rgba(255,255,255,.12);font-size:12.5px">
+        <span>🙈 <b>${esc(h.title || h.id)}</b>${h.ref ? ` (${esc(h.ref)})` : ''} <small style="opacity:.65">· hidden</small></span>
+        <button type="button" class="nb-link" data-curate-unhide="${esc(h.id)}">👁️ Restore</button>
+      </div>`).join('')}
+    </div>`;
+  }
+
   function shownOf(x) {
-    if (!x) return null;
+    if (!x || isCuratedHidden(x.id)) return null;
     const approved = !!x.approved && x.approved === approvalHash(noApproval(x));
-    return approved || TEST_SITE ? { x, draft: !approved } : null;
+    return { x, draft: TEST_SITE ? !approved : false };
   }
   const guideOf = week => ((week && week.guide) || []).map(shownOf).filter(Boolean);
   const familyOf = week => shownOf(week && week.family);
@@ -8302,9 +8454,9 @@ const TreasureUp = (function () {
     const seenYt = new Set();
     const ytKey = v => v.youtube + ':' + (v.start || 0);
 
-    // 1. Video insights in weeks.js
+    // 1. Previewed video insights in weeks.js
     for (const i of insightsOf(week)) {
-      if (i.x && i.x.kind === 'video' && i.x.video && i.x.video.youtube) {
+      if (i.x && i.x.kind === 'video' && i.x.video && i.x.video.youtube && i.x.video.previewed === true) {
         if (!seenYt.has(ytKey(i.x.video))) {
           seenYt.add(ytKey(i.x.video));
           list.push({
@@ -8350,9 +8502,28 @@ const TreasureUp = (function () {
             title: m.video.title || (rawGuide && rawGuide.h) || week.title,
             text: m.text || (rawGuide && rawGuide.h) || m.video.title,
             video: m.video,
-            shortId: rawGuide ? id : undefined,
             channel: m.video.channel || 'Latter Day Kids'
           });
+        }
+      }
+    }
+
+    // 2b. Unpreviewed video insights on TEST_SITE (after CFM_MEDIA so previewed CFM_MEDIA entries win)
+    if (TEST_SITE) {
+      for (const i of insightsOf(week)) {
+        if (i.x && i.x.kind === 'video' && i.x.video && i.x.video.youtube && i.x.video.previewed !== true) {
+          if (!seenYt.has(ytKey(i.x.video))) {
+            seenYt.add(ytKey(i.x.video));
+            list.push({
+              id: i.x.id,
+              ref: i.x.ref,
+              title: i.x.title,
+              text: i.x.text,
+              video: i.x.video,
+              cardId: i.x.id,
+              channel: i.x.video.channel || 'YouTube'
+            });
+          }
         }
       }
     }
@@ -8806,7 +8977,8 @@ const TreasureUp = (function () {
         ${glLink}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
           <button type="button" class="ins-save-btn" data-save-card-note="${esc(x.id)}">✍️ Save Takeaway to My Notes</button>
-        </div>`
+        </div>
+        ${curationControlsHtml(x.id, x.title || s.who || s.by || x.id, x.ref || '')}`
     });
 
     const deckHtml = `<div class="ins-deck" data-ins-deck="${esc(x.id)}">
@@ -10190,59 +10362,50 @@ const TreasureUp = (function () {
     }
   } catch (e) {}
   function plainOf(week, ch) {
+    if (isCuratedHidden('plain:' + ch)) return null;
     const p = ((week && week.plain) || []).find(x => x.ch === ch)
       || (((window.TU_LIB || {})[ch] || {}).p)
       || Object.values(window.TU_PAST || {}).reduce((f, w) => f || ((w && w.plain) || []).find(x => x.ch === ch), null)
       || ((window.TU_PLAIN && window.TU_PLAIN.plain) || []).find(x => x && x.ch === ch);
     if (!p || !Array.isArray(p.verses)) return null;
     const approved = !!p.approved && p.approved === approvalHash(noApproval(p));
-    return approved || TEST_SITE ? { p, draft: !approved } : null;
+    const notes = Array.isArray(p.notes) ? p.notes.filter(n => !isCuratedHidden(`pnote:${ch}:${n.v}`)) : p.notes;
+    return { p: notes === p.notes ? p : Object.assign({}, p, { notes }), draft: TEST_SITE ? !approved : false };
   }
   // The short version (week.tldr): two to four lines on the whole chapter,
   // at its top, each ending with the verses it covers, "(verses 4–5)", which
   // take him down to them. Written from the Church's chapter heading, the
   // week's lesson and the verses; `also` is the Book of Mormon copy the
-  // heading names, under the lines. Shown like the plain words: once the owner
-  // has approved it, or on the test site as a marked draft.
+  // heading names, under the lines. Optimistic live once tools/verify.mjs passes.
   function tldrOf(week, ch) {
+    if (isCuratedHidden('tldr:' + ch)) return null;
     const t = ((week && week.tldr) || []).find(x => x.ch === ch)
       || (((window.TU_LIB || {})[ch] || {}).t)
       || Object.values(window.TU_PAST || {}).reduce((f, w) => f || ((w && w.tldr) || []).find(x => x.ch === ch), null);
     if (!t || !Array.isArray(t.lines) || !t.lines.length) return null;
     const approved = !!t.approved && t.approved === approvalHash(noApproval(t));
-    return approved || TEST_SITE ? { t, draft: !approved } : null;
+    return { t, draft: TEST_SITE ? !approved : false };
   }
   // Insight cards (week.insights; 2026-10-01: "where can I get
   // faithful commentary … Make that into additional insight cards"): one
   // point about verses of the reading from the Church's manuals and talks,
   // Scripture Central, BYU or followHIM, in our own words, with the page it
   // comes from. Each is in its day's Go further, the day its verses are
-  // read. Shown like the plain words: once the owner has approved it, or on the
-  // test site as a marked draft.
-  // Two more kinds (2026-10-02, from the Scripture Central app): a
-  // quote card (`kind: 'quote'`), a prophet's or apostle's own words on the
-  // verses, and a video card (`kind: 'video'`), a short clip on the week's
-  // reading that, like a reel's, shows only once a parent has watched it.
+  // read. Scholarly notes, quotes, and hymns ship optimistically once verified;
+  // video clips wait until previewed === true.
   const cardOk = x => x && x.id && (x.kind === 'video' ? x.video && x.video.youtube : x.kind === 'quote' ? x.quote && x.source : x.text && x.source);
   const isJsp = x => !x.kind && /^https:\/\/www\.josephsmithpapers\.org\//.test((x.source && x.source.url) || '');
-  // A quote from a Gospel Library page (General Conference, a Church talk)
-  // shows without approval (2026-10-02: "Quotes only"): the speaker's
-  // own words, which the deploy finds word for word on that page
-  // (tools/verify.mjs --online). Our own line under it waits for approval.
   const churchQuote = x => x.kind === 'quote' && /^https:\/\/www\.churchofjesuschrist\.org\/study\//.test((x.source && x.source.url) || '');
-  // A card's deep dive has its own approval (x.deep.approved), so one added to
-  // an approved card waits for the owner while the card stays in the app; off the
-  // test site an unapproved deep dive is left off the card.
-  // Its note in the reader (x.margin) has its own approval too: `m` once it
-  // shows (approved, or on the test site, marked).
   function insightsOf(week) {
-    return ((week && week.insights) || []).filter(cardOk).map(x => {
+    return ((week && week.insights) || []).filter(x => cardOk(x) && !isCuratedHidden(x.id)).map(x => {
       const approved = !!x.approved && x.approved === approvalHash(cardOf(x));
       const watched = x.kind !== 'video' || x.video.previewed === true;
-      const mOk = hasMargin(x) && marginOk(x.margin), m = mOk || (hasMargin(x) && TEST_SITE) ? Object.assign({}, x.margin, { draft: !mOk }) : null;
-      if (hasDeep(x) && !diveOk(x.deep)) x = Object.assign({}, x, { deep: TEST_SITE ? Object.assign({}, x.deep, { draft: true }) : undefined });
-      if (!approved && churchQuote(x)) return { x: Object.assign({}, x, { text: '' }), draft: false, m: mOk ? m : null };
-      return (approved && watched) || x.kind !== 'video' || TEST_SITE ? { x, draft: TEST_SITE ? !approved : false, m } : null;
+      const mOk = hasMargin(x) && marginOk(x.margin), m = hasMargin(x) ? Object.assign({}, x.margin, { draft: TEST_SITE ? !mOk : false }) : null;
+      if (hasDeep(x) && !diveOk(x.deep)) {
+        const listenReady = !x.deep.listen || x.deep.listen.previewed === true;
+        x = Object.assign({}, x, { deep: Object.assign({}, x.deep, { listen: listenReady || TEST_SITE ? x.deep.listen : undefined, draft: TEST_SITE }) });
+      }
+      return (x.kind !== 'video' || (approved && watched) || TEST_SITE) ? { x, draft: TEST_SITE ? !approved : false, m } : null;
     }).filter(Boolean);
   }
   // Notes in the reader (2026-10-07, from the mockup: "Let's try
@@ -10282,11 +10445,11 @@ const TreasureUp = (function () {
   // its verse has in STEPBible's Hebrew or Greek.
   const twKnown = new Map();      // id -> { x, draft }, of the weeks shown so far, for the card
   function treasureOf(week) {
-    return ((week && week.treasure) || []).map(x => {
-      const ok = !!x.approved && x.approved === approvalHash(noApproval(x)), t = ok || TEST_SITE ? { x, draft: !ok } : null;
-      if (t) twKnown.set(x.id, t);
+    return ((week && week.treasure) || []).filter(x => x && !isCuratedHidden(x.id)).map(x => {
+      const ok = !!x.approved && x.approved === approvalHash(noApproval(x)), t = { x, draft: TEST_SITE ? !ok : false };
+      twKnown.set(x.id, t);
       return t;
-    }).filter(Boolean);
+    });
   }
   const twLang = x => /^G/.test(x.strong || '') ? 'el' : 'he';
   const twWordHtml = (x, cls) => `<span class="${cls}" lang="${twLang(x)}" dir="${twLang(x) === 'he' ? 'rtl' : 'ltr'}">${esc(x.word)}</span>`;
@@ -10680,7 +10843,8 @@ const TreasureUp = (function () {
     const body = x.kind === 'quote'
       ? `“${x.quote.replace(/“/g, '‘').replace(/”/g, '’')}”${x.text ? ' — ' + x.text : ''}`
       : (x.text || (m && m.short) || (m && m.glance) || '');
-    return `<button type="button" class="ls-note ls-m ls-${k.c}${top ? ' ls-top' : ''}" data-insnote="${esc(x.id)}"><span class="lm-sum"><span class="lm-head"><span class="lm-ic">${k.ic}</span><b>${esc(head)}</b>${hasDeep(x) ? '<span class="lm-both">· Deep dive</span>' : ''}${m && m.draft ? ' <span class="plain-draft">Draft</span>' : ''}</span>${body && body !== head ? `<span class="lm-body">${esc(body)}</span>` : ''}</span><span class="lm-go" aria-hidden="true">›</span></button>`;
+    const flagMark = isCuratedFlagged(x.id) ? ' <span class="plain-draft" style="background:rgba(245,158,11,.22);color:#fbbf24">🚩 Flagged</span>' : '';
+    return `<button type="button" class="ls-note ls-m ls-${k.c}${top ? ' ls-top' : ''}" data-insnote="${esc(x.id)}"><span class="lm-sum"><span class="lm-head"><span class="lm-ic">${k.ic}</span><b>${esc(head)}</b>${hasDeep(x) ? '<span class="lm-both">· Deep dive</span>' : ''}${m && m.draft ? ' <span class="plain-draft">Draft</span>' : ''}${flagMark}</span>${body && body !== head ? `<span class="lm-body">${esc(body)}</span>` : ''}</span><span class="lm-go" aria-hidden="true">›</span></button>`;
   }
   // Scripture Central's archive (2026-10-07: "What about scripture
   // Central content. Their archives are deep!"): a line at the top of every
@@ -10729,6 +10893,7 @@ const TreasureUp = (function () {
           ${vRef ? `<button type="button" class="sf-btn" data-vnote="${esc(vRef)}"${lastMineId ? ` data-vnote-id="${esc(lastMineId)}"` : ''}>🖍 ${mine.length ? 'Edit' : 'Write'} My Verse Note</button>` : ''}
           <button type="button" class="sf-btn" data-feed-share="${esc(shareTxt)}">💬 Share to Chat</button>
         </div>
+        ${curationControlsHtml(x.id, x.title || s.who || src.name, x.ref || '')}
       </div>
       ${s.url ? `<a class="ins-src" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer"><span>Read the whole thing · ${esc(s.by)}</span> <b>${esc(s.title)} ↗</b></a>` : ''}${card}`);
   }
@@ -12637,7 +12802,7 @@ const TreasureUp = (function () {
     return `<section class="nb-page ruled"><div class="nb-run"><span>My notes</span><span>${notes.length} ${notes.length === 1 ? 'note' : 'notes'}</span></div>
       <h2 class="nb-h">My notes</h2><p class="nb-sub">✍️ impressions · 🖍 verse notes · 🙏 gratitude · ✏️ reel notes</p>
       ${live ? `<div class="nb-compose"><textarea id="impText" class="nb-hand" maxlength="1000" aria-label="Write a note" placeholder="${impRef ? 'What did ' + esc(impRef) + ' teach you?' : 'What did you notice today?'}"></textarea>
-        <div class="nb-cbar">${impRef ? `<span class="nb-ref">📖 ${esc(impRef)} <button class="nb-link" data-imp-noref aria-label="Not about ${esc(impRef)}">✕</button></span>` : ''}${kid ? `<button class="nb-link" data-imp-share>${impShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : ''}<button class="nb-save" data-imp-save>Save</button></div></div>` : ''}
+        <div class="nb-cbar">${impRef ? `<span class="nb-ref">📖 ${esc(impRef)} <button class="nb-link" data-imp-noref aria-label="Not about ${esc(impRef)}">✕</button></span>` : ''}${kid ? `<button class="nb-link" data-imp-share>${impShare ? '👀 Share with my parents' : '🔒 Just me'}</button>` : ''}<button class="nb-save" data-imp-save>Save</button></div></div>${curationNotebookHtml()}` : ''}
       ${[...byWeek].map(([w, ns]) => `<div class="nb-gap"></div><div class="nb-wkhead">${esc(weekHead(w))}</div>${ns.map(note).join('')}`).join('')
         || `<div class="nb-gap"></div><p class="nb-empty">${live ? 'No notes yet. Write one above, or tap ✍️ at the end of any chapter.' : 'No notes in this Season.'}</p>`}</section>`;
   }
@@ -23828,7 +23993,73 @@ const TreasureUp = (function () {
       const c = e.target.closest('[data-insnote-card]');
       if (c) { openCard(c.dataset.insnoteCard); return; }
       const d = e.target.closest('[data-scdoor]');
-      if (d) openScDoor(d.dataset.scdoor);
+      if (d) { openScDoor(d.dataset.scdoor); return; }
+      const chide = e.target.closest('[data-curate-hide]');
+      if (chide) {
+        const id = chide.dataset.curateHide;
+        curateHide(id, { title: chide.dataset.curateTitle || id, ref: chide.dataset.curateRef || '' });
+        closeSheet();
+        document.querySelectorAll('.ls-chapter').forEach(redrawChapter);
+        refreshHome();
+        toast('🙈 Note hidden', 'Restore anytime in Keep → Notes');
+        return;
+      }
+      const cunhide = e.target.closest('[data-curate-unhide]');
+      if (cunhide) {
+        curateUnhide(cunhide.dataset.curateUnhide);
+        document.querySelectorAll('.ls-chapter').forEach(redrawChapter);
+        refreshHome();
+        toast('👁️ Note restored', 'Back in your reader & Study feed');
+        return;
+      }
+      const cftog = e.target.closest('[data-curate-flag-toggle]');
+      if (cftog) {
+        const id = cftog.dataset.curateFlagToggle;
+        const wrap = cftog.closest('[data-curate-wrap]');
+        const box = wrap && wrap.querySelector('[data-curate-box]');
+        if (box) {
+          const show = box.hidden;
+          box.hidden = !show;
+          box.style.display = show ? 'flex' : 'none';
+          if (show) { const inp = box.querySelector('[data-curate-input]'); if (inp) inp.focus(); }
+        }
+        return;
+      }
+      const cfsave = e.target.closest('[data-curate-flag-save]');
+      if (cfsave) {
+        const id = cfsave.dataset.curateFlagSave;
+        const title = cfsave.dataset.curateTitle || id;
+        const ref = cfsave.dataset.curateRef || '';
+        const wrap = cfsave.closest('[data-curate-wrap]');
+        const inp = wrap && wrap.querySelector('[data-curate-input]');
+        curateFlag(id, inp ? inp.value : 'Needs review', { title, ref });
+        if (wrap) wrap.outerHTML = curationControlsHtml(id, title, ref);
+        document.querySelectorAll('.ls-chapter').forEach(redrawChapter);
+        toast('🚩 Flagged to fix', 'Saved in Keep → Notes');
+        return;
+      }
+      const cunflag = e.target.closest('[data-curate-unflag]');
+      if (cunflag) {
+        const id = cunflag.dataset.curateUnflag;
+        curateUnflag(id);
+        const wrap = cunflag.closest('[data-curate-wrap]');
+        if (wrap) {
+          const hideBtn = wrap.querySelector('[data-curate-hide]');
+          wrap.outerHTML = curationControlsHtml(id, hideBtn ? hideBtn.dataset.curateTitle : id, hideBtn ? hideBtn.dataset.curateRef : '');
+        }
+        document.querySelectorAll('.ls-chapter').forEach(redrawChapter);
+        refreshHome();
+        toast('✓ Flag cleared');
+        return;
+      }
+      const ccopy = e.target.closest('[data-curate-copy]');
+      if (ccopy) {
+        const flg = Object.values(getCuration().flagged || {});
+        const txt = flg.map(f => `- 🚩 [${f.id}] ${f.title || f.id}${f.ref ? ` (${f.ref})` : ''}: ${f.note || 'Needs review'}`).join('\n');
+        try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt); } catch (err) {}
+        toast('📋 Copied flagged list', 'Paste into chat to fix');
+        return;
+      }
     });
     // A Hebrew or Greek word, tapped: its word study.
     document.addEventListener('click', e => {

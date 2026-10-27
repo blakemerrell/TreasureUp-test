@@ -156,11 +156,28 @@ export default async function reader({ port }) {
   const firstInsnote = p.locator('#viewBody .ls-verses [data-insnote]').first();
   if (await firstInsnote.count() > 0) {
     const mineBefore = await p.locator('#viewBody .ls-verses .ls-note.ls-mine').count();
+    const totalNotesBefore = await p.locator('#viewBody .ls-verses [data-insnote]').count();
+    const noteId = await firstInsnote.getAttribute('data-insnote');
     await firstInsnote.click(); await wait(300);
     await p.click('#appSheet [data-save-card-note]'); await wait(250);
-    await p.click('#appClose'); await wait(250);
+    // Flag the note in-app
+    await p.click(`#appSheet [data-curate-flag-toggle="${noteId}"]`); await wait(150);
+    await p.fill(`#appSheet [data-curate-input="${noteId}"]`, 'Tighten wording on verse 3');
+    await p.click(`#appSheet [data-curate-flag-save="${noteId}"]`); await wait(250);
+    check((await txt(p, '#appSheet')).includes('Tighten wording on verse 3'), 'In-app Flag to Fix saves note feedback in place');
+    // Hide the note in-app
+    await p.click(`#appSheet [data-curate-hide="${noteId}"]`); await wait(300);
+    const totalNotesAfterHide = await p.locator('#viewBody .ls-verses [data-insnote]').count();
+    check(totalNotesAfterHide === totalNotesBefore - 1, `In-app Hide Note immediately removes the note from the chapter (${totalNotesBefore} → ${totalNotesAfterHide})`);
     const mineAfter = await p.locator('#viewBody .ls-verses .ls-note.ls-mine').count();
     check(mineAfter === mineBefore + 1, 'Saving a scholarly note to My Notes immediately redraws the verse in the open chapter');
+    // Restore the hidden note and clear flag
+    await p.evaluate(id => {
+      const d = JSON.parse(localStorage.getItem('treasureup.v1.curation') || '{}');
+      if (d.hidden) delete d.hidden[id];
+      if (d.flagged) delete d.flagged[id];
+      localStorage.setItem('treasureup.v1.curation', JSON.stringify(d));
+    }, noteId);
   }
   await close();
 
