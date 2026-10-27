@@ -135,6 +135,13 @@ export default async function reader({ port }) {
   await p.click('#viewBody [data-layer="notes"]'); await wait(200);
   check(await p.locator('#viewBody .ls-verses [data-insnote]').count() === 0, 'turning Notes off hides the interlinear scholarly notes');
   await p.click('#viewBody [data-layer="notes"]'); await wait(200);
+  await p.click('#viewBody .ls-verses .ls-vv[data-ref="Jeremiah 31:3"] p.lead'); await wait(200);
+  await p.click('#viewBody .vbar [data-vnote="Jeremiah 31:3"]'); await wait(300);
+  await p.fill('#vnText', 'Hesed covenant love draws us closer to Christ');
+  await p.click('#appSheet [data-vn-save]'); await wait(350);
+  await p.click('#viewBody .ls-verses .ls-vv[data-ref="Jeremiah 31:3"] p.lead'); await wait(200);
+  check(await p.locator('#viewBody .vbar [data-vbar-copy^="Jeremiah 31:3|"]').count() === 1 && await p.locator('#viewBody .vbar [data-vnote-id]').count() === 1,
+    'saving a personal verse note adds 1-tap Copy to Gospel Library and Edit Note right in the verse bar');
   await close();
 
   // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words, Summary drawer, and interlinear scholarly notes.
