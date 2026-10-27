@@ -137,11 +137,31 @@ export default async function reader({ port }) {
   await p.click('#viewBody [data-layer="notes"]'); await wait(200);
   await p.click('#viewBody .ls-verses .ls-vv[data-ref="Jeremiah 31:3"] p.lead'); await wait(200);
   await p.click('#viewBody .vbar [data-vnote="Jeremiah 31:3"]'); await wait(300);
-  await p.fill('#vnText', 'Hesed covenant love draws us closer to Christ');
+  const specialNote = 'Hesed | covenant & "love"\nDraws us closer to Christ';
+  await p.fill('#vnText', specialNote);
   await p.click('#appSheet [data-vn-save]'); await wait(350);
   await p.click('#viewBody .ls-verses .ls-vv[data-ref="Jeremiah 31:3"] p.lead'); await wait(200);
   check(await p.locator('#viewBody .vbar [data-vbar-copy^="Jeremiah 31:3|"]').count() === 1 && await p.locator('#viewBody .vbar [data-vnote-id]').count() === 1,
     'saving a personal verse note adds 1-tap Copy to Gospel Library and Edit Note right in the verse bar');
+  const copiedText = await p.evaluate(async () => {
+    let copied = '';
+    navigator.clipboard.writeText = async t => { copied = t; };
+    const btn = document.querySelector('#viewBody .vbar [data-vbar-copy]');
+    btn.addEventListener('click', e => e.preventDefault(), { once: true });
+    btn.click();
+    return copied;
+  });
+  check(copiedText === specialNote, '1-tap Copy to Gospel Library preserves pipes, quotes, ampersands, and newlines in the note body');
+  // Tapping an interlinear scholarly note and clicking Save to My Notes normalizes range refs and immediately redraws the verse in the open chapter
+  const firstInsnote = p.locator('#viewBody .ls-verses [data-insnote]').first();
+  if (await firstInsnote.count() > 0) {
+    const mineBefore = await p.locator('#viewBody .ls-verses .ls-note.ls-mine').count();
+    await firstInsnote.click(); await wait(300);
+    await p.click('#appSheet [data-save-card-note]'); await wait(250);
+    await p.click('#appClose'); await wait(250);
+    const mineAfter = await p.locator('#viewBody .ls-verses .ls-note.ls-mine').count();
+    check(mineAfter === mineBefore + 1, 'Saving a scholarly note to My Notes immediately redraws the verse in the open chapter');
+  }
   await close();
 
   // An archived past-week chapter (Isaiah 26 in content/past/week-39.js): loads its Plain words, Summary drawer, and interlinear scholarly notes.

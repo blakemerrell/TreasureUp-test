@@ -50,7 +50,27 @@ export default async function smoke({ port }) {
   await p.locator('.flow [data-fam-video-stream]').first().click();
   await wait(350);
   check(await p.locator('#home [data-feed-filter="media"].on').count() === 1, 'Tapping Video & Story Stream opens the Study feed filtered to videos & stories');
+  if (await p.locator('#home .social-feed button.clip').count() > 0) {
+    await p.evaluate(() => {
+      window.YT = { Player: function (el) { el.innerHTML = '<iframe class="yt-stub"></iframe>'; }, PlayerState: { ENDED: 0 } };
+    });
+    await p.locator('#home .social-feed button.clip').first().click();
+    await wait(200);
+    check(await p.locator('#home .social-feed .clip-frame').count() === 1, 'Tapping a video clip in the Study Video & Story Stream mounts the inline player');
+  }
   await p.click('#tabs [data-tab="today"]'); await wait(350);
+  // Edge case: empty week.guide gracefully omits the mini-lesson button without breaking Family Study
+  const emptyGuideOk = await p.evaluate(() => {
+    const weeks = window.TU_WEEKS || [];
+    const saved = weeks.map(w => w.guide);
+    weeks.forEach(w => { w.guide = []; });
+    document.querySelector('[data-study-mode="family"]').click();
+    const noShortBtn = document.querySelectorAll('.flow .fl-next[data-short-id]').length === 0;
+    weeks.forEach((w, i) => { w.guide = saved[i]; });
+    document.querySelector('[data-study-mode="family"]').click();
+    return noShortBtn;
+  });
+  check(emptyGuideOk, 'Family Study gracefully omits the mini-lesson button when week.guide is empty');
   await p.click('[data-study-mode="personal"]'); await wait(400);
   check(/(Personal|My) Study/i.test(await txt(p, '[data-study-mode="personal"]')), 'Personal Study switches back');
   check(await p.locator('.flow [data-familynight]').count() === 0, 'No Family Night card in Personal Study');

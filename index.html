@@ -3843,11 +3843,23 @@ const TreasureUp = (function () {
     </div>`;
   }
 
+  function dayMiniLesson(d, week = WEEK) {
+    if (d < 0 || d >= 6) return null;
+    const homeGuide = guideOf(week).filter(p => !p.x.kids);
+    const kidsGuide = guideOf(week).filter(p => p.x.kids);
+    if (!homeGuide.length && !kidsGuide.length) return null;
+    return homeGuide[d]
+      || (week === WEEK && homeGuide.length ? cfmOf(d) : null)
+      || homeGuide.find(p => !isShortDone(p.x.id))
+      || kidsGuide.find(p => !isShortDone(p.x.id))
+      || (homeGuide.length ? homeGuide[d % homeGuide.length] : kidsGuide[d % kidsGuide.length]);
+  }
+
   function familyStudyTodayHtml(d, k) {
     const isSun = d === 6;
     const homeGuide = guideOf(WEEK).filter(p => !p.x.kids);
     const kidsGuide = guideOf(WEEK).filter(p => p.x.kids);
-    const todayMini = !isSun ? (homeGuide[d] || cfmOf(d) || homeGuide.find(p => !isShortDone(p.x.id)) || kidsGuide.find(p => !isShortDone(p.x.id)) || homeGuide[0]) : null;
+    const todayMini = dayMiniLesson(d, WEEK);
     const isDone = todayMini && isShortDone(todayMini.x.id);
     const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const fg = familyStudyGoal(WEEK);
@@ -3950,8 +3962,7 @@ const TreasureUp = (function () {
       // The Season's other rows, in Goals: finished goals for a parent to look at, planning a Season, the weekend check-in, looking back.
       seasonRows().filter(r => /^(hub|check|reflect)$/.test(r.card) || (r.card === 'season' && !goalSteps().length)).forEach(r => seasonExtra.push(r.html));
     }
-    const homeGuide = guideOf(WEEK).filter(p => !p.x.kids);
-    const todayMini = homeGuide[d] || cfmOf(d);
+    const todayMini = dayMiniLesson(d, WEEK);
     let mini = null;
     if (todayMini) {
       const isDone = isShortDone(todayMini.x.id);
@@ -7743,7 +7754,7 @@ const TreasureUp = (function () {
     const parts = guideOf(week);
     const home = parts.filter(p => !p.x.kids);
     const f = familyOf(week);
-    const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const items = home.map((p, i) => ({
       id: p.x.id,
       title: p.x.h,
@@ -8107,7 +8118,7 @@ const TreasureUp = (function () {
     const home = parts.filter(p => !p.x.kids);
     const kids = parts.filter(p => p.x.kids);
     const cream = creamItemsOf(WEEK);
-    const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const fg = familyStudyGoal(WEEK);
 
     return `<div class="shorts-shelf" style="margin:12px 0 20px">
@@ -8121,12 +8132,12 @@ const TreasureUp = (function () {
           <small style="font-size:12px;color:rgba(255,255,255,.7)">${fg.won ? '🎉 Family Goal Won! Everyone completed all family lessons this week!' : `${fg.total - fg.done} family lesson${fg.total - fg.done === 1 ? '' : 's'} to complete this week · Pure family time (no XP)`}</small>
         </div>` : ''}
 
-      <!-- 1. Daily Come, Follow Me Mini-Lessons (5 Days) -->
+      <!-- 1. Daily Come, Follow Me Mini-Lessons -->
       ${home.length ? `
         <div class="shorts-sec">
           <div class="shorts-sec-head">
-            <span class="shorts-sec-title">Daily Mini-Lessons · 5 Days</span>
-            <span class="shorts-sec-hint">Swipe Mon–Fri ›</span>
+            <span class="shorts-sec-title">Daily Mini-Lessons · ${home.length} ${home.length === 1 ? 'Day' : 'Days'}</span>
+            <span class="shorts-sec-hint">Swipe Mon–${DAYS[Math.min(home.length - 1, 5)] || 'Fri'} ›</span>
           </div>
           <div class="shorts-tray">
             ${home.map((p, i) => shortCardHtml(p, false, DAYS[i] || 'Day ' + (i + 1))).join('')}
@@ -10384,6 +10395,7 @@ const TreasureUp = (function () {
       ? `<button type="button" class="lm-card" data-insnote-card="${esc(x.id)}">📖 Open as Story Deck ›<small>${hasDeep(x) ? 'Swipe through deep dive' + (x.deep.listen ? ' & video clip' : '') : 'Marks it read in Study'}</small></button>` : '';
     const vRefM = /^(.+? \d+):(\d+)/.exec(x.ref || ''), vRef = vRefM ? vRefM[1] + ':' + vRefM[2] : '';
     const mine = vRef ? myNotesOf(vRef) : x.ref ? myNotesOf(x.ref) : [];
+    const lastMineId = mine.length ? mine[mine.length - 1][0] : '';
     const shareTxt = `${src.ic} ${x.title || s.who || src.name} (${x.ref || ''}): ${cut(x.quote || x.text || (m && m.short) || '', 220)}`;
     openSheet(`<div class="ls-kind lm-k-${src.c}"><span class="lm-ic">${src.ic}</span> ${esc(src.name)} · ${linkRefs(x.ref || '')}</div>${m.draft || i.draft ? '<p class="plain-draft">Draft: not approved yet</p>' : ''}
       <div class="lm-note-card">
@@ -10397,7 +10409,7 @@ const TreasureUp = (function () {
         </div>` : ''}
         <div class="lm-note-actions">
           <button type="button" class="ins-save-btn" data-save-card-note="${esc(x.id)}">✍️ Save to My Notes</button>
-          ${vRef ? `<button type="button" class="sf-btn" data-vnote="${esc(vRef)}">🖍 Write My Verse Note</button>` : ''}
+          ${vRef ? `<button type="button" class="sf-btn" data-vnote="${esc(vRef)}"${lastMineId ? ` data-vnote-id="${esc(lastMineId)}"` : ''}>🖍 ${mine.length ? 'Edit' : 'Write'} My Verse Note</button>` : ''}
           <button type="button" class="sf-btn" data-feed-share="${esc(shareTxt)}">💬 Share to Chat</button>
         </div>
       </div>
@@ -10641,6 +10653,10 @@ const TreasureUp = (function () {
       <p class="sh-small vn-foot">It’s kept with your impressions in the 🌱 Season tab. Gospel Library keeps its own notes; this app can’t see or change them, so “Copy it” is the way to put this one there too: in Gospel Library, tap the verse, add a note, and paste.</p>`;
   }
   function openVerseNote(ref, id) {
+    if (!id && ref) {
+      const notes = myNotesOf(ref);
+      if (notes.length) id = notes[notes.length - 1][0];
+    }
     const x = id && (S.impressions || {})[id];
     vnShare = !!(x && x.share);
     closeVerseBar();
@@ -10698,8 +10714,9 @@ const TreasureUp = (function () {
     const vbc = t.closest('[data-vbar-copy]');
     if (vbc) {
       const [ref, id] = vbc.dataset.vbarCopy.split('|');
+      const all = ref ? myNotesOf(ref).map(([, n]) => (n && n.text ? n.text.trim() : '')).filter(Boolean).join('\n\n') : '';
       const imp = id && (S.impressions || {})[id];
-      const text = (imp && imp.text) ? imp.text.trim() : '';
+      const text = all || ((imp && imp.text) ? imp.text.trim() : '');
       if (text) {
         try { navigator.clipboard.writeText(text).then(() => toast('📋 Note copied!', 'In Gospel Library, tap ' + ref + ', add a note, and paste'), () => toast("Couldn't copy", 'Open note to copy manually')); }
         catch (x) { toast("Couldn't copy", 'Open note to copy manually'); }
@@ -22552,6 +22569,8 @@ const TreasureUp = (function () {
       const wv = e.target.closest('[data-watch-video]');
       if (wv) { toggleWatchedVideo(wv.dataset.watchVideo); return; }
       if (e.target.closest('[data-filter-unwatched]')) { videoFilterUnwatched = !videoFilterUnwatched; refreshHome(); return; }
+      const clip = e.target.closest('button.clip, [data-clip]');
+      if (clip) { playClip(clip); return; }
       const bpc = e.target.closest('[data-bp-check]');
       if (bpc) { toggleBlueprintCheck(bpc.dataset.bpCheck); return; }
       if (e.target.closest('[data-together-check]')) { toggleTogetherCheck(); return; }
@@ -22685,18 +22704,22 @@ const TreasureUp = (function () {
           const x = found.x;
           const body = x.text || x.quote || (found.m && (found.m.short || found.m.glance)) || '';
           txtVal = (x.title ? x.title + ': ' : '') + body;
-          refVal = x.ref || '';
+          const vRefM = /^(.+? \d+):(\d+)/.exec(x.ref || '');
+          refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : (x.ref || '');
         } else {
           const t = talkById(cid);
           if (t) {
             txtVal = `${t.speaker} — “${t.title}”: ${(t.quotes && t.quotes[0]) || t.quick || ''}`;
-            refVal = (t.scriptures && t.scriptures[0]) || '';
+            const rawRef = (t.scriptures && t.scriptures[0]) || '';
+            const vRefM = /^(.+? \d+):(\d+)/.exec(rawRef);
+            refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : rawRef;
           }
         }
         if (txtVal) {
           const imps = S.impressions || (S.impressions = {});
           imps[seaId('i')] = { text: txtVal.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: refVal, share: false };
           save();
+          if (refVal) redrawVerse(refVal);
           hscn.textContent = '✓ Saved';
           hscn.disabled = true;
           toast('✍️ Saved to My Notes!', 'Added to your Season notebook.');
@@ -23276,18 +23299,22 @@ const TreasureUp = (function () {
           const x = found.x;
           const body = x.text || x.quote || (found.m && (found.m.short || found.m.glance)) || '';
           txtVal = (x.title ? x.title + ': ' : '') + body;
-          refVal = x.ref || '';
+          const vRefM = /^(.+? \d+):(\d+)/.exec(x.ref || '');
+          refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : (x.ref || '');
         } else {
           const t = talkById(cid);
           if (t) {
             txtVal = `${t.speaker} — “${t.title}”: ${(t.quotes && t.quotes[0]) || t.quick || ''}`;
-            refVal = (t.scriptures && t.scriptures[0]) || '';
+            const rawRef = (t.scriptures && t.scriptures[0]) || '';
+            const vRefM = /^(.+? \d+):(\d+)/.exec(rawRef);
+            refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : rawRef;
           }
         }
         if (txtVal) {
           const imps = S.impressions || (S.impressions = {});
           imps[seaId('i')] = { text: txtVal.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: refVal, share: false };
           save();
+          if (refVal) redrawVerse(refVal);
           scn.textContent = '✓ Saved to My Notes';
           scn.disabled = true;
           toast('✍️ Saved to My Notes!', 'Added to your Season notebook.');
