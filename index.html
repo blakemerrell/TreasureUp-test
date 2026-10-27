@@ -9353,58 +9353,35 @@ const TreasureUp = (function () {
     const goal = S.readingGoal || 'cfm';
     if (!stats) return '';
 
-    return `<div class="pace-card" style="margin:12px 0 16px;padding:14px;border-radius:16px;background:linear-gradient(145deg, rgba(30,27,75,.6), rgba(49,16,66,.45));border:1.5px solid rgba(251,191,36,.25)">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
-        <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--gold)">📅 Reading Pace Goal</span>
-        <div class="pace-pills" style="display:flex;gap:6px">
-          <button class="sh-pill${goal === 'cfm' ? ' on' : ''}" data-reading-goal="cfm" style="font-size:11px;padding:3px 10px">🕊️ Come, Follow Me Pace</button>
-          <button class="sh-pill${goal === 'year_ot' ? ' on' : ''}" data-reading-goal="year_ot" style="font-size:11px;padding:3px 10px">📖 Finish OT by Dec 31</button>
+    return `<details class="pace-pill-details" style="margin:0 0 10px">
+      <summary style="list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;color:rgba(255,255,255,.68);padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)">
+        <span>${goal === 'year_ot' ? `📖 Pace: Finish OT by Dec 31 (${stats.pct}% · ${stats.targetDaily}/day)` : '🕊️ Pace: Come, Follow Me'}</span>
+        <span style="font-size:10px;opacity:.7">▾</span>
+      </summary>
+      <div class="pace-card" style="margin-top:8px;padding:12px 14px;border-radius:14px;background:linear-gradient(145deg, rgba(30,27,75,.6), rgba(49,16,66,.45));border:1px solid rgba(251,191,36,.25)">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+          <span style="font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--gold)">📅 Reading Pace Goal</span>
+          <div class="pace-pills" style="display:flex;gap:6px">
+            <button class="sh-pill${goal === 'cfm' ? ' on' : ''}" data-reading-goal="cfm" style="font-size:11px;padding:3px 10px">🕊️ Come, Follow Me Pace</button>
+            <button class="sh-pill${goal === 'year_ot' ? ' on' : ''}" data-reading-goal="year_ot" style="font-size:11px;padding:3px 10px">📖 Finish OT by Dec 31</button>
+          </div>
         </div>
-      </div>
-
-      ${goal === 'year_ot' ? `
-        <div style="margin-top:12px">
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
-            <span style="font-size:15px;font-weight:800;color:#fff">${stats.readCount} of ${stats.total} chapters read</span>
-            <span style="font-size:12px;font-weight:700;color:var(--gold)">${stats.pct}%</span>
-          </div>
-          <div class="today-bar" style="margin:8px 0 10px"><div style="width:${stats.pct}%;background:linear-gradient(90deg, #f59e0b, #fbbf24)"></div></div>
-
-          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;text-align:center;margin-bottom:12px">
-            <div style="padding:8px 6px;border-radius:10px;background:rgba(255,255,255,.05)">
-              <div style="font-size:16px;font-weight:900;color:#fff">${stats.targetDaily}</div>
-              <div style="font-size:10.5px;color:rgba(255,255,255,.6)">Chapters / day</div>
+        ${goal === 'year_ot' ? `
+          <div style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <span style="font-size:14px;font-weight:800;color:#fff">${stats.readCount} of ${stats.total} chapters read</span>
+              <span style="font-size:12px;font-weight:700;color:var(--gold)">${stats.pct}%</span>
             </div>
-            <div style="padding:8px 6px;border-radius:10px;background:rgba(255,255,255,.05)">
-              <div style="font-size:16px;font-weight:900;color:#fff">${stats.remaining}</div>
-              <div style="font-size:10.5px;color:rgba(255,255,255,.6)">Remaining</div>
-            </div>
-            <div style="padding:8px 6px;border-radius:10px;background:rgba(255,255,255,.05)">
-              <div style="font-size:16px;font-weight:900;color:#fff">${stats.daysLeft}</div>
-              <div style="font-size:10.5px;color:rgba(255,255,255,.6)">Days to Dec 31</div>
-            </div>
-          </div>
-
-          <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.75);margin-bottom:8px">
-            <span>${stats.delta >= 0 ? `✨ <b>${stats.delta} chapters ahead</b> of expected pace` : `⚡ <b>${Math.abs(stats.delta)} chapters behind</b> year-end schedule`}</span>
-            <span style="color:#a7f3d0">${stats.readToday ? `✓ ${stats.readToday} read today` : 'None read today yet'}</span>
-          </div>
-
-          ${stats.nextQueue.length ? `
-            <div style="margin-top:10px;padding-top:10px;border-top:1px dashed rgba(255,255,255,.15)">
-              <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px">Next chapters to read:</div>
-              <div style="display:flex;gap:6px;flex-wrap:wrap">
-                ${stats.nextQueue.map(ch => `<button class="sp-jump-btn" data-lib-ch="${esc(ch)}" style="padding:5px 12px;font-size:12px;font-weight:700;border-radius:999px;background:rgba(251,191,36,.18);color:#fde68a;border:1px solid rgba(251,191,36,.35);cursor:pointer">📖 Read ${esc(ch)} ›</button>`).join('')}
+            <div class="today-bar" style="margin:6px 0 8px"><div style="width:${stats.pct}%;background:linear-gradient(90deg, #f59e0b, #fbbf24)"></div></div>
+            ${stats.nextQueue.length ? `
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+                ${stats.nextQueue.map(ch => `<button class="sp-jump-btn" data-lib-ch="${esc(ch)}" style="padding:4px 10px;font-size:11.5px;font-weight:700;border-radius:999px;background:rgba(251,191,36,.18);color:#fde68a;border:1px solid rgba(251,191,36,.35);cursor:pointer">📖 Read ${esc(ch)} ›</button>`).join('')}
               </div>
-            </div>
-          ` : ''}
-        </div>
-      ` : `
-        <p style="margin:10px 0 0;font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.4">
-          Following standard <b>Come, Follow Me</b> pace (~10 min/day). To read all 929 Old Testament chapters by December 31, switch to <b>Finish OT by Dec 31</b> above.
-        </p>
-      `}
-    </div>`;
+            ` : ''}
+          </div>
+        ` : ''}
+      </div>
+    </details>`;
   }
 
   const VOL_ICONS = {
