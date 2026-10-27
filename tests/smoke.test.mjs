@@ -158,10 +158,16 @@ export default async function smoke({ port }) {
     await p.evaluate(() => { const m = document.querySelector('#home details.more'); if (m) m.open = true; });
     await firstCard.click(); await wait(350);
     check(await p.locator('#appBody .ins-deck .ins-deck-track .ins-deck-slide').count() >= 2, 'Insight card opens as a multi-slide horizontal Story Deck');
+    const taIn = p.locator('#appBody [data-takeaway-input]');
+    check(await taIn.count() === 1, 'Story Deck Takeaway slide includes a textarea for typing personal thoughts');
     const saveBtn = p.locator('#appBody [data-save-card-note]');
     if (await saveBtn.count() > 0) {
+      await taIn.fill('My personal reflection on covenant faithfulness');
       await saveBtn.click(); await wait(200);
       check((await txt(p, '#appBody [data-save-card-note]')).includes('Saved to My Notes'), '1-tap Save Takeaway to My Notes saves impression');
+      await taIn.fill('Updated reflection thought');
+      await wait(100);
+      check(!(await saveBtn.isDisabled()), 'Typing a new thought in the Takeaway box re-enables the Save button');
     }
     await p.click('#appClose').catch(() => p.keyboard.press('Escape')); await wait(300);
   }
