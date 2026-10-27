@@ -7764,6 +7764,7 @@ const TreasureUp = (function () {
           <div class="sp-ask-box"${isKids ? ' style="background:linear-gradient(135deg, rgba(8,51,68,.35), rgba(6,78,59,.25));border-color:rgba(103,232,249,.4)"' : ''}>
             <span class="sp-ask-label"${isKids ? ' style="color:#67e8f9"' : ''}>💬 60-Second Family Talk:</span>
             <p class="sp-ask-text">${linkRefs(x.ask, x.ref)}</p>
+            <textarea class="field bp-textarea" data-short-takeaway="${esc(x.id)}" rows="2" maxlength="600" style="margin-top:8px" placeholder="Write a thought or family answer to save to My Notes (optional)…"></textarea>
           </div>
 
           ${(() => {
@@ -8001,6 +8002,7 @@ const TreasureUp = (function () {
             <p class="sp-ask-text">
               What stands out to you most from ${esc(item.ref || item.title)} today?
             </p>
+            <textarea class="field bp-textarea" data-cream-takeaway="${esc(item.id)}" rows="2" maxlength="600" style="margin-top:8px" placeholder="Write your thoughts here to save to My Notes (optional)…"></textarea>
           </div>
           ${item.ref && readLink(item.ref) ? `<a class="sp-gl-link" href="${esc(readLink(item.ref))}" target="_blank" rel="noopener noreferrer">📖 Open ${esc(item.ref)} in Gospel Library ↗</a>` : ''}
           ${lotPickerHtml('shares an impression')}
@@ -8963,6 +8965,7 @@ const TreasureUp = (function () {
         <div class="sp-ask-box" style="margin:0;border-color:rgba(251,191,36,.38);background:linear-gradient(135deg, rgba(245,158,11,.14), rgba(0,0,0,.35))">
           <span class="sp-ask-label" style="color:#fbbf24">💭 Quick Takeaway</span>
           <p class="sp-ask-text">What is one truth from ${esc(x.title || x.ref || 'this card')} you want to remember or share today?</p>
+          <textarea class="field bp-textarea" data-takeaway-input="${esc(x.id)}" rows="2" maxlength="600" style="margin-top:8px" placeholder="Write your thoughts here (or leave blank to save the card summary)…"></textarea>
         </div>
         ${src}
         ${glLink}
@@ -9015,6 +9018,16 @@ const TreasureUp = (function () {
       if (!track.clientWidth) return;
       sync(Math.round(track.scrollLeft / track.clientWidth));
     }, { passive: true });
+    const ta = deck.querySelector('[data-takeaway-input]');
+    if (ta) {
+      ta.addEventListener('input', () => {
+        const btn = deck.querySelector('[data-save-card-note]');
+        if (btn && btn.disabled) {
+          btn.disabled = false;
+          btn.textContent = '✍️ Save My Thought';
+        }
+      });
+    }
     sync(initialSlide);
     if (initialSlide > 0) {
       setTimeout(() => {
@@ -23669,10 +23682,21 @@ const TreasureUp = (function () {
       const sfin = e.target.closest('[data-short-finish]');
       if (sfin) {
         const id = sfin.dataset.shortFinish;
+        const p = guideOf(WEEK).find(g => g.x.id === id);
+        const stIn = document.querySelector(`[data-short-takeaway="${id}"]`);
+        const typed = stIn ? stIn.value.trim() : '';
+        if (typed) {
+          const rawRef = (p && p.x && p.x.ref) || '';
+          const vRefM = /^(.+? \d+):(\d+)/.exec(rawRef);
+          const refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : rawRef;
+          const imps = S.impressions || (S.impressions = {});
+          imps[seaId('i')] = { text: typed.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: refVal, share: seasonWho() !== 'adult' };
+          save();
+          if (refVal) redrawVerse(refVal);
+        }
         markShortDone(id, 0, 'Come, Follow Me Short');
         const fg = familyStudyGoal(WEEK);
-        toast('🎉 Family lesson completed!', fg.won ? 'Family Goal Met! All lessons done!' : `Family Goal: ${fg.done} of ${fg.total} done!`);
-        const p = guideOf(WEEK).find(g => g.x.id === id);
+        toast(typed ? '✍️ Saved note & completed lesson!' : '🎉 Family lesson completed!', fg.won ? 'Family Goal Met! All lessons done!' : `Family Goal: ${fg.done} of ${fg.total} done!`);
         if (p) {
           const lastIdx = Math.max(0, shortTotalSlides(p.x) - 1);
           openSheet(shortPlayerHtml(p, lastIdx));
@@ -23767,17 +23791,19 @@ const TreasureUp = (function () {
       if (scn) {
         const cid = scn.dataset.saveCardNote;
         const found = insightsOf(WEEK).find(y => y.x.id === cid) || (noteKnown.get(cid) && noteKnown.get(cid).i);
+        const inp = document.querySelector(`[data-takeaway-input="${cid}"]`);
+        const userNote = inp ? inp.value.trim() : '';
         let txtVal = '', refVal = '';
         if (found && found.x) {
           const x = found.x;
           const body = x.text || x.quote || (found.m && (found.m.short || found.m.glance)) || '';
-          txtVal = (x.title ? x.title + ': ' : '') + body;
+          txtVal = userNote ? (x.title ? `${userNote} — (${x.title})` : userNote) : ((x.title ? x.title + ': ' : '') + body);
           const vRefM = /^(.+? \d+):(\d+)/.exec(x.ref || '');
           refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : (x.ref || '');
         } else {
           const t = talkById(cid);
           if (t) {
-            txtVal = `${t.speaker} — “${t.title}”: ${(t.quotes && t.quotes[0]) || t.quick || ''}`;
+            txtVal = userNote ? `${userNote} — (${t.speaker}, “${t.title}”)` : `${t.speaker} — “${t.title}”: ${(t.quotes && t.quotes[0]) || t.quick || ''}`;
             const rawRef = (t.scriptures && t.scriptures[0]) || '';
             const vRefM = /^(.+? \d+):(\d+)/.exec(rawRef);
             refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : rawRef;
@@ -23821,10 +23847,21 @@ const TreasureUp = (function () {
       const crfin = e.target.closest('[data-cream-finish]');
       if (crfin) {
         const id = crfin.dataset.creamFinish;
-        markShortDone(id, 15, 'Deep Dive');
-        toast('🔍 Deep Dive Completed! +15 XP', 'Deep treasure unlocked!');
         treasureOf(WEEK);
         const it = creamItemsOf(WEEK).find(x => x.id === id);
+        const ctIn = document.querySelector(`[data-cream-takeaway="${id}"]`);
+        const typed = ctIn ? ctIn.value.trim() : '';
+        if (typed) {
+          const rawRef = (it && it.ref) || '';
+          const vRefM = /^(.+? \d+):(\d+)/.exec(rawRef);
+          const refVal = vRefM ? vRefM[1] + ':' + vRefM[2] : rawRef;
+          const imps = S.impressions || (S.impressions = {});
+          imps[seaId('i')] = { text: typed.slice(0, 1000), day: dayKey(), at: Date.now(), upd: Date.now(), ref: refVal, share: false };
+          save();
+          if (refVal) redrawVerse(refVal);
+        }
+        markShortDone(id, 15, 'Deep Dive');
+        toast(typed ? '✍️ Saved note & completed Deep Dive!' : '🔍 Deep Dive Completed! +15 XP', 'Deep treasure unlocked!');
         if (it) openSheet(creamPlayerHtml(it, 2));
         return;
       }
