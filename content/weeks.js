@@ -3879,7 +3879,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "The Lord Himself Will Gather Scattered Israel The Lord Himself will gather Israel."
+        "find": "The Lord Himself Will Gather Scattered Israel The Lord Himself will gather Israel.",
+        "approved": "553ae742"
       },
       {
         "id": "jer31-hymn-israel",
@@ -3892,7 +3893,8 @@ window.TU_WEEKS = [
           "title": "Israel, Israel, God Is Calling",
           "url": "https://www.churchofjesuschrist.org/study/manual/hymns/israel-israel-god-is-calling?lang=eng"
         },
-        "find": "Israel, Israel, God is calling, Calling thee from lands of woe. Babylon the great is falling"
+        "find": "Israel, Israel, God is calling, Calling thee from lands of woe. Babylon the great is falling",
+        "approved": "301ac540"
       },
       {
         "id": "jer31-turn-mourning",
@@ -3904,7 +3906,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "These verses picture the great joy and happiness that will accompany the return of Israel."
+        "find": "These verses picture the great joy and happiness that will accompany the return of Israel.",
+        "approved": "ed8a63c3"
       },
       {
         "id": "jer31-ephraim-repents",
@@ -3917,7 +3920,8 @@ window.TU_WEEKS = [
           "title": "Resources for Studying Jeremiah",
           "url": "https://johnhiltoniii.com/resources-for-studying-jeremiah/"
         },
-        "find": "even though the Book of Jeremiah is the longest book in the entire Bible"
+        "find": "even though the Book of Jeremiah is the longest book in the entire Bible",
+        "approved": "bdba24d1"
       },
       {
         "id": "jer31-compass-man",
@@ -3929,7 +3933,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "Many times in Hebrew writing Israel is described as a woman and sometimes as a bride."
+        "find": "Many times in Hebrew writing Israel is described as a woman and sometimes as a bride.",
+        "approved": "4bdf5781"
       },
       {
         "id": "jer31-sun-moon-ordinances",
@@ -3941,7 +3946,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "The Lord, who has worked so long and hard to establish His righteous people"
+        "find": "The Lord, who has worked so long and hard to establish His righteous people",
+        "approved": "5eef0888"
       },
       {
         "id": "jer32-prison-politics",
@@ -3953,7 +3959,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "From a strictly political point of view, one can understand why the Jewish leaders reacted so strongly against Jeremiah."
+        "find": "From a strictly political point of view, one can understand why the Jewish leaders reacted so strongly against Jeremiah.",
+        "approved": "f82f0717"
       },
       {
         "id": "jer32-redemption-field",
@@ -3965,7 +3972,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "Jeremiah purchased his cousin’s estate because he had the right as next of kin"
+        "find": "Jeremiah purchased his cousin’s estate because he had the right as next of kin",
+        "approved": "ecd0a333"
       },
       {
         "id": "jer32-nothing-too-hard",
@@ -3978,7 +3986,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah, Prophecies of",
           "url": "https://scripturecentral.org/archive/articles/encyclopedia-entry/jeremiah-prophecies"
         },
-        "find": "Another doctrinal contribution is Jeremiah's revelation of the Lord's foreknowledge of future events."
+        "find": "Another doctrinal contribution is Jeremiah's revelation of the Lord's foreknowledge of future events.",
+        "approved": "625e27ff"
       },
       {
         "id": "jer32-one-heart-way",
@@ -3990,7 +3999,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "Jeremiah clearly signaled a full return of all of the Lord’s people and the establishment of an eternal covenant"
+        "find": "Jeremiah clearly signaled a full return of all of the Lord’s people and the establishment of an eternal covenant",
+        "approved": "e207b96d"
       },
       {
         "id": "jer33-health-and-cure",
@@ -4002,7 +4012,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "Prophecy of the Latter Days The Lord knows all things, including the future."
+        "find": "Prophecy of the Latter Days The Lord knows all things, including the future.",
+        "approved": "787738c3"
       },
       {
         "id": "jer33-branch-david",
@@ -4014,7 +4025,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 23; 30–33; 46–51; Obadiah",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-25?lang=eng"
         },
-        "find": "The seed of David are those who repent of their sins, accept the ordinances of the gospel"
+        "find": "The seed of David are those who repent of their sins, accept the ordinances of the gospel",
+        "approved": "f42c7789"
       },
       {
         "id": "jer36-baruch-scroll",
@@ -4026,7 +4038,8 @@ window.TU_WEEKS = [
           "title": "Jeremiah 36: The Word of God",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026/43-jeremiah-lamentations/432-jeremiah-36?lang=eng"
         },
-        "find": "Lord uses scriptures to lovingly correct us and bring us to Him."
+        "find": "Lord uses scriptures to lovingly correct us and bring us to Him.",
+        "approved": "77ae292f"
       },
       {
         "id": "jer36-second-scroll",
@@ -4039,7 +4052,8 @@ window.TU_WEEKS = [
           "title": "Resources for Studying Jeremiah",
           "url": "https://johnhiltoniii.com/resources-for-studying-jeremiah/"
         },
-        "find": "Lehi and Nephi lived in the time of Jeremiah, and the events that are described in Jeremiah set the stage for the Book of Mormon."
+        "find": "Lehi and Nephi lived in the time of Jeremiah, and the events that are described in Jeremiah set the stage for the Book of Mormon.",
+        "approved": "ea7af1d8"
       },
       {
         "id": "jer37-prophets-reward",
@@ -4051,7 +4065,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "When King Jehoiachin rebelled against Babylon, he was deposed and his uncle, Zedekiah, was placed on the throne."
+        "find": "When King Jehoiachin rebelled against Babylon, he was deposed and his uncle, Zedekiah, was placed on the throne.",
+        "approved": "29f9b69c"
       },
       {
         "id": "jer38-lehi-parallel",
@@ -4063,7 +4078,8 @@ window.TU_WEEKS = [
           "title": "How Did Jeremiah’s and Lehi’s Ministries Reflect One Another?",
           "url": "https://scripturecentral.org/knowhy/how-did-jeremiahs-and-lehis-ministries-reflect-one-another"
         },
-        "find": "Because of the wickedness of the people, both prophets were rejected and suffered intense persecution."
+        "find": "Because of the wickedness of the people, both prophets were rejected and suffered intense persecution.",
+        "approved": "1f4aed25"
       },
       {
         "id": "jer39-ebed-saved",
@@ -4076,7 +4092,8 @@ window.TU_WEEKS = [
           "title": "When There Is No Happy Ending",
           "url": "https://johnhiltoniii.com/when-there-is-no-happy-ending/"
         },
-        "find": "Notice how, in each of these cases, the trials did not come from the person’s own choices but resulted from the actions of others."
+        "find": "Notice how, in each of these cases, the trials did not come from the person’s own choices but resulted from the actions of others.",
+        "approved": "b492e8f4"
       },
       {
         "id": "lam1-hilton-sad",
@@ -4089,7 +4106,8 @@ window.TU_WEEKS = [
           "title": "It’s Okay to Feel Sad",
           "url": "https://johnhiltoniii.com/its-okay-to-feel-sad/"
         },
-        "find": "We can allow ourselves to take the time to mourn over our lost opportunities."
+        "find": "We can allow ourselves to take the time to mourn over our lost opportunities.",
+        "approved": "7efe777f"
       },
       {
         "id": "lam3-quietly-wait",
@@ -4101,7 +4119,8 @@ window.TU_WEEKS = [
           "title": "The Babylonian Captivity",
           "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-student-manual-kings-malachi/chapter-24?lang=eng"
         },
-        "find": "Lamentations 3:1–66 contains the writer’s individual lament over his and his people’s"
+        "find": "Lamentations 3:1–66 contains the writer’s individual lament over his and his people’s",
+        "approved": "346669d5"
       },
       {
         "id": "lam3-hymn-redeemer",
@@ -4114,7 +4133,8 @@ window.TU_WEEKS = [
           "title": "I Know That My Redeemer Lives",
           "url": "https://www.churchofjesuschrist.org/study/manual/hymns/i-know-that-my-redeemer-lives?lang=eng"
         },
-        "find": "He lives to comfort me when faint. He lives to hear my soul’s complaint. He lives to silence all my fears."
+        "find": "He lives to comfort me when faint. He lives to hear my soul’s complaint. He lives to silence all my fears.",
+        "approved": "e0013aa7"
       }
     ],
     "plain": [
